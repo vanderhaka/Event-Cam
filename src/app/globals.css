@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: radial-gradient(circle at 10% 10%, #e9efff 0%, #f6f8ff 40%, #f4f6fc 100%);
+  --surface: #ffffff;
+  --surface-soft: #f0f4ff;
+  --text: #15243d;
+  --muted: #55607a;
+  --accent: #2563eb;
+  --accent-soft: #93c5fd;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --card-border: #d8e1f8;
+  --shadow: 0 14px 45px rgba(26, 60, 110, 0.12);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Manrope', 'Avenir Next', 'Segoe UI', 'Noto Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+.top-shell {
+  border-radius: 22px;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--card-border);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 30px rgba(21, 37, 71, 0.07);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.brand-mark {
+  color: var(--accent);
+}
+
+.subtitle {
+  margin: 0.15rem 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.nav {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background: #e8f0ff;
+}
+
+.card,
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.05rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.btn-secondary {
+  background: var(--accent-soft);
+  color: #0d2c66;
+}
+
+.btn-success {
+  background: var(--success);
+}
+
+.btn-danger {
+  background: var(--danger);
+}
+
+.btn-subtle {
+  background: #eef3ff;
+  border: 1px solid var(--card-border);
+  color: #1d3b80;
+}
+
+.btn + .btn {
+  margin-left: 0;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.field {
+  flex: 1;
+  min-width: 210px;
+}
+
+.stack-small {
+  margin-top: 0.45rem;
+}
+
+.media-block {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  color: #fff;
+  background: #94a3b8;
+}
+
+.status-chip.paid {
+  background: var(--success);
+}
+
+.status-chip.pending {
+  background: #f59e0b;
+}
+
+.status-chip.checkout_pending {
+  background: #f59e0b;
+}
+
+.status-chip.draft {
+  background: #64748b;
+}
+
+.status-chip.published {
+  background: var(--accent);
+}
+
+.status-chip.archived {
+  background: #ef4444;
+}
+
+.list-item {
+  margin-bottom: 0.75rem;
+}
+
+.media-preview {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  display: block;
+}
+
+.top-shell {
+  max-width: 1060px;
+  margin: 1rem auto 0.6rem;
+}
+
+.section-head {
+  margin: 0;
+}
+
+.section-sub {
+  margin: 0 0 0.7rem;
+}
+
+.hero {
+  padding: 1.3rem;
+  background: linear-gradient(130deg, #e9f0ff, #f8fbff);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+}
+
+.stack {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-sm {
+  gap: 0.5rem;
+}
+
+.gap-md {
+  gap: 1rem;
+}
+
+/* Timezone hint */
+.tz-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* Custom date-time input */
+.datetime-input-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.datetime-display {
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.datetime-native-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /* keep the input clickable so showPicker() works */
+  pointer-events: none;
+}
+
+/* Invitee row form */
+.invitee-rows {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.invitee-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.invitee-fields {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.invitee-fields .field {
+  flex: 1;
+  min-width: 0;
+}
+
+.invitee-remove {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  border-radius: 8px;
+  margin-bottom: 1px;
+}
+
+@media (max-width: 640px) {
+  .invitee-fields {
+    flex-direction: column;
+  }
+
+  .invitee-fields .field {
+    min-width: 100%;
+  }
+}
