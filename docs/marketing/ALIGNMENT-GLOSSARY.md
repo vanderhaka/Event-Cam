@@ -121,6 +121,12 @@ The quality of identifier consistency (format, uniqueness, cross-linking) across
 ## State Transition Integrity
 Conformance of status changes to the approved state-machine transition rules.
 
+## Decision Premortem
+Structured pre-approval analysis that assumes decision failure and identifies likely causes, warnings, and controls.
+
+## Owner Load Risk
+Workload concentration level (Low/Medium/High) for a specific owner based on active critical alignment responsibilities.
+
 ---
 
 ## Incident & Escalation Terms
@@ -142,6 +148,9 @@ A structured post-incident learning review completed within 48 hours of stabiliz
 
 ## Stabilization Window
 The target duration to contain incident impact and restore minimum control integrity.
+
+## Metric Anomaly (A1/A2/A3)
+Unexpected KPI behavior classified by severity for triage urgency and decision-gating impact.
 
 ---
 
