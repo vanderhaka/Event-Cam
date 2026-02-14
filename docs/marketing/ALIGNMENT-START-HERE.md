@@ -186,6 +186,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 101. `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` (ensures critical controls are de-bottlenecked when they introduce avoidable execution delay)
 102. `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` (ensures control signals translate into clear, owned, and time-bound actions)
 103. `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` (ensures control outputs are used in high-impact decisions with low integration lag)
+104. `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` (ensures equivalent risk signals trigger consistent actions across owners and cycles)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

@@ -347,6 +347,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Median signal-to-action lead time (hrs):
 - Low-utility critical controls (count):
 - Median signal-to-decision integration lag (hrs):
+- Inconsistent equivalent-signal responses (count):
+- Response consistency rate for equivalent signal classes (%):
 
 ---
 

@@ -153,6 +153,7 @@ It helps teams:
 - **Control execution-friction governance:** `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`
 - **Control actionability governance:** `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md`
 - **Control decision-usefulness governance:** `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md`
+- **Control signal-action consistency governance:** `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -275,4 +276,5 @@ For full routing by scenario, use:
 - Keep control-induced execution delay low by de-bottlenecking friction-high critical controls.
 - Keep control outputs action-ready with clear owners, due dates, and fast signal-to-action conversion.
 - Keep controls decision-relevant by reducing low-utility outputs and integration lag.
+- Keep equivalent control signals mapped to consistent response actions across teams and cycles.
 

@@ -430,6 +430,9 @@ The degree to which control outputs convert directly into clear, owned, time-bou
 ## Control Decision Usefulness
 The degree to which control outputs are actually incorporated into high-impact decision-making.
 
+## Control Signal-Action Consistency
+The degree to which equivalent control signals trigger the same approved response class across contexts.
+
 ---
 
 ## Incident & Escalation Terms

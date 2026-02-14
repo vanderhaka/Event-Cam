@@ -900,6 +900,7 @@ Use this minimum-safe operating rule:
 | Control steps introduce recurring handoff delay, slowing critical execution even when controls are nominally healthy | `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` | Friction-high critical-control count trends to zero and median control-induced delay declines |
 | Control outputs are logged but not action-ready, causing delayed ownership and weak follow-through | `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` | Non-actionable output count trends to zero and signal-to-action lead time declines |
 | Controls generate activity but weakly influence high-impact decisions, reducing governance ROI and strategic precision | `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` | Low-utility control count trends to zero and signal-to-decision integration lag declines |
+| Equivalent control signals trigger inconsistent responses across teams, causing uneven risk handling and avoidable outcome variance | `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` | Equivalent-signal inconsistency count trends to zero and response consistency rate remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
