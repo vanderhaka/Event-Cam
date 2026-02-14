@@ -160,6 +160,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-EVIDENCE-STANDARDS.md`**  
   Decision evidence quality rubric defining what proof is required for high-impact choices.
 
+- **`ALIGNMENT-DOC-QUALITY-SCORECARD.md`**  
+  Recurring quality audit scorecard to keep active alignment docs clear, current, and decision-safe.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -216,6 +219,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to track cross-functional blockers before they cascade | `ALIGNMENT-DEPENDENCY-TRACKER.md` |
 | We need a controlled process for rolling back failed decisions | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` |
 | We need clear standards for what qualifies as decision-grade evidence | `ALIGNMENT-EVIDENCE-STANDARDS.md` |
+| We need recurring quality checks on active alignment artifacts | `ALIGNMENT-DOC-QUALITY-SCORECARD.md` |
 
 ---
 
@@ -238,6 +242,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Dependency Tracker | Ops / PMO + Functional Leads |
 | Decision Reversal Protocol | Strategy Owner + Ops / PMO |
 | Evidence Standards | Strategy Owner + Analytics / Growth Lead |
+| Doc Quality Scorecard | Ops / PMO + Documentation Owner |
 
 ---
 
@@ -279,6 +284,7 @@ Includes Pack C, plus:
 22. `ALIGNMENT-DEPENDENCY-TRACKER.md`
 23. `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
 24. `ALIGNMENT-EVIDENCE-STANDARDS.md`
+25. `ALIGNMENT-DOC-QUALITY-SCORECARD.md`
 
 Recommended only when:
 - decision volume is high,
