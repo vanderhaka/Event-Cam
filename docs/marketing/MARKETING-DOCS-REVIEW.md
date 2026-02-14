@@ -514,6 +514,42 @@ Using this template across channels will prevent idea overload and keep executio
 
 ---
 
+## Documentation Governance Matrix (Recommended)
+
+To stop cross-doc drift, assign explicit ownership and update cadence:
+
+| Strategy Domain | Canonical Doc | Suggested Owner Role | Update Cadence | Approval Rule |
+|---|---|---|---|---|
+| Core positioning & ICP | `MARKETING-PLAN.md` | Founder / Marketing Lead | Monthly | Major narrative changes require leadership sign-off |
+| Pricing & economics | `PRICING-MODELS.md` (+ Pro economics references) | Founder / Finance owner | Biweekly during launch | Any price/incentive change must update all downstream docs same day |
+| Pro channel model | `PRO-ACCOUNT-DEEP-DIVE.md` | Partnerships / Growth Lead | Monthly | Commission or payout changes require finance + legal check |
+| Account architecture | `ACCOUNT-TYPES.md` | Product Strategy Lead | Monthly | No standalone numbers unless synced from canonical pricing |
+| Channel experiments | `PURPLE-COW-CHANNELS.md` | Growth Lead | Weekly active experiments, monthly archive | Every channel entry must include status (planned/running/scaled/killed) |
+| Naming & brand | `NAMING-BRAINSTORM.md` | Brand Lead | As decisions progress | Final naming changes require legal checkpoint |
+| Platform vision roadmap | `SOCIAL-APP-EXPLORATION.md` | Product Lead | Quarterly | Roadmap phase movement requires metric gate evidence |
+| Gap tracking | `WHATS-MISSING.md` | Operations / PMO | Biweekly | Closed items must link to completed artifact/doc |
+
+If this governance matrix is enforced, strategy docs become an operating system instead of a static brainstorm archive.
+
+---
+
+## Doc-Specific 14-Day Fix Pack (Fastest Path to Coherence)
+
+This is the minimum set of revisions that will materially improve strategic credibility in two weeks.
+
+| Doc | Highest-Leverage Fixes | Expected Impact |
+|---|---|---|
+| `PRICING-MODELS.md` | Remove conflicting numbers, correct all arithmetic anchors, mark non-live pricing as experiments | Immediate trust gain in pricing conversations |
+| `ACCOUNT-TYPES.md` | Remove stale economics, point to canonical pricing references only | Eliminates partner/investor confusion |
+| `MARKETING-PLAN.md` | Compress to one near-term GTM story and move speculative items to appendix | Stronger execution focus |
+| `PRO-ACCOUNT-DEEP-DIVE.md` | Add abuse/fraud/dispute controls and attribution edge-case policy | Higher channel reliability and payout confidence |
+| `PURPLE-COW-CHANNELS.md` | Add experiment status + KPI threshold fields per channel | Turns idea list into execution system |
+| `SOCIAL-APP-EXPLORATION.md` | Add hard metric gates for each phase transition | Prevents roadmap overreach |
+| `NAMING-BRAINSTORM.md` | Add legal/trademark + market validation checklist | Reduces costly rebrand risk |
+| `WHATS-MISSING.md` | Add “governance + source of truth” as explicit high-priority gap | Maintains long-term strategic consistency |
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
