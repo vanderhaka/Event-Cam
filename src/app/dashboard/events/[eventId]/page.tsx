@@ -373,7 +373,7 @@ export default function EventDetailPage() {
     padding: '0.5rem 1rem',
     border: 'none',
     background: activeTab === tab ? 'var(--accent)' : 'transparent',
-    color: activeTab === tab ? '#fff' : 'var(--muted)',
+    color: activeTab === tab ? '#fff' : 'var(--text)',
     fontWeight: 600 as const,
     borderRadius: '10px',
     cursor: 'pointer' as const,
@@ -492,14 +492,14 @@ export default function EventDetailPage() {
       )}
 
       {/* Tab navigation */}
-      <div className="row-center" style={{ gap: '0.25rem', background: 'var(--surface-soft)', padding: '0.3rem', borderRadius: '12px', width: 'fit-content' }}>
-        <button style={tabStyle('invitees')} onClick={() => setActiveTab('invitees')}>
-          {eventPayload.event?.event_type === 'open' ? 'Event QR' : `Invitees (${eventPayload.invitees?.length ?? 0})`}
+      <div className="event-detail-tabs row-center">
+        <button className={activeTab === 'invitees' ? 'active' : ''} style={tabStyle('invitees')} onClick={() => setActiveTab('invitees')}>
+          {eventPayload.event?.event_type === 'open' ? 'Event QR' : `Guest list (${eventPayload.invitees?.length ?? 0})`}
         </button>
-        <button style={tabStyle('moderation')} onClick={() => setActiveTab('moderation')}>
-          Moderation ({pendingQueue.length})
+        <button className={activeTab === 'moderation' ? 'active' : ''} style={tabStyle('moderation')} onClick={() => setActiveTab('moderation')}>
+          Guest uploads ({pendingQueue.length})
         </button>
-        <button style={tabStyle('albums')} onClick={() => setActiveTab('albums')}>
+        <button className={activeTab === 'albums' ? 'active' : ''} style={tabStyle('albums')} onClick={() => setActiveTab('albums')}>
           Albums ({eventPayload.albums?.length ?? 0})
         </button>
       </div>
@@ -628,7 +628,7 @@ export default function EventDetailPage() {
           ) : (
             <>
           <section className="card">
-            <h3 className="section-head">Add invitees</h3>
+            <h3 className="section-head">Add guests</h3>
             <p className="section-sub">Add the people you want to invite. They will each get a unique QR code after publishing.</p>
             <form onSubmit={addInvitees} className="form-grid">
               <div className="invitee-rows">
@@ -689,7 +689,7 @@ export default function EventDetailPage() {
                   + Add another
                 </button>
                 <button className="btn btn-primary" type="submit">
-                  Save invitees
+                  Save guests
                 </button>
               </div>
             </form>

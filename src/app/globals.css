@@ -311,6 +311,20 @@ textarea.input {
   align-items: center;
 }
 
+.event-detail-tabs {
+  gap: 0.25rem;
+  background: var(--card-border);
+  padding: 0.35rem;
+  border-radius: 12px;
+  width: fit-content;
+  border: 1px solid var(--card-border);
+}
+
+.event-detail-tabs button:not(.active):hover {
+  background: var(--surface-soft) !important;
+  color: var(--text) !important;
+}
+
 .grid {
   display: grid;
   gap: 1rem;
