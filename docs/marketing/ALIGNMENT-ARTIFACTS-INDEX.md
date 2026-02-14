@@ -250,6 +250,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-DEBT-REGISTER.md`**  
   Register for tracking and paying down overdue, low-quality, or repeatedly reopened decision debt.
 
+- **`ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`**  
+  Weekly workload balancing control for preventing owner overload across decision, execution, and governance duties.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -329,6 +332,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need explicit tie-break logic when priorities compete | `ALIGNMENT-PRIORITY-RULES.md` |
 | We need to spot uncovered governance failure modes quickly | `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md` |
 | We need to make unresolved decision debt visible and payable | `ALIGNMENT-DECISION-DEBT-REGISTER.md` |
+| We need to prevent owner overload from degrading execution quality | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` |
 
 ---
 
@@ -374,6 +378,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Priority Rules | Ops / PMO + Strategy Owner |
 | Control Coverage Matrix | Ops / PMO + Strategy Owner |
 | Decision Debt Register | Strategy Owner + Ops / PMO |
+| Owner Load Management | Ops / PMO + Leadership Team |
 
 ---
 
@@ -438,6 +443,7 @@ Includes Pack C, plus:
 45. `ALIGNMENT-PRIORITY-RULES.md`
 46. `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`
 47. `ALIGNMENT-DECISION-DEBT-REGISTER.md`
+48. `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`
 
 Recommended only when:
 - decision volume is high,

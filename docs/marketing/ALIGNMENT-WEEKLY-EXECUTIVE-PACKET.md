@@ -105,6 +105,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 - Dependencies at risk:
 - Dependencies blocked:
 - Cascading blocker count:
+- Owner load risk summary (low/medium/high count by owner):
 
 ---
 

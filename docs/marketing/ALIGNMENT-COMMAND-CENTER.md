@@ -53,6 +53,7 @@
 - Assign single owner per commitment.
 - Capture expected success signal.
 - If priority conflicts emerge, apply `ALIGNMENT-PRIORITY-RULES.md` before finalizing commitments.
+- Confirm owner load remains within safe threshold before assigning net-new critical items.
 
 ## Step 6: Control Hygiene Scan (10 min)
 - Run ID format/link checks on new entries (decision/experiment/blocker/dependency).
