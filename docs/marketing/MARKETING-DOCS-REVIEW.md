@@ -888,6 +888,7 @@ Use this minimum-safe operating rule:
 | Controls are retired/merged without full risk validation, reopening previously contained failure modes | `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` | Unsafe deprecation candidate count trends to zero and post-deprecation incident count stays low |
 | Dependency changes are rolled out without full downstream impact mitigation, causing avoidable control regressions | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` | High-risk unresolved dependency changes trend to zero and pre-rollout mitigation completion remains high |
 | The same control coverage gaps recur cycle after cycle because fixes remain tactical instead of structural | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` | Recurring-gap cluster count trends down and structural fix conversion rate remains high |
+| Teams assume controls are sufficient without quantifying residual exposure, leaving hidden risk unmanaged | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` | Exposed residual-risk control count trends to zero with regular reassessment coverage |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

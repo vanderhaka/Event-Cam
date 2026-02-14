@@ -523,6 +523,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`**  
   Trend review tracking recurring control coverage gaps across cycles.
 
+- **`ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`**  
+  Review quantifying residual risk that remains after current control mitigations.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -693,6 +696,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to retire or merge controls safely without reopening previously contained risks | `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` |
 | We need dependency changes impact-assessed before they disrupt critical controls | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` |
 | We need recurring control coverage gaps surfaced and structurally fixed, not repeatedly patched | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` |
+| We need visibility into risk that remains after controls so hidden exposure is not ignored | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` |
 
 ---
 
@@ -829,6 +833,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Deprecation Risk Review | Ops / PMO + Strategy Owner + Control Owners |
 | Control Dependency Change Impact Review | Ops / PMO + Platform/Data Owners + Control Owners |
 | Control Coverage Gap Trend Review | Ops / PMO + Control Owners + Functional Leads |
+| Control Residual Risk Review | Ops / PMO + Strategy Owner + Risk/Control Owners |
 
 ---
 
@@ -984,6 +989,7 @@ Includes Pack C, plus:
 136. `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
 137. `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
 138. `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
+139. `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

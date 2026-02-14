@@ -394,6 +394,9 @@ The downstream control and decision risk introduced by modifying dependencies th
 ## Control Coverage Gap Trend
 The recurring pattern of unresolved or repeated coverage gaps across control domains over multiple cycles.
 
+## Control Residual Risk
+The level of risk that remains after current controls and mitigations have been applied.
+
 ---
 
 ## Incident & Escalation Terms

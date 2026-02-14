@@ -141,6 +141,7 @@ It helps teams:
 - **Control deprecation-risk governance:** `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
 - **Control dependency-change impact governance:** `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
 - **Control coverage-gap trend governance:** `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
+- **Control residual-risk governance:** `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -251,4 +252,5 @@ For full routing by scenario, use:
 - Keep control retire/merge decisions risk-assessed with no unmanaged unsafe deprecation candidates.
 - Keep high-risk dependency changes fully impact-assessed and mitigated before rollout.
 - Keep recurring control coverage gaps structurally remediated with declining recurrence trends.
+- Keep residual risk on critical controls explicitly measured and actively reduced.
 

@@ -323,6 +323,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Dependency-change mitigation completed pre-rollout (%):
 - Recurring critical-control coverage gap clusters (count):
 - Structural fix conversion rate for recurring gaps (%):
+- Exposed residual-risk critical controls (count):
+- Residual-risk reassessment completed on cadence (%):
 
 ---
 

@@ -77,6 +77,7 @@
 | Unsafe control deprecation candidate count |  | 0 |  |
 | High-risk dependency-change mitigation completion rate |  | 100% |  |
 | Recurring control coverage-gap cluster count |  | 0 |  |
+| Exposed residual-risk critical-control count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________
