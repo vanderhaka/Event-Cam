@@ -155,6 +155,7 @@ It helps teams:
 - **Control decision-usefulness governance:** `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md`
 - **Control signal-action consistency governance:** `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md`
 - **Control lead-time predictability governance:** `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`
+- **Control outcome-attribution governance:** `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -279,4 +280,5 @@ For full routing by scenario, use:
 - Keep controls decision-relevant by reducing low-utility outputs and integration lag.
 - Keep equivalent control signals mapped to consistent response actions across teams and cycles.
 - Keep control completion timing stable and predictable enough to protect planning reliability.
+- Keep control impact claims evidence-attributed so governance investment follows verified outcomes.
 

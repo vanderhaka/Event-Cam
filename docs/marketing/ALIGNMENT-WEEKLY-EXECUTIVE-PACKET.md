@@ -351,6 +351,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Response consistency rate for equivalent signal classes (%):
 - Lead-time volatile critical controls (count):
 - Control lead-time variability index:
+- Low-attribution control claims (count):
+- Verified contribution rate for critical controls (%):
 
 ---
 

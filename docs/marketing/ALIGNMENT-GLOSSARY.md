@@ -436,6 +436,9 @@ The degree to which equivalent control signals trigger the same approved respons
 ## Control Lead-Time Predictability
 The consistency of control completion timing relative to approved lead-time bands.
 
+## Control Outcome Attribution
+The strength of evidence linking a control to the outcomes it claims to influence.
+
 ---
 
 ## Incident & Escalation Terms

@@ -91,6 +91,7 @@
 | Low-utility critical-control count |  | 0 |  |
 | Inconsistent equivalent-signal response count |  | 0 |  |
 | Lead-time volatile critical-control count |  | 0 |  |
+| Low-attribution control-claim count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

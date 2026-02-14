@@ -902,6 +902,7 @@ Use this minimum-safe operating rule:
 | Controls generate activity but weakly influence high-impact decisions, reducing governance ROI and strategic precision | `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` | Low-utility control count trends to zero and signal-to-decision integration lag declines |
 | Equivalent control signals trigger inconsistent responses across teams, causing uneven risk handling and avoidable outcome variance | `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` | Equivalent-signal inconsistency count trends to zero and response consistency rate remains high |
 | Control completion timing becomes volatile, making planning unreliable and increasing commitment slippage risk | `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` | Lead-time volatility count trends to zero and variability index remains stable or improving |
+| Control impact is claimed without credible attribution, distorting investment priorities and governance ROI judgments | `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` | Low-attribution claim count trends to zero and verified contribution rate remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
