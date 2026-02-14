@@ -55,6 +55,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-GLOSSARY.md`**  
   Canonical terminology for consistent strategy and KPI language.
 
+- **`ALIGNMENT-RUNBOOK.md`**  
+  End-to-end 0–90 day operating playbook for alignment execution.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -76,6 +79,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need rigorous write-ups for Priority 0 decisions | `ALIGNMENT-PRIORITY0-DECISION-BRIEF.md` |
 | We need quick operating answers during execution | `ALIGNMENT-FAQ.md` |
 | We need consistent terminology across teams | `ALIGNMENT-GLOSSARY.md` |
+| We need a time-sequenced 0–90 day operating playbook | `ALIGNMENT-RUNBOOK.md` |
 
 ---
 
