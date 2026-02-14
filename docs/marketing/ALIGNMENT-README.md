@@ -76,6 +76,7 @@ It helps teams:
 - **Closure validity governance:** `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
 - **Early-warning governance:** `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
 - **Prevention effectiveness governance:** `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
+- **Threshold quality governance:** `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -121,4 +122,5 @@ For full routing by scenario, use:
 - Keep closed statuses audit-valid with evidence-linked closure quality above threshold.
 - Keep leading indicators monitored and prevent Warning/Critical drift from compounding.
 - Keep preventive action patterns only when they measurably reduce downstream failures.
+- Keep threshold bands calibrated to minimize missed alerts and noisy false positives.
 

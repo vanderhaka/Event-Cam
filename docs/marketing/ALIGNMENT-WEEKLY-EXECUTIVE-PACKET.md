@@ -107,6 +107,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Invalid closures detected this week (count) |  |  |  |
 | Indicators in Warning/Critical state (count) |  |  |  |
 | Preventive actions marked ineffective (count) |  |  |  |
+| Thresholds in Drift-Suspected/Recalibrating status (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -193,6 +194,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Valid closure rate (audit):
 - Leading-indicator preventive actions overdue (count):
 - Prevention success rate (30-day window):
+- Missed alert rate (threshold calibration):
 
 ---
 

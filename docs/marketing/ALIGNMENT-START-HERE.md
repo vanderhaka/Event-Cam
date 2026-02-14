@@ -109,6 +109,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 24. `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` (audit check that closed statuses are evidence-valid)
 25. `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` (early-warning scan before lagging KPIs break)
 26. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` (proves whether preventive actions reduced downstream failure)
+27. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` (keeps warning thresholds predictive and actionable)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

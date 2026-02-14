@@ -328,6 +328,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`**  
   Effectiveness review to verify whether preventive actions reduce downstream escalations and failures.
 
+- **`ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`**  
+  Recurring calibration review to keep KPI/control thresholds predictive and action-worthy.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -433,6 +436,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to detect false closures before they create hidden risk | `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` |
 | We need to act on risk build-up before lagging metrics fail | `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` |
 | We need to verify if preventive actions actually prevented downstream failures | `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` |
+| We need to tune thresholds to reduce false alerts and missed warnings | `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` |
 
 ---
 
@@ -504,6 +508,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Closure Integrity Audit | Ops / PMO + Strategy Owner + Data/Analytics Owner |
 | Leading Indicator Watchlist | Ops / PMO + Growth/Data Owner + Functional Leads |
 | Preventive Action Review | Ops / PMO + Growth/Data Owner + Functional Leads |
+| Threshold Calibration Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
 
 ---
 
@@ -594,6 +599,7 @@ Includes Pack C, plus:
 71. `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
 72. `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
 73. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
+74. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

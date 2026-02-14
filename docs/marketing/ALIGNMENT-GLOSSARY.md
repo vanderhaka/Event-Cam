@@ -199,6 +199,9 @@ An early risk signal that usually moves before lagging KPI failure, used to trig
 ## Prevention Success Rate
 Percentage of completed preventive actions that avoid related escalation or failure recurrence during the defined watch window.
 
+## Threshold Calibration
+The periodic process of adjusting alert/decision thresholds to reduce false positives, reduce missed warnings, and improve actionability.
+
 ---
 
 ## Incident & Escalation Terms

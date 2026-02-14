@@ -823,6 +823,7 @@ Use this minimum-safe operating rule:
 | Teams close items early without proof, hiding unresolved risk | `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` | Valid closure rate rises and reopen-after-close rate declines month-over-month |
 | Emerging risks are recognized only after lagging KPI degradation | `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` | Warning/Critical leading indicators trigger timely preventive actions and fewer high-severity events |
 | Teams run preventive routines but cannot prove they prevented failures | `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` | Prevention success rate rises and ineffective patterns are retired quickly |
+| Threshold noise and misses cause alert fatigue or late intervention | `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` | False-alert and missed-alert rates both decline while alert actionability improves |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
