@@ -85,6 +85,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-QUICKSTART-48H.md`**  
   Tactical first-48-hour guide for rapidly standing up the alignment system.
 
+- **`ALIGNMENT-MATURITY-MODEL.md`**  
+  Framework for assessing and improving alignment-system maturity over time.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -116,6 +119,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a structured way to compare strategic options | `ALIGNMENT-DECISION-CRITERIA.md` |
 | We need a quarter-end alignment and execution review | `ALIGNMENT-RETROSPECTIVE-TEMPLATE.md` |
 | We need to stand up alignment in the next 48 hours | `ALIGNMENT-QUICKSTART-48H.md` |
+| We need to evaluate long-term alignment capability maturity | `ALIGNMENT-MATURITY-MODEL.md` |
 
 ---
 
