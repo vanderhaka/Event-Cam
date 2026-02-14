@@ -33,16 +33,23 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
       .in('id', inviteeIds as string[]);
 
     const inviteeById = new Map((invitees ?? []).map((invitee) => [invitee.id, invitee]));
-    const enriched = mediaItems.map((item) => {
-      const url = item.storage_path
-        ? admin.storage.from('event-media').getPublicUrl(item.storage_path).data.publicUrl
-        : null;
-      return {
-        ...item,
-        invitee: inviteeById.get(item.invitee_id) || null,
-        url,
-      };
-    });
+    const signedUrlExpirySec = 3600; // 1 hour for host viewing moderation
+    const enriched = await Promise.all(
+      mediaItems.map(async (item) => {
+        let url: string | null = null;
+        if (item.storage_path) {
+          const { data } = await admin.storage
+            .from('event-media')
+            .createSignedUrl(item.storage_path, signedUrlExpirySec);
+          url = data?.signedUrl ?? null;
+        }
+        return {
+          ...item,
+          invitee: inviteeById.get(item.invitee_id) || null,
+          url,
+        };
+      }),
+    );
 
     return jsonResponse({ media: enriched });
   } catch (error) {

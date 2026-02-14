@@ -65,5 +65,5 @@ npm run dev
 
 - This is a working MVP scaffold, not production hardened.
 - Add throttling, webhook signature hardening, and stricter validation before launch.
-- Storage object ACL currently assumes bucket is public for simplicity.
+- Event media bucket is private; moderation and album views use time-limited signed URLs so only the event host or valid share-link viewers can access files.
 - Set `EVENT_CAM_ALLOW_UNPAID=1` for local/dev deployments to bypass publish payment checks when testing QR flows.

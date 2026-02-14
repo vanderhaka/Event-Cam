@@ -92,25 +92,32 @@ export async function GET(request: NextRequest, context: { params: { albumId: st
     }
 
     const inviteeById = new Map((invitees ?? []).map((invitee) => [invitee.id, invitee]));
-    const itemsOrdered = mediaIds
+    const signedUrlExpirySec = 3600; // 1 hour for share-link viewers
+    const itemsWithPaths = mediaIds
       .map((mediaId) => (mediaRows ?? []).find((item) => item.id === mediaId))
-      .filter(Boolean)
-      .map((item) => {
+      .filter(Boolean);
+    const itemsOrdered = await Promise.all(
+      itemsWithPaths.map(async (item) => {
         const inv = inviteeById.get(item.invitee_id);
-        const publicUrl = admin.storage
-          .from('event-media')
-          .getPublicUrl(item.storage_path).data.publicUrl;
+        let url: string | null = null;
+        if (item.storage_path) {
+          const { data } = await admin.storage
+            .from('event-media')
+            .createSignedUrl(item.storage_path, signedUrlExpirySec);
+          url = data?.signedUrl ?? null;
+        }
         return {
           id: item.id,
           mediaType: item.media_type,
           mimeType: item.mime_type,
           uploadedAt: item.created_at,
           invitedBy: inv,
-          url: publicUrl,
+          url,
           name: item.original_name,
           durationSec: item.duration_sec,
         };
-      });
+      }),
+    );
 
     await admin
       .from('share_links')
