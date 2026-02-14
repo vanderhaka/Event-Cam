@@ -49,6 +49,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-PRIORITY0-DECISION-BRIEF.md`**  
   Structured decision-quality template for resolving path-defining Priority 0 questions.
 
+- **`ALIGNMENT-FAQ.md`**  
+  Rapid answers to common alignment and execution questions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -68,6 +71,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need consistent KPI language and formulas | `ALIGNMENT-METRIC-DEFINITIONS.md` |
 | We need one weekly summary view for leadership | `ALIGNMENT-DASHBOARD-TEMPLATE.md` |
 | We need rigorous write-ups for Priority 0 decisions | `ALIGNMENT-PRIORITY0-DECISION-BRIEF.md` |
+| We need quick operating answers during execution | `ALIGNMENT-FAQ.md` |
 
 ---
 
