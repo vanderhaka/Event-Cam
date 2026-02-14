@@ -217,6 +217,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`**  
   Incident-severity on-call ownership and escalation chain for urgent alignment failures.
 
+- **`ALIGNMENT-WORKING-AGREEMENTS.md`**  
+  Team behavior contract for decision hygiene, escalation speed, and accountability norms.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -285,6 +288,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need a clean quarter-close and reactivation ritual | `ALIGNMENT-QUARTER-RESET-PROTOCOL.md` |
 | We need a pragmatic sequence to roll out the alignment system | `ALIGNMENT-ADOPTION-ROADMAP.md` |
 | We need fast response ownership for urgent alignment incidents | `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md` |
+| We need consistent team behavior while running this system | `ALIGNMENT-WORKING-AGREEMENTS.md` |
 
 ---
 
@@ -319,6 +323,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Quarter Reset Protocol | Ops / PMO + Leadership Team |
 | Adoption Roadmap | Ops / PMO + Strategy Owner |
 | On-Call Escalation Matrix | Ops / PMO + Strategy Owner |
+| Working Agreements | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -372,6 +377,7 @@ Includes Pack C, plus:
 34. `ALIGNMENT-QUARTER-RESET-PROTOCOL.md`
 35. `ALIGNMENT-ADOPTION-ROADMAP.md`
 36. `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`
+37. `ALIGNMENT-WORKING-AGREEMENTS.md`
 
 Recommended only when:
 - decision volume is high,

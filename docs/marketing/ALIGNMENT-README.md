@@ -48,6 +48,7 @@ It helps teams:
 - **ID and linkage hygiene:** `ALIGNMENT-ID-STANDARDS.md`
 - **State transition discipline:** `ALIGNMENT-STATE-MACHINE.md`
 - **Doc quality + pruning:** `ALIGNMENT-DOC-QUALITY-SCORECARD.md` + `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
+- **Team behavior baseline:** `ALIGNMENT-WORKING-AGREEMENTS.md`
 
 These controls keep the system operable as artifact count grows.
 
