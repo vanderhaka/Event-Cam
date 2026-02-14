@@ -273,6 +273,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls not failover-ready (count):
 - High-blast dependencies unmitigated (count):
 - Critical dependency containment readiness rate (%):
+- Fully test-covered critical controls (%):
+- Critical controls with test-layer gaps (count):
 
 ---
 

@@ -319,6 +319,9 @@ The degree to which critical controls can switch to validated fallback paths and
 ## Dependency Blast Radius
 The scope and severity of downstream disruption caused when a single critical dependency fails.
 
+## Control Test Coverage
+The degree to which critical controls are validated across all required testing layers: runbook, drill, and failover.
+
 ---
 
 ## Incident & Escalation Terms

@@ -448,6 +448,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md`**  
   Risk review measuring how dependency failures can cascade across critical workflows.
 
+- **`ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`**  
+  Coverage review ensuring critical controls are validated across runbook, drill, and failover layers.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -593,6 +596,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need proof that control drills improve response quality instead of creating false confidence | `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md` |
 | We need critical controls to stay operational when primary owners/systems fail | `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md` |
 | We need to contain cross-workflow fallout from single dependency failures | `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md` |
+| We need one view of whether critical controls are fully tested across all required validation layers | `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -704,6 +708,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Drill Effectiveness Review | On-Call Lead + Ops / PMO + Functional Leads |
 | Control Failover Readiness Review | On-Call Lead + Ops / PMO + Platform/Data Owners |
 | Dependency Blast Radius Review | Platform/Data Owners + Ops / PMO + Strategy Owner |
+| Control Test Coverage Review | Ops / PMO + On-Call Lead + Functional Leads |
 
 ---
 
@@ -834,6 +839,7 @@ Includes Pack C, plus:
 111. `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md`
 112. `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`
 113. `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md`
+114. `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

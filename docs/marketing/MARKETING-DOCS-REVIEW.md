@@ -863,6 +863,7 @@ Use this minimum-safe operating rule:
 | Teams run drills but fail to convert them into measurable response improvements, creating false readiness confidence | `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md` | Drill first-pass success trends upward and critical-step omissions trend to zero |
 | Critical controls fail when primary paths break because failover readiness is assumed, not validated | `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md` | Failover-ready control coverage remains high and not-ready count trends to zero |
 | A single dependency failure cascades across multiple workflows because blast radius is unmeasured and uncontained | `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md` | Unmitigated high-blast dependency count trends to zero and containment readiness stays high |
+| Critical controls are only partially validated, leaving hidden failure modes despite apparent compliance | `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` | Fully test-covered critical-control rate stays high and test-layer gap count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

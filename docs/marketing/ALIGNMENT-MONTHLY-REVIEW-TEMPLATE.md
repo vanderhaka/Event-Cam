@@ -52,6 +52,7 @@
 | Control drill first-pass success rate |  | ≥90% |  |
 | Critical-control failover readiness rate |  | ≥95% |  |
 | Critical dependency containment readiness rate |  | ≥95% |  |
+| Critical-control full test-coverage rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________
