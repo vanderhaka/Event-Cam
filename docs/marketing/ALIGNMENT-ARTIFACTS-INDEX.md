@@ -490,6 +490,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`**  
   Review measuring delay between control action completion and verified outcomes.
 
+- **`ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`**  
+  Review validating that control operators retain the skills needed for reliable execution.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -649,6 +652,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need proof that critical controls survive multi-factor stress, not just isolated checks | `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md` |
 | We need to prevent overdue control maintenance from compounding into reliability failures | `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md` |
 | We need fast proof that control actions worked before risk compounds | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` |
+| We need confidence that critical controls are operated by currently proficient operators | `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md` |
 
 ---
 
@@ -774,6 +778,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Continuity Stress-Test Review | Ops / PMO + On-Call Lead + Functional Leads |
 | Control Maintenance Debt Review | Ops / PMO + Functional Leads + Control Owners |
 | Control Verification Latency Review | Ops / PMO + Control Owners + Data/Analytics Owners |
+| Control Operator Proficiency Review | Ops / PMO + Functional Leads + People/Enablement Owners |
 
 ---
 
@@ -918,6 +923,7 @@ Includes Pack C, plus:
 125. `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
 126. `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`
 127. `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
+128. `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -301,6 +301,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control-maintenance debt closure rate (%):
 - On-time control-action verification rate (%):
 - Overdue critical-control verifications (count):
+- Critical-control operators with current certification (%):
+- Critical-control operators with unresolved proficiency gaps (count):
 
 ---
 

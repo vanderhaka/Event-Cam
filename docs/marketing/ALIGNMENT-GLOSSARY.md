@@ -361,6 +361,9 @@ Accumulated overdue maintenance work on a control that increases operational fra
 ## Control Verification Latency
 The elapsed time between a control action being completed and its outcome being verified with evidence.
 
+## Control Operator Proficiency
+The degree to which assigned operators demonstrate the practical skills required to execute controls reliably.
+
 ---
 
 ## Incident & Escalation Terms

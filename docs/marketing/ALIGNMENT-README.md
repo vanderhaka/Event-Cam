@@ -130,6 +130,7 @@ It helps teams:
 - **Control continuity stress-test governance:** `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
 - **Control maintenance-debt governance:** `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`
 - **Control verification-latency governance:** `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
+- **Control operator-proficiency governance:** `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -229,4 +230,5 @@ For full routing by scenario, use:
 - Keep CC-1 controls stress-tested under compounded continuity scenarios with timely hardening closure.
 - Keep critical-control maintenance debt near zero and close overdue debt within SLA.
 - Keep control-action verification on time; eliminate overdue critical verification lag.
+- Keep critical-control operator certification current and resolve proficiency gaps quickly.
 

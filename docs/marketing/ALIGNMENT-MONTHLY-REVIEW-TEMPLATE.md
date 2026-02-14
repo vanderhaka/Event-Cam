@@ -66,6 +66,7 @@
 | Critical-control continuity stress-test pass rate |  | ≥90% |  |
 | Critical-control maintenance debt count |  | 0 |  |
 | On-time critical-control verification rate |  | ≥95% |  |
+| Critical-control operator certification coverage |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________
