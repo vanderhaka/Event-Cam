@@ -112,6 +112,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-MONTHLY-REVIEW-TEMPLATE.md`**  
   Structured monthly strategy-sync template for path integrity and governance review.
 
+- **`ALIGNMENT-COMMAND-CENTER.md`**  
+  Weekly control page for running alignment operations and escalation checks.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -152,6 +155,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need explicit KPI owner and backup mapping | `ALIGNMENT-KPI-OWNER-MAP.md` |
 | We need KPI data reliability checks before decisions | `ALIGNMENT-DATA-QUALITY-CHECKLIST.md` |
 | We need a monthly strategy-sync operating template | `ALIGNMENT-MONTHLY-REVIEW-TEMPLATE.md` |
+| We need a weekly control surface for alignment operations | `ALIGNMENT-COMMAND-CENTER.md` |
 
 ---
 
