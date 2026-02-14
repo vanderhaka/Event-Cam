@@ -373,6 +373,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`**  
   Cross-workflow aggregation of recurring root causes to prioritize structural fixes.
 
+- **`ALIGNMENT-BACKLOG-AGING-REVIEW.md`**  
+  Cross-workflow aging review for stale unresolved items and age-weighted risk burn-down.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -493,6 +496,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need decision approvals blocked when required packet sections are incomplete | `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md` |
 | We need to reduce repeated reopen cycles on previously closed decisions | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` |
 | We need one recurring view of dominant root causes across all governance workflows | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` |
+| We need to prevent unresolved-item backlog from aging into capacity debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` |
 
 ---
 
@@ -579,6 +583,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Packet Compliance | Strategy Owner + Ops / PMO + Decision Review Leads |
 | Decision Reopen Analysis | Strategy Owner + Ops / PMO + Decision Review Leads |
 | Root Cause Pattern Review | Strategy Owner + Ops / PMO + Functional Leads |
+| Backlog Aging Review | Ops / PMO + Functional Leads + Strategy Owner |
 
 ---
 
@@ -684,6 +689,7 @@ Includes Pack C, plus:
 86. `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`
 87. `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 88. `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
+89. `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

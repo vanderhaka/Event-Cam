@@ -91,6 +91,7 @@ It helps teams:
 - **Decision packet quality governance:** `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`
 - **Decision closure stability governance:** `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 - **Systemic-cause governance:** `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
+- **Backlog-debt governance:** `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -151,4 +152,5 @@ For full routing by scenario, use:
 - Keep high-impact decisions blocked from approval until packets meet required quality bar.
 - Keep reopened-decision churn low by resolving root causes before reclose.
 - Keep recurring root causes visible and prioritized for structural fixes.
+- Keep unresolved-item aging in control through severity-weighted backlog burn-down.
 

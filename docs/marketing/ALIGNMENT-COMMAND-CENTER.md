@@ -49,6 +49,7 @@
 - Review decision-packet compliance status for upcoming P0/high-impact approvals.
 - Review decision-reopen analysis trends for repeat churn and dominant causes.
 - Review root-cause pattern trends across slippage/escalation/failure/reopen streams.
+- Review backlog-aging trends for stale and critical-stale unresolved items.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -106,6 +107,7 @@
 - Check P0/P1 packets for missing critical sections before decision meetings.
 - Check reopened decisions for unresolved root causes and reclose stability risk.
 - Check recurring top root causes and assign structural-fix owners.
+- Check critical-stale backlog clusters and assign burn-down owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -178,6 +180,7 @@ Use this trigger table before meetings:
 | P0 packet non-compliant at decision date | Block approval and trigger packet remediation |
 | P0 decision reopened more than once | Trigger decision-quality and closure-standard intervention |
 | Same root cause dominates high-severity events for 3 cycles | Trigger systemic root-cause intervention plan |
+| High/Critical backlog item enters critical-stale band | Trigger immediate backlog-burn escalation |
 
 ---
 
@@ -188,7 +191,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

@@ -244,6 +244,9 @@ Percentage of previously closed decisions that are reopened within the defined m
 ## Root Cause Pattern
 Recurring causal category observed across multiple governance workflows, indicating systemic failure pressure rather than isolated events.
 
+## Backlog Aging
+The accumulation of unresolved items over time relative to SLA, used to identify stale work and hidden capacity debt.
+
 ---
 
 ## Incident & Escalation Terms

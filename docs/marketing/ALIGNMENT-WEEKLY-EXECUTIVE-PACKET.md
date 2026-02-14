@@ -122,6 +122,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Non-compliant P0/P1 decision packets (count) |  |  |  |
 | Reopened decisions this cycle (count) |  |  |  |
 | Dominant root cause category (current cycle) |  |  |  |
+| Critical-stale unresolved items (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -223,6 +224,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Complete decision packet rate (P0/high-impact P1):
 - Decision reopen rate:
 - Root-cause classified rate:
+- Age-weighted backlog score:
 
 ---
 
