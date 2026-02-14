@@ -283,6 +283,9 @@ Mismatch in a metric’s formula, threshold, or interpretation across artifacts 
 ## Control Change Saturation
 Condition where concurrent control changes exceed adoption capacity, increasing confusion, non-compliance, and change-related incidents.
 
+## Recovery Window Compliance
+The degree to which declared recovery actions are completed and verified within their committed stabilization timelines.
+
 ---
 
 ## Incident & Escalation Terms

@@ -851,6 +851,7 @@ Use this minimum-safe operating rule:
 | Data source degradation silently reduces decision trust before downstream metrics reveal impact | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` | Critical source reliability remains high and exposed P0/P1 decision risk declines |
 | Metric formulas and thresholds drift across artifacts, creating conflicting performance narratives | `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` | Canonical metric-match rate stays high and material drift count trends to zero |
 | Too many concurrent control changes overwhelm teams and reduce adoption quality | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` | High-criticality change overlap stays within limits and adoption lag remains controlled |
+| Recovery plans stay open past target windows and risk quietly re-accumulates | `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` | Overdue recovery window count declines and verified in-window closure rate rises |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

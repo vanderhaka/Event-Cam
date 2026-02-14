@@ -135,6 +135,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Degraded critical data sources (Yellow/Red count) |  |  |  |
 | Metrics with material definition drift (count) |  |  |  |
 | Active control changes in saturation risk band (count) |  |  |  |
+| Overdue recovery windows (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -249,6 +250,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Reliable source rate (critical sources):
 - Canonical metric match rate:
 - Control-change adoption lag (median):
+- Recovery plans completed within window (%):
 
 ---
 

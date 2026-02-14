@@ -412,6 +412,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`**  
   Capacity guardrail for concurrent control-change volume and overlap risk.
 
+- **`ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`**  
+  Time-window compliance review for recovery plans after incidents, slippage, and control failures.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -545,6 +548,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need early warning when source reliability degrades and contaminates high-impact decisions | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` |
 | We need to prevent formula/threshold drift from creating contradictory metric narratives | `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` |
 | We need to prevent concurrent control-change overload from degrading adoption and compliance | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` |
+| We need proof that recovery plans close on time with verified stabilization evidence | `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` |
 
 ---
 
@@ -644,6 +648,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Data Source Reliability Review | Growth/Data Owner + Strategy Owner + Ops / PMO |
 | Metric Definition Consistency Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
 | Control Change Saturation Review | Strategy Owner + Ops / PMO + Governance Owners |
+| Recovery Window Compliance | Ops / PMO + Functional Leads + Strategy Owner |
 
 ---
 
@@ -762,6 +767,7 @@ Includes Pack C, plus:
 99. `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md`
 100. `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md`
 101. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`
+102. `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`
 
 Recommended only when:
 - decision volume is high,
