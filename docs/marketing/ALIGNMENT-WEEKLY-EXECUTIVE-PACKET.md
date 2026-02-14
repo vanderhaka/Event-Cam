@@ -163,6 +163,11 @@ No meeting should end without assigning clear decision outcomes for this section
 | [Commitment 1] |  |  |  |
 | [Commitment 2] |  |  |  |
 
+### Commitment reliability
+- Slipped commitments this week (S1/S2/S3):
+- Recovery-on-time rate:
+- Top slippage root cause:
+
 ---
 
 ## Packet Quality Gate (Before Sending)

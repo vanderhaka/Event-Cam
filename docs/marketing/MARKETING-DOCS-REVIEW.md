@@ -803,6 +803,7 @@ Use this minimum-safe operating rule:
 | Owner burnout from governance spread | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` | No owner in high-risk load band without mitigation |
 | Decision queue congestion before formal review | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` | P0 intake triaged within 24h; low overdue triage ratio |
 | Meeting hours rising while execution output stalls | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` | Meeting effectiveness stays Green/Yellow with rising decision yield |
+| Weekly commitments repeatedly miss without correction | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` | S2/S3 slippage trend stable or declining week-over-week |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

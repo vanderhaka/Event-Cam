@@ -59,6 +59,7 @@
 - Capture expected success signal.
 - If priority conflicts emerge, apply `ALIGNMENT-PRIORITY-RULES.md` before finalizing commitments.
 - Confirm owner load remains within safe threshold before assigning net-new critical items.
+- Review prior-week commitment slippage and apply recovery protocol for S2/S3 misses.
 
 ## Step 6: Control Hygiene Scan (10 min)
 - Run ID format/link checks on new entries (decision/experiment/blocker/dependency).
@@ -87,6 +88,7 @@ Use this trigger table before meetings:
 | Decision WIP ceiling breached | Pause low-priority activations and run queue reduction session |
 | Decision outcome review overdue >7 days | Escalate review owner and assign corrective action deadline |
 | Meeting effectiveness Red for 2 consecutive weeks | Redesign meeting cadence/format and assign recovery owner |
+| S3 commitment slippage detected | Trigger same-day recovery plan and escalate ownership support |
 
 ---
 

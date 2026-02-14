@@ -139,6 +139,9 @@ Structured post-close evaluation that compares intended decision effects with ob
 ## Meeting Effectiveness Status
 Weekly quality rating (Green/Yellow/Red) indicating whether recurring alignment meetings are producing sufficient decisions, closures, and synchronized artifact updates.
 
+## Commitment Slippage
+Condition where a weekly commitment misses due date, fails agreed quality gate, or remains unsynchronized across required artifacts.
+
 ---
 
 ## Incident & Escalation Terms

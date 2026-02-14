@@ -268,6 +268,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`**  
   Weekly quality and yield audit for alignment meetings to prevent governance overhead without outcomes.
 
+- **`ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`**  
+  Standard response model for missed weekly commitments, including classification, escalation, and recovery controls.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -353,6 +356,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to cap concurrent decision work before quality drops | `ALIGNMENT-DECISION-WIP-LIMITS.md` |
 | We need to verify closed decisions actually worked | `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` |
 | We need to ensure meetings produce real outputs, not process drag | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` |
+| We need consistent recovery when weekly commitments slip | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` |
 
 ---
 
@@ -404,6 +408,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision WIP Limits | Ops / PMO + Strategy Owner |
 | Decision Outcome Reviews | Strategy Owner + Growth Lead |
 | Meeting Effectiveness Review | Ops / PMO + Meeting Owners |
+| Commitment Slippage Protocol | Ops / PMO + Functional Leads |
 
 ---
 
@@ -474,6 +479,7 @@ Includes Pack C, plus:
 51. `ALIGNMENT-DECISION-WIP-LIMITS.md`
 52. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
 53. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
+54. `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
 
 Recommended only when:
 - decision volume is high,
