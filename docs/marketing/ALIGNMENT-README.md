@@ -149,6 +149,7 @@ It helps teams:
 - **Control mitigation-coverage governance:** `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
 - **Control failure-impact cost governance:** `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
 - **Control efficiency governance:** `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
+- **Control complexity-budget governance:** `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -267,4 +268,5 @@ For full routing by scenario, use:
 - Keep all exposed critical risks covered by active, owned, and current mitigation plans.
 - Keep high-impact control failures prioritized by quantified business cost and closed on time.
 - Keep high-burden low-return controls redesigned, automated, or sunset-candidated on schedule.
+- Keep critical control complexity within approved budget and simplify over-budget controls quickly.
 

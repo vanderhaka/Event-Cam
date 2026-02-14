@@ -418,6 +418,9 @@ The estimated business impact (time, revenue, trust, or execution drag) attribut
 ## Control Efficiency
 The value-to-cost performance of a control, balancing measurable risk reduction against operating effort.
 
+## Control Complexity Budget
+The approved upper bound for control-process complexity, calibrated to team stage and risk profile.
+
 ---
 
 ## Incident & Escalation Terms

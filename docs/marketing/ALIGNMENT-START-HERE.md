@@ -182,6 +182,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 97. `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` (ensures every exposed critical risk is linked to an active, owned, and current mitigation plan)
 98. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` (ensures control failure remediation is prioritized by quantified business-impact cost, not volume alone)
 99. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` (ensures control burden remains proportional to measured value so governance drag does not accumulate)
+100. `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` (ensures control process complexity stays within sustainable budget and is simplified when over threshold)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

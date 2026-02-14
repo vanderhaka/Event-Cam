@@ -339,6 +339,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Cost-weighted closure rate for high-impact failures (%):
 - High-burden low-return controls (count):
 - Median control value-to-cost ratio:
+- Over-budget critical controls (count):
+- Complexity simplification actions on-time rate (%):
 
 ---
 

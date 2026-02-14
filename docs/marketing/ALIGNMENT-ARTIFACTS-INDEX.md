@@ -547,6 +547,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`**  
   Review verifying control value-to-cost performance and reducing high-burden low-return controls.
 
+- **`ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`**  
+  Review keeping control complexity within stage-appropriate budget to prevent governance drag.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -725,6 +728,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need exposed control risks consistently mapped to active mitigation plans | `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` |
 | We need control failures prioritized by real business impact cost instead of incident count alone | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` |
 | We need to prevent governance drag from controls that consume high effort with low measurable impact | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` |
+| We need to keep control process complexity within a sustainable budget as the system scales | `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` |
 
 ---
 
@@ -869,6 +873,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Mitigation Coverage Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Failure Impact Cost Review | Ops / PMO + Finance Partner + Control Owners |
 | Control Efficiency Review | Ops / PMO + Control Owners + Finance/Operations Partner |
+| Control Complexity Budget Review | Ops / PMO + Control Owners + Process/Operations Partner |
 
 ---
 
@@ -1032,6 +1037,7 @@ Includes Pack C, plus:
 144. `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
 145. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
 146. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
+147. `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
