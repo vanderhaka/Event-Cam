@@ -95,6 +95,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Open P0/P1 decisions with expired evidence |  |  |  |
 | Open overrides (count) |  |  |  |
 | Governance cost (% capacity) |  |  |  |
+| Portfolio review status (On Track/At Risk/Overdue) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

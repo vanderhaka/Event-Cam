@@ -292,6 +292,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-GOVERNANCE-COST-BUDGET.md`**  
   Weekly budget and efficiency model for keeping governance overhead proportional to execution value.
 
+- **`ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`**  
+  Quarterly portfolio-level review for deciding which controls to keep, merge, retire, or expand.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -385,6 +388,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need stale evidence blocked before high-impact approvals | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` |
 | We need auditable control exceptions without shadow policy | `ALIGNMENT-OVERRIDE-REGISTER.md` |
 | We need to cap governance overhead before it slows execution | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` |
+| We need a quarterly keep/merge/retire decision on all controls | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` |
 
 ---
 
@@ -444,6 +448,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Evidence Refresh Schedule | Growth / Analytics + Strategy Owner |
 | Override Register | Strategy Owner + Ops / PMO |
 | Governance Cost Budget | Ops / PMO + Leadership Team |
+| Control Portfolio Review | Strategy Owner + Ops / PMO + Leadership Team |
 
 ---
 
@@ -522,6 +527,7 @@ Includes Pack C, plus:
 59. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
 60. `ALIGNMENT-OVERRIDE-REGISTER.md`
 61. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
+62. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

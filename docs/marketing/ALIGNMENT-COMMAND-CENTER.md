@@ -25,6 +25,7 @@
 - Confirm artifact usage telemetry is within acceptable utilization/staleness range.
 - Review any proposed control sunset actions and verify packet completeness.
 - Review open overrides for expiry risk and compensating-control status.
+- Confirm portfolio-review due date and readiness of required inputs.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -102,6 +103,7 @@ Use this trigger table before meetings:
 | P0/P1 decision depends on expired evidence | Block approval until refresh or explicit override logged |
 | Override expires without closure | Escalate as governance incident and force same-week resolution |
 | Governance cost exceeds 120% budget for 2 weeks | Trigger cost-reduction playbook and re-evaluate active pack/mode |
+| Portfolio review overdue beyond quarter reset window | Escalate to leadership and freeze net-new control additions |
 
 ---
 

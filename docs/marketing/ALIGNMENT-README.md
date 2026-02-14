@@ -64,6 +64,7 @@ It helps teams:
 - **Evidence freshness control:** `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
 - **Override accountability control:** `ALIGNMENT-OVERRIDE-REGISTER.md`
 - **Governance cost control:** `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
+- **Quarterly control portfolio review:** `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -97,4 +98,5 @@ For full routing by scenario, use:
 - Keep evidence refresh current; expired evidence should not drive P0/P1 approvals.
 - Keep all control overrides logged, time-bounded, and reviewed weekly.
 - Keep governance effort within budget and reduce controls when cost outruns value.
+- Run quarterly control portfolio reviews to keep active controls right-sized.
 

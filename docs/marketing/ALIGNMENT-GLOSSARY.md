@@ -163,6 +163,9 @@ Time-bounded exception to a standard control rule, allowed only with explicit ra
 ## Governance Cost
 Total weekly time spent on meetings, documentation, control administration, and governance-related recovery work.
 
+## Control Portfolio Review
+Periodic assessment of all active controls to decide keep/merge/retire/expand actions based on risk coverage, usage, and cost.
+
 ---
 
 ## Incident & Escalation Terms
