@@ -250,6 +250,9 @@ The accumulation of unresolved items over time relative to SLA, used to identify
 ## Recurrence Heatmap
 Structured view of repeated issue intensity by domain, cause, owner group, and severity to identify chronic clusters.
 
+## Control Lifecycle Stage
+Current maturity state of a control (e.g., Launching, Stabilizing, Mature, Sunset Candidate, Retired) used to guide governance actions.
+
 ---
 
 ## Incident & Escalation Terms

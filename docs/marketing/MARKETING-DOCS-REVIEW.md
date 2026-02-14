@@ -840,6 +840,7 @@ Use this minimum-safe operating rule:
 | Teams treat recurring failures as isolated issues and miss systemic root-cause concentration | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` | Dominant recurring causes are reduced through structural interventions |
 | Unresolved governance work silently ages and accumulates hidden execution debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` | Critical-stale backlog declines and age-weighted risk score trends downward |
 | Chronic repeat issues persist across teams because recurrence hotspots are not visualized | `ALIGNMENT-RECURRENCE-HEATMAP.md` | High-severity recurrence clusters shrink and recurrence burn-down improves cycle-over-cycle |
+| Controls linger in unstable or outdated states because lifecycle progression is unmanaged | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` | Controls transition predictably through lifecycle stages with fewer stalled states |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

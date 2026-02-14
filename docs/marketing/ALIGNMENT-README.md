@@ -93,6 +93,7 @@ It helps teams:
 - **Systemic-cause governance:** `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
 - **Backlog-debt governance:** `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
 - **Chronic-recurrence governance:** `ALIGNMENT-RECURRENCE-HEATMAP.md`
+- **Control lifecycle governance:** `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -155,4 +156,5 @@ For full routing by scenario, use:
 - Keep recurring root causes visible and prioritized for structural fixes.
 - Keep unresolved-item aging in control through severity-weighted backlog burn-down.
 - Keep chronic recurrence clusters visible and trending down by cycle.
+- Keep controls moving through lifecycle stages with evidence-based transition decisions.
 

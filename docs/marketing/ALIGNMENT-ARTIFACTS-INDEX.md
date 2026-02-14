@@ -379,6 +379,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-RECURRENCE-HEATMAP.md`**  
   Cross-domain heatmap of repeated issues to prioritize chronic-cluster interventions.
 
+- **`ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`**  
+  Lifecycle-stage analysis for controls from launch through maturity and sunset decisions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -501,6 +504,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one recurring view of dominant root causes across all governance workflows | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` |
 | We need to prevent unresolved-item backlog from aging into capacity debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` |
 | We need to visualize chronic recurrence clusters across domains and owners | `ALIGNMENT-RECURRENCE-HEATMAP.md` |
+| We need lifecycle-stage visibility to time control optimization and retirement correctly | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` |
 
 ---
 
@@ -589,6 +593,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Root Cause Pattern Review | Strategy Owner + Ops / PMO + Functional Leads |
 | Backlog Aging Review | Ops / PMO + Functional Leads + Strategy Owner |
 | Recurrence Heatmap | Ops / PMO + Strategy Owner + Functional Leads |
+| Control Lifecycle Analysis | Strategy Owner + Ops / PMO + Governance Owners |
 
 ---
 
@@ -696,6 +701,7 @@ Includes Pack C, plus:
 88. `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
 89. `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
 90. `ALIGNMENT-RECURRENCE-HEATMAP.md`
+91. `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 
 Recommended only when:
 - decision volume is high,
