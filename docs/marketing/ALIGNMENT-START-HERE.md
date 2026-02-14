@@ -89,6 +89,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 4. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` (active/frozen set integrity)
 5. `ALIGNMENT-DECISION-INTAKE-QUEUE.md` (new request triage discipline)
 6. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` (impact verification on closed decisions)
+7. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` (meeting-yield and governance-efficiency check)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
