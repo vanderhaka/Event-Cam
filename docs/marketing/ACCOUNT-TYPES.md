@@ -16,11 +16,11 @@
 
 ## Overview
 
-The current model is simple: one couple creates one wedding, pays $1/guest. That works perfectly for the primary use case. But two audiences need something different:
+The current model is simple: one couple creates one wedding, pays $2/guest ($49 minimum). That works perfectly for the primary use case. But two audiences need something different:
 
 | Account Type | Who | Core Need | Revenue Model |
 |-------------|-----|-----------|---------------|
-| **Standard** (current) | Engaged couples | One wedding, one-time purchase | $1/guest |
+| **Standard** (current) | Engaged couples | One wedding, one-time purchase | $2/guest ($49 min) |
 | **Venue** | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription or per-event |
 | **Pro** | Photographers, planners, DJs, celebrants, coordinators | Resell or bundle Event Cam into their own packages; earn commission | Affiliate/commission + discounted per-guest rate |
 
@@ -83,7 +83,7 @@ Any business that hosts events regularly and wants to offer Event Cam as a built
 | Volume | Per-Guest Rate |
 |--------|---------------|
 | 1–500 guests/month | $0.75/guest |
-| 500–2,000 | $0.50/guest |
+| 500–2,000 | $1.00/guest |
 | 2,000+ | $0.35/guest |
 
 - Keeps the pricing model consistent with the core product.
@@ -157,16 +157,16 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 
 #### Model A: Wholesale + Markup (Pro sets their own price)
 
-- Pro buys Event Cam at a discounted rate: **$0.60/guest** (40% discount off $1)
-- Pro sells to their client at whatever price they want — $1/guest, $1.50/guest, flat $200, bundled into their photography package, whatever.
+- Pro buys Event Cam at a discounted rate: **$1.20/guest** (40% discount off $2)
+- Pro sells to their client at whatever price they want — $2/guest, $2.50/guest, flat $350, bundled into their photography package, whatever.
 - Pro keeps the margin.
 - Event Cam doesn't control or see the end price.
 
-**Example:** Photographer charges a couple $3,500 for their package. Package now includes "guest photo collection powered by Event Cam." Photographer pays Event Cam $0.60 × 150 guests = $90. Photographer either absorbs it (tiny cost vs. $3,500 package) or marks it up.
+**Example:** Photographer charges a couple $4,000 for their package. Package now includes "guest photo collection powered by Event Cam." Photographer pays Event Cam $1.20 × 150 guests = $180. Photographer either absorbs it (4.5% of their package) or marks it up to $2/guest ($300) and pockets $120.
 
 #### Model B: Affiliate Commission (Pro earns a cut)
 
-- Couple pays $1/guest directly to Event Cam (standard pricing).
+- Couple pays $1.80/guest via Pro's code (10% off standard pricing).
 - Pro gets a **20% commission** on every event they refer: $0.20/guest.
 - Pro shares a referral link or code with clients.
 - Event Cam handles billing, the Pro just drives the sale.
@@ -175,7 +175,7 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 
 #### Model C: Hybrid (Wholesale for bundlers, Affiliate for recommenders)
 
-- **Pros who bundle** Event Cam into their packages → Wholesale model (buy at $0.60, sell at their price)
+- **Pros who bundle** Event Cam into their packages → Wholesale model (buy at $1.20, sell at their price)
 - **Pros who just recommend** → Affiliate model (20% commission, no billing hassle)
 - Let the Pro choose which model fits their business.
 
@@ -259,7 +259,7 @@ Marketing it as: **"Event Cam Pro — For wedding professionals."**
 ```
                     ┌──────────────┐
                     │   Standard   │  Engaged couples
-                    │  $1 / guest  │  One-time purchase
+                    │  $2 / guest  │  One-time purchase
                     └──────┬───────┘
                            │
               ┌────────────┼────────────┐

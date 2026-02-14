@@ -15,7 +15,7 @@
 7. [Free Tier](#7-free-tier)
 8. [Add-Ons (Universal)](#8-add-ons-universal)
 9. [Pricing Page Layout](#9-pricing-page-layout)
-10. [Comparison: What $1/Guest Actually Buys](#10-comparison-what-1guest-actually-buys)
+10. [Comparison: What $2/Guest Actually Buys](#10-comparison-what-2guest-actually-buys)
 11. [Open Questions](#11-open-questions)
 
 ---
@@ -25,7 +25,7 @@
 A few principles to keep pricing from becoming a mess as the product expands:
 
 - **Simple to explain in one sentence.** If a customer can't understand the price in 5 seconds, it's too complex.
-- **Anchored to $1/guest where possible.** This is the core mental model. Other pricing should feel like natural extensions of it, not a totally different system.
+- **Anchored to $2/guest where possible.** This is the core mental model. Other pricing should feel like natural extensions of it, not a totally different system.
 - **No surprise bills.** People paying for events (especially weddings) are stressed enough. No overages, no hidden fees, no "you went over your limit" emails.
 - **Generous free tier.** Let people try the full product before paying. The product sells itself once someone sees the watermarked album.
 - **Upsell through add-ons, not feature gating.** Every plan gets the core features (QR codes, uploads, watermarks, filters, moderation, albums, sharing). Premium add-ons are extras, not unlocks.
@@ -38,24 +38,24 @@ A few principles to keep pricing from becoming a mess as the product expands:
 
 This is the bread and butter. The guest count is known upfront because the organizer adds a guest list.
 
-### Pricing: $1 Per Guest
+### Pricing: $2 Per Guest
 
-| Example | Guests | Price |
-|---------|--------|-------|
-| Intimate wedding / dinner party | 30 | $30 |
-| Engagement party | 60 | $60 |
-| Mid-size wedding | 150 | $150 |
-| Large wedding | 250 | $250 |
-| Grand / cultural wedding | 500 | $500 |
-| Corporate offsite | 80 | $80 |
+| Example | Guests | Price | Wedding Budget Context |
+|---------|--------|-------|----------------------|
+| Intimate wedding / dinner party | 25 | $49 (minimum) | Less than a single centerpiece |
+| Engagement party | 60 | $120 | Less than the invitations |
+| Mid-size wedding | 150 | $300 | Less than the cake |
+| Large wedding | 250 | $500 | Less than the DJ's overtime fee |
+| Grand / cultural wedding | 500 | $1,000 | Less than one hour of photography |
+| Corporate offsite | 80 | $160 | One line item on the expense report |
 
 ### Rules
 
-- **Minimum: $20** — Events under 20 guests still pay $20. Covers costs and prevents abuse.
-- **No maximum** — Let it scale. A 500-person wedding at $500 is still a bargain.
+- **Minimum: $49** — Events under 25 guests still pay $49. Positions the product as premium, covers costs, and prevents micro-events from diluting perceived value.
+- **No maximum** — Let it scale. A 500-person wedding at $1,000 is still a fraction of the total budget.
 - **Charged at event creation** — Pay when you publish the event / generate QR codes. Not after the event.
 - **Guest count = QR codes generated** — You pay for the number of unique QR codes, which equals your guest list size.
-- **Add guests later:** If the couple adds 10 more guests after paying, they're charged $10 more. Simple top-up.
+- **Add guests later:** If the couple adds 10 more guests after paying, they're charged $20 more. Simple top-up.
 
 ### What's Included (Everything)
 
@@ -68,11 +68,13 @@ This is the bread and butter. The guest count is known upfront because the organ
 - Guest email capture
 - 12-month album hosting
 
-### Why It Works
+### Why $2/Guest Works
 
-- Dead simple — "How many guests? That's how many dollars."
-- Scales with value — more guests = more photos = more storage = more value.
-- Wedding budget context: $150 for a 150-person wedding is less than the cake, the flowers, one hour of photography, or literally anything else at the wedding.
+- **Dead simple** — "Two dollars per guest." No tiers, no feature matrix.
+- **Scales with value** — more guests = more photos = more storage = more value.
+- **Feels premium but accessible** — $300 for a 150-person wedding signals quality. $150 was almost suspiciously cheap. $300 is still less than the cake, the flowers, the DJ, or one hour of photography.
+- **$49 minimum sets the floor** — Even a 10-person dinner feels like a real purchase at $49, not a throwaway impulse buy.
+- **Easy to justify in a wedding budget** — The average US wedding costs $35,000. $300 is 0.86% of the total budget.
 
 ---
 
@@ -80,7 +82,7 @@ This is the bread and butter. The guest count is known upfront because the organ
 
 > House parties, birthday bashes, bar nights, brand activations, community events, meetups — any event where you don't have a guest list and don't know how many people will show up or participate.
 
-The $1/guest model doesn't work here because there's no guest list. You can't charge per head when you don't know how many heads there are. You need a different model that still feels fair.
+The $2/guest model doesn't work here because there's no guest list. You can't charge per head when you don't know how many heads there are. You need a different model that still feels fair.
 
 ### Option A: Flat-Fee Tiers (Recommended)
 
@@ -88,10 +90,10 @@ Simple tiered pricing based on expected event size. The organizer picks the tier
 
 | Tier | Upload Slots | Price | Best For |
 |------|-------------|-------|----------|
-| **Small** | Up to 50 uploaders | $29 | House parties, dinners, small meetups |
-| **Medium** | Up to 150 uploaders | $59 | Birthday parties, brand events, work socials |
-| **Large** | Up to 500 uploaders | $99 | Large parties, club nights, brand activations |
-| **Massive** | Up to 2,000 uploaders | $199 | Concerts, large community events |
+| **Small** | Up to 50 uploaders | $49 | House parties, dinners, small meetups |
+| **Medium** | Up to 150 uploaders | $99 | Birthday parties, brand events, work socials |
+| **Large** | Up to 500 uploaders | $199 | Large parties, club nights, brand activations |
+| **Massive** | Up to 2,000 uploaders | $399 | Concerts, large community events |
 
 - **"Uploaders"** = unique people who scan the QR and upload at least one photo. NOT guests invited — people who actually participate.
 - **One shared QR code** — Instead of unique QR per guest, the event gets one (or a few) QR codes that anyone can scan. No guest list required.
@@ -109,10 +111,10 @@ If tiers feel too rigid, offer pay-per-uploader with a price cap:
 
 | Uploaders | Price | Cap |
 |-----------|-------|-----|
-| First 50 | $0.50/uploader | — |
-| 51–150 | $0.50/uploader | Cumulative cap: $59 |
-| 151–500 | $0.50/uploader | Cumulative cap: $99 |
-| 500+ | $0.50/uploader | Cumulative cap: $199 |
+| First 50 | $1.00/uploader | — |
+| 51–150 | $1.00/uploader | Cumulative cap: $99 |
+| 151–500 | $1.00/uploader | Cumulative cap: $199 |
+| 500+ | $1.00/uploader | Cumulative cap: $399 |
 
 - You never pay more than the cap for your tier.
 - If only 30 people show up at your "Large" event, you pay $15 — not $99.
@@ -124,11 +126,11 @@ Just charge a flat fee regardless of attendance:
 
 | Duration | Price |
 |----------|-------|
-| Single event (1 day) | $49 |
-| Weekend event (2–3 days) | $79 |
+| Single event (1 day) | $79 |
+| Weekend event (2–3 days) | $129 |
 
 - Simplest possible model. No tiers, no counting, no caps.
-- **Downside:** Feels expensive for a 20-person house party. Feels cheap for a 500-person brand activation. One-size-fits-all always leaves money on the table or prices people out.
+- **Downside:** Feels expensive for a 20-person house party. Feels cheap for a 500-person brand activation. One-size-fits-all always leaves money on the table or prices people out. One-size-fits-all always leaves money on the table or prices people out.
 
 ### Recommendation: Option A (Flat-Fee Tiers)
 
@@ -140,7 +142,7 @@ Tiers strike the best balance between simplicity and fairness. The organizer pic
 |---------|-----------------|------------|
 | QR codes | Unique per guest | Shared (one or few QR codes) |
 | Guest list required | Yes | No |
-| Pricing model | $1/guest | Flat-fee tier by expected size |
+| Pricing model | $2/guest | Flat-fee tier by expected size |
 | Email capture | Pre-loaded from guest list OR at upload | Always at upload (required) |
 | Moderation | Yes | Yes |
 | AI watermark | Yes (couple's names/date) | Yes (event name/date/custom text) |
@@ -278,25 +280,20 @@ Pros need two things: (1) a way to manage multiple client events, and (2) a fina
 
 The Pro buys at a discount and resells at their own price.
 
-| Volume (Guests/Year) | Wholesale Rate | Discount Off $1 |
-|-----------------------|---------------|-----------------|
-| 1–500 | $0.70/guest | 30% off |
-| 501–2,000 | $0.60/guest | 40% off |
-| 2,001–5,000 | $0.50/guest | 50% off |
-| 5,000+ | $0.40/guest | 60% off |
+**Note:** The Pro account model has been refined — see `PRO-ACCOUNT-DEEP-DIVE.md` for the full unified model.
+
+**Summary:** One flat Pro rate: **$1.20/guest** (40% off the $2 retail price). No volume tiers.
 
 - **No monthly fee** — the Pro only pays when they create events.
-- **Volume is cumulative across all client events** in a rolling 12-month period.
-- **Pro sets their own client price** — they can charge $1/guest (keep the margin), $1.50/guest (premium markup), or bundle it invisibly into their package.
-- **Billing:** Pro's card is charged per event at the wholesale rate. Or they can pre-purchase credits in bulk for additional savings.
+- **Pro sets their own client price** — they can charge $2/guest (keep the margin), $2.50/guest (premium markup), or bundle it invisibly into their package.
 
 **Example:**
 - Photographer does 40 weddings/year averaging 140 guests = 5,600 guests/year.
-- Wholesale rate: $0.40/guest.
-- Annual cost: $2,240.
-- If they charge clients $1.50/guest (bundled into their photography package): $8,400 revenue.
-- **Net margin: $6,160/year** from just reselling the product.
-- Or they absorb the cost ($56/wedding at $0.40 × 140 guests) as a value-add in their $4,000 package. It's 1.4% of their package price for a major feature.
+- Pro rate: $1.20/guest.
+- Annual cost: $6,720.
+- If they charge clients $2/guest (bundled into their photography package): $11,200 revenue.
+- **Net margin: $4,480/year** from just reselling the product.
+- Or they absorb the cost ($168/wedding at $1.20 × 140 guests) as a value-add in their $4,000 package. It's 4.2% of their package price for a major feature.
 
 #### Model B: Affiliate (For Pros Who Recommend)
 
@@ -310,12 +307,14 @@ The Pro doesn't handle billing. They refer clients, and earn a commission.
 | Attribution | Referral link or promo code, 90-day cookie |
 | Dashboard | Track referrals, conversions, earnings in real-time |
 
+**Note:** In the unified Pro model (see `PRO-ACCOUNT-DEEP-DIVE.md`), referred events give the couple 10% off ($1.80/guest) and the Pro earns $0.60/guest commission. We keep $1.20/guest.
+
 **Example:**
 - Celebrant recommends Event Cam to 50 couples/year.
-- 60% convert (30 couples), averaging 130 guests = $130/event.
-- Total event revenue: 30 × $130 = $3,900.
-- 20% commission: **$780/year** for the celebrant.
-- Passive income for just mentioning the product in consultations.
+- 60% convert (30 couples), averaging 130 guests.
+- Couple pays $1.80/guest (10% off via Pro code) = $234/event.
+- Pro commission: $0.60/guest × 130 = $78/event.
+- **$2,340/year** for the celebrant. Passive income for just mentioning the product.
 
 #### Comparison
 
@@ -437,7 +436,7 @@ How to present all of this without overwhelming people. The pricing page needs t
 ```
 
 **Tab 1: Weddings & Events (Guest List)**
-- Big "$1 per guest" headline
+- Big "$2 per guest" headline
 - Slider: "How many guests?" → shows price in real-time
 - "Includes everything" feature list
 - CTA: "Start free with 10 guests"
@@ -471,15 +470,15 @@ How to present all of this without overwhelming people. The pricing page needs t
 
 ---
 
-## 10. Comparison: What $1/Guest Actually Buys
+## 10. Comparison: What $2/Guest Actually Buys
 
 This section is for the pricing page or a blog post. Anchor the price against what couples already spend.
 
-### $1/Guest vs. Other Wedding Costs
+### $2/Guest vs. Other Wedding Costs
 
 | Item | Cost | What You Get |
 |------|------|-------------|
-| **Event Cam (150 guests)** | **$150** | **2,000+ photos from every guest, AI watermarked, filtered, moderated, in a private album** |
+| **Event Cam (150 guests)** | **$300** | **2,000+ photos from every guest, AI watermarked, filtered, moderated, in a private album** |
 | Photographer | $3,000–$6,000 | 500 professional shots |
 | Photo booth rental | $500–$2,000 | 50–100 posed photos with props |
 | 15 disposable cameras | $225–$450 | ~400 low-res photos, 2-week development wait |
@@ -487,32 +486,34 @@ This section is for the pricing page or a blog post. Anchor the price against wh
 | Cake | $500–$1,500 | Gone in 20 minutes |
 | Flowers | $1,500–$4,000 | Dead in 3 days |
 | DJ | $1,000–$2,500 | Music for the night |
-| **Event Cam** | **$150** | **Every memory, forever** |
+| **Event Cam** | **$300** | **Every memory, forever** |
 
-### $1/Guest vs. Other Photo Solutions
+### $2/Guest vs. Other Photo Solutions
 
 | Solution | Cost for 150 Guests | Photos Collected | Watermarks | Filters | Moderation | Private Sharing |
 |----------|--------------------|--------------------|------------|---------|------------|----------------|
-| **Event Cam** | **$150** | **2,000+** | **AI custom** | **Yes** | **Yes** | **Yes** |
+| **Event Cam** | **$300** | **2,000+** | **AI custom** | **Yes** | **Yes** | **Yes** |
 | The Guest (app) | $100–$200 | 500–800 (requires app download) | No | Limited | Yes | Yes |
 | Disposable cameras (15) | $225–$450 | ~400 (low quality) | No | No | No | No |
 | Photo booth | $500–$2,000 | 50–100 (posed only) | No | Preset only | No | No |
 | Google Photos shared album | $0 | Varies (low participation, need Google account) | No | No | No | No |
 | Instagram hashtag | $0 | Varies (public, buried in feed) | No | Yes (public) | No | No |
 
+Even at $2/guest, Event Cam is cheaper than disposable cameras and massively cheaper than a photo booth — while delivering 10–20x more photos with AI watermarks, filters, and moderation.
+
 ---
 
 ## 11. Open Questions
 
 ### Guest List Events
-- [ ] Should $1/guest be the forever price, or is it an intro/launch price? Could raise to $1.25 or $1.50 once brand is established.
+- [ ] Should $2/guest be the forever price, or is it an intro/launch price? Could raise to $2.50 once brand is established.
 - [ ] Do couples get a partial refund if they over-estimate? (e.g., paid for 150 but only 120 guests showed up) — Probably not. The value is in the QR generation, not the actual uploads.
 - [ ] Should there be a "late add" penalty? (Adding guests within 24 hours of the event?) — Probably not. Keep it frictionless.
 
 ### Open Events
 - [ ] How do you prevent one person from scanning multiple times and using up uploader slots? Track by email or device fingerprint?
 - [ ] Should open events get AI watermarks? (The "couple's names" watermark doesn't apply to a pub trivia night.) — Yes, but the watermark should be event name / date / custom text instead.
-- [ ] Is $29 too high for a casual house party? Test $19 as the entry point.
+- [ ] Is $49 too high for a casual house party? Test $29 as a lower "Tiny" tier if needed.
 
 ### Multi-Day / Festivals
 - [ ] Should festival pricing include a per-uploader component, or is flat-fee-by-capacity simpler?
@@ -530,12 +531,12 @@ This section is for the pricing page or a blog post. Anchor the price against wh
 - [ ] Do we need a vetting/approval process for Pro accounts, or let anyone sign up?
 - [ ] Should wholesale volume tiers reset annually or be lifetime cumulative?
 - [ ] How do we handle the case where a Pro creates an event on behalf of a couple, but the couple also wants their own login to moderate/manage albums?
-- [ ] Is 20% affiliate commission sustainable long-term? (At $1/guest, 20% = $0.20/guest. Our margin is still ~$0.60/guest after infra costs.)
+- [ ] Is the Pro commission sustainable long-term? (At $2/guest with $0.60/guest commission on referred events, our margin is $1.20/guest — very healthy.)
 - [ ] Should Pros get early access to new features (beta watermark styles, filters) to keep them engaged?
 
 ### General
 - [ ] Annual pricing for guest list events? E.g., "Unlimited events for 1 year — $499." Could work for planners who don't want a Pro account.
-- [ ] Currency localization — should pricing adjust for international markets? ($1/guest in USD is steep in India, cheap in Norway.)
+- [ ] Currency localization — should pricing adjust for international markets? ($2/guest in USD is steep in India, cheap in Norway.)
 - [ ] Should we offer "event insurance" — pay $5 extra and if something goes wrong (event date changes, QR codes lost), we regenerate everything for free?
 
 ---

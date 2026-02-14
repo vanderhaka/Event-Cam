@@ -45,7 +45,7 @@ Don't just partner with venues — become part of their infrastructure. Offer ve
 
 - The venue gets a premium amenity to advertise: "Complimentary guest photo collection at all events."
 - You get distribution at every single event held at that venue, forever.
-- The couple still pays $1/guest, but the venue drives the sale.
+- The couple still pays $2/guest, but the venue drives the sale.
 
 **Think of it like:** How venues already have built-in AV systems or photo booths — Event Cam becomes the default.
 

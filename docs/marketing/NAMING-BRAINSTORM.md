@@ -89,7 +89,7 @@ These are the strongest names. Each has a distinct emotional angle and branding 
   - "Heirloom — The album your grandchildren will treasure."
 - **Visual brand:** Deep, rich colors — navy, gold, cream, forest green. Classic typography — elegant serif. Think luxury stationery meets modern tech. Logo: serif "Heirloom" with a subtle monogram icon.
 - **Domain:** heirloom.app, getheirloom.com, heirloomalbum.com
-- **Risk:** Feels more upscale, which could create friction with the "$1/guest" accessibility angle. Also "Heirloom" is used in food/agriculture branding (heirloom tomatoes). But in the wedding context, it's clean.
+- **Risk:** "Heirloom" is used in food/agriculture branding (heirloom tomatoes). But in the wedding context, it's clean. The premium feel actually aligns well with the $2/guest price point.
 
 ---
 

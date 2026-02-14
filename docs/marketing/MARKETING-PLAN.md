@@ -2,7 +2,7 @@
 
 > **Product:** Event Cam — a mobile-first web app built for weddings. Couples collect photos and videos from every guest via unique QR codes, apply AI-generated custom watermarks and photo filters, moderate submissions, and share curated albums through password-protected links. No app download required for guests.
 >
-> **Primary market:** Weddings (50–300 guests). **Pricing:** $1 per guest — simple, transparent, and easy to justify inside a wedding budget.
+> **Primary market:** Weddings (50–300 guests). **Pricing:** $2 per guest ($49 minimum) — premium but accessible, easy to justify inside a wedding budget.
 
 ---
 
@@ -37,7 +37,7 @@ What makes Event Cam special beyond the QR workflow:
 - **Full moderation** — Every upload is reviewed before it hits the album. Approve or reject with one tap.
 - **Private sharing** — Password-protected album links with optional view limits and expiration.
 
-At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a wedding budget, but it delivers something no photographer alone can: every angle, every moment, from every guest.
+At **$2 per guest**, a 150-person wedding costs $300 — less than the cake, less than the flowers, less than one hour of photography — but it delivers something no photographer alone can: every angle, every moment, from every guest.
 
 **Built-in growth engine:** Every wedding is also a lead generation event. When guests scan the QR code and upload, Event Cam captures their email address. A 150-person wedding gives you 150 warm leads — people in the same age/life-stage demographic who just had a positive experience with the product. Many of them are engaged themselves, planning events, or will be soon. This turns every single wedding into a marketing channel that pays for itself.
 
@@ -49,12 +49,12 @@ At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a w
 
 ### Primary Segment: Weddings
 
-| Sub-Segment | Description | Guest Count | Revenue @ $1/guest | Notes |
+| Sub-Segment | Description | Guest Count | Revenue @ $2/guest | Notes |
 |-------------|-------------|-------------|---------------------|-------|
-| **Engaged couples (DIY)** | Couples planning their own wedding | 50–200 | $50–$200 | Largest volume; price-sensitive but $1/head is trivial |
-| **Wedding planners** | Professional planners managing multiple weddings/year | 100–300 | $100–$300 per event | Repeat buyers; recommend tools to every client |
-| **Destination weddings** | Smaller guest list, but high-value experience | 20–80 | $20–$80 | Especially value "no app download" since guests may have limited connectivity |
-| **Large/cultural weddings** | Indian, Nigerian, Filipino, etc. — often 300–500+ guests | 300–500+ | $300–$500+ | Highest per-event revenue; strong community word-of-mouth |
+| **Engaged couples (DIY)** | Couples planning their own wedding | 50–200 | $100–$400 | Largest volume; $2/head is trivial in a wedding budget |
+| **Wedding planners** | Professional planners managing multiple weddings/year | 100–300 | $200–$600 per event | Repeat buyers; recommend tools to every client |
+| **Destination weddings** | Smaller guest list, but high-value experience | 20–80 | $49–$160 | Especially value "no app download" since guests may have limited connectivity |
+| **Large/cultural weddings** | Indian, Nigerian, Filipino, etc. — often 300–500+ guests | 300–500+ | $600–$1,000+ | Highest per-event revenue; strong community word-of-mouth |
 
 ### Secondary Segments (Future Expansion)
 
@@ -72,7 +72,7 @@ At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a w
 - Already overwhelmed by decisions; wants tools that are simple and "just work"
 - Hates the idea of asking 150 guests to download yet another app
 - Loves the idea of a custom watermark with their names and date on every photo
-- Budget-conscious but understands $1/guest ($150 total) is nothing compared to the photographer ($3,000+), the venue ($10,000+), or even the cake ($500+)
+- Budget-conscious but understands $2/guest ($300 total) is nothing compared to the photographer ($3,000+), the venue ($10,000+), or even the cake ($500+)
 - Will absolutely share the product with her engaged friends if it works well
 
 ### Buyer Persona: "Planner Priya"
@@ -81,7 +81,7 @@ At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a w
 - Always looking for tools that make her look good to clients
 - Values reliability and polish — she's recommending this to paying clients
 - Sees AI watermarks and filters as a "wow" feature she can showcase in proposals
-- $1/guest is easy to pass through to the client or absorb as a business expense
+- $2/guest is easy to pass through to the client or absorb as a business expense
 - If she likes Event Cam, she brings 15–40 events/year of recurring revenue
 
 ---
@@ -94,7 +94,7 @@ At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a w
 
 ### Elevator Pitch
 
-Event Cam is the easiest way to collect photos and videos from every guest at your wedding. Put QR codes on tables, guests scan with their phone and upload — no app, no account, no friction. AI generates a custom watermark with your names and wedding date that's applied to every photo. Add beautiful filters for a cohesive look. Moderate everything, build curated albums, and share with password-protected links. All for just $1 per guest.
+Event Cam is the easiest way to collect photos and videos from every guest at your wedding. Put QR codes on tables, guests scan with their phone and upload — no app, no account, no friction. AI generates a custom watermark with your names and wedding date that's applied to every photo. Add beautiful filters for a cohesive look. Moderate everything, build curated albums, and share with password-protected links. All for just $2 per guest.
 
 ### Messaging Pillars
 
@@ -105,19 +105,19 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 | **Filters & polish** | "A cohesive album without an editor." — Curated filters give every guest's photos a unified, polished look | Wedding-friendly filter presets applied in-browser or post-upload |
 | **Full control** | "Your wedding, your album." — Review every photo before anyone sees it | Built-in approve/reject moderation queue |
 | **Privacy-first** | "Private by default." — No public galleries, no social media leaks | Password-protected links with view limits and expiration |
-| **Absurdly affordable** | "Less than a dollar per memory." — $1/guest makes it cheaper than a single disposable camera | 150 guests = $150; compare to $30+ per disposable camera table |
+| **Premium yet affordable** | "Less than a dollar per memory." — $2/guest is still cheaper than disposable cameras and a fraction of a photo booth | 150 guests = $300; compare to $500+ photo booth or $300+ in disposable cameras |
 
 ### Tagline Options
 
 - "Every guest. Every photo. Your watermark."
 - "The wedding album that fills itself."
-- "Scan. Upload. Done. — $1 per guest."
+- "Scan. Upload. Done. — $2 per guest."
 - "No app. No friction. Every memory."
 - "AI-watermarked. Guest-powered. Beautifully yours."
 
 ### Emotional Hook (for Ads & Landing Pages)
 
-> Your photographer captures 500 perfect shots. Your 150 guests capture 2,000 more — the candid laughs, the dance floor chaos, the moments between moments. Event Cam collects them all, watermarks them with your names, and puts them in one beautiful album. For a dollar a guest.
+> Your photographer captures 500 perfect shots. Your 150 guests capture 2,000 more — the candid laughs, the dance floor chaos, the moments between moments. Event Cam collects them all, watermarks them with your names, and puts them in one beautiful album. For two dollars a guest.
 
 ---
 
@@ -125,7 +125,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 | Competitor | Strengths | Weaknesses | Event Cam Advantage |
 |-----------|-----------|-----------|---------------------|
-| **The Guest** (app) | Polished UI, established brand | Requires app download; $100+/event pricing; no AI features | No download + AI watermarks + filters + cheaper ($1/guest) |
+| **The Guest** (app) | Polished UI, established brand | Requires app download; $100+/event pricing; no AI features | No download + AI watermarks + filters + competitive pricing ($2/guest) |
 | **WedUploader** | Wedding-focused | Limited features; dated UI | AI watermarks, filters, modern UX, simpler pricing |
 | **Disposable cameras** | Nostalgia, tactile experience | $15–$30 each × 10–20 tables = $150–$600; low quality; development delay | Instant digital, higher quality, cheaper at scale, plus AI watermarks |
 | **Google Photos shared album** | Free, familiar | Requires Google account; no moderation; no watermarks; no privacy controls; messy at 100+ contributors | Moderation + watermarks + filters + password-protected sharing |
@@ -133,7 +133,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 | **WhatsApp/iMessage group** | Everyone has it | Compressed images; chaotic; no curation; no watermarks; maxes out fast | Full-resolution uploads, organized albums, AI watermarks |
 | **Motif / Chatbooks** | Print-focused albums | Require manual upload; no guest collection workflow | Collect first, print later (future upsell) |
 
-**Positioning:** Event Cam is the modern disposable camera — but digital, instant, AI-watermarked, and a fraction of the price. No other solution combines zero-friction QR collection, AI-generated watermarks, photo filters, moderation, and private sharing in one product for $1/guest.
+**Positioning:** Event Cam is the modern disposable camera — but digital, instant, AI-watermarked, and a fraction of the price. No other solution combines zero-friction QR collection, AI-generated watermarks, photo filters, moderation, and private sharing in one product for $2/guest.
 
 ### Differentiation Matrix
 
@@ -144,34 +144,35 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 | Photo filters | Yes | Limited | No | No | Yes (but public) |
 | Moderation | Yes | Yes | N/A | No | No |
 | Private sharing | Yes | Yes | N/A | Partial | No |
-| Per-guest pricing | $1/guest | $100+ flat | $15–30/table | Free | Free |
-| Cost for 150 guests | $150 | $100–200 | $300–600 | $0 | $0 |
+| Per-guest pricing | $2/guest | $100+ flat | $15–30/table | Free | Free |
+| Cost for 150 guests | $300 | $100–200 | $300–600 | $0 | $0 |
 
 ---
 
 ## 5. Pricing Strategy
 
-### Core Model: $1 Per Guest
+### Core Model: $2 Per Guest ($49 Minimum)
 
 | Example Wedding | Guests | Total Price | Context |
 |----------------|--------|-------------|---------|
-| Intimate / destination | 30 | $30 | Less than a single centerpiece |
-| Mid-size | 100 | $100 | Less than the cake topper |
-| Large | 200 | $200 | Less than the DJ's overtime fee |
-| Grand / cultural | 400 | $400 | Still less than one hour of photography |
+| Intimate / destination | 25 | $49 (minimum) | Less than a single centerpiece |
+| Mid-size | 100 | $200 | Less than the cake topper |
+| Large | 150 | $300 | Less than the cake |
+| Grand / cultural | 400 | $800 | Still less than one hour of photography |
 
-### Why $1/Guest Works
+### Why $2/Guest Works
 
-- **Dead simple** — No tiers to compare, no feature matrix to decode. "How many guests? That's how many dollars."
+- **Dead simple** — No tiers to compare, no feature matrix to decode. "Two dollars per guest."
 - **Scales naturally** — Larger weddings pay more, which is fair because they generate more media, use more storage, and get more value.
-- **Trivially affordable** — The average US wedding costs $35,000. Even a 300-guest wedding at $300 is 0.85% of the budget. It's a line item that no couple will agonize over.
-- **Easy for planners to quote** — "It's a dollar per guest" is something a planner can say in a consultation without pulling up a pricing page.
+- **Premium but accessible** — $300 for a 150-guest wedding feels like a real product, not a giveaway. Still less than the cake, the flowers, or one hour of photography.
+- **$49 minimum sets the floor** — Even small events feel like a meaningful purchase. Prevents micro-transactions and signals quality.
+- **Easy for planners to quote** — "It's two dollars per guest" is something a planner can say in a consultation without pulling up a pricing page.
 - **Aligns with current Stripe checkout** — Already built to charge per invite count.
 
 ### Minimum & Maximum
 
-- **Minimum charge:** $20 (so sub-20-guest events still cover costs)
-- **No maximum:** Let it scale. A 500-person wedding at $500 is still a bargain for the couple.
+- **Minimum charge:** $49 (positions the product as premium, covers costs)
+- **No maximum:** Let it scale. A 500-person wedding at $1,000 is still a fraction of the total budget.
 
 ### Free Trial
 
@@ -180,7 +181,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 - Purpose: let engaged couples try it at a bridal shower or engagement party, then convert for the wedding
 - This also lets wedding planners test before recommending to clients
 
-### What's Included at $1/Guest (Everything)
+### What's Included at $2/Guest (Everything)
 
 - Unlimited photo and video uploads from guests
 - AI-generated custom watermark (names, date, monogram — couple's choice)
@@ -188,19 +189,20 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 - Moderation dashboard (approve/reject)
 - Curated albums with password-protected sharing
 - QR code generation for all guests
+- Guest email capture
 - 12-month album hosting (media stays live for a year after the event)
 
 ### Future Premium Add-Ons (Upsell Opportunities)
 
 | Add-On | Price Idea | Description |
 |--------|-----------|-------------|
-| **Extended hosting** | $2/month after 12 months | Keep albums live beyond the included year |
+| **Extended hosting** | $3/month after 12 months | Keep albums live beyond the included year |
 | **Photobook ordering** | $40–$80 | Partner with print-on-demand; one-click from the album |
-| **AI slideshow / highlight reel** | $15–$25 | Auto-generate a video montage from the best uploads |
-| **Custom filter creation** | $10 | Couple designs their own filter (color grade, grain, etc.) |
-| **Rush watermark design** | $5 | AI generates 5+ watermark options with premium styles |
-| **RAW/full-resolution export** | $10 | Download all originals in a ZIP |
-| **White-label for planners** | $50/month | Remove Event Cam branding; planner's logo instead |
+| **AI slideshow / highlight reel** | $19 | Auto-generate a video montage from the best uploads |
+| **Custom filter creation** | $9 | Couple designs their own filter (color grade, grain, etc.) |
+| **Premium watermark pack** | $5 | AI generates 10+ watermark options in premium styles |
+| **Full-resolution export** | $9 | Download all originals in a ZIP |
+| **White-label for Pros** | $49/month | Remove Event Cam branding; Pro's logo instead |
 
 ### Revenue Projections (Conservative)
 
@@ -208,9 +210,9 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 |--------|-------------------|-------------------|---------------------|
 | Weddings / month | 30 | 150 | 500 |
 | Avg guests / wedding | 120 | 130 | 140 |
-| Revenue / month | $3,600 | $19,500 | $70,000 |
-| Upsell revenue (est. 10%) | $360 | $1,950 | $7,000 |
-| **Total / month** | **$3,960** | **$21,450** | **$77,000** |
+| Revenue / month | $7,200 | $39,000 | $140,000 |
+| Upsell revenue (est. 10%) | $720 | $3,900 | $14,000 |
+| **Total / month** | **$7,920** | **$42,900** | **$154,000** |
 
 ---
 
@@ -232,7 +234,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 #### WeddingTok & Bridal Content Creators
 - The wedding planning niche on TikTok is enormous. Partner with creators who post wedding tips, DIY wedding content, and budget breakdowns.
-- "$1 per guest" is a great hook for budget-focused wedding content: "I spent $150 and got 2,000 photos from my guests — here's how."
+- "$2 per guest" is a great hook for budget-focused wedding content: "I spent $300 and got 2,000 photos from my guests — here's how."
 
 #### Product Hunt Launch
 - Lead with the AI watermark angle — it's novel and visual
@@ -240,7 +242,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 #### Community Engagement
 - **r/weddingplanning** (1.3M members) — Offer genuine advice, share the product when relevant
-- **r/Weddingsunder10k** — $1/guest is a perfect budget-friendly pitch
+- **r/Weddingsunder10k** — $2/guest is still a budget-friendly pitch ($300 for 150 guests vs. $500+ photo booth)
 - **The Knot / WeddingWire forums** — Engaged couples actively asking "how do I collect guest photos?"
 - **Facebook groups:** "Wedding Planning Tips & Ideas," "Budget Brides," local wedding planning groups
 - **Bridal shows / expos:** Physical presence where engaged couples are actively shopping for vendors
@@ -258,7 +260,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
   - Split-screen: "The group chat" (chaos, compressed images) vs. "The Event Cam album" (organized, watermarked, beautiful)
   - Watermark reveal: Show a plain photo, then the AI watermark fades in with the couple's names and date
   - Filter before/after: Same guest photo, raw vs. with a warm wedding filter
-  - Price anchor: "Your photographer costs $4,000. Your guest photos cost $1 each."
+  - Price anchor: "Your photographer costs $4,000. Your guest photos cost $2 each."
 - Retarget website visitors who started signup but didn't create an event
 
 #### Pinterest Ads
@@ -309,7 +311,7 @@ Even a conservative 2% conversion rate on guest-to-couple (guest eventually plan
 - Phase 2: ~4,992 new wedding customers/year
 - Phase 3: ~13,440 new wedding customers/year
 
-At $130 average revenue per wedding, Phase 3 guest email conversion alone = **$1.75M/year in revenue** from a channel that costs essentially nothing.
+At $260 average revenue per wedding ($2/guest × 130 avg guests), Phase 3 guest email conversion alone = **$3.5M/year in revenue** from a channel that costs essentially nothing.
 
 ### Email Capture UX
 
@@ -375,7 +377,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 ### Phase 0: Pre-Launch (Weeks 1–4)
 
-**Goal:** Build a waitlist of engaged couples and validate messaging around AI watermarks + $1/guest.
+**Goal:** Build a waitlist of engaged couples and validate messaging around AI watermarks + $2/guest.
 
 - [ ] Rework the landing page to be wedding-focused: hero image of a reception table with QR code, watermark showcase, filter preview
 - [ ] Add an email capture / waitlist with the hook: "Get early access — your first 10 guests are free"
@@ -457,7 +459,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 | Tuesday | TikTok | "POV: You're a wedding guest and you scan the QR code on the table..." |
 | Wednesday | Pinterest | Wedding table setup with QR codes — aesthetic flat lay / reception shots |
 | Thursday | Instagram Reels | Filter before/after — same guest photo, raw vs. filtered |
-| Friday | TikTok | Budget wedding tips: "$1 per guest for every photo from your wedding" |
+| Friday | TikTok | Budget wedding tips: "$2 per guest for every photo from your wedding" |
 | Saturday | Instagram Stories | Real couple testimonial / album preview (with permission) |
 | Sunday | Pinterest | "X ways to collect wedding photos" pin carousel |
 
@@ -465,7 +467,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 1. **"The QR Scan"** — Film a guest at a real wedding scanning the QR, uploading a photo, done in 10 seconds. Add text: "No app. No account. Just scan."
 2. **"The Watermark Reveal"** — Show a plain wedding photo, then the AI watermark fades in with the couple's names. Satisfying visual moment.
-3. **"$1 vs. $30"** — Side by side: disposable camera on a table ($30 per table) vs. Event Cam QR card ($1 per guest). Show the quality difference.
+3. **"$2 vs. $30"** — Side by side: disposable camera on a table ($30 per table) vs. Event Cam QR card ($2 per guest). Show the quality difference.
 4. **"The Morning After"** — Couple wakes up the day after the wedding, opens Event Cam, and scrolls through 1,500 guest photos they've never seen. Emotional.
 5. **"Filter Glow-Up"** — Grid of raw guest phone photos → apply a warm wedding filter → instant cohesive album.
 
@@ -542,13 +544,13 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 | Metric | Target |
 |--------|--------|
-| Customer Acquisition Cost (CAC) — paid channels | < $20 |
+| Customer Acquisition Cost (CAC) — paid channels | < $30 |
 | Customer Acquisition Cost (CAC) — guest email flywheel | ~$0 (organic conversion from guest list) |
-| Blended CAC (as flywheel matures) | < $10 |
-| Average Revenue Per Wedding | $120–$150 (120–150 guests at $1/each) |
-| Average Revenue Per Wedding + Upsell | $140–$180 |
-| Gross margin | > 80% (Supabase + AI watermark generation costs are low) |
-| LTV:CAC ratio (paid) | > 6:1 |
+| Blended CAC (as flywheel matures) | < $15 |
+| Average Revenue Per Wedding | $240–$300 (120–150 guests at $2/each) |
+| Average Revenue Per Wedding + Upsell | $280–$350 |
+| Gross margin | > 85% (Supabase + AI watermark generation costs are low; higher price = better margin) |
+| LTV:CAC ratio (paid) | > 8:1 |
 | LTV:CAC ratio (guest email) | Effectively infinite (zero acquisition cost) |
 | Payback period | Immediate (first wedding covers CAC many times over) |
 | Guest emails captured per $1 spent on marketing | 10+ (by Phase 2) |
@@ -608,7 +610,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 ### Budget Context
 
-At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/month in revenue. Even at the high end of the budget ($15,100), marketing spend is 58% of revenue — aggressive but typical for a growth-stage consumer product. As organic channels compound and referrals kick in, paid spend as a % of revenue should drop to 30–40% by month 8.
+At Phase 2 targets of 200 weddings/month averaging $260/wedding ($2 × 130 guests), that's $52,000/month in revenue. Even at the high end of the budget ($15,600), marketing spend is 30% of revenue — healthy for a growth-stage consumer product. As organic channels compound and referrals kick in, paid spend as a % of revenue should drop to 15–25% by month 8.
 
 ---
 
@@ -621,8 +623,7 @@ At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/
 | **Wedding seasonality** | Medium — revenue heavily concentrated in May–October | High | Target destination/winter weddings in off-season; expand into engagement parties, bridal showers, anniversaries; launch corporate event push in Q4 |
 | **Privacy concerns** | High — collecting photos involves consent | Medium | Mandatory consent screen before upload (already built); clear privacy policy; GDPR compliance for international weddings |
 | **Competitor copies AI watermark feature** | Medium — AI features are easy to replicate | Medium | Build brand loyalty fast; invest in watermark quality and variety; layer on additional AI features (slideshow, auto-curation); build planner/photographer network effects |
-| **$1/guest feels "too cheap"** | Low — some couples may question quality at a low price | Low | Frame as premium but accessible; show watermark/filter quality upfront; "premium features, transparent pricing" messaging |
-| **$1/guest feels "too expensive" for small weddings** | Low — a 30-person wedding is only $30 | Low | $20 minimum already covers this; free tier for 10 guests lets them try first |
+| **$2/guest feels expensive for small weddings** | Low — a 25-person dinner is $49 (minimum) | Low | $49 minimum positions the product as premium; free tier for 10 guests lets them try first; $49 is still cheaper than almost any wedding vendor |
 | **AI compute costs spike** | Medium — image generation costs could erode margins | Low | Cache watermark designs (one generation per wedding, applied to all photos); use efficient models; watermark is a one-time generation, not per-photo AI |
 | **Storage costs at scale (video-heavy uploads)** | Low — margins compress if guests upload lots of video | Medium | Set per-event storage caps (e.g., 10GB included); compress/transcode uploads; offer extended storage as paid add-on |
 | **Guest email spam perception** | Medium — guests feel spammed after uploading at a wedding | Medium | Keep nurture emails infrequent (max 1/month); always lead with value (album link, photos); prominent unsubscribe; never sell the list to third parties |
@@ -633,10 +634,10 @@ At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/
 
 ## Summary: First 30 Days Checklist
 
-1. Implement $1/guest pricing in Stripe checkout (replace tiered model)
+1. Implement $2/guest pricing in Stripe checkout ($49 minimum)
 2. Build AI watermark generation feature — couple inputs names/date/style, AI generates watermark options
 3. Build filter system — at least 5 wedding-friendly presets (warm, film, bright & airy, moody, classic)
-4. Rework landing page: wedding-focused hero, watermark showcase, filter preview, "$1 per guest" pricing
+4. Rework landing page: wedding-focused hero, watermark showcase, filter preview, "$2 per guest" pricing
 5. Add free tier: 10 guests, full features including watermark and filters
 6. Record a 30-second demo video with watermark reveal moment
 7. Write and publish 3 wedding-focused SEO blog posts
