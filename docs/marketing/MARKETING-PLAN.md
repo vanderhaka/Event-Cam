@@ -247,6 +247,30 @@ Do NOT include in public messaging this quarter:
 
 ## 6. Go-to-Market Channels
 
+### Active Channels This Quarter
+
+These are the channels we're actively testing now. Everything else in this section is documented for future use but **not in focus this quarter**.
+
+| # | Channel | Hypothesis | KPI | Pass (scale up) | Kill (stop) | Window |
+|---|---------|-----------|-----|-----------------|-------------|--------|
+| 1 | **Pro outreach** | Photographers/planners will sign up and bring paying clients | Pro signups → first client event | 5+ Pros active with client events | <3 Pros convert after 50+ outreach attempts | 6 weeks |
+| 2 | **Organic social** (Instagram/TikTok/Reels/YouTube Shorts) | Wedding content drives site visits and signups | Profile visits → site clicks → signups | Consistent signup trickle (5+/week) | <5 signups/month after 8 weeks of posting | 8 weeks |
+| 3 | **Reddit & online communities** (r/weddingplanning, Facebook groups, The Knot) | Genuine helpful posts convert lurkers into signups | Post engagement → site visits → signups | 2+ paying events/month from community posts | Zero conversions after 20+ genuine posts | 6 weeks |
+| 4 | **Guest email flywheel** | Wedding guests become future customers | Guest email capture rate → future event creation | 1%+ of captured guests create their own event within 6 months | <0.3% conversion after 6 months of data | 6 months |
+
+**Maybe / testing:**
+
+| # | Channel | Hypothesis | KPI | Pass (scale up) | Kill (stop) | Window |
+|---|---------|-----------|-----|-----------------|-------------|--------|
+| 5 | **WeddingTok creators** | Creator mentions drive awareness and signups | Views → site visits → signups per creator | 10+ signups from a single partnership | <3 signups per partnership after testing 3 creators | 4 weeks/test |
+| 6 | **Pro-to-Pro referrals** | Pros naturally refer other Pros when they like the product | Pro referrals → new Pro signups → client events | 20%+ of Pros refer at least 1 other Pro | <5% referral rate after 3 months | 3 months |
+
+**Not in focus this quarter** (documented below for future phases): SEO/blog, Pinterest organic, Product Hunt, Google Ads, Meta Ads, Pinterest Ads, micro-influencer partnerships, bridal shows, venue partnerships, couple referral program.
+
+---
+
+### Channel Details
+
 ### Organic / Low-Cost Channels
 
 #### SEO & Content Marketing

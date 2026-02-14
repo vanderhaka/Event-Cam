@@ -183,7 +183,7 @@ Use this to resolve the highest-risk questions quickly.
 | P0-4 | Primary loop: Pro network (photographers, planners bring clients). Secondary loop: Guest email engagement (guests become future customers). Details to be refined. |  | 2026-02-14 | MARKETING-PLAN.md | Closed |
 | P0-5 | Lead with emotional hooks (loss/fear of missing photos), not features. 14 headline candidates selected. Supporting paragraph: "Put a code on every table..." No AI/watermarks in headlines — discovery features only. See MARKETING-PLAN.md Section 3. |  | 2026-02-14 | MARKETING-PLAN.md | Closed |
 | P0-6 | Light touch — not aggressive with email marketing. Lower priority for now. |  | 2026-02-14 |  | Closed |
-| P1-7 |  |  |  |  | Open |
+| P1-7 | Active: Pro outreach, organic social (IG/TikTok/Reels/Shorts), Reddit & communities, guest email flywheel. Maybe: WeddingTok creators, Pro-to-Pro referrals. All other channels not in focus this quarter. Kill criteria defined per channel — see MARKETING-PLAN.md Section 6. |  | 2026-02-14 | MARKETING-PLAN.md | Closed |
 | P1-8 |  |  |  |  | Open |
 | P1-9 |  |  |  |  | Open |
 | P1-10 |  |  |  |  | Open |
