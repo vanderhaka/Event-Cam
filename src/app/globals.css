@@ -347,6 +347,38 @@ textarea.input {
   gap: 1rem;
 }
 
+.event-type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event-type-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+}
+
+.event-type-option:hover {
+  border-color: var(--primary, #3b82f6);
+  background: var(--surface-hover, #f8fafc);
+}
+
+.event-type-option input {
+  margin-top: 0.25rem;
+}
+
+.event-type-label {
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
 /* ─── Centered auth form ─── */
 .auth-wrapper {
   max-width: 440px;
@@ -634,6 +666,18 @@ textarea.input {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.invitee-edit-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.invitee-edit-row .field {
+  margin-bottom: 0;
 }
 
 /* ─── QR modal ─── */

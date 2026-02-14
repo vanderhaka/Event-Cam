@@ -11,6 +11,7 @@ async function readEvent(eventId: string, userId: string) {
     .from('invitees')
     .select('id, display_name, email, phone_e164, group_tag, qr_state, qr_token, is_active, created_at')
     .eq('event_id', eventId)
+    .eq('is_active', true)
     .order('created_at', { ascending: false });
 
   if (inviteeError) {
@@ -26,7 +27,8 @@ async function readEvent(eventId: string, userId: string) {
   const { count: inviteCount, error: inviteCountError } = await admin
     .from('invitees')
     .select('id', { count: 'exact', head: true })
-    .eq('event_id', eventId);
+    .eq('event_id', eventId)
+    .eq('is_active', true);
 
   if (inviteCountError) {
     throw new ApiError('Unable to count invitees', 400);

@@ -52,6 +52,11 @@ export default function EventDetailPage() {
   const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
   const [baseOrigin, setBaseOrigin] = useState('');
   const [qrModalInvitee, setQrModalInvitee] = useState<any>(null);
+  const [editingInviteeId, setEditingInviteeId] = useState<string | null>(null);
+  const [editDisplayName, setEditDisplayName] = useState('');
+  const [editPhone, setEditPhone] = useState('');
+  const [inviteeOnboardingStep, setInviteeOnboardingStep] = useState<'step1' | 'step2' | null>(null);
+
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
   }, []);
@@ -138,6 +143,8 @@ export default function EventDetailPage() {
       return;
     }
 
+    const prevInviteeCount = eventPayload?.invitees?.length ?? 0;
+
     const response = await fetchWithAuth(`/api/events/${eventId}/invitees`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -145,9 +152,14 @@ export default function EventDetailPage() {
     });
 
     if (response.ok) {
+      const payload = await response.json();
+      const addedCount = payload.invitees?.length ?? 0;
       setInviteeRows([{ firstName: '', lastName: '', phone: '' }]);
       showStatus('Invitees added successfully', 'success');
       await loadData();
+      if (prevInviteeCount === 0 && addedCount > 0 && typeof window !== 'undefined' && !sessionStorage.getItem(`event-cam-invitee-onboarding-${eventId}`)) {
+        setInviteeOnboardingStep('step1');
+      }
     } else {
       const payload = await response.json();
       showStatus(payload.message || 'Could not add invitees', 'error');
@@ -176,6 +188,53 @@ export default function EventDetailPage() {
       await loadData();
     } else {
       showStatus(payload.message || 'Publish failed', 'error');
+    }
+  }
+
+  function startEditInvitee(invitee: { id: string; display_name: string; phone_e164?: string | null }) {
+    setEditingInviteeId(invitee.id);
+    setEditDisplayName(invitee.display_name ?? '');
+    setEditPhone(invitee.phone_e164 ?? '');
+  }
+
+  function cancelEditInvitee() {
+    setEditingInviteeId(null);
+    setEditDisplayName('');
+    setEditPhone('');
+  }
+
+  async function saveEditInvitee(inviteeId: string) {
+    const name = editDisplayName.trim();
+    if (!name) {
+      showStatus('Name is required', 'error');
+      return;
+    }
+    const response = await fetchWithAuth(`/api/events/${eventId}/invitees/${inviteeId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ displayName: name, phone: editPhone.trim() || null }),
+    });
+    if (response.ok) {
+      showStatus('Guest updated', 'success');
+      setEditingInviteeId(null);
+      await loadData();
+    } else {
+      const payload = await response.json();
+      showStatus(payload.message || 'Update failed', 'error');
+    }
+  }
+
+  async function removeInvitee(invitee: { id: string; display_name: string }) {
+    if (!window.confirm(`Remove "${invitee.display_name}" from the guest list? They can no longer be sent a QR code.`)) {
+      return;
+    }
+    const response = await fetchWithAuth(`/api/events/${eventId}/invitees/${invitee.id}`, { method: 'DELETE' });
+    if (response.ok) {
+      showStatus('Guest removed', 'success');
+      await loadData();
+    } else {
+      const payload = await response.json();
+      showStatus(payload.message || 'Remove failed', 'error');
     }
   }
 
@@ -297,6 +356,11 @@ export default function EventDetailPage() {
               >
                 {eventPayload.event?.status}
               </span>
+              {(eventPayload.event?.event_type === 'open') && (
+                <span className="status-chip" style={{ marginLeft: '0.5rem', background: 'var(--surface-soft)', color: 'var(--muted)' }}>
+                  Open event
+                </span>
+              )}
               <p className="muted" style={{ margin: '0.4rem 0 0', fontSize: '0.88rem' }}>
                 {readableDate(eventPayload.event?.start_at)} &mdash; {readableDate(eventPayload.event?.end_at)}
               </p>
@@ -305,10 +369,20 @@ export default function EventDetailPage() {
               )}
             </div>
             <div className="row" style={{ gap: '0.5rem' }}>
-              <button className="btn btn-subtle btn-sm" onClick={checkout}>
+              <button
+                type="button"
+                className="btn btn-subtle btn-sm"
+                onClick={checkout}
+                disabled={eventPayload.event?.status === 'paid' || eventPayload.event?.status === 'published'}
+              >
                 Checkout
               </button>
-              <button className="btn btn-success btn-sm" onClick={publishEvent}>
+              <button
+                type="button"
+                className="btn btn-success btn-sm"
+                onClick={publishEvent}
+                disabled={eventPayload.event?.status !== 'paid'}
+              >
                 Publish QR Codes
               </button>
             </div>
@@ -326,7 +400,7 @@ export default function EventDetailPage() {
       {/* Tab navigation */}
       <div className="row-center" style={{ gap: '0.25rem', background: 'var(--surface-soft)', padding: '0.3rem', borderRadius: '12px', width: 'fit-content' }}>
         <button style={tabStyle('invitees')} onClick={() => setActiveTab('invitees')}>
-          Invitees ({eventPayload.invitees?.length ?? 0})
+          {eventPayload.event?.event_type === 'open' ? 'Event QR' : `Invitees (${eventPayload.invitees?.length ?? 0})`}
         </button>
         <button style={tabStyle('moderation')} onClick={() => setActiveTab('moderation')}>
           Moderation ({pendingQueue.length})
@@ -336,9 +410,80 @@ export default function EventDetailPage() {
         </button>
       </div>
 
-      {/* ─── Invitees Tab ─── */}
+      {/* ─── Invitees / Event QR Tab ─── */}
       {activeTab === 'invitees' && (
         <>
+          {eventPayload.event?.event_type === 'open' ? (
+            <section className="card">
+              <h3 className="section-head">Open event — one QR for everyone</h3>
+              <p className="section-sub">
+                Anyone who scans this event&apos;s QR code can upload photos and videos. No guest list needed. Checkout to pay, then publish to get your event QR.
+              </p>
+              {eventPayload.invitees && eventPayload.invitees.length > 0 ? (
+                <div className="open-event-qr">
+                  <p className="section-sub">Your event QR is ready. Share it at the venue or in your event materials.</p>
+                  <ul className="invitee-list">
+                    {eventPayload.invitees.map((invitee: any) => (
+                      <li key={invitee.id} className="invitee-item">
+                        {editingInviteeId === invitee.id ? (
+                          <div className="invitee-edit-row">
+                            <label className="field" style={{ flex: 1, minWidth: 0 }}>
+                              <span className="label">Label</span>
+                              <input
+                                className="input"
+                                value={editDisplayName}
+                                onChange={(e) => setEditDisplayName(e.target.value)}
+                                placeholder="e.g. Event guests"
+                              />
+                            </label>
+                            <div className="row" style={{ gap: '0.5rem', flexShrink: 0 }}>
+                              <button type="button" className="btn btn-primary btn-sm" onClick={() => saveEditInvitee(invitee.id)}>
+                                Save
+                              </button>
+                              <button type="button" className="btn btn-subtle btn-sm" onClick={cancelEditInvitee}>
+                                Cancel
+                              </button>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            <div>
+                              <span className="invitee-name">{invitee.display_name}</span>
+                            </div>
+                            <div className="invitee-item-actions">
+                              <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
+                                {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
+                              </span>
+                              <button type="button" className="btn btn-subtle btn-sm" onClick={() => startEditInvitee(invitee)} aria-label="Edit label">
+                                Edit
+                              </button>
+                              {invitee.qr_state === 'issued' && invitee.qr_token && (
+                                <button
+                                  type="button"
+                                  className="btn btn-subtle btn-sm"
+                                  onClick={() => setQrModalInvitee(invitee)}
+                                >
+                                  Show QR
+                                </button>
+                              )}
+                            </div>
+                          </>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <>
+                  <p className="section-sub">When you&apos;re ready, pay for your event QR, then publish to get your shareable link.</p>
+                  <button type="button" className="btn btn-primary" onClick={checkout}>
+                    I&apos;ve finished — proceed to checkout
+                  </button>
+                </>
+              )}
+            </section>
+          ) : (
+            <>
           <section className="card">
             <h3 className="section-head">Add invitees</h3>
             <p className="section-sub">Add the people you want to invite. They will each get a unique QR code after publishing.</p>
@@ -401,34 +546,110 @@ export default function EventDetailPage() {
             </form>
           </section>
 
+          {eventPayload.event?.event_type !== 'open' &&
+            eventPayload.invitees &&
+            eventPayload.invitees.length > 0 &&
+            eventPayload.event?.status !== 'published' && (
+            <section className="card next-step-card" style={{ borderLeft: '4px solid var(--accent, #3b82f6)' }}>
+              <h3 className="section-head" style={{ marginBottom: '0.25rem' }}>Next step</h3>
+              {eventPayload.event?.status !== 'paid' ? (
+                <>
+                  <p className="section-sub">
+                    I&apos;ve finished adding guests. Proceed to checkout to pay for your invites, then publish to get QR codes for everyone.
+                  </p>
+                  <button type="button" className="btn btn-primary" onClick={checkout}>
+                    I&apos;ve finished — proceed to checkout
+                  </button>
+                </>
+              ) : eventPayload.event?.status === 'paid' ? (
+                <>
+                  <p className="section-sub">Payment complete. Publish to issue unique QR codes for each guest.</p>
+                  <button type="button" className="btn btn-success" onClick={publishEvent}>
+                    Publish QR Codes
+                  </button>
+                </>
+              ) : null}
+            </section>
+          )}
+
           {eventPayload.invitees && eventPayload.invitees.length > 0 && (
             <section className="card">
               <h3 className="section-head">Guest list</h3>
               <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Click &quot;Show QR&quot; to see the scan link and QR code.</p>
+              <p className="muted" style={{ fontSize: '0.875rem', marginTop: '-0.5rem', marginBottom: '0.75rem' }}>
+                <strong>Pending</strong> = added but QR not issued yet. Checkout, then Publish QR Codes to get shareable links.
+              </p>
               <ul className="invitee-list">
                 {eventPayload.invitees.map((invitee: any) => (
                   <li key={invitee.id} className="invitee-item">
-                    <div>
-                      <span className="invitee-name">{invitee.display_name}</span>
-                    </div>
-                    <div className="invitee-item-actions">
-                      <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
-                        {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
-                      </span>
-                      {invitee.qr_state === 'issued' && invitee.qr_token && (
-                        <button
-                          type="button"
-                          className="btn btn-subtle btn-sm"
-                          onClick={() => setQrModalInvitee(invitee)}
-                        >
-                          Show QR
-                        </button>
-                      )}
-                    </div>
+                    {editingInviteeId === invitee.id ? (
+                      <div className="invitee-edit-row">
+                        <label className="field" style={{ flex: 1, minWidth: 0 }}>
+                          <span className="label">Name</span>
+                          <input
+                            className="input"
+                            value={editDisplayName}
+                            onChange={(e) => setEditDisplayName(e.target.value)}
+                            placeholder="Display name"
+                          />
+                        </label>
+                        <label className="field" style={{ flex: 1, minWidth: 0 }}>
+                          <span className="label">Phone</span>
+                          <input
+                            className="input"
+                            type="tel"
+                            value={editPhone}
+                            onChange={(e) => setEditPhone(e.target.value)}
+                            placeholder="+1 555 000 0000"
+                          />
+                        </label>
+                        <div className="row" style={{ gap: '0.5rem', flexShrink: 0 }}>
+                          <button type="button" className="btn btn-primary btn-sm" onClick={() => saveEditInvitee(invitee.id)}>
+                            Save
+                          </button>
+                          <button type="button" className="btn btn-subtle btn-sm" onClick={cancelEditInvitee}>
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div>
+                          <span className="invitee-name">{invitee.display_name}</span>
+                          {invitee.phone_e164 && (
+                            <span className="muted" style={{ fontSize: '0.85rem', marginLeft: '0.5rem' }}>{invitee.phone_e164}</span>
+                          )}
+                        </div>
+                        <div className="invitee-item-actions">
+                          <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
+                            {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
+                          </span>
+                          <button type="button" className="btn btn-subtle btn-sm" onClick={() => startEditInvitee(invitee)} aria-label="Edit guest">
+                            Edit
+                          </button>
+                          {eventPayload.event?.event_type !== 'open' && (
+                            <button type="button" className="btn btn-danger btn-sm" onClick={() => removeInvitee(invitee)} aria-label="Remove guest">
+                              Remove
+                            </button>
+                          )}
+                          {invitee.qr_state === 'issued' && invitee.qr_token && (
+                            <button
+                              type="button"
+                              className="btn btn-subtle btn-sm"
+                              onClick={() => setQrModalInvitee(invitee)}
+                            >
+                              Show QR
+                            </button>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
             </section>
+          )}
+            </>
           )}
 
           {/* QR modal */}
@@ -463,6 +684,82 @@ export default function EventDetailPage() {
               </div>
             );
           })()}
+
+          {/* Invitee onboarding modal (after first guest added) */}
+          {inviteeOnboardingStep && (
+            <div
+              className="modal-backdrop"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="onboarding-modal-title"
+              onClick={() => {
+                setInviteeOnboardingStep(null);
+                if (typeof window !== 'undefined') {
+                  sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
+                }
+              }}
+            >
+              <div className="modal-card onboarding-modal" onClick={(e) => e.stopPropagation()}>
+                <div className="modal-header">
+                  <h3 id="onboarding-modal-title" className="modal-title">
+                    {inviteeOnboardingStep === 'step1' ? 'Once you\'re done adding guests' : 'One more thing'}
+                  </h3>
+                  <button
+                    type="button"
+                    className="modal-close"
+                    onClick={() => {
+                      setInviteeOnboardingStep(null);
+                      if (typeof window !== 'undefined') {
+                        sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
+                      }
+                    }}
+                    aria-label="Close"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div className="modal-body">
+                  {inviteeOnboardingStep === 'step1' ? (
+                    <>
+                      <p className="section-sub" style={{ marginBottom: '1rem' }}>
+                        Here&apos;s how you get QR codes for everyone:
+                      </p>
+                      <ol className="onboarding-steps" style={{ margin: '0 0 1.25rem', paddingLeft: '1.25rem' }}>
+                        <li style={{ marginBottom: '0.5rem' }}>Click <strong>I&apos;ve finished — proceed to checkout</strong> to pay for your invites.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>After payment, click <strong>Publish QR Codes</strong> to generate a unique QR code for each guest.</li>
+                      </ol>
+                      <p className="muted" style={{ fontSize: '0.9rem' }}>
+                        You&apos;ll find both buttons in the &quot;Next step&quot; card above your guest list.
+                      </p>
+                      <div className="modal-actions" style={{ marginTop: '1.25rem' }}>
+                        <button type="button" className="btn btn-primary" onClick={() => setInviteeOnboardingStep('step2')}>
+                          Next
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <p className="section-sub" style={{ marginBottom: '1.25rem' }}>
+                        You can always come back and add more guests later — before or after checkout. Just save them here and, if you&apos;ve already published, you&apos;ll need to publish again to get new QR codes.
+                      </p>
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => {
+                          setInviteeOnboardingStep(null);
+                          if (typeof window !== 'undefined') {
+                            sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
+                          }
+                        }}
+                      >
+                        Got it
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </>
       )}
 

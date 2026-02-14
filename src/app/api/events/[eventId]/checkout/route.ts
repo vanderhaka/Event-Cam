@@ -11,20 +11,28 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
     const body = await parseJsonBody(request);
 
     const admin = createSupabaseAdminClient();
+    const isOpenEvent = event.event_type === 'open';
+
     const {
       count: inviteCount,
       error: inviteCountError,
     } = await admin
       .from('invitees')
       .select('id', { count: 'exact', head: true })
-      .eq('event_id', context.params.eventId);
+      .eq('event_id', context.params.eventId)
+      .eq('is_active', true);
 
     if (inviteCountError) {
       return jsonResponse({ message: inviteCountError.message }, { status: 400 });
     }
 
-    if (!inviteCount || inviteCount <= 0) {
-      return jsonResponse({ message: 'No invitees to bill for this event yet' }, { status: 400 });
+    const billableQuantity = isOpenEvent ? 1 : (inviteCount ?? 0);
+    if (billableQuantity <= 0) {
+      return jsonResponse({
+        message: isOpenEvent
+          ? 'Open events require checkout before publishing.'
+          : 'Add at least one invitee before checkout.',
+      }, { status: 400 });
     }
 
     const feePerInvite = Number(body.feePerInviteCents ?? event.fee_per_invite_cents ?? 0);
@@ -43,10 +51,12 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
             currency,
             unit_amount: lineItemAmount,
             product_data: {
-              name: `${event.name} - Event Invite Access`,
+              name: isOpenEvent
+                ? `${event.name} - Open Event QR`
+                : `${event.name} - Event Invite Access`,
             },
           },
-          quantity: inviteCount,
+          quantity: billableQuantity,
         },
       ],
       success_url: `${origin}/dashboard/events/${event.id}?checkout=success`,
@@ -61,7 +71,7 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
       return jsonResponse({ message: 'Unable to create checkout session' }, { status: 400 });
     }
 
-    const total = lineItemAmount * inviteCount;
+    const total = lineItemAmount * billableQuantity;
     await admin
       .from('billing_records')
       .upsert(
@@ -81,7 +91,7 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
     return jsonResponse({
       checkoutUrl: stripeSession.url,
       checkoutSessionId: stripeSession.id,
-      invites: inviteCount,
+      invites: billableQuantity,
       total,
     });
   } catch (error) {

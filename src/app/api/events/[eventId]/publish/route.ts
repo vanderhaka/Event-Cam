@@ -29,12 +29,31 @@ export async function POST(_: Request, context: { params: { eventId: string } })
       return jsonResponse({ message: inviteeError.message }, { status: 400 });
     }
 
-    if (!allInvitees || allInvitees.length === 0) {
-      return jsonResponse({ message: 'No invitees on this event', code: 'NO_INVITEES' }, { status: 400 });
-    }
+    const isOpenEvent = event.event_type === 'open';
+    let invitees = (allInvitees ?? []).filter((invitee) => invitee.is_active);
 
-    const invitees = allInvitees.filter((invitee) => invitee.is_active);
-    if (invitees.length === 0) {
+    if (isOpenEvent && (!allInvitees || allInvitees.length === 0)) {
+      const openEventToken = randomToken();
+      const { data: newInvitee, error: insertError } = await admin
+        .from('invitees')
+        .insert({
+          event_id: event.id,
+          display_name: 'Event guests',
+          qr_token: openEventToken,
+          qr_state: 'issued',
+          is_active: true,
+          created_by_host: userId,
+        })
+        .select('id, display_name, qr_token, is_active')
+        .single();
+
+      if (insertError || !newInvitee) {
+        return jsonResponse({ message: insertError?.message ?? 'Failed to create open event invitee' }, { status: 400 });
+      }
+      invitees = [newInvitee];
+    } else if (!allInvitees || allInvitees.length === 0) {
+      return jsonResponse({ message: 'No invitees on this event', code: 'NO_INVITEES' }, { status: 400 });
+    } else if (invitees.length === 0) {
       return jsonResponse(
         {
           message: 'No active invitees on this event. Add invitees and keep them active before publishing.',

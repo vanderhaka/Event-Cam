@@ -9,7 +9,7 @@ export async function GET() {
 
   const { data, error } = await admin
     .from('events')
-    .select('id, name, start_at, end_at, status, is_published, fee_per_invite_cents')
+    .select('id, name, start_at, end_at, status, is_published, event_type, fee_per_invite_cents')
     .eq('host_id', userId)
     .order('created_at', { ascending: false });
 
@@ -51,6 +51,8 @@ export async function POST(request: NextRequest) {
     const feePerInviteCents = Number(body.feePerInviteCents ?? body.fee_per_invite_cents ?? defaultFeeCents);
     const maxStartWindowMinutes = Number(body.maxStartWindowMinutes ?? body.max_start_window_minutes ?? 0);
     const timezone = String(body.location ?? body.timezone ?? 'UTC').trim() || 'UTC';
+    const eventType = String(body.eventType ?? body.event_type ?? 'invite_list').toLowerCase();
+    const validEventType = eventType === 'open' ? 'open' : 'invite_list';
 
     const brandName = body.brandName ?? body.brand_name ?? null;
     const brandLogoUrl = body.brandLogoUrl ?? body.brand_logo_url ?? null;
@@ -77,6 +79,7 @@ export async function POST(request: NextRequest) {
         brand_primary_color: brandPrimaryColor,
         brand_secondary_color: brandSecondaryColor,
         custom_domain: customDomain,
+        event_type: validEventType,
         status: 'draft',
       })
       .select('*')

@@ -110,6 +110,7 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
         name: event.name,
         startAt: event.start_at,
         endAt: event.end_at,
+        eventType: event.event_type ?? 'invite_list',
       },
       invitee: {
         id: invitee.id,

@@ -181,7 +181,9 @@ export default function ScanPage() {
       <section className="card">
         <h2 className="section-head">{info.event.name}</h2>
         <p className="section-sub">
-          Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. The host will review them before adding to the event album.
+          {info.event.eventType === 'open'
+            ? 'Upload your photos and videos below. The host will review them before adding to the event album.'
+            : <>Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. The host will review them before adding to the event album.</>}
         </p>
 
         <form onSubmit={submit} className="form-grid">

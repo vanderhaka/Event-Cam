@@ -107,6 +107,8 @@ export default function DashboardPage() {
   const [detectingLocation, setDetectingLocation] = useState(false);
   const [startAt, setStartAt] = useState(toIsoLocal(new Date()));
   const [endAt, setEndAt] = useState(toIsoLocal(new Date(Date.now() + 24 * 60 * 60 * 1000)));
+  const [eventType, setEventType] = useState<'invite_list' | 'open'>('invite_list');
+
   async function buildAuthHeaders(extra: HeadersInit = {}) {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
@@ -193,6 +195,7 @@ export default function DashboardPage() {
         name,
         location,
         timezone,
+        eventType,
         startAt: new Date(startAt).toISOString(),
         endAt: new Date(endAt).toISOString(),
       }),
@@ -243,23 +246,46 @@ export default function DashboardPage() {
               <div className="label">Event name</div>
               <input className="input" value={name} onChange={(e) => setName(e.target.value)} required placeholder="e.g. Sarah & Tom's Wedding" />
             </label>
-            <div className="row">
-              <label className="stack field">
-                <div className="label">Location</div>
-                <input
-                  className="input"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  placeholder={detectingLocation ? 'Detecting location...' : 'e.g. Sydney, Australia'}
-                  disabled={detectingLocation}
-                />
-                <span className="tz-hint">{timezone}</span>
-              </label>
-              <label className="stack field">
-                <div className="label">Fee per invite <span className="label-hint">(cents)</span></div>
-                <input className="input" value={feePerInviteCents} onChange={(e) => setFeePerInviteCents(e.target.value)} required type="number" min="0" />
-              </label>
+            <div className="stack field">
+              <div className="label">Event type</div>
+              <div className="event-type-options" role="radiogroup" aria-label="Event type">
+                <label className="event-type-option">
+                  <input
+                    type="radio"
+                    name="eventType"
+                    value="invite_list"
+                    checked={eventType === 'invite_list'}
+                    onChange={() => setEventType('invite_list')}
+                  />
+                  <span className="event-type-label">
+                    <strong>Known guest list</strong> — Add invitees; each gets a unique QR code.
+                  </span>
+                </label>
+                <label className="event-type-option">
+                  <input
+                    type="radio"
+                    name="eventType"
+                    value="open"
+                    checked={eventType === 'open'}
+                    onChange={() => setEventType('open')}
+                  />
+                  <span className="event-type-label">
+                    <strong>Open event</strong> — One QR for the event; anyone can scan and upload.
+                  </span>
+                </label>
+              </div>
             </div>
+            <label>
+              <div className="label">Location</div>
+              <input
+                className="input"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder={detectingLocation ? 'Detecting location...' : 'e.g. Sydney, Australia'}
+                disabled={detectingLocation}
+              />
+              <span className="tz-hint">{timezone}</span>
+            </label>
             <div className="row">
               <div className="stack field">
                 <div className="label">Starts</div>
@@ -311,6 +337,11 @@ export default function DashboardPage() {
                   <span className={`status-chip ${evt.status === 'checkout_pending' ? 'pending' : evt.status}`} style={{ marginLeft: '0.5rem' }}>
                     {evt.status}
                   </span>
+                  {evt.event_type === 'open' && (
+                    <span className="status-chip" style={{ marginLeft: '0.5rem', background: 'var(--surface-soft)', color: 'var(--muted)', fontSize: '0.75rem' }}>
+                      Open
+                    </span>
+                  )}
                 </div>
                 <div className="event-card-date">
                   {readableDate(evt.start_at)} &mdash; {readableDate(evt.end_at)}

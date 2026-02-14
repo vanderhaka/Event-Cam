@@ -18,6 +18,7 @@ create table if not exists public.events (
   retention_policy text not null default 'manual',
   status text not null default 'draft' check (status in ('draft', 'checkout_pending', 'paid', 'published', 'archived')),
   is_published boolean not null default false,
+  event_type text not null default 'invite_list' check (event_type in ('invite_list', 'open')),
   fee_per_invite_cents integer not null default 500,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
