@@ -50,6 +50,10 @@ export default function EventDetailPage() {
   const [selectedMediaIds, setSelectedMediaIds] = useState<Set<string>>(new Set());
   const [sharePassword, setSharePassword] = useState('');
   const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
+  const [baseOrigin, setBaseOrigin] = useState('');
+  useEffect(() => {
+    setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
+  }, []);
 
   async function buildAuthHeaders(extra: HeadersInit = {}) {
     const { data } = await supabase.auth.getSession();
@@ -399,18 +403,45 @@ export default function EventDetailPage() {
           {eventPayload.invitees && eventPayload.invitees.length > 0 && (
             <section className="card">
               <h3 className="section-head">Guest list</h3>
-              <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}</p>
+              <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Open a guest&apos;s scan link or scan their QR to test uploads.</p>
               <ul className="invitee-list">
-                {eventPayload.invitees.map((invitee: any) => (
-                  <li key={invitee.id} className="invitee-item">
-                    <div>
-                      <span className="invitee-name">{invitee.display_name}</span>
-                    </div>
-                    <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
-                      {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
-                    </span>
-                  </li>
-                ))}
+                {eventPayload.invitees.map((invitee: any) => {
+                  const scanUrl = invitee.qr_token && baseOrigin
+                    ? `${baseOrigin}/scan/${encodeURIComponent(invitee.qr_token)}`
+                    : '';
+                  const qrImageUrl = scanUrl
+                    ? `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(scanUrl)}`
+                    : '';
+                  return (
+                    <li key={invitee.id} className="invitee-item invitee-item-with-qr">
+                      <div className="invitee-item-head">
+                        <div>
+                          <span className="invitee-name">{invitee.display_name}</span>
+                        </div>
+                        <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
+                          {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
+                        </span>
+                      </div>
+                      {invitee.qr_state === 'issued' && qrImageUrl && (
+                        <div className="invitee-qr-row">
+                          <img
+                            src={qrImageUrl}
+                            alt={`QR code for ${invitee.display_name}`}
+                            width={200}
+                            height={200}
+                            className="invitee-qr-image"
+                          />
+                          <div className="invitee-qr-actions">
+                            <a href={scanUrl} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+                              Open scan page
+                            </a>
+                            <span className="invitee-scan-url muted">{scanUrl}</span>
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           )}
