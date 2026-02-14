@@ -409,6 +409,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md`**  
   Cross-artifact consistency check for metric definitions, formulas, thresholds, and owner interpretation.
 
+- **`ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`**  
+  Capacity guardrail for concurrent control-change volume and overlap risk.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -541,6 +544,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need visibility into overdue dependency chains before they stall delivery | `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` |
 | We need early warning when source reliability degrades and contaminates high-impact decisions | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` |
 | We need to prevent formula/threshold drift from creating contradictory metric narratives | `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` |
+| We need to prevent concurrent control-change overload from degrading adoption and compliance | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` |
 
 ---
 
@@ -639,6 +643,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Dependency Resolution SLA Review | Ops / PMO + Functional Leads + Strategy Owner |
 | Data Source Reliability Review | Growth/Data Owner + Strategy Owner + Ops / PMO |
 | Metric Definition Consistency Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
+| Control Change Saturation Review | Strategy Owner + Ops / PMO + Governance Owners |
 
 ---
 
@@ -756,6 +761,7 @@ Includes Pack C, plus:
 98. `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`
 99. `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md`
 100. `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md`
+101. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

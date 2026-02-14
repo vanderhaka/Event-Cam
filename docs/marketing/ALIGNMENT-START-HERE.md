@@ -136,6 +136,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 51. `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` (keeps cross-team dependency chains within resolution SLA)
 52. `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` (monitors source trustworthiness before decision quality is impacted)
 53. `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` (prevents metric formula/threshold drift across active artifacts)
+54. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` (keeps concurrent control changes within adoption capacity)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

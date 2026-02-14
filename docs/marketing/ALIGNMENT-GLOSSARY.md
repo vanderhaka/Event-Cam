@@ -280,6 +280,9 @@ The measured trustworthiness of a source based on freshness, completeness, consi
 ## Metric Definition Drift
 Mismatch in a metric’s formula, threshold, or interpretation across artifacts that can produce conflicting decisions or narratives.
 
+## Control Change Saturation
+Condition where concurrent control changes exceed adoption capacity, increasing confusion, non-compliance, and change-related incidents.
+
 ---
 
 ## Incident & Escalation Terms
