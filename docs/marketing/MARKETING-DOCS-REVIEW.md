@@ -108,6 +108,19 @@ Examples:
 
 ---
 
+## Evidence Ledger — Contradictions That Need Immediate Reconciliation
+
+This section translates strategic critique into concrete reconciliation work.
+
+| Topic | Source A | Source B | Why It’s Dangerous | Required Action |
+|---|---|---|---|---|
+| Pro referral payout | `ACCOUNT-TYPES.md` describes ~`$0.20/guest` commission framing | `PRO-ACCOUNT-DEEP-DIVE.md` + `PRICING-MODELS.md` center on `$0.60/guest` | Partner pitch inconsistency reduces trust and slows Pro adoption | Lock one model and deprecate old numbers everywhere |
+| Venue plan prices | `ACCOUNT-TYPES.md` uses `$29/$79/$149` | `PRICING-MODELS.md` uses `$39/$89/$179` | Finance modeling and sales scripts diverge | Assign a canonical pricing table owner and version |
+| Open-event tier cards | Tier table uses `$49/$99/$199/$399` | Pricing-page section shows `$29/$59/$99/$199` | High risk of checkout mismatch and support friction | Choose one launch schedule and archive alternates as tests |
+| Core wedding math | “150 guests = $150” appears in one comparison section | Core model is `$2/guest` | Basic arithmetic inconsistency creates perceived sloppiness | Correct all anchor math and add final QA pass for numeric claims |
+
+---
+
 ## 2) Strategy breadth currently exceeds execution focus
 The set spans weddings, open events, festivals, venues, pros, and a social app roadmap. This breadth creates a focus tax.
 
@@ -331,6 +344,61 @@ Given how central this is to growth claims, compliance should move from “missi
 1. Validate naming finalists with legal + market testing.
 2. Add retention playbooks for Pro/Venue before scaling recurring channels.
 3. Set explicit gate metrics for any social app expansion investment.
+
+---
+
+## Decision Sequence (Non-Negotiable Order of Operations)
+
+To prevent strategy drift, sequence decisions in this exact order:
+
+1. **Canonical economics first**  
+   Finalize the single source-of-truth for retail price, Pro margin/commission, and venue pricing.
+
+2. **One external story second**  
+   Publish the primary message architecture for the next 6 months (recommended: wedding-first, no-app-required for guests).
+
+3. **One growth loop third**  
+   Choose the dominant growth loop to scale first (recommended: Pro-driven or guest-flywheel, not both equally).
+
+4. **Channel expansion fourth**  
+   Scale only channels that pass pre-defined CAC/payback thresholds.
+
+5. **Platform expansion fifth**  
+   Keep social app work as gated roadmap investment, tied to hard activation/retention milestones.
+
+---
+
+## High-Impact Rewrite Directives (If You Revise the Strategy Set)
+
+These are the highest leverage documentation improvements:
+
+1. Add a **“Current truth” header block** to every strategy doc:
+   - Last updated date
+   - Owner
+   - Canonical references
+   - Superseded sections (if any)
+
+2. In pricing docs, separate clearly:
+   - **Live launch pricing**
+   - **Future experiments**
+   - **Deprecated assumptions**
+
+3. Convert all numeric claims into a standardized format:
+   - assumption,
+   - formula,
+   - resulting value,
+   - confidence level (high/medium/low).
+
+4. Add a one-page **message architecture map**:
+   - Core promise,
+   - 3 proof pillars,
+   - Segment-specific adaptations,
+   - Explicit “not saying this yet” boundary.
+
+5. Add one **single GTM operating dashboard** used across all docs:
+   - weekly targets,
+   - owners,
+   - pass/fail status.
 
 ---
 
