@@ -78,6 +78,7 @@ It helps teams:
 - **Prevention effectiveness governance:** `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
 - **Threshold quality governance:** `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
 - **Decision quality trend governance:** `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`
+- **Alert quality governance:** `ALIGNMENT-ALERT-FATIGUE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -125,4 +126,5 @@ For full routing by scenario, use:
 - Keep preventive action patterns only when they measurably reduce downstream failures.
 - Keep threshold bands calibrated to minimize missed alerts and noisy false positives.
 - Keep decision quality trends stable by intervening early on regression signals.
+- Keep alert volume/noise within capacity so critical warnings remain actionable.
 

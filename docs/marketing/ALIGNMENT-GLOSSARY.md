@@ -205,6 +205,9 @@ The periodic process of adjusting alert/decision thresholds to reduce false posi
 ## Decision Quality Composite
 Aggregate quality signal combining confidence discipline, outcome performance, reversal frequency, and evidence compliance across high-impact decisions.
 
+## Alert Fatigue
+Condition where alert volume/noise exceeds team processing capacity, causing delayed responses and reduced sensitivity to critical signals.
+
 ---
 
 ## Incident & Escalation Terms

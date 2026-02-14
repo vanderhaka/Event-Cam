@@ -111,6 +111,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 26. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` (proves whether preventive actions reduced downstream failure)
 27. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` (keeps warning thresholds predictive and actionable)
 28. `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` (trend-level check for degrading decision quality)
+29. `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` (keeps alert noise low and critical response quality high)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

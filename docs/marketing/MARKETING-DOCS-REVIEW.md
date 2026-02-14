@@ -825,6 +825,7 @@ Use this minimum-safe operating rule:
 | Teams run preventive routines but cannot prove they prevented failures | `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` | Prevention success rate rises and ineffective patterns are retired quickly |
 | Threshold noise and misses cause alert fatigue or late intervention | `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` | False-alert and missed-alert rates both decline while alert actionability improves |
 | Decision quality drifts down slowly and is noticed only after reversals accumulate | `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` | Decision quality composite remains stable/improving and reversal trend declines |
+| Alert overload desensitizes teams and delays response to critical warnings | `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` | Alert noise declines while critical-alert response SLA stays high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

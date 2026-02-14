@@ -334,6 +334,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`**  
   Trend-level audit for sustained deterioration in decision quality, confidence, and outcome effectiveness.
 
+- **`ALIGNMENT-ALERT-FATIGUE-REVIEW.md`**  
+  Weekly alert-quality and volume review to prevent noise-driven response degradation.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -441,6 +444,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to verify if preventive actions actually prevented downstream failures | `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` |
 | We need to tune thresholds to reduce false alerts and missed warnings | `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` |
 | We need to detect long-horizon decline in decision quality before repeated reversals | `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` |
+| We need to reduce alert noise so critical warnings are still acted on quickly | `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` |
 
 ---
 
@@ -514,6 +518,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Preventive Action Review | Ops / PMO + Growth/Data Owner + Functional Leads |
 | Threshold Calibration Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
 | Decision Quality Regression Review | Strategy Owner + Growth/Data Owner + Leadership Delegate |
+| Alert Fatigue Review | Ops / PMO + Growth/Data Owner + Functional Leads |
 
 ---
 
@@ -606,6 +611,7 @@ Includes Pack C, plus:
 73. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
 74. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
 75. `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`
+76. `ALIGNMENT-ALERT-FATIGUE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

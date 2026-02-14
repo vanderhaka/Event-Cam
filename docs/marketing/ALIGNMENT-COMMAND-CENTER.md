@@ -36,6 +36,7 @@
 - Review preventive-action effectiveness trend and ineffective-pattern concentration.
 - Review threshold-calibration status (false alerts, missed alerts, pending recalibration).
 - Review decision-quality regression trend and active remediation status.
+- Review alert-fatigue status (noise ratio, repeat alerts, critical-response SLA).
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -80,6 +81,7 @@
 - Check preventive actions marked ineffective and route redesign owners.
 - Check thresholds in drift-suspected status and assign recalibration owners.
 - Check decision-quality composite trend and assign intervention owners when regressing.
+- Check noisy/repeat alert sources and assign alert-design corrections.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -139,6 +141,7 @@ Use this trigger table before meetings:
 | Prevention success rate falls below threshold | Redesign preventive play patterns and owners |
 | Missed alert rate exceeds tolerance | Trigger threshold recalibration review with immediate owner assignment |
 | Decision quality composite declines 3 cycles | Trigger decision-quality remediation escalation |
+| Alert fatigue status remains Fatigued for 2 weeks | Trigger alert-routing/threshold redesign intervention |
 
 ---
 
@@ -149,7 +152,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

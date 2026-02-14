@@ -109,6 +109,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Preventive actions marked ineffective (count) |  |  |  |
 | Thresholds in Drift-Suspected/Recalibrating status (count) |  |  |  |
 | Decision quality composite trend (Up/Flat/Down) |  |  |  |
+| Alert fatigue status (Healthy/Watch/Fatigued) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -197,6 +198,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Prevention success rate (30-day window):
 - Missed alert rate (threshold calibration):
 - No-Effect/Negative outcome rate (decision quality):
+- Low-value alert rate:
 
 ---
 
