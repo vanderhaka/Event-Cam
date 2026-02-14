@@ -328,6 +328,9 @@ The degree to which critical controls are fully monitored through defined signal
 ## Control Confidence Index
 A composite score estimating whether a control is reliable enough for critical use based on ownership, validation, observability, performance, and evidence quality.
 
+## Control Confidence Calibration
+The degree to which control-confidence scores accurately predict observed control outcomes over time.
+
 ---
 
 ## Incident & Escalation Terms

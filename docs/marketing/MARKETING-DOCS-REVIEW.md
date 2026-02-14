@@ -866,6 +866,7 @@ Use this minimum-safe operating rule:
 | Critical controls are only partially validated, leaving hidden failure modes despite apparent compliance | `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` | Fully test-covered critical-control rate stays high and test-layer gap count trends to zero |
 | Control blind spots delay detection and create reactive firefighting because observability is incomplete | `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md` | Full observability coverage remains high and blind-spot count trends to zero |
 | Teams cannot prioritize control hardening effectively because control reliability confidence is not quantified | `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md` | Average critical-control confidence stays high and low-confidence control count trends to zero |
+| Control confidence scores drift from real outcomes, creating false certainty and poor hardening priorities | `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md` | Mean calibration gap stays near zero and high-confidence miss rate remains low |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

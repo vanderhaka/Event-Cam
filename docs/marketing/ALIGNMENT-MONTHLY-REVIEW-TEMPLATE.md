@@ -55,6 +55,7 @@
 | Critical-control full test-coverage rate |  | 100% |  |
 | Critical-control observability coverage rate |  | 100% |  |
 | Average critical-control confidence score |  | ≥85 |  |
+| Mean control-confidence calibration gap |  | -0.10 to +0.10 |  |
 
 Key governance issue this month:
 ______________________________________
