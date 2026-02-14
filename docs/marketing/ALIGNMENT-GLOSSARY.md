@@ -238,6 +238,9 @@ Risk-tier classification (e.g., CC-1 to CC-4) indicating how severe control fail
 ## Decision Packet Compliance
 The degree to which required sections and evidence links in high-impact decision packets are complete before approval.
 
+## Decision Reopen Rate
+Percentage of previously closed decisions that are reopened within the defined monitoring window due to unresolved or newly surfaced issues.
+
 ---
 
 ## Incident & Escalation Terms

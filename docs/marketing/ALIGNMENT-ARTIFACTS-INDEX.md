@@ -367,6 +367,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`**  
   Compliance gate ensuring high-impact decision packets are complete before approval.
 
+- **`ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`**  
+  Root-cause analysis tracker for reopened decisions to reduce repeat churn.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -485,6 +488,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one composite system score to prioritize cross-domain recovery actions | `ALIGNMENT-OPERATING-HEALTH-INDEX.md` |
 | We need control monitoring and escalation intensity matched to real risk criticality | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` |
 | We need decision approvals blocked when required packet sections are incomplete | `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md` |
+| We need to reduce repeated reopen cycles on previously closed decisions | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` |
 
 ---
 
@@ -569,6 +573,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Operating Health Index | Strategy Owner + Ops / PMO + Growth/Data Owner |
 | Control Criticality Map | Strategy Owner + Ops / PMO + Governance Owners |
 | Decision Packet Compliance | Strategy Owner + Ops / PMO + Decision Review Leads |
+| Decision Reopen Analysis | Strategy Owner + Ops / PMO + Decision Review Leads |
 
 ---
 
@@ -672,6 +677,7 @@ Includes Pack C, plus:
 84. `ALIGNMENT-OPERATING-HEALTH-INDEX.md`
 85. `ALIGNMENT-CONTROL-CRITICALITY-MAP.md`
 86. `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`
+87. `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 
 Recommended only when:
 - decision volume is high,

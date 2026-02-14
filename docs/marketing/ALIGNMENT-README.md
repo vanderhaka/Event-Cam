@@ -89,6 +89,7 @@ It helps teams:
 - **System-level health governance:** `ALIGNMENT-OPERATING-HEALTH-INDEX.md`
 - **Control criticality governance:** `ALIGNMENT-CONTROL-CRITICALITY-MAP.md`
 - **Decision packet quality governance:** `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`
+- **Decision closure stability governance:** `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -147,4 +148,5 @@ For full routing by scenario, use:
 - Keep overall operating-health index stable and above recovery-trigger bands.
 - Keep highest-criticality controls under strict compliance and escalation discipline.
 - Keep high-impact decisions blocked from approval until packets meet required quality bar.
+- Keep reopened-decision churn low by resolving root causes before reclose.
 

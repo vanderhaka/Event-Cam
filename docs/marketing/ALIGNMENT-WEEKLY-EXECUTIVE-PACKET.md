@@ -120,6 +120,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Operating health index band (Strong/Watch/At Risk/Critical) |  |  |  |
 | CC-1 controls at risk/non-compliant (count) |  |  |  |
 | Non-compliant P0/P1 decision packets (count) |  |  |  |
+| Reopened decisions this cycle (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -219,6 +220,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Operating health index score:
 - Critical-control compliance rate (CC-1/CC-2):
 - Complete decision packet rate (P0/high-impact P1):
+- Decision reopen rate:
 
 ---
 
