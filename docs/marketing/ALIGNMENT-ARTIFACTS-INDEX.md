@@ -52,6 +52,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-FAQ.md`**  
   Rapid answers to common alignment and execution questions.
 
+- **`ALIGNMENT-GLOSSARY.md`**  
+  Canonical terminology for consistent strategy and KPI language.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -72,6 +75,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need one weekly summary view for leadership | `ALIGNMENT-DASHBOARD-TEMPLATE.md` |
 | We need rigorous write-ups for Priority 0 decisions | `ALIGNMENT-PRIORITY0-DECISION-BRIEF.md` |
 | We need quick operating answers during execution | `ALIGNMENT-FAQ.md` |
+| We need consistent terminology across teams | `ALIGNMENT-GLOSSARY.md` |
 
 ---
 
