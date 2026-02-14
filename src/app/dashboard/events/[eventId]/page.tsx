@@ -222,7 +222,7 @@ export default function EventDetailPage() {
       window.location.href = payload.checkoutUrl;
       return;
     }
-    showStatus(payload.message || 'Checkout failed', 'error');
+    showStatus(payload.message || 'Could not confirm', 'error');
   }
 
   async function publishEvent() {
@@ -420,7 +420,7 @@ export default function EventDetailPage() {
                 onClick={checkout}
                 disabled={eventPayload.event?.status === 'paid' || eventPayload.event?.status === 'published'}
               >
-                Checkout
+                Confirm
               </button>
               <button
                 type="button"
@@ -560,7 +560,7 @@ export default function EventDetailPage() {
             <section className="card">
               <h3 className="section-head">Open event — one QR for everyone</h3>
               <p className="section-sub">
-                Anyone who scans this event&apos;s QR code can upload photos and videos. No guest list needed. Checkout to pay — your event QR is issued automatically.
+                Anyone who scans this event&apos;s QR code can upload photos and videos. No guest list needed. Confirm when you&apos;re ready and your event QR is issued automatically.
               </p>
               {eventPayload.invitees && eventPayload.invitees.length > 0 ? (
                 <div className="open-event-qr">
@@ -618,9 +618,9 @@ export default function EventDetailPage() {
                 </div>
               ) : (
                 <>
-                  <p className="section-sub">When you&apos;re ready, pay for your event QR — it&apos;s issued automatically after payment.</p>
+                  <p className="section-sub">When you&apos;re ready, confirm to get your event QR — it&apos;s issued automatically.</p>
                   <button type="button" className="btn btn-primary" onClick={checkout}>
-                    I&apos;ve finished — proceed to checkout
+                    I&apos;ve finished — confirm
                   </button>
                 </>
               )}
@@ -704,15 +704,15 @@ export default function EventDetailPage() {
               {eventPayload.event?.status !== 'paid' ? (
                 <>
                   <p className="section-sub">
-                    I&apos;ve finished adding guests. Proceed to checkout to pay — QR codes are issued automatically after payment.
+                    I&apos;ve finished adding guests. Confirm to get QR codes for everyone — they&apos;re issued automatically.
                   </p>
                   <button type="button" className="btn btn-primary" onClick={checkout}>
-                    I&apos;ve finished — proceed to checkout
+                    I&apos;ve finished — confirm
                   </button>
                 </>
               ) : eventPayload.event?.status === 'paid' ? (
                 <p className="section-sub">
-                  Payment complete. QR codes are issued automatically — refresh the page if you don&apos;t see them yet.
+                  Confirmed. QR codes are issued automatically — refresh the page if you don&apos;t see them yet.
                 </p>
               ) : null}
             </section>
@@ -723,7 +723,7 @@ export default function EventDetailPage() {
               <h3 className="section-head">Guest list</h3>
               <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Click &quot;Show QR&quot; to see the scan link and QR code.</p>
               <p className="muted" style={{ fontSize: '0.875rem', marginTop: '-0.5rem', marginBottom: '0.75rem' }}>
-                <strong>Pending</strong> = added but QR not issued yet. Checkout to pay — QR codes are issued automatically.
+                <strong>Pending</strong> = added but QR not issued yet. Confirm to get QR codes for each guest.
               </p>
               <ul className="invitee-list">
                 {eventPayload.invitees.map((invitee: any) => (
@@ -871,22 +871,22 @@ export default function EventDetailPage() {
                         Here&apos;s how you get QR codes for everyone:
                       </p>
                       <ol className="onboarding-steps" style={{ margin: '0 0 1.25rem', paddingLeft: '1.25rem' }}>
-                        <li style={{ marginBottom: '0.5rem' }}>Click <strong>I&apos;ve finished — proceed to checkout</strong> to pay for your invites.</li>
-                        <li style={{ marginBottom: '0.5rem' }}>After payment, QR codes are issued automatically for each guest. Refresh the page if you don&apos;t see them right away.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>Click <strong>I&apos;ve finished — confirm</strong> in the &quot;Next step&quot; card above your guest list.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>After you confirm, QR codes are issued automatically for each guest. Refresh the page if you don&apos;t see them right away.</li>
                       </ol>
                       <p className="muted" style={{ fontSize: '0.9rem' }}>
-                        The checkout button is in the &quot;Next step&quot; card above your guest list.
+                        Look for the &quot;Next step&quot; card above your guest list.
                       </p>
                       <div className="modal-actions" style={{ marginTop: '1.25rem' }}>
                         <button type="button" className="btn btn-primary" onClick={() => setInviteeOnboardingStep('step2')}>
-                          Next
+                          Continue
                         </button>
                       </div>
                     </>
                   ) : (
                     <>
                       <p className="section-sub" style={{ marginBottom: '1.25rem' }}>
-                        You can always come back and add more guests later — before or after checkout. Just save them here and, if you&apos;ve already published, you&apos;ll need to publish again to get new QR codes.
+                        You can always come back and add more guests later — before or after you confirm. Just save them here and, if you&apos;ve already published, you&apos;ll need to publish again to get new QR codes.
                       </p>
                       <button
                         type="button"

@@ -985,6 +985,43 @@ textarea.input {
   gap: 1rem;
 }
 
+/* Onboarding modal: readable width, left-aligned content */
+.onboarding-modal {
+  max-width: min(28rem, 90vw);
+}
+
+.onboarding-modal .modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.onboarding-modal .modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  flex: 1;
+  min-width: 0;
+  padding-right: 0.5rem;
+}
+
+.onboarding-modal .modal-close {
+  flex-shrink: 0;
+}
+
+.onboarding-modal .modal-body {
+  align-items: stretch;
+  text-align: left;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.onboarding-modal .modal-body .onboarding-steps {
+  line-height: 1.5;
+}
+
+.onboarding-modal .modal-actions {
+  justify-content: flex-start;
+}
+
 .qr-modal-image {
   flex-shrink: 0;
   border-radius: 8px;
