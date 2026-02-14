@@ -133,6 +133,9 @@ Canonical front-door list where new decision requests are logged, triaged, and r
 ## Decision WIP Limit
 Maximum allowed number of concurrently active decisions by priority band to protect decision quality and SLA reliability.
 
+## Decision Outcome Review
+Structured post-close evaluation that compares intended decision effects with observed results and determines reinforcement, modification, or reversal actions.
+
 ---
 
 ## Incident & Escalation Terms

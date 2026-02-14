@@ -37,6 +37,7 @@
 - Verify premortem coverage for all open Priority 0 decisions.
 - Check decision intake queue for triage SLA misses and unassigned requests.
 - Check active decision counts against WIP ceilings.
+- Check overdue decision outcome reviews and unresolved negative outcomes.
 
 ## Step 3: Execution Scan (20 min)
 - Verify active experiment load (≤5).
@@ -83,6 +84,7 @@ Use this trigger table before meetings:
 | Critical KPI anomaly detected (A1/A2) | Trigger metric anomaly protocol and mark packet provisional |
 | P0 decision request untriaged beyond 24h | Escalate intake owner and force triage in same-week review |
 | Decision WIP ceiling breached | Pause low-priority activations and run queue reduction session |
+| Decision outcome review overdue >7 days | Escalate review owner and assign corrective action deadline |
 
 ---
 

@@ -262,6 +262,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-WIP-LIMITS.md`**  
   Concurrency guardrail for capping active decision volume and protecting quality/SLA performance.
 
+- **`ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`**  
+  Post-close impact-review discipline for validating whether decisions achieved intended outcomes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -345,6 +348,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to stress-test high-impact decisions before approval | `ALIGNMENT-DECISION-PREMORTEM.md` |
 | We need one front-door queue for triaging new decision requests | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` |
 | We need to cap concurrent decision work before quality drops | `ALIGNMENT-DECISION-WIP-LIMITS.md` |
+| We need to verify closed decisions actually worked | `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` |
 
 ---
 
@@ -394,6 +398,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Premortem | Strategy Owner + Cross-functional Decision Team |
 | Decision Intake Queue | Ops / PMO + Strategy Owner |
 | Decision WIP Limits | Ops / PMO + Strategy Owner |
+| Decision Outcome Reviews | Strategy Owner + Growth Lead |
 
 ---
 
@@ -462,6 +467,7 @@ Includes Pack C, plus:
 49. `ALIGNMENT-DECISION-PREMORTEM.md`
 50. `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
 51. `ALIGNMENT-DECISION-WIP-LIMITS.md`
+52. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
 
 Recommended only when:
 - decision volume is high,
