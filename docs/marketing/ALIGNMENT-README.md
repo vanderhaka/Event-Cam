@@ -41,6 +41,7 @@ It helps teams:
 ## Control Layer (Run Continuously)
 
 - **Active set control:** `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
+- **Mode control (process intensity):** `ALIGNMENT-OPERATING-MODES.md`
 - **Canonical source control:** `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 - **ID and linkage hygiene:** `ALIGNMENT-ID-STANDARDS.md`
 - **State transition discipline:** `ALIGNMENT-STATE-MACHINE.md`

@@ -19,6 +19,7 @@ This artifact creates a single control point for:
 
 - Quarter:
 - Active pack (`A` / `B` / `C` / `D`):
+- Active mode (`Focus` / `Execution` / `Governance` / `Diagnostic`):
 - Effective date:
 - Review owner:
 - Next review date:
@@ -91,6 +92,7 @@ If active count exceeds pack guidance for 2 consecutive weeks:
 ## Weekly Review Checklist
 
 - [ ] Active pack still matches team complexity.
+- [ ] Active mode still matches current risk/signal conditions.
 - [ ] Every active artifact has owner + recent verification.
 - [ ] No frozen artifact is being used as canonical source.
 - [ ] New artifacts added this week are explicitly classified (Active/Frozen).
@@ -102,6 +104,7 @@ If active count exceeds pack guidance for 2 consecutive weeks:
 
 Use with:
 - `ALIGNMENT-ARTIFACTS-INDEX.md`
+- `ALIGNMENT-OPERATING-MODES.md`
 - `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 - `ALIGNMENT-DOC-QUALITY-SCORECARD.md`
 - `ALIGNMENT-CHANGELOG.md`

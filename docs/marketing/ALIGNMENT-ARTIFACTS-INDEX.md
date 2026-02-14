@@ -202,6 +202,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CANONICAL-SOURCE-MAP.md`**  
   Domain-by-domain source-of-truth map showing which artifact governs each operating topic.
 
+- **`ALIGNMENT-OPERATING-MODES.md`**  
+  Mode-selection playbook (Focus/Execution/Governance/Diagnostic) for tuning process intensity by context.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -265,6 +268,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need clean cross-artifact ID consistency and linkage | `ALIGNMENT-ID-STANDARDS.md` |
 | We need one explicit source of truth for active vs frozen docs | `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` |
 | We need to resolve “which doc is canonical for this topic?” quickly | `ALIGNMENT-CANONICAL-SOURCE-MAP.md` |
+| We need to adjust process intensity to current risk and complexity | `ALIGNMENT-OPERATING-MODES.md` |
 
 ---
 
@@ -294,6 +298,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | ID Standards | Ops / PMO + Documentation Owner |
 | Active Artifact Set | Ops / PMO + Documentation Owner |
 | Canonical Source Map | Strategy Owner + Documentation Owner |
+| Operating Modes | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -342,6 +347,7 @@ Includes Pack C, plus:
 29. `ALIGNMENT-ID-STANDARDS.md`
 30. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 31. `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+32. `ALIGNMENT-OPERATING-MODES.md`
 
 Recommended only when:
 - decision volume is high,
