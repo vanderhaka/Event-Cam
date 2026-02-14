@@ -889,6 +889,7 @@ Use this minimum-safe operating rule:
 | Dependency changes are rolled out without full downstream impact mitigation, causing avoidable control regressions | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` | High-risk unresolved dependency changes trend to zero and pre-rollout mitigation completion remains high |
 | The same control coverage gaps recur cycle after cycle because fixes remain tactical instead of structural | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` | Recurring-gap cluster count trends down and structural fix conversion rate remains high |
 | Teams assume controls are sufficient without quantifying residual exposure, leaving hidden risk unmanaged | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` | Exposed residual-risk control count trends to zero with regular reassessment coverage |
+| Residual risk is accepted informally without expiry or monitoring, creating unmanaged long-tail exposure | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` | Expired accepted-risk count trends to zero and monitoring coverage remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

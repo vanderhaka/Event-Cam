@@ -325,6 +325,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Structural fix conversion rate for recurring gaps (%):
 - Exposed residual-risk critical controls (count):
 - Residual-risk reassessment completed on cadence (%):
+- Expired accepted control risks (count):
+- Accepted risks with active monitoring coverage (%):
 
 ---
 

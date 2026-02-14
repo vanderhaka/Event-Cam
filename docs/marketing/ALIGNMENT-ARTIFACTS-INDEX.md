@@ -526,6 +526,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`**  
   Review quantifying residual risk that remains after current control mitigations.
 
+- **`ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`**  
+  Review governing explicit, time-bounded acceptance of residual control risk.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -697,6 +700,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need dependency changes impact-assessed before they disrupt critical controls | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` |
 | We need recurring control coverage gaps surfaced and structurally fixed, not repeatedly patched | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` |
 | We need visibility into risk that remains after controls so hidden exposure is not ignored | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` |
+| We need accepted residual risk tracked with authority, expiry, and monitoring discipline | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` |
 
 ---
 
@@ -834,6 +838,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Dependency Change Impact Review | Ops / PMO + Platform/Data Owners + Control Owners |
 | Control Coverage Gap Trend Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Residual Risk Review | Ops / PMO + Strategy Owner + Risk/Control Owners |
+| Control Risk Acceptance Review | Ops / PMO + Strategy Owner + Policy/Compliance Owners |
 
 ---
 
@@ -990,6 +995,7 @@ Includes Pack C, plus:
 137. `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
 138. `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
 139. `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
+140. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -142,6 +142,7 @@ It helps teams:
 - **Control dependency-change impact governance:** `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
 - **Control coverage-gap trend governance:** `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
 - **Control residual-risk governance:** `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
+- **Control risk-acceptance governance:** `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -253,4 +254,5 @@ For full routing by scenario, use:
 - Keep high-risk dependency changes fully impact-assessed and mitigated before rollout.
 - Keep recurring control coverage gaps structurally remediated with declining recurrence trends.
 - Keep residual risk on critical controls explicitly measured and actively reduced.
+- Keep accepted residual risks authority-approved, monitored, and closed/reassessed before expiry.
 

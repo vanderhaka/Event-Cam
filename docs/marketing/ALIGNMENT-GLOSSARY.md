@@ -397,6 +397,9 @@ The recurring pattern of unresolved or repeated coverage gaps across control dom
 ## Control Residual Risk
 The level of risk that remains after current controls and mitigations have been applied.
 
+## Control Risk Acceptance
+The formal, time-bounded decision to tolerate defined residual risk with explicit authority approval and monitoring.
+
 ---
 
 ## Incident & Escalation Terms
