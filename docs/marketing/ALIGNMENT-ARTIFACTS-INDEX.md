@@ -67,6 +67,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-CHANGELOG.md`**  
   Historical log of material changes to the alignment system and rationale.
 
+- **`ALIGNMENT-READINESS-ASSESSMENT.md`**  
+  Periodic self-assessment to gauge whether alignment is execution-ready.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -92,6 +95,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a top-level model of the full alignment system | `ALIGNMENT-SYSTEM-OVERVIEW.md` |
 | We need role-specific week-1 action clarity | `ALIGNMENT-ROLE-CHECKLISTS.md` |
 | We need an audit trail of alignment-system changes | `ALIGNMENT-CHANGELOG.md` |
+| We need a periodic readiness self-assessment | `ALIGNMENT-READINESS-ASSESSMENT.md` |
 
 ---
 
