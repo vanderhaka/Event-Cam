@@ -385,6 +385,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`**  
   Cross-team coordination quality review for dependencies, handoffs, and joint commitments.
 
+- **`ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`**  
+  Structured analysis of overlapping controls to reduce duplication, conflicts, and governance drag.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -509,6 +512,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to visualize chronic recurrence clusters across domains and owners | `ALIGNMENT-RECURRENCE-HEATMAP.md` |
 | We need lifecycle-stage visibility to time control optimization and retirement correctly | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` |
 | We need recurring visibility into cross-function friction causing delays and rework | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` |
+| We need to detect and resolve duplicate/conflicting controls before governance bloat grows | `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` |
 
 ---
 
@@ -599,6 +603,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Recurrence Heatmap | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Lifecycle Analysis | Strategy Owner + Ops / PMO + Governance Owners |
 | Cross-Function Coordination Review | Ops / PMO + Functional Leads + Strategy Owner |
+| Control Overlap Analysis | Strategy Owner + Ops / PMO + Governance Owners |
 
 ---
 
@@ -708,6 +713,7 @@ Includes Pack C, plus:
 90. `ALIGNMENT-RECURRENCE-HEATMAP.md`
 91. `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 92. `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
+93. `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
 
 Recommended only when:
 - decision volume is high,

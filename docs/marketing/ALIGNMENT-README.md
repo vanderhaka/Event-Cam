@@ -95,6 +95,7 @@ It helps teams:
 - **Chronic-recurrence governance:** `ALIGNMENT-RECURRENCE-HEATMAP.md`
 - **Control lifecycle governance:** `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 - **Cross-function execution governance:** `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
+- **Control de-duplication governance:** `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -159,4 +160,5 @@ For full routing by scenario, use:
 - Keep chronic recurrence clusters visible and trending down by cycle.
 - Keep controls moving through lifecycle stages with evidence-based transition decisions.
 - Keep cross-function coordination quality high on shared dependencies and commitments.
+- Keep overlapping controls clarified or merged to prevent duplicate effort and conflict.
 

@@ -53,6 +53,7 @@
 - Review recurrence heatmap for chronic H3/H4 clusters and owner concentration.
 - Review control-lifecycle stage transitions and stalled lifecycle states.
 - Review cross-function coordination status for recurring delay/rework pairs.
+- Review control-overlap analysis for unresolved duplicate/conflict-prone pairs.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -114,6 +115,7 @@
 - Check persistent recurrence clusters and assign cross-functional intervention owners.
 - Check controls stuck in unstable lifecycle stages and assign transition owners.
 - Check repeated function-pair coordination failures and assign correction owners.
+- Check overlap/conflict control pairs and assign clarify/merge owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -190,6 +192,7 @@ Use this trigger table before meetings:
 | H4 recurrence cluster appears or persists | Trigger chronic-recurrence intervention package |
 | Control lifecycle stage stalls beyond expected window | Trigger lifecycle-transition remediation review |
 | Cross-function coordination remains At Risk for 2 cycles | Trigger owner-pair coordination intervention |
+| Conflict-prone control overlap unresolved | Trigger overlap-resolution intervention before next cycle |
 
 ---
 
@@ -200,7 +203,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

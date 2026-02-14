@@ -842,6 +842,7 @@ Use this minimum-safe operating rule:
 | Chronic repeat issues persist across teams because recurrence hotspots are not visualized | `ALIGNMENT-RECURRENCE-HEATMAP.md` | High-severity recurrence clusters shrink and recurrence burn-down improves cycle-over-cycle |
 | Controls linger in unstable or outdated states because lifecycle progression is unmanaged | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` | Controls transition predictably through lifecycle stages with fewer stalled states |
 | Cross-team dependency friction causes recurring delays and rework despite local process compliance | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` | Coordination delay and rework rates decline as high-friction function pairs are corrected |
+| Duplicate or conflicting controls create governance drag and inconsistent operator behavior | `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` | Overlap/conflict pairs decline and duplicate-effort burden drops over time |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

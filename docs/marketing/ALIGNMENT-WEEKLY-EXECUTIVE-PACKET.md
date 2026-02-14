@@ -126,6 +126,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Recurrence heat level (H1/H2/H3/H4) |  |  |  |
 | Controls in stalled lifecycle stage (count) |  |  |  |
 | Cross-function coordination status (Healthy/Watch/At Risk) |  |  |  |
+| Unresolved control-overlap pairs (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -231,6 +232,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Recurrence burn-down rate:
 - Controls reaching mature stage this cycle (count):
 - Joint-action completion rate:
+- Duplicate governance effort hours (est.):
 
 ---
 

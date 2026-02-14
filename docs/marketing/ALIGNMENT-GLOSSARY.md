@@ -256,6 +256,9 @@ Current maturity state of a control (e.g., Launching, Stabilizing, Mature, Sunse
 ## Cross-Function Coordination
 The quality of alignment between teams on shared dependencies, handoffs, and joint commitments required for on-time execution.
 
+## Control Overlap
+Condition where two or more controls enforce similar or conflicting actions, creating duplication, confusion, or unnecessary governance overhead.
+
 ---
 
 ## Incident & Escalation Terms
