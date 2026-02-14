@@ -89,6 +89,62 @@ If active count exceeds pack guidance for 2 consecutive weeks:
 
 ---
 
+## Mode-Aligned Starter Active Sets (Recommended)
+
+Use these as default baselines when selecting or switching operating modes.
+
+### Focus Mode (minimum control, fast execution)
+- `ALIGNMENT-START-HERE.md`
+- `QUESTIONS-THAT-NEED-ANSWERS.md`
+- `PATH-ALIGNMENT-WORKSHEET.md`
+- `ALIGNMENT-DECISIONS-LOG.md`
+- `ALIGNMENT-DASHBOARD-TEMPLATE.md`
+- `ALIGNMENT-CHECKLIST.md`
+
+### Execution Mode (steady weekly operation)
+Includes Focus Mode, plus:
+- `ALIGNMENT-SCORECARD.md`
+- `ALIGNMENT-MEETING-CADENCE.md`
+- `ALIGNMENT-BLOCKERS-LOG.md`
+- `ALIGNMENT-EXPERIMENT-REGISTRY.md`
+- `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
+
+### Governance Mode (higher compliance and cross-team complexity)
+Includes Execution Mode, plus:
+- `ALIGNMENT-DECISION-SLA.md`
+- `ALIGNMENT-RISK-TAXONOMY.md`
+- `ALIGNMENT-CONTRADICTION-REGISTER.md`
+- `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+- `ALIGNMENT-ARTIFACT-LIFECYCLE.md`
+- `ALIGNMENT-CHANGELOG.md`
+
+### Diagnostic Mode (recovery / root-cause isolation)
+Includes Governance Mode, plus:
+- `ALIGNMENT-TRACEABILITY-MATRIX.md`
+- `ALIGNMENT-ASSUMPTION-REGISTRY.md`
+- `ALIGNMENT-DEPENDENCY-TRACKER.md`
+- `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
+- `ALIGNMENT-EVIDENCE-STANDARDS.md`
+- `ALIGNMENT-STATE-MACHINE.md`
+
+If a mode change occurs, re-publish this document the same week with updated active/frozen lists.
+
+---
+
+## Active-Set Change Protocol
+
+When adding or freezing artifacts:
+
+1. Update **Current Operating Selection** and active/frozen registers.
+2. Confirm owner + cadence for every newly active artifact.
+3. Remove frozen artifacts from weekly packet and command-center expectations.
+4. Log change in `ALIGNMENT-CHANGELOG.md`.
+5. Reconfirm active count is within mode/pack guardrail.
+
+No active-set change is complete until all five steps are done.
+
+---
+
 ## Weekly Review Checklist
 
 - [ ] Active pack still matches team complexity.
