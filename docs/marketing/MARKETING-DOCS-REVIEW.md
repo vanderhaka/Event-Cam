@@ -834,6 +834,7 @@ Use this minimum-safe operating rule:
 | Temporary policy exceptions become de facto shadow policy through repeated extension | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` | Exception recurrence and expired-exception counts decline as policy gaps are corrected |
 | Ownership transitions drop context and create hidden execution gaps | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` | Handoff completeness and post-handoff stability remain high with no critical ownerless windows |
 | Teams miss broad system degradation because signals are reviewed in isolation | `ALIGNMENT-OPERATING-HEALTH-INDEX.md` | Composite operating-health trend remains stable and triggers early cross-domain recovery |
+| High-impact controls are treated like low-impact controls, creating misallocated governance effort | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` | Critical controls maintain high compliance while low-risk controls are governed proportionally |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

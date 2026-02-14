@@ -361,6 +361,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-OPERATING-HEALTH-INDEX.md`**  
   Composite monthly operating-health score aggregating decision, execution, control, signal, and governance health.
 
+- **`ALIGNMENT-CONTROL-CRITICALITY-MAP.md`**  
+  Risk-tier map classifying controls by criticality to align monitoring and escalation rigor.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -477,6 +480,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need recurring exception patterns translated into policy fixes, not ad hoc extensions | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` |
 | We need to prevent ownership-transition gaps from degrading execution quality | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` |
 | We need one composite system score to prioritize cross-domain recovery actions | `ALIGNMENT-OPERATING-HEALTH-INDEX.md` |
+| We need control monitoring and escalation intensity matched to real risk criticality | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` |
 
 ---
 
@@ -559,6 +563,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Policy Exception Review | Strategy Owner + Ops / PMO + Governance Owners |
 | Handoff Reliability Review | Ops / PMO + Strategy Owner + Functional Leads |
 | Operating Health Index | Strategy Owner + Ops / PMO + Growth/Data Owner |
+| Control Criticality Map | Strategy Owner + Ops / PMO + Governance Owners |
 
 ---
 
@@ -660,6 +665,7 @@ Includes Pack C, plus:
 82. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
 83. `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`
 84. `ALIGNMENT-OPERATING-HEALTH-INDEX.md`
+85. `ALIGNMENT-CONTROL-CRITICALITY-MAP.md`
 
 Recommended only when:
 - decision volume is high,

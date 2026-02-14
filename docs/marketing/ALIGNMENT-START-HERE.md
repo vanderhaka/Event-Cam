@@ -120,6 +120,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 35. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` (prevents recurring exceptions from becoming shadow policy)
 36. `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` (ensures ownership transitions are stable and complete)
 37. `ALIGNMENT-OPERATING-HEALTH-INDEX.md` (tracks one composite score for overall system reliability)
+38. `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` (aligns monitoring rigor with each control’s risk impact)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

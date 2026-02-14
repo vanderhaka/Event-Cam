@@ -87,6 +87,7 @@ It helps teams:
 - **Exception-governance coherence:** `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
 - **Ownership-transition governance:** `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`
 - **System-level health governance:** `ALIGNMENT-OPERATING-HEALTH-INDEX.md`
+- **Control criticality governance:** `ALIGNMENT-CONTROL-CRITICALITY-MAP.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -143,4 +144,5 @@ For full routing by scenario, use:
 - Keep exception recurrence and expired-exception counts low through policy correction.
 - Keep ownership transitions complete and stable with no critical ownerless windows.
 - Keep overall operating-health index stable and above recovery-trigger bands.
+- Keep highest-criticality controls under strict compliance and escalation discipline.
 

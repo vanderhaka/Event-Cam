@@ -232,6 +232,9 @@ The quality of ownership transitions measured by context completeness, acceptanc
 ## Operating Health Index
 Composite system score combining decision, execution, control, signal, and governance-efficiency health to track overall alignment reliability.
 
+## Control Criticality
+Risk-tier classification (e.g., CC-1 to CC-4) indicating how severe control failure impact is and how strict monitoring/escalation should be.
+
 ---
 
 ## Incident & Escalation Terms
