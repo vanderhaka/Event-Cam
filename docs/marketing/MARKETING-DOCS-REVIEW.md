@@ -38,6 +38,32 @@ All four can eventually be true — but together, today, they create strategy sp
 
 ---
 
+## Review Rubric (Marketing Lens)
+
+To keep this review objective, each document was assessed on:
+
+1. **ICP clarity** — Is the buyer explicit, narrow, and actionable?
+2. **Value proposition strength** — Is there a clear “why choose us” narrative?
+3. **Conversion readiness** — Does this translate into funnel decisions and CTAs?
+4. **Commercial coherence** — Are pricing, incentives, and economics consistent?
+5. **Execution quality** — Can a team actually run this without ambiguity?
+6. **Strategic fit** — Does this support the near-term core strategy (vs distract)?
+
+### Scorecard by Document (1–10)
+
+| Document | ICP Clarity | Value Prop | Conversion Readiness | Commercial Coherence | Execution Quality | Strategic Fit |
+|---|---:|---:|---:|---:|---:|---:|
+| `MARKETING-PLAN.md` | 9 | 9 | 8 | 7 | 6 | 7 |
+| `PRICING-MODELS.md` | 7 | 7 | 7 | 4 | 5 | 6 |
+| `PRO-ACCOUNT-DEEP-DIVE.md` | 8 | 8 | 8 | 8 | 8 | 8 |
+| `ACCOUNT-TYPES.md` | 7 | 6 | 6 | 4 | 5 | 6 |
+| `PURPLE-COW-CHANNELS.md` | 8 | 7 | 6 | 6 | 5 | 7 |
+| `NAMING-BRAINSTORM.md` | 8 | 8 | 5 | 7 | 7 | 7 |
+| `SOCIAL-APP-EXPLORATION.md` | 7 | 8 | 5 | 6 | 6 | 5 |
+| `WHATS-MISSING.md` | 8 | 7 | 8 | 8 | 8 | 9 |
+
+---
+
 ## What’s Working Extremely Well
 
 ## 1) Emotional core is strong and sticky
@@ -266,6 +292,26 @@ Given how central this is to growth claims, compliance should move from “missi
 
 ---
 
+## What to Keep, What to Cut, What to Delay
+
+## Keep (double down now)
+- Wedding-first positioning and emotional narrative.
+- Pro channel strategy (especially unified Pro model economics).
+- Guest flywheel as a growth system (with compliance-first implementation).
+- Purple-cow experimentation style (but with tighter test discipline).
+
+## Cut (for now)
+- Simultaneous external narrative around too many segments (weddings + venues + festivals + social app at equal weight).
+- Redundant pricing variants that produce decision paralysis.
+- Any market-facing claim that cannot be operationally supported in the next 90 days.
+
+## Delay (until core milestones are hit)
+- Broad social app positioning as a primary GTM narrative.
+- Full venue/festival expansion messaging before wedding funnel metrics are stable.
+- Secondary monetization complexity (advanced add-ons, broad enterprise packaging) before base conversion is proven.
+
+---
+
 ## Prioritized Recommendations
 
 ## P0 (Do now: next 7–14 days)
@@ -285,6 +331,28 @@ Given how central this is to growth claims, compliance should move from “missi
 1. Validate naming finalists with legal + market testing.
 2. Add retention playbooks for Pro/Venue before scaling recurring channels.
 3. Set explicit gate metrics for any social app expansion investment.
+
+---
+
+## 30/60/90 Marketing Operating Plan (Suggested)
+
+## First 30 Days
+- Resolve all contradictory numbers and publish one canonical economics sheet.
+- Publish a single external narrative: wedding-first, no-app-required-for-guests.
+- Finalize launch playbook and assign clear owners for each motion.
+- Implement compliance baseline: consent language, opt-in/opt-out logic, policy updates.
+
+## Day 31–60
+- Run 3–5 high-signal growth experiments from Purple Cow list with pass/fail criteria.
+- Ship referral mechanics for one channel first (e.g., Pro referral).
+- Build weekly KPI ritual (traffic → signup → event creation → paid → upload participation).
+- Freeze non-critical strategy branching until learning loops stabilize.
+
+## Day 61–90
+- Scale only experiments that meet efficiency and conversion thresholds.
+- Lock naming decision via legal + customer signal, then align brand artifacts.
+- Prepare venue/pro retention playbooks before meaningful recurring channel spend.
+- Reassess app/social roadmap only against hard threshold metrics.
 
 ---
 
