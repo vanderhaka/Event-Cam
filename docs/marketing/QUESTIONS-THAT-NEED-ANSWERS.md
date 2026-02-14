@@ -232,3 +232,39 @@ Before closing any question in the log, verify:
 
 If any checkbox is missing, keep status as **Open** or **In Progress**.
 
+---
+
+## Status Legend & Escalation Rules
+
+Use consistent status labels in the Decision Log:
+
+- **Open** — not discussed yet
+- **In Progress** — discussion underway, no final owner-approved decision
+- **Blocked** — waiting on prerequisite decision or missing data
+- **Closed** — decision approved, documented, and docs updated
+- **Revisit** — previously closed decision requires reassessment
+
+### Escalation rules
+- Any **Priority 0** item still `Open` or `Blocked` after 7 days escalates to leadership review.
+- Any `Closed` decision changed within 14 days requires a short “reason for change” note.
+- Any `Blocked` item must list what unblock condition is required and who owns that unblock.
+
+---
+
+## Top 10 Decisive Questions (If You Need Fast Alignment)
+
+If time is constrained, answer these first:
+
+1. What is the single primary market for the next 6 months? (P0-1)
+2. What is the canonical live pricing table? (P0-2)
+3. What are final Pro economics for this phase? (P0-3)
+4. What is the one dominant growth loop this quarter? (P0-4)
+5. What is the official message architecture for this quarter? (P0-5)
+6. What are non-negotiable compliance rules for guest capture? (P0-6)
+7. Which 3–5 channels are actively being tested now? (P1-7)
+8. What is the weekly KPI cadence and owner map? (P1-8)
+9. What is the launch timeline with explicit ownership? (P1-9)
+10. What is the exact referral program design and abuse policy? (P1-10)
+
+If these ten are answered clearly, most downstream decisions become significantly easier.
+
