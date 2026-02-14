@@ -493,6 +493,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`**  
   Review validating that control operators retain the skills needed for reliable execution.
 
+- **`ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`**  
+  Review detecting when lower-priority control work displaces overdue critical obligations.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -653,6 +656,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent overdue control maintenance from compounding into reliability failures | `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md` |
 | We need fast proof that control actions worked before risk compounds | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` |
 | We need confidence that critical controls are operated by currently proficient operators | `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md` |
+| We need to prevent low-priority control work from delaying overdue critical obligations | `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md` |
 
 ---
 
@@ -779,6 +783,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Maintenance Debt Review | Ops / PMO + Functional Leads + Control Owners |
 | Control Verification Latency Review | Ops / PMO + Control Owners + Data/Analytics Owners |
 | Control Operator Proficiency Review | Ops / PMO + Functional Leads + People/Enablement Owners |
+| Control Priority Inversion Review | Ops / PMO + Functional Leads + Strategy Owner |
 
 ---
 
@@ -924,6 +929,7 @@ Includes Pack C, plus:
 126. `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`
 127. `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
 128. `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
+129. `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -364,6 +364,9 @@ The elapsed time between a control action being completed and its outcome being 
 ## Control Operator Proficiency
 The degree to which assigned operators demonstrate the practical skills required to execute controls reliably.
 
+## Control Priority Inversion
+A condition where lower-priority control work is executed while higher-risk critical obligations remain overdue.
+
 ---
 
 ## Incident & Escalation Terms
