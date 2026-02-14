@@ -687,6 +687,44 @@ This format prevents “activity updates” from replacing strategic decision-ma
 
 ---
 
+## Appendix A — Contradiction Reconciliation Backlog (Track to Closure)
+
+Use this table as an execution checklist and close each row with a date + owner.
+
+| ID | Contradiction | Where It Appears | Target Resolution | Owner Role | Due Window |
+|---|---|---|---|---|---|
+| CR-01 | Pro referral payout mismatch (`$0.20` vs `$0.60`) | `ACCOUNT-TYPES.md`, `PRO-ACCOUNT-DEEP-DIVE.md`, `PRICING-MODELS.md` | Adopt one canonical Pro payout model and remove legacy framing | Partnerships + Finance | 48 hours |
+| CR-02 | Venue pricing mismatch (`$29/$79/$149` vs `$39/$89/$179`) | `ACCOUNT-TYPES.md`, `PRICING-MODELS.md` | Publish one venue pricing source of truth and sync all references | Pricing owner | 48 hours |
+| CR-03 | Open event tier mismatch (`$49/$99/$199/$399` vs `$29/$59/$99/$199`) | `PRICING-MODELS.md` | Define live tiers and move alternatives into experiment appendix | Growth + Pricing | 72 hours |
+| CR-04 | Core arithmetic contradiction (`150 guests = $150`) | `PRICING-MODELS.md` comparison section | Correct all arithmetic anchors and add numeric QA checklist | Marketing Ops | 24 hours |
+| CR-05 | Ambiguous “live vs future” models | Multiple docs | Add clear labels: Live / Planned / Experimental / Deprecated | Doc owners | 1 week |
+| CR-06 | Ownership ambiguity on canonical numbers | Entire strategy set | Assign explicit pricing/economics owner with approval rights | Leadership | 1 week |
+
+### Closure rule
+No strategy or pricing update is “done” until CR-01 through CR-06 are either closed or explicitly waived by leadership.
+
+---
+
+## Appendix B — Quarter-1 Experiment Portfolio (Suggested)
+
+To avoid diffusion, run a constrained test portfolio with explicit pass/fail gates.
+
+| Experiment | Channel | Goal | Primary Metric | Pass Threshold | Stop-Loss |
+|---|---|---|---|---|---|
+| E-01 DJ Script Insertion Pilot | Partner referral | Increase in-event upload participation | Upload participation rate | +15% vs control events | <5% lift after 20 events |
+| E-02 Photographer “Second Shooter” Pilot | Pro channel | Validate Pro-led activation | Pro-referred paid events / month | 10+ paid events from first cohort | <3 events after 6 weeks |
+| E-03 Table Card Branding Test | Organic at-event | Brand recall + direct traffic | Branded direct visits post-event | +20% branded traffic in pilot cohort | No measurable lift after 30 events |
+| E-04 Guest Flywheel Nurture Test | Lifecycle email | Guest→creator conversion | Guest-to-creator conversion rate | ≥1.5% within cohort window | <0.7% with healthy email delivery |
+| E-05 Pricing Page Clarity Test | Conversion | Reduce pricing confusion | Checkout start rate | +10% checkout starts | No change after 2,000 sessions |
+| E-06 Referral Incentive A/B | Referral loop | Improve referral-driven paid events | Referral-paid conversion rate | +20% vs baseline incentive | Incentive cost > contribution margin |
+| E-07 Wedding Proof Content Sprint | Organic social | Improve top-of-funnel quality | Qualified signup rate from social | +25% qualified signup rate | Flat signups + low engagement for 4 weeks |
+| E-08 Planner Outreach Sequence | B2B partner | Validate planner channel viability | Meetings→active planner conversion | 20% conversion to active referral | <8% after two outreach cycles |
+
+### Portfolio guardrail
+Run no more than **5 concurrent experiments** at any time; kill or graduate before opening new slots.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
