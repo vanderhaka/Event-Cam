@@ -418,6 +418,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`**  
   Compliance review ensuring source-of-truth usage follows the canonical source map.
 
+- **`ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`**  
+  Visibility-lag analysis for time from decision closure to measurable outcome signals.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -553,6 +556,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent concurrent control-change overload from degrading adoption and compliance | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` |
 | We need proof that recovery plans close on time with verified stabilization evidence | `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` |
 | We need to prevent non-canonical source usage from reintroducing contradictions | `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md` |
+| We need to detect when decision outcomes are taking too long to become measurable | `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md` |
 
 ---
 
@@ -654,6 +658,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Change Saturation Review | Strategy Owner + Ops / PMO + Governance Owners |
 | Recovery Window Compliance | Ops / PMO + Functional Leads + Strategy Owner |
 | Canonical Source Compliance Review | Strategy Owner + Ops / PMO + Functional Leads |
+| Decision Outcome Lag Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 
 ---
 
@@ -774,6 +779,7 @@ Includes Pack C, plus:
 101. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`
 102. `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`
 103. `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`
+104. `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -289,6 +289,9 @@ The degree to which declared recovery actions are completed and verified within 
 ## Canonical Source Compliance
 The degree to which teams consistently reference the designated source-of-truth artifact for each operating domain.
 
+## Decision Outcome Lag
+Elapsed time between decision closure and the first reliable measurable signal of its outcome impact.
+
 ---
 
 ## Incident & Escalation Terms

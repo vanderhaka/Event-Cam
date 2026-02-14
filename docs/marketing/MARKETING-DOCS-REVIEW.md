@@ -853,6 +853,7 @@ Use this minimum-safe operating rule:
 | Too many concurrent control changes overwhelm teams and reduce adoption quality | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` | High-criticality change overlap stays within limits and adoption lag remains controlled |
 | Recovery plans stay open past target windows and risk quietly re-accumulates | `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` | Overdue recovery window count declines and verified in-window closure rate rises |
 | Teams reference non-canonical sources under pressure, reintroducing contradictions and trust loss | `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md` | Canonical-source compliance stays high and material source violations trend to zero |
+| Decision outcomes become measurable too late, delaying corrective action and learning loops | `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md` | Overdue outcome-visibility count declines and median outcome lag improves |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

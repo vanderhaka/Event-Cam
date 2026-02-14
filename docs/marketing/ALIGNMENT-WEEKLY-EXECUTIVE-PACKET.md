@@ -137,6 +137,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Active control changes in saturation risk band (count) |  |  |  |
 | Overdue recovery windows (count) |  |  |  |
 | Material canonical-source violations (count) |  |  |  |
+| Decisions with overdue outcome visibility (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -253,6 +254,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control-change adoption lag (median):
 - Recovery plans completed within window (%):
 - Canonical source compliance rate:
+- Median decision outcome lag (days):
 
 ---
 
