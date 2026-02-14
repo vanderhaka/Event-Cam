@@ -22,6 +22,8 @@ It helps teams:
 2. Work through `QUESTIONS-THAT-NEED-ANSWERS.md`
 3. Complete `PATH-ALIGNMENT-WORKSHEET.md`
 4. Run weekly cadence via `ALIGNMENT-COMMAND-CENTER.md`
+5. Declare active operating set in `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
+6. Resolve source-of-truth ambiguity with `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 
 ---
 
@@ -33,6 +35,18 @@ It helps teams:
 - Operate: `ALIGNMENT-DASHBOARD-TEMPLATE.md` + `ALIGNMENT-SCORECARD.md`
 - Govern: `ALIGNMENT-GOVERNANCE-CHARTER.md` + `ALIGNMENT-ARTIFACT-LIFECYCLE.md`
 - Recover: `ALIGNMENT-RECOVERY-PLAYBOOK.md`
+
+---
+
+## Control Layer (Run Continuously)
+
+- **Active set control:** `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
+- **Canonical source control:** `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+- **ID and linkage hygiene:** `ALIGNMENT-ID-STANDARDS.md`
+- **State transition discipline:** `ALIGNMENT-STATE-MACHINE.md`
+- **Doc quality + pruning:** `ALIGNMENT-DOC-QUALITY-SCORECARD.md` + `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
+
+These controls keep the system operable as artifact count grows.
 
 ---
 
@@ -50,4 +64,6 @@ For full routing by scenario, use:
 - Keep experiment count at 5 or fewer.
 - Keep one primary path active per quarter.
 - Use changelog + decision log for all material changes.
+- Keep only one declared active artifact set per cycle.
+- If canonical-source conflicts persist >5 business days, escalate in weekly decision review.
 
