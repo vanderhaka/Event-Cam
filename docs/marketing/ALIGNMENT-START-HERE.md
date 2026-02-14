@@ -18,6 +18,7 @@ If you want one aligned path quickly, use the documents in this order:
    - `ALIGNMENT-MEETING-CADENCE.md`
    - `ALIGNMENT-SCORECARD.md`
    - `ALIGNMENT-DECISIONS-LOG.md`
+   - `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
    - `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
    - `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
    - `ALIGNMENT-COMMAND-CENTER.md`
@@ -86,6 +87,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 2. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` (leadership-ready output)
 3. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` (meta-discipline health)
 4. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` (active/frozen set integrity)
+5. `ALIGNMENT-DECISION-INTAKE-QUEUE.md` (new request triage discipline)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

@@ -24,7 +24,8 @@ It helps teams:
 4. Run weekly cadence via `ALIGNMENT-COMMAND-CENTER.md`
 5. Declare active operating set in `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 6. Resolve source-of-truth ambiguity with `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
-7. If adopting gradually, follow `ALIGNMENT-ADOPTION-ROADMAP.md`
+7. Keep new decision requests controlled in `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
+8. If adopting gradually, follow `ALIGNMENT-ADOPTION-ROADMAP.md`
 
 ---
 
@@ -51,6 +52,7 @@ It helps teams:
 - **Doc quality + pruning:** `ALIGNMENT-DOC-QUALITY-SCORECARD.md` + `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 - **Team behavior baseline:** `ALIGNMENT-WORKING-AGREEMENTS.md`
 - **Pre-change risk check:** `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
+- **Decision front-door control:** `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -72,4 +74,5 @@ For full routing by scenario, use:
 - Use changelog + decision log for all material changes.
 - Keep only one declared active artifact set per cycle.
 - If canonical-source conflicts persist >5 business days, escalate in weekly decision review.
+- Keep P0 decision intake triage within 24 hours.
 
