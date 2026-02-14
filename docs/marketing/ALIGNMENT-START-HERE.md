@@ -14,6 +14,14 @@ If you want one aligned path quickly, use the documents in this order:
    `PATH-ALIGNMENT-WORKSHEET.md`  
    - Select one path, set KPI contract, lock boundaries, assign owners.
 
+4. **Run operating cadence and tracking artifacts**
+   - `ALIGNMENT-MEETING-CADENCE.md`
+   - `ALIGNMENT-SCORECARD.md`
+   - `ALIGNMENT-DECISIONS-LOG.md`
+
+5. **Use full artifact map if unsure where to go next**
+   `ALIGNMENT-ARTIFACTS-INDEX.md`
+
 ---
 
 ## 7-Step Alignment Flow
@@ -38,4 +46,18 @@ If you want one aligned path quickly, use the documents in this order:
 - Boundaries (“not doing now”) are explicit.
 
 If any of the above is missing, alignment is incomplete.
+
+---
+
+## Week-1 Kickoff Pack (Practical)
+
+If you need to start this week, run this exact pack:
+
+1. `QUESTIONS-THAT-NEED-ANSWERS.md` (close Priority 0 items)
+2. `ALIGNMENT-DECISION-CALENDAR.md` (assign dates/owners)
+3. `ALIGNMENT-DECISIONS-LOG.md` (record finalized decisions)
+4. `PATH-ALIGNMENT-WORKSHEET.md` (lock one 90-day path)
+5. `ALIGNMENT-CHECKLIST.md` (verify readiness)
+
+This pack is enough to move from strategy debate to aligned execution.
 
