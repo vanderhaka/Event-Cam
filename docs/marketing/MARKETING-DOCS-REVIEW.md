@@ -771,6 +771,7 @@ To avoid this review becoming static analysis, translate each major risk into a 
 | Pricing and economics contradictions | `ALIGNMENT-CONTRADICTION-REGISTER.md` | `ALIGNMENT-DECISIONS-LOG.md` | Count open High/Critical contradictions |
 | Weak evidence behind major claims | `ALIGNMENT-EVIDENCE-STANDARDS.md` | `ALIGNMENT-ASSUMPTION-REGISTRY.md` | % P0/P1 decisions with required evidence tier |
 | Decision lag and unresolved dependencies | `ALIGNMENT-DECISION-SLA.md` | `ALIGNMENT-DEPENDENCY-TRACKER.md` | On-time decision close rate + overdue dependencies |
+| Too many concurrent decisions reducing quality | `ALIGNMENT-DECISION-WIP-LIMITS.md` | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` | WIP ceiling breaches + triage SLA misses |
 | Narrative drift across docs/channels | `ALIGNMENT-NARRATIVE-GUARDRAILS.md` | `ALIGNMENT-COMMAND-CENTER.md` | Narrative QA pass/fail each week |
 | Activity without measurable outcomes | `ALIGNMENT-TRACEABILITY-MATRIX.md` | `ALIGNMENT-DASHBOARD-TEMPLATE.md` | Decisions with verified KPI movement |
 | Underperforming decisions left in place too long | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` | `ALIGNMENT-RETROSPECTIVE-TEMPLATE.md` | Reversal requests opened/closed by SLA |
