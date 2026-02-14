@@ -415,6 +415,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`**  
   Time-window compliance review for recovery plans after incidents, slippage, and control failures.
 
+- **`ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`**  
+  Compliance review ensuring source-of-truth usage follows the canonical source map.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -549,6 +552,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent formula/threshold drift from creating contradictory metric narratives | `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` |
 | We need to prevent concurrent control-change overload from degrading adoption and compliance | `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` |
 | We need proof that recovery plans close on time with verified stabilization evidence | `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` |
+| We need to prevent non-canonical source usage from reintroducing contradictions | `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md` |
 
 ---
 
@@ -649,6 +653,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Metric Definition Consistency Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
 | Control Change Saturation Review | Strategy Owner + Ops / PMO + Governance Owners |
 | Recovery Window Compliance | Ops / PMO + Functional Leads + Strategy Owner |
+| Canonical Source Compliance Review | Strategy Owner + Ops / PMO + Functional Leads |
 
 ---
 
@@ -768,6 +773,7 @@ Includes Pack C, plus:
 100. `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md`
 101. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md`
 102. `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`
+103. `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

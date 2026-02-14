@@ -286,6 +286,9 @@ Condition where concurrent control changes exceed adoption capacity, increasing 
 ## Recovery Window Compliance
 The degree to which declared recovery actions are completed and verified within their committed stabilization timelines.
 
+## Canonical Source Compliance
+The degree to which teams consistently reference the designated source-of-truth artifact for each operating domain.
+
 ---
 
 ## Incident & Escalation Terms

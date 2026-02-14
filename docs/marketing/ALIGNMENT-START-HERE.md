@@ -138,6 +138,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 53. `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` (prevents metric formula/threshold drift across active artifacts)
 54. `ALIGNMENT-CONTROL-CHANGE-SATURATION-REVIEW.md` (keeps concurrent control changes within adoption capacity)
 55. `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md` (ensures recovery actions close within promised stabilization timelines)
+56. `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md` (ensures teams use declared source-of-truth artifacts consistently)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

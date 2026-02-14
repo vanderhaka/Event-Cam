@@ -136,6 +136,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Metrics with material definition drift (count) |  |  |  |
 | Active control changes in saturation risk band (count) |  |  |  |
 | Overdue recovery windows (count) |  |  |  |
+| Material canonical-source violations (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -251,6 +252,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Canonical metric match rate:
 - Control-change adoption lag (median):
 - Recovery plans completed within window (%):
+- Canonical source compliance rate:
 
 ---
 
