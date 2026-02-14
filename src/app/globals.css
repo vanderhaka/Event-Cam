@@ -353,6 +353,24 @@ textarea.input {
   gap: 0.75rem;
 }
 
+/* Event type as side-by-side cards on desktop, stacked on mobile */
+.event-type-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .event-type-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.event-type-option.event-type-card {
+  min-height: 4.5rem;
+  padding: 1rem 1rem;
+}
+
 .event-type-option {
   display: flex;
   align-items: flex-start;
@@ -377,6 +395,111 @@ textarea.input {
   flex: 1;
   font-size: 0.9375rem;
   line-height: 1.4;
+}
+
+/* ─── Create event multi-step flow ─── */
+.create-event-card {
+  max-width: 520px;
+}
+
+.create-flow-header {
+  margin-bottom: 1.25rem;
+}
+
+.create-flow-stepper {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.create-flow-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.create-flow-dots::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1.125rem;
+  right: 1.125rem;
+  height: 2px;
+  background: var(--card-border);
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 1px;
+}
+
+.create-flow-dot {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--card-border);
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.create-flow-dot:hover {
+  border-color: var(--accent-soft);
+  color: var(--accent);
+}
+
+.create-flow-dot.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.create-flow-dot.done {
+  border-color: var(--success);
+  background: var(--success);
+  color: #fff;
+}
+
+.create-flow-dot.done:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.create-flow-step-label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.create-flow-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 8rem;
+}
+
+.create-flow-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.create-flow-actions .btn-primary {
+  margin-left: auto;
 }
 
 /* ─── Centered auth form ─── */
