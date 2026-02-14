@@ -938,6 +938,54 @@ textarea.input {
   padding: 1rem;
 }
 
+/* Tour overlay: spotlight cutout highlights one element; dark elsewhere */
+.tour-backdrop {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.tour-backdrop .tour-spotlight {
+  z-index: 1;
+}
+
+.tour-step-card {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.tour-guest-list-anchor {
+  min-height: 6rem;
+}
+
+.tour-step-header {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tour-step-indicator {
+  width: 100%;
+  order: -1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tour-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tour-step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
 .modal-card {
   background: var(--surface);
   border-radius: 12px;

@@ -55,7 +55,9 @@ export default function EventDetailPage() {
   const [editingInviteeId, setEditingInviteeId] = useState<string | null>(null);
   const [editDisplayName, setEditDisplayName] = useState('');
   const [editPhone, setEditPhone] = useState('');
-  const [inviteeOnboardingStep, setInviteeOnboardingStep] = useState<'step1' | 'step2' | null>(null);
+  const [guestListTourStep, setGuestListTourStep] = useState<0 | 1 | 2 | 3 | null>(null);
+  const [tourSpotlightRect, setTourSpotlightRect] = useState<{ top: number; left: number; width: number; height: number } | null>(null);
+  const [tourModalPosition, setTourModalPosition] = useState<{ top: number; left: number } | null>(null);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -63,6 +65,77 @@ export default function EventDetailPage() {
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
   }, []);
+
+  const TOUR_TARGETS = ['add-guests', 'guest-list', 'save-guests', 'confirm'] as const;
+
+  useEffect(() => {
+    if (
+      activeTab !== 'invitees' ||
+      !eventPayload?.event ||
+      eventPayload.event.event_type === 'open' ||
+      typeof window === 'undefined'
+    ) return;
+    const tourKey = `event-cam-guest-list-tour-${eventId}`;
+    if (!sessionStorage.getItem(tourKey)) {
+      setGuestListTourStep(0);
+    }
+  }, [activeTab, eventPayload, eventId]);
+
+  const TOUR_MODAL_ESTIMATE = { width: 360, height: 280, gap: 16 };
+  const TOUR_MODAL_PADDING = 16;
+
+  useEffect(() => {
+    if (guestListTourStep === null || typeof document === 'undefined' || typeof window === 'undefined') {
+      setTourSpotlightRect(null);
+      setTourModalPosition(null);
+      return;
+    }
+    const key = TOUR_TARGETS[guestListTourStep];
+    const el = document.querySelector(`[data-tour="${key}"]`);
+    const update = () => {
+      if (!el) {
+        setTourSpotlightRect(null);
+        setTourModalPosition(null);
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const { width: mw, height: mh, gap } = TOUR_MODAL_ESTIMATE;
+      const pad = TOUR_MODAL_PADDING;
+      setTourSpotlightRect({ top: rect.top, left: rect.left, width: rect.width, height: rect.height });
+
+      const spaceBelow = vh - (rect.bottom + gap);
+      const spaceAbove = rect.top - gap;
+      let top: number;
+      let left: number;
+      if (spaceBelow >= mh) {
+        top = rect.bottom + gap;
+        left = Math.max(pad, Math.min(rect.left + rect.width / 2 - mw / 2, vw - mw - pad));
+      } else if (spaceAbove >= mh) {
+        top = rect.top - mh - gap;
+        left = Math.max(pad, Math.min(rect.left + rect.width / 2 - mw / 2, vw - mw - pad));
+      } else if (rect.left + rect.width + gap + mw <= vw - pad) {
+        left = rect.right + gap;
+        top = Math.max(pad, Math.min(rect.top + rect.height / 2 - mh / 2, vh - mh - pad));
+      } else if (rect.left - gap - mw >= pad) {
+        left = rect.left - mw - gap;
+        top = Math.max(pad, Math.min(rect.top + rect.height / 2 - mh / 2, vh - mh - pad));
+      } else {
+        top = Math.max(pad, (vh - mh) / 2);
+        left = Math.max(pad, Math.min((vw - mw) / 2, vw - mw - pad));
+      }
+      setTourModalPosition({ top, left });
+    };
+    const raf = requestAnimationFrame(() => update());
+    window.addEventListener('scroll', update, true);
+    window.addEventListener('resize', update);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', update, true);
+      window.removeEventListener('resize', update);
+    };
+  }, [guestListTourStep]);
 
   async function buildAuthHeaders(extra: HeadersInit = {}) {
     const { data } = await supabase.auth.getSession();
@@ -128,10 +201,6 @@ export default function EventDetailPage() {
     if (inviteeRows.length > 0 && !inviteeRows[0].firstName.trim()) {
       showStatus('Enter a first name for the first guest before adding another', 'error');
       return;
-    }
-
-    if (inviteeRows.length >= 1 && typeof window !== 'undefined' && !sessionStorage.getItem(`event-cam-invitee-onboarding-${eventId}`)) {
-      setInviteeOnboardingStep('step1');
     }
 
     const toSave = inviteeRows
@@ -419,6 +488,7 @@ export default function EventDetailPage() {
                 className="btn btn-subtle btn-sm"
                 onClick={checkout}
                 disabled={eventPayload.event?.status === 'paid' || eventPayload.event?.status === 'published'}
+                data-tour="confirm"
               >
                 Confirm
               </button>
@@ -627,7 +697,7 @@ export default function EventDetailPage() {
             </section>
           ) : (
             <>
-          <section className="card">
+          <section className="card" data-tour="add-guests">
             <h3 className="section-head">Add guests</h3>
             <p className="section-sub">Add the people you want to invite. They will each get a unique QR code after publishing.</p>
             <form onSubmit={addInvitees} className="form-grid">
@@ -688,37 +758,15 @@ export default function EventDetailPage() {
                 >
                   + Add another
                 </button>
-                <button className="btn btn-primary" type="submit">
+                <button className="btn btn-primary" type="submit" data-tour="save-guests">
                   Save guests
                 </button>
               </div>
             </form>
           </section>
 
-          {eventPayload.event?.event_type !== 'open' &&
-            eventPayload.invitees &&
-            eventPayload.invitees.length > 0 &&
-            eventPayload.event?.status !== 'published' && (
-            <section className="card next-step-card" style={{ borderLeft: '4px solid var(--accent, #3b82f6)' }}>
-              <h3 className="section-head" style={{ marginBottom: '0.25rem' }}>Next step</h3>
-              {eventPayload.event?.status !== 'paid' ? (
-                <>
-                  <p className="section-sub">
-                    I&apos;ve finished adding guests. Confirm to get QR codes for everyone — they&apos;re issued automatically.
-                  </p>
-                  <button type="button" className="btn btn-primary" onClick={checkout}>
-                    I&apos;ve finished — confirm
-                  </button>
-                </>
-              ) : eventPayload.event?.status === 'paid' ? (
-                <p className="section-sub">
-                  Confirmed. QR codes are issued automatically — refresh the page if you don&apos;t see them yet.
-                </p>
-              ) : null}
-            </section>
-          )}
-
-          {eventPayload.invitees && eventPayload.invitees.length > 0 && (
+          <div data-tour="guest-list" className="tour-guest-list-anchor">
+          {eventPayload.invitees && eventPayload.invitees.length > 0 ? (
             <section className="card">
               <h3 className="section-head">Guest list</h3>
               <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Click &quot;Show QR&quot; to see the scan link and QR code.</p>
@@ -794,7 +842,13 @@ export default function EventDetailPage() {
                 ))}
               </ul>
             </section>
+          ) : (
+            <section className="card">
+              <h3 className="section-head">Guest list</h3>
+              <p className="section-sub muted">Your saved guests will appear here after you click Save guests.</p>
+            </section>
           )}
+          </div>
             </>
           )}
 
@@ -831,76 +885,139 @@ export default function EventDetailPage() {
             );
           })()}
 
-          {/* Invitee onboarding modal (after first guest added) */}
-          {inviteeOnboardingStep && (
+          {/* Guided tour: dark overlay with spotlight on current step */}
+          {guestListTourStep !== null && (
             <div
-              className="modal-backdrop"
+              className="modal-backdrop tour-backdrop"
               role="dialog"
               aria-modal="true"
-              aria-labelledby="onboarding-modal-title"
+              aria-labelledby="guest-list-tour-title"
+              aria-describedby="guest-list-tour-step-desc"
+              style={tourSpotlightRect ? undefined : { background: 'rgba(0,0,0,0.75)' }}
               onClick={() => {
-                setInviteeOnboardingStep(null);
+                setGuestListTourStep(null);
                 if (typeof window !== 'undefined') {
-                  sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
+                  sessionStorage.setItem(`event-cam-guest-list-tour-${eventId}`, '1');
                 }
               }}
             >
-              <div className="modal-card onboarding-modal" onClick={(e) => e.stopPropagation()}>
-                <div className="modal-header">
-                  <h3 id="onboarding-modal-title" className="modal-title">
-                    {inviteeOnboardingStep === 'step1' ? 'You\'re all set with your guest list' : 'Quick heads-up'}
+              {tourSpotlightRect && (
+                <div
+                  className="tour-spotlight"
+                  style={{
+                    position: 'fixed',
+                    top: tourSpotlightRect.top,
+                    left: tourSpotlightRect.left,
+                    width: Math.max(tourSpotlightRect.width, 1),
+                    height: Math.max(tourSpotlightRect.height, 1),
+                    boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.75)',
+                    pointerEvents: 'none',
+                  }}
+                  aria-hidden
+                />
+              )}
+              <div
+                className="modal-card onboarding-modal tour-step-card"
+                style={
+                  tourModalPosition
+                    ? { position: 'fixed', top: tourModalPosition.top, left: tourModalPosition.left }
+                    : undefined
+                }
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="modal-header tour-step-header">
+                  <span className="tour-step-indicator" aria-live="polite">
+                    Step {guestListTourStep + 1} of 4
+                  </span>
+                  <h3 id="guest-list-tour-title" className="modal-title">
+                    {guestListTourStep === 0
+                      ? 'Add guests'
+                      : guestListTourStep === 1
+                        ? 'Guest list'
+                        : guestListTourStep === 2
+                          ? 'Save guests'
+                          : 'Confirm & get QR codes'}
                   </h3>
                   <button
                     type="button"
                     className="modal-close"
                     onClick={() => {
-                      setInviteeOnboardingStep(null);
+                      setGuestListTourStep(null);
                       if (typeof window !== 'undefined') {
-                        sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
+                        sessionStorage.setItem(`event-cam-guest-list-tour-${eventId}`, '1');
                       }
                     }}
-                    aria-label="Close"
+                    aria-label="Close tour"
                   >
                     &times;
                   </button>
                 </div>
-                <div className="modal-body">
-                  {inviteeOnboardingStep === 'step1' ? (
-                    <>
-                      <p className="section-sub" style={{ marginBottom: '1rem' }}>
-                        Super simple — here&apos;s how everyone gets their QR code:
+                <div className="modal-body" id="guest-list-tour-step-desc">
+                  {guestListTourStep === 0 && (
+                    <div className="tour-step-content" data-step={1}>
+                      <p className="section-sub">
+                        Add your guests here. Enter first name, last name, and optional phone. Use &quot;+ Add another&quot; for more rows.
                       </p>
-                      <ol className="onboarding-steps" style={{ margin: '0 0 1.25rem', paddingLeft: '1.25rem' }}>
-                        <li style={{ marginBottom: '0.5rem' }}>Hit <strong>I&apos;ve finished — confirm</strong> in the &quot;Next step&quot; card above.</li>
-                        <li style={{ marginBottom: '0.5rem' }}>Boom — QR codes show up for each guest. If they don&apos;t appear right away, just refresh the page.</li>
-                      </ol>
-                      <p className="muted" style={{ fontSize: '0.9rem' }}>
-                        The &quot;Next step&quot; card is right above your guest list.
-                      </p>
-                      <div className="modal-actions" style={{ marginTop: '1.25rem' }}>
-                        <button type="button" className="btn btn-primary" onClick={() => setInviteeOnboardingStep('step2')}>
-                          Sounds good
+                      <div className="modal-actions tour-step-actions">
+                        <button type="button" className="btn btn-primary" onClick={() => setGuestListTourStep(1)}>
+                          Next
                         </button>
                       </div>
-                    </>
-                  ) : (
-                    <>
-                      <p className="section-sub" style={{ marginBottom: '1.25rem' }}>
-                        You can add more guests anytime — before or after you confirm. Just save them here. If you&apos;ve already published, no worries — hit publish again and you&apos;ll get the new QR codes.
+                    </div>
+                  )}
+                  {guestListTourStep === 1 && (
+                    <div className="tour-step-content" data-step={2}>
+                      <p className="section-sub">
+                        After you save, your guests appear here. Each will get their own QR code once you confirm.
                       </p>
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => {
-                          setInviteeOnboardingStep(null);
-                          if (typeof window !== 'undefined') {
-                            sessionStorage.setItem(`event-cam-invitee-onboarding-${eventId}`, '1');
-                          }
-                        }}
-                      >
-                        Perfect, thanks
-                      </button>
-                    </>
+                      <div className="modal-actions tour-step-actions">
+                        <button type="button" className="btn btn-subtle" onClick={() => setGuestListTourStep(0)}>
+                          Back
+                        </button>
+                        <button type="button" className="btn btn-primary" onClick={() => setGuestListTourStep(2)}>
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  {guestListTourStep === 2 && (
+                    <div className="tour-step-content" data-step={3}>
+                      <p className="section-sub">
+                        Click <strong>Save guests</strong> to add them to the list above. You can add more anytime.
+                      </p>
+                      <div className="modal-actions tour-step-actions">
+                        <button type="button" className="btn btn-subtle" onClick={() => setGuestListTourStep(1)}>
+                          Back
+                        </button>
+                        <button type="button" className="btn btn-primary" onClick={() => setGuestListTourStep(3)}>
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  {guestListTourStep === 3 && (
+                    <div className="tour-step-content" data-step={4}>
+                      <p className="section-sub">
+                        When you&apos;re ready, click <strong>Confirm</strong>. QR codes are created for each guest—then you can share them via &quot;Show QR&quot; in the guest list.
+                      </p>
+                      <div className="modal-actions tour-step-actions">
+                        <button type="button" className="btn btn-subtle" onClick={() => setGuestListTourStep(2)}>
+                          Back
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={() => {
+                            setGuestListTourStep(null);
+                            if (typeof window !== 'undefined') {
+                              sessionStorage.setItem(`event-cam-guest-list-tour-${eventId}`, '1');
+                            }
+                          }}
+                        >
+                          Got it
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
