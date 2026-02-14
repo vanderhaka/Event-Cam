@@ -68,6 +68,7 @@
 | On-time critical-control verification rate |  | ≥95% |  |
 | Critical-control operator certification coverage |  | 100% |  |
 | Critical-first control execution rate |  | ≥95% |  |
+| Critical-control signal integrity pass rate |  | ≥98% |  |
 
 Key governance issue this month:
 ______________________________________

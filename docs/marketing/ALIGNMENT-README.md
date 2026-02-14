@@ -132,6 +132,7 @@ It helps teams:
 - **Control verification-latency governance:** `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
 - **Control operator-proficiency governance:** `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
 - **Control priority-inversion governance:** `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`
+- **Control signal-integrity governance:** `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -233,4 +234,5 @@ For full routing by scenario, use:
 - Keep control-action verification on time; eliminate overdue critical verification lag.
 - Keep critical-control operator certification current and resolve proficiency gaps quickly.
 - Keep critical control obligations prioritized ahead of lower-priority control work.
+- Keep critical control signals trusted, definition-consistent, and free from unresolved integrity defects.
 

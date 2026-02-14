@@ -879,6 +879,7 @@ Use this minimum-safe operating rule:
 | Control actions are completed but verified too late, allowing ineffective controls to run unchecked | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` | On-time verification rate remains high and overdue critical verifications trend to zero |
 | Critical controls are assigned to operators without current practical proficiency, increasing execution error risk | `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md` | Operator certification and validation pass rates remain high with low unresolved proficiency gaps |
 | Teams complete low-priority control work while critical overdue obligations remain unresolved | `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md` | Priority inversion incidents trend to zero and critical-first execution rate remains high |
+| Critical decisions rely on control signals that may be corrupted or formula-drifted without detection | `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md` | Signal integrity pass rate remains high and untrusted critical-signal count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

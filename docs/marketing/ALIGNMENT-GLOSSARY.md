@@ -367,6 +367,9 @@ The degree to which assigned operators demonstrate the practical skills required
 ## Control Priority Inversion
 A condition where lower-priority control work is executed while higher-risk critical obligations remain overdue.
 
+## Control Signal Integrity
+The degree to which control signals are accurate, complete, and definition-consistent for trusted decision use.
+
 ---
 
 ## Incident & Escalation Terms

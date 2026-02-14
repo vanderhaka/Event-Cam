@@ -496,6 +496,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`**  
   Review detecting when lower-priority control work displaces overdue critical obligations.
 
+- **`ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md`**  
+  Review validating that control signals remain trustworthy and definition-consistent.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -657,6 +660,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need fast proof that control actions worked before risk compounds | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` |
 | We need confidence that critical controls are operated by currently proficient operators | `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md` |
 | We need to prevent low-priority control work from delaying overdue critical obligations | `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md` |
+| We need to prevent corrupted or drifting control signals from driving critical decisions | `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md` |
 
 ---
 
@@ -784,6 +788,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Verification Latency Review | Ops / PMO + Control Owners + Data/Analytics Owners |
 | Control Operator Proficiency Review | Ops / PMO + Functional Leads + People/Enablement Owners |
 | Control Priority Inversion Review | Ops / PMO + Functional Leads + Strategy Owner |
+| Control Signal Integrity Review | Data/Analytics Owners + Ops / PMO + Control Owners |
 
 ---
 
@@ -930,6 +935,7 @@ Includes Pack C, plus:
 127. `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
 128. `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
 129. `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`
+130. `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

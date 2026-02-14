@@ -305,6 +305,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical-control operators with unresolved proficiency gaps (count):
 - Priority inversion incidents in control backlog (count):
 - Critical-first execution rate (%):
+- Critical-control signal integrity pass rate (%):
+- Untrusted critical-control signals (count):
 
 ---
 
