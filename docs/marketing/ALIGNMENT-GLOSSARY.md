@@ -421,6 +421,9 @@ The value-to-cost performance of a control, balancing measurable risk reduction 
 ## Control Complexity Budget
 The approved upper bound for control-process complexity, calibrated to team stage and risk profile.
 
+## Control Execution Friction
+The measurable delay or handoff drag introduced by control steps in critical operating workflows.
+
 ---
 
 ## Incident & Escalation Terms

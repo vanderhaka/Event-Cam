@@ -341,6 +341,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Median control value-to-cost ratio:
 - Over-budget critical controls (count):
 - Complexity simplification actions on-time rate (%):
+- Friction-high critical controls (count):
+- Median control-induced delay (hrs):
 
 ---
 

@@ -897,6 +897,7 @@ Use this minimum-safe operating rule:
 | High-impact control failures are triaged by count rather than cost, delaying the most material fixes | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` | High-impact failure count declines and cost-weighted closure rate remains high |
 | Controls remain active despite poor value-to-cost performance, creating governance drag and slowing execution | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` | High-burden low-return control count trends to zero and value-to-cost ratio improves |
 | Control workflows become overly complex over time, causing process drag and avoidable execution latency | `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` | Over-budget critical-control count trends to zero and simplification actions close on time |
+| Control steps introduce recurring handoff delay, slowing critical execution even when controls are nominally healthy | `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` | Friction-high critical-control count trends to zero and median control-induced delay declines |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

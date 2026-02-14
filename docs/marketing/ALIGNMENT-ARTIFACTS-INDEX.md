@@ -550,6 +550,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`**  
   Review keeping control complexity within stage-appropriate budget to prevent governance drag.
 
+- **`ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`**  
+  Review identifying control bottlenecks that introduce avoidable execution delays.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -729,6 +732,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need control failures prioritized by real business impact cost instead of incident count alone | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` |
 | We need to prevent governance drag from controls that consume high effort with low measurable impact | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` |
 | We need to keep control process complexity within a sustainable budget as the system scales | `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` |
+| We need to reduce control-induced execution delay without weakening safeguards | `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` |
 
 ---
 
@@ -874,6 +878,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Failure Impact Cost Review | Ops / PMO + Finance Partner + Control Owners |
 | Control Efficiency Review | Ops / PMO + Control Owners + Finance/Operations Partner |
 | Control Complexity Budget Review | Ops / PMO + Control Owners + Process/Operations Partner |
+| Control Execution Friction Review | Ops / PMO + Control Owners + Functional Execution Leads |
 
 ---
 
@@ -1038,6 +1043,7 @@ Includes Pack C, plus:
 145. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
 146. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
 147. `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`
+148. `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
