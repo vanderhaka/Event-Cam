@@ -349,6 +349,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`**  
   Monthly per-control scoring framework for keep/optimize/merge/retire decisions.
 
+- **`ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`**  
+  Monthly review of expected signal relationships to detect contradictory patterns and hidden risk.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -461,6 +464,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need proof that required review cycles are not being skipped | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` |
 | We need to verify teams are actually following newly launched controls | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` |
 | We need objective, per-control value scoring before portfolio decisions | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` |
+| We need to detect conflicting signal movement before making wrong optimization calls | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` |
 
 ---
 
@@ -539,6 +543,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Review Cadence Compliance | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Adoption Compliance | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Effectiveness Scorecard | Strategy Owner + Ops / PMO + Functional Leads |
+| Signal Correlation Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 
 ---
 
@@ -636,6 +641,7 @@ Includes Pack C, plus:
 78. `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
 79. `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
 80. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
+81. `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

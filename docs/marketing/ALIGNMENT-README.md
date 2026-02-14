@@ -83,6 +83,7 @@ It helps teams:
 - **Review discipline governance:** `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
 - **Control adoption governance:** `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
 - **Control value governance:** `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
+- **Cross-signal coherence governance:** `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -135,4 +136,5 @@ For full routing by scenario, use:
 - Keep weekly/monthly/quarterly review cadence on schedule with complete inputs.
 - Keep newly launched controls above adoption target or intervene quickly.
 - Keep each active control above minimum effectiveness score or route portfolio action.
+- Keep contradictory signal patterns diagnosed before high-impact decisions proceed.
 

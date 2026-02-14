@@ -830,6 +830,7 @@ Use this minimum-safe operating rule:
 | Required weekly/monthly reviews are skipped, causing silent governance drift | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` | On-time review rate stays high and missed review count trends to zero |
 | Newly introduced controls exist on paper but are inconsistently executed | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` | Adoption compliance on active new controls reaches and sustains target levels |
 | Active controls remain in place without objective proof of value | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` | Low-scoring controls are optimized/merged/retired and average score trends upward |
+| Teams optimize isolated metrics while contradictory signals reveal hidden risk | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` | Contradictory critical signal pairs decline and are diagnosed quickly when present |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

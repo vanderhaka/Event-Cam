@@ -41,6 +41,7 @@
 - Review cadence-compliance status for weekly/monthly/quarterly review cycles.
 - Review control-adoption compliance for newly launched or changed controls.
 - Review control-effectiveness score trend for keep/optimize/merge/retire candidates.
+- Review signal-correlation report for contradictory high-priority pairs.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -90,6 +91,7 @@
 - Check missed/deferred reviews and assign catch-up owners.
 - Check non-compliant control steps and assign remediation owners.
 - Check controls with weak/failing effectiveness scores and assign action decisions.
+- Check contradictory signal pairs and assign root-cause investigations.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -154,6 +156,7 @@ Use this trigger table before meetings:
 | Monthly/quarterly review missed | Trigger immediate cadence-recovery session and owner reset |
 | Control adoption rate drops below threshold | Trigger adoption remediation or control redesign review |
 | Critical control effectiveness score falls below threshold | Trigger immediate portfolio intervention decision |
+| Contradictory critical signal pair unresolved >10 business days | Escalate cross-signal diagnostic review |
 
 ---
 
@@ -164,7 +167,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

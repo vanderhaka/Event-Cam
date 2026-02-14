@@ -220,6 +220,9 @@ The measured extent to which teams consistently execute required steps for activ
 ## Control Effectiveness Score
 Composite per-control score evaluating adoption, outcome impact, response quality, evidence integrity, and cost efficiency.
 
+## Signal Correlation
+Observed relationship between key operating signals used to confirm expected system behavior and detect contradictory risk patterns.
+
 ---
 
 ## Incident & Escalation Terms
