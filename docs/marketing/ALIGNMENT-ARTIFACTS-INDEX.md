@@ -376,6 +376,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-BACKLOG-AGING-REVIEW.md`**  
   Cross-workflow aging review for stale unresolved items and age-weighted risk burn-down.
 
+- **`ALIGNMENT-RECURRENCE-HEATMAP.md`**  
+  Cross-domain heatmap of repeated issues to prioritize chronic-cluster interventions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -497,6 +500,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to reduce repeated reopen cycles on previously closed decisions | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` |
 | We need one recurring view of dominant root causes across all governance workflows | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` |
 | We need to prevent unresolved-item backlog from aging into capacity debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` |
+| We need to visualize chronic recurrence clusters across domains and owners | `ALIGNMENT-RECURRENCE-HEATMAP.md` |
 
 ---
 
@@ -584,6 +588,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Reopen Analysis | Strategy Owner + Ops / PMO + Decision Review Leads |
 | Root Cause Pattern Review | Strategy Owner + Ops / PMO + Functional Leads |
 | Backlog Aging Review | Ops / PMO + Functional Leads + Strategy Owner |
+| Recurrence Heatmap | Ops / PMO + Strategy Owner + Functional Leads |
 
 ---
 
@@ -690,6 +695,7 @@ Includes Pack C, plus:
 87. `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 88. `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
 89. `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
+90. `ALIGNMENT-RECURRENCE-HEATMAP.md`
 
 Recommended only when:
 - decision volume is high,

@@ -839,6 +839,7 @@ Use this minimum-safe operating rule:
 | Previously closed decisions reopen repeatedly, creating churn and strategy instability | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` | Reopen rate and repeat-reopen frequency decline as root causes are corrected |
 | Teams treat recurring failures as isolated issues and miss systemic root-cause concentration | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` | Dominant recurring causes are reduced through structural interventions |
 | Unresolved governance work silently ages and accumulates hidden execution debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` | Critical-stale backlog declines and age-weighted risk score trends downward |
+| Chronic repeat issues persist across teams because recurrence hotspots are not visualized | `ALIGNMENT-RECURRENCE-HEATMAP.md` | High-severity recurrence clusters shrink and recurrence burn-down improves cycle-over-cycle |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

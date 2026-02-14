@@ -92,6 +92,7 @@ It helps teams:
 - **Decision closure stability governance:** `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
 - **Systemic-cause governance:** `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
 - **Backlog-debt governance:** `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
+- **Chronic-recurrence governance:** `ALIGNMENT-RECURRENCE-HEATMAP.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -153,4 +154,5 @@ For full routing by scenario, use:
 - Keep reopened-decision churn low by resolving root causes before reclose.
 - Keep recurring root causes visible and prioritized for structural fixes.
 - Keep unresolved-item aging in control through severity-weighted backlog burn-down.
+- Keep chronic recurrence clusters visible and trending down by cycle.
 

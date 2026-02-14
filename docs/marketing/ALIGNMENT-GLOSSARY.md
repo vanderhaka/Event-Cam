@@ -247,6 +247,9 @@ Recurring causal category observed across multiple governance workflows, indicat
 ## Backlog Aging
 The accumulation of unresolved items over time relative to SLA, used to identify stale work and hidden capacity debt.
 
+## Recurrence Heatmap
+Structured view of repeated issue intensity by domain, cause, owner group, and severity to identify chronic clusters.
+
 ---
 
 ## Incident & Escalation Terms

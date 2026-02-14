@@ -125,6 +125,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 40. `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` (reduces repeat reopen churn on previously closed decisions)
 41. `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` (surfaces recurring causes across workflows for structural fixes)
 42. `ALIGNMENT-BACKLOG-AGING-REVIEW.md` (keeps unresolved work from aging into hidden capacity debt)
+43. `ALIGNMENT-RECURRENCE-HEATMAP.md` (maps chronic recurrence clusters for focused intervention)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
