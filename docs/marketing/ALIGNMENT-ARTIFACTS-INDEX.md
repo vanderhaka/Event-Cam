@@ -88,6 +88,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-MATURITY-MODEL.md`**  
   Framework for assessing and improving alignment-system maturity over time.
 
+- **`ALIGNMENT-RISK-TAXONOMY.md`**  
+  Shared risk classification framework for blocker severity and escalation handling.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -120,6 +123,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a quarter-end alignment and execution review | `ALIGNMENT-RETROSPECTIVE-TEMPLATE.md` |
 | We need to stand up alignment in the next 48 hours | `ALIGNMENT-QUICKSTART-48H.md` |
 | We need to evaluate long-term alignment capability maturity | `ALIGNMENT-MATURITY-MODEL.md` |
+| We need standardized risk classification and escalation | `ALIGNMENT-RISK-TAXONOMY.md` |
 
 ---
 
