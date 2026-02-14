@@ -140,3 +140,58 @@ For each question above, capture:
 
 If any Priority 0 question is unanswered, treat it as an execution blocker for expansion initiatives.
 
+---
+
+## Rapid Alignment Workshop Agenda (90 Minutes)
+
+Use this to resolve the highest-risk questions quickly.
+
+### 0–10 min: Set decision boundaries
+- Confirm current quarter objective.
+- Confirm who has final decision authority for pricing, GTM narrative, and channel investment.
+
+### 10–35 min: Priority 0 commercial decisions
+- Finalize canonical pricing model.
+- Finalize Pro economics.
+- Finalize single primary market for next 6 months.
+
+### 35–55 min: Narrative and growth-loop decisions
+- Approve one-quarter message architecture.
+- Select one dominant growth loop + one support loop.
+
+### 55–70 min: Compliance and risk decisions
+- Approve consent/email policy baseline.
+- Confirm non-negotiable legal guardrails for lifecycle marketing.
+
+### 70–85 min: Operating cadence decisions
+- Lock weekly KPI cadence and owner map.
+- Lock launch playbook owner responsibilities.
+
+### 85–90 min: Commitments
+- Record decisions in the log below.
+- Assign due dates for all doc updates triggered by decisions.
+
+---
+
+## Decision Log (Fill as Answers Are Finalized)
+
+| Question ID | Decision | Owner | Date Decided | Docs to Update | Status |
+|---|---|---|---|---|---|
+| P0-1 |  |  |  |  | Open |
+| P0-2 |  |  |  |  | Open |
+| P0-3 |  |  |  |  | Open |
+| P0-4 |  |  |  |  | Open |
+| P0-5 |  |  |  |  | Open |
+| P0-6 |  |  |  |  | Open |
+| P1-7 |  |  |  |  | Open |
+| P1-8 |  |  |  |  | Open |
+| P1-9 |  |  |  |  | Open |
+| P1-10 |  |  |  |  | Open |
+| P1-11 |  |  |  |  | Open |
+| P1-12 |  |  |  |  | Open |
+| P2-13 |  |  |  |  | Open |
+| P2-14 |  |  |  |  | Open |
+| P2-15 |  |  |  |  | Open |
+| P2-16 |  |  |  |  | Open |
+| P2-17 |  |  |  |  | Open |
+
