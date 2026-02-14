@@ -638,6 +638,55 @@ If these metrics are not available and reviewed consistently, strategic expansio
 
 ---
 
+## Single-Page Strategy Narrative Template (Recommended Replacement for Drift)
+
+Use this as the canonical one-page narrative to align all future docs:
+
+1. **Who we win with first (ICP):**  
+   _Primary buyer + immediate adjacent buyer._
+
+2. **Core promise:**  
+   _One sentence that survives all channels._
+
+3. **Why now:**  
+   _Market timing and behavioral trigger._
+
+4. **Proof pillars (max 3):**  
+   _Operational proof points, not aspirational claims._
+
+5. **Monetization truth:**  
+   _Current live pricing model + explicit exclusions._
+
+6. **Primary growth loop:**  
+   _One loop selected for this quarter._
+
+7. **Top 3 operating priorities (90 days):**  
+   _Each with owner + metric._
+
+8. **What we are intentionally not doing:**  
+   _Prevents narrative creep and focus dilution._
+
+If any long-form strategy doc conflicts with this one-page narrative, the one-page narrative wins.
+
+---
+
+## Board Reporting Format (Monthly)
+
+To keep leadership aligned, use one fixed monthly strategic readout structure:
+
+| Section | Required Output |
+|---|---|
+| Strategic Focus | What remained in focus vs what was consciously deprioritized |
+| KPI Movement | Top-line funnel and unit economics deltas (MoM) |
+| Experiment Outcomes | Scaled / iterated / killed tests with reasons |
+| Risk Register | Top 5 current strategic risks + mitigation owner |
+| Assumption Changes | Which prior assumptions were invalidated or strengthened |
+| Decision Requests | Clear decisions needed from leadership |
+
+This format prevents “activity updates” from replacing strategic decision-making.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
