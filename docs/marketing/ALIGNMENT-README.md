@@ -49,6 +49,7 @@ It helps teams:
 - **State transition discipline:** `ALIGNMENT-STATE-MACHINE.md`
 - **Doc quality + pruning:** `ALIGNMENT-DOC-QUALITY-SCORECARD.md` + `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 - **Team behavior baseline:** `ALIGNMENT-WORKING-AGREEMENTS.md`
+- **Pre-change risk check:** `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
 
 These controls keep the system operable as artifact count grows.
 

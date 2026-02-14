@@ -220,6 +220,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-WORKING-AGREEMENTS.md`**  
   Team behavior contract for decision hygiene, escalation speed, and accountability norms.
 
+- **`ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`**  
+  Structured pre-approval assessment for evaluating second-order effects of major changes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -289,6 +292,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need a pragmatic sequence to roll out the alignment system | `ALIGNMENT-ADOPTION-ROADMAP.md` |
 | We need fast response ownership for urgent alignment incidents | `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md` |
 | We need consistent team behavior while running this system | `ALIGNMENT-WORKING-AGREEMENTS.md` |
+| We need to evaluate cross-functional impact before major changes | `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md` |
 
 ---
 
@@ -324,6 +328,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Adoption Roadmap | Ops / PMO + Strategy Owner |
 | On-Call Escalation Matrix | Ops / PMO + Strategy Owner |
 | Working Agreements | Strategy Owner + Ops / PMO |
+| Change Impact Assessment | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -378,6 +383,7 @@ Includes Pack C, plus:
 35. `ALIGNMENT-ADOPTION-ROADMAP.md`
 36. `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`
 37. `ALIGNMENT-WORKING-AGREEMENTS.md`
+38. `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
 
 Recommended only when:
 - decision volume is high,
