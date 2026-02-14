@@ -89,36 +89,64 @@ At **$2 per guest**, a 150-person wedding costs $300 — less than the cake, les
 
 ## 3. Value Proposition & Messaging
 
-### One-Liner
+### Headline Candidates (Pick One — Test the Rest)
 
-> **Every guest. Every photo. Your watermark. No app required.**
+Lead with emotion, not features. The bride doesn't care about AI or watermarks in the headline — she cares about not losing the photos. Features are discovered after the click.
 
-### Elevator Pitch
+**The fear:**
+1. "There are thousands of photos from your wedding you'll never see. Unless."
+2. "Right now, the best photo from your wedding is on someone else's phone."
 
-Event Cam is the easiest way to collect photos and videos from every guest at your wedding. Put QR codes on tables, guests scan with their phone and upload — no app, no account, no friction. AI generates a custom watermark with your names and wedding date that's applied to every photo. Add beautiful filters for a cohesive look. Moderate everything, build curated albums, and share with password-protected links. All for just $2 per guest.
+**The perspective shift:**
+3. "See your wedding the way your guests did."
+4. "Every angle. Every laugh. Every ugly-cry. From everyone who was there."
+
+**The emotional gut-punch:**
+5. "The photo that makes you cry won't be from your photographer."
+6. "Your photographer captured 500 perfect shots. Your guests captured the other 2,000."
+
+**The simple promise:**
+7. "Every guest. Every photo. One album."
+8. "150 guests. 150 cameras. One album."
+
+**More to test:**
+9. "Everyone at your wedding is already holding a camera."
+10. "Stop asking guests to 'send me that photo.' They never will."
+11. "The group chat isn't going to cut it."
+12. "You spent a year planning every detail. Don't lose half the photos."
+13. "Your mum's photo from the aisle. Your best friend's video of the first dance. Your cousin's shot of the cake disaster. All of it. One album."
+14. "The morning after your wedding, 2,000 photos you've never seen are waiting."
+
+### Supporting Paragraph (Follows Any Headline)
+
+> Put a code on every table. Your guests scan it with their phone, snap photos, and upload in seconds — no app, no account, nothing to download. Every photo lands in one private album that only you control. You choose what stays, you choose who sees it. $2 a guest. Less than the cake.
 
 ### Messaging Pillars
 
-| Pillar | Message | Proof Point |
-|--------|---------|-------------|
-| **Zero friction** | "Scan. Upload. Done." — Your guests never download an app or create an account | Browser-based upload; works on any phone with a camera |
-| **AI watermarks** | "Your names. Your date. On every photo." — AI generates a custom, beautiful watermark unique to your wedding | One-of-a-kind AI-generated design, not a generic text stamp |
-| **Filters & polish** | "A cohesive album without an editor." — Curated filters give every guest's photos a unified, polished look | Wedding-friendly filter presets applied in-browser or post-upload |
-| **Full control** | "Your wedding, your album." — Review every photo before anyone sees it | Built-in approve/reject moderation queue |
-| **Privacy-first** | "Private by default." — No public galleries, no social media leaks | Password-protected links with view limits and expiration |
-| **Premium yet affordable** | "Less than a dollar per memory." — $2/guest is still cheaper than disposable cameras and a fraction of a photo booth | 150 guests = $300; compare to $500+ photo booth or $300+ in disposable cameras |
+| Pillar | Message | How a bride would say it |
+|--------|---------|--------------------------|
+| **Effortless for guests** | "Your guests just scan a code." | "Even my grandma figured it out. No app, nothing to download. She just scanned the thing on the table and uploaded." |
+| **Every photo, one place** | "It all lands in one private album." | "Instead of chasing people for photos in six different group chats, it was just... all there. The morning after." |
+| **You're in control** | "You approve every photo before anyone sees it." | "I could go through everything and pick what to share. Nothing weird goes public." |
+| **Costs almost nothing** | "Less than the cake." | "We spent $300 for 150 guests. That's literally less than the flowers on one table." |
 
-### Tagline Options
+### Tone Rules
 
-- "Every guest. Every photo. Your watermark."
-- "The wedding album that fills itself."
-- "Scan. Upload. Done. — $2 per guest."
-- "No app. No friction. Every memory."
-- "AI-watermarked. Guest-powered. Beautifully yours."
+- **Never lead with features** — lead with the feeling. Watermarks, filters, moderation are features you discover *after* you care.
+- **Never say "AI" in a headline** — it's a tool, not the message.
+- **Talk like a friend, not a brand** — "You'll spend more on napkins" beats "affordable per-guest pricing."
+- **Use specifics** — "$300 for 150 guests" is better than "affordable." "2,000 photos" is better than "all the photos."
+- **The emotional hook is loss** — brides are terrified of missing memories. That's the real motivator. Not features. Not price.
 
-### Emotional Hook (for Ads & Landing Pages)
+### "Not Saying Yet" Boundary
 
-> Your photographer captures 500 perfect shots. Your 150 guests capture 2,000 more — the candid laughs, the dance floor chaos, the moments between moments. Event Cam collects them all, watermarks them with your names, and puts them in one beautiful album. For two dollars a guest.
+Do NOT include in public messaging this quarter:
+- AI / watermarks / filters as headline concepts (they're discovery features, not the hook)
+- Venue subscriptions (future feature)
+- Social app / platform vision
+- Festival / enterprise capabilities
+- "Network" or "marketplace" language
+- Anything about email collection or growth engines (internal strategy only)
 
 ---
 
