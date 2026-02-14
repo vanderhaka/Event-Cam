@@ -129,6 +129,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Unresolved control-overlap pairs (count) |  |  |  |
 | Drifted high-impact assumptions (count) |  |  |  |
 | Open I1/I2 interventions (count) |  |  |  |
+| Forecasted high-risk owners next cycle (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -237,6 +238,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Duplicate governance effort hours (est.):
 - Assumption revalidated rate:
 - Intervention queue completion rate (I1/I2):
+- Owner capacity forecast accuracy:
 
 ---
 

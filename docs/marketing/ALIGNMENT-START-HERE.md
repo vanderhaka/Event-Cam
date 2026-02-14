@@ -131,6 +131,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 46. `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` (removes duplicate/conflicting controls that create governance drag)
 47. `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` (detects and rebases high-impact assumptions before decision quality degrades)
 48. `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` (ensures highest-risk interventions are sequenced first)
+49. `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` (forecasts owner overload and enables pre-cycle rebalancing)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

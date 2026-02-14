@@ -56,6 +56,7 @@
 - Review control-overlap analysis for unresolved duplicate/conflict-prone pairs.
 - Review assumption-drift status for high-impact decision dependencies.
 - Review intervention-priority queue for unresolved I1/I2 items.
+- Review owner-capacity forecast for next-cycle high-risk load concentrations.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -120,6 +121,7 @@
 - Check overlap/conflict control pairs and assign clarify/merge owners.
 - Check drifted assumptions with active decision exposure and assign rebase owners.
 - Check intervention sequence adherence and rebalance capacity toward highest bands.
+- Check forecasted high-risk owners and assign pre-cycle rebalancing actions.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -199,6 +201,7 @@ Use this trigger table before meetings:
 | Conflict-prone control overlap unresolved | Trigger overlap-resolution intervention before next cycle |
 | Drifted assumptions exposed to active P0/P1 decisions | Trigger assumption rebase and packet update intervention |
 | I1 interventions remain unstarted while lower-priority work continues | Trigger forced intervention reprioritization |
+| Forecast shows multi-owner high-risk overload next cycle | Trigger pre-cycle owner reallocation decision |
 
 ---
 
@@ -209,7 +212,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

@@ -98,6 +98,7 @@ It helps teams:
 - **Control de-duplication governance:** `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
 - **Assumption-integrity governance:** `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`
 - **Intervention sequencing governance:** `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md`
+- **Owner capacity foresight governance:** `ALIGNMENT-OWNER-CAPACITY-FORECAST.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -165,4 +166,5 @@ For full routing by scenario, use:
 - Keep overlapping controls clarified or merged to prevent duplicate effort and conflict.
 - Keep high-impact assumptions revalidated and rebased before drift contaminates decisions.
 - Keep remediation capacity focused on highest-priority interventions first.
+- Keep projected owner overload low through pre-cycle capacity rebalancing.
 

@@ -265,6 +265,9 @@ Material deviation between an assumption’s baseline claim and current evidence
 ## Intervention Priority Score
 Risk-weighted score used to rank remediation interventions by urgency, exposure, recurrence pressure, and feasibility.
 
+## Owner Capacity Forecast
+Forward-looking estimate of owner workload and risk-band status for the next operating cycle to enable proactive reallocation.
+
 ---
 
 ## Incident & Escalation Terms
