@@ -88,6 +88,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 3. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` (meta-discipline health)
 4. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` (active/frozen set integrity)
 5. `ALIGNMENT-DECISION-INTAKE-QUEUE.md` (new request triage discipline)
+6. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` (impact verification on closed decisions)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

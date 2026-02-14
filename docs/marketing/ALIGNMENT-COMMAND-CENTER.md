@@ -93,7 +93,7 @@ Use this trigger table before meetings:
 | Meeting | Minimum Inputs |
 |---|---|
 | KPI Standup | KPI dashboard + data quality checklist |
-| Decision Review | Questions doc + decisions log + blockers log + decision intake queue |
+| Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
 | Strategy Sync | Monthly review template + score trend + risk register |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
