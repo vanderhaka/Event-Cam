@@ -79,6 +79,7 @@
 | Recurring control coverage-gap cluster count |  | 0 |  |
 | Exposed residual-risk critical-control count |  | 0 |  |
 | Expired accepted control-risk count |  | 0 |  |
+| Mean accepted-risk calibration gap |  | -0.10 to +0.10 |  |
 
 Key governance issue this month:
 ______________________________________

@@ -400,6 +400,9 @@ The level of risk that remains after current controls and mitigations have been 
 ## Control Risk Acceptance
 The formal, time-bounded decision to tolerate defined residual risk with explicit authority approval and monitoring.
 
+## Control Risk Acceptance Calibration
+The degree to which accepted-risk criteria and thresholds match observed outcomes over time.
+
 ---
 
 ## Incident & Escalation Terms

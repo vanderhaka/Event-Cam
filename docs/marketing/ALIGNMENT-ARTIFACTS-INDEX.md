@@ -529,6 +529,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`**  
   Review governing explicit, time-bounded acceptance of residual control risk.
 
+- **`ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`**  
+  Review calibrating accepted-risk decisions against observed outcomes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -701,6 +704,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need recurring control coverage gaps surfaced and structurally fixed, not repeatedly patched | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` |
 | We need visibility into risk that remains after controls so hidden exposure is not ignored | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` |
 | We need accepted residual risk tracked with authority, expiry, and monitoring discipline | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` |
+| We need accepted-risk criteria tuned to real outcomes instead of intuition drift | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` |
 
 ---
 
@@ -839,6 +843,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Coverage Gap Trend Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Residual Risk Review | Ops / PMO + Strategy Owner + Risk/Control Owners |
 | Control Risk Acceptance Review | Ops / PMO + Strategy Owner + Policy/Compliance Owners |
+| Control Risk Acceptance Calibration Review | Ops / PMO + Strategy Owner + Risk/Analytics Owners |
 
 ---
 
@@ -996,6 +1001,7 @@ Includes Pack C, plus:
 138. `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
 139. `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
 140. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
+141. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

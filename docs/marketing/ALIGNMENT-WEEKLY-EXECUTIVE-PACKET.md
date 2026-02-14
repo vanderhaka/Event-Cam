@@ -327,6 +327,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Residual-risk reassessment completed on cadence (%):
 - Expired accepted control risks (count):
 - Accepted risks with active monitoring coverage (%):
+- Accepted-risk over-acceptance rate (%):
+- Risk-acceptance recalibration actions overdue (count):
 
 ---
 
