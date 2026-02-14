@@ -319,6 +319,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`**  
   Unified tracker for corrective actions from incidents, escalations, reversals, and control failures.
 
+- **`ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`**  
+  Evidence-quality audit to verify closed statuses are valid and not administratively premature.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -421,6 +424,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to identify and correct recurring control breakdown patterns | `ALIGNMENT-CONTROL-FAILURE-MODES.md` |
 | We need to ensure escalations resolve root causes and not just move ownership upward | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` |
 | We need one verified closure queue for all corrective actions | `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md` |
+| We need to detect false closures before they create hidden risk | `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` |
 
 ---
 
@@ -489,6 +493,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Failure Modes | Strategy Owner + Ops / PMO + Control Owners |
 | Escalation Effectiveness Review | Ops / PMO + On-Call Owner + Functional Leads |
 | Corrective Action Tracker | Ops / PMO + Functional Leads + Control Owners |
+| Closure Integrity Audit | Ops / PMO + Strategy Owner + Data/Analytics Owner |
 
 ---
 
@@ -576,6 +581,7 @@ Includes Pack C, plus:
 68. `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 69. `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
 70. `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
+71. `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
 
 Recommended only when:
 - decision volume is high,

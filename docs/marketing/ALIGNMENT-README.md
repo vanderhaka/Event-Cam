@@ -73,6 +73,7 @@ It helps teams:
 - **Control breakdown pattern governance:** `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 - **Escalation outcome governance:** `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
 - **Corrective-action closure governance:** `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
+- **Closure validity governance:** `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -115,4 +116,5 @@ For full routing by scenario, use:
 - Contain and redesign controls quickly when high-severity failure modes recur.
 - Keep escalation closures root-cause-complete and recurrence trending down.
 - Keep corrective-action backlog small and verified-closure rates high.
+- Keep closed statuses audit-valid with evidence-linked closure quality above threshold.
 

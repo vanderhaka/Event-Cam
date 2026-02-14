@@ -31,6 +31,7 @@
 - Review open high-severity control failure modes and containment status.
 - Review escalation effectiveness trend (SLA, recurrence, reopened count).
 - Review corrective-action backlog (overdue CA-P0/CA-P1 and reopened actions).
+- Review closure-integrity audit results (valid-closure rate, failure classes, stale-evidence closures).
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -70,6 +71,7 @@
 - Check recurring control-failure patterns and trigger redesign review where needed.
 - Check unresolved or reopened escalations for root-cause containment gaps.
 - Check corrective actions awaiting verification and overdue closure.
+- Check reopened items caused by invalid closure and assign correction owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -124,6 +126,7 @@ Use this trigger table before meetings:
 | Same control logs repeated F1/F2 failure modes | Trigger control redesign via change protocol |
 | Escalation recurrence rises for 2 months | Run escalation-effectiveness redesign review |
 | Corrective-action backlog grows for 3 weeks | Run corrective-action reset and owner rebalance |
+| Valid closure rate drops below 90% | Freeze new closes in affected workflow and run closure-integrity correction |
 
 ---
 
@@ -134,7 +137,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

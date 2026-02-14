@@ -104,6 +104,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Open high-severity control failure modes (F1/F2) |  |  |  |
 | Escalations reopened this month (count) |  |  |  |
 | Overdue corrective actions (CA-P0/CA-P1) |  |  |  |
+| Invalid closures detected this week (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -187,6 +188,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control failures without containment plan (count):
 - Escalation root-cause closure rate:
 - Corrective-action verified closure rate:
+- Valid closure rate (audit):
 
 ---
 
