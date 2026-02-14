@@ -151,6 +151,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-ASSUMPTION-REGISTRY.md`**  
   Canonical registry for strategic assumptions, confidence levels, and validation status.
 
+- **`ALIGNMENT-DEPENDENCY-TRACKER.md`**  
+  Cross-functional dependency tracker for owner/date-bound execution blockers.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -204,6 +207,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to track and close conflicting statements across docs | `ALIGNMENT-CONTRADICTION-REGISTER.md` |
 | We need to prove decisions changed execution and KPI outcomes | `ALIGNMENT-TRACEABILITY-MATRIX.md` |
 | We need to make strategic assumptions explicit and testable | `ALIGNMENT-ASSUMPTION-REGISTRY.md` |
+| We need to track cross-functional blockers before they cascade | `ALIGNMENT-DEPENDENCY-TRACKER.md` |
 
 ---
 
@@ -223,6 +227,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Contradiction Register | Strategy Owner + Documentation Owner |
 | Traceability Matrix | Ops / PMO + Growth Lead |
 | Assumption Registry | Strategy Owner + Growth Lead |
+| Dependency Tracker | Ops / PMO + Functional Leads |
 
 ---
 
@@ -258,6 +263,7 @@ Includes Pack B, plus:
 19. `ALIGNMENT-CONTRADICTION-REGISTER.md`
 20. `ALIGNMENT-TRACEABILITY-MATRIX.md`
 21. `ALIGNMENT-ASSUMPTION-REGISTRY.md`
+22. `ALIGNMENT-DEPENDENCY-TRACKER.md`
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
