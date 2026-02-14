@@ -299,6 +299,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Continuity stress-test failures open (count):
 - Overdue critical-control maintenance debt items (count):
 - Control-maintenance debt closure rate (%):
+- On-time control-action verification rate (%):
+- Overdue critical-control verifications (count):
 
 ---
 

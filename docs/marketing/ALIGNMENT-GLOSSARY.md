@@ -358,6 +358,9 @@ A multi-factor simulation that tests whether a control remains reliable during s
 ## Control Maintenance Debt
 Accumulated overdue maintenance work on a control that increases operational fragility and failure risk.
 
+## Control Verification Latency
+The elapsed time between a control action being completed and its outcome being verified with evidence.
+
 ---
 
 ## Incident & Escalation Terms

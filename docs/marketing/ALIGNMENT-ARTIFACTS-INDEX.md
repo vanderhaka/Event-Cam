@@ -487,6 +487,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`**  
   Review tracking overdue maintenance debt that threatens control reliability.
 
+- **`ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`**  
+  Review measuring delay between control action completion and verified outcomes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -645,6 +648,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need early detection of ownership instability on critical controls before reliability degrades | `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md` |
 | We need proof that critical controls survive multi-factor stress, not just isolated checks | `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md` |
 | We need to prevent overdue control maintenance from compounding into reliability failures | `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md` |
+| We need fast proof that control actions worked before risk compounds | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` |
 
 ---
 
@@ -769,6 +773,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Ownership Churn Review | Ops / PMO + Functional Leads + People/Leadership Delegates |
 | Control Continuity Stress-Test Review | Ops / PMO + On-Call Lead + Functional Leads |
 | Control Maintenance Debt Review | Ops / PMO + Functional Leads + Control Owners |
+| Control Verification Latency Review | Ops / PMO + Control Owners + Data/Analytics Owners |
 
 ---
 
@@ -912,6 +917,7 @@ Includes Pack C, plus:
 124. `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`
 125. `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
 126. `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`
+127. `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

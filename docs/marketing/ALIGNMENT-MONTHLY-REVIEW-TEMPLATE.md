@@ -65,6 +65,7 @@
 | High-churn critical-control count |  | 0 |  |
 | Critical-control continuity stress-test pass rate |  | ≥90% |  |
 | Critical-control maintenance debt count |  | 0 |  |
+| On-time critical-control verification rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

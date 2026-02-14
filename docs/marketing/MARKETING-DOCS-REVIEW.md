@@ -876,6 +876,7 @@ Use this minimum-safe operating rule:
 | Frequent owner turnover destabilizes critical controls and increases silent continuity risk | `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md` | High-churn control count trends to zero and unplanned transitions are eliminated |
 | Controls appear healthy in isolated checks but fail under combined continuity stress conditions | `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md` | Stress-test pass rate remains high and combined-failure defect count trends to zero |
 | Overdue control maintenance accumulates quietly, increasing fragility and future incident likelihood | `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md` | Critical maintenance-debt count trends to zero and debt-closure SLA stays high |
+| Control actions are completed but verified too late, allowing ineffective controls to run unchecked | `ALIGNMENT-CONTROL-VERIFICATION-LATENCY-REVIEW.md` | On-time verification rate remains high and overdue critical verifications trend to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
