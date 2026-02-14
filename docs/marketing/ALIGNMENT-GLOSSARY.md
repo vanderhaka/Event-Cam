@@ -292,6 +292,9 @@ The degree to which teams consistently reference the designated source-of-truth 
 ## Decision Outcome Lag
 Elapsed time between decision closure and the first reliable measurable signal of its outcome impact.
 
+## Evidence Linkage Compliance
+The degree to which required decisions and actions include valid, current, and traceable evidence references.
+
 ---
 
 ## Incident & Escalation Terms

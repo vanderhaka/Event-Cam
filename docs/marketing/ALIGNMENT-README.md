@@ -107,6 +107,7 @@ It helps teams:
 - **Recovery-timeline governance:** `ALIGNMENT-RECOVERY-WINDOW-COMPLIANCE.md`
 - **Source-of-truth governance:** `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`
 - **Decision outcome visibility governance:** `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`
+- **Evidence-traceability governance:** `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -183,4 +184,5 @@ For full routing by scenario, use:
 - Keep recovery plans within declared windows and verify stabilization before closure.
 - Keep source references aligned to canonical-source map to avoid contradiction reintroduction.
 - Keep decision outcome visibility timely enough to support reinforcement/modification/reversal decisions.
+- Keep high-impact actions linked to valid, fresh evidence before closure or approval.
 

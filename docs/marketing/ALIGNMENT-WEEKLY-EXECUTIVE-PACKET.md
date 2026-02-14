@@ -138,6 +138,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Overdue recovery windows (count) |  |  |  |
 | Material canonical-source violations (count) |  |  |  |
 | Decisions with overdue outcome visibility (count) |  |  |  |
+| Critical items with broken/stale evidence links (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -255,6 +256,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Recovery plans completed within window (%):
 - Canonical source compliance rate:
 - Median decision outcome lag (days):
+- Evidence-linked item rate:
 
 ---
 
