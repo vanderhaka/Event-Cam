@@ -819,6 +819,7 @@ Use this minimum-safe operating rule:
 | Critical warnings are acknowledged slowly and become preventable incidents | `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` | Detection-to-action lag for critical signals stays within defined thresholds |
 | Same control risks recur despite prior fixes and consume governance capacity | `ALIGNMENT-CONTROL-FAILURE-MODES.md` | High-severity control failure recurrences decline with containment in SLA |
 | Escalations close administratively but root causes stay unresolved and recur | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` | Escalation recurrence and reopen rates decline with verified root-cause closure |
+| Corrective fixes are spread across logs and missed before verification | `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md` | Overdue high-priority corrective actions decline and verified-closure rate rises |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

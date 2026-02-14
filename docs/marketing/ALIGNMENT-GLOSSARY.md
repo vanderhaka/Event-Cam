@@ -187,6 +187,9 @@ Recurring pattern where a governance control fails by design, adoption, timing, 
 ## Escalation Effectiveness
 The degree to which escalations are resolved within SLA, close root causes, and avoid recurrence over the following review window.
 
+## Corrective Action Verified Closure
+Status reached when a corrective action is completed and objective evidence confirms it reduced the targeted risk without immediate recurrence.
+
 ---
 
 ## Incident & Escalation Terms

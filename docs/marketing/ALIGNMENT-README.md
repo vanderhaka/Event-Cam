@@ -72,6 +72,7 @@ It helps teams:
 - **Signal response speed governance:** `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`
 - **Control breakdown pattern governance:** `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 - **Escalation outcome governance:** `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
+- **Corrective-action closure governance:** `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -113,4 +114,5 @@ For full routing by scenario, use:
 - Keep critical signal detection→assignment→action lag within threshold by stage.
 - Contain and redesign controls quickly when high-severity failure modes recur.
 - Keep escalation closures root-cause-complete and recurrence trending down.
+- Keep corrective-action backlog small and verified-closure rates high.
 

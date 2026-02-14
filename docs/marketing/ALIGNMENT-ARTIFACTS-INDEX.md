@@ -316,6 +316,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`**  
   Weekly/monthly audit of escalation closure quality, recurrence, and root-cause resolution.
 
+- **`ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`**  
+  Unified tracker for corrective actions from incidents, escalations, reversals, and control failures.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -417,6 +420,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to reduce time-to-response on critical alignment signals | `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` |
 | We need to identify and correct recurring control breakdown patterns | `ALIGNMENT-CONTROL-FAILURE-MODES.md` |
 | We need to ensure escalations resolve root causes and not just move ownership upward | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` |
+| We need one verified closure queue for all corrective actions | `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md` |
 
 ---
 
@@ -484,6 +488,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Signal Lag Analysis | Ops / PMO + On-Call Owner + Functional Leads |
 | Control Failure Modes | Strategy Owner + Ops / PMO + Control Owners |
 | Escalation Effectiveness Review | Ops / PMO + On-Call Owner + Functional Leads |
+| Corrective Action Tracker | Ops / PMO + Functional Leads + Control Owners |
 
 ---
 
@@ -570,6 +575,7 @@ Includes Pack C, plus:
 67. `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`
 68. `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 69. `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
+70. `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
 
 Recommended only when:
 - decision volume is high,
