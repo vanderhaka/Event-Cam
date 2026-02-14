@@ -827,6 +827,7 @@ Use this minimum-safe operating rule:
 | Decision quality drifts down slowly and is noticed only after reversals accumulate | `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` | Decision quality composite remains stable/improving and reversal trend declines |
 | Alert overload desensitizes teams and delays response to critical warnings | `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` | Alert noise declines while critical-alert response SLA stays high |
 | Downstream controls run without valid upstream prerequisites, creating false compliance | `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` | Critical dependency breaks are resolved quickly and provisional outputs decline |
+| Required weekly/monthly reviews are skipped, causing silent governance drift | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` | On-time review rate stays high and missed review count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

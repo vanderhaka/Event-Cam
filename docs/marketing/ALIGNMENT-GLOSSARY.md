@@ -211,6 +211,9 @@ Condition where alert volume/noise exceeds team processing capacity, causing del
 ## Control Dependency
 Prerequisite relationship where one control’s validity depends on the health, cadence, or outputs of another upstream control.
 
+## Cadence Compliance
+The degree to which required review cycles occur on time with complete inputs and required owner participation.
+
 ---
 
 ## Incident & Escalation Terms

@@ -111,6 +111,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Decision quality composite trend (Up/Flat/Down) |  |  |  |
 | Alert fatigue status (Healthy/Watch/Fatigued) |  |  |  |
 | Broken critical control dependencies (D1 count) |  |  |  |
+| Missed required reviews this cycle (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -201,6 +202,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - No-Effect/Negative outcome rate (decision quality):
 - Low-value alert rate:
 - Dependency-at-risk controls (count):
+- On-time review rate (cadence compliance):
 
 ---
 

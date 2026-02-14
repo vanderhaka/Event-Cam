@@ -80,6 +80,7 @@ It helps teams:
 - **Decision quality trend governance:** `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`
 - **Alert quality governance:** `ALIGNMENT-ALERT-FATIGUE-REVIEW.md`
 - **Control sequencing governance:** `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md`
+- **Review discipline governance:** `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -129,4 +130,5 @@ For full routing by scenario, use:
 - Keep decision quality trends stable by intervening early on regression signals.
 - Keep alert volume/noise within capacity so critical warnings remain actionable.
 - Keep control prerequisites visible so downstream controls run only when valid.
+- Keep weekly/monthly/quarterly review cadence on schedule with complete inputs.
 
