@@ -100,6 +100,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-ARTIFACT-LIFECYCLE.md`**  
   Rules for creating, updating, superseding, and archiving alignment artifacts.
 
+- **`ALIGNMENT-SIGNAL-PLAYBOOK.md`**  
+  Response playbook for green/yellow/red alignment signal states.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -136,6 +139,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to transfer alignment ownership cleanly | `ALIGNMENT-HANDOFF-TEMPLATE.md` |
 | We need a tactical weekly operating routine | `ALIGNMENT-WEEKLY-OPERATIONS-CHECKLIST.md` |
 | We need governance for artifact versioning and retirement | `ALIGNMENT-ARTIFACT-LIFECYCLE.md` |
+| We need clear responses to degrading alignment signals | `ALIGNMENT-SIGNAL-PLAYBOOK.md` |
 
 ---
 
