@@ -481,6 +481,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`**  
   Review monitoring ownership turnover risk on critical controls.
 
+- **`ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`**  
+  Stress-test review validating critical controls under compounded continuity stress scenarios.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -637,6 +640,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to ensure automated controls stay reliable and recover quickly when they fail | `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md` |
 | We need critical controls to stay stable when primary owners transition or become unavailable | `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md` |
 | We need early detection of ownership instability on critical controls before reliability degrades | `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md` |
+| We need proof that critical controls survive multi-factor stress, not just isolated checks | `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md` |
 
 ---
 
@@ -759,6 +763,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Automation Reliability Review | Ops / PMO + Automation Owner + On-Call Lead |
 | Control Succession Readiness Review | Ops / PMO + Functional Leads + People/Leadership Delegates |
 | Control Ownership Churn Review | Ops / PMO + Functional Leads + People/Leadership Delegates |
+| Control Continuity Stress-Test Review | Ops / PMO + On-Call Lead + Functional Leads |
 
 ---
 
@@ -900,6 +905,7 @@ Includes Pack C, plus:
 122. `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`
 123. `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`
 124. `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`
+125. `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

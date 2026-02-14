@@ -295,6 +295,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls with single-owner dependency (count):
 - High-churn critical controls this quarter (count):
 - Unplanned critical-control owner transitions (count):
+- Critical controls passing continuity stress tests (%):
+- Continuity stress-test failures open (count):
 
 ---
 

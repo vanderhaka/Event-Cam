@@ -160,6 +160,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 75. `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md` (ensures automated controls remain reliable and fallback-ready under failure conditions)
 76. `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md` (ensures critical controls remain stable when primary owners transition, with validated successor coverage)
 77. `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md` (ensures repeated owner turnover risk is detected early and continuity is stabilized before control reliability degrades)
+78. `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md` (ensures critical controls remain reliable under compounded continuity stress scenarios before real incidents occur)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

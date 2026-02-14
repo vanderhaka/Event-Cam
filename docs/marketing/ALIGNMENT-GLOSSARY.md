@@ -352,6 +352,9 @@ The degree to which critical controls can transfer operation to trained successo
 ## Control Ownership Churn
 The rate and risk impact of repeated owner transitions on critical controls within a defined operating period.
 
+## Control Continuity Stress Test
+A multi-factor simulation that tests whether a control remains reliable during simultaneous continuity pressures.
+
 ---
 
 ## Incident & Escalation Terms

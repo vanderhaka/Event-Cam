@@ -127,6 +127,7 @@ It helps teams:
 - **Control automation-reliability governance:** `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`
 - **Control succession-readiness governance:** `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`
 - **Control ownership-churn governance:** `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`
+- **Control continuity stress-test governance:** `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -223,4 +224,5 @@ For full routing by scenario, use:
 - Keep critical control automation success high and fallback paths tested/current.
 - Keep critical controls successor-ready with validated continuity coverage beyond primary owners.
 - Keep high-churn ownership events low and eliminate unplanned critical-control transitions.
+- Keep CC-1 controls stress-tested under compounded continuity scenarios with timely hardening closure.
 
