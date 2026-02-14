@@ -169,6 +169,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-STATE-MACHINE.md`**  
   Canonical state and transition definitions across decisions, experiments, blockers, dependencies, and artifacts.
 
+- **`ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`**  
+  Consolidated weekly leadership packet template combining KPI, decision, risk, and escalation signals.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -228,6 +231,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need recurring quality checks on active alignment artifacts | `ALIGNMENT-DOC-QUALITY-SCORECARD.md` |
 | We need to reduce doc sprawl without losing governance integrity | `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md` |
 | We need standardized status transitions across operating workflows | `ALIGNMENT-STATE-MACHINE.md` |
+| We need one leadership-ready weekly decision brief | `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` |
 
 ---
 
@@ -253,6 +257,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Doc Quality Scorecard | Ops / PMO + Documentation Owner |
 | Artifact Pruning Policy | Ops / PMO + Documentation Owner |
 | State Machine | Ops / PMO + Strategy Owner |
+| Weekly Executive Packet | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -297,6 +302,7 @@ Includes Pack C, plus:
 25. `ALIGNMENT-DOC-QUALITY-SCORECARD.md`
 26. `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 27. `ALIGNMENT-STATE-MACHINE.md`
+28. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
 
 Recommended only when:
 - decision volume is high,
