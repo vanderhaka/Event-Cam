@@ -61,6 +61,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-SYSTEM-OVERVIEW.md`**  
   How all alignment artifacts fit together as one execution system.
 
+- **`ALIGNMENT-ROLE-CHECKLISTS.md`**  
+  First-week role-by-role execution checklists for alignment setup.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -84,6 +87,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need consistent terminology across teams | `ALIGNMENT-GLOSSARY.md` |
 | We need a time-sequenced 0–90 day operating playbook | `ALIGNMENT-RUNBOOK.md` |
 | We need a top-level model of the full alignment system | `ALIGNMENT-SYSTEM-OVERVIEW.md` |
+| We need role-specific week-1 action clarity | `ALIGNMENT-ROLE-CHECKLISTS.md` |
 
 ---
 
