@@ -835,6 +835,7 @@ Use this minimum-safe operating rule:
 | Ownership transitions drop context and create hidden execution gaps | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` | Handoff completeness and post-handoff stability remain high with no critical ownerless windows |
 | Teams miss broad system degradation because signals are reviewed in isolation | `ALIGNMENT-OPERATING-HEALTH-INDEX.md` | Composite operating-health trend remains stable and triggers early cross-domain recovery |
 | High-impact controls are treated like low-impact controls, creating misallocated governance effort | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` | Critical controls maintain high compliance while low-risk controls are governed proportionally |
+| High-impact decisions are approved with incomplete packets under timeline pressure | `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md` | Complete high-impact decision-packet rate remains high and non-compliant packets are blocked pre-approval |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

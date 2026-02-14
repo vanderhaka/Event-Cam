@@ -235,6 +235,9 @@ Composite system score combining decision, execution, control, signal, and gover
 ## Control Criticality
 Risk-tier classification (e.g., CC-1 to CC-4) indicating how severe control failure impact is and how strict monitoring/escalation should be.
 
+## Decision Packet Compliance
+The degree to which required sections and evidence links in high-impact decision packets are complete before approval.
+
 ---
 
 ## Incident & Escalation Terms
