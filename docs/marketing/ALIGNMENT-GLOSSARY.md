@@ -208,6 +208,9 @@ Aggregate quality signal combining confidence discipline, outcome performance, r
 ## Alert Fatigue
 Condition where alert volume/noise exceeds team processing capacity, causing delayed responses and reduced sensitivity to critical signals.
 
+## Control Dependency
+Prerequisite relationship where one control’s validity depends on the health, cadence, or outputs of another upstream control.
+
 ---
 
 ## Incident & Escalation Terms

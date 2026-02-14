@@ -110,6 +110,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Thresholds in Drift-Suspected/Recalibrating status (count) |  |  |  |
 | Decision quality composite trend (Up/Flat/Down) |  |  |  |
 | Alert fatigue status (Healthy/Watch/Fatigued) |  |  |  |
+| Broken critical control dependencies (D1 count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -199,6 +200,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Missed alert rate (threshold calibration):
 - No-Effect/Negative outcome rate (decision quality):
 - Low-value alert rate:
+- Dependency-at-risk controls (count):
 
 ---
 
