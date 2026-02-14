@@ -14,12 +14,13 @@
 4. [Competitive Landscape](#4-competitive-landscape)
 5. [Pricing Strategy](#5-pricing-strategy)
 6. [Go-to-Market Channels](#6-go-to-market-channels)
-7. [Launch Phases](#7-launch-phases)
-8. [Content Strategy](#8-content-strategy)
-9. [Partnerships & Integrations](#9-partnerships--integrations)
-10. [Metrics & KPIs](#10-metrics--kpis)
-11. [Budget Guidance](#11-budget-guidance)
-12. [Risks & Mitigations](#12-risks--mitigations)
+7. [Guest Email Flywheel](#7-guest-email-flywheel)
+8. [Launch Phases](#8-launch-phases)
+9. [Content Strategy](#9-content-strategy)
+10. [Partnerships & Integrations](#10-partnerships--integrations)
+11. [Metrics & KPIs](#11-metrics--kpis)
+12. [Budget Guidance](#12-budget-guidance)
+13. [Risks & Mitigations](#13-risks--mitigations)
 
 ---
 
@@ -38,7 +39,9 @@ What makes Event Cam special beyond the QR workflow:
 
 At **$1 per guest**, a 150-person wedding costs $150 — a rounding error in a wedding budget, but it delivers something no photographer alone can: every angle, every moment, from every guest.
 
-**Core marketing thesis:** Position Event Cam as the modern replacement for disposable cameras and wedding photo apps. Lead with the emotional hook ("every memory from every guest") and differentiate on AI watermarks, filters, and the zero-friction guest experience.
+**Built-in growth engine:** Every wedding is also a lead generation event. When guests scan the QR code and upload, Event Cam captures their email address. A 150-person wedding gives you 150 warm leads — people in the same age/life-stage demographic who just had a positive experience with the product. Many of them are engaged themselves, planning events, or will be soon. This turns every single wedding into a marketing channel that pays for itself.
+
+**Core marketing thesis:** Position Event Cam as the modern replacement for disposable cameras and wedding photo apps. Lead with the emotional hook ("every memory from every guest"), differentiate on AI watermarks and filters, and leverage the guest email flywheel to drive compounding organic growth.
 
 ---
 
@@ -269,7 +272,106 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 ---
 
-## 7. Launch Phases
+## 7. Guest Email Flywheel
+
+This is Event Cam's most powerful — and most cost-efficient — growth channel. Every single wedding generates a list of warm, high-quality email leads at zero incremental acquisition cost.
+
+### How It Works
+
+1. **Couple creates a wedding** and adds their guest list (names + emails, or just names with QR distribution)
+2. **Guests scan the QR code** at the wedding and land on the upload page
+3. **Before uploading, the guest enters their email** (required — framed as "so we can send you the album link")
+4. **Guest uploads photos/videos**, has a great experience, and leaves with a positive impression of Event Cam
+5. **Post-wedding, the guest receives the album link** via email — this is the value delivery moment
+6. **Follow-up emails** nurture the guest toward their own future use: "Planning an event? Your first 10 guests are free."
+
+### Why This Is So Valuable
+
+| Factor | Details |
+|--------|---------|
+| **Volume** | A single 150-guest wedding = 150 emails. 50 weddings/month = 7,500 new emails/month. 200 weddings/month = 30,000 new emails/month. |
+| **Quality** | These aren't cold leads. They've used the product, had a positive experience, and are in a life stage where events (and weddings) are common. |
+| **Demographic match** | Wedding guests skew 24–40, the exact demographic that's getting engaged, throwing parties, and planning events. A meaningful % are themselves engaged or will be within 1–2 years. |
+| **Warm introduction** | The guest's first interaction with Event Cam was fun (taking photos at a wedding) and useful (getting the album link). There's built-in goodwill. |
+| **Zero marginal cost** | You're not paying for these leads. They come as a natural byproduct of the product working. |
+| **Compounding** | Every new wedding generates guests who become future couples who generate more guests. This is a true flywheel. |
+
+### The Math
+
+| Scenario | Weddings/Mo | Avg Guests | Emails Captured (80% rate) | Annual Email List Growth |
+|----------|------------|------------|---------------------------|--------------------------|
+| Phase 1 | 50 | 120 | 4,800/mo | ~57,600/yr |
+| Phase 2 | 200 | 130 | 20,800/mo | ~249,600/yr |
+| Phase 3 | 500 | 140 | 56,000/mo | ~672,000/yr |
+
+Even a conservative 2% conversion rate on guest-to-couple (guest eventually plans their own wedding and uses Event Cam) means:
+- Phase 1: ~96 new wedding customers/year from guest emails alone
+- Phase 2: ~4,992 new wedding customers/year
+- Phase 3: ~13,440 new wedding customers/year
+
+At $130 average revenue per wedding, Phase 3 guest email conversion alone = **$1.75M/year in revenue** from a channel that costs essentially nothing.
+
+### Email Capture UX
+
+The email capture must feel natural, not extractive. Key principles:
+
+- **Frame it as value for the guest:** "Enter your email so we can send you the album when it's ready." This is genuinely useful — the guest *wants* to see the final album.
+- **Ask at the right moment:** After the QR scan, before the upload. The guest is already committed to participating. The email field is a small ask at a high-intent moment.
+- **Keep it fast:** Name + email, nothing else. One field if possible (email only), two fields max.
+- **Confirm with value:** Immediately after upload, show: "Thanks! We'll email you the album link when [Couple Name] shares it."
+- **Respect opt-out:** Include a clear "marketing emails" checkbox (unchecked by default in EU/GDPR regions, checked by default in US with clear opt-out). The album delivery email is transactional and doesn't require opt-in.
+
+### Guest Email Sequences
+
+**Sequence 1: Album Delivery (Transactional — sent to all guests)**
+
+| Timing | Email | Purpose |
+|--------|-------|---------|
+| When album is shared | "The photos from [Couple]'s wedding are ready!" | Deliver album link; re-engage with product |
+| Album + 3 days | "Did you see your photos? [X] guests contributed [Y] photos" | Drive album views; social proof |
+
+**Sequence 2: Guest-to-Customer Nurture (Marketing — opt-in only)**
+
+| Timing | Email | Purpose |
+|--------|-------|---------|
+| Post-wedding + 2 weeks | "Loved being part of [Couple]'s wedding album? Here's what Event Cam does." | Soft product introduction; brand awareness |
+| + 1 month | "Planning a birthday, party, or event? Your first 10 guests are free." | Low-pressure conversion offer |
+| + 3 months | "Getting engaged? Here's how couples are using Event Cam at their weddings." | Target the engaged subset; show social proof |
+| + 6 months | "Anniversary coming up? Collect photos from friends and family." | Re-engage around milestone events |
+| Engagement season (Dec–Feb) | "Just got engaged? Congrats! Here's a wedding planning hack your guests will love." | Seasonal push timed to peak engagement season |
+
+**Sequence 3: Referral Ask (Marketing — opt-in only)**
+
+| Timing | Email | Purpose |
+|--------|-------|---------|
+| Post-wedding + 1 month | "Know someone getting married? Share Event Cam and you both get $10 off." | Referral program activation |
+| Every 3 months | "Still planning events? $10 referral credit is waiting." | Referral reminder |
+
+### Segmentation Strategy
+
+Not all guest emails are equal. Segment for higher-conversion targeting:
+
+| Segment | How to Identify | Marketing Angle |
+|---------|----------------|-----------------|
+| **Guests who uploaded 3+ photos** | Upload count | High engagement — they loved the product. Strongest conversion candidates. |
+| **Guests who viewed the album multiple times** | Album page analytics | Emotionally invested in the content. Warm lead for "create your own event." |
+| **Guests in the 24–34 age range** | Inferred from couple's guest list metadata (if available) or self-reported | Prime wedding-planning demographic. Target with engagement/wedding content. |
+| **Guests who clicked a referral link** | Click tracking | Already considering Event Cam. Send conversion-focused follow-up. |
+| **Guests from large weddings (200+)** | Event metadata | Likely part of communities where large events are common. Cultural/community targeting. |
+
+### Long-Term Email List Value
+
+The guest email list becomes one of Event Cam's most valuable assets over time:
+
+- **Direct marketing channel** with near-zero cost (email is essentially free at scale with tools like Resend, Postmark, or SendGrid)
+- **Lookalike audiences** — Upload the email list to Meta/Google to build lookalike audiences for paid ads. Wedding guests look like future wedding customers.
+- **Seasonal campaigns** — Every December–February (peak engagement season), blast the list with "Just got engaged?" content.
+- **Product launches** — When you launch new features (photobooks, AI slideshows, filters), the guest list is the first audience to notify.
+- **Network effects** — As the list grows, you can partner with wedding vendors (venues, planners, photographers) to do co-marketing, because you have a massive, verified list of people who attend weddings.
+
+---
+
+## 8. Launch Phases
 
 ### Phase 0: Pre-Launch (Weeks 1–4)
 
@@ -295,6 +397,9 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 - [ ] Attend 1–2 local bridal shows with a simple booth: live demo + QR table card samples
 - [ ] Optimize the signup → event creation → guest-add → payment funnel
 - [ ] Ship 3+ AI watermark style options (script, modern, monogram) and 5+ filter presets
+- [ ] Implement guest email capture in the upload flow + album delivery emails
+- [ ] Set up guest nurture email sequence (opt-in marketing emails post-wedding)
+- [ ] Begin tracking guest email capture rate and email list growth
 
 ### Phase 2: Wedding Season Growth (Months 3–8)
 
@@ -309,6 +414,9 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 - [ ] Introduce "Planner Pro" plan: white-label branding, bulk event creation, dashboard
 - [ ] Sponsor 3–5 wedding expos / bridal shows in major metros
 - [ ] Expand filter library based on what couples are requesting (vintage, film, moody, bright & airy)
+- [ ] Upload guest email list to Meta/Google to build lookalike audiences for paid ads
+- [ ] Launch guest referral program: "Know someone getting married? Share Event Cam."
+- [ ] Segment guest email list by engagement level and target high-engagement guests with conversion campaigns
 
 ### Phase 3: Year-Round & Expansion (Months 8–14)
 
@@ -324,7 +432,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 ---
 
-## 8. Content Strategy
+## 9. Content Strategy
 
 ### Blog Topics (SEO-Driven, Wedding-Focused)
 
@@ -385,7 +493,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 ---
 
-## 9. Partnerships & Integrations
+## 10. Partnerships & Integrations
 
 ### High-Priority Partnerships
 
@@ -409,7 +517,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 ---
 
-## 10. Metrics & KPIs
+## 11. Metrics & KPIs
 
 ### North Star Metric
 
@@ -434,12 +542,29 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 | Metric | Target |
 |--------|--------|
-| Customer Acquisition Cost (CAC) | < $20 |
+| Customer Acquisition Cost (CAC) — paid channels | < $20 |
+| Customer Acquisition Cost (CAC) — guest email flywheel | ~$0 (organic conversion from guest list) |
+| Blended CAC (as flywheel matures) | < $10 |
 | Average Revenue Per Wedding | $120–$150 (120–150 guests at $1/each) |
 | Average Revenue Per Wedding + Upsell | $140–$180 |
 | Gross margin | > 80% (Supabase + AI watermark generation costs are low) |
-| LTV:CAC ratio | > 6:1 |
+| LTV:CAC ratio (paid) | > 6:1 |
+| LTV:CAC ratio (guest email) | Effectively infinite (zero acquisition cost) |
 | Payback period | Immediate (first wedding covers CAC many times over) |
+| Guest emails captured per $1 spent on marketing | 10+ (by Phase 2) |
+
+### Guest Email Flywheel Metrics
+
+| Metric | Target (Phase 1) | Target (Phase 2) |
+|--------|-------------------|-------------------|
+| Guest email capture rate (% of uploading guests) | 80%+ | 90%+ |
+| Guest emails captured / month | 4,800 | 20,800 |
+| Album delivery email open rate | 60%+ | 60%+ |
+| Nurture email open rate | 25%+ | 25%+ |
+| Guest-to-customer conversion rate | 1.5% | 2.5% |
+| Guest referral rate (shared with a friend) | 3% | 5% |
+| Unsubscribe rate (nurture sequence) | < 2% | < 1.5% |
+| Lookalike audience ROAS (Meta/Google) | — | 3x+ |
 
 ### AI Feature Metrics
 
@@ -453,7 +578,7 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 
 ---
 
-## 11. Budget Guidance
+## 12. Budget Guidance
 
 ### Phase 1 Budget (Monthly, Months 1–3)
 
@@ -464,7 +589,8 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 | Community outreach | $0 (time cost) | Founder-led Reddit/Facebook/wedding forum engagement |
 | Micro-influencer seeding | $500–$800 | Free events + small fees for 5–10 wedding creators |
 | AI / compute costs (watermark generation) | $100–$200 | Image generation API costs during beta |
-| **Total** | **$1,400–$2,300/mo** | |
+| Email platform (guest sequences) | $50–$100 | Resend, Postmark, or SendGrid — low volume in Phase 1 |
+| **Total** | **$1,450–$2,400/mo** | |
 
 ### Phase 2 Budget (Monthly, Months 3–8)
 
@@ -477,7 +603,8 @@ Event Cam is the easiest way to collect photos and videos from every guest at yo
 | Influencer partnerships | $1,000–$2,500 | Ongoing wedding creator program |
 | Bridal show booths | $500–$1,500 | 1–2 shows/month in peak season (amortized) |
 | AI / compute costs | $300–$600 | Scales with wedding volume |
-| **Total** | **$6,800–$15,100/mo** | |
+| Email platform (guest nurture at scale) | $200–$500 | 20k+ emails/month; Resend or SendGrid growth tier |
+| **Total** | **$7,000–$15,600/mo** | |
 
 ### Budget Context
 
@@ -485,7 +612,7 @@ At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/
 
 ---
 
-## 12. Risks & Mitigations
+## 13. Risks & Mitigations
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|-----------|------------|
@@ -498,6 +625,9 @@ At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/
 | **$1/guest feels "too expensive" for small weddings** | Low — a 30-person wedding is only $30 | Low | $20 minimum already covers this; free tier for 10 guests lets them try first |
 | **AI compute costs spike** | Medium — image generation costs could erode margins | Low | Cache watermark designs (one generation per wedding, applied to all photos); use efficient models; watermark is a one-time generation, not per-photo AI |
 | **Storage costs at scale (video-heavy uploads)** | Low — margins compress if guests upload lots of video | Medium | Set per-event storage caps (e.g., 10GB included); compress/transcode uploads; offer extended storage as paid add-on |
+| **Guest email spam perception** | Medium — guests feel spammed after uploading at a wedding | Medium | Keep nurture emails infrequent (max 1/month); always lead with value (album link, photos); prominent unsubscribe; never sell the list to third parties |
+| **GDPR / CAN-SPAM compliance for guest emails** | High — legal risk if email capture isn't compliant | Medium | Separate transactional (album delivery) from marketing emails; require opt-in for marketing in EU/UK; include clear privacy policy on upload page; honor unsubscribes instantly |
+| **Low guest email capture rate** | Medium — guests skip the email field or use fake addresses | Low | Frame email as "so we can send you the album" (genuine value); validate email format; consider optional SMS alternative |
 
 ---
 
@@ -515,9 +645,12 @@ At Phase 2 targets of 200 weddings/month averaging $130/wedding, that's $26,000/
 10. Collect 3+ testimonials and watermarked album screenshots for marketing assets
 11. Prepare Product Hunt launch materials (lead with AI watermark angle)
 12. Identify and reach out to 10 wedding planners and wedding bloggers
-13. Set up welcome email sequence (5 emails)
-14. Create printable QR table tent and place card templates (PDF download from dashboard)
-15. Install analytics (Plausible or PostHog) and define wedding funnel tracking
+13. Set up welcome email sequence for couples (5 emails)
+14. Build guest email capture into the upload flow ("Enter your email so we can send you the album")
+15. Set up guest email sequences: album delivery (transactional) + nurture (marketing, opt-in)
+16. Choose and configure an email platform (Resend, Postmark, or SendGrid)
+17. Create printable QR table tent and place card templates (PDF download from dashboard)
+18. Install analytics (Plausible or PostHog) and define wedding funnel + email flywheel tracking
 
 ---
 
