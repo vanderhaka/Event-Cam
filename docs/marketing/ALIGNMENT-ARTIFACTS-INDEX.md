@@ -211,6 +211,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-QUARTER-RESET-PROTOCOL.md`**  
   End-of-quarter reset procedure for closing cycles cleanly and re-activating next-quarter alignment.
 
+- **`ALIGNMENT-ADOPTION-ROADMAP.md`**  
+  Six-week staged rollout plan for adopting alignment controls without process overload.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -277,6 +280,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to adjust process intensity to current risk and complexity | `ALIGNMENT-OPERATING-MODES.md` |
 | We need one weekly score of alignment-system discipline quality | `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` |
 | We need a clean quarter-close and reactivation ritual | `ALIGNMENT-QUARTER-RESET-PROTOCOL.md` |
+| We need a pragmatic sequence to roll out the alignment system | `ALIGNMENT-ADOPTION-ROADMAP.md` |
 
 ---
 
@@ -309,6 +313,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Operating Modes | Ops / PMO + Strategy Owner |
 | System Health Metrics | Ops / PMO + Strategy Owner |
 | Quarter Reset Protocol | Ops / PMO + Leadership Team |
+| Adoption Roadmap | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -360,6 +365,7 @@ Includes Pack C, plus:
 32. `ALIGNMENT-OPERATING-MODES.md`
 33. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md`
 34. `ALIGNMENT-QUARTER-RESET-PROTOCOL.md`
+35. `ALIGNMENT-ADOPTION-ROADMAP.md`
 
 Recommended only when:
 - decision volume is high,

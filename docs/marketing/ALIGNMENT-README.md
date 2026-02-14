@@ -24,6 +24,7 @@ It helps teams:
 4. Run weekly cadence via `ALIGNMENT-COMMAND-CENTER.md`
 5. Declare active operating set in `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 6. Resolve source-of-truth ambiguity with `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+7. If adopting gradually, follow `ALIGNMENT-ADOPTION-ROADMAP.md`
 
 ---
 

@@ -34,6 +34,9 @@ If you want one aligned path quickly, use the documents in this order:
 8. **If you need urgency: run the fast-start sequence**
    `ALIGNMENT-QUICKSTART-48H.md`
 
+9. **If your team needs staged rollout instead of full activation**
+   `ALIGNMENT-ADOPTION-ROADMAP.md`
+
 ---
 
 ## 7-Step Alignment Flow
