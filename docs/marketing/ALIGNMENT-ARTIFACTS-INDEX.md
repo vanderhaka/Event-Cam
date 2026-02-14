@@ -229,6 +229,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ESCALATION-PLAYCARDS.md`**  
   Scenario-based rapid-response playcards for recurring high-impact alignment incidents.
 
+- **`ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`**  
+  Post-incident learning template for capturing root causes and prevention actions within 48 hours.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -301,6 +304,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to evaluate cross-functional impact before major changes | `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md` |
 | We need explicit source lineage and reliability for decision metrics | `ALIGNMENT-DATA-SOURCE-CATALOG.md` |
 | We need tactical step-by-step response guides during incidents | `ALIGNMENT-ESCALATION-PLAYCARDS.md` |
+| We need structured post-incident learning and prevention capture | `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md` |
 
 ---
 
@@ -339,6 +343,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Change Impact Assessment | Strategy Owner + Ops / PMO |
 | Data Source Catalog | Growth Lead + Data/Analytics Owner |
 | Escalation Playcards | Ops / PMO + Strategy Owner |
+| Incident Hotwash Template | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -396,6 +401,7 @@ Includes Pack C, plus:
 38. `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
 39. `ALIGNMENT-DATA-SOURCE-CATALOG.md`
 40. `ALIGNMENT-ESCALATION-PLAYCARDS.md`
+41. `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`
 
 Recommended only when:
 - decision volume is high,

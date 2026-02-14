@@ -99,6 +99,9 @@ Within 48 hours of closure:
 
 No incident is complete until after-action updates are done.
 
+Use this structured format for after-action capture:
+`ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`
+
 ---
 
 ## Weekly Reporting
