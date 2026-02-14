@@ -22,6 +22,9 @@ If you want one aligned path quickly, use the documents in this order:
 5. **Use full artifact map if unsure where to go next**
    `ALIGNMENT-ARTIFACTS-INDEX.md`
 
+6. **If you need urgency: run the fast-start sequence**
+   `ALIGNMENT-QUICKSTART-48H.md`
+
 ---
 
 ## 7-Step Alignment Flow
@@ -60,4 +63,16 @@ If you need to start this week, run this exact pack:
 5. `ALIGNMENT-CHECKLIST.md` (verify readiness)
 
 This pack is enough to move from strategy debate to aligned execution.
+
+---
+
+## If You’re Starting From Chaos
+
+Use this order:
+
+1. `ALIGNMENT-QUICKSTART-48H.md` (stabilize fast)
+2. `ALIGNMENT-SYSTEM-OVERVIEW.md` (understand the full model)
+3. `ALIGNMENT-ARTIFACTS-INDEX.md` (route to exact artifact needed)
+
+This minimizes analysis paralysis and gets you into execution quickly.
 
