@@ -131,6 +131,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Open I1/I2 interventions (count) |  |  |  |
 | Forecasted high-risk owners next cycle (count) |  |  |  |
 | Repeated decision bottleneck stage (name/count) |  |  |  |
+| Overdue high-priority dependencies (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -241,6 +242,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Intervention queue completion rate (I1/I2):
 - Owner capacity forecast accuracy:
 - Median decision stage latency (dominant stage):
+- Dependency resolution on-time rate:
 
 ---
 

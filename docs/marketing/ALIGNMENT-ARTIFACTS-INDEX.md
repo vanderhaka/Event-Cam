@@ -400,6 +400,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`**  
   Stage-level breakdown of decision-cycle latency to pinpoint recurring bottlenecks.
 
+- **`ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`**  
+  SLA performance review for dependency resolution speed, overdue trends, and escalation discipline.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -529,6 +532,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one objective queue for sequencing remediation interventions under capacity limits | `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` |
 | We need to rebalance owner assignments before overload harms decision and governance quality | `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` |
 | We need to identify exactly which decision stages are causing SLA delays | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` |
+| We need visibility into overdue dependency chains before they stall delivery | `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` |
 
 ---
 
@@ -624,6 +628,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Intervention Prioritization Matrix | Strategy Owner + Ops / PMO + Functional Leads |
 | Owner Capacity Forecast | Ops / PMO + Functional Leads + Strategy Owner |
 | Decision Latency Decomposition | Strategy Owner + Ops / PMO + Decision Review Leads |
+| Dependency Resolution SLA Review | Ops / PMO + Functional Leads + Strategy Owner |
 
 ---
 
@@ -738,6 +743,7 @@ Includes Pack C, plus:
 95. `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md`
 96. `ALIGNMENT-OWNER-CAPACITY-FORECAST.md`
 97. `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`
+98. `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

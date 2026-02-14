@@ -271,6 +271,9 @@ Forward-looking estimate of owner workload and risk-band status for the next ope
 ## Decision Latency Decomposition
 Stage-by-stage breakdown of decision cycle time used to identify the specific bottlenecks driving SLA misses.
 
+## Dependency Resolution SLA
+Time-bound expectation for resolving a dependency before it blocks decisions, commitments, or downstream execution.
+
 ---
 
 ## Incident & Escalation Terms
