@@ -20,18 +20,32 @@ export async function POST(_: Request, context: { params: { eventId: string } })
       return jsonResponse({ message: 'Event is not paid and cannot be published' }, { status: 402 });
     }
 
-    const { data: invitees, error: inviteeError } = await admin
+    const { data: allInvitees, error: inviteeError } = await admin
       .from('invitees')
       .select('id, display_name, qr_token, is_active')
-      .eq('event_id', event.id)
-      .eq('is_active', true);
+      .eq('event_id', event.id);
 
     if (inviteeError) {
       return jsonResponse({ message: inviteeError.message }, { status: 400 });
     }
 
-    if (!invitees || invitees.length === 0) {
-      return jsonResponse({ message: 'No active invitees on this event' }, { status: 400 });
+    if (!allInvitees || allInvitees.length === 0) {
+      return jsonResponse({ message: 'No invitees on this event', code: 'NO_INVITEES' }, { status: 400 });
+    }
+
+    const invitees = allInvitees.filter((invitee) => invitee.is_active);
+    if (invitees.length === 0) {
+      return jsonResponse(
+        {
+          message: 'No active invitees on this event. Add invitees and keep them active before publishing.',
+          code: 'NO_ACTIVE_INVITEES',
+          summary: {
+            inviteeCount: allInvitees.length,
+            activeInviteeCount: 0,
+          },
+        },
+        { status: 400 },
+      );
     }
 
     const updates = invitees.map((invitee) => ({
