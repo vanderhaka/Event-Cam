@@ -172,6 +172,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`**  
   Consolidated weekly leadership packet template combining KPI, decision, risk, and escalation signals.
 
+- **`ALIGNMENT-ID-STANDARDS.md`**  
+  Canonical identifier format and cross-reference rules for traceability across all alignment artifacts.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -232,6 +235,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to reduce doc sprawl without losing governance integrity | `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md` |
 | We need standardized status transitions across operating workflows | `ALIGNMENT-STATE-MACHINE.md` |
 | We need one leadership-ready weekly decision brief | `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` |
+| We need clean cross-artifact ID consistency and linkage | `ALIGNMENT-ID-STANDARDS.md` |
 
 ---
 
@@ -258,6 +262,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Artifact Pruning Policy | Ops / PMO + Documentation Owner |
 | State Machine | Ops / PMO + Strategy Owner |
 | Weekly Executive Packet | Ops / PMO + Strategy Owner |
+| ID Standards | Ops / PMO + Documentation Owner |
 
 ---
 
@@ -303,6 +308,7 @@ Includes Pack C, plus:
 26. `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 27. `ALIGNMENT-STATE-MACHINE.md`
 28. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
+29. `ALIGNMENT-ID-STANDARDS.md`
 
 Recommended only when:
 - decision volume is high,
