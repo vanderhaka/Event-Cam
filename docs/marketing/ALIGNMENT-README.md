@@ -109,6 +109,7 @@ It helps teams:
 - **Decision outcome visibility governance:** `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`
 - **Evidence-traceability governance:** `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`
 - **Decision reversal readiness governance:** `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
+- **Decision authority governance:** `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -187,4 +188,5 @@ For full routing by scenario, use:
 - Keep decision outcome visibility timely enough to support reinforcement/modification/reversal decisions.
 - Keep high-impact actions linked to valid, fresh evidence before closure or approval.
 - Keep high-impact decisions covered by explicit reversal triggers before approval.
+- Keep high-impact decisions approved only through declared authority routes.
 

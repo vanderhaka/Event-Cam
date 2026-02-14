@@ -140,6 +140,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Decisions with overdue outcome visibility (count) |  |  |  |
 | Critical items with broken/stale evidence links (count) |  |  |  |
 | Active P0/P1 decisions missing reversal trigger coverage (count) |  |  |  |
+| High-impact decisions with authority violation (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -259,6 +260,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Median decision outcome lag (days):
 - Evidence-linked item rate:
 - Reversal trigger coverage rate (P0/high-impact P1):
+- Authorized approval rate (P0/high-impact P1):
 
 ---
 

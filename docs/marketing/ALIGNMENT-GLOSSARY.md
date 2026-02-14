@@ -298,6 +298,9 @@ The degree to which required decisions and actions include valid, current, and t
 ## Reversal Trigger Coverage
 The extent to which high-impact decisions define measurable thresholds that trigger reversal or modification actions when outcomes underperform.
 
+## Decision Authority Compliance
+The degree to which decisions are approved by the correct role and forum according to defined authority rules.
+
 ---
 
 ## Incident & Escalation Terms
