@@ -91,6 +91,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-RISK-TAXONOMY.md`**  
   Shared risk classification framework for blocker severity and escalation handling.
 
+- **`ALIGNMENT-HANDOFF-TEMPLATE.md`**  
+  Structured template for transferring alignment ownership without losing context.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -124,6 +127,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to stand up alignment in the next 48 hours | `ALIGNMENT-QUICKSTART-48H.md` |
 | We need to evaluate long-term alignment capability maturity | `ALIGNMENT-MATURITY-MODEL.md` |
 | We need standardized risk classification and escalation | `ALIGNMENT-RISK-TAXONOMY.md` |
+| We need to transfer alignment ownership cleanly | `ALIGNMENT-HANDOFF-TEMPLATE.md` |
 
 ---
 
