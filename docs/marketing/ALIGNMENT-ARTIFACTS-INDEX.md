@@ -223,6 +223,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`**  
   Structured pre-approval assessment for evaluating second-order effects of major changes.
 
+- **`ALIGNMENT-DATA-SOURCE-CATALOG.md`**  
+  Source-lineage catalog for KPI and decision data reliability, ownership, and dependency mapping.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -293,6 +296,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need fast response ownership for urgent alignment incidents | `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md` |
 | We need consistent team behavior while running this system | `ALIGNMENT-WORKING-AGREEMENTS.md` |
 | We need to evaluate cross-functional impact before major changes | `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md` |
+| We need explicit source lineage and reliability for decision metrics | `ALIGNMENT-DATA-SOURCE-CATALOG.md` |
 
 ---
 
@@ -329,6 +333,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | On-Call Escalation Matrix | Ops / PMO + Strategy Owner |
 | Working Agreements | Strategy Owner + Ops / PMO |
 | Change Impact Assessment | Strategy Owner + Ops / PMO |
+| Data Source Catalog | Growth Lead + Data/Analytics Owner |
 
 ---
 
@@ -384,6 +389,7 @@ Includes Pack C, plus:
 36. `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`
 37. `ALIGNMENT-WORKING-AGREEMENTS.md`
 38. `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
+39. `ALIGNMENT-DATA-SOURCE-CATALOG.md`
 
 Recommended only when:
 - decision volume is high,

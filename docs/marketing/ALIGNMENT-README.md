@@ -45,6 +45,7 @@ It helps teams:
 - **Active set control:** `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 - **Mode control (process intensity):** `ALIGNMENT-OPERATING-MODES.md`
 - **Canonical source control:** `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+- **Data lineage control:** `ALIGNMENT-DATA-SOURCE-CATALOG.md`
 - **ID and linkage hygiene:** `ALIGNMENT-ID-STANDARDS.md`
 - **State transition discipline:** `ALIGNMENT-STATE-MACHINE.md`
 - **Doc quality + pruning:** `ALIGNMENT-DOC-QUALITY-SCORECARD.md` + `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
