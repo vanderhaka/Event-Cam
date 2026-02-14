@@ -370,6 +370,9 @@ A condition where lower-priority control work is executed while higher-risk crit
 ## Control Signal Integrity
 The degree to which control signals are accurate, complete, and definition-consistent for trusted decision use.
 
+## Control Alert Triage Quality
+The degree to which critical alerts are classified, prioritized, and routed correctly on first triage.
+
 ---
 
 ## Incident & Escalation Terms

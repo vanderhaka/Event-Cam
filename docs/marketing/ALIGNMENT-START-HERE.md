@@ -166,6 +166,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 81. `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md` (ensures critical controls are run by validated, currently proficient operators with fast gap remediation)
 82. `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md` (ensures critical control obligations are executed before lower-priority work under capacity pressure)
 83. `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md` (ensures critical control signals stay trusted, definition-consistent, and safe for high-impact decisions)
+84. `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md` (ensures critical alerts are classified and routed correctly on first triage to avoid delayed response)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

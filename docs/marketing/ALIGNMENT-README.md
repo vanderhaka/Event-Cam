@@ -133,6 +133,7 @@ It helps teams:
 - **Control operator-proficiency governance:** `ALIGNMENT-CONTROL-OPERATOR-PROFICIENCY-REVIEW.md`
 - **Control priority-inversion governance:** `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md`
 - **Control signal-integrity governance:** `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md`
+- **Control alert-triage quality governance:** `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -235,4 +236,5 @@ For full routing by scenario, use:
 - Keep critical-control operator certification current and resolve proficiency gaps quickly.
 - Keep critical control obligations prioritized ahead of lower-priority control work.
 - Keep critical control signals trusted, definition-consistent, and free from unresolved integrity defects.
+- Keep critical-alert first-triage accuracy high with zero persistent misroute patterns.
 

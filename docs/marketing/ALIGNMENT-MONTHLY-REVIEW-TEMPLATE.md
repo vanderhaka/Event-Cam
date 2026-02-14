@@ -69,6 +69,7 @@
 | Critical-control operator certification coverage |  | 100% |  |
 | Critical-first control execution rate |  | ≥95% |  |
 | Critical-control signal integrity pass rate |  | ≥98% |  |
+| Critical-alert first-triage accuracy rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

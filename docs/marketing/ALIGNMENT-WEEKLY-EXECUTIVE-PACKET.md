@@ -307,6 +307,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical-first execution rate (%):
 - Critical-control signal integrity pass rate (%):
 - Untrusted critical-control signals (count):
+- Critical-alert first-triage accuracy rate (%):
+- Misrouted critical alerts (count):
 
 ---
 
