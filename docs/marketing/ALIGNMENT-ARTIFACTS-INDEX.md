@@ -460,6 +460,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md`**  
   Calibration review verifying that control-confidence scores predict real outcomes.
 
+- **`ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`**  
+  Recurring review that re-certifies critical controls against current risk and configuration reality.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -609,6 +612,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to eliminate control blind spots by enforcing complete observability coverage | `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md` |
 | We need one quantified signal for whether critical controls are reliable enough to trust | `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md` |
 | We need confidence scores to stay predictive instead of drifting into false certainty | `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md` |
+| We need critical controls to be periodically re-certified so drift and obsolete logic don’t accumulate | `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` |
 
 ---
 
@@ -724,6 +728,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Observability Coverage Review | Data/Analytics Owners + Ops / PMO + On-Call Lead |
 | Control Confidence Index | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Confidence Calibration Review | Ops / PMO + Strategy Owner + Data/Analytics Owners |
+| Control Recertification Review | Ops / PMO + Strategy Owner + Functional Leads |
 
 ---
 
@@ -858,6 +863,7 @@ Includes Pack C, plus:
 115. `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`
 116. `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md`
 117. `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md`
+118. `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

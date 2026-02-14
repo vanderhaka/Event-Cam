@@ -331,6 +331,9 @@ A composite score estimating whether a control is reliable enough for critical u
 ## Control Confidence Calibration
 The degree to which control-confidence scores accurately predict observed control outcomes over time.
 
+## Control Recertification
+The periodic validation that a control remains necessary, correctly configured, and fit for current operating risk.
+
 ---
 
 ## Incident & Escalation Terms

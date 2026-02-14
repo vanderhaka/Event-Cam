@@ -281,6 +281,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls in Low Confidence band (count):
 - Mean control-confidence calibration gap:
 - High-confidence controls with negative outcomes (count):
+- In-scope controls recertified on cadence (%):
+- Controls with recertification drift findings (count):
 
 ---
 
