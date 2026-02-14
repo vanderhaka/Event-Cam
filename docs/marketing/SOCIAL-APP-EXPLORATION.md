@@ -273,6 +273,113 @@ whenever they want
 
 Guests without the app still get an email with a QR code / upload link. Both paths coexist. But for the host, inviting through the app is faster than printing QR cards — especially for casual events (birthday parties, dinners) where printing feels overkill.
 
+---
+
+## Pre-Event Guest Notifications
+
+This is a day-one feature, not an app-only feature. When the host adds guests with email addresses (or phone numbers), we reach out to them before the event to prime participation and drive app installs.
+
+### The Pre-Event Message
+
+Sent **1 day before** the event. Via email (and SMS/text if we have the number).
+
+**Email version:**
+
+```
+Subject: You're invited to upload photos at Sarah & James's wedding!
+
+Hey [Guest Name],
+
+Sarah & James are using [Product] to collect photos from every 
+guest at their wedding tomorrow. Here's how you can contribute:
+
+📱 OPTION 1: Download the app (easiest)
+   [Download for iOS]  [Download for Android]
+   Your event code: SARAH-JAMES-2026
+
+🔗 OPTION 2: Use this link (no app needed)
+   [Upload photos here] — opens in your browser, no download required
+
+📷 OPTION 3: Scan the QR code at the event
+   Look for QR codes on the tables at the reception.
+
+All photos will be watermarked with Sarah & James's names and 
+added to their private wedding album.
+
+See you at the celebration!
+```
+
+**SMS/Text version:**
+
+```
+Sarah & James invited you to share photos at their wedding 
+tomorrow! 📸
+
+Download the app: [short link]
+Event code: SARAH-JAMES-2026
+
+Or just use this link: [short link]
+(No app needed — opens in your browser)
+```
+
+### Why This Matters
+
+| Without pre-event notification | With pre-event notification |
+|-------------------------------|----------------------------|
+| Guest arrives at wedding, notices QR on table, maybe scans it | Guest already knows about the product before they arrive |
+| Some guests ignore the QR — they're busy eating, dancing, drinking | Guest is primed to participate — they expected it |
+| Upload rate: maybe 30–40% of guests | Upload rate: potentially 50–70% of guests |
+| App installs: 0 (they don't know the app exists until after) | App installs: some guests download before the event |
+| Guests only upload in-the-moment photos | Guests know they can upload up to 3 days after — they'll go through their camera roll later |
+
+### The Three Options Are Strategic
+
+Each option serves a different purpose:
+
+**Option 1 — Download the app:** This is the ideal path. If they download before the event, they'll have the smoothest experience during and after. Plus they're now an app user — part of the long-term hub. The event code makes it dead simple to connect to the right event.
+
+**Option 2 — Direct link:** For people who won't download an app for anything. Clicking the link takes them to the same browser upload page the QR code would. Zero friction. No app, no scan, just click and upload. They can even start uploading before the event (if they have photos from the rehearsal dinner, getting ready, etc.).
+
+**Option 3 — QR at the event:** The fallback. Some people won't open the email, won't download the app, won't click the link. But they'll see the QR code on the table and scan it in the moment. This option is mentioned so they know to look for it.
+
+### Event Codes
+
+The event code (e.g., `SARAH-JAMES-2026`) is a new concept that matters for the app:
+
+- **Short, memorable, human-readable** — not a UUID or random token
+- **Entered in the app** to connect to an event (like joining a Zoom meeting with a code)
+- **Shareable verbally** — the DJ can announce it: "Open [Product] and enter code SARAH-JAMES-2026 to upload your photos!"
+- **Works without QR** — if someone doesn't have a QR code in front of them, they can still find the event
+- **Unique per event** — auto-generated from couple's names + year, with collision handling
+
+### Notification Timeline
+
+| Timing | Channel | Message | Purpose |
+|--------|---------|---------|---------|
+| **1 day before** | Email + SMS | "You're invited to upload photos at [Event]. Download the app / use this link / scan QR at the event." | Prime participation, drive app installs |
+| **Event day (morning)** | Push notification (app users) | "[Event] is today! Open the app to start uploading photos." | Reminder for app users |
+| **Event day (evening)** | Push notification (app users) | "The event is live — upload your photos!" | Trigger during the event |
+| **Day after** | Email + push | "[Host] is building the album! You can still upload photos for the next 2 days." | Drive post-event uploads |
+| **3 days after (window closing)** | Email + push | "Last chance to upload your photos from [Event]. The upload window closes tonight." | Urgency for final uploads |
+| **Album shared** | Email + push | "The album from [Event] is ready! [X] guests contributed [Y] photos." | Deliver value, drive album engagement |
+
+### Host Controls
+
+The host should be able to:
+- **Toggle pre-event notifications on/off** — Some hosts might want to keep the product a surprise (rare, but possible).
+- **Customise the message** — Add a personal note: "Can't wait to see everyone tomorrow! Don't forget to upload your photos!"
+- **Choose channels** — Email only, SMS only, or both. SMS costs money (we pay per text), so might be a premium feature or included above a certain guest count.
+- **Set the upload window** — Default 3 days, but the host can extend (up to 7 days) or shorten (close immediately after event).
+
+### SMS Considerations
+
+- **Cost:** SMS costs ~$0.01–$0.03 per message. For a 150-guest wedding, that's $1.50–$4.50. Trivial per event, but at scale (200 weddings/month × 150 guests) = $30k–$90k/year in SMS costs.
+- **Options:**
+  - Include SMS in the $2/guest price (absorb the cost — it drives participation which drives value)
+  - Make SMS a premium feature (+$0.10/guest or flat $10 add-on)
+  - Email only by default, SMS opt-in
+- **Recommendation:** Include email notifications in the base price. SMS as an optional add-on for $10/event. It's a no-brainer upsell at checkout: "Add text reminders for $10 — increase guest participation by up to 30%."
+
 ### What This Means for Venue Events
 
 For venues, the app evolution is even more powerful:
@@ -588,24 +695,36 @@ If the product evolves from a tool to a social platform, the name matters even m
 
 ---
 
-## Decisions That Should Be Made Now (Even Before Building the App)
+## Decisions — Build Now
 
-These affect the current web product and are worth implementing regardless of whether the app ships:
+These affect the current web product and should be implemented from day one, regardless of when the app ships.
 
-1. **Guest accounts (optional):** After upload, prompt "Create an account to save your memories." Even if the app is a year away, start building the account base and event history data now.
+### Confirmed (Building These)
 
-2. **Event history tracking:** When a guest uploads to multiple events using the same email, link them. This data is the foundation of "Your Events" even if it's only visible later.
+1. **Deep link-ready QR URLs:** All QR code URLs must support deep linking from day one (Universal Links on iOS, App Links on Android). If the guest has the app, QR opens the app. If not, falls through to browser. The URL structure needs to be right now — retrofitting later is painful. This is invisible to the user.
 
-3. **Reactions on albums:** Add heart/laugh/cry reactions to the existing album page. Low-cost, validates engagement, and works without an app.
+2. **3-day post-event upload window:** Uploads stay open for 72 hours after the event ends. Guests can go through their camera roll the next morning and upload the photos they forgot about. Host can adjust (extend to 7 days, or close immediately). The app makes this natural, but the behaviour starts now.
 
-4. **Venue public/private flag:** When building venue accounts, include a "public" toggle for events. Even without the app, public events could appear on the venue's web profile page.
+3. **Pre-event guest notifications:** When the host adds guest emails (and optionally phone numbers), send a notification 1 day before the event. Three options: download the app + event code, direct upload link, or scan QR at the event. Drives participation and app installs before the event even starts.
 
-5. **Reshare formatting:** When guests share a photo externally, make sure the watermark looks great on Instagram Stories (9:16 ratio, clean placement). This is free marketing whether or not an app exists.
+4. **Event codes:** Human-readable, memorable codes (e.g., `SARAH-JAMES-2026`) that guests can enter in the app or type into a URL. Works without a QR code. DJ can announce it. Guests can share it verbally. Auto-generated from event details with collision handling.
 
-6. **Deep link-ready QR URLs:** When generating QR codes, use URLs that support deep linking (e.g., Universal Links on iOS, App Links on Android). If the guest has the app installed, the QR opens the app directly. If not, it falls through to the browser. This is invisible to the user but requires the URL structure to be right from day one. Retrofitting deep links later is painful.
+### Should Build Soon
 
-7. **Post-event upload window:** Even in the current browser flow, allow uploads for 48–72 hours after the event ends. This sets the expectation that uploading isn't only an in-the-moment thing — guests can go through their camera roll later. The app makes this natural, but the behaviour should be established now.
+5. **Guest accounts (optional):** After upload, prompt "Create an account to save your memories." Even if the app is a year away, start building the account base and event history data now.
+
+6. **Event history tracking:** When a guest uploads to multiple events using the same email, link them. This data is the foundation of "Your Events" even if it's only visible later.
+
+7. **Reactions on albums:** Add heart/laugh/cry reactions to the existing album page. Low-cost, validates engagement, and works without an app.
+
+8. **Reshare formatting:** When guests share a photo externally, make sure the watermark looks great on Instagram Stories (9:16 ratio, clean placement). Free marketing whether or not an app exists.
+
+### Build When Venue Accounts Ship
+
+9. **Venue public/private flag:** Include a "public" toggle for events. Public events appear on the venue's web profile page and later in the app's "Following" feed.
+
+10. **Event-based push notifications for venue followers:** When a venue creates a new event, push a notification to followers. "The Crown & Anchor just posted photos from Friday Night Jazz."
 
 ---
 
-*This is a vision doc. The core product needs to work first. But the hub concept should inform architecture and feature decisions made today — especially around guest accounts, event history tracking, and the data model.*
+*This is a vision doc with confirmed architecture decisions. The core product comes first. The hub concept informs every feature and data model decision made today.*
