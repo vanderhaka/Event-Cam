@@ -904,6 +904,7 @@ Use this minimum-safe operating rule:
 | Control completion timing becomes volatile, making planning unreliable and increasing commitment slippage risk | `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` | Lead-time volatility count trends to zero and variability index remains stable or improving |
 | Control impact is claimed without credible attribution, distorting investment priorities and governance ROI judgments | `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` | Low-attribution claim count trends to zero and verified contribution rate remains high |
 | Interventions appear successful initially but regress later, forcing repeated remediation cycles and hidden operational cost | `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md` | Regressing intervention count trends to zero and durable intervention rate remains high |
+| Critical thresholds are defined without mapped response actions, causing detection without reliable execution follow-through | `ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md` | Unmapped threshold-state count trends to zero and threshold-action coverage remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

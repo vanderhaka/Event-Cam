@@ -355,6 +355,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Verified contribution rate for critical controls (%):
 - Regressing interventions after stabilization (count):
 - Durable intervention rate (%):
+- Unmapped critical threshold states (count):
+- Threshold-action mapping coverage rate (%):
 
 ---
 

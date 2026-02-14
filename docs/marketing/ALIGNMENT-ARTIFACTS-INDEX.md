@@ -571,6 +571,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md`**  
   Review verifying intervention gains remain stable over time and do not regress after initial recovery.
 
+- **`ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md`**  
+  Review ensuring every active threshold state has a defined and executable response action.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -757,6 +760,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need control completion timing to remain predictable so planning commitments stay reliable | `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` |
 | We need confidence that claimed control impact is causally supported, not just correlated | `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` |
 | We need to prove interventions stay effective over time and don’t regress after early stabilization | `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md` |
+| We need assurance that every threshold state is mapped to a clear response action path | `ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -909,6 +913,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Lead-Time Predictability Review | Ops / PMO + Control Owners + Delivery/Execution Leads |
 | Control Outcome Attribution Review | Ops / PMO + Strategy Owner + Analytics/Control Owners |
 | Control Intervention Durability Review | Ops / PMO + Control Owners + Functional Leads |
+| Control Threshold-Action Coverage Review | Ops / PMO + Control Owners + Response/Operations Leads |
 
 ---
 
@@ -1080,6 +1085,7 @@ Includes Pack C, plus:
 152. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`
 153. `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md`
 154. `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md`
+155. `ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

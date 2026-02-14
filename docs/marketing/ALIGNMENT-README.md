@@ -157,6 +157,7 @@ It helps teams:
 - **Control lead-time predictability governance:** `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`
 - **Control outcome-attribution governance:** `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md`
 - **Control intervention-durability governance:** `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md`
+- **Control threshold-action coverage governance:** `ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -283,4 +284,5 @@ For full routing by scenario, use:
 - Keep control completion timing stable and predictable enough to protect planning reliability.
 - Keep control impact claims evidence-attributed so governance investment follows verified outcomes.
 - Keep intervention gains durable across review windows; regressions must be corrected quickly.
+- Keep all critical threshold states mapped to clear response actions with current ownership.
 

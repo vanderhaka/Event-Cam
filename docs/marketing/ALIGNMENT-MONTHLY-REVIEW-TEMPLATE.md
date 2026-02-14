@@ -93,6 +93,7 @@
 | Lead-time volatile critical-control count |  | 0 |  |
 | Low-attribution control-claim count |  | 0 |  |
 | Regressing intervention count |  | 0 |  |
+| Unmapped critical-threshold state count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

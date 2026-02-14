@@ -190,6 +190,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 105. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` (ensures critical control workflows complete within stable lead-time bands for reliable planning)
 106. `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` (ensures control impact claims are causally supported before investment is scaled)
 107. `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md` (ensures intervention improvements remain stable over time instead of regressing after initial gains)
+108. `ALIGNMENT-CONTROL-THRESHOLD-ACTION-COVERAGE-REVIEW.md` (ensures all critical threshold states are mapped to defined response actions and owners)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
