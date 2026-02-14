@@ -91,6 +91,58 @@ Weekly 0–20 score from `ALIGNMENT-SCORECARD.md` indicating alignment health.
 ## Documentation Sync SLA
 Expected time (48 hours) to update affected docs after a closed decision.
 
+## Active Artifact Set
+The explicitly declared list of artifacts currently used as operational sources in the active cycle.
+
+## Frozen Artifact
+An artifact retained for history/context but excluded from current-cycle operational use.
+
+## Canonical Source
+The primary source-of-truth artifact for a given operating domain.
+
+## Canonical Conflict
+A contradiction where two artifacts claim source-of-truth status for the same domain.
+
+## Operating Mode
+The current governance intensity profile (Focus, Execution, Governance, or Diagnostic).
+
+## System Health Band
+Weekly meta-health classification (Green/Yellow/Red) representing alignment-discipline quality.
+
+## Data-Ready Status
+Weekly contract outcome indicating whether critical fields are valid enough for non-provisional decisions.
+
+## Weekly Data Contract
+Minimum required critical fields, freshness rules, and validation outcomes for weekly review readiness.
+
+## ID Hygiene
+The quality of identifier consistency (format, uniqueness, cross-linking) across all operational artifacts.
+
+## State Transition Integrity
+Conformance of status changes to the approved state-machine transition rules.
+
+---
+
+## Incident & Escalation Terms
+
+## Alignment Incident
+Any event that materially threatens path execution, decision quality, metric trust, or canonical consistency.
+
+## Severity (Sev-1 to Sev-4)
+Incident urgency classification used to determine response and escalation timing.
+
+## On-Call Owner
+The person accountable for immediate incident response under the escalation matrix.
+
+## Escalation Playcard
+A scenario-specific response runbook defining immediate, 24-hour, and 72-hour actions.
+
+## Hotwash
+A structured post-incident learning review completed within 48 hours of stabilization.
+
+## Stabilization Window
+The target duration to contain incident impact and restore minimum control integrity.
+
 ---
 
 ## Usage Rule
