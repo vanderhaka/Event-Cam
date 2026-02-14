@@ -1,136 +1,314 @@
-# Social / Instagram-Style App — Exploration
+# The App — Personal Event Hub
 
-> The current product is a tool: create event → collect photos → share album → done. But there's potentially something much bigger underneath. Every wedding generates hundreds of photos, 150+ engaged users, and deep emotional content. That's the raw material for a social platform, not just a utility.
+> The product doesn't have to be a tool you use once. It can be the place where every event in your life lives — every wedding you attended, every party, every gig at your local pub. Private by default. Everything in one place. The more you use it, the more it becomes *your* history of celebrations. And the easiest place to create the next one.
 
 ---
 
-## The Observation
+## The Core Idea
 
-Right now, the product lifecycle looks like this:
+Right now, the product lifecycle is linear and terminal:
 
 ```
 Couple signs up → creates event → guests upload → couple moderates → 
 album shared → done. Product goes dormant.
 ```
 
-The relationship with the couple ends after the album is shared. The relationship with the guests ends after the album delivery email. All that content, all those users, all that emotional energy — it just... stops.
+The relationship with the couple ends after the album is shared. The relationship with the guests ends after the album delivery email. All that content, all those users — it just stops.
 
-An Instagram-style layer changes that:
+**The app changes that.** It becomes the central hub for every event you go to:
 
 ```
-Couple signs up → creates event → guests upload → couple moderates → 
-album shared → guests react, comment, tag → couple posts highlights → 
-friends see it → friends get engaged → they sign up → cycle continues
+You attend a wedding → photos appear in your app
+You go to a gig at a pub → photos appear in your app
+You attend a friend's birthday → photos appear in your app
+You follow your local venue → see their public event photos in your feed
+You decide to host your own event → one tap to create, right from the app
 ```
 
-The product stops being a tool you use once and becomes a place you come back to.
+**It's not a social network. It's a personal event memory vault with a public layer for venues.**
+
+### What Makes It Different from Instagram
+
+| | Instagram | This App |
+|---|-----------|----------|
+| Content | Everything (food, selfies, ads, memes) | Only events and celebrations |
+| Default privacy | Public | Private (only guests see it) |
+| Why you open it | Boredom, habit, FOMO | You attended an event, or you're feeling nostalgic |
+| Engagement model | Daily dopamine hits | Low frequency, high intensity — open after events, revisit memories |
+| How content arrives | You create it intentionally | It appears automatically because you were there |
+| Monetisation | Ads | Event creation fees ($2/guest) |
+| User acquisition | Paid/organic marketing | Every event seeds 50–500 users organically |
 
 ---
 
-## What "Instagram-Style" Could Mean
+## The Two Layers
 
-This isn't about cloning Instagram. It's about adding a social layer that makes sense for weddings and events. Several possible directions:
+### Layer 1: Private Events (Default)
 
-### Direction 1: Private Social Album (Smallest Step)
+Every private event (wedding, birthday, corporate event, house party) is only visible to people who were at that event. You attended → you see it in your app. Nobody else does.
 
-The album itself becomes social. Instead of a static gallery behind a password, it becomes interactive.
+**How it works:**
+- You scan the QR at a wedding and upload photos
+- That event now appears in your app under "Your Events"
+- You see the curated album, your own uploads, other guests' photos
+- You can react, comment, tag people
+- 6 months later, you open the app and it's all still there — along with every other event you've attended
+- "On this day 1 year ago" memory notifications bring you back
 
-**Features:**
-- Guests react to photos (heart, laugh, cry — wedding-appropriate reactions)
-- Guests comment on photos
-- Guests tag themselves and others in photos
-- "This was my favourite moment" — guests highlight their top picks
-- Couple pins their favourites to the top
-- Real-time during the event: a live feed of uploads as they come in (like a wedding-specific Instagram Stories)
+**What the user sees:**
 
-**What this feels like:** A private Instagram for one event. Only people who were at the wedding can see it. Intimate, emotional, interactive.
+```
+┌─────────────────────────────────────────────────┐
+│  Your Events                                    │
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  ❤️ Sarah & James — Wedding                ││
+│  │  June 14, 2026 · 1,247 photos · You: 12   ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🎂 Tom's 30th Birthday                    ││
+│  │  May 22, 2026 · 342 photos · You: 8       ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🏢 Company Summer Offsite                  ││
+│  │  May 3, 2026 · 567 photos · You: 15       ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  💍 Priya & Raj — Wedding                   ││
+│  │  April 19, 2026 · 2,103 photos · You: 22  ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ──────────────────────────────────────────     │
+│  📅 2025                                        │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🎄 Office Christmas Party                  ││
+│  │  Dec 18, 2025 · 189 photos · You: 5       ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│         [ + Create Your Own Event ]             │
+│                                                 │
+└─────────────────────────────────────────────────┘
+```
 
-**Why it works:** It gives guests a reason to come back to the album repeatedly (notifications: "Sarah commented on your photo," "The couple pinned your shot as a favourite"). More engagement = more time in the product = stronger brand recall = higher referral likelihood.
+**The lock-in effect:** After 5–10 events, your history lives in this app. You can't get that anywhere else. It's not just photos — it's a timeline of every celebration in your life. Switching costs increase with every event you attend.
 
-**Risk level:** Low. This is a feature addition, not a pivot. Doesn't require an app (could work in browser). Doesn't change the core product.
+### Layer 2: Public Events & Venue Follows
+
+Venues (pubs, clubs, bars, event spaces) and public events are followable. You follow a venue, and their public event photos appear in your feed.
+
+**How it works:**
+- A pub hosts a live music night and uses the product to collect photos
+- The venue marks the event as "public"
+- Public event photos appear in the feeds of anyone who follows that venue
+- You discover new venues through friends' public check-ins
+- You see what events are happening and what they look like — real photos, not stock images
+
+**What the user sees:**
+
+```
+┌─────────────────────────────────────────────────┐
+│  Following                                      │
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🍺 The Crown & Anchor                      ││
+│  │  Live music Fridays · 12 events · 2.4k pics││
+│  │  Latest: Friday Night Jazz — Feb 7          ││
+│  │  [View Photos]                              ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🎵 Warehouse Collective                    ││
+│  │  Underground events · 8 events · 1.8k pics ││
+│  │  Latest: Neon Night — Feb 1                 ││
+│  │  [View Photos]                              ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  ┌─────────────────────────────────────────────┐│
+│  │  🏨 The Grand Hotel                         ││
+│  │  Weddings & galas · 23 events · 15k pics   ││
+│  │  Latest: Charity Gala — Jan 25              ││
+│  │  [View Photos]                              ││
+│  └─────────────────────────────────────────────┘│
+│                                                 │
+│  [ Discover Venues Near You ]                   │
+│                                                 │
+└─────────────────────────────────────────────────┘
+```
+
+**Why venues love this:**
+- It's a free marketing channel. Every public event shows real, authentic photos to potential customers.
+- Followers are a built-in audience for their next event.
+- "Follow us on [Product] to see photos from our events" becomes the venue's version of "follow us on Instagram" — but more useful.
+- It drives foot traffic: someone sees amazing photos from a pub's Friday night and thinks "I need to go there."
+
+**Why users love this:**
+- Discover what's actually happening at local venues — real photos, not promotional material.
+- See friends who attended public events nearby.
+- Follow venues you love and get a visual feed of their events.
 
 ---
 
-### Direction 2: Guest Profiles & Memory Timeline (Medium Step)
+## The "Easy Create" Conversion Funnel
 
-Every guest who uploads to a wedding gets a lightweight profile. Over time, as they attend more events that use the product, their profile becomes a timeline of memories.
+This is the killer feature from a business perspective. Once someone has the app and has been a guest at 3–5 events, creating their own event is a single tap away.
 
-**Features:**
-- Guest profile: name, photo, events attended
-- "Your memories" timeline: every event you've contributed to, with your photos
-- "You were at 5 weddings this year" — year-in-review style
-- Cross-event connections: "You and Sarah were both at 3 weddings together"
-- Notifications: "Emma & Liam just shared their wedding album — you contributed 12 photos!"
-- One-tap reshare to Instagram/TikTok (with the AI watermark visible — free marketing)
+**The funnel:**
 
-**What this feels like:** A memory vault. Not a social network you scroll every day, but a place you visit when you're feeling nostalgic. "Remember Jake & Maria's wedding? Let me find that photo of grandma on the dance floor."
+```
+Guest at someone else's event (free)
+        ↓
+Photos appear in their app (automatic)
+        ↓
+They attend 2-3 more events (familiarity builds)
+        ↓
+They're planning their own event (birthday, wedding, party)
+        ↓
+[ + Create Your Own Event ] is right there in the app
+        ↓
+They already know how the product works (they've been a guest)
+        ↓
+One tap → event creation flow → pay $2/guest → done
+```
 
-**Why it works:** It creates a reason for guests to have an account (not just an email). An account = a relationship. A relationship = future conversion opportunities. And every time they open the app to revisit a memory, they're one tap away from "Create your own event."
+**Why this is so powerful:**
+- **Zero education needed** — They've experienced the product as a guest. They know it works. They've seen the watermarks, the filters, the album. There's nothing to explain.
+- **Zero trust gap** — They're not buying from a landing page. They're buying from inside a product they've used and enjoyed multiple times.
+- **Frictionless** — The app is already on their phone. The payment is one screen. They're not "discovering a new product" — they're activating a feature of an app they already have.
+- **Contextual** — The app can nudge at the right moment: "Planning a birthday? An anniversary? Create an event and collect photos from your guests, just like Sarah & James did at their wedding."
 
-**Risk level:** Medium. Requires some form of account/login for guests (currently they just enter an email). But could be optional — "Create a profile to save your memories" after upload.
-
----
-
-### Direction 3: Wedding Photo Community / Discovery (Bigger Step)
-
-A public (opt-in) feed of beautiful wedding photos. Couples share their best shots. Other couples browse for inspiration. Photographers showcase their work.
-
-**Features:**
-- "Explore" feed: curated wedding photos from real events (couple opts in to share publicly)
-- Browse by style: rustic, modern, cultural, destination, intimate, grand
-- Browse by element: first dance, ceremony, reception, getting ready, details
-- Photographer profiles with portfolios built from real Event Cam weddings
-- Couple wedding pages: a public-facing mini-site for their wedding with selected photos
-- "Get this look" — see the filter and watermark style used, apply it to your event
-- Venue discovery: see real photos from events at a specific venue
-
-**What this feels like:** Pinterest meets Instagram, but exclusively weddings. A visual discovery engine where every photo was captured by a real guest at a real event, not staged by a photographer.
-
-**Why it works:** Wedding planning is intensely visual. Couples spend hours on Pinterest and Instagram looking for inspiration. If the product becomes where real wedding photos live, it becomes a top-of-funnel discovery engine that feeds directly into the paid product. A couple finds inspiration → "This was collected with [Product]" → they sign up for their own wedding.
-
-**Risk level:** High. This is a platform play, not a feature. Requires content moderation at scale, discovery algorithms, creator tools, and a fundamentally different engagement model. But the payoff is enormous if it works.
+This is the guest email flywheel, but **10x more powerful** because the guest doesn't just have an email — they have the app, they have history, they have emotional investment.
 
 ---
 
-### Direction 4: Full Social App (Biggest Step)
+## How Privacy Works
 
-A standalone app that's "Instagram for life events." Weddings first, then birthdays, graduations, baby showers, anniversaries, reunions, holidays.
+Privacy is core. The app doesn't expose anything by default.
 
-**Features:**
-- Personal feed of all events you've attended
-- Follow friends to see their event highlights
-- Stories-style ephemeral content from live events
-- Event creation and photo collection (the current core product)
-- DMs around shared photos ("Remember this moment?")
-- Memories: "On this day 1 year ago, you were at Sarah & James's wedding"
-- Creator tools: filters, watermarks, collages, slideshows
-- Marketplace: photobook ordering, prints, gifts
+| Event Type | Who sees it? | Who can find it? |
+|-----------|-------------|-----------------|
+| **Private event** (wedding, birthday, party) | Only guests who scanned the QR and uploaded | Nobody — it doesn't appear in any public feed or search |
+| **Private event — invited viewer** | Guests + anyone with the album share link (password-protected) | Nobody external — link-only access |
+| **Public event** (venue night, brand activation) | Anyone who follows the venue + anyone who browses the venue page | Discoverable on the venue's public page and in "Discover" |
+| **Your own uploads** | Only you (in your "Your Events" timeline) | Nobody else sees your personal timeline |
 
-**What this feels like:** The app for every celebration in your life. Not a daily-use social network (you don't post breakfast photos), but the place you go every time something worth celebrating happens.
-
-**Why it works:** Instagram is general purpose. Nobody owns "celebrations" as a social category. Events are inherently social, visual, emotional, and shareable. And unlike Instagram, the content is private by default — you only see events you were part of, unless the host shares publicly.
-
-**Risk level:** Very high. This is a completely different company. Building a social network is a multi-year, multi-million-dollar endeavour. But the weddings vertical gives you a focused, monetisable entry point that most social apps don't have.
+**Key principle:** Private events are invisible to the outside world. There's no "explore" feed showing strangers' weddings (unless the couple explicitly opts in to share). The app is a vault, not a broadcast channel.
 
 ---
 
-## The Strategic Case For Going Social
+## What This Does to the Business
 
-### The Guest Email List Is a User Base Waiting to Happen
+### Lock-In Through History
+
+This is the most important strategic effect. Every other photo collection tool is transactional — use it once, forget it. The app turns the product into an accumulating asset:
+
+| Events Attended | Lock-In Level | Switching Cost |
+|----------------|---------------|----------------|
+| 1 | None — you could delete the app tomorrow | Zero — it's just one album |
+| 3 | Low — you've got a few nice memories in there | Mild inconvenience |
+| 5–10 | Medium — this is becoming your event photo archive | You'd lose years of memories |
+| 10+ | High — your entire social/celebration history lives here | Unthinkable — like leaving Instagram after 5 years |
+
+No competitor can replicate your personal history. They can copy features, match pricing, clone the watermark. They can't give you back 3 years of wedding and party memories.
+
+### The Venue Flywheel
+
+Venue accounts become dramatically more valuable with the app:
+
+```
+Venue hosts events → guests get the app → guests follow the venue →
+venue's public photos reach followers → followers visit the venue →
+more events → more guests → more followers → bigger audience
+```
+
+The venue's follower count becomes a genuine marketing asset. "Follow us on [Product] — 2,400 followers" is a real CTA that drives foot traffic. This makes venue accounts stickier and justifies the subscription pricing.
+
+### Guest-to-Creator Conversion Rate Explodes
+
+Without the app, converting a guest to a paying customer requires: email → click → visit website → understand product → sign up → create event → pay. That's 6 steps with drop-off at each one.
+
+With the app: they're already in the product. They already understand it. They tap "Create Event." That's 1 step.
+
+**Expected conversion lift:** 3–5x higher guest-to-creator conversion with the app vs. email-only.
+
+---
+
+## Social Features Within Events
+
+Each event in the app is a private, interactive space — not a static album.
+
+### What Guests Can Do Inside an Event
+
+- **React to photos** — Heart, laugh, cry (event-appropriate reactions, not a generic "like")
+- **Comment** — "Oh my god this is the best photo of grandma"
+- **Tag people** — "That's @Sarah behind the DJ booth"
+- **Highlight favourites** — "This was my favourite moment" — guests vote on the best shots
+- **See a live feed during the event** — Photos appear in real-time as guests upload. Creates a live, collective experience during the event itself.
+
+### What the Host Can Do
+
+- **Pin favourites** to the top of the album
+- **Feature a "Best Of"** selection on the event page
+- **Send a notification** to all guests: "The album is ready! Come see it."
+- **Share externally** — Password-protected link still works for people not on the app
+
+### Notifications That Bring People Back
+
+| Trigger | Notification | Timing |
+|---------|-------------|--------|
+| New album shared | "Sarah & James shared their wedding album — you contributed 14 photos!" | Post-event |
+| Someone reacted to your photo | "Emma loved your photo from the wedding" | Real-time |
+| Someone commented | "Tom commented on your photo: 'Legendary dance move'" | Real-time |
+| Your photo was pinned | "The couple pinned your photo as a favourite!" | When it happens |
+| Memory anniversary | "1 year ago today, you were at Priya & Raj's wedding" | Annual |
+| Year in review | "You attended 7 events in 2026. See your highlights." | End of year |
+| Venue you follow has new event | "The Crown & Anchor posted photos from Friday Night Jazz" | Post-event |
+
+---
+
+## App Screens Overview
+
+### Tab 1: Your Events (Home)
+
+Your personal timeline of every event you've attended, most recent first. Grouped by year. Each card shows the event name, date, photo count, and how many you contributed. Tap to open.
+
+### Tab 2: Following (Venues & Public)
+
+A feed of public event photos from venues you follow. Discover new venues nearby. See what's happening in your city. Each venue card shows their latest event and follower count.
+
+### Tab 3: Create
+
+One-tap event creation. Pre-filled with smart defaults based on event type (wedding, birthday, party, corporate). For returning users, it remembers their preferences (watermark style, filter choice).
+
+The create flow for someone who's already been a guest is nearly instant — they know the product, they trust it, they just need to fill in the details and pay.
+
+### Tab 4: Profile
+
+Your name, photo, events attended, total photos contributed. Settings, account management, notification preferences.
+
+"Your year in review" lives here. Shareable — "I attended 7 events in 2026 and contributed 89 photos" → share to Instagram Stories (with branding — free marketing).
+
+---
+
+## Why This Works — Strategic Advantages
+
+### The Guest Email List Is an App Install Base Waiting to Happen
 
 By Phase 2, the product captures ~20,000 guest emails per month. By Phase 3, ~56,000/month. Within 12 months, you could have 250,000–500,000 email addresses of people who have already used the product.
 
-Right now, those emails sit in a nurture sequence. But with an app, those emails become **user acquisition at zero cost**:
+Right now, those emails sit in a nurture sequence. But with the app, those emails become **app installs at zero cost**:
 
 > "Your photos from Sarah & James's wedding are now in the app. Download to see your memories, react to photos, and save your favourites."
 
 This is a fundamentally different push than "download our app to upload photos." The guest already has content waiting for them. The app isn't an ask — it's a delivery mechanism for something they already want.
 
-### Every Event Is a Network Seeding Moment
+### Every Event Seeds Users in Clusters
 
-Instagram grew user by user. A wedding event seeds 150 users in one night. Ten weddings in a weekend = 1,500 users. If even 20% download the app, that's 300 new app users per weekend from organic product usage alone.
+Instagram grew user by user. A single wedding seeds 150 users in one night. Ten weddings in a weekend = 1,500 users. If even 20% download the app, that's 300 new app users per weekend from organic product usage alone.
 
-And unlike Instagram, these users arrive in **clusters** — they already know each other. Social features (comments, tags, reactions) have built-in engagement because the people in the photos are your actual friends and family.
+And unlike Instagram, these users arrive in **clusters** — they already know each other. Social features (comments, tags, reactions) have built-in engagement from day one because the people in the photos are your actual friends and family.
 
 ### The Content Is Inherently Premium
 
@@ -146,94 +324,105 @@ Right now, the product competes with The Guest app, disposable cameras, and Goog
 
 ---
 
-## The Strategic Case Against Going Social (Or At Least, Not Yet)
+## Risks & Honest Concerns
 
 ### "No App Required" Is the Core Differentiator
 
-The entire marketing plan is built on "guests don't need to download anything." An app undermines that message. You can't say "no app required" while also saying "download our app."
+The entire marketing plan is built on "guests don't need to download anything." An app seems to undermine that message.
 
-**Counter:** The app is for the couple and returning guests, not for the initial upload. The upload flow stays browser-based (no download required). The app is the post-event experience — "want to revisit your memories? Download the app." The zero-friction principle is preserved for the critical moment (guest at the wedding scanning the QR).
+**Why it doesn't:** The app is for after the event, not during. The QR → browser upload flow is untouched. Guests at a wedding never need to download anything. The app is the post-event experience: "Want to save your memories and see the final album? Download the app." The zero-friction upload principle is preserved for the critical moment. The app is optional but valuable.
 
-### Social Features Require a Completely Different Product Muscle
+### Building an App Is a Major Investment
 
-Building a social app means: push notifications, real-time feeds, content algorithms, reporting/blocking, scaled moderation, engagement metrics, retention engineering. These are fundamentally different skills from building a photo collection tool.
+Native iOS + Android development, push notifications, accounts/auth, real-time features, app store approvals and reviews. This is a different beast from a Next.js web app.
 
-**Counter:** You don't have to build it all at once. Direction 1 (private social album) is a small step. Direction 4 (full social app) is years away. Start with reactions and comments on the album page and see if engagement data justifies going further.
+**Mitigation:** Start with a PWA (Progressive Web App). It works on both platforms, supports push notifications, can be "installed" to the home screen, and uses the existing web codebase. Test whether the hub concept works before committing to native. If engagement proves out, go native.
 
-### Engagement Pressure Can Corrupt the Product
+### Risk of Overcomplicating a Simple Product
 
-Social networks optimise for time-on-app. That creates perverse incentives (notifications, algorithmic feeds, engagement bait). The current product is beautiful because it's simple and self-contained. Adding social features could bloat it.
+The current product is beautiful because it's simple. Adding social features and an app could bloat it into something confusing.
 
-**Counter:** This doesn't have to be an attention-sucking social network. It can be a "low-frequency, high-intensity" app — you open it after a wedding, spend 30 minutes reliving the night, then don't open it again until the next event. That's a healthy engagement model that doesn't require manipulation.
+**Mitigation:** The app's primary screen is just a list of events you attended. Tap one → see photos. That's it. Social features (reactions, comments) are secondary. The core experience stays dead simple. Never add features that require explanation.
 
-### It Dilutes Focus
+### Focus Risk — Core Product Isn't Proven Yet
 
-You haven't achieved product-market fit for the core product yet. Adding a social layer now splits attention, engineering effort, and marketing budget.
+Product-market fit for the event collection tool needs to come first. Building an app before the core works is premature.
 
-**Counter:** This is absolutely right. The social layer is a Phase 3+ play. The doc is about the vision, not the next sprint.
+**Agreement:** This is absolutely right. The app is a Phase 3+ play (month 12+). But the vision should inform decisions made today — especially around guest accounts, data architecture, and the email capture flow. Build the foundations now even if the app comes later.
 
 ---
 
-## Phased Approach
+## Phased Build Plan
 
-If you're going to go social, do it in layers. Each layer validates the next.
+Each phase validates the next. Don't build Phase 3 until Phase 2 proves people come back.
 
-### Layer 1: Interactive Albums (Month 6–9)
+### Phase 1: Interactive Albums (Month 6–9)
 
-**Add to the existing browser-based album:**
+**Add to the existing browser-based album page:**
 - Reactions on photos (heart, laugh, cry)
 - Comments
 - "This was my favourite" guest highlights
-- Couple can pin favourites
+- Host pins favourites to the top
 - Notifications via email: "3 guests reacted to your photos"
 
-**What you learn:** Do guests actually come back to the album? Do reactions/comments drive re-engagement? How often do guests revisit?
+**What you learn:** Do guests actually come back to the album? Do reactions/comments drive re-engagement? How many times does a guest revisit?
 
-**Build cost:** Low. It's feature additions to the existing album page.
+**Build cost:** Low. Feature additions to the existing album page. No app required.
 
----
-
-### Layer 2: Guest Accounts & Memory Timeline (Month 9–14)
-
-**Add optional guest profiles:**
-- "Save your memories" prompt after upload → create a lightweight account
-- Profile page: events attended, your photos, your reactions
-- "Memories" emails: "1 year ago today, you were at Sarah & James's wedding"
-- Cross-event discovery: "You and [friend] were at 3 events together"
-
-**What you learn:** What % of guests create accounts? Do memory notifications drive re-engagement? Does having an account increase referral/conversion rates?
-
-**Build cost:** Medium. Requires auth for guests (currently none), profile pages, memory logic.
+**Success metric:** 30%+ of guests revisit the album at least once after initial viewing.
 
 ---
 
-### Layer 3: Native App (Month 12–18)
+### Phase 2: Guest Accounts & Event History (Month 9–14)
 
-**Launch a mobile app (iOS + Android) with:**
-- All event management (currently web-only)
-- Guest memory timeline
-- Push notifications for album activity
+**Add optional guest accounts:**
+- "Save your memories" prompt after upload → create a lightweight account (email + password, or social login)
+- "Your Events" page: every event you've contributed to, with your photos
+- Memory notification emails: "1 year ago today, you were at Sarah & James's wedding"
+- Cross-event connections: "You and Sarah were both at 3 events together"
+- "Create Your Own Event" CTA prominent on the Your Events page
+
+**What you learn:** What % of guests create accounts? Do memory notifications drive re-engagement? Does having an account increase guest-to-creator conversion?
+
+**Build cost:** Medium. Requires auth for guests, profile pages, event history logic.
+
+**Success metric:** 20%+ of uploading guests create an account. Account holders convert to event creators at 2x the rate of email-only guests.
+
+---
+
+### Phase 3: The App — PWA First (Month 12–18)
+
+**Launch a Progressive Web App (PWA) with:**
+- "Your Events" timeline (the core hub)
+- "Following" tab for venues
+- Push notifications for album activity and memory anniversaries
+- One-tap event creation
 - One-tap reshare to Instagram/TikTok (with watermark — free marketing)
-- Quick upload directly from the app at events (supplement to QR browser flow)
+- "Discover Venues Near You" basic location-based browsing
 
-**What you learn:** Do people actually download it? What's the DAU/MAU? Does the app drive more uploads per guest? Does it increase couple engagement with moderation/albums?
+**Why PWA first:** Works on iOS and Android. No App Store approval needed. Uses the existing web codebase. Supports push notifications. Can be "installed" to the home screen. Tests the hub concept without the massive investment of native development.
 
-**Build cost:** High. Native app development is a major investment.
+**What you learn:** Do people actually install it? What's the weekly active rate? Does the app drive more event creation? Does the venue follow feature get traction?
+
+**Build cost:** Medium. PWA is significantly cheaper than native. Most of the logic already exists in the web app.
+
+**Success metric:** 15%+ of account holders install the PWA. App users create events at 3x the rate of non-app users.
 
 ---
 
-### Layer 4: Public Discovery Feed (Month 18–24)
+### Phase 4: Native App + Public Layer (Month 18–24)
 
-**Add opt-in public sharing:**
-- Couples share their best photos to a public feed
-- Browse by style, venue, location
-- Photographer portfolios
-- "Get this look" — filter and watermark style discovery
-- Venue pages with real event photos
+**Go native (iOS + Android) if PWA metrics justify it:**
+- Full native experience (smoother, faster, better push notifications)
+- Venue public pages with photo galleries and follower counts
+- "Discover" tab: browse venues, see public events nearby
+- Year-in-review shareable cards
+- Photographer portfolios (for Pro accounts)
+- In-app photobook ordering
 
-**What you learn:** Does public content drive organic discovery and signups? Can this replace or supplement paid ads as a top-of-funnel channel?
+**Build cost:** High. Native development is a major investment. Only justified if PWA engagement proves the concept.
 
-**Build cost:** High. Content moderation at scale, discovery/search, recommendation algorithms.
+**Success metric:** 100k+ app installs within 6 months of launch. 40%+ monthly retention.
 
 ---
 
@@ -294,14 +483,31 @@ If the product evolves from a tool to a social platform, the name matters even m
 
 ## Open Questions
 
-- [ ] Does the market want this, or are we projecting? Need to talk to 20+ couples and guests post-wedding. Do they revisit the album? Do they wish they could comment/react? Would they download an app?
-- [ ] Does an app conflict with the "no app required" positioning, or can both coexist? (Browser for upload, app for everything after.)
-- [ ] What's the engagement model? Daily? Weekly? Event-driven? "Low frequency, high intensity" is the hypothesis but needs validation.
-- [ ] Does this change the fundraising story? A social platform has a much bigger TAM than a wedding photo tool — but it's also a much bigger bet.
-- [ ] Could we build a lightweight "app-like" experience with a PWA (Progressive Web App) instead of native? Lower build cost, no App Store approval needed, still supports push notifications.
-- [ ] What happens to the Pro and Venue accounts in a social world? Do Pros get social features too? Do venues get a public page?
-- [ ] How do we handle moderation at scale if there's a public feed? User reports, AI content filtering, community guidelines.
+- [ ] Does the market want this? Need to talk to 20+ guests post-wedding. Do they revisit the album? Do they wish they could comment/react? Would they install an app to see their event history?
+- [ ] PWA vs native — is PWA good enough for the core hub experience, or do the push notification and performance limitations matter too much?
+- [ ] What's the realistic install rate? If 20% of guests install, that's 30 installs per wedding. If 5%, that's only 7–8. Need to test the prompt and value proposition.
+- [ ] How do venue follows work with privacy? If you follow a pub and they post public event photos, can other followers see that you were at the same event? (Probably not — keep attendance private, just show the venue's curated public photos.)
+- [ ] Does this change the fundraising story? A personal event hub with network effects and lock-in is a much bigger TAM than a wedding photo tool — but it's also a bigger bet.
+- [ ] How do Pro accounts fit? Does a photographer get a public profile in the app? Can couples find Pros through the app? (This connects to the Pro Directory concept.)
+- [ ] Moderation for public venue content — user reports, community guidelines, AI content filtering. Needed before venue follows launch.
+- [ ] Data architecture decisions needed NOW (even before app): Should guests be creating accounts today? Should we start tracking which events a guest has attended across multiple email-based uploads? Building this data layer early makes the app launch much easier later.
 
 ---
 
-*This is a vision doc, not a roadmap. The core product needs to work first. But the social opportunity should inform decisions made today — especially around naming, guest accounts, and data architecture.*
+## Decisions That Should Be Made Now (Even Before Building the App)
+
+These affect the current web product and are worth implementing regardless of whether the app ships:
+
+1. **Guest accounts (optional):** After upload, prompt "Create an account to save your memories." Even if the app is a year away, start building the account base and event history data now.
+
+2. **Event history tracking:** When a guest uploads to multiple events using the same email, link them. This data is the foundation of "Your Events" even if it's only visible later.
+
+3. **Reactions on albums:** Add heart/laugh/cry reactions to the existing album page. Low-cost, validates engagement, and works without an app.
+
+4. **Venue public/private flag:** When building venue accounts, include a "public" toggle for events. Even without the app, public events could appear on the venue's web profile page.
+
+5. **Reshare formatting:** When guests share a photo externally, make sure the watermark looks great on Instagram Stories (9:16 ratio, clean placement). This is free marketing whether or not an app exists.
+
+---
+
+*This is a vision doc. The core product needs to work first. But the hub concept should inform architecture and feature decisions made today — especially around guest accounts, event history tracking, and the data model.*
