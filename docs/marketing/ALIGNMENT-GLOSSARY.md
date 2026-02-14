@@ -175,6 +175,9 @@ Rule hierarchy that determines which control wins when two active controls presc
 ## Control Change Criticality
 Classification of control updates (C1/C2/C3) based on expected behavior impact and approval/verification rigor required.
 
+## Automation Priority Score
+Composite score used to rank governance automation candidates based on time savings, error reduction, risk reduction, complexity, and adoption readiness.
+
 ---
 
 ## Incident & Escalation Terms

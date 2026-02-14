@@ -75,6 +75,7 @@
 - Run ID format/link checks on new entries (decision/experiment/blocker/dependency).
 - Run state-machine sanity check on transitioned items.
 - Log any transition or ID hygiene defects for next-week correction.
+- Review top automation-priority candidates and dependency status.
 
 ---
 
@@ -110,6 +111,7 @@ Use this trigger table before meetings:
 | Governance ROI negative for 2 months | Initiate governance redesign and leadership review |
 | Unresolved control conflict blocks decision progress | Apply precedence ruling and assign wording-fix owner |
 | C2/C3 control change launched without packet | Freeze rollout and require immediate governance review |
+| P-A1 automation candidates idle for 2 cycles | Escalate automation queue reprioritization |
 
 ---
 

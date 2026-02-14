@@ -304,6 +304,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`**  
   Standard workflow for proposing, approving, verifying, and rolling back behavior-changing control updates.
 
+- **`ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md`**  
+  Weighted scoring model for selecting highest-leverage governance automations by impact and feasibility.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -401,6 +404,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need proof that governance effort has positive return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` |
 | We need one rule for resolving control conflicts quickly | `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` |
 | We need disciplined rollout/rollback for control changes | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` |
+| We need objective sequencing for governance automation work | `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` |
 
 ---
 
@@ -464,6 +468,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Governance ROI Report | Strategy Owner + Ops / PMO + Leadership Team |
 | Control Precedence Rules | Strategy Owner + Ops / PMO |
 | Control Change Protocol | Strategy Owner + Ops / PMO + Leadership Team |
+| Automation Prioritization Scorecard | Ops / PMO + Engineering/Automation Owner |
 
 ---
 
@@ -546,6 +551,7 @@ Includes Pack C, plus:
 63. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
 64. `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`
 65. `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`
+66. `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md`
 
 Recommended only when:
 - decision volume is high,

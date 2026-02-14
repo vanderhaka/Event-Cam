@@ -815,6 +815,7 @@ Use this minimum-safe operating rule:
 | Governance workload rises without measurable business-control return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` | Governance ROI index remains positive and improving quarter-over-quarter |
 | Teams apply conflicting controls inconsistently under pressure | `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` | Control conflicts are resolved quickly with logged precedence rulings |
 | Governance controls change frequently without rollout discipline | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` | High-impact control changes show stable post-change verification results |
+| Automation effort is spent on low-impact governance tasks | `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` | P-A1 automations are delivered first and reduce manual governance load |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

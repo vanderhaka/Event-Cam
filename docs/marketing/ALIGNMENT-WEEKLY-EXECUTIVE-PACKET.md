@@ -99,6 +99,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Governance ROI index (last monthly run) |  |  |  |
 | Open control-precedence conflicts |  |  |  |
 | Active high-criticality control changes (C2/C3) |  |  |  |
+| P-A1 automation candidates open (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
