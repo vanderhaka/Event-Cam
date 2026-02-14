@@ -28,6 +28,7 @@
 - Confirm current system-health band (Green/Yellow/Red).
 - Confirm any red signals from signal playbook.
 - Confirm blocker backlog trend.
+- Confirm meeting effectiveness status (Green/Yellow/Red trend).
 
 ## Step 2: Decision Scan (15 min)
 - Check Priority 0/1 decisions due this week.
@@ -85,6 +86,7 @@ Use this trigger table before meetings:
 | P0 decision request untriaged beyond 24h | Escalate intake owner and force triage in same-week review |
 | Decision WIP ceiling breached | Pause low-priority activations and run queue reduction session |
 | Decision outcome review overdue >7 days | Escalate review owner and assign corrective action deadline |
+| Meeting effectiveness Red for 2 consecutive weeks | Redesign meeting cadence/format and assign recovery owner |
 
 ---
 
@@ -95,7 +97,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

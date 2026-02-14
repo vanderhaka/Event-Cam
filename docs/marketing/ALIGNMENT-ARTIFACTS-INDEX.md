@@ -265,6 +265,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`**  
   Post-close impact-review discipline for validating whether decisions achieved intended outcomes.
 
+- **`ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`**  
+  Weekly quality and yield audit for alignment meetings to prevent governance overhead without outcomes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -349,6 +352,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one front-door queue for triaging new decision requests | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` |
 | We need to cap concurrent decision work before quality drops | `ALIGNMENT-DECISION-WIP-LIMITS.md` |
 | We need to verify closed decisions actually worked | `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` |
+| We need to ensure meetings produce real outputs, not process drag | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` |
 
 ---
 
@@ -399,6 +403,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Intake Queue | Ops / PMO + Strategy Owner |
 | Decision WIP Limits | Ops / PMO + Strategy Owner |
 | Decision Outcome Reviews | Strategy Owner + Growth Lead |
+| Meeting Effectiveness Review | Ops / PMO + Meeting Owners |
 
 ---
 
@@ -468,6 +473,7 @@ Includes Pack C, plus:
 50. `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
 51. `ALIGNMENT-DECISION-WIP-LIMITS.md`
 52. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
+53. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

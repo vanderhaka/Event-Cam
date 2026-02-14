@@ -136,6 +136,9 @@ Maximum allowed number of concurrently active decisions by priority band to prot
 ## Decision Outcome Review
 Structured post-close evaluation that compares intended decision effects with observed results and determines reinforcement, modification, or reversal actions.
 
+## Meeting Effectiveness Status
+Weekly quality rating (Green/Yellow/Red) indicating whether recurring alignment meetings are producing sufficient decisions, closures, and synchronized artifact updates.
+
 ---
 
 ## Incident & Escalation Terms

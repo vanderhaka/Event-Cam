@@ -55,6 +55,7 @@ It helps teams:
 - **Decision front-door control:** `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
 - **Decision concurrency control:** `ALIGNMENT-DECISION-WIP-LIMITS.md`
 - **Decision impact verification:** `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
+- **Meeting yield control:** `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -79,4 +80,5 @@ For full routing by scenario, use:
 - Keep P0 decision intake triage within 24 hours.
 - Keep active decision counts within declared WIP ceilings.
 - Keep decision outcome reviews current for closed P0/high-impact P1 decisions.
+- Keep recurring meetings outcome-positive (no 2-week Red effectiveness streak).
 

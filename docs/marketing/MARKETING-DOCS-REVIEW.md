@@ -802,6 +802,7 @@ Use this minimum-safe operating rule:
 | Process heavier than current business context | `ALIGNMENT-OPERATING-MODES.md` | Mode rationale reviewed and still valid weekly |
 | Owner burnout from governance spread | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` | No owner in high-risk load band without mitigation |
 | Decision queue congestion before formal review | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` | P0 intake triaged within 24h; low overdue triage ratio |
+| Meeting hours rising while execution output stalls | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` | Meeting effectiveness stays Green/Yellow with rising decision yield |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

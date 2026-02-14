@@ -89,6 +89,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Intake triage SLA misses |  |  |  |
 | Decision WIP ceiling breaches (count) |  |  |  |
 | Overdue decision outcome reviews |  |  |  |
+| Meeting effectiveness status (G/Y/R) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
