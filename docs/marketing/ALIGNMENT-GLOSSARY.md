@@ -376,6 +376,9 @@ The degree to which critical alerts are classified, prioritized, and routed corr
 ## Control Documentation Drift
 The gap between documented control procedures and the way controls are actually executed in live operations.
 
+## Control Recovery Evidence Quality
+The degree to which recovery claims are supported by complete, fresh, and auditable evidence before closure.
+
 ---
 
 ## Incident & Escalation Terms

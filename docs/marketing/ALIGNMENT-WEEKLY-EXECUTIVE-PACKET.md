@@ -311,6 +311,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Misrouted critical alerts (count):
 - Controls with material documentation drift (count):
 - Documentation drift correction within SLA (%):
+- Unverified critical control recoveries (count):
+- Recovery evidence quality pass rate (%):
 
 ---
 

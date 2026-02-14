@@ -71,6 +71,7 @@
 | Critical-control signal integrity pass rate |  | ≥98% |  |
 | Critical-alert first-triage accuracy rate |  | ≥95% |  |
 | Control documentation sync rate |  | 100% |  |
+| Recovery evidence quality pass rate (critical controls) |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

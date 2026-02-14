@@ -168,6 +168,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 83. `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md` (ensures critical control signals stay trusted, definition-consistent, and safe for high-impact decisions)
 84. `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md` (ensures critical alerts are classified and routed correctly on first triage to avoid delayed response)
 85. `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md` (ensures control documentation stays synchronized with live workflows to prevent execution mismatch)
+86. `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md` (ensures recovery closure is backed by complete, fresh, and auditable evidence)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
