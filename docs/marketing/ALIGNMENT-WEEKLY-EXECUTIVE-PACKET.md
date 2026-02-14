@@ -289,6 +289,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Preventive action start within decay lead-time target (%):
 - Escape defects detected this cycle (count):
 - Escape-defect remediation closed on time (%):
+- Automation success rate across critical controls (%):
+- Failed automated critical-control runs (count):
 
 ---
 

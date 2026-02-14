@@ -60,6 +60,7 @@
 | Critical-control rollback-readiness rate |  | ≥95% |  |
 | Early detection rate for control decay signals |  | ≥90% |  |
 | Escape defect count (critical controls) |  | 0 |  |
+| Critical-control automation success rate |  | ≥99% |  |
 
 Key governance issue this month:
 ______________________________________

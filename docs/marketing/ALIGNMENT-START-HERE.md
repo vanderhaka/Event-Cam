@@ -157,6 +157,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 72. `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` (ensures critical controls can be safely reverted during change failures through tested rollback paths)
 73. `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` (ensures control degradation is detected early and preventive actions start before incidents occur)
 74. `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md` (ensures control failures that bypass checks are captured, root-caused, and structurally remediated)
+75. `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md` (ensures automated controls remain reliable and fallback-ready under failure conditions)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

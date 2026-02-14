@@ -343,6 +343,9 @@ The degree to which early signals identify control degradation before incidents 
 ## Control Escape Defect
 A control failure that bypasses existing checks and is discovered only after downstream impact has occurred.
 
+## Control Automation Reliability
+The degree to which automated controls execute consistently, recover quickly on failure, and maintain tested manual fallback readiness.
+
 ---
 
 ## Incident & Escalation Terms

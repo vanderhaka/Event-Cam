@@ -124,6 +124,7 @@ It helps teams:
 - **Control rollback-readiness governance:** `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`
 - **Control decay early-warning governance:** `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`
 - **Control escape-defect governance:** `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md`
+- **Control automation-reliability governance:** `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -217,4 +218,5 @@ For full routing by scenario, use:
 - Keep critical controls rollback-ready during change windows with tested triggers and execution paths.
 - Keep CC-1 decay signals monitored and begin preventive actions within lead-time target.
 - Keep escape defects at zero and close escape-driven remediations within target SLA.
+- Keep critical control automation success high and fallback paths tested/current.
 
