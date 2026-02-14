@@ -130,6 +130,9 @@ Workload concentration level (Low/Medium/High) for a specific owner based on act
 ## Decision Intake Queue
 Canonical front-door list where new decision requests are logged, triaged, and routed before scheduling and closure.
 
+## Decision WIP Limit
+Maximum allowed number of concurrently active decisions by priority band to protect decision quality and SLA reliability.
+
 ---
 
 ## Incident & Escalation Terms

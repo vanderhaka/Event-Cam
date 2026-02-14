@@ -87,6 +87,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Median decision cycle time |  |  |  |
 | New decision intake requests (week) |  |  |  |
 | Intake triage SLA misses |  |  |  |
+| Decision WIP ceiling breaches (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

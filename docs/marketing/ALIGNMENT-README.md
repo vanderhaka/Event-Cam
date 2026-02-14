@@ -53,6 +53,7 @@ It helps teams:
 - **Team behavior baseline:** `ALIGNMENT-WORKING-AGREEMENTS.md`
 - **Pre-change risk check:** `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
 - **Decision front-door control:** `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
+- **Decision concurrency control:** `ALIGNMENT-DECISION-WIP-LIMITS.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -75,4 +76,5 @@ For full routing by scenario, use:
 - Keep only one declared active artifact set per cycle.
 - If canonical-source conflicts persist >5 business days, escalate in weekly decision review.
 - Keep P0 decision intake triage within 24 hours.
+- Keep active decision counts within declared WIP ceilings.
 

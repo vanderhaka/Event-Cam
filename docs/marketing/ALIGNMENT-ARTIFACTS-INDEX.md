@@ -259,6 +259,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-INTAKE-QUEUE.md`**  
   Front-door queue and triage workflow for capturing, prioritizing, and routing new decision requests.
 
+- **`ALIGNMENT-DECISION-WIP-LIMITS.md`**  
+  Concurrency guardrail for capping active decision volume and protecting quality/SLA performance.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -341,6 +344,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent owner overload from degrading execution quality | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` |
 | We need to stress-test high-impact decisions before approval | `ALIGNMENT-DECISION-PREMORTEM.md` |
 | We need one front-door queue for triaging new decision requests | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` |
+| We need to cap concurrent decision work before quality drops | `ALIGNMENT-DECISION-WIP-LIMITS.md` |
 
 ---
 
@@ -389,6 +393,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Owner Load Management | Ops / PMO + Leadership Team |
 | Decision Premortem | Strategy Owner + Cross-functional Decision Team |
 | Decision Intake Queue | Ops / PMO + Strategy Owner |
+| Decision WIP Limits | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -456,6 +461,7 @@ Includes Pack C, plus:
 48. `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`
 49. `ALIGNMENT-DECISION-PREMORTEM.md`
 50. `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
+51. `ALIGNMENT-DECISION-WIP-LIMITS.md`
 
 Recommended only when:
 - decision volume is high,
