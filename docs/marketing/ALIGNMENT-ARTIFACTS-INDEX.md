@@ -136,6 +136,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-EXPERIMENT-REGISTRY.md`**  
   Canonical tracker for experiment lifecycle, thresholds, and scale/stop decisions.
 
+- **`ALIGNMENT-DECISION-SLA.md`**  
+  Time-bound service-level expectations for closing P0/P1/P2 decisions with escalation rules.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -184,6 +187,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need canonical KPI decision thresholds by signal state | `ALIGNMENT-METRIC-THRESHOLDS.md` |
 | We need a first-touch orientation to the full system | `ALIGNMENT-README.md` |
 | We need one canonical source for experiment status and decisions | `ALIGNMENT-EXPERIMENT-REGISTRY.md` |
+| We need explicit time-to-decision rules and escalation timing | `ALIGNMENT-DECISION-SLA.md` |
 
 ---
 
@@ -198,6 +202,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Meeting Cadence + Scorecard | Ops / PMO + Growth Lead |
 | Metric Definitions + Dashboard | Growth Lead + Ops / PMO |
 | Experiment Registry | Growth Lead + Marketing Lead |
+| Decision SLA | Strategy Owner + Ops / PMO |
 
 ---
 
