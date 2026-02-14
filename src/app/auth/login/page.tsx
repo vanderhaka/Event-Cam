@@ -22,9 +22,8 @@ export default function LoginPage() {
 
     const response = await supabase.auth.signInWithPassword({ email, password });
     if (response.error) {
-      setMessage(response.error.message);
-      setMessageType('error');
       setLoading(false);
+      router.push(`/auth/register?email=${encodeURIComponent(email)}`);
       return;
     }
 

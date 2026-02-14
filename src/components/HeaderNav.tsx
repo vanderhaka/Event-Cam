@@ -43,6 +43,7 @@ export function HeaderNav() {
   async function handleLogout() {
     const client = createBrowserSupabaseClient();
     await client.auth.signOut();
+    await fetch('/api/auth/logout', { method: 'POST' });
     router.push('/');
     router.refresh();
   }

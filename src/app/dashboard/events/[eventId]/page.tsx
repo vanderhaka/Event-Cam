@@ -474,7 +474,6 @@ export default function EventDetailPage() {
             <p className="section-sub">Review uploaded media before it goes into an album.</p>
             {pendingQueue.length === 0 ? (
               <div className="empty-state">
-                <span className="empty-state-icon">{'\u2705'}</span>
                 <p>No pending uploads to review</p>
               </div>
             ) : (

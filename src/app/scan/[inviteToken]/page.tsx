@@ -141,17 +141,14 @@ export default function ScanPage() {
   if (errorState) {
     const errorContent = {
       not_found: {
-        icon: '\uD83D\uDD0D',
         title: 'Invite not found',
         desc: 'This QR code doesn\u2019t match any active invite. Please check with the event host for a valid link.',
       },
       expired: {
-        icon: '\u23F0',
         title: 'Upload window closed',
         desc: 'The upload window for this event has ended. Contact the event host if you believe this is a mistake.',
       },
       generic: {
-        icon: '\u26A0\uFE0F',
         title: 'Something went wrong',
         desc: 'We couldn\u2019t load your invite. Please try again or contact the event host.',
       },
@@ -165,7 +162,6 @@ export default function ScanPage() {
           </h1>
         </div>
         <section className="card error-card">
-          <span className="error-icon">{errorContent.icon}</span>
           <h2 className="error-title">{errorContent.title}</h2>
           <p className="error-desc">{errorContent.desc}</p>
         </section>
@@ -197,7 +193,6 @@ export default function ScanPage() {
               capture="environment"
               onChange={(e) => setFiles(e.target.files)}
             />
-            <span className="file-upload-icon">{'\uD83D\uDCF7'}</span>
             <p className="file-upload-text">
               {files && files.length > 0
                 ? <strong>{files.length} file{files.length > 1 ? 's' : ''} selected</strong>

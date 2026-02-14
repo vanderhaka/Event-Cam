@@ -47,7 +47,8 @@ export async function POST(request: NextRequest) {
 
     const mediaMode = String(body.mediaMode ?? body.media_mode ?? 'image_video');
     const retentionPolicy = String(body.retentionPolicy ?? body.retention_policy ?? 'manual');
-    const feePerInviteCents = Number(body.feePerInviteCents ?? body.fee_per_invite_cents ?? 0);
+    const defaultFeeCents = Number(process.env.EVENT_CAM_DEFAULT_FEE_CENTS ?? 500);
+    const feePerInviteCents = Number(body.feePerInviteCents ?? body.fee_per_invite_cents ?? defaultFeeCents);
     const maxStartWindowMinutes = Number(body.maxStartWindowMinutes ?? body.max_start_window_minutes ?? 0);
     const timezone = String(body.location ?? body.timezone ?? 'UTC').trim() || 'UTC';
 
@@ -68,7 +69,7 @@ export async function POST(request: NextRequest) {
         timezone,
         media_mode: mediaMode,
         retention_policy: retentionPolicy,
-        fee_per_invite_cents: Number.isFinite(feePerInviteCents) ? feePerInviteCents : 0,
+        fee_per_invite_cents: Number.isFinite(feePerInviteCents) && feePerInviteCents >= 0 ? feePerInviteCents : defaultFeeCents,
         max_start_window_minutes: Number.isFinite(maxStartWindowMinutes) ? maxStartWindowMinutes : 0,
         brand_name: brandName,
         brand_logo_url: brandLogoUrl,

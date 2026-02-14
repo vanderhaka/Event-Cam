@@ -41,7 +41,6 @@ export default function PublicAlbumPage() {
     return (
       <div className="auth-wrapper">
         <section className="card error-card">
-          <span className="error-icon">{'\uD83D\uDD17'}</span>
           <h2 className="error-title">Missing share link</h2>
           <p className="error-desc">This album link appears to be incomplete. Please check with the event host for the correct link.</p>
         </section>

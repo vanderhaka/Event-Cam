@@ -914,6 +914,12 @@ ul {
 }
 
 /* ─── Empty state ─── */
+.empty-state-card .empty-state {
+  padding: 3rem 2rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
 .empty-state {
   text-align: center;
   padding: 2rem 1rem;
@@ -921,10 +927,30 @@ ul {
 }
 
 .empty-state-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   display: block;
-  opacity: 0.5;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.empty-state-heading {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.empty-state-text {
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.empty-state-cta {
+  margin: 0 auto;
 }
 
 /* ─── Timezone hint ─── */

@@ -107,8 +107,6 @@ export default function DashboardPage() {
   const [detectingLocation, setDetectingLocation] = useState(false);
   const [startAt, setStartAt] = useState(toIsoLocal(new Date()));
   const [endAt, setEndAt] = useState(toIsoLocal(new Date(Date.now() + 24 * 60 * 60 * 1000)));
-  const [feePerInviteCents, setFeePerInviteCents] = useState('500');
-
   async function buildAuthHeaders(extra: HeadersInit = {}) {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
@@ -197,7 +195,6 @@ export default function DashboardPage() {
         timezone,
         startAt: new Date(startAt).toISOString(),
         endAt: new Date(endAt).toISOString(),
-        feePerInviteCents: Number(feePerInviteCents),
       }),
     });
 
@@ -289,10 +286,19 @@ export default function DashboardPage() {
 
       {/* Events list */}
       {events.length === 0 ? (
-        <section className="card">
+        <section className="card empty-state-card">
           <div className="empty-state">
-            <span className="empty-state-icon">{'\uD83C\uDF89'}</span>
-            <p>No events yet. Create your first event to get started!</p>
+            <h3 className="empty-state-heading">Your first event is waiting</h3>
+            <p className="empty-state-text">
+              Every great album starts with one moment—yours starts here. Create an event, invite your guests, and collect every photo and video in one place.
+            </p>
+            <button
+              type="button"
+              className="btn btn-primary btn-lg empty-state-cta"
+              onClick={() => setShowForm(true)}
+            >
+              Create your first event
+            </button>
           </div>
         </section>
       ) : (

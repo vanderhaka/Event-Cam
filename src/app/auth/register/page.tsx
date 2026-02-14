@@ -1,17 +1,33 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { FormEvent, Suspense, useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { createBrowserSupabaseClient } from '@/lib/supabase/browser';
 
-export default function RegisterPage() {
+function friendlyAuthError(message: string): string {
+  const lower = message.toLowerCase();
+  if (lower.includes('rate limit') || lower.includes('email rate limit')) {
+    return 'Too many sign-ups right now. Please try again in a few minutes.';
+  }
+  if (lower.includes('already registered') || lower.includes('already exists')) {
+    return 'An account with this email already exists. Try signing in instead.';
+  }
+  return message;
+}
+
+function RegisterForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createBrowserSupabaseClient();
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  useEffect(() => {
+    const fromLogin = searchParams.get('email');
+    if (fromLogin) setEmail(fromLogin);
+  }, [searchParams]);
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'error' | 'success' | 'info'>('error');
@@ -35,14 +51,42 @@ export default function RegisterPage() {
     });
 
     if (response.error) {
-      setMessage(response.error.message);
+      setMessage(friendlyAuthError(response.error.message));
       setMessageType('error');
       setLoading(false);
       return;
     }
 
     if (response.data?.session) {
-      setMessage('Account created — logging you in...');
+      setMessage('Account created — redirecting...');
+      setMessageType('success');
+      router.push('/dashboard');
+      return;
+    }
+
+    // No session when email confirmation is required: auto-confirm and sign in
+    const user = response.data?.user;
+    if (user?.id) {
+      const confirmRes = await fetch('/api/auth/confirm-new-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: user.id }),
+      });
+      if (!confirmRes.ok) {
+        const err = await confirmRes.json().catch(() => ({}));
+        setMessage(err?.error ?? 'Could not complete sign up.');
+        setMessageType('error');
+        setLoading(false);
+        return;
+      }
+      const signIn = await supabase.auth.signInWithPassword({ email, password });
+      if (signIn.error) {
+        setMessage(friendlyAuthError(signIn.error.message));
+        setMessageType('error');
+        setLoading(false);
+        return;
+      }
+      setMessage('Account created — redirecting...');
       setMessageType('success');
       router.push('/dashboard');
       return;
@@ -123,5 +167,20 @@ export default function RegisterPage() {
         <Link href="/auth/login">Sign in here</Link>
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={
+      <div className="auth-wrapper">
+        <section className="card">
+          <h2 className="section-head">Create your account</h2>
+          <p className="section-sub">Loading...</p>
+        </section>
+      </div>
+    }>
+      <RegisterForm />
+    </Suspense>
   );
 }
