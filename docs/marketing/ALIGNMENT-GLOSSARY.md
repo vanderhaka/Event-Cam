@@ -259,6 +259,9 @@ The quality of alignment between teams on shared dependencies, handoffs, and joi
 ## Control Overlap
 Condition where two or more controls enforce similar or conflicting actions, creating duplication, confusion, or unnecessary governance overhead.
 
+## Assumption Drift
+Material deviation between an assumption’s baseline claim and current evidence, requiring rebase or decision mitigation.
+
 ---
 
 ## Incident & Escalation Terms

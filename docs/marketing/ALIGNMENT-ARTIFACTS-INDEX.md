@@ -388,6 +388,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`**  
   Structured analysis of overlapping controls to reduce duplication, conflicts, and governance drag.
 
+- **`ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`**  
+  Periodic review of high-impact assumption drift and decision exposure.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -513,6 +516,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need lifecycle-stage visibility to time control optimization and retirement correctly | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` |
 | We need recurring visibility into cross-function friction causing delays and rework | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` |
 | We need to detect and resolve duplicate/conflicting controls before governance bloat grows | `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` |
+| We need early warning when strategic assumptions drift away from current evidence | `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` |
 
 ---
 
@@ -604,6 +608,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Lifecycle Analysis | Strategy Owner + Ops / PMO + Governance Owners |
 | Cross-Function Coordination Review | Ops / PMO + Functional Leads + Strategy Owner |
 | Control Overlap Analysis | Strategy Owner + Ops / PMO + Governance Owners |
+| Assumption Drift Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 
 ---
 
@@ -714,6 +719,7 @@ Includes Pack C, plus:
 91. `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 92. `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
 93. `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
+94. `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

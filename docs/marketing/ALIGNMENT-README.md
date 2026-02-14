@@ -96,6 +96,7 @@ It helps teams:
 - **Control lifecycle governance:** `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
 - **Cross-function execution governance:** `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
 - **Control de-duplication governance:** `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
+- **Assumption-integrity governance:** `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -161,4 +162,5 @@ For full routing by scenario, use:
 - Keep controls moving through lifecycle stages with evidence-based transition decisions.
 - Keep cross-function coordination quality high on shared dependencies and commitments.
 - Keep overlapping controls clarified or merged to prevent duplicate effort and conflict.
+- Keep high-impact assumptions revalidated and rebased before drift contaminates decisions.
 

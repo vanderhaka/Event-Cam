@@ -127,6 +127,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Controls in stalled lifecycle stage (count) |  |  |  |
 | Cross-function coordination status (Healthy/Watch/At Risk) |  |  |  |
 | Unresolved control-overlap pairs (count) |  |  |  |
+| Drifted high-impact assumptions (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -233,6 +234,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Controls reaching mature stage this cycle (count):
 - Joint-action completion rate:
 - Duplicate governance effort hours (est.):
+- Assumption revalidated rate:
 
 ---
 

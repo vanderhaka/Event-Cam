@@ -129,6 +129,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 44. `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` (manages control maturity transitions and sunset readiness)
 45. `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` (reduces recurring delays from team-to-team coordination gaps)
 46. `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` (removes duplicate/conflicting controls that create governance drag)
+47. `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` (detects and rebases high-impact assumptions before decision quality degrades)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
