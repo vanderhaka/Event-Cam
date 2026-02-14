@@ -804,6 +804,7 @@ Use this minimum-safe operating rule:
 | Decision queue congestion before formal review | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` | P0 intake triaged within 24h; low overdue triage ratio |
 | Meeting hours rising while execution output stalls | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` | Meeting effectiveness stays Green/Yellow with rising decision yield |
 | Weekly commitments repeatedly miss without correction | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` | S2/S3 slippage trend stable or declining week-over-week |
+| Active controls multiply but are not used in practice | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` | Active-artifact utilization stays above target with low stale count |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

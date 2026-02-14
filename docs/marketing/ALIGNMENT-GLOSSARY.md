@@ -142,6 +142,9 @@ Weekly quality rating (Green/Yellow/Red) indicating whether recurring alignment 
 ## Commitment Slippage
 Condition where a weekly commitment misses due date, fails agreed quality gate, or remains unsynchronized across required artifacts.
 
+## Artifact Utilization Rate
+Percentage of declared active artifacts that are actually referenced in weekly operating workflows.
+
 ---
 
 ## Incident & Escalation Terms

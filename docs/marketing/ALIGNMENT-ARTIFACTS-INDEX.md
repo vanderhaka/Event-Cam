@@ -271,6 +271,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`**  
   Standard response model for missed weekly commitments, including classification, escalation, and recovery controls.
 
+- **`ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`**  
+  Weekly telemetry for measuring active-artifact usage, staleness, and overlap to prevent process bloat.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -357,6 +360,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to verify closed decisions actually worked | `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` |
 | We need to ensure meetings produce real outputs, not process drag | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` |
 | We need consistent recovery when weekly commitments slip | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` |
+| We need to prove active artifacts are actually used weekly | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` |
 
 ---
 
@@ -409,6 +413,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Outcome Reviews | Strategy Owner + Growth Lead |
 | Meeting Effectiveness Review | Ops / PMO + Meeting Owners |
 | Commitment Slippage Protocol | Ops / PMO + Functional Leads |
+| Artifact Usage Telemetry | Ops / PMO + Documentation Owner |
 
 ---
 
@@ -480,6 +485,7 @@ Includes Pack C, plus:
 52. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
 53. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 54. `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
+55. `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
 
 Recommended only when:
 - decision volume is high,

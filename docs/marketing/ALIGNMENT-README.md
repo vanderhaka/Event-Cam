@@ -57,6 +57,7 @@ It helps teams:
 - **Decision impact verification:** `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md`
 - **Meeting yield control:** `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 - **Commitment recovery control:** `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
+- **Artifact usage telemetry:** `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -83,4 +84,5 @@ For full routing by scenario, use:
 - Keep decision outcome reviews current for closed P0/high-impact P1 decisions.
 - Keep recurring meetings outcome-positive (no 2-week Red effectiveness streak).
 - Keep S2/S3 commitment slippage on documented recovery plans within same week.
+- Keep active-artifact utilization healthy and prune low-use controls quickly.
 

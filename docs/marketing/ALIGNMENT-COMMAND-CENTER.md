@@ -22,6 +22,7 @@
 - Confirm active pack + operating mode still match current risk/complexity.
 - Confirm no frozen artifact is being used as canonical source.
 - Confirm no unresolved canonical-source conflict older than 5 business days.
+- Confirm artifact usage telemetry is within acceptable utilization/staleness range.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -89,6 +90,7 @@ Use this trigger table before meetings:
 | Decision outcome review overdue >7 days | Escalate review owner and assign corrective action deadline |
 | Meeting effectiveness Red for 2 consecutive weeks | Redesign meeting cadence/format and assign recovery owner |
 | S3 commitment slippage detected | Trigger same-day recovery plan and escalate ownership support |
+| Active-artifact utilization <70% for 2 weeks | Reduce active set and trigger pruning/merge pass |
 
 ---
 
