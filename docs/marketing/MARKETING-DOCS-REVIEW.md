@@ -762,6 +762,29 @@ No new strategic initiative should be opened in this 4-week window unless one ex
 
 ---
 
+## Execution Handshake — Turning This Review into Weekly Operating Control
+
+To avoid this review becoming static analysis, translate each major risk into a live operating artifact.
+
+| Risk in This Review | First Artifact to Activate | Secondary Control Artifact | Weekly Check |
+|---|---|---|---|
+| Pricing and economics contradictions | `ALIGNMENT-CONTRADICTION-REGISTER.md` | `ALIGNMENT-DECISIONS-LOG.md` | Count open High/Critical contradictions |
+| Weak evidence behind major claims | `ALIGNMENT-EVIDENCE-STANDARDS.md` | `ALIGNMENT-ASSUMPTION-REGISTRY.md` | % P0/P1 decisions with required evidence tier |
+| Decision lag and unresolved dependencies | `ALIGNMENT-DECISION-SLA.md` | `ALIGNMENT-DEPENDENCY-TRACKER.md` | On-time decision close rate + overdue dependencies |
+| Narrative drift across docs/channels | `ALIGNMENT-NARRATIVE-GUARDRAILS.md` | `ALIGNMENT-COMMAND-CENTER.md` | Narrative QA pass/fail each week |
+| Activity without measurable outcomes | `ALIGNMENT-TRACEABILITY-MATRIX.md` | `ALIGNMENT-DASHBOARD-TEMPLATE.md` | Decisions with verified KPI movement |
+| Underperforming decisions left in place too long | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` | `ALIGNMENT-RETROSPECTIVE-TEMPLATE.md` | Reversal requests opened/closed by SLA |
+
+### 14-day implementation handshake
+1. **Days 1–3:** Activate contradiction register + decision SLA + canonical pricing table.
+2. **Days 4–7:** Activate evidence standards + assumption registry + experiment registry.
+3. **Days 8–10:** Activate traceability matrix + dependency tracker.
+4. **Days 11–14:** Activate reversal protocol + monthly/quarterly learning loop.
+
+Success condition: this review should create **fewer contradictions, faster decisions, and cleaner KPI causality** within two weeks of adoption.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
