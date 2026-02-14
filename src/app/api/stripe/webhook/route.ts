@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import Stripe from 'stripe';
 import { getStripeClient } from '@/lib/stripe';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
+import { publishEventQrCodes } from '@/lib/publish-event';
 
 export const runtime = 'nodejs';
 
@@ -32,6 +33,11 @@ export async function POST(request: NextRequest) {
     if (eventId && checkoutSession) {
       await admin.from('billing_records').update({ status: 'paid', invoice_ref: session.invoice as string }).eq('event_id', eventId).eq('checkout_session', checkoutSession);
       await admin.from('events').update({ status: 'paid' }).eq('id', eventId);
+      try {
+        await publishEventQrCodes(admin, eventId, { requirePaid: false });
+      } catch (err) {
+        console.error('[stripe webhook] auto-publish failed for event', eventId, err);
+      }
     }
   }
 

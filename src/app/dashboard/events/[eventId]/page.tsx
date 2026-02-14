@@ -121,7 +121,35 @@ export default function EventDetailPage() {
     setInviteeRows((prev) => prev.map((row, i) => (i === index ? { ...row, [field]: value } : row)));
   }
 
-  function addInviteeRow() {
+  async function addInviteeRow() {
+    if (inviteeRows.length >= 1 && typeof window !== 'undefined' && !sessionStorage.getItem(`event-cam-invitee-onboarding-${eventId}`)) {
+      setInviteeOnboardingStep('step1');
+    }
+
+    const toSave = inviteeRows
+      .filter((row) => row.firstName.trim())
+      .map((row) => {
+        const displayName = [row.firstName.trim(), row.lastName.trim()].filter(Boolean).join(' ');
+        return { displayName, phone: row.phone.trim() || undefined };
+      });
+
+    if (toSave.length > 0) {
+      const response = await fetchWithAuth(`/api/events/${eventId}/invitees`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ invitees: toSave }),
+      });
+      if (response.ok) {
+        showStatus('Guests saved', 'success');
+        await loadData();
+        setInviteeRows([...Array(inviteeRows.length + 1)].map(() => ({ firstName: '', lastName: '', phone: '' })));
+        return;
+      }
+      const payload = await response.json();
+      showStatus(payload.message || 'Could not save guests', 'error');
+      return;
+    }
+
     setInviteeRows((prev) => [...prev, { firstName: '', lastName: '', phone: '' }]);
   }
 
@@ -143,8 +171,6 @@ export default function EventDetailPage() {
       return;
     }
 
-    const prevInviteeCount = eventPayload?.invitees?.length ?? 0;
-
     const response = await fetchWithAuth(`/api/events/${eventId}/invitees`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -152,14 +178,9 @@ export default function EventDetailPage() {
     });
 
     if (response.ok) {
-      const payload = await response.json();
-      const addedCount = payload.invitees?.length ?? 0;
       setInviteeRows([{ firstName: '', lastName: '', phone: '' }]);
       showStatus('Invitees added successfully', 'success');
       await loadData();
-      if (prevInviteeCount === 0 && addedCount > 0 && typeof window !== 'undefined' && !sessionStorage.getItem(`event-cam-invitee-onboarding-${eventId}`)) {
-        setInviteeOnboardingStep('step1');
-      }
     } else {
       const payload = await response.json();
       showStatus(payload.message || 'Could not add invitees', 'error');
@@ -417,7 +438,7 @@ export default function EventDetailPage() {
             <section className="card">
               <h3 className="section-head">Open event — one QR for everyone</h3>
               <p className="section-sub">
-                Anyone who scans this event&apos;s QR code can upload photos and videos. No guest list needed. Checkout to pay, then publish to get your event QR.
+                Anyone who scans this event&apos;s QR code can upload photos and videos. No guest list needed. Checkout to pay — your event QR is issued automatically.
               </p>
               {eventPayload.invitees && eventPayload.invitees.length > 0 ? (
                 <div className="open-event-qr">
@@ -475,7 +496,7 @@ export default function EventDetailPage() {
                 </div>
               ) : (
                 <>
-                  <p className="section-sub">When you&apos;re ready, pay for your event QR, then publish to get your shareable link.</p>
+                  <p className="section-sub">When you&apos;re ready, pay for your event QR — it&apos;s issued automatically after payment.</p>
                   <button type="button" className="btn btn-primary" onClick={checkout}>
                     I&apos;ve finished — proceed to checkout
                   </button>
@@ -555,19 +576,16 @@ export default function EventDetailPage() {
               {eventPayload.event?.status !== 'paid' ? (
                 <>
                   <p className="section-sub">
-                    I&apos;ve finished adding guests. Proceed to checkout to pay for your invites, then publish to get QR codes for everyone.
+                    I&apos;ve finished adding guests. Proceed to checkout to pay — QR codes are issued automatically after payment.
                   </p>
                   <button type="button" className="btn btn-primary" onClick={checkout}>
                     I&apos;ve finished — proceed to checkout
                   </button>
                 </>
               ) : eventPayload.event?.status === 'paid' ? (
-                <>
-                  <p className="section-sub">Payment complete. Publish to issue unique QR codes for each guest.</p>
-                  <button type="button" className="btn btn-success" onClick={publishEvent}>
-                    Publish QR Codes
-                  </button>
-                </>
+                <p className="section-sub">
+                  Payment complete. QR codes are issued automatically — refresh the page if you don&apos;t see them yet.
+                </p>
               ) : null}
             </section>
           )}
@@ -577,7 +595,7 @@ export default function EventDetailPage() {
               <h3 className="section-head">Guest list</h3>
               <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Click &quot;Show QR&quot; to see the scan link and QR code.</p>
               <p className="muted" style={{ fontSize: '0.875rem', marginTop: '-0.5rem', marginBottom: '0.75rem' }}>
-                <strong>Pending</strong> = added but QR not issued yet. Checkout, then Publish QR Codes to get shareable links.
+                <strong>Pending</strong> = added but QR not issued yet. Checkout to pay — QR codes are issued automatically.
               </p>
               <ul className="invitee-list">
                 {eventPayload.invitees.map((invitee: any) => (
@@ -726,10 +744,10 @@ export default function EventDetailPage() {
                       </p>
                       <ol className="onboarding-steps" style={{ margin: '0 0 1.25rem', paddingLeft: '1.25rem' }}>
                         <li style={{ marginBottom: '0.5rem' }}>Click <strong>I&apos;ve finished — proceed to checkout</strong> to pay for your invites.</li>
-                        <li style={{ marginBottom: '0.5rem' }}>After payment, click <strong>Publish QR Codes</strong> to generate a unique QR code for each guest.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>After payment, QR codes are issued automatically for each guest. Refresh the page if you don&apos;t see them right away.</li>
                       </ol>
                       <p className="muted" style={{ fontSize: '0.9rem' }}>
-                        You&apos;ll find both buttons in the &quot;Next step&quot; card above your guest list.
+                        The checkout button is in the &quot;Next step&quot; card above your guest list.
                       </p>
                       <div className="modal-actions" style={{ marginTop: '1.25rem' }}>
                         <button type="button" className="btn btn-primary" onClick={() => setInviteeOnboardingStep('step2')}>
