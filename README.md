@@ -45,6 +45,15 @@ Run `supabase/schema.sql` in your Supabase database SQL editor.
 npm run dev
 ```
 
+## Vercel deployment
+
+For production (e.g. `event-cam-qr-test.vercel.app`), set these in **Vercel → Project → Settings → Environment Variables**:
+
+- `NEXT_PUBLIC_SUPABASE_URL` – Supabase project URL  
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` – Supabase anon/public key  
+- **`SUPABASE_SERVICE_ROLE_KEY`** – Supabase **service role** key (Dashboard → Settings → API). Required for server-side queries (e.g. listing events). If missing, `/api/events` returns 500.  
+- Stripe and other vars from `.env.example` as needed.
+
 ## API routes implemented
 
 - `POST /api/events`

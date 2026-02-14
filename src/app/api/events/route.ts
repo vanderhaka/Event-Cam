@@ -4,20 +4,36 @@ import { requireHostUser } from '@/lib/auth';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 
 export async function GET() {
-  const { userId } = await requireHostUser();
-  const admin = createSupabaseAdminClient();
+  try {
+    const { userId } = await requireHostUser();
+    const admin = createSupabaseAdminClient();
 
-  const { data, error } = await admin
-    .from('events')
-    .select('id, name, start_at, end_at, status, is_published, event_type, fee_per_invite_cents')
-    .eq('host_id', userId)
-    .order('created_at', { ascending: false });
+    const { data, error } = await admin
+      .from('events')
+      .select('id, name, start_at, end_at, status, is_published, event_type, fee_per_invite_cents')
+      .eq('host_id', userId)
+      .order('created_at', { ascending: false });
 
-  if (error) {
-    return jsonResponse({ message: error.message }, { status: 400 });
+    if (error) {
+      console.error('[GET /api/events] Supabase error:', error.message, error.code);
+      return jsonResponse(
+        { message: 'Failed to load events. Please try again.' },
+        { status: 500 }
+      );
+    }
+
+    return jsonResponse({ events: data ?? [] });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Server error';
+    console.error('[GET /api/events]', message);
+    if (message.includes('SUPABASE_SERVICE_ROLE_KEY')) {
+      console.error('[GET /api/events] Set SUPABASE_SERVICE_ROLE_KEY in Vercel env vars (Supabase Dashboard → Settings → API).');
+    }
+    return jsonResponse(
+      { message: 'Failed to load events. Please try again.' },
+      { status: 500 }
+    );
   }
-
-  return jsonResponse({ events: data ?? [] });
 }
 
 export async function POST(request: NextRequest) {
@@ -86,7 +102,11 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      return jsonResponse({ message: error.message }, { status: 400 });
+      console.error('[POST /api/events] Supabase error:', error.message, error.code);
+      return jsonResponse(
+        { message: 'Failed to create event. Please try again.' },
+        { status: 500 }
+      );
     }
 
     return jsonResponse({ event: data }, { status: 201 });
@@ -94,6 +114,6 @@ export async function POST(request: NextRequest) {
     if (error instanceof ApiError) {
       return jsonResponse({ message: error.message }, { status: error.status });
     }
-    return jsonResponse({ message: 'Unable to create event' }, { status: 400 });
+    return jsonResponse({ message: 'Unable to create event' }, { status: 500 });
   }
 }

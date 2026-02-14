@@ -26,10 +26,8 @@ Supabase does not support moving an existing project between orgs, so this is a 
    - service_role key (keep secret)
 
 3. **Point the app at the new project**  
-   In `.env.local` (or your deployment env):
-   - `NEXT_PUBLIC_SUPABASE_URL=https://lyytiqmpiljajzkietlv.supabase.co`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon key>`
-   - `SUPABASE_SERVICE_ROLE_KEY=<service_role key>`
+   - **Local:** In `.env.local` set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` for the new project.
+   - **Vercel:** In [Vercel → Your Project → Settings → Environment Variables](https://vercel.com/docs/projects/environment-variables), set the same variables for the new Supabase project. Redeploy (or push a commit) so the new values are used; otherwise the deployed app will keep calling the old Supabase URL and you may see `ERR_NAME_NOT_RESOLVED` on auth refresh.
 
 4. **Auth**  
    Users are per-project. Existing users from the old project will not exist here; sign up again or configure the same auth provider (e.g. email) in Authentication → Providers.
