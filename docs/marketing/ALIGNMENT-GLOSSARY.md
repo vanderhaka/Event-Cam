@@ -346,6 +346,9 @@ A control failure that bypasses existing checks and is discovered only after dow
 ## Control Automation Reliability
 The degree to which automated controls execute consistently, recover quickly on failure, and maintain tested manual fallback readiness.
 
+## Control Succession Readiness
+The degree to which critical controls can transfer operation to trained successors without degradation.
+
 ---
 
 ## Incident & Escalation Terms

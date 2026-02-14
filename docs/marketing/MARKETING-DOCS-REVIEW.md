@@ -872,6 +872,7 @@ Use this minimum-safe operating rule:
 | Control degradation is noticed too late because early-warning signals are undefined or ignored | `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` | Undetected decay count trends to zero and preventive lead-time performance stays on target |
 | Control failures bypass existing checks and are discovered only after downstream damage is visible | `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md` | Escape-defect count trends to zero and repeat escape patterns are eliminated |
 | Automated controls fail silently or frequently, reintroducing manual burden and hidden governance risk | `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md` | Automation success rate stays high and failed critical runs trend to zero |
+| Critical controls depend on one operator in practice, creating continuity risk during absence or transition | `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md` | Validated successor coverage remains high and single-owner dependency count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

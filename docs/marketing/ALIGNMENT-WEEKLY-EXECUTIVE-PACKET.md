@@ -291,6 +291,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Escape-defect remediation closed on time (%):
 - Automation success rate across critical controls (%):
 - Failed automated critical-control runs (count):
+- Critical controls with validated successor coverage (%):
+- Critical controls with single-owner dependency (count):
 
 ---
 

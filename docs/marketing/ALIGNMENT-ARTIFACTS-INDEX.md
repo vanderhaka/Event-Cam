@@ -475,6 +475,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`**  
   Reliability review ensuring automated controls execute correctly with tested fallback paths.
 
+- **`ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`**  
+  Readiness review ensuring critical controls remain operable through owner transitions and absences.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -629,6 +632,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to detect control degradation early instead of waiting for visible failures | `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` |
 | We need to stop recurring failures that bypass controls and appear only after impact | `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md` |
 | We need to ensure automated controls stay reliable and recover quickly when they fail | `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md` |
+| We need critical controls to stay stable when primary owners transition or become unavailable | `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md` |
 
 ---
 
@@ -749,6 +753,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Decay Early Warning Review | Ops / PMO + On-Call Lead + Data/Analytics Owners |
 | Control Escape Defect Review | Ops / PMO + Functional Leads + QA/Analytics Support |
 | Control Automation Reliability Review | Ops / PMO + Automation Owner + On-Call Lead |
+| Control Succession Readiness Review | Ops / PMO + Functional Leads + People/Leadership Delegates |
 
 ---
 
@@ -888,6 +893,7 @@ Includes Pack C, plus:
 120. `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`
 121. `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md`
 122. `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`
+123. `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

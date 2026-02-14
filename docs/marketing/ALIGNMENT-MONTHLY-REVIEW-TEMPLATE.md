@@ -61,6 +61,7 @@
 | Early detection rate for control decay signals |  | ≥90% |  |
 | Escape defect count (critical controls) |  | 0 |  |
 | Critical-control automation success rate |  | ≥99% |  |
+| Critical-control successor coverage rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________
