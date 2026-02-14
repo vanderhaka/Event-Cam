@@ -125,6 +125,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Critical-stale unresolved items (count) |  |  |  |
 | Recurrence heat level (H1/H2/H3/H4) |  |  |  |
 | Controls in stalled lifecycle stage (count) |  |  |  |
+| Cross-function coordination status (Healthy/Watch/At Risk) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -229,6 +230,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Age-weighted backlog score:
 - Recurrence burn-down rate:
 - Controls reaching mature stage this cycle (count):
+- Joint-action completion rate:
 
 ---
 

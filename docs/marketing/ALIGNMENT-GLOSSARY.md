@@ -253,6 +253,9 @@ Structured view of repeated issue intensity by domain, cause, owner group, and s
 ## Control Lifecycle Stage
 Current maturity state of a control (e.g., Launching, Stabilizing, Mature, Sunset Candidate, Retired) used to guide governance actions.
 
+## Cross-Function Coordination
+The quality of alignment between teams on shared dependencies, handoffs, and joint commitments required for on-time execution.
+
 ---
 
 ## Incident & Escalation Terms

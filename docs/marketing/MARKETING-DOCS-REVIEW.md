@@ -841,6 +841,7 @@ Use this minimum-safe operating rule:
 | Unresolved governance work silently ages and accumulates hidden execution debt | `ALIGNMENT-BACKLOG-AGING-REVIEW.md` | Critical-stale backlog declines and age-weighted risk score trends downward |
 | Chronic repeat issues persist across teams because recurrence hotspots are not visualized | `ALIGNMENT-RECURRENCE-HEATMAP.md` | High-severity recurrence clusters shrink and recurrence burn-down improves cycle-over-cycle |
 | Controls linger in unstable or outdated states because lifecycle progression is unmanaged | `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` | Controls transition predictably through lifecycle stages with fewer stalled states |
+| Cross-team dependency friction causes recurring delays and rework despite local process compliance | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` | Coordination delay and rework rates decline as high-friction function pairs are corrected |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

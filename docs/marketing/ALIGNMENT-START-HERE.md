@@ -127,6 +127,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 42. `ALIGNMENT-BACKLOG-AGING-REVIEW.md` (keeps unresolved work from aging into hidden capacity debt)
 43. `ALIGNMENT-RECURRENCE-HEATMAP.md` (maps chronic recurrence clusters for focused intervention)
 44. `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md` (manages control maturity transitions and sunset readiness)
+45. `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` (reduces recurring delays from team-to-team coordination gaps)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

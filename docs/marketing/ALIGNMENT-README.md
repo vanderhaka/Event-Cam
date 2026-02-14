@@ -94,6 +94,7 @@ It helps teams:
 - **Backlog-debt governance:** `ALIGNMENT-BACKLOG-AGING-REVIEW.md`
 - **Chronic-recurrence governance:** `ALIGNMENT-RECURRENCE-HEATMAP.md`
 - **Control lifecycle governance:** `ALIGNMENT-CONTROL-LIFECYCLE-ANALYSIS.md`
+- **Cross-function execution governance:** `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -157,4 +158,5 @@ For full routing by scenario, use:
 - Keep unresolved-item aging in control through severity-weighted backlog burn-down.
 - Keep chronic recurrence clusters visible and trending down by cycle.
 - Keep controls moving through lifecycle stages with evidence-based transition decisions.
+- Keep cross-function coordination quality high on shared dependencies and commitments.
 
