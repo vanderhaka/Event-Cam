@@ -20,6 +20,7 @@ If you want one aligned path quickly, use the documents in this order:
    - `ALIGNMENT-DECISIONS-LOG.md`
    - `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
    - `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
+   - `ALIGNMENT-COMMAND-CENTER.md`
 
 5. **Use full artifact map if unsure where to go next**
    `ALIGNMENT-ARTIFACTS-INDEX.md`
@@ -27,7 +28,10 @@ If you want one aligned path quickly, use the documents in this order:
 6. **If canonical-source conflicts appear, use:**
    `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 
-7. **If you need urgency: run the fast-start sequence**
+7. **If process load feels too high or too low, tune mode first**
+   `ALIGNMENT-OPERATING-MODES.md`
+
+8. **If you need urgency: run the fast-start sequence**
    `ALIGNMENT-QUICKSTART-48H.md`
 
 ---
@@ -68,6 +72,32 @@ If you need to start this week, run this exact pack:
 5. `ALIGNMENT-CHECKLIST.md` (verify readiness)
 
 This pack is enough to move from strategy debate to aligned execution.
+
+---
+
+## Ongoing Weekly Control (After Kickoff)
+
+Once week-1 setup is done, run this minimum weekly loop:
+
+1. `ALIGNMENT-COMMAND-CENTER.md` (weekly scan and commitments)
+2. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` (leadership-ready output)
+3. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` (meta-discipline health)
+4. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` (active/frozen set integrity)
+
+If this loop stops, alignment drift usually follows within 2–4 weeks.
+
+---
+
+## Quarter Transition Rule
+
+At quarter-end, run:
+
+`ALIGNMENT-QUARTER-RESET-PROTOCOL.md`
+
+Do not start the next quarter without:
+- refreshed path worksheet,
+- updated active artifact set,
+- updated week-1 commitments.
 
 ---
 
