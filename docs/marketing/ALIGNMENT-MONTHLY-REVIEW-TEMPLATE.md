@@ -45,6 +45,7 @@
 | Alignment score average (/20) |  | ≥17 |  |
 | Mean calibration gap |  | -0.10 to +0.10 |  |
 | High-band decision failure rate |  | <15% |  |
+| Governance ROI index |  | >0 |  |
 
 Key governance issue this month:
 ______________________________________

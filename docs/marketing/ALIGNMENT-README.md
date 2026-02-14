@@ -65,6 +65,7 @@ It helps teams:
 - **Override accountability control:** `ALIGNMENT-OVERRIDE-REGISTER.md`
 - **Governance cost control:** `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
 - **Quarterly control portfolio review:** `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
+- **Governance ROI accountability:** `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -99,4 +100,5 @@ For full routing by scenario, use:
 - Keep all control overrides logged, time-bounded, and reviewed weekly.
 - Keep governance effort within budget and reduce controls when cost outruns value.
 - Run quarterly control portfolio reviews to keep active controls right-sized.
+- Run monthly governance ROI checks to confirm process effort is worth the cost.
 

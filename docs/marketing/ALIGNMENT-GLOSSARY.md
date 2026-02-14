@@ -166,6 +166,9 @@ Total weekly time spent on meetings, documentation, control administration, and 
 ## Control Portfolio Review
 Periodic assessment of all active controls to decide keep/merge/retire/expand actions based on risk coverage, usage, and cost.
 
+## Governance ROI Index
+Normalized monthly measure of governance benefit minus governance cost, used to assess whether process intensity is producing net execution value.
+
 ---
 
 ## Incident & Escalation Terms

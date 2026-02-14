@@ -295,6 +295,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`**  
   Quarterly portfolio-level review for deciding which controls to keep, merge, retire, or expand.
 
+- **`ALIGNMENT-GOVERNANCE-ROI-REPORT.md`**  
+  Monthly value-versus-cost report to verify governance effort is improving outcomes faster than it adds overhead.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -389,6 +392,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need auditable control exceptions without shadow policy | `ALIGNMENT-OVERRIDE-REGISTER.md` |
 | We need to cap governance overhead before it slows execution | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` |
 | We need a quarterly keep/merge/retire decision on all controls | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` |
+| We need proof that governance effort has positive return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` |
 
 ---
 
@@ -449,6 +453,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Override Register | Strategy Owner + Ops / PMO |
 | Governance Cost Budget | Ops / PMO + Leadership Team |
 | Control Portfolio Review | Strategy Owner + Ops / PMO + Leadership Team |
+| Governance ROI Report | Strategy Owner + Ops / PMO + Leadership Team |
 
 ---
 
@@ -528,6 +533,7 @@ Includes Pack C, plus:
 60. `ALIGNMENT-OVERRIDE-REGISTER.md`
 61. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
 62. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
+63. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
 
 Recommended only when:
 - decision volume is high,

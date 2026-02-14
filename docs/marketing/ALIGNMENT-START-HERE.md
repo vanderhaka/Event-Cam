@@ -98,6 +98,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 13. `ALIGNMENT-OVERRIDE-REGISTER.md` (exception tracking and expiry discipline)
 14. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` (cost-to-value guardrail for process load)
 15. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` (quarterly keep/merge/retire decisions)
+16. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` (monthly proof that governance value exceeds governance cost)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

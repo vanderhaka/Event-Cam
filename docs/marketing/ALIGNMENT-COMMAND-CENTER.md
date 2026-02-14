@@ -34,6 +34,7 @@
 - Confirm blocker backlog trend.
 - Confirm meeting effectiveness status (Green/Yellow/Red trend).
 - Confirm governance cost is within weekly budget threshold.
+- Confirm latest governance ROI trend and action status.
 
 ## Step 2: Decision Scan (15 min)
 - Check Priority 0/1 decisions due this week.
@@ -104,6 +105,7 @@ Use this trigger table before meetings:
 | Override expires without closure | Escalate as governance incident and force same-week resolution |
 | Governance cost exceeds 120% budget for 2 weeks | Trigger cost-reduction playbook and re-evaluate active pack/mode |
 | Portfolio review overdue beyond quarter reset window | Escalate to leadership and freeze net-new control additions |
+| Governance ROI negative for 2 months | Initiate governance redesign and leadership review |
 
 ---
 
@@ -114,7 +116,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

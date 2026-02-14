@@ -812,6 +812,7 @@ Use this minimum-safe operating rule:
 | Teams bypass controls informally under deadline pressure | `ALIGNMENT-OVERRIDE-REGISTER.md` | Open overrides remain low, time-bounded, and fully reviewed |
 | Governance overhead grows faster than execution value | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` | Governance cost remains in budget while decision quality trends improve |
 | Control set grows without periodic strategic pruning decisions | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` | Quarterly keep/merge/retire outcomes are completed on schedule |
+| Governance workload rises without measurable business-control return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` | Governance ROI index remains positive and improving quarter-over-quarter |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
