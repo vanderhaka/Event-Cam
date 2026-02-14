@@ -325,6 +325,9 @@ The degree to which critical controls are validated across all required testing 
 ## Control Observability Coverage
 The degree to which critical controls are fully monitored through defined signals, actionable alerts, and accessible diagnostics.
 
+## Control Confidence Index
+A composite score estimating whether a control is reliable enough for critical use based on ownership, validation, observability, performance, and evidence quality.
+
 ---
 
 ## Incident & Escalation Terms

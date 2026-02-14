@@ -454,6 +454,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`**  
   Coverage review ensuring critical controls have complete signal, alert, and diagnostic observability.
 
+- **`ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md`**  
+  Composite confidence scoring model for critical control reliability.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -601,6 +604,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to contain cross-workflow fallout from single dependency failures | `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md` |
 | We need one view of whether critical controls are fully tested across all required validation layers | `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` |
 | We need to eliminate control blind spots by enforcing complete observability coverage | `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md` |
+| We need one quantified signal for whether critical controls are reliable enough to trust | `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md` |
 
 ---
 
@@ -714,6 +718,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Dependency Blast Radius Review | Platform/Data Owners + Ops / PMO + Strategy Owner |
 | Control Test Coverage Review | Ops / PMO + On-Call Lead + Functional Leads |
 | Control Observability Coverage Review | Data/Analytics Owners + Ops / PMO + On-Call Lead |
+| Control Confidence Index | Ops / PMO + Strategy Owner + Functional Leads |
 
 ---
 
@@ -846,6 +851,7 @@ Includes Pack C, plus:
 113. `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md`
 114. `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`
 115. `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`
+116. `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md`
 
 Recommended only when:
 - decision volume is high,

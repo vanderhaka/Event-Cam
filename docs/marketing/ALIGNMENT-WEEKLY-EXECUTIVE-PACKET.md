@@ -277,6 +277,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls with test-layer gaps (count):
 - Observable critical controls with full signal/alert/diagnostic coverage (%):
 - Critical controls with observability blind spots (count):
+- Average critical-control confidence score:
+- Critical controls in Low Confidence band (count):
 
 ---
 

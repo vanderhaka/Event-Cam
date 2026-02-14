@@ -54,6 +54,7 @@
 | Critical dependency containment readiness rate |  | ≥95% |  |
 | Critical-control full test-coverage rate |  | 100% |  |
 | Critical-control observability coverage rate |  | 100% |  |
+| Average critical-control confidence score |  | ≥85 |  |
 
 Key governance issue this month:
 ______________________________________
