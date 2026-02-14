@@ -50,6 +50,8 @@ export async function POST(_: Request, context: { params: { eventId: string } })
 
     const updates = invitees.map((invitee) => ({
       id: invitee.id,
+      event_id: event.id,
+      display_name: invitee.display_name,
       qr_token: invitee.qr_token || randomToken(),
       qr_state: 'issued',
     }));
