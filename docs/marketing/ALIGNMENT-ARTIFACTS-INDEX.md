@@ -58,6 +58,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-RUNBOOK.md`**  
   End-to-end 0–90 day operating playbook for alignment execution.
 
+- **`ALIGNMENT-SYSTEM-OVERVIEW.md`**  
+  How all alignment artifacts fit together as one execution system.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -80,6 +83,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need quick operating answers during execution | `ALIGNMENT-FAQ.md` |
 | We need consistent terminology across teams | `ALIGNMENT-GLOSSARY.md` |
 | We need a time-sequenced 0–90 day operating playbook | `ALIGNMENT-RUNBOOK.md` |
+| We need a top-level model of the full alignment system | `ALIGNMENT-SYSTEM-OVERVIEW.md` |
 
 ---
 
