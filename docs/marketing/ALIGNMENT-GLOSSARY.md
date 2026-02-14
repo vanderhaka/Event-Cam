@@ -310,6 +310,9 @@ The degree to which closed items satisfy explicit completion criteria and eviden
 ## Control Runbook Coverage
 The degree to which critical controls maintain current, validated runbooks that can be executed reliably under incident conditions.
 
+## Control Drill Effectiveness
+The degree to which control drills reliably execute critical steps, meet stabilization targets, and produce timely corrective-action closure.
+
 ---
 
 ## Incident & Escalation Terms

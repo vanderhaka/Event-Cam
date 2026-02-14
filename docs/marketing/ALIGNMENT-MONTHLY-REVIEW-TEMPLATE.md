@@ -49,6 +49,7 @@
 | Critical-control owner full-coverage rate |  | 100% |  |
 | Verified closure rate against done criteria |  | ≥95% |  |
 | Critical-control runbook validation rate |  | ≥95% |  |
+| Control drill first-pass success rate |  | ≥90% |  |
 
 Key governance issue this month:
 ______________________________________

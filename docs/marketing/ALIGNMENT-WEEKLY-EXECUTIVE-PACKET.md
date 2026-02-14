@@ -267,6 +267,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Premature closures detected this cycle (count):
 - Critical controls with validated runbook (%):
 - Critical controls with stale/missing runbook (count):
+- Control drill first-pass success rate (%):
+- Critical-step omissions in control drills (count):
 
 ---
 
