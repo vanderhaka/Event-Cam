@@ -142,6 +142,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-NARRATIVE-GUARDRAILS.md`**  
   Non-negotiable messaging consistency rules to prevent strategy and channel narrative drift.
 
+- **`ALIGNMENT-CONTRADICTION-REGISTER.md`**  
+  Canonical log for identifying, resolving, and auditing cross-document contradictions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -192,6 +195,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need one canonical source for experiment status and decisions | `ALIGNMENT-EXPERIMENT-REGISTRY.md` |
 | We need explicit time-to-decision rules and escalation timing | `ALIGNMENT-DECISION-SLA.md` |
 | We need to stop cross-doc messaging drift and contradiction | `ALIGNMENT-NARRATIVE-GUARDRAILS.md` |
+| We need to track and close conflicting statements across docs | `ALIGNMENT-CONTRADICTION-REGISTER.md` |
 
 ---
 
@@ -208,6 +212,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Experiment Registry | Growth Lead + Marketing Lead |
 | Decision SLA | Strategy Owner + Ops / PMO |
 | Narrative Guardrails | Marketing Lead + Strategy Owner |
+| Contradiction Register | Strategy Owner + Documentation Owner |
 
 ---
 
@@ -240,6 +245,7 @@ Includes Pack B, plus:
 16. `ALIGNMENT-RECOVERY-PLAYBOOK.md`
 17. `ALIGNMENT-DECISION-SLA.md`
 18. `ALIGNMENT-NARRATIVE-GUARDRAILS.md`
+19. `ALIGNMENT-CONTRADICTION-REGISTER.md`
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
