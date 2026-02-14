@@ -75,6 +75,7 @@
 | High-impact decision-gate enforcement rate |  | 100% |  |
 | Critical-control exception closure within SLA |  | ≥95% |  |
 | Unsafe control deprecation candidate count |  | 0 |  |
+| High-risk dependency-change mitigation completion rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

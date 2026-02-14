@@ -319,6 +319,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Overdue critical control exceptions (count):
 - Unsafe control deprecation candidates (count):
 - Deprecation verification completed within window (%):
+- Dependency changes with unresolved high-risk impact (count):
+- Dependency-change mitigation completed pre-rollout (%):
 
 ---
 

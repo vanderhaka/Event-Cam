@@ -139,6 +139,7 @@ It helps teams:
 - **Control decision-gate integrity governance:** `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md`
 - **Control exception lead-time governance:** `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`
 - **Control deprecation-risk governance:** `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
+- **Control dependency-change impact governance:** `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -247,4 +248,5 @@ For full routing by scenario, use:
 - Keep high-impact decisions routed through required control gates with zero unmanaged bypasses.
 - Keep critical control exceptions resolved inside SLA with minimal overdue exposure.
 - Keep control retire/merge decisions risk-assessed with no unmanaged unsafe deprecation candidates.
+- Keep high-risk dependency changes fully impact-assessed and mitigated before rollout.
 

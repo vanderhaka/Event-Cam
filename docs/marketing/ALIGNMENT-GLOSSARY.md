@@ -388,6 +388,9 @@ The elapsed time from exception opening to verified closure against defined SLA 
 ## Control Deprecation Risk
 The residual risk exposure associated with retiring or merging a control before replacement coverage is proven.
 
+## Control Dependency Change Impact
+The downstream control and decision risk introduced by modifying dependencies that support active controls.
+
 ---
 
 ## Incident & Escalation Terms
