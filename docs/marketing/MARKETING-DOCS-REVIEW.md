@@ -837,6 +837,7 @@ Use this minimum-safe operating rule:
 | High-impact controls are treated like low-impact controls, creating misallocated governance effort | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` | Critical controls maintain high compliance while low-risk controls are governed proportionally |
 | High-impact decisions are approved with incomplete packets under timeline pressure | `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md` | Complete high-impact decision-packet rate remains high and non-compliant packets are blocked pre-approval |
 | Previously closed decisions reopen repeatedly, creating churn and strategy instability | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` | Reopen rate and repeat-reopen frequency decline as root causes are corrected |
+| Teams treat recurring failures as isolated issues and miss systemic root-cause concentration | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` | Dominant recurring causes are reduced through structural interventions |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

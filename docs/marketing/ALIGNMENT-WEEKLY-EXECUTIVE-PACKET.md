@@ -121,6 +121,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | CC-1 controls at risk/non-compliant (count) |  |  |  |
 | Non-compliant P0/P1 decision packets (count) |  |  |  |
 | Reopened decisions this cycle (count) |  |  |  |
+| Dominant root cause category (current cycle) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -221,6 +222,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical-control compliance rate (CC-1/CC-2):
 - Complete decision packet rate (P0/high-impact P1):
 - Decision reopen rate:
+- Root-cause classified rate:
 
 ---
 

@@ -241,6 +241,9 @@ The degree to which required sections and evidence links in high-impact decision
 ## Decision Reopen Rate
 Percentage of previously closed decisions that are reopened within the defined monitoring window due to unresolved or newly surfaced issues.
 
+## Root Cause Pattern
+Recurring causal category observed across multiple governance workflows, indicating systemic failure pressure rather than isolated events.
+
 ---
 
 ## Incident & Escalation Terms

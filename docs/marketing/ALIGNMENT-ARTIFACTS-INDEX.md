@@ -370,6 +370,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`**  
   Root-cause analysis tracker for reopened decisions to reduce repeat churn.
 
+- **`ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`**  
+  Cross-workflow aggregation of recurring root causes to prioritize structural fixes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -489,6 +492,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need control monitoring and escalation intensity matched to real risk criticality | `ALIGNMENT-CONTROL-CRITICALITY-MAP.md` |
 | We need decision approvals blocked when required packet sections are incomplete | `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md` |
 | We need to reduce repeated reopen cycles on previously closed decisions | `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md` |
+| We need one recurring view of dominant root causes across all governance workflows | `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md` |
 
 ---
 
@@ -574,6 +578,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Criticality Map | Strategy Owner + Ops / PMO + Governance Owners |
 | Decision Packet Compliance | Strategy Owner + Ops / PMO + Decision Review Leads |
 | Decision Reopen Analysis | Strategy Owner + Ops / PMO + Decision Review Leads |
+| Root Cause Pattern Review | Strategy Owner + Ops / PMO + Functional Leads |
 
 ---
 
@@ -678,6 +683,7 @@ Includes Pack C, plus:
 85. `ALIGNMENT-CONTROL-CRITICALITY-MAP.md`
 86. `ALIGNMENT-DECISION-PACKET-COMPLIANCE.md`
 87. `ALIGNMENT-DECISION-REOPEN-ANALYSIS.md`
+88. `ALIGNMENT-ROOT-CAUSE-PATTERN-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
