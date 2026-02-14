@@ -137,6 +137,7 @@ It helps teams:
 - **Control documentation-drift governance:** `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md`
 - **Control recovery-evidence quality governance:** `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md`
 - **Control decision-gate integrity governance:** `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md`
+- **Control exception lead-time governance:** `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -243,4 +244,5 @@ For full routing by scenario, use:
 - Keep control documentation synchronized with live workflows; eliminate material drift quickly.
 - Keep critical-control recoveries evidence-verified before closure to prevent false stabilization claims.
 - Keep high-impact decisions routed through required control gates with zero unmanaged bypasses.
+- Keep critical control exceptions resolved inside SLA with minimal overdue exposure.
 

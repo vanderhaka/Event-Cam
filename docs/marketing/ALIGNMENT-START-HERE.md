@@ -170,6 +170,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 85. `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md` (ensures control documentation stays synchronized with live workflows to prevent execution mismatch)
 86. `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md` (ensures recovery closure is backed by complete, fresh, and auditable evidence)
 87. `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md` (ensures required control gates are enforced before high-impact decisions are approved)
+88. `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md` (ensures critical control exceptions are resolved within SLA and do not create prolonged exposure windows)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

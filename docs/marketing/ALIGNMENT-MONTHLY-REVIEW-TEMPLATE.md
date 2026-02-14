@@ -73,6 +73,7 @@
 | Control documentation sync rate |  | 100% |  |
 | Recovery evidence quality pass rate (critical controls) |  | 100% |  |
 | High-impact decision-gate enforcement rate |  | 100% |  |
+| Critical-control exception closure within SLA |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

@@ -382,6 +382,9 @@ The degree to which recovery claims are supported by complete, fresh, and audita
 ## Control Decision-Gate Integrity
 The degree to which required decision gates are enforced with valid evidence before high-impact approvals.
 
+## Control Exception Lead Time
+The elapsed time from exception opening to verified closure against defined SLA thresholds.
+
 ---
 
 ## Incident & Escalation Terms
