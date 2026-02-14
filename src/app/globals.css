@@ -139,6 +139,13 @@ main {
   margin: 0 0.25rem;
 }
 
+.header-greeting {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 0 0.5rem;
+}
+
 /* ─── Cards & Surfaces ─── */
 .card,
 .surface {

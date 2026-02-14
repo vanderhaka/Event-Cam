@@ -9,6 +9,8 @@ export default function RegisterPage() {
   const router = useRouter();
   const supabase = createBrowserSupabaseClient();
 
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -25,6 +27,10 @@ export default function RegisterPage() {
       password,
       options: {
         emailRedirectTo: `${window.location.origin}/dashboard`,
+        data: {
+          first_name: firstName.trim() || undefined,
+          last_name: lastName.trim() || undefined,
+        },
       },
     });
 
@@ -53,6 +59,28 @@ export default function RegisterPage() {
         <h2 className="section-head">Create your account</h2>
         <p className="section-sub">Start collecting event media in minutes</p>
         <form onSubmit={submit} className="form-grid">
+          <label>
+            <div className="label">First name</div>
+            <input
+              className="input"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              type="text"
+              placeholder="Jane"
+              autoComplete="given-name"
+            />
+          </label>
+          <label>
+            <div className="label">Last name</div>
+            <input
+              className="input"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              type="text"
+              placeholder="Doe"
+              autoComplete="family-name"
+            />
+          </label>
           <label>
             <div className="label">Email</div>
             <input
