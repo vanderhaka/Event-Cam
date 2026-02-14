@@ -166,6 +166,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`**  
   Governance policy for merging/retiring low-value artifacts while preserving traceability.
 
+- **`ALIGNMENT-STATE-MACHINE.md`**  
+  Canonical state and transition definitions across decisions, experiments, blockers, dependencies, and artifacts.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -224,6 +227,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need clear standards for what qualifies as decision-grade evidence | `ALIGNMENT-EVIDENCE-STANDARDS.md` |
 | We need recurring quality checks on active alignment artifacts | `ALIGNMENT-DOC-QUALITY-SCORECARD.md` |
 | We need to reduce doc sprawl without losing governance integrity | `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md` |
+| We need standardized status transitions across operating workflows | `ALIGNMENT-STATE-MACHINE.md` |
 
 ---
 
@@ -248,6 +252,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Evidence Standards | Strategy Owner + Analytics / Growth Lead |
 | Doc Quality Scorecard | Ops / PMO + Documentation Owner |
 | Artifact Pruning Policy | Ops / PMO + Documentation Owner |
+| State Machine | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -291,6 +296,7 @@ Includes Pack C, plus:
 24. `ALIGNMENT-EVIDENCE-STANDARDS.md`
 25. `ALIGNMENT-DOC-QUALITY-SCORECARD.md`
 26. `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
+27. `ALIGNMENT-STATE-MACHINE.md`
 
 Recommended only when:
 - decision volume is high,
