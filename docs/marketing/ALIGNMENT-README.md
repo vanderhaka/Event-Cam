@@ -146,6 +146,7 @@ It helps teams:
 - **Control risk-acceptance calibration governance:** `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`
 - **Control risk-transfer governance:** `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`
 - **Control intervention effect-lag governance:** `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`
+- **Control mitigation-coverage governance:** `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -261,4 +262,5 @@ For full routing by scenario, use:
 - Keep accepted-risk criteria calibrated to observed outcomes; correct drift quickly.
 - Keep transferred-risk controls evidence-verified with no unmanaged residual exposure.
 - Keep critical interventions measurable with improving time-to-effect and minimal delayed/no-effect cases.
+- Keep all exposed critical risks covered by active, owned, and current mitigation plans.
 

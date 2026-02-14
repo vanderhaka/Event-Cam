@@ -82,6 +82,7 @@
 | Mean accepted-risk calibration gap |  | -0.10 to +0.10 |  |
 | Failed transferred-risk control count |  | 0 |  |
 | On-time intervention effect realization rate |  | ≥90% |  |
+| Exposed-risk mitigation coverage rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

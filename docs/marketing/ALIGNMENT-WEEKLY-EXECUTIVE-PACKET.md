@@ -333,6 +333,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Transferred-risk effectiveness verification pass rate (%):
 - Delayed/no-effect critical interventions (count):
 - On-time intervention effect realization rate (%):
+- Exposed risks lacking mitigation coverage (count):
+- Mitigation coverage rate for exposed critical risks (%):
 
 ---
 

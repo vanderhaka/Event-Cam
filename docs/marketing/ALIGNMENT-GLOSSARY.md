@@ -409,6 +409,9 @@ The practice of shifting defined control-related risk exposure to an external pa
 ## Control Intervention Effect Lag
 The elapsed time between intervention launch and the first validated measurable improvement signal.
 
+## Control Mitigation Coverage
+The degree to which exposed control risks are linked to active, owned, and current mitigation plans.
+
 ---
 
 ## Incident & Escalation Terms

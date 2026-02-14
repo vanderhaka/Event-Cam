@@ -893,6 +893,7 @@ Use this minimum-safe operating rule:
 | Risk acceptance criteria drift from real outcomes, causing chronic over-acceptance or over-mitigation | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` | Acceptance calibration gap stays controlled and recalibration actions close on time |
 | Transferred control risk is assumed resolved without validating partner obligations or remaining internal exposure | `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` | Failed transfer count trends to zero and transfer effectiveness verification remains high |
 | Interventions are launched but take too long to show impact, masking ineffective responses behind activity | `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` | Delayed/no-effect intervention count trends to zero and on-time effect realization remains high |
+| Exposed risks remain active without linked mitigation plans, leaving known issues unmanaged in execution | `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` | Exposed-risk mitigation coverage remains high and uncovered exposed-risk count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
