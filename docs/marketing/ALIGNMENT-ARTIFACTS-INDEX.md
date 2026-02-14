@@ -1098,8 +1098,8 @@ Recommended only when:
 |---|---:|---|
 | Pack A | 5–7 | Early focus / founder-led execution |
 | Pack B | 8–12 | Active growth and weekly operations |
-| Pack C | 12–18 | Scaling with governance requirements |
-| Pack D | 18+ | Multi-team complexity and high decision churn |
+| Pack C | 12–19 | Scaling with governance requirements |
+| Pack D | 19+ | Multi-team complexity and high decision churn |
 
 If your team cannot keep artifacts updated within 48 hours, drop down one pack immediately.
 

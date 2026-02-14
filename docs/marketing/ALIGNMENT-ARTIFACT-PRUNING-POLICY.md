@@ -98,7 +98,7 @@ Use this quick score to prioritize pruning candidates:
 - **Usage Frequency (0–3)**
 - **Unique Value (0–3)**
 - **Maintenance Burden (0–2, reverse-scored)**
-- **Conflict Risk if kept (0–2)**
+- **Conflict Risk if kept (0–2, reverse-scored)**
 
 Interpretation:
 - **0–3:** Retire candidate
