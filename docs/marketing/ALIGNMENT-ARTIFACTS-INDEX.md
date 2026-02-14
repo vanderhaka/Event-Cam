@@ -208,6 +208,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-SYSTEM-HEALTH-METRICS.md`**  
   Meta-operating KPI framework for monitoring alignment-system quality and discipline health.
 
+- **`ALIGNMENT-QUARTER-RESET-PROTOCOL.md`**  
+  End-of-quarter reset procedure for closing cycles cleanly and re-activating next-quarter alignment.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -273,6 +276,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to resolve “which doc is canonical for this topic?” quickly | `ALIGNMENT-CANONICAL-SOURCE-MAP.md` |
 | We need to adjust process intensity to current risk and complexity | `ALIGNMENT-OPERATING-MODES.md` |
 | We need one weekly score of alignment-system discipline quality | `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` |
+| We need a clean quarter-close and reactivation ritual | `ALIGNMENT-QUARTER-RESET-PROTOCOL.md` |
 
 ---
 
@@ -304,6 +308,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Canonical Source Map | Strategy Owner + Documentation Owner |
 | Operating Modes | Ops / PMO + Strategy Owner |
 | System Health Metrics | Ops / PMO + Strategy Owner |
+| Quarter Reset Protocol | Ops / PMO + Leadership Team |
 
 ---
 
@@ -354,6 +359,7 @@ Includes Pack C, plus:
 31. `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 32. `ALIGNMENT-OPERATING-MODES.md`
 33. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md`
+34. `ALIGNMENT-QUARTER-RESET-PROTOCOL.md`
 
 Recommended only when:
 - decision volume is high,
