@@ -121,6 +121,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-RECOVERY-PLAYBOOK.md`**  
   Stepwise response guide for restoring alignment after drift or failure signals.
 
+- **`ALIGNMENT-GOVERNANCE-CHARTER.md`**  
+  Core governance policy document defining controls and enforcement rules.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -164,6 +167,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a weekly control surface for alignment operations | `ALIGNMENT-COMMAND-CENTER.md` |
 | We need consistent capture of decision-review meeting outcomes | `ALIGNMENT-DECISION-MEETING-NOTES-TEMPLATE.md` |
 | We need a defined response when alignment breaks down | `ALIGNMENT-RECOVERY-PLAYBOOK.md` |
+| We need formal governance rules and enforcement policy | `ALIGNMENT-GOVERNANCE-CHARTER.md` |
 
 ---
 
