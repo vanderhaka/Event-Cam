@@ -70,6 +70,7 @@
 | Critical-first control execution rate |  | ≥95% |  |
 | Critical-control signal integrity pass rate |  | ≥98% |  |
 | Critical-alert first-triage accuracy rate |  | ≥95% |  |
+| Control documentation sync rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

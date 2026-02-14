@@ -373,6 +373,9 @@ The degree to which control signals are accurate, complete, and definition-consi
 ## Control Alert Triage Quality
 The degree to which critical alerts are classified, prioritized, and routed correctly on first triage.
 
+## Control Documentation Drift
+The gap between documented control procedures and the way controls are actually executed in live operations.
+
 ---
 
 ## Incident & Escalation Terms

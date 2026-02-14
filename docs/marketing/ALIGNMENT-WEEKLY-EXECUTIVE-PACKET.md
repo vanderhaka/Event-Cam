@@ -309,6 +309,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Untrusted critical-control signals (count):
 - Critical-alert first-triage accuracy rate (%):
 - Misrouted critical alerts (count):
+- Controls with material documentation drift (count):
+- Documentation drift correction within SLA (%):
 
 ---
 

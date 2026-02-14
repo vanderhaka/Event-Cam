@@ -881,6 +881,7 @@ Use this minimum-safe operating rule:
 | Teams complete low-priority control work while critical overdue obligations remain unresolved | `ALIGNMENT-CONTROL-PRIORITY-INVERSION-REVIEW.md` | Priority inversion incidents trend to zero and critical-first execution rate remains high |
 | Critical decisions rely on control signals that may be corrupted or formula-drifted without detection | `ALIGNMENT-CONTROL-SIGNAL-INTEGRITY-REVIEW.md` | Signal integrity pass rate remains high and untrusted critical-signal count trends to zero |
 | Critical alerts are triaged inaccurately, causing response delays despite signal availability | `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md` | First-triage accuracy remains high and critical alert misroutes trend to zero |
+| Teams follow outdated control instructions because documentation drifted away from live operating reality | `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md` | Documentation sync rate remains high and material drift count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
