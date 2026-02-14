@@ -26,6 +26,27 @@ This index maps each alignment artifact to its purpose so the team can execute i
 
 ---
 
+## Strategy Source Inputs (Reviewed Marketing Docs)
+
+These are source strategy documents reviewed and translated into the alignment system.  
+They are not operating controls, but they remain important context inputs.
+
+- `MARKETING-PLAN.md`
+- `PRICING-MODELS.md`
+- `PRO-ACCOUNT-DEEP-DIVE.md`
+- `ACCOUNT-TYPES.md`
+- `PURPLE-COW-CHANNELS.md`
+- `NAMING-BRAINSTORM.md`
+- `SOCIAL-APP-EXPLORATION.md`
+- `WHATS-MISSING.md`
+
+When conflicts appear between source inputs and active alignment artifacts, route through:
+1. `ALIGNMENT-CONTRADICTION-REGISTER.md`
+2. `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+3. `ALIGNMENT-DECISIONS-LOG.md`
+
+---
+
 ## Supporting Operating Artifacts
 
 - **`ALIGNMENT-DECISIONS-LOG.md`**  
