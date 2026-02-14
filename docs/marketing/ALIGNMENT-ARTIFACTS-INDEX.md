@@ -214,6 +214,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ADOPTION-ROADMAP.md`**  
   Six-week staged rollout plan for adopting alignment controls without process overload.
 
+- **`ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`**  
+  Incident-severity on-call ownership and escalation chain for urgent alignment failures.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -281,6 +284,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one weekly score of alignment-system discipline quality | `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` |
 | We need a clean quarter-close and reactivation ritual | `ALIGNMENT-QUARTER-RESET-PROTOCOL.md` |
 | We need a pragmatic sequence to roll out the alignment system | `ALIGNMENT-ADOPTION-ROADMAP.md` |
+| We need fast response ownership for urgent alignment incidents | `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md` |
 
 ---
 
@@ -314,6 +318,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | System Health Metrics | Ops / PMO + Strategy Owner |
 | Quarter Reset Protocol | Ops / PMO + Leadership Team |
 | Adoption Roadmap | Ops / PMO + Strategy Owner |
+| On-Call Escalation Matrix | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -366,6 +371,7 @@ Includes Pack C, plus:
 33. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md`
 34. `ALIGNMENT-QUARTER-RESET-PROTOCOL.md`
 35. `ALIGNMENT-ADOPTION-ROADMAP.md`
+36. `ALIGNMENT-ONCALL-ESCALATION-MATRIX.md`
 
 Recommended only when:
 - decision volume is high,

@@ -72,6 +72,7 @@ Use this trigger table before meetings:
 | Canonical-source conflict unresolved >5 business days | Escalate in decision review and assign forced close date |
 | Active artifact count exceeds mode guardrail for 2 weeks | Run pruning pass and republish active-set declaration |
 | Repeated invalid state transitions this week | Freeze affected workflow until owner retraining completes |
+| Sev-1 alignment incident detected | Trigger on-call escalation matrix immediately |
 
 ---
 
