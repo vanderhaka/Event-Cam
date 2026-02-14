@@ -261,6 +261,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Evidence-linked item rate:
 - Reversal trigger coverage rate (P0/high-impact P1):
 - Authorized approval rate (P0/high-impact P1):
+- Control owner full-coverage rate (CC-1/CC-2):
+- Critical controls with ownership gaps (count):
 
 ---
 

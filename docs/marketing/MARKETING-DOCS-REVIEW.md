@@ -857,6 +857,7 @@ Use this minimum-safe operating rule:
 | High-impact actions close without reliable evidence links, undermining auditability and trust | `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md` | Broken/stale evidence-link count declines and linkage compliance remains high |
 | Underperforming decisions persist because reversal thresholds were never explicitly set | `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` | Reversal-trigger coverage remains complete and trigger-response time stays within target |
 | High-impact decisions are approved through informal paths, creating authority ambiguity and rework | `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` | Authorized-approval rate remains high and authority-violation count trends to zero |
+| Critical controls depend on a single owner, creating avoidable outages during absence or turnover | `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` | Full ownership coverage stays high and single-point-of-failure control count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

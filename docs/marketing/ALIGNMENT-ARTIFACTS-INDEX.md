@@ -430,6 +430,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`**  
   Compliance review ensuring high-impact decisions are approved by the correct authority level.
 
+- **`ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`**  
+  Ownership-coverage review ensuring critical controls have primary, backup, and escalation owners.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -569,6 +572,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need high-impact decisions and recoveries blocked when evidence linkage is missing or stale | `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md` |
 | We need to prevent underperforming decisions from running without clear reversal thresholds | `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` |
 | We need to prevent unauthorized approvals on high-impact decisions | `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` |
+| We need to eliminate single-owner fragility on high-criticality controls | `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -674,6 +678,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Evidence Linkage Compliance | Strategy Owner + Growth/Data Owner + Ops / PMO |
 | Reversal Trigger Coverage Review | Strategy Owner + Decision Review Leads + Ops / PMO |
 | Decision Authority Compliance | Strategy Owner + Leadership Delegate + Ops / PMO |
+| Control Owner Coverage Review | Strategy Owner + Ops / PMO + Functional Leads |
 
 ---
 
@@ -798,6 +803,7 @@ Includes Pack C, plus:
 105. `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`
 106. `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
 107. `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`
+108. `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

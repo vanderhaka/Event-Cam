@@ -301,6 +301,9 @@ The extent to which high-impact decisions define measurable thresholds that trig
 ## Decision Authority Compliance
 The degree to which decisions are approved by the correct role and forum according to defined authority rules.
 
+## Control Owner Coverage
+The degree to which in-scope controls have complete, current primary, backup, and escalation ownership assignments.
+
 ---
 
 ## Incident & Escalation Terms

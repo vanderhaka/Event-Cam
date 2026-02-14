@@ -46,6 +46,7 @@
 | Mean calibration gap |  | -0.10 to +0.10 |  |
 | High-band decision failure rate |  | <15% |  |
 | Governance ROI index |  | >0 |  |
+| Critical-control owner full-coverage rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

@@ -143,6 +143,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 58. `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md` (ensures high-impact actions remain traceable to valid evidence)
 59. `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` (ensures high-impact decisions include measurable reversal thresholds)
 60. `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` (ensures high-impact approvals follow declared authority paths)
+61. `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` (ensures critical controls maintain primary/backup/escalation ownership coverage)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

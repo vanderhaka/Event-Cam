@@ -68,6 +68,7 @@
 - Review evidence-linkage compliance for broken/unlinked critical items.
 - Review reversal-trigger coverage status for active P0/high-impact decisions.
 - Review decision-authority compliance for in-scope approvals and route integrity.
+- Review control-owner coverage status for CC-1/CC-2 controls.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -144,6 +145,7 @@
 - Check broken or stale evidence links and assign linkage-recovery owners.
 - Check uncovered or partial reversal-trigger sets and assign correction owners.
 - Check authority violations and assign ratification/correction owners.
+- Check critical controls with partial/uncovered ownership and assign fixes.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -235,6 +237,7 @@ Use this trigger table before meetings:
 | Critical item evidence linkage missing/stale beyond due date | Trigger immediate evidence-linkage remediation |
 | Active P0 decision missing reversal trigger coverage | Trigger immediate decision packet correction and review hold |
 | High-impact decision approved without required authority | Trigger immediate authority correction and decision review hold |
+| CC-1 control lacks full owner coverage | Trigger immediate ownership coverage correction |
 
 ---
 
@@ -245,7 +248,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance + control-owner coverage review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---
