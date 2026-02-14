@@ -57,6 +57,7 @@
 | Average critical-control confidence score |  | ≥85 |  |
 | Mean control-confidence calibration gap |  | -0.10 to +0.10 |  |
 | Critical-control recertification completion rate |  | 100% |  |
+| Critical-control rollback-readiness rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

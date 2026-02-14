@@ -463,6 +463,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`**  
   Recurring review that re-certifies critical controls against current risk and configuration reality.
 
+- **`ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`**  
+  Readiness review ensuring critical controls can be rolled back quickly and safely.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -613,6 +616,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one quantified signal for whether critical controls are reliable enough to trust | `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md` |
 | We need confidence scores to stay predictive instead of drifting into false certainty | `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md` |
 | We need critical controls to be periodically re-certified so drift and obsolete logic don’t accumulate | `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` |
+| We need critical controls to recover quickly when control changes underperform | `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` |
 
 ---
 
@@ -729,6 +733,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Confidence Index | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Confidence Calibration Review | Ops / PMO + Strategy Owner + Data/Analytics Owners |
 | Control Recertification Review | Ops / PMO + Strategy Owner + Functional Leads |
+| Control Rollback Readiness Review | Ops / PMO + On-Call Lead + Functional Leads |
 
 ---
 
@@ -864,6 +869,7 @@ Includes Pack C, plus:
 116. `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md`
 117. `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md`
 118. `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`
+119. `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

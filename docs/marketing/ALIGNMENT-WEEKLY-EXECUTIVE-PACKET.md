@@ -283,6 +283,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - High-confidence controls with negative outcomes (count):
 - In-scope controls recertified on cadence (%):
 - Controls with recertification drift findings (count):
+- In-scope controls rollback-ready (%):
+- Controls with rollback-readiness gaps (count):
 
 ---
 

@@ -121,6 +121,7 @@ It helps teams:
 - **Control confidence governance:** `ALIGNMENT-CONTROL-CONFIDENCE-INDEX.md`
 - **Control confidence-calibration governance:** `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md`
 - **Control recertification governance:** `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`
+- **Control rollback-readiness governance:** `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -211,4 +212,5 @@ For full routing by scenario, use:
 - Keep CC-1 average control-confidence score above threshold with zero unmanaged low-confidence controls.
 - Keep control-confidence calibration within target band; recalibrate promptly on material drift.
 - Keep critical controls recertified on cadence; close drift and obsolete-control actions quickly.
+- Keep critical controls rollback-ready during change windows with tested triggers and execution paths.
 

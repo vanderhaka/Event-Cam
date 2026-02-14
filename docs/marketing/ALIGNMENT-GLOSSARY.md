@@ -334,6 +334,9 @@ The degree to which control-confidence scores accurately predict observed contro
 ## Control Recertification
 The periodic validation that a control remains necessary, correctly configured, and fit for current operating risk.
 
+## Control Rollback Readiness
+The degree to which a control can revert safely and quickly to a stable state when changes degrade outcomes.
+
 ---
 
 ## Incident & Escalation Terms

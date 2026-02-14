@@ -79,6 +79,7 @@
 - Review control confidence index for CC-1/CC-2 reliability trend shifts.
 - Review control-confidence calibration for score-to-outcome drift.
 - Review control recertification status for cadence, drift, and obsolete candidates.
+- Review control rollback readiness for active/recent control changes.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -166,6 +167,7 @@
 - Check low-confidence controls and assign recovery owners.
 - Check confidence-calibration drift and assign recalibration owners.
 - Check overdue recertification/drift findings and assign closure owners.
+- Check partial/not-ready rollback controls and assign remediation owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -268,6 +270,7 @@ Use this trigger table before meetings:
 | CC-1 control enters Low Confidence band | Trigger immediate control-confidence recovery intervention |
 | Control-confidence calibration shows material drift | Trigger scoring recalibration and priority-control review |
 | CC-1 control misses recertification cadence or shows repeat drift | Trigger immediate recertification intervention and action closure |
+| CC-1 control is not rollback-ready during active change | Trigger immediate rollback-readiness remediation and change-risk hold |
 
 ---
 
@@ -278,7 +281,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance + control-owner coverage review + definition-of-done compliance + control-runbook coverage review + control-drill effectiveness review + control-failover readiness review + dependency-blast-radius review + control-test coverage review + control-observability coverage review + control-confidence index + control-confidence calibration review + control-recertification review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance + control-owner coverage review + definition-of-done compliance + control-runbook coverage review + control-drill effectiveness review + control-failover readiness review + dependency-blast-radius review + control-test coverage review + control-observability coverage review + control-confidence index + control-confidence calibration review + control-recertification review + control-rollback readiness review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---
