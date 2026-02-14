@@ -51,6 +51,7 @@
 | Critical-control runbook validation rate |  | ≥95% |  |
 | Control drill first-pass success rate |  | ≥90% |  |
 | Critical-control failover readiness rate |  | ≥95% |  |
+| Critical dependency containment readiness rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

@@ -316,6 +316,9 @@ The degree to which control drills reliably execute critical steps, meet stabili
 ## Control Failover Readiness
 The degree to which critical controls can switch to validated fallback paths and restore operation within target recovery windows.
 
+## Dependency Blast Radius
+The scope and severity of downstream disruption caused when a single critical dependency fails.
+
 ---
 
 ## Incident & Escalation Terms

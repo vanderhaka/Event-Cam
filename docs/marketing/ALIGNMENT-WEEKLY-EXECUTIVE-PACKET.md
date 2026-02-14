@@ -271,6 +271,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical-step omissions in control drills (count):
 - Failover-ready critical controls (%):
 - Critical controls not failover-ready (count):
+- High-blast dependencies unmitigated (count):
+- Critical dependency containment readiness rate (%):
 
 ---
 
