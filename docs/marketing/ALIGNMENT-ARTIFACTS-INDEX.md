@@ -163,6 +163,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DOC-QUALITY-SCORECARD.md`**  
   Recurring quality audit scorecard to keep active alignment docs clear, current, and decision-safe.
 
+- **`ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`**  
+  Governance policy for merging/retiring low-value artifacts while preserving traceability.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -220,6 +223,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a controlled process for rolling back failed decisions | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` |
 | We need clear standards for what qualifies as decision-grade evidence | `ALIGNMENT-EVIDENCE-STANDARDS.md` |
 | We need recurring quality checks on active alignment artifacts | `ALIGNMENT-DOC-QUALITY-SCORECARD.md` |
+| We need to reduce doc sprawl without losing governance integrity | `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md` |
 
 ---
 
@@ -243,6 +247,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Decision Reversal Protocol | Strategy Owner + Ops / PMO |
 | Evidence Standards | Strategy Owner + Analytics / Growth Lead |
 | Doc Quality Scorecard | Ops / PMO + Documentation Owner |
+| Artifact Pruning Policy | Ops / PMO + Documentation Owner |
 
 ---
 
@@ -285,6 +290,7 @@ Includes Pack C, plus:
 23. `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
 24. `ALIGNMENT-EVIDENCE-STANDARDS.md`
 25. `ALIGNMENT-DOC-QUALITY-SCORECARD.md`
+26. `ALIGNMENT-ARTIFACT-PRUNING-POLICY.md`
 
 Recommended only when:
 - decision volume is high,
