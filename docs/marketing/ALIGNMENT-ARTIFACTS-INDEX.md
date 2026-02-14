@@ -178,6 +178,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-ACTIVE-ARTIFACT-SET.md`**  
   Single control file declaring which artifacts are active this cycle versus frozen.
 
+- **`ALIGNMENT-CANONICAL-SOURCE-MAP.md`**  
+  Domain-by-domain source-of-truth map showing which artifact governs each operating topic.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -240,6 +243,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need one leadership-ready weekly decision brief | `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` |
 | We need clean cross-artifact ID consistency and linkage | `ALIGNMENT-ID-STANDARDS.md` |
 | We need one explicit source of truth for active vs frozen docs | `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` |
+| We need to resolve “which doc is canonical for this topic?” quickly | `ALIGNMENT-CANONICAL-SOURCE-MAP.md` |
 
 ---
 
@@ -268,6 +272,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Weekly Executive Packet | Ops / PMO + Strategy Owner |
 | ID Standards | Ops / PMO + Documentation Owner |
 | Active Artifact Set | Ops / PMO + Documentation Owner |
+| Canonical Source Map | Strategy Owner + Documentation Owner |
 
 ---
 
@@ -315,6 +320,7 @@ Includes Pack C, plus:
 28. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
 29. `ALIGNMENT-ID-STANDARDS.md`
 30. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
+31. `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 
 Recommended only when:
 - decision volume is high,

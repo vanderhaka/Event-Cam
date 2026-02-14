@@ -18,11 +18,16 @@ If you want one aligned path quickly, use the documents in this order:
    - `ALIGNMENT-MEETING-CADENCE.md`
    - `ALIGNMENT-SCORECARD.md`
    - `ALIGNMENT-DECISIONS-LOG.md`
+   - `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
+   - `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 
 5. **Use full artifact map if unsure where to go next**
    `ALIGNMENT-ARTIFACTS-INDEX.md`
 
-6. **If you need urgency: run the fast-start sequence**
+6. **If canonical-source conflicts appear, use:**
+   `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
+
+7. **If you need urgency: run the fast-start sequence**
    `ALIGNMENT-QUICKSTART-48H.md`
 
 ---
