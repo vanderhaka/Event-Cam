@@ -40,6 +40,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-RACI.md`**  
   Ownership clarity for decision rights, execution responsibilities, and escalation paths.
 
+- **`ALIGNMENT-METRIC-DEFINITIONS.md`**  
+  Canonical KPI definitions, formulas, cadence, and ownership.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -56,6 +59,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need recurring operating rhythm | `ALIGNMENT-MEETING-CADENCE.md` |
 | We need to quantify alignment health weekly | `ALIGNMENT-SCORECARD.md` |
 | We need role-level ownership clarity | `ALIGNMENT-RACI.md` |
+| We need consistent KPI language and formulas | `ALIGNMENT-METRIC-DEFINITIONS.md` |
 
 ---
 
