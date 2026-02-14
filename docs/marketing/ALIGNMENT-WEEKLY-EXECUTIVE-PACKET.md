@@ -112,6 +112,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Alert fatigue status (Healthy/Watch/Fatigued) |  |  |  |
 | Broken critical control dependencies (D1 count) |  |  |  |
 | Missed required reviews this cycle (count) |  |  |  |
+| Control adoption non-compliance findings (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -203,6 +204,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Low-value alert rate:
 - Dependency-at-risk controls (count):
 - On-time review rate (cadence compliance):
+- Control adoption rate (new/changed controls):
 
 ---
 

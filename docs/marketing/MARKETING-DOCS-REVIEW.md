@@ -828,6 +828,7 @@ Use this minimum-safe operating rule:
 | Alert overload desensitizes teams and delays response to critical warnings | `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` | Alert noise declines while critical-alert response SLA stays high |
 | Downstream controls run without valid upstream prerequisites, creating false compliance | `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` | Critical dependency breaks are resolved quickly and provisional outputs decline |
 | Required weekly/monthly reviews are skipped, causing silent governance drift | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` | On-time review rate stays high and missed review count trends to zero |
+| Newly introduced controls exist on paper but are inconsistently executed | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` | Adoption compliance on active new controls reaches and sustains target levels |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

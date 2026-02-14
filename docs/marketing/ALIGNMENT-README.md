@@ -81,6 +81,7 @@ It helps teams:
 - **Alert quality governance:** `ALIGNMENT-ALERT-FATIGUE-REVIEW.md`
 - **Control sequencing governance:** `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md`
 - **Review discipline governance:** `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
+- **Control adoption governance:** `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -131,4 +132,5 @@ For full routing by scenario, use:
 - Keep alert volume/noise within capacity so critical warnings remain actionable.
 - Keep control prerequisites visible so downstream controls run only when valid.
 - Keep weekly/monthly/quarterly review cadence on schedule with complete inputs.
+- Keep newly launched controls above adoption target or intervene quickly.
 

@@ -343,6 +343,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`**  
   Compliance tracker to ensure required weekly/monthly/quarterly reviews run on time with complete inputs.
 
+- **`ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`**  
+  Adoption/compliance tracker for newly introduced or changed controls in active operations.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -453,6 +456,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to reduce alert noise so critical warnings are still acted on quickly | `ALIGNMENT-ALERT-FATIGUE-REVIEW.md` |
 | We need to prevent downstream controls from running without upstream prerequisites | `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` |
 | We need proof that required review cycles are not being skipped | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` |
+| We need to verify teams are actually following newly launched controls | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` |
 
 ---
 
@@ -529,6 +533,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Alert Fatigue Review | Ops / PMO + Growth/Data Owner + Functional Leads |
 | Control Dependency Map | Ops / PMO + Strategy Owner + Control Owners |
 | Review Cadence Compliance | Ops / PMO + Strategy Owner + Functional Leads |
+| Control Adoption Compliance | Ops / PMO + Strategy Owner + Functional Leads |
 
 ---
 
@@ -624,6 +629,7 @@ Includes Pack C, plus:
 76. `ALIGNMENT-ALERT-FATIGUE-REVIEW.md`
 77. `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md`
 78. `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
+79. `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
 
 Recommended only when:
 - decision volume is high,

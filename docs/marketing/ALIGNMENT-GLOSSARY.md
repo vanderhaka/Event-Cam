@@ -214,6 +214,9 @@ Prerequisite relationship where one control’s validity depends on the health, 
 ## Cadence Compliance
 The degree to which required review cycles occur on time with complete inputs and required owner participation.
 
+## Control Adoption Compliance
+The measured extent to which teams consistently execute required steps for active or newly changed controls.
+
 ---
 
 ## Incident & Escalation Terms
