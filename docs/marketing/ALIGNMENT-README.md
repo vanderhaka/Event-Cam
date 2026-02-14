@@ -126,6 +126,7 @@ It helps teams:
 - **Control escape-defect governance:** `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md`
 - **Control automation-reliability governance:** `ALIGNMENT-CONTROL-AUTOMATION-RELIABILITY-REVIEW.md`
 - **Control succession-readiness governance:** `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`
+- **Control ownership-churn governance:** `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -221,4 +222,5 @@ For full routing by scenario, use:
 - Keep escape defects at zero and close escape-driven remediations within target SLA.
 - Keep critical control automation success high and fallback paths tested/current.
 - Keep critical controls successor-ready with validated continuity coverage beyond primary owners.
+- Keep high-churn ownership events low and eliminate unplanned critical-control transitions.
 

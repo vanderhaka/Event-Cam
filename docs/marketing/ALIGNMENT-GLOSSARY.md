@@ -349,6 +349,9 @@ The degree to which automated controls execute consistently, recover quickly on 
 ## Control Succession Readiness
 The degree to which critical controls can transfer operation to trained successors without degradation.
 
+## Control Ownership Churn
+The rate and risk impact of repeated owner transitions on critical controls within a defined operating period.
+
 ---
 
 ## Incident & Escalation Terms

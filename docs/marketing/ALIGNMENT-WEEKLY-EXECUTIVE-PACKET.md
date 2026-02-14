@@ -293,6 +293,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Failed automated critical-control runs (count):
 - Critical controls with validated successor coverage (%):
 - Critical controls with single-owner dependency (count):
+- High-churn critical controls this quarter (count):
+- Unplanned critical-control owner transitions (count):
 
 ---
 

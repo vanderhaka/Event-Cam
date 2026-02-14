@@ -62,6 +62,7 @@
 | Escape defect count (critical controls) |  | 0 |  |
 | Critical-control automation success rate |  | ≥99% |  |
 | Critical-control successor coverage rate |  | 100% |  |
+| High-churn critical-control count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________
