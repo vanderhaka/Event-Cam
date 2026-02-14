@@ -24,6 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/dashboard" className="link">
                 Host dashboard
               </Link>
+              <Link href="/qr-test" className="link">
+                QR test
+              </Link>
               <Link href="/auth/login" className="link">
                 Login
               </Link>
