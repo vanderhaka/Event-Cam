@@ -226,6 +226,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DATA-SOURCE-CATALOG.md`**  
   Source-lineage catalog for KPI and decision data reliability, ownership, and dependency mapping.
 
+- **`ALIGNMENT-ESCALATION-PLAYCARDS.md`**  
+  Scenario-based rapid-response playcards for recurring high-impact alignment incidents.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -297,6 +300,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need consistent team behavior while running this system | `ALIGNMENT-WORKING-AGREEMENTS.md` |
 | We need to evaluate cross-functional impact before major changes | `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md` |
 | We need explicit source lineage and reliability for decision metrics | `ALIGNMENT-DATA-SOURCE-CATALOG.md` |
+| We need tactical step-by-step response guides during incidents | `ALIGNMENT-ESCALATION-PLAYCARDS.md` |
 
 ---
 
@@ -334,6 +338,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Working Agreements | Strategy Owner + Ops / PMO |
 | Change Impact Assessment | Strategy Owner + Ops / PMO |
 | Data Source Catalog | Growth Lead + Data/Analytics Owner |
+| Escalation Playcards | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -390,6 +395,7 @@ Includes Pack C, plus:
 37. `ALIGNMENT-WORKING-AGREEMENTS.md`
 38. `ALIGNMENT-CHANGE-IMPACT-ASSESSMENT.md`
 39. `ALIGNMENT-DATA-SOURCE-CATALOG.md`
+40. `ALIGNMENT-ESCALATION-PLAYCARDS.md`
 
 Recommended only when:
 - decision volume is high,

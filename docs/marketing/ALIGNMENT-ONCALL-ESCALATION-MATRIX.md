@@ -64,6 +64,9 @@ If incident is unresolved within stabilization target:
 
 For Sev-1, skip directly to steps 2 and 3.
 
+When available, execute the matching response runbook from:
+`ALIGNMENT-ESCALATION-PLAYCARDS.md`
+
 ---
 
 ## Incident Log Entry Template
@@ -116,6 +119,7 @@ Escalate if:
 
 Use with:
 - `ALIGNMENT-COMMAND-CENTER.md`
+- `ALIGNMENT-ESCALATION-PLAYCARDS.md`
 - `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
 - `ALIGNMENT-BLOCKERS-LOG.md`
 - `ALIGNMENT-CONTRADICTION-REGISTER.md`
