@@ -785,6 +785,27 @@ Success condition: this review should create **fewer contradictions, faster deci
 
 ---
 
+## Execution Minimality Guardrail (Preventing Process Overload)
+
+A common failure mode after adopting a robust alignment system is over-activation: too many controls, too fast, with no capacity guardrails.
+
+Use this minimum-safe operating rule:
+- activate only controls needed for current risk,
+- prove each control changes decisions or outcomes,
+- remove/merge controls that do not produce measurable value.
+
+| Overload Risk | Primary Guardrail | Weekly Proof Signal |
+|---|---|---|
+| Too many active artifacts causing stale docs | `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` | Active artifacts within pack guardrail and freshness SLA |
+| Process heavier than current business context | `ALIGNMENT-OPERATING-MODES.md` | Mode rationale reviewed and still valid weekly |
+| Owner burnout from governance spread | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` | No owner in high-risk load band without mitigation |
+| Decision queue congestion before formal review | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` | P0 intake triaged within 24h; low overdue triage ratio |
+
+### Practical rule
+If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
