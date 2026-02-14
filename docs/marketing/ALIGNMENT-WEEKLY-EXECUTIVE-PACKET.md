@@ -85,6 +85,8 @@ If “No” to path integrity, include immediate remediation owner and date.
 | P1 on-time close rate |  |  |  |
 | Open overdue decisions |  |  |  |
 | Median decision cycle time |  |  |  |
+| New decision intake requests (week) |  |  |  |
+| Intake triage SLA misses |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

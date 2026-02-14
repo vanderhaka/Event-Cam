@@ -127,6 +127,9 @@ Structured pre-approval analysis that assumes decision failure and identifies li
 ## Owner Load Risk
 Workload concentration level (Low/Medium/High) for a specific owner based on active critical alignment responsibilities.
 
+## Decision Intake Queue
+Canonical front-door list where new decision requests are logged, triaged, and routed before scheduling and closure.
+
 ---
 
 ## Incident & Escalation Terms

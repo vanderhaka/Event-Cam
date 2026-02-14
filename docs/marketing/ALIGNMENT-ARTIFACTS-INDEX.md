@@ -256,6 +256,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-PREMORTEM.md`**  
   Structured pre-approval failure-mode analysis to reduce high-impact decision reversals.
 
+- **`ALIGNMENT-DECISION-INTAKE-QUEUE.md`**  
+  Front-door queue and triage workflow for capturing, prioritizing, and routing new decision requests.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -337,6 +340,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to make unresolved decision debt visible and payable | `ALIGNMENT-DECISION-DEBT-REGISTER.md` |
 | We need to prevent owner overload from degrading execution quality | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` |
 | We need to stress-test high-impact decisions before approval | `ALIGNMENT-DECISION-PREMORTEM.md` |
+| We need one front-door queue for triaging new decision requests | `ALIGNMENT-DECISION-INTAKE-QUEUE.md` |
 
 ---
 
@@ -384,6 +388,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Debt Register | Strategy Owner + Ops / PMO |
 | Owner Load Management | Ops / PMO + Leadership Team |
 | Decision Premortem | Strategy Owner + Cross-functional Decision Team |
+| Decision Intake Queue | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -450,6 +455,7 @@ Includes Pack C, plus:
 47. `ALIGNMENT-DECISION-DEBT-REGISTER.md`
 48. `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`
 49. `ALIGNMENT-DECISION-PREMORTEM.md`
+50. `ALIGNMENT-DECISION-INTAKE-QUEUE.md`
 
 Recommended only when:
 - decision volume is high,
