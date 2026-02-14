@@ -412,6 +412,9 @@ The elapsed time between intervention launch and the first validated measurable 
 ## Control Mitigation Coverage
 The degree to which exposed control risks are linked to active, owned, and current mitigation plans.
 
+## Control Failure Impact Cost
+The estimated business impact (time, revenue, trust, or execution drag) attributable to a control failure event.
+
 ---
 
 ## Incident & Escalation Terms

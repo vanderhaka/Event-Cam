@@ -180,6 +180,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 95. `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` (ensures transferred risks are enforceable, monitored, and not masking residual internal exposure)
 96. `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` (ensures critical interventions produce measurable effect within expected lag windows)
 97. `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` (ensures every exposed critical risk is linked to an active, owned, and current mitigation plan)
+98. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` (ensures control failure remediation is prioritized by quantified business-impact cost, not volume alone)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

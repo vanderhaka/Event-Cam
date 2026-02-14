@@ -335,6 +335,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - On-time intervention effect realization rate (%):
 - Exposed risks lacking mitigation coverage (count):
 - Mitigation coverage rate for exposed critical risks (%):
+- High-impact control failures (count):
+- Cost-weighted closure rate for high-impact failures (%):
 
 ---
 

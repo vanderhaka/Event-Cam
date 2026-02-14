@@ -541,6 +541,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`**  
   Review ensuring all exposed control risks are covered by active mitigation plans.
 
+- **`ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`**  
+  Review quantifying business impact cost from control failures to prioritize remediation by exposure.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -717,6 +720,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need transferred control risks validated so external safeguards don’t create false security | `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` |
 | We need intervention impact timing measured so delayed/no-effect actions are corrected quickly | `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` |
 | We need exposed control risks consistently mapped to active mitigation plans | `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` |
+| We need control failures prioritized by real business impact cost instead of incident count alone | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` |
 
 ---
 
@@ -859,6 +863,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Risk Transfer Review | Ops / PMO + Risk/Control Owners + Vendor/Partner Owners |
 | Control Intervention Effect Lag Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Mitigation Coverage Review | Ops / PMO + Control Owners + Functional Leads |
+| Control Failure Impact Cost Review | Ops / PMO + Finance Partner + Control Owners |
 
 ---
 
@@ -1020,6 +1025,7 @@ Includes Pack C, plus:
 142. `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`
 143. `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`
 144. `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
+145. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
