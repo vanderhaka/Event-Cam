@@ -145,6 +145,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-CONTRADICTION-REGISTER.md`**  
   Canonical log for identifying, resolving, and auditing cross-document contradictions.
 
+- **`ALIGNMENT-TRACEABILITY-MATRIX.md`**  
+  Decision-to-outcome mapping matrix linking closed decisions to execution and KPI movement.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -196,6 +199,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need explicit time-to-decision rules and escalation timing | `ALIGNMENT-DECISION-SLA.md` |
 | We need to stop cross-doc messaging drift and contradiction | `ALIGNMENT-NARRATIVE-GUARDRAILS.md` |
 | We need to track and close conflicting statements across docs | `ALIGNMENT-CONTRADICTION-REGISTER.md` |
+| We need to prove decisions changed execution and KPI outcomes | `ALIGNMENT-TRACEABILITY-MATRIX.md` |
 
 ---
 
@@ -213,6 +217,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Decision SLA | Strategy Owner + Ops / PMO |
 | Narrative Guardrails | Marketing Lead + Strategy Owner |
 | Contradiction Register | Strategy Owner + Documentation Owner |
+| Traceability Matrix | Ops / PMO + Growth Lead |
 
 ---
 
@@ -246,6 +251,7 @@ Includes Pack B, plus:
 17. `ALIGNMENT-DECISION-SLA.md`
 18. `ALIGNMENT-NARRATIVE-GUARDRAILS.md`
 19. `ALIGNMENT-CONTRADICTION-REGISTER.md`
+20. `ALIGNMENT-TRACEABILITY-MATRIX.md`
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
