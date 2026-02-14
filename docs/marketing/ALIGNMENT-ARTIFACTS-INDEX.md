@@ -70,6 +70,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-READINESS-ASSESSMENT.md`**  
   Periodic self-assessment to gauge whether alignment is execution-ready.
 
+- **`ALIGNMENT-KICKOFF-COMMS-TEMPLATE.md`**  
+  Internal communication template for announcing aligned path and operating cadence.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -96,6 +99,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need role-specific week-1 action clarity | `ALIGNMENT-ROLE-CHECKLISTS.md` |
 | We need an audit trail of alignment-system changes | `ALIGNMENT-CHANGELOG.md` |
 | We need a periodic readiness self-assessment | `ALIGNMENT-READINESS-ASSESSMENT.md` |
+| We need to communicate aligned path to the team | `ALIGNMENT-KICKOFF-COMMS-TEMPLATE.md` |
 
 ---
 
