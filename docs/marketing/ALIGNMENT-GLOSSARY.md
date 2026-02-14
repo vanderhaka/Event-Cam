@@ -424,6 +424,9 @@ The approved upper bound for control-process complexity, calibrated to team stag
 ## Control Execution Friction
 The measurable delay or handoff drag introduced by control steps in critical operating workflows.
 
+## Control Actionability
+The degree to which control outputs convert directly into clear, owned, time-bound actions.
+
 ---
 
 ## Incident & Escalation Terms

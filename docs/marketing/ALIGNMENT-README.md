@@ -151,6 +151,7 @@ It helps teams:
 - **Control efficiency governance:** `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
 - **Control complexity-budget governance:** `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`
 - **Control execution-friction governance:** `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`
+- **Control actionability governance:** `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -271,4 +272,5 @@ For full routing by scenario, use:
 - Keep high-burden low-return controls redesigned, automated, or sunset-candidated on schedule.
 - Keep critical control complexity within approved budget and simplify over-budget controls quickly.
 - Keep control-induced execution delay low by de-bottlenecking friction-high critical controls.
+- Keep control outputs action-ready with clear owners, due dates, and fast signal-to-action conversion.
 

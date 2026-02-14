@@ -184,6 +184,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 99. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` (ensures control burden remains proportional to measured value so governance drag does not accumulate)
 100. `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` (ensures control process complexity stays within sustainable budget and is simplified when over threshold)
 101. `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` (ensures critical controls are de-bottlenecked when they introduce avoidable execution delay)
+102. `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` (ensures control signals translate into clear, owned, and time-bound actions)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

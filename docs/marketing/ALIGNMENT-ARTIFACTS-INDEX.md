@@ -553,6 +553,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`**  
   Review identifying control bottlenecks that introduce avoidable execution delays.
 
+- **`ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md`**  
+  Review verifying control outputs always translate into clear, owned, executable actions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -733,6 +736,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent governance drag from controls that consume high effort with low measurable impact | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` |
 | We need to keep control process complexity within a sustainable budget as the system scales | `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` |
 | We need to reduce control-induced execution delay without weakening safeguards | `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` |
+| We need control signals to produce clear, owned next steps instead of ambiguous follow-up | `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` |
 
 ---
 
@@ -879,6 +883,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Efficiency Review | Ops / PMO + Control Owners + Finance/Operations Partner |
 | Control Complexity Budget Review | Ops / PMO + Control Owners + Process/Operations Partner |
 | Control Execution Friction Review | Ops / PMO + Control Owners + Functional Execution Leads |
+| Control Actionability Review | Ops / PMO + Control Owners + Functional Leads |
 
 ---
 
@@ -1044,6 +1049,7 @@ Includes Pack C, plus:
 146. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
 147. `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md`
 148. `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md`
+149. `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

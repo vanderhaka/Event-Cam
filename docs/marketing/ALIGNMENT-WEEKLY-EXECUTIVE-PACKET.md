@@ -343,6 +343,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Complexity simplification actions on-time rate (%):
 - Friction-high critical controls (count):
 - Median control-induced delay (hrs):
+- Non-actionable control outputs (count):
+- Median signal-to-action lead time (hrs):
 
 ---
 
