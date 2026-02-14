@@ -111,6 +111,7 @@ Primary objective:
 2. Do not run mixed modes without explicit owner approval.
 3. Any mode change must be logged in `ALIGNMENT-CHANGELOG.md`.
 4. Reconfirm ownership and cadence after every mode switch.
+5. Record every transition in `ALIGNMENT-MODE-TRANSITION-LOG.md`.
 
 ---
 

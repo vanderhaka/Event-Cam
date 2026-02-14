@@ -235,6 +235,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-WEEKLY-DATA-CONTRACT.md`**  
   Required field-level data readiness contract that gates weekly reviews and high-impact decisions.
 
+- **`ALIGNMENT-MODE-TRANSITION-LOG.md`**  
+  Audit log of operating-mode changes with triggers, verification windows, and rollback criteria.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -309,6 +312,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need tactical step-by-step response guides during incidents | `ALIGNMENT-ESCALATION-PLAYCARDS.md` |
 | We need structured post-incident learning and prevention capture | `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md` |
 | We need explicit weekly data readiness gates before decisions | `ALIGNMENT-WEEKLY-DATA-CONTRACT.md` |
+| We need an auditable history of mode changes and outcomes | `ALIGNMENT-MODE-TRANSITION-LOG.md` |
 
 ---
 
@@ -349,6 +353,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Escalation Playcards | Ops / PMO + Strategy Owner |
 | Incident Hotwash Template | Ops / PMO + Strategy Owner |
 | Weekly Data Contract | Ops / PMO + Growth/Data Owner |
+| Mode Transition Log | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -408,6 +413,7 @@ Includes Pack C, plus:
 40. `ALIGNMENT-ESCALATION-PLAYCARDS.md`
 41. `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`
 42. `ALIGNMENT-WEEKLY-DATA-CONTRACT.md`
+43. `ALIGNMENT-MODE-TRANSITION-LOG.md`
 
 Recommended only when:
 - decision volume is high,

@@ -143,6 +143,9 @@ When adding or freezing artifacts:
 
 No active-set change is complete until all five steps are done.
 
+If the change includes an operating-mode switch, also update:
+`ALIGNMENT-MODE-TRANSITION-LOG.md`
+
 ---
 
 ## Weekly Review Checklist
