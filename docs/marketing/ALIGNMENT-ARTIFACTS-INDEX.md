@@ -247,6 +247,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`**  
   Failure-mode coverage matrix verifying preventive, corrective, and escalation controls are all mapped and owned.
 
+- **`ALIGNMENT-DECISION-DEBT-REGISTER.md`**  
+  Register for tracking and paying down overdue, low-quality, or repeatedly reopened decision debt.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -325,6 +328,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need controlled triage for unexpected KPI behavior | `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md` |
 | We need explicit tie-break logic when priorities compete | `ALIGNMENT-PRIORITY-RULES.md` |
 | We need to spot uncovered governance failure modes quickly | `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md` |
+| We need to make unresolved decision debt visible and payable | `ALIGNMENT-DECISION-DEBT-REGISTER.md` |
 
 ---
 
@@ -369,6 +373,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Metric Anomaly Protocol | Growth/Data Owner + Ops / PMO |
 | Priority Rules | Ops / PMO + Strategy Owner |
 | Control Coverage Matrix | Ops / PMO + Strategy Owner |
+| Decision Debt Register | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -432,6 +437,7 @@ Includes Pack C, plus:
 44. `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`
 45. `ALIGNMENT-PRIORITY-RULES.md`
 46. `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`
+47. `ALIGNMENT-DECISION-DEBT-REGISTER.md`
 
 Recommended only when:
 - decision volume is high,
