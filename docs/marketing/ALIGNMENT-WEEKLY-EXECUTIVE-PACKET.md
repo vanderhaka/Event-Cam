@@ -91,6 +91,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Overdue decision outcome reviews |  |  |  |
 | Meeting effectiveness status (G/Y/R) |  |  |  |
 | Active P0/P1 decisions with confidence <70 |  |  |  |
+| Decision calibration gap (last monthly run) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

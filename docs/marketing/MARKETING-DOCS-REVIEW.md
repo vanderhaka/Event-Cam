@@ -807,6 +807,7 @@ Use this minimum-safe operating rule:
 | Active controls multiply but are not used in practice | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` | Active-artifact utilization stays above target with low stale count |
 | Controls removed too quickly and risk rebounds | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` | No post-sunset risk spike during verification window |
 | High-impact decisions approved with weak conviction | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` | P0/P1 confidence distribution improves and low-band decisions decline |
+| Confidence model drifts away from real outcomes | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` | Calibration gap remains near neutral and high-band failure rate stays low |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

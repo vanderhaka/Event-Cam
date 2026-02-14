@@ -280,6 +280,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`**  
   Scoring framework for quantifying decision confidence before approval and after outcome validation.
 
+- **`ALIGNMENT-DECISION-CALIBRATION-REPORT.md`**  
+  Monthly accuracy check comparing confidence scores to real outcomes to detect optimism/pessimism bias.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -369,6 +372,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prove active artifacts are actually used weekly | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` |
 | We need a safe way to retire controls when risk stays low | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` |
 | We need objective confidence scoring for high-impact decisions | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` |
+| We need to verify our confidence scoring is accurate over time | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` |
 
 ---
 
@@ -424,6 +428,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Artifact Usage Telemetry | Ops / PMO + Documentation Owner |
 | Control Sunset Criteria | Strategy Owner + Ops / PMO |
 | Decision Confidence Index | Strategy Owner + Growth Lead |
+| Decision Calibration Report | Strategy Owner + Analytics / Growth Lead |
 
 ---
 
@@ -498,6 +503,7 @@ Includes Pack C, plus:
 55. `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
 56. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 57. `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
+58. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
 
 Recommended only when:
 - decision volume is high,

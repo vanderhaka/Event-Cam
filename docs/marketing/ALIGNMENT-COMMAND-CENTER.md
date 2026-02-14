@@ -95,6 +95,7 @@ Use this trigger table before meetings:
 | Active-artifact utilization <70% for 2 weeks | Reduce active set and trigger pruning/merge pass |
 | Control retirement proposed without sunset packet | Block retirement and escalate for evidence review |
 | 2+ active P0 decisions below confidence score 70 | Trigger conditional-approval review and mitigation plan |
+| Calibration gap worsens below -0.15 for 2 months | Tighten confidence scoring policy and evidence requirements |
 
 ---
 
@@ -105,7 +106,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

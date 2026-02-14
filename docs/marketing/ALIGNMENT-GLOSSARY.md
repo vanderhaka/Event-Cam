@@ -151,6 +151,9 @@ Formal process for merging or retiring an active governance control only after r
 ## Decision Confidence Score
 Composite 0–100 score indicating how strongly a decision is supported across evidence strength, causal clarity, execution readiness, and risk containment.
 
+## Calibration Gap
+Difference between expected decision outcome (based on confidence band) and observed outcome, used to detect scoring bias over time.
+
 ---
 
 ## Incident & Escalation Terms

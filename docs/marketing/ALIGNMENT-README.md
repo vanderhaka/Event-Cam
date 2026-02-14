@@ -60,6 +60,7 @@ It helps teams:
 - **Artifact usage telemetry:** `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
 - **Control sunset governance:** `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 - **Decision confidence scoring:** `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
+- **Decision confidence calibration:** `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -89,4 +90,5 @@ For full routing by scenario, use:
 - Keep active-artifact utilization healthy and prune low-use controls quickly.
 - Retire controls only through explicit sunset criteria and verification windows.
 - Keep active P0/P1 decisions above minimum confidence band or on conditional mitigation plans.
+- Run monthly calibration to ensure confidence scores match observed outcomes.
 

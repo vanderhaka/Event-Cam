@@ -43,6 +43,8 @@
 | Decision closure rate |  | ≥90% on-time |  |
 | Documentation sync SLA |  | ≥90% within 48h |  |
 | Alignment score average (/20) |  | ≥17 |  |
+| Mean calibration gap |  | -0.10 to +0.10 |  |
+| High-band decision failure rate |  | <15% |  |
 
 Key governance issue this month:
 ______________________________________
