@@ -45,6 +45,7 @@
 - Confirm mitigation owner accountability.
 - Escalate overdue high/critical items.
 - Confirm contradiction backlog trend (new vs resolved this week).
+- Check control-coverage gaps and assign owner for any uncovered failure mode.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.

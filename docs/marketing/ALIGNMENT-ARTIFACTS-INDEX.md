@@ -244,6 +244,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-PRIORITY-RULES.md`**  
   Capacity-arbitration rules for force-ranking competing decisions, blockers, and initiatives.
 
+- **`ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`**  
+  Failure-mode coverage matrix verifying preventive, corrective, and escalation controls are all mapped and owned.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -321,6 +324,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need an auditable history of mode changes and outcomes | `ALIGNMENT-MODE-TRANSITION-LOG.md` |
 | We need controlled triage for unexpected KPI behavior | `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md` |
 | We need explicit tie-break logic when priorities compete | `ALIGNMENT-PRIORITY-RULES.md` |
+| We need to spot uncovered governance failure modes quickly | `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md` |
 
 ---
 
@@ -364,6 +368,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Mode Transition Log | Ops / PMO + Strategy Owner |
 | Metric Anomaly Protocol | Growth/Data Owner + Ops / PMO |
 | Priority Rules | Ops / PMO + Strategy Owner |
+| Control Coverage Matrix | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -426,6 +431,7 @@ Includes Pack C, plus:
 43. `ALIGNMENT-MODE-TRANSITION-LOG.md`
 44. `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`
 45. `ALIGNMENT-PRIORITY-RULES.md`
+46. `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`
 
 Recommended only when:
 - decision volume is high,
