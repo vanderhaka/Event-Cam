@@ -415,6 +415,9 @@ The degree to which exposed control risks are linked to active, owned, and curre
 ## Control Failure Impact Cost
 The estimated business impact (time, revenue, trust, or execution drag) attributable to a control failure event.
 
+## Control Efficiency
+The value-to-cost performance of a control, balancing measurable risk reduction against operating effort.
+
 ---
 
 ## Incident & Escalation Terms

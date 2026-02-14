@@ -84,6 +84,7 @@
 | On-time intervention effect realization rate |  | ≥90% |  |
 | Exposed-risk mitigation coverage rate |  | 100% |  |
 | High-impact control failure count |  | 0 |  |
+| High-burden low-return control count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

@@ -544,6 +544,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`**  
   Review quantifying business impact cost from control failures to prioritize remediation by exposure.
 
+- **`ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`**  
+  Review verifying control value-to-cost performance and reducing high-burden low-return controls.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -721,6 +724,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need intervention impact timing measured so delayed/no-effect actions are corrected quickly | `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` |
 | We need exposed control risks consistently mapped to active mitigation plans | `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` |
 | We need control failures prioritized by real business impact cost instead of incident count alone | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` |
+| We need to prevent governance drag from controls that consume high effort with low measurable impact | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` |
 
 ---
 
@@ -864,6 +868,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Intervention Effect Lag Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Mitigation Coverage Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Failure Impact Cost Review | Ops / PMO + Finance Partner + Control Owners |
+| Control Efficiency Review | Ops / PMO + Control Owners + Finance/Operations Partner |
 
 ---
 
@@ -1026,6 +1031,7 @@ Includes Pack C, plus:
 143. `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`
 144. `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
 145. `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
+146. `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

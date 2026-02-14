@@ -337,6 +337,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Mitigation coverage rate for exposed critical risks (%):
 - High-impact control failures (count):
 - Cost-weighted closure rate for high-impact failures (%):
+- High-burden low-return controls (count):
+- Median control value-to-cost ratio:
 
 ---
 

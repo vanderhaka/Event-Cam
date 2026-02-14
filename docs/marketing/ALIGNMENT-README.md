@@ -148,6 +148,7 @@ It helps teams:
 - **Control intervention effect-lag governance:** `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`
 - **Control mitigation-coverage governance:** `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md`
 - **Control failure-impact cost governance:** `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md`
+- **Control efficiency governance:** `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -265,4 +266,5 @@ For full routing by scenario, use:
 - Keep critical interventions measurable with improving time-to-effect and minimal delayed/no-effect cases.
 - Keep all exposed critical risks covered by active, owned, and current mitigation plans.
 - Keep high-impact control failures prioritized by quantified business cost and closed on time.
+- Keep high-burden low-return controls redesigned, automated, or sunset-candidated on schedule.
 

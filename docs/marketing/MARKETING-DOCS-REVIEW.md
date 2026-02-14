@@ -895,6 +895,7 @@ Use this minimum-safe operating rule:
 | Interventions are launched but take too long to show impact, masking ineffective responses behind activity | `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` | Delayed/no-effect intervention count trends to zero and on-time effect realization remains high |
 | Exposed risks remain active without linked mitigation plans, leaving known issues unmanaged in execution | `ALIGNMENT-CONTROL-MITIGATION-COVERAGE-REVIEW.md` | Exposed-risk mitigation coverage remains high and uncovered exposed-risk count trends to zero |
 | High-impact control failures are triaged by count rather than cost, delaying the most material fixes | `ALIGNMENT-CONTROL-FAILURE-IMPACT-COST-REVIEW.md` | High-impact failure count declines and cost-weighted closure rate remains high |
+| Controls remain active despite poor value-to-cost performance, creating governance drag and slowing execution | `ALIGNMENT-CONTROL-EFFICIENCY-REVIEW.md` | High-burden low-return control count trends to zero and value-to-cost ratio improves |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
