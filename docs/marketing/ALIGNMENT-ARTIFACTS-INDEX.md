@@ -266,10 +266,29 @@ Includes Pack B, plus:
 17. `ALIGNMENT-DECISION-SLA.md`
 18. `ALIGNMENT-NARRATIVE-GUARDRAILS.md`
 19. `ALIGNMENT-CONTRADICTION-REGISTER.md`
+
+### Pack D — Advanced Diagnostics & Control (high-complexity operations)
+Includes Pack C, plus:
 20. `ALIGNMENT-TRACEABILITY-MATRIX.md`
 21. `ALIGNMENT-ASSUMPTION-REGISTRY.md`
 22. `ALIGNMENT-DEPENDENCY-TRACKER.md`
 23. `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
+
+Recommended only when:
+- decision volume is high,
+- multiple teams own execution simultaneously,
+- repeated KPI surprises require deeper causal tracing.
+
+### Pack Activation Guardrails
+
+| Pack | Recommended Max Active Artifacts (weekly) | Typical Team Stage |
+|---|---:|---|
+| Pack A | 5–7 | Early focus / founder-led execution |
+| Pack B | 8–12 | Active growth and weekly operations |
+| Pack C | 12–18 | Scaling with governance requirements |
+| Pack D | 18+ | Multi-team complexity and high decision churn |
+
+If your team cannot keep artifacts updated within 48 hours, drop down one pack immediately.
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
