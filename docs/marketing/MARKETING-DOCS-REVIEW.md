@@ -829,6 +829,7 @@ Use this minimum-safe operating rule:
 | Downstream controls run without valid upstream prerequisites, creating false compliance | `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` | Critical dependency breaks are resolved quickly and provisional outputs decline |
 | Required weekly/monthly reviews are skipped, causing silent governance drift | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` | On-time review rate stays high and missed review count trends to zero |
 | Newly introduced controls exist on paper but are inconsistently executed | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` | Adoption compliance on active new controls reaches and sustains target levels |
+| Active controls remain in place without objective proof of value | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` | Low-scoring controls are optimized/merged/retired and average score trends upward |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

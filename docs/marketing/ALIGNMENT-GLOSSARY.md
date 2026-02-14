@@ -217,6 +217,9 @@ The degree to which required review cycles occur on time with complete inputs an
 ## Control Adoption Compliance
 The measured extent to which teams consistently execute required steps for active or newly changed controls.
 
+## Control Effectiveness Score
+Composite per-control score evaluating adoption, outcome impact, response quality, evidence integrity, and cost efficiency.
+
 ---
 
 ## Incident & Escalation Terms

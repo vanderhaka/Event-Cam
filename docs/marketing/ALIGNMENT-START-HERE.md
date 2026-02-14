@@ -115,6 +115,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 30. `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` (validates prerequisite order across active controls)
 31. `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` (ensures required review loops run on schedule)
 32. `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` (checks whether new controls are followed in practice)
+33. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` (scores control value before keep/merge/retire decisions)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

@@ -346,6 +346,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`**  
   Adoption/compliance tracker for newly introduced or changed controls in active operations.
 
+- **`ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`**  
+  Monthly per-control scoring framework for keep/optimize/merge/retire decisions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -457,6 +460,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent downstream controls from running without upstream prerequisites | `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md` |
 | We need proof that required review cycles are not being skipped | `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md` |
 | We need to verify teams are actually following newly launched controls | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` |
+| We need objective, per-control value scoring before portfolio decisions | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` |
 
 ---
 
@@ -534,6 +538,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Dependency Map | Ops / PMO + Strategy Owner + Control Owners |
 | Review Cadence Compliance | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Adoption Compliance | Ops / PMO + Strategy Owner + Functional Leads |
+| Control Effectiveness Scorecard | Strategy Owner + Ops / PMO + Functional Leads |
 
 ---
 
@@ -630,6 +635,7 @@ Includes Pack C, plus:
 77. `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md`
 78. `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
 79. `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
+80. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
 
 Recommended only when:
 - decision volume is high,

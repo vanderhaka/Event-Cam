@@ -113,6 +113,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Broken critical control dependencies (D1 count) |  |  |  |
 | Missed required reviews this cycle (count) |  |  |  |
 | Control adoption non-compliance findings (count) |  |  |  |
+| Controls scoring <70 effectiveness (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -205,6 +206,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Dependency-at-risk controls (count):
 - On-time review rate (cadence compliance):
 - Control adoption rate (new/changed controls):
+- Control effectiveness average score:
 
 ---
 

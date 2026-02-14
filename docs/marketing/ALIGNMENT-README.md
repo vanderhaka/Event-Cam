@@ -82,6 +82,7 @@ It helps teams:
 - **Control sequencing governance:** `ALIGNMENT-CONTROL-DEPENDENCY-MAP.md`
 - **Review discipline governance:** `ALIGNMENT-REVIEW-CADENCE-COMPLIANCE.md`
 - **Control adoption governance:** `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
+- **Control value governance:** `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -133,4 +134,5 @@ For full routing by scenario, use:
 - Keep control prerequisites visible so downstream controls run only when valid.
 - Keep weekly/monthly/quarterly review cadence on schedule with complete inputs.
 - Keep newly launched controls above adoption target or intervene quickly.
+- Keep each active control above minimum effectiveness score or route portfolio action.
 
