@@ -43,6 +43,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-METRIC-DEFINITIONS.md`**  
   Canonical KPI definitions, formulas, cadence, and ownership.
 
+- **`ALIGNMENT-DASHBOARD-TEMPLATE.md`**  
+  One-page weekly operating snapshot for leadership and execution teams.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -60,6 +63,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to quantify alignment health weekly | `ALIGNMENT-SCORECARD.md` |
 | We need role-level ownership clarity | `ALIGNMENT-RACI.md` |
 | We need consistent KPI language and formulas | `ALIGNMENT-METRIC-DEFINITIONS.md` |
+| We need one weekly summary view for leadership | `ALIGNMENT-DASHBOARD-TEMPLATE.md` |
 
 ---
 
@@ -72,6 +76,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Decision Calendar + Decisions Log | Strategy Owner + Ops |
 | Path Worksheet | Leadership Team |
 | Meeting Cadence + Scorecard | Ops / PMO + Growth Lead |
+| Metric Definitions + Dashboard | Growth Lead + Ops / PMO |
 
 ---
 
