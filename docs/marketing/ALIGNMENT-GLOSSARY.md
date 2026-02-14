@@ -379,6 +379,9 @@ The gap between documented control procedures and the way controls are actually 
 ## Control Recovery Evidence Quality
 The degree to which recovery claims are supported by complete, fresh, and auditable evidence before closure.
 
+## Control Decision-Gate Integrity
+The degree to which required decision gates are enforced with valid evidence before high-impact approvals.
+
 ---
 
 ## Incident & Escalation Terms

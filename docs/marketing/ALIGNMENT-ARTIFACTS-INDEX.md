@@ -508,6 +508,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md`**  
   Review verifying that control recoveries are supported by high-quality, auditable evidence.
 
+- **`ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md`**  
+  Review ensuring required control decision gates are enforced and not bypassed.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -673,6 +676,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need critical alerts triaged accurately on first pass to avoid response delays | `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md` |
 | We need control documentation to stay synchronized with actual operating behavior | `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md` |
 | We need to prevent false recovery closure caused by weak or stale recovery evidence | `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md` |
+| We need required decision gates enforced consistently on high-impact decisions | `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md` |
 
 ---
 
@@ -804,6 +808,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Alert Triage Quality Review | Ops / PMO + On-Call Lead + Control Owners |
 | Control Documentation Drift Review | Ops / PMO + Control Owners + Documentation Owners |
 | Control Recovery Evidence Quality Review | Ops / PMO + Control Owners + Data/Analytics Owners |
+| Control Decision-Gate Integrity Review | Ops / PMO + Strategy Owner + Decision Review Leads |
 
 ---
 
@@ -954,6 +959,7 @@ Includes Pack C, plus:
 131. `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md`
 132. `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md`
 133. `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md`
+134. `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

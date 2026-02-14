@@ -883,6 +883,7 @@ Use this minimum-safe operating rule:
 | Critical alerts are triaged inaccurately, causing response delays despite signal availability | `ALIGNMENT-CONTROL-ALERT-TRIAGE-QUALITY-REVIEW.md` | First-triage accuracy remains high and critical alert misroutes trend to zero |
 | Teams follow outdated control instructions because documentation drifted away from live operating reality | `ALIGNMENT-CONTROL-DOCUMENTATION-DRIFT-REVIEW.md` | Documentation sync rate remains high and material drift count trends to zero |
 | Recovery is declared without high-quality evidence, creating false closure and repeat failure risk | `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md` | Recovery evidence pass rate remains high and unverified critical recoveries trend to zero |
+| High-impact decisions bypass required control gates, creating invisible governance failures | `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md` | Decision-gate enforcement remains high and gate-bypass count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
