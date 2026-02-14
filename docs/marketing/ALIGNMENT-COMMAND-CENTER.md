@@ -60,6 +60,7 @@
 - Review decision-latency decomposition for repeated stage bottlenecks.
 - Review dependency-resolution SLA status for overdue cluster growth.
 - Review data-source reliability bands for degraded source concentration.
+- Review metric-definition consistency status for formula/threshold drift.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -128,6 +129,7 @@
 - Check dominant decision bottleneck stages and assign stage-specific fixes.
 - Check overdue dependency chains and assign expedited recovery owners.
 - Check Red/Yellow source exposure and assign reliability recovery owners.
+- Check material metric-definition drift and assign canonical correction owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -211,6 +213,7 @@ Use this trigger table before meetings:
 | Same decision stage bottleneck persists across cycles | Trigger stage-level latency intervention plan |
 | Dependency SLA misses cluster across same owner pair | Trigger dependency-SLA recovery escalation |
 | Red-band source feeds active P0/P1 decision | Trigger immediate decision gating and source-recovery escalation |
+| Material metric formula/threshold drift affects active decisions | Trigger metric-consistency correction and decision note update |
 
 ---
 
@@ -221,7 +224,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

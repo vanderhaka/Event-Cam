@@ -849,6 +849,7 @@ Use this minimum-safe operating rule:
 | Decision-cycle delays are visible only at total-SLA level, hiding stage-specific bottlenecks | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` | Dominant decision-stage bottlenecks are reduced and total cycle-time reliability improves |
 | Dependency chains miss SLA silently and then cascade into multi-team delays | `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` | Overdue dependency clusters shrink and on-time dependency resolution improves |
 | Data source degradation silently reduces decision trust before downstream metrics reveal impact | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` | Critical source reliability remains high and exposed P0/P1 decision risk declines |
+| Metric formulas and thresholds drift across artifacts, creating conflicting performance narratives | `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md` | Canonical metric-match rate stays high and material drift count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

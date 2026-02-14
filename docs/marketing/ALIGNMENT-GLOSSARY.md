@@ -277,6 +277,9 @@ Time-bound expectation for resolving a dependency before it blocks decisions, co
 ## Data Source Reliability
 The measured trustworthiness of a source based on freshness, completeness, consistency, and stability for decision-grade use.
 
+## Metric Definition Drift
+Mismatch in a metric’s formula, threshold, or interpretation across artifacts that can produce conflicting decisions or narratives.
+
 ---
 
 ## Incident & Escalation Terms

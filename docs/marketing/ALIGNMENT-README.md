@@ -102,6 +102,7 @@ It helps teams:
 - **Decision flow-speed governance:** `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`
 - **Dependency-SLA governance:** `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`
 - **Data reliability governance:** `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md`
+- **Metric consistency governance:** `ALIGNMENT-METRIC-DEFINITION-CONSISTENCY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -173,4 +174,5 @@ For full routing by scenario, use:
 - Keep decision-stage bottlenecks visible and shrinking cycle-over-cycle.
 - Keep high-priority dependencies within SLA to prevent cascade delays.
 - Keep critical data sources in reliable bands before high-confidence decisions proceed.
+- Keep metric formulas and thresholds consistent across all active operating artifacts.
 
