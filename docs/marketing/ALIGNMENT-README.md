@@ -117,6 +117,7 @@ It helps teams:
 - **Control failover resilience governance:** `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`
 - **Dependency-containment governance:** `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md`
 - **Control test-coverage governance:** `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`
+- **Control observability governance:** `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -203,4 +204,5 @@ For full routing by scenario, use:
 - Keep CC-1 failover readiness at target and remediate not-ready controls immediately.
 - Keep high-blast dependencies mapped, mitigated, and containment-tested.
 - Keep CC-1 controls fully test-covered across runbook, drill, and failover layers.
+- Keep CC-1 controls fully observable with current signal, alert, and diagnostic coverage.
 

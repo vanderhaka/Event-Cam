@@ -150,6 +150,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 65. `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md` (ensures critical controls can recover through validated failover paths when primary paths fail)
 66. `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md` (ensures single dependency failures are contained before they cascade across critical workflows)
 67. `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` (ensures critical controls are fully validated across runbook, drill, and failover test layers)
+68. `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md` (ensures critical controls have complete signal, alert, and diagnostic observability coverage)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

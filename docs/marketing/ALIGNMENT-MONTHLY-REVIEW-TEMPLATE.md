@@ -53,6 +53,7 @@
 | Critical-control failover readiness rate |  | ≥95% |  |
 | Critical dependency containment readiness rate |  | ≥95% |  |
 | Critical-control full test-coverage rate |  | 100% |  |
+| Critical-control observability coverage rate |  | 100% |  |
 
 Key governance issue this month:
 ______________________________________

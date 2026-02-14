@@ -451,6 +451,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`**  
   Coverage review ensuring critical controls are validated across runbook, drill, and failover layers.
 
+- **`ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`**  
+  Coverage review ensuring critical controls have complete signal, alert, and diagnostic observability.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -597,6 +600,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need critical controls to stay operational when primary owners/systems fail | `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md` |
 | We need to contain cross-workflow fallout from single dependency failures | `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md` |
 | We need one view of whether critical controls are fully tested across all required validation layers | `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md` |
+| We need to eliminate control blind spots by enforcing complete observability coverage | `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -709,6 +713,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Failover Readiness Review | On-Call Lead + Ops / PMO + Platform/Data Owners |
 | Dependency Blast Radius Review | Platform/Data Owners + Ops / PMO + Strategy Owner |
 | Control Test Coverage Review | Ops / PMO + On-Call Lead + Functional Leads |
+| Control Observability Coverage Review | Data/Analytics Owners + Ops / PMO + On-Call Lead |
 
 ---
 
@@ -840,6 +845,7 @@ Includes Pack C, plus:
 112. `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`
 113. `ALIGNMENT-DEPENDENCY-BLAST-RADIUS-REVIEW.md`
 114. `ALIGNMENT-CONTROL-TEST-COVERAGE-REVIEW.md`
+115. `ALIGNMENT-CONTROL-OBSERVABILITY-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

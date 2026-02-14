@@ -275,6 +275,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical dependency containment readiness rate (%):
 - Fully test-covered critical controls (%):
 - Critical controls with test-layer gaps (count):
+- Observable critical controls with full signal/alert/diagnostic coverage (%):
+- Critical controls with observability blind spots (count):
 
 ---
 

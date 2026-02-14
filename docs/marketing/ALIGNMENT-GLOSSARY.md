@@ -322,6 +322,9 @@ The scope and severity of downstream disruption caused when a single critical de
 ## Control Test Coverage
 The degree to which critical controls are validated across all required testing layers: runbook, drill, and failover.
 
+## Control Observability Coverage
+The degree to which critical controls are fully monitored through defined signals, actionable alerts, and accessible diagnostics.
+
 ---
 
 ## Incident & Escalation Terms

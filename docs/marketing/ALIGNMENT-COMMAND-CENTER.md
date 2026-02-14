@@ -75,6 +75,7 @@
 - Review control-failover readiness status for CC-1 and dependency-critical CC-2 controls.
 - Review dependency blast-radius status for critical shared dependencies.
 - Review control-test coverage across runbook/drill/failover layers.
+- Review control observability coverage across signal/alert/diagnostic layers.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -158,6 +159,7 @@
 - Check controls not failover-ready and assign recovery/remediation owners.
 - Check unmitigated high-blast dependencies and assign containment owners.
 - Check partially covered critical controls and assign test-gap owners.
+- Check blind/partial observability controls and assign coverage owners.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -256,6 +258,7 @@ Use this trigger table before meetings:
 | CC-1 control is not failover-ready | Trigger immediate failover-readiness remediation and containment plan |
 | High-blast dependency is unmitigated | Trigger dependency containment intervention and escalation |
 | CC-1 control is not fully test-covered | Trigger immediate test-coverage recovery plan |
+| CC-1 control has observability blind spot | Trigger immediate observability coverage remediation |
 
 ---
 
@@ -266,7 +269,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance + control-owner coverage review + definition-of-done compliance + control-runbook coverage review + control-drill effectiveness review + control-failover readiness review + dependency-blast-radius review + control-test coverage review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index + control criticality map + decision packet compliance + decision reopen analysis + root cause pattern review + backlog aging review + recurrence heatmap + control lifecycle analysis + cross-function coordination review + control overlap analysis + assumption drift review + intervention prioritization matrix + owner capacity forecast + decision latency decomposition + dependency-resolution SLA review + data-source reliability review + metric-definition consistency review + control-change saturation review + recovery-window compliance + canonical-source compliance review + decision outcome lag review + evidence-linkage compliance + reversal-trigger coverage review + decision-authority compliance + control-owner coverage review + definition-of-done compliance + control-runbook coverage review + control-drill effectiveness review + control-failover readiness review + dependency-blast-radius review + control-test coverage review + control-observability coverage review |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---
