@@ -108,6 +108,7 @@ It helps teams:
 - **Source-of-truth governance:** `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`
 - **Decision outcome visibility governance:** `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`
 - **Evidence-traceability governance:** `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`
+- **Decision reversal readiness governance:** `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -185,4 +186,5 @@ For full routing by scenario, use:
 - Keep source references aligned to canonical-source map to avoid contradiction reintroduction.
 - Keep decision outcome visibility timely enough to support reinforcement/modification/reversal decisions.
 - Keep high-impact actions linked to valid, fresh evidence before closure or approval.
+- Keep high-impact decisions covered by explicit reversal triggers before approval.
 

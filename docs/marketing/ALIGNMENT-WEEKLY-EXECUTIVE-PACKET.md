@@ -139,6 +139,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Material canonical-source violations (count) |  |  |  |
 | Decisions with overdue outcome visibility (count) |  |  |  |
 | Critical items with broken/stale evidence links (count) |  |  |  |
+| Active P0/P1 decisions missing reversal trigger coverage (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -257,6 +258,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Canonical source compliance rate:
 - Median decision outcome lag (days):
 - Evidence-linked item rate:
+- Reversal trigger coverage rate (P0/high-impact P1):
 
 ---
 

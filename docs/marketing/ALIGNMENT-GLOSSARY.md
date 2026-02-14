@@ -295,6 +295,9 @@ Elapsed time between decision closure and the first reliable measurable signal o
 ## Evidence Linkage Compliance
 The degree to which required decisions and actions include valid, current, and traceable evidence references.
 
+## Reversal Trigger Coverage
+The extent to which high-impact decisions define measurable thresholds that trigger reversal or modification actions when outcomes underperform.
+
 ---
 
 ## Incident & Escalation Terms

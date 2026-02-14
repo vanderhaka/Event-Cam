@@ -424,6 +424,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`**  
   Compliance review for valid, fresh evidence linkage across high-impact actions and decisions.
 
+- **`ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`**  
+  Coverage review ensuring high-impact decisions include explicit, measurable reversal triggers.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -561,6 +564,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent non-canonical source usage from reintroducing contradictions | `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md` |
 | We need to detect when decision outcomes are taking too long to become measurable | `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md` |
 | We need high-impact decisions and recoveries blocked when evidence linkage is missing or stale | `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md` |
+| We need to prevent underperforming decisions from running without clear reversal thresholds | `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -664,6 +668,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Canonical Source Compliance Review | Strategy Owner + Ops / PMO + Functional Leads |
 | Decision Outcome Lag Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 | Evidence Linkage Compliance | Strategy Owner + Growth/Data Owner + Ops / PMO |
+| Reversal Trigger Coverage Review | Strategy Owner + Decision Review Leads + Ops / PMO |
 
 ---
 
@@ -786,6 +791,7 @@ Includes Pack C, plus:
 103. `ALIGNMENT-CANONICAL-SOURCE-COMPLIANCE-REVIEW.md`
 104. `ALIGNMENT-DECISION-OUTCOME-LAG-REVIEW.md`
 105. `ALIGNMENT-EVIDENCE-LINKAGE-COMPLIANCE.md`
+106. `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
