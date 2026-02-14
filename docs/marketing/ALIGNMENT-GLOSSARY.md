@@ -304,6 +304,9 @@ The degree to which decisions are approved by the correct role and forum accordi
 ## Control Owner Coverage
 The degree to which in-scope controls have complete, current primary, backup, and escalation ownership assignments.
 
+## Definition of Done Compliance
+The degree to which closed items satisfy explicit completion criteria and evidence standards before being marked done.
+
 ---
 
 ## Incident & Escalation Terms

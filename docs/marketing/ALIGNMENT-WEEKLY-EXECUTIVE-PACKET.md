@@ -263,6 +263,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Authorized approval rate (P0/high-impact P1):
 - Control owner full-coverage rate (CC-1/CC-2):
 - Critical controls with ownership gaps (count):
+- Verified closure rate against done criteria (%):
+- Premature closures detected this cycle (count):
 
 ---
 

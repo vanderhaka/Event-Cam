@@ -47,6 +47,7 @@
 | High-band decision failure rate |  | <15% |  |
 | Governance ROI index |  | >0 |  |
 | Critical-control owner full-coverage rate |  | 100% |  |
+| Verified closure rate against done criteria |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

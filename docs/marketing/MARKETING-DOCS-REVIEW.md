@@ -858,6 +858,7 @@ Use this minimum-safe operating rule:
 | Underperforming decisions persist because reversal thresholds were never explicitly set | `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` | Reversal-trigger coverage remains complete and trigger-response time stays within target |
 | High-impact decisions are approved through informal paths, creating authority ambiguity and rework | `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` | Authorized-approval rate remains high and authority-violation count trends to zero |
 | Critical controls depend on a single owner, creating avoidable outages during absence or turnover | `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` | Full ownership coverage stays high and single-point-of-failure control count trends to zero |
+| Teams mark high-impact work done without consistent closure criteria, creating reopen churn and trust decay | `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md` | Verified closure rate against done criteria stays high and premature closure count trends to zero |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

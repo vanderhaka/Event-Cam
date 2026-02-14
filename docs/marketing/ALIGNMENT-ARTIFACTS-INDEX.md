@@ -433,6 +433,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`**  
   Ownership-coverage review ensuring critical controls have primary, backup, and escalation owners.
 
+- **`ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`**  
+  Compliance review ensuring closed items meet explicit definition-of-done criteria before closure.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -573,6 +576,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent underperforming decisions from running without clear reversal thresholds | `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md` |
 | We need to prevent unauthorized approvals on high-impact decisions | `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` |
 | We need to eliminate single-owner fragility on high-criticality controls | `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` |
+| We need to prevent premature closures and reopen churn from weak done criteria | `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md` |
 
 ---
 
@@ -679,6 +683,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Reversal Trigger Coverage Review | Strategy Owner + Decision Review Leads + Ops / PMO |
 | Decision Authority Compliance | Strategy Owner + Leadership Delegate + Ops / PMO |
 | Control Owner Coverage Review | Strategy Owner + Ops / PMO + Functional Leads |
+| Definition-of-Done Compliance | Ops / PMO + Workflow Owners + Strategy Owner |
 
 ---
 
@@ -804,6 +809,7 @@ Includes Pack C, plus:
 106. `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
 107. `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`
 108. `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`
+109. `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`
 
 Recommended only when:
 - decision volume is high,

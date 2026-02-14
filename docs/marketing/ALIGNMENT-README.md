@@ -111,6 +111,7 @@ It helps teams:
 - **Decision reversal readiness governance:** `ALIGNMENT-REVERSAL-TRIGGER-COVERAGE-REVIEW.md`
 - **Decision authority governance:** `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`
 - **Control ownership resilience governance:** `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`
+- **Closure-quality governance:** `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -191,4 +192,5 @@ For full routing by scenario, use:
 - Keep high-impact decisions covered by explicit reversal triggers before approval.
 - Keep high-impact decisions approved only through declared authority routes.
 - Keep CC-1/CC-2 controls fully covered with primary, backup, and escalation owners.
+- Keep P0/high-impact closures compliant with explicit definition-of-done criteria.
 
