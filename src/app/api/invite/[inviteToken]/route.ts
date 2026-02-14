@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import { ApiError, jsonResponse } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
-import { hashValue } from '@/lib/utils';
+import { hashValue, normalizeInviteToken } from '@/lib/utils';
 
 function nowCanUpload(event: { start_at: string; end_at: string }) {
   const start = new Date(event.start_at).getTime();
@@ -18,15 +18,24 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     }
 
     const admin = createSupabaseAdminClient();
-    const normalizedToken = inviteeTokenKey(inviteToken);
-    const altToken = stripQrNoise(normalizedToken);
+    const normalizedToken = normalizeInviteToken(inviteToken);
+    if (!normalizedToken) {
+      return jsonResponse({ message: 'Invalid inviteToken' }, { status: 400 });
+    }
+    const tokenCandidates = [normalizedToken];
 
     // eslint-disable-next-line no-console
-    console.info('[invite lookup]', { tokenHint: normalizedToken.slice(0, 8), length: normalizedToken.length, altProvided: altToken !== normalizedToken });
+    console.info('[invite lookup]', {
+      tokenHint: normalizedToken.slice(0, 8),
+      length: normalizedToken.length,
+      candidates: tokenCandidates,
+    });
 
-    let query = admin.from('invitees').select('*');
-    const tokenCandidates = Array.from(new Set([normalizedToken, altToken].filter((value): value is string => Boolean(value))));
-    const { data: invitees, error } = await query.in('qr_token', tokenCandidates).order('updated_at', { ascending: false });
+    const { data: invitees, error } = await admin
+      .from('invitees')
+      .select('*')
+      .in('qr_token', tokenCandidates)
+      .order('updated_at', { ascending: false });
 
     if (error || !invitees || invitees.length === 0) {
       // eslint-disable-next-line no-console
@@ -41,7 +50,6 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     if (!invitee) {
       return jsonResponse({ message: 'Invalid or expired QR code', code: 'TOKEN_NOT_FOUND' }, { status: 404 });
     }
-
 
     if (!invitee.is_active || invitee.qr_state !== 'issued') {
       // eslint-disable-next-line no-console
@@ -125,22 +133,4 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     }
     return jsonResponse({ message: 'Unable to resolve invite token' }, { status: 500 });
   }
-}
-
-function inviteeTokenKey(token: string) {
-  const trimmed = token.trim();
-  try {
-    return decodeURIComponent(trimmed);
-  } catch {
-    return trimmed;
-  }
-}
-
-function stripQrNoise(token: string) {
-  return token
-    .replace(/^["'`]+/, '')
-    .replace(/["'`]+$/, '')
-    .replace(/\\+$/, '')
-    .replace(/\s+/g, '')
-    .replace(/[^A-Za-z0-9_-]/g, '');
 }

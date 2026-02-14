@@ -7,9 +7,15 @@ import { publishEventQrCodes } from '@/lib/publish-event';
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
+  const json = (message: string, status = 200) =>
+    new Response(JSON.stringify({ message }), {
+      status,
+      headers: { 'Content-Type': 'application/json' },
+    });
+
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!webhookSecret) {
-    return new Response(JSON.stringify({ message: 'Missing webhook secret' }), { status: 500 });
+    return json('Missing webhook secret', 500);
   }
 
   const body = await request.text();
@@ -20,7 +26,7 @@ export async function POST(request: NextRequest) {
   try {
     stripeEvent = stripe.webhooks.constructEvent(body, sig || '', webhookSecret);
   } catch (error) {
-    return new Response(JSON.stringify({ message: 'Invalid webhook signature' }), { status: 400 });
+    return json('Invalid webhook signature', 400);
   }
 
   const admin = createSupabaseAdminClient();
@@ -31,12 +37,28 @@ export async function POST(request: NextRequest) {
     const checkoutSession = session.id;
 
     if (eventId && checkoutSession) {
-      await admin.from('billing_records').update({ status: 'paid', invoice_ref: session.invoice as string }).eq('event_id', eventId).eq('checkout_session', checkoutSession);
-      await admin.from('events').update({ status: 'paid' }).eq('id', eventId);
+      const billingUpdate = await admin
+        .from('billing_records')
+        .update({ status: 'paid', invoice_ref: session.invoice as string })
+        .eq('event_id', eventId)
+        .eq('checkout_session', checkoutSession);
+
+      if (billingUpdate.error) {
+        console.error('[stripe webhook] failed to mark billing record as paid', billingUpdate.error);
+        return json('Failed to update billing status', 500);
+      }
+
+      const eventUpdate = await admin.from('events').update({ status: 'paid' }).eq('id', eventId);
+      if (eventUpdate.error) {
+        console.error('[stripe webhook] failed to mark event as paid', eventUpdate.error);
+        return json('Failed to mark event as paid', 500);
+      }
+
       try {
         await publishEventQrCodes(admin, eventId, { requirePaid: false });
       } catch (err) {
         console.error('[stripe webhook] auto-publish failed for event', eventId, err);
+        return json('Failed to publish event QR codes', 500);
       }
     }
   }
@@ -47,10 +69,24 @@ export async function POST(request: NextRequest) {
     const checkoutSession = session.id;
 
     if (eventId && checkoutSession) {
-      await admin.from('billing_records').update({ status: 'failed' }).eq('event_id', eventId).eq('checkout_session', checkoutSession);
-      await admin.from('events').update({ status: 'draft' }).eq('id', eventId);
+      const billingUpdate = await admin
+        .from('billing_records')
+        .update({ status: 'failed' })
+        .eq('event_id', eventId)
+        .eq('checkout_session', checkoutSession);
+
+      if (billingUpdate.error) {
+        console.error('[stripe webhook] failed to mark billing record as failed', billingUpdate.error);
+        return json('Failed to update billing status', 500);
+      }
+
+      const eventUpdate = await admin.from('events').update({ status: 'draft' }).eq('id', eventId);
+      if (eventUpdate.error) {
+        console.error('[stripe webhook] failed to revert event status', eventUpdate.error);
+        return json('Failed to revert event status', 500);
+      }
     }
   }
 
-  return new Response(JSON.stringify({ received: true }));
+  return json('Webhook processed');
 }

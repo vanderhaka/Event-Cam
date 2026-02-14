@@ -13,6 +13,25 @@ export function isFutureExpired(dateValue?: string | null) {
   return new Date(dateValue).getTime() < Date.now();
 }
 
+export function normalizeInviteToken(rawToken: string) {
+  const trimmed = rawToken.trim();
+  try {
+    const decoded = decodeURIComponent(trimmed);
+    return stripNoise(decoded);
+  } catch {
+    return stripNoise(trimmed);
+  }
+}
+
+export function stripNoise(token: string) {
+  return token
+    .replace(/^['"`]+/, '')
+    .replace(/['"`]+$/, '')
+    .replace(/\\+$/, '')
+    .replace(/\s+/g, '')
+    .replace(/[^A-Za-z0-9_-]/g, '');
+}
+
 export function nowIso() {
   return new Date().toISOString();
 }

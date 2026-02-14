@@ -75,6 +75,7 @@ export default function NewEventStepContent() {
     setEventType,
     location,
     setLocation,
+    detectTimezoneFromLocation,
     timezone,
     detectingLocation,
     startAt,
@@ -207,6 +208,9 @@ export default function NewEventStepContent() {
                   className="input"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
+                  onBlur={() => {
+                    detectTimezoneFromLocation(location).catch(() => {});
+                  }}
                   placeholder={detectingLocation ? 'Detecting location...' : 'e.g. Sydney, Australia'}
                   disabled={detectingLocation}
                   autoFocus

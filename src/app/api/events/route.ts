@@ -3,6 +3,16 @@ import { ApiError, jsonResponse, parseJsonBody } from '@/lib/http';
 import { requireHostUser } from '@/lib/auth';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 
+function normalizeTimeZone(rawValue: unknown) {
+  const timezone = String(rawValue ?? 'UTC').trim() || 'UTC';
+  try {
+    new Intl.DateTimeFormat(undefined, { timeZone: timezone });
+    return timezone;
+  } catch {
+    throw new ApiError('Invalid timezone value', 400);
+  }
+}
+
 export async function GET() {
   try {
     const { userId } = await requireHostUser();
@@ -18,12 +28,16 @@ export async function GET() {
       console.error('[GET /api/events] Supabase error:', error.message, error.code);
       return jsonResponse(
         { message: 'Failed to load events. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return jsonResponse({ events: data ?? [] });
   } catch (err) {
+    if (err instanceof ApiError) {
+      return jsonResponse({ message: err.message }, { status: err.status });
+    }
+
     const message = err instanceof Error ? err.message : 'Server error';
     console.error('[GET /api/events]', message);
     if (message.includes('SUPABASE_SERVICE_ROLE_KEY')) {
@@ -37,11 +51,11 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const { userId } = await requireHostUser();
-  const admin = createSupabaseAdminClient();
-  const body = await parseJsonBody(request);
-
   try {
+    const { userId } = await requireHostUser();
+    const admin = createSupabaseAdminClient();
+    const body = await parseJsonBody(request);
+
     const name = String(body.name ?? '').trim();
     const startAt = String(body.startAt ?? body.start_at ?? '').trim();
     const endAt = String(body.endAt ?? body.end_at ?? '').trim();
@@ -66,7 +80,7 @@ export async function POST(request: NextRequest) {
     const defaultFeeCents = Number(process.env.EVENT_CAM_DEFAULT_FEE_CENTS ?? 500);
     const feePerInviteCents = Number(body.feePerInviteCents ?? body.fee_per_invite_cents ?? defaultFeeCents);
     const maxStartWindowMinutes = Number(body.maxStartWindowMinutes ?? body.max_start_window_minutes ?? 0);
-    const timezone = String(body.location ?? body.timezone ?? 'UTC').trim() || 'UTC';
+    const timezone = normalizeTimeZone(body.timezone ?? body.timeZone);
     const eventType = String(body.eventType ?? body.event_type ?? 'invite_list').toLowerCase();
     const validEventType = eventType === 'open' ? 'open' : 'invite_list';
 

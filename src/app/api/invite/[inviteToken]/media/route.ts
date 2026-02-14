@@ -1,6 +1,6 @@
 import { ApiError, jsonResponse } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
-import { randomToken } from '@/lib/utils';
+import { normalizeInviteToken, randomToken } from '@/lib/utils';
 
 const MAX_VIDEO_SECONDS = 20;
 
@@ -17,6 +17,10 @@ export async function POST(request: Request, context: { params: { inviteToken: s
   if (!inviteToken) {
     return jsonResponse({ message: 'Missing inviteToken' }, { status: 400 });
   }
+  const normalizedInviteToken = normalizeInviteToken(inviteToken);
+  if (!normalizedInviteToken) {
+    return jsonResponse({ message: 'Invalid inviteToken' }, { status: 400 });
+  }
 
   try {
     const admin = createSupabaseAdminClient();
@@ -24,7 +28,7 @@ export async function POST(request: Request, context: { params: { inviteToken: s
     const { data: invitee, error } = await admin
       .from('invitees')
       .select('*')
-      .eq('qr_token', inviteToken)
+      .eq('qr_token', normalizedInviteToken)
       .single();
 
     if (error || !invitee) {
