@@ -18,18 +18,37 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     }
 
     const admin = createSupabaseAdminClient();
+    const normalizedToken = inviteeTokenKey(inviteToken);
+
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.info('[invite lookup]', { tokenHint: normalizedToken.slice(0, 8), length: normalizedToken.length });
+    }
+
     const { data: invitee, error } = await admin
       .from('invitees')
       .select('*')
-      .eq('qr_token', inviteeTokenKey(inviteToken))
+      .eq('qr_token', normalizedToken)
       .single();
 
     if (error || !invitee) {
-      return jsonResponse({ message: 'Invalid or expired QR code' }, { status: 404 });
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('[invite lookup] token not found', { tokenHint: normalizedToken.slice(0, 8) });
+      }
+      return jsonResponse({ message: 'Invalid or expired QR code', code: 'TOKEN_NOT_FOUND' }, { status: 404 });
     }
 
     if (!invitee.is_active || invitee.qr_state !== 'issued') {
-      return jsonResponse({ message: 'This QR code is disabled' }, { status: 403 });
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('[invite lookup] token disabled', {
+          tokenHint: normalizedToken.slice(0, 8),
+          isActive: invitee.is_active,
+          qrState: invitee.qr_state,
+        });
+      }
+      return jsonResponse({ message: 'This QR code is disabled', code: 'TOKEN_DISABLED' }, { status: 403 });
     }
 
     const { data: event, error: eventError } = await admin
@@ -43,11 +62,32 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     }
 
     if (!event.is_published || event.status !== 'published') {
-      return jsonResponse({ message: 'Event is not published yet' }, { status: 403 });
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('[invite lookup] event not published', { eventId: event.id, isPublished: event.is_published, status: event.status });
+      }
+      return jsonResponse({ message: 'Event is not published yet', code: 'EVENT_NOT_PUBLISHED' }, { status: 403 });
     }
 
     if (!nowCanUpload(event)) {
-      return jsonResponse({ message: 'Event upload window is closed', state: 'closed' }, { status: 403 });
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('[invite lookup] event window closed', {
+          eventId: event.id,
+          startAt: event.start_at,
+          endAt: event.end_at,
+          now: new Date().toISOString(),
+        });
+      }
+      return jsonResponse(
+        {
+          message: 'Event upload window is closed',
+          code: 'WINDOW_CLOSED',
+          state: 'closed',
+          event: { id: event.id, startAt: event.start_at, endAt: event.end_at },
+        },
+        { status: 403 },
+      );
     }
 
     const { data: existingSession } = await admin
@@ -89,5 +129,10 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
 }
 
 function inviteeTokenKey(token: string) {
-  return token.trim();
+  const trimmed = token.trim();
+  try {
+    return decodeURIComponent(trimmed);
+  } catch {
+    return trimmed;
+  }
 }

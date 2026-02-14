@@ -11,12 +11,24 @@ export default function ScanPage() {
   const [tagCsv, setTagCsv] = useState('');
   const [durationSec, setDurationSec] = useState('');
   const [message, setMessage] = useState('');
+  const [statusCode, setStatusCode] = useState<number | null>(null);
+  const [errorCode, setErrorCode] = useState('');
 
   async function loadInfo() {
+    console.debug('[scan page] loading invite', { inviteToken });
     const response = await fetch(`/api/invite/${inviteToken}`);
+    console.debug('[scan page] invite response', { status: response.status });
     const payload = await response.json();
-    if (response.ok) setInfo(payload);
-    else setMessage(payload.message || 'Could not load invite details');
+    if (response.ok) {
+      setInfo(payload);
+      setStatusCode(200);
+      setErrorCode('');
+    } else {
+      setStatusCode(response.status);
+      setErrorCode(payload.code || 'UNKNOWN');
+      setMessage(payload.message || 'Could not load invite details');
+      console.error('[scan page] invite lookup failed', payload);
+    }
   }
 
   useEffect(() => {
@@ -64,7 +76,12 @@ export default function ScanPage() {
   }
 
   if (!info) {
-    return <p className="muted">{message || 'Loading...'}</p>;
+    return (
+      <section className="card">
+        <p className="muted">{message || 'Loading...'}</p>
+        {statusCode ? <p className="muted">{`HTTP ${statusCode}${errorCode ? ` · ${errorCode}` : ''}`}</p> : null}
+      </section>
+    );
   }
 
   return (
