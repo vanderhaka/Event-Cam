@@ -122,6 +122,11 @@ export default function EventDetailPage() {
   }
 
   async function addInviteeRow() {
+    if (inviteeRows.length > 0 && !inviteeRows[0].firstName.trim()) {
+      showStatus('Enter a first name for the first guest before adding another', 'error');
+      return;
+    }
+
     if (inviteeRows.length >= 1 && typeof window !== 'undefined' && !sessionStorage.getItem(`event-cam-invitee-onboarding-${eventId}`)) {
       setInviteeOnboardingStep('step1');
     }
@@ -517,7 +522,7 @@ export default function EventDetailPage() {
                         <div className="label">First name *</div>
                         <input
                           className="input"
-                          placeholder="Jane"
+                          placeholder="First name"
                           value={row.firstName}
                           onChange={(e) => updateInviteeRow(index, 'firstName', e.target.value)}
                           required
@@ -527,7 +532,7 @@ export default function EventDetailPage() {
                         <div className="label">Last name</div>
                         <input
                           className="input"
-                          placeholder="Doe"
+                          placeholder="Last name"
                           value={row.lastName}
                           onChange={(e) => updateInviteeRow(index, 'lastName', e.target.value)}
                         />
@@ -537,7 +542,7 @@ export default function EventDetailPage() {
                         <input
                           className="input"
                           type="tel"
-                          placeholder="+1 555 000 0000"
+                          placeholder="Phone (optional)"
                           value={row.phone}
                           onChange={(e) => updateInviteeRow(index, 'phone', e.target.value)}
                         />
@@ -557,7 +562,13 @@ export default function EventDetailPage() {
                 ))}
               </div>
               <div className="row gap-sm">
-                <button type="button" className="btn btn-subtle" onClick={addInviteeRow}>
+                <button
+                  type="button"
+                  className="btn btn-subtle"
+                  onClick={addInviteeRow}
+                  disabled={inviteeRows.length > 0 && !inviteeRows[0].firstName.trim()}
+                  title={inviteeRows.length > 0 && !inviteeRows[0].firstName.trim() ? 'Enter a first name for the first guest' : undefined}
+                >
                   + Add another
                 </button>
                 <button className="btn btn-primary" type="submit">
