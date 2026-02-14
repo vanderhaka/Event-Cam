@@ -77,6 +77,7 @@ It helps teams:
 - **Early-warning governance:** `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
 - **Prevention effectiveness governance:** `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
 - **Threshold quality governance:** `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
+- **Decision quality trend governance:** `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -123,4 +124,5 @@ For full routing by scenario, use:
 - Keep leading indicators monitored and prevent Warning/Critical drift from compounding.
 - Keep preventive action patterns only when they measurably reduce downstream failures.
 - Keep threshold bands calibrated to minimize missed alerts and noisy false positives.
+- Keep decision quality trends stable by intervening early on regression signals.
 

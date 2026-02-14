@@ -110,6 +110,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 25. `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` (early-warning scan before lagging KPIs break)
 26. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` (proves whether preventive actions reduced downstream failure)
 27. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` (keeps warning thresholds predictive and actionable)
+28. `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` (trend-level check for degrading decision quality)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

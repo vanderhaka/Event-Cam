@@ -331,6 +331,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`**  
   Recurring calibration review to keep KPI/control thresholds predictive and action-worthy.
 
+- **`ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`**  
+  Trend-level audit for sustained deterioration in decision quality, confidence, and outcome effectiveness.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -437,6 +440,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to act on risk build-up before lagging metrics fail | `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` |
 | We need to verify if preventive actions actually prevented downstream failures | `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md` |
 | We need to tune thresholds to reduce false alerts and missed warnings | `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md` |
+| We need to detect long-horizon decline in decision quality before repeated reversals | `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md` |
 
 ---
 
@@ -509,6 +513,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Leading Indicator Watchlist | Ops / PMO + Growth/Data Owner + Functional Leads |
 | Preventive Action Review | Ops / PMO + Growth/Data Owner + Functional Leads |
 | Threshold Calibration Review | Growth/Data Owner + Ops / PMO + Strategy Owner |
+| Decision Quality Regression Review | Strategy Owner + Growth/Data Owner + Leadership Delegate |
 
 ---
 
@@ -600,6 +605,7 @@ Includes Pack C, plus:
 72. `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
 73. `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
 74. `ALIGNMENT-THRESHOLD-CALIBRATION-REVIEW.md`
+75. `ALIGNMENT-DECISION-QUALITY-REGRESSION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

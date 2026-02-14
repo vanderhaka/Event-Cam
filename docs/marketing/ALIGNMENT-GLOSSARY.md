@@ -202,6 +202,9 @@ Percentage of completed preventive actions that avoid related escalation or fail
 ## Threshold Calibration
 The periodic process of adjusting alert/decision thresholds to reduce false positives, reduce missed warnings, and improve actionability.
 
+## Decision Quality Composite
+Aggregate quality signal combining confidence discipline, outcome performance, reversal frequency, and evidence compliance across high-impact decisions.
+
 ---
 
 ## Incident & Escalation Terms
