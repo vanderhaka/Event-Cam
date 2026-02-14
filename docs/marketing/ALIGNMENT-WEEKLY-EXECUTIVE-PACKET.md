@@ -321,6 +321,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Deprecation verification completed within window (%):
 - Dependency changes with unresolved high-risk impact (count):
 - Dependency-change mitigation completed pre-rollout (%):
+- Recurring critical-control coverage gap clusters (count):
+- Structural fix conversion rate for recurring gaps (%):
 
 ---
 

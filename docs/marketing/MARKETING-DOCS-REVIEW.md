@@ -887,6 +887,7 @@ Use this minimum-safe operating rule:
 | Control exceptions remain open too long, extending exposure and normalizing policy bypass behavior | `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md` | Exception closure within SLA remains high and overdue critical exceptions trend to zero |
 | Controls are retired/merged without full risk validation, reopening previously contained failure modes | `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` | Unsafe deprecation candidate count trends to zero and post-deprecation incident count stays low |
 | Dependency changes are rolled out without full downstream impact mitigation, causing avoidable control regressions | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` | High-risk unresolved dependency changes trend to zero and pre-rollout mitigation completion remains high |
+| The same control coverage gaps recur cycle after cycle because fixes remain tactical instead of structural | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` | Recurring-gap cluster count trends down and structural fix conversion rate remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

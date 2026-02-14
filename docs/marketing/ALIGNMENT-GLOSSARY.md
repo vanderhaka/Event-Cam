@@ -391,6 +391,9 @@ The residual risk exposure associated with retiring or merging a control before 
 ## Control Dependency Change Impact
 The downstream control and decision risk introduced by modifying dependencies that support active controls.
 
+## Control Coverage Gap Trend
+The recurring pattern of unresolved or repeated coverage gaps across control domains over multiple cycles.
+
 ---
 
 ## Incident & Escalation Terms

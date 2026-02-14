@@ -140,6 +140,7 @@ It helps teams:
 - **Control exception lead-time governance:** `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`
 - **Control deprecation-risk governance:** `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
 - **Control dependency-change impact governance:** `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
+- **Control coverage-gap trend governance:** `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -249,4 +250,5 @@ For full routing by scenario, use:
 - Keep critical control exceptions resolved inside SLA with minimal overdue exposure.
 - Keep control retire/merge decisions risk-assessed with no unmanaged unsafe deprecation candidates.
 - Keep high-risk dependency changes fully impact-assessed and mitigated before rollout.
+- Keep recurring control coverage gaps structurally remediated with declining recurrence trends.
 

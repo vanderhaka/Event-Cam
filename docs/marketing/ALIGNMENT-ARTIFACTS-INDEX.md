@@ -520,6 +520,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`**  
   Review assessing downstream control risk before dependency changes are rolled out.
 
+- **`ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`**  
+  Trend review tracking recurring control coverage gaps across cycles.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -689,6 +692,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need control exceptions resolved quickly enough to avoid prolonged risk exposure | `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md` |
 | We need to retire or merge controls safely without reopening previously contained risks | `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` |
 | We need dependency changes impact-assessed before they disrupt critical controls | `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` |
+| We need recurring control coverage gaps surfaced and structurally fixed, not repeatedly patched | `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` |
 
 ---
 
@@ -824,6 +828,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Exception Lead-Time Review | Ops / PMO + Control Owners + Policy/Compliance Owners |
 | Control Deprecation Risk Review | Ops / PMO + Strategy Owner + Control Owners |
 | Control Dependency Change Impact Review | Ops / PMO + Platform/Data Owners + Control Owners |
+| Control Coverage Gap Trend Review | Ops / PMO + Control Owners + Functional Leads |
 
 ---
 
@@ -978,6 +983,7 @@ Includes Pack C, plus:
 135. `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`
 136. `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
 137. `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md`
+138. `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -173,6 +173,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 88. `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md` (ensures critical control exceptions are resolved within SLA and do not create prolonged exposure windows)
 89. `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` (ensures control retire/merge actions are risk-assessed and verified before removing safeguards)
 90. `ALIGNMENT-CONTROL-DEPENDENCY-CHANGE-IMPACT-REVIEW.md` (ensures high-risk dependency changes are impact-assessed and mitigated before rollout)
+91. `ALIGNMENT-CONTROL-COVERAGE-GAP-TREND-REVIEW.md` (ensures recurring control coverage gaps are tracked as patterns and fixed structurally)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
