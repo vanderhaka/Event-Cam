@@ -3,7 +3,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 
 export default function QrTestPage() {
-  const [token, setToken] = useState('test-token');
+  const [token, setToken] = useState('');
   const [baseUrl, setBaseUrl] = useState('');
   const [warnLocalHost, setWarnLocalHost] = useState(false);
 
@@ -13,6 +13,12 @@ export default function QrTestPage() {
     try {
       const hostname = new URL(currentOrigin).hostname;
       setWarnLocalHost(hostname === 'localhost' || hostname === '127.0.0.1');
+
+      const params = new URLSearchParams(window.location.search);
+      const initialToken = params.get('token')?.trim();
+      if (initialToken) {
+        setToken(initialToken);
+      }
     } catch {
       setWarnLocalHost(false);
     }
@@ -20,6 +26,7 @@ export default function QrTestPage() {
 
   const normalizedToken = token.trim();
   const normalizedBaseUrl = baseUrl.trim().replace(/\/+$/, '');
+  const isPlaceholderToken = /^test-token$/i.test(normalizedToken);
   const scanUrl = normalizedToken && normalizedBaseUrl ? `${normalizedBaseUrl}/scan/${encodeURIComponent(normalizedToken)}` : '';
   const qrImageUrl = scanUrl
     ? `https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=${encodeURIComponent(scanUrl)}`
@@ -35,7 +42,7 @@ export default function QrTestPage() {
   return (
     <section className="card">
       <h2 className="section-head">Temporary QR Test Page</h2>
-      <p className="muted">Use this to generate a QR code for any invite token. Default points to `/scan/{token}`.</p>
+      <p className="muted">Use this to generate a QR code for an invite token you created in host publish flow.</p>
       <form onSubmit={onSubmit} className="form-grid">
         <label>
           <div className="label">Invite token</div>
@@ -57,6 +64,13 @@ export default function QrTestPage() {
           ) : null}
         </div>
       </form>
+
+      {isPlaceholderToken ? (
+        <p className="muted">
+          <strong>Warning:</strong> `test-token` is a placeholder and is not a real invite token. Publish an event first, then
+          paste a real token here.
+        </p>
+      ) : null}
 
       {warnLocalHost ? (
         <p className="muted">
