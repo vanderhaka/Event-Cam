@@ -844,6 +844,7 @@ Use this minimum-safe operating rule:
 | Cross-team dependency friction causes recurring delays and rework despite local process compliance | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` | Coordination delay and rework rates decline as high-friction function pairs are corrected |
 | Duplicate or conflicting controls create governance drag and inconsistent operator behavior | `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` | Overlap/conflict pairs decline and duplicate-effort burden drops over time |
 | Strategic assumptions drift silently, causing confident decisions to rely on outdated baselines | `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` | Drifted high-impact assumptions are rebased quickly and decision exposure declines |
+| Teams address visible low-risk issues while high-risk interventions wait unstarted | `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` | High-priority intervention queue clears faster and risk-reduction throughput improves |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

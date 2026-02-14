@@ -262,6 +262,9 @@ Condition where two or more controls enforce similar or conflicting actions, cre
 ## Assumption Drift
 Material deviation between an assumption’s baseline claim and current evidence, requiring rebase or decision mitigation.
 
+## Intervention Priority Score
+Risk-weighted score used to rank remediation interventions by urgency, exposure, recurrence pressure, and feasibility.
+
 ---
 
 ## Incident & Escalation Terms

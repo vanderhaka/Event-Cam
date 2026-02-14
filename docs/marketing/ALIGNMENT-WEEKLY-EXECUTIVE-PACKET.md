@@ -128,6 +128,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Cross-function coordination status (Healthy/Watch/At Risk) |  |  |  |
 | Unresolved control-overlap pairs (count) |  |  |  |
 | Drifted high-impact assumptions (count) |  |  |  |
+| Open I1/I2 interventions (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -235,6 +236,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Joint-action completion rate:
 - Duplicate governance effort hours (est.):
 - Assumption revalidated rate:
+- Intervention queue completion rate (I1/I2):
 
 ---
 

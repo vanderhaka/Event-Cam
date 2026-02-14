@@ -391,6 +391,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`**  
   Periodic review of high-impact assumption drift and decision exposure.
 
+- **`ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md`**  
+  Risk-weighted scoring matrix for sequencing remediation interventions by impact and urgency.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -517,6 +520,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need recurring visibility into cross-function friction causing delays and rework | `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md` |
 | We need to detect and resolve duplicate/conflicting controls before governance bloat grows | `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md` |
 | We need early warning when strategic assumptions drift away from current evidence | `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` |
+| We need one objective queue for sequencing remediation interventions under capacity limits | `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` |
 
 ---
 
@@ -609,6 +613,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Cross-Function Coordination Review | Ops / PMO + Functional Leads + Strategy Owner |
 | Control Overlap Analysis | Strategy Owner + Ops / PMO + Governance Owners |
 | Assumption Drift Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
+| Intervention Prioritization Matrix | Strategy Owner + Ops / PMO + Functional Leads |
 
 ---
 
@@ -720,6 +725,7 @@ Includes Pack C, plus:
 92. `ALIGNMENT-CROSS-FUNCTION-COORDINATION-REVIEW.md`
 93. `ALIGNMENT-CONTROL-OVERLAP-ANALYSIS.md`
 94. `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`
+95. `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md`
 
 Recommended only when:
 - decision volume is high,
