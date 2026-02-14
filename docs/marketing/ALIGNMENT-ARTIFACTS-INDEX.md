@@ -118,6 +118,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DECISION-MEETING-NOTES-TEMPLATE.md`**  
   Standard notes template for weekly decision-review meetings.
 
+- **`ALIGNMENT-RECOVERY-PLAYBOOK.md`**  
+  Stepwise response guide for restoring alignment after drift or failure signals.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -160,6 +163,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a monthly strategy-sync operating template | `ALIGNMENT-MONTHLY-REVIEW-TEMPLATE.md` |
 | We need a weekly control surface for alignment operations | `ALIGNMENT-COMMAND-CENTER.md` |
 | We need consistent capture of decision-review meeting outcomes | `ALIGNMENT-DECISION-MEETING-NOTES-TEMPLATE.md` |
+| We need a defined response when alignment breaks down | `ALIGNMENT-RECOVERY-PLAYBOOK.md` |
 
 ---
 
