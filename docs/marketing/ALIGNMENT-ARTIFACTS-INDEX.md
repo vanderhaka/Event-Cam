@@ -514,6 +514,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`**  
   Review measuring whether control exceptions are resolved within risk-aligned lead-time SLAs.
 
+- **`ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`**  
+  Review assessing risk and dependency exposure before control retirement or merge actions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -681,6 +684,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent false recovery closure caused by weak or stale recovery evidence | `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md` |
 | We need required decision gates enforced consistently on high-impact decisions | `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md` |
 | We need control exceptions resolved quickly enough to avoid prolonged risk exposure | `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md` |
+| We need to retire or merge controls safely without reopening previously contained risks | `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md` |
 
 ---
 
@@ -814,6 +818,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Recovery Evidence Quality Review | Ops / PMO + Control Owners + Data/Analytics Owners |
 | Control Decision-Gate Integrity Review | Ops / PMO + Strategy Owner + Decision Review Leads |
 | Control Exception Lead-Time Review | Ops / PMO + Control Owners + Policy/Compliance Owners |
+| Control Deprecation Risk Review | Ops / PMO + Strategy Owner + Control Owners |
 
 ---
 
@@ -966,6 +971,7 @@ Includes Pack C, plus:
 133. `ALIGNMENT-CONTROL-RECOVERY-EVIDENCE-QUALITY-REVIEW.md`
 134. `ALIGNMENT-CONTROL-DECISION-GATE-INTEGRITY-REVIEW.md`
 135. `ALIGNMENT-CONTROL-EXCEPTION-LEAD-TIME-REVIEW.md`
+136. `ALIGNMENT-CONTROL-DEPRECATION-RISK-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

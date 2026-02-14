@@ -74,6 +74,7 @@
 | Recovery evidence quality pass rate (critical controls) |  | 100% |  |
 | High-impact decision-gate enforcement rate |  | 100% |  |
 | Critical-control exception closure within SLA |  | ≥95% |  |
+| Unsafe control deprecation candidate count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

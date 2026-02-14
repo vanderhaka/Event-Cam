@@ -317,6 +317,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - High-impact decision gate bypasses (count):
 - Exception closure within SLA (critical controls) (%):
 - Overdue critical control exceptions (count):
+- Unsafe control deprecation candidates (count):
+- Deprecation verification completed within window (%):
 
 ---
 

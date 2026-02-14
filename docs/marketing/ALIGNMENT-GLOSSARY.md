@@ -385,6 +385,9 @@ The degree to which required decision gates are enforced with valid evidence bef
 ## Control Exception Lead Time
 The elapsed time from exception opening to verified closure against defined SLA thresholds.
 
+## Control Deprecation Risk
+The residual risk exposure associated with retiring or merging a control before replacement coverage is proven.
+
 ---
 
 ## Incident & Escalation Terms
