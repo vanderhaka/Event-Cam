@@ -195,3 +195,40 @@ Use this to resolve the highest-risk questions quickly.
 | P2-16 |  |  |  |  | Open |
 | P2-17 |  |  |  |  | Open |
 
+---
+
+## Decision Dependency Map (Answer in This Order)
+
+Some questions are prerequisites for others. Use this dependency flow to avoid rework:
+
+1. **P0-1 Primary market focus**  
+   ↓ informs
+2. **P0-5 Message architecture** and **P0-4 growth loop choice**  
+   ↓ informs
+3. **P0-2 canonical pricing** + **P0-3 Pro economics**  
+   ↓ informs
+4. **P1-9 launch playbook** + **P1-7 channel tests** + **P1-10 referral design**  
+   ↓ informs
+5. **P1-8 KPI cadence** + **P1-11 retention strategy** + **P1-12 assumption register**  
+   ↓ informs
+6. **P2 expansion gates** (venue/festival/app/naming/economics by segment)
+
+### Rule
+If an upstream decision changes, downstream answers must be reviewed within 48 hours.
+
+---
+
+## Decision Quality Checklist (Use Before Marking “Closed”)
+
+Before closing any question in the log, verify:
+
+- [ ] **Clear owner:** one accountable person is assigned.
+- [ ] **Decision statement:** answer is explicit (not ambiguous).
+- [ ] **Trade-offs captured:** what was intentionally deprioritized is written.
+- [ ] **Metrics attached:** success/failure signals are defined.
+- [ ] **Docs synced:** all affected strategy docs are updated.
+- [ ] **Date stamped:** decision has a timestamp for auditability.
+- [ ] **Review date set:** when this decision will be revisited is defined.
+
+If any checkbox is missing, keep status as **Open** or **In Progress**.
+
