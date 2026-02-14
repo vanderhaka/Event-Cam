@@ -285,6 +285,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Controls with recertification drift findings (count):
 - In-scope controls rollback-ready (%):
 - Controls with rollback-readiness gaps (count):
+- CC-1 controls with active decay-warning status (count):
+- Preventive action start within decay lead-time target (%):
 
 ---
 

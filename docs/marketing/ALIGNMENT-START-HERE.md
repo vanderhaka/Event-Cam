@@ -155,6 +155,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 70. `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md` (ensures control-confidence scores remain predictive by comparing confidence bands to observed outcomes)
 71. `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` (ensures critical controls are re-certified on cadence and drift/obsolete logic is corrected before failure)
 72. `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` (ensures critical controls can be safely reverted during change failures through tested rollback paths)
+73. `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` (ensures control degradation is detected early and preventive actions start before incidents occur)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

@@ -337,6 +337,9 @@ The periodic validation that a control remains necessary, correctly configured, 
 ## Control Rollback Readiness
 The degree to which a control can revert safely and quickly to a stable state when changes degrade outcomes.
 
+## Control Decay Early Warning
+The degree to which early signals identify control degradation before incidents or escalations occur.
+
 ---
 
 ## Incident & Escalation Terms

@@ -466,6 +466,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`**  
   Readiness review ensuring critical controls can be rolled back quickly and safely.
 
+- **`ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`**  
+  Early-warning review detecting critical-control degradation before incidents occur.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -617,6 +620,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need confidence scores to stay predictive instead of drifting into false certainty | `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md` |
 | We need critical controls to be periodically re-certified so drift and obsolete logic don’t accumulate | `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` |
 | We need critical controls to recover quickly when control changes underperform | `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` |
+| We need to detect control degradation early instead of waiting for visible failures | `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` |
 
 ---
 
@@ -734,6 +738,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Confidence Calibration Review | Ops / PMO + Strategy Owner + Data/Analytics Owners |
 | Control Recertification Review | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Rollback Readiness Review | Ops / PMO + On-Call Lead + Functional Leads |
+| Control Decay Early Warning Review | Ops / PMO + On-Call Lead + Data/Analytics Owners |
 
 ---
 
@@ -870,6 +875,7 @@ Includes Pack C, plus:
 117. `ALIGNMENT-CONTROL-CONFIDENCE-CALIBRATION-REVIEW.md`
 118. `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`
 119. `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`
+120. `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
