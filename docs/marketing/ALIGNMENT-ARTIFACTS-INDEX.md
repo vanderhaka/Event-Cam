@@ -175,6 +175,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-ID-STANDARDS.md`**  
   Canonical identifier format and cross-reference rules for traceability across all alignment artifacts.
 
+- **`ALIGNMENT-ACTIVE-ARTIFACT-SET.md`**  
+  Single control file declaring which artifacts are active this cycle versus frozen.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -236,6 +239,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need standardized status transitions across operating workflows | `ALIGNMENT-STATE-MACHINE.md` |
 | We need one leadership-ready weekly decision brief | `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md` |
 | We need clean cross-artifact ID consistency and linkage | `ALIGNMENT-ID-STANDARDS.md` |
+| We need one explicit source of truth for active vs frozen docs | `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` |
 
 ---
 
@@ -263,6 +267,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | State Machine | Ops / PMO + Strategy Owner |
 | Weekly Executive Packet | Ops / PMO + Strategy Owner |
 | ID Standards | Ops / PMO + Documentation Owner |
+| Active Artifact Set | Ops / PMO + Documentation Owner |
 
 ---
 
@@ -309,6 +314,7 @@ Includes Pack C, plus:
 27. `ALIGNMENT-STATE-MACHINE.md`
 28. `ALIGNMENT-WEEKLY-EXECUTIVE-PACKET.md`
 29. `ALIGNMENT-ID-STANDARDS.md`
+30. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 
 Recommended only when:
 - decision volume is high,
