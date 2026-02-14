@@ -50,6 +50,7 @@
 - Set top 3 commitments for next 7 days.
 - Assign single owner per commitment.
 - Capture expected success signal.
+- If priority conflicts emerge, apply `ALIGNMENT-PRIORITY-RULES.md` before finalizing commitments.
 
 ## Step 6: Control Hygiene Scan (10 min)
 - Run ID format/link checks on new entries (decision/experiment/blocker/dependency).

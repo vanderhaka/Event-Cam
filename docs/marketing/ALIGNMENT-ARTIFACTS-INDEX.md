@@ -241,6 +241,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`**  
   Triage and decision-gating procedure for unexpected KPI behavior or metric integrity failures.
 
+- **`ALIGNMENT-PRIORITY-RULES.md`**  
+  Capacity-arbitration rules for force-ranking competing decisions, blockers, and initiatives.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -317,6 +320,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need explicit weekly data readiness gates before decisions | `ALIGNMENT-WEEKLY-DATA-CONTRACT.md` |
 | We need an auditable history of mode changes and outcomes | `ALIGNMENT-MODE-TRANSITION-LOG.md` |
 | We need controlled triage for unexpected KPI behavior | `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md` |
+| We need explicit tie-break logic when priorities compete | `ALIGNMENT-PRIORITY-RULES.md` |
 
 ---
 
@@ -359,6 +363,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Weekly Data Contract | Ops / PMO + Growth/Data Owner |
 | Mode Transition Log | Ops / PMO + Strategy Owner |
 | Metric Anomaly Protocol | Growth/Data Owner + Ops / PMO |
+| Priority Rules | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -420,6 +425,7 @@ Includes Pack C, plus:
 42. `ALIGNMENT-WEEKLY-DATA-CONTRACT.md`
 43. `ALIGNMENT-MODE-TRANSITION-LOG.md`
 44. `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`
+45. `ALIGNMENT-PRIORITY-RULES.md`
 
 Recommended only when:
 - decision volume is high,
