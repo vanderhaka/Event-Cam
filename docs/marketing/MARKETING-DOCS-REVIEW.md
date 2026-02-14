@@ -808,6 +808,7 @@ Use this minimum-safe operating rule:
 | Controls removed too quickly and risk rebounds | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` | No post-sunset risk spike during verification window |
 | High-impact decisions approved with weak conviction | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` | P0/P1 confidence distribution improves and low-band decisions decline |
 | Confidence model drifts away from real outcomes | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` | Calibration gap remains near neutral and high-band failure rate stays low |
+| Decisions rely on stale evidence during fast-moving conditions | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` | Expired-evidence dependency count trends to zero on P0/P1 items |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

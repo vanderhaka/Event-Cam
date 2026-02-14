@@ -42,6 +42,7 @@
 - Check active decision counts against WIP ceilings.
 - Check overdue decision outcome reviews and unresolved negative outcomes.
 - Check confidence-band distribution for active P0/P1 decisions.
+- Check for expired evidence linked to pending high-impact decisions.
 
 ## Step 3: Execution Scan (20 min)
 - Verify active experiment load (≤5).
@@ -96,6 +97,7 @@ Use this trigger table before meetings:
 | Control retirement proposed without sunset packet | Block retirement and escalate for evidence review |
 | 2+ active P0 decisions below confidence score 70 | Trigger conditional-approval review and mitigation plan |
 | Calibration gap worsens below -0.15 for 2 months | Tighten confidence scoring policy and evidence requirements |
+| P0/P1 decision depends on expired evidence | Block approval until refresh or explicit override logged |
 
 ---
 

@@ -92,6 +92,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Meeting effectiveness status (G/Y/R) |  |  |  |
 | Active P0/P1 decisions with confidence <70 |  |  |  |
 | Decision calibration gap (last monthly run) |  |  |  |
+| Open P0/P1 decisions with expired evidence |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

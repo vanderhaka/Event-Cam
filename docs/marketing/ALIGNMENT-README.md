@@ -61,6 +61,7 @@ It helps teams:
 - **Control sunset governance:** `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 - **Decision confidence scoring:** `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
 - **Decision confidence calibration:** `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
+- **Evidence freshness control:** `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -91,4 +92,5 @@ For full routing by scenario, use:
 - Retire controls only through explicit sunset criteria and verification windows.
 - Keep active P0/P1 decisions above minimum confidence band or on conditional mitigation plans.
 - Run monthly calibration to ensure confidence scores match observed outcomes.
+- Keep evidence refresh current; expired evidence should not drive P0/P1 approvals.
 

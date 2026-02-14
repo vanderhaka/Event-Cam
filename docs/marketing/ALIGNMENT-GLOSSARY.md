@@ -154,6 +154,9 @@ Composite 0–100 score indicating how strongly a decision is supported across e
 ## Calibration Gap
 Difference between expected decision outcome (based on confidence band) and observed outcome, used to detect scoring bias over time.
 
+## Evidence Expiry
+State where previously valid evidence is no longer current enough to support high-impact decision approvals under defined refresh cadences.
+
 ---
 
 ## Incident & Escalation Terms

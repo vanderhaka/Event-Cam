@@ -283,6 +283,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DECISION-CALIBRATION-REPORT.md`**  
   Monthly accuracy check comparing confidence scores to real outcomes to detect optimism/pessimism bias.
 
+- **`ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`**  
+  Cadence and expiry governance for keeping decision evidence current and decision-safe.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -373,6 +376,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need a safe way to retire controls when risk stays low | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` |
 | We need objective confidence scoring for high-impact decisions | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` |
 | We need to verify our confidence scoring is accurate over time | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` |
+| We need stale evidence blocked before high-impact approvals | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` |
 
 ---
 
@@ -429,6 +433,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Sunset Criteria | Strategy Owner + Ops / PMO |
 | Decision Confidence Index | Strategy Owner + Growth Lead |
 | Decision Calibration Report | Strategy Owner + Analytics / Growth Lead |
+| Evidence Refresh Schedule | Growth / Analytics + Strategy Owner |
 
 ---
 
@@ -504,6 +509,7 @@ Includes Pack C, plus:
 56. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 57. `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
 58. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
+59. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
 
 Recommended only when:
 - decision volume is high,

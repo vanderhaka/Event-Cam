@@ -94,6 +94,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 9. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` (safe control-retirement gate)
 10. `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` (pre-approval conviction and uncertainty visibility)
 11. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` (monthly confidence-vs-outcome accuracy check)
+12. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` (evidence freshness and expiry gate)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
