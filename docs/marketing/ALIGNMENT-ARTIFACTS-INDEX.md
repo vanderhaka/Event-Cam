@@ -34,6 +34,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-MEETING-CADENCE.md`**  
   Weekly/monthly operating cadence to keep alignment active.
 
+- **`ALIGNMENT-SCORECARD.md`**  
+  Weekly quantitative health check to detect alignment drift early.
+
 ---
 
 ## Recommended Ownership
@@ -44,7 +47,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Review + Questions | Founder + Marketing Lead |
 | Decision Calendar + Decisions Log | Strategy Owner + Ops |
 | Path Worksheet | Leadership Team |
-| Meeting Cadence | Ops / PMO + Growth Lead |
+| Meeting Cadence + Scorecard | Ops / PMO + Growth Lead |
 
 ---
 
