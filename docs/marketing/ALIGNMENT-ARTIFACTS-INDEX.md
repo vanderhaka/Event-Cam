@@ -301,6 +301,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`**  
   Conflict-resolution hierarchy defining which controls take priority when governance rules prescribe different actions.
 
+- **`ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`**  
+  Standard workflow for proposing, approving, verifying, and rolling back behavior-changing control updates.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -397,6 +400,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need a quarterly keep/merge/retire decision on all controls | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` |
 | We need proof that governance effort has positive return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` |
 | We need one rule for resolving control conflicts quickly | `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` |
+| We need disciplined rollout/rollback for control changes | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` |
 
 ---
 
@@ -459,6 +463,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Portfolio Review | Strategy Owner + Ops / PMO + Leadership Team |
 | Governance ROI Report | Strategy Owner + Ops / PMO + Leadership Team |
 | Control Precedence Rules | Strategy Owner + Ops / PMO |
+| Control Change Protocol | Strategy Owner + Ops / PMO + Leadership Team |
 
 ---
 
@@ -540,6 +545,7 @@ Includes Pack C, plus:
 62. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
 63. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
 64. `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`
+65. `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`
 
 Recommended only when:
 - decision volume is high,

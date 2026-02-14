@@ -67,6 +67,7 @@ It helps teams:
 - **Quarterly control portfolio review:** `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
 - **Governance ROI accountability:** `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
 - **Control conflict resolution:** `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`
+- **Control change governance:** `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -103,4 +104,5 @@ For full routing by scenario, use:
 - Run quarterly control portfolio reviews to keep active controls right-sized.
 - Run monthly governance ROI checks to confirm process effort is worth the cost.
 - Resolve all control conflicts through precedence rules before using overrides.
+- Run C2/C3 control updates through formal change packets and verification windows.
 

@@ -27,6 +27,7 @@
 - Review open overrides for expiry risk and compensating-control status.
 - Confirm portfolio-review due date and readiness of required inputs.
 - Resolve any active control conflicts using precedence rules and log outcomes.
+- Review active control-change verification windows and rollback triggers.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -108,6 +109,7 @@ Use this trigger table before meetings:
 | Portfolio review overdue beyond quarter reset window | Escalate to leadership and freeze net-new control additions |
 | Governance ROI negative for 2 months | Initiate governance redesign and leadership review |
 | Unresolved control conflict blocks decision progress | Apply precedence ruling and assign wording-fix owner |
+| C2/C3 control change launched without packet | Freeze rollout and require immediate governance review |
 
 ---
 

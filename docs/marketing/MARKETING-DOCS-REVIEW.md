@@ -814,6 +814,7 @@ Use this minimum-safe operating rule:
 | Control set grows without periodic strategic pruning decisions | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` | Quarterly keep/merge/retire outcomes are completed on schedule |
 | Governance workload rises without measurable business-control return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` | Governance ROI index remains positive and improving quarter-over-quarter |
 | Teams apply conflicting controls inconsistently under pressure | `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` | Control conflicts are resolved quickly with logged precedence rulings |
+| Governance controls change frequently without rollout discipline | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` | High-impact control changes show stable post-change verification results |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

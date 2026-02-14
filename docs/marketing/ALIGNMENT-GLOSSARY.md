@@ -172,6 +172,9 @@ Normalized monthly measure of governance benefit minus governance cost, used to 
 ## Control Precedence
 Rule hierarchy that determines which control wins when two active controls prescribe conflicting actions.
 
+## Control Change Criticality
+Classification of control updates (C1/C2/C3) based on expected behavior impact and approval/verification rigor required.
+
 ---
 
 ## Incident & Escalation Terms

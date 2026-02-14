@@ -100,6 +100,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 15. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` (quarterly keep/merge/retire decisions)
 16. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` (monthly proof that governance value exceeds governance cost)
 17. `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` (tie-break system for conflicting controls)
+18. `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` (safe rollout/rollback for control updates)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

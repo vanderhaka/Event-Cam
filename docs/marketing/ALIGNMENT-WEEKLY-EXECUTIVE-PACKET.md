@@ -98,6 +98,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Portfolio review status (On Track/At Risk/Overdue) |  |  |  |
 | Governance ROI index (last monthly run) |  |  |  |
 | Open control-precedence conflicts |  |  |  |
+| Active high-criticality control changes (C2/C3) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
