@@ -34,6 +34,7 @@
 - Check for ownerless or overdue decisions.
 - Check doc-sync SLA compliance on recently closed decisions.
 - Check decision debt backlog trend and oldest unresolved debt items.
+- Verify premortem coverage for all open Priority 0 decisions.
 
 ## Step 3: Execution Scan (20 min)
 - Verify active experiment load (≤5).

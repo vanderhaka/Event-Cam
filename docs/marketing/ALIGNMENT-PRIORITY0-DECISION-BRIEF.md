@@ -100,6 +100,18 @@ Expected validation window: __________________
 
 ---
 
+## Premortem (Mandatory for P0)
+
+Complete `ALIGNMENT-DECISION-PREMORTEM.md` and summarize outputs:
+
+- Top failure mode:
+- Earliest warning signal:
+- Prevention control:
+- Contingency owner:
+- Reversal trigger threshold:
+
+---
+
 ## Sign-off
 
 | Role | Name | Sign-off | Date |

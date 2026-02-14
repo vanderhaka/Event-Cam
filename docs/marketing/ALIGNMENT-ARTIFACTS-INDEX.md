@@ -253,6 +253,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`**  
   Weekly workload balancing control for preventing owner overload across decision, execution, and governance duties.
 
+- **`ALIGNMENT-DECISION-PREMORTEM.md`**  
+  Structured pre-approval failure-mode analysis to reduce high-impact decision reversals.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -333,6 +336,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to spot uncovered governance failure modes quickly | `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md` |
 | We need to make unresolved decision debt visible and payable | `ALIGNMENT-DECISION-DEBT-REGISTER.md` |
 | We need to prevent owner overload from degrading execution quality | `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md` |
+| We need to stress-test high-impact decisions before approval | `ALIGNMENT-DECISION-PREMORTEM.md` |
 
 ---
 
@@ -379,6 +383,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Coverage Matrix | Ops / PMO + Strategy Owner |
 | Decision Debt Register | Strategy Owner + Ops / PMO |
 | Owner Load Management | Ops / PMO + Leadership Team |
+| Decision Premortem | Strategy Owner + Cross-functional Decision Team |
 
 ---
 
@@ -444,6 +449,7 @@ Includes Pack C, plus:
 46. `ALIGNMENT-CONTROL-COVERAGE-MATRIX.md`
 47. `ALIGNMENT-DECISION-DEBT-REGISTER.md`
 48. `ALIGNMENT-OWNER-LOAD-MANAGEMENT.md`
+49. `ALIGNMENT-DECISION-PREMORTEM.md`
 
 Recommended only when:
 - decision volume is high,
