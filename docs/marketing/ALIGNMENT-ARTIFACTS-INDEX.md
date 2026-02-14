@@ -232,6 +232,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`**  
   Post-incident learning template for capturing root causes and prevention actions within 48 hours.
 
+- **`ALIGNMENT-WEEKLY-DATA-CONTRACT.md`**  
+  Required field-level data readiness contract that gates weekly reviews and high-impact decisions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -305,6 +308,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need explicit source lineage and reliability for decision metrics | `ALIGNMENT-DATA-SOURCE-CATALOG.md` |
 | We need tactical step-by-step response guides during incidents | `ALIGNMENT-ESCALATION-PLAYCARDS.md` |
 | We need structured post-incident learning and prevention capture | `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md` |
+| We need explicit weekly data readiness gates before decisions | `ALIGNMENT-WEEKLY-DATA-CONTRACT.md` |
 
 ---
 
@@ -344,6 +348,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Data Source Catalog | Growth Lead + Data/Analytics Owner |
 | Escalation Playcards | Ops / PMO + Strategy Owner |
 | Incident Hotwash Template | Ops / PMO + Strategy Owner |
+| Weekly Data Contract | Ops / PMO + Growth/Data Owner |
 
 ---
 
@@ -402,6 +407,7 @@ Includes Pack C, plus:
 39. `ALIGNMENT-DATA-SOURCE-CATALOG.md`
 40. `ALIGNMENT-ESCALATION-PLAYCARDS.md`
 41. `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`
+42. `ALIGNMENT-WEEKLY-DATA-CONTRACT.md`
 
 Recommended only when:
 - decision volume is high,

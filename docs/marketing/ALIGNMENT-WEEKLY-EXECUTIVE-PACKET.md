@@ -29,6 +29,7 @@ Populate this packet using the latest versions of:
 - `ALIGNMENT-DEPENDENCY-TRACKER.md`
 - `ALIGNMENT-TRACEABILITY-MATRIX.md`
 - `ALIGNMENT-CONTRADICTION-REGISTER.md`
+- `ALIGNMENT-WEEKLY-DATA-CONTRACT.md`
 
 Optional (as relevant):
 - `ALIGNMENT-EXPERIMENT-REGISTRY.md`
@@ -43,6 +44,8 @@ Optional (as relevant):
 - Prepared by:
 - Path in force:
 - Alignment status (Green/Yellow/Red):
+- Data-ready status (Yes/No):
+- Critical data field fails (count):
 - Executive summary (3 bullets max):
 
 ---
