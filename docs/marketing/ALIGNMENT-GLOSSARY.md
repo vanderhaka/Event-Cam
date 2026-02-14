@@ -181,6 +181,9 @@ Composite score used to rank governance automation candidates based on time savi
 ## Signal Lag
 Elapsed time between threshold breach and stabilization, measured across detection, assignment, action, and recovery stages.
 
+## Control Failure Mode
+Recurring pattern where a governance control fails by design, adoption, timing, data quality, ownership, or conflict—requiring containment and redesign action.
+
 ---
 
 ## Incident & Escalation Terms

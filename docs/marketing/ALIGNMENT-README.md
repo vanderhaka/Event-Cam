@@ -70,6 +70,7 @@ It helps teams:
 - **Control change governance:** `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`
 - **Automation sequencing governance:** `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md`
 - **Signal response speed governance:** `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`
+- **Control breakdown pattern governance:** `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -109,4 +110,5 @@ For full routing by scenario, use:
 - Run C2/C3 control updates through formal change packets and verification windows.
 - Prioritize automation using scorecard so build effort targets highest governance ROI first.
 - Keep critical signal detection→assignment→action lag within threshold by stage.
+- Contain and redesign controls quickly when high-severity failure modes recur.
 

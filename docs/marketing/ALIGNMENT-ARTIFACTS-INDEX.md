@@ -310,6 +310,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`**  
   Stage-by-stage lag analysis for response speed from signal detection to stabilization.
 
+- **`ALIGNMENT-CONTROL-FAILURE-MODES.md`**  
+  Canonical catalog of control breakdown patterns, containment actions, and redesign triggers.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -409,6 +412,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need disciplined rollout/rollback for control changes | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` |
 | We need objective sequencing for governance automation work | `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` |
 | We need to reduce time-to-response on critical alignment signals | `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` |
+| We need to identify and correct recurring control breakdown patterns | `ALIGNMENT-CONTROL-FAILURE-MODES.md` |
 
 ---
 
@@ -474,6 +478,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Change Protocol | Strategy Owner + Ops / PMO + Leadership Team |
 | Automation Prioritization Scorecard | Ops / PMO + Engineering/Automation Owner |
 | Signal Lag Analysis | Ops / PMO + On-Call Owner + Functional Leads |
+| Control Failure Modes | Strategy Owner + Ops / PMO + Control Owners |
 
 ---
 
@@ -558,6 +563,7 @@ Includes Pack C, plus:
 65. `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md`
 66. `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md`
 67. `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`
+68. `ALIGNMENT-CONTROL-FAILURE-MODES.md`
 
 Recommended only when:
 - decision volume is high,

@@ -101,6 +101,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Active high-criticality control changes (C2/C3) |  |  |  |
 | P-A1 automation candidates open (count) |  |  |  |
 | Critical signal lag breaches (count) |  |  |  |
+| Open high-severity control failure modes (F1/F2) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -181,6 +182,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Active-artifact utilization rate:
 - Controls proposed for sunset (count):
 - Mean critical-signal action lag (hours):
+- Control failures without containment plan (count):
 
 ---
 

@@ -817,6 +817,7 @@ Use this minimum-safe operating rule:
 | Governance controls change frequently without rollout discipline | `ALIGNMENT-CONTROL-CHANGE-PROTOCOL.md` | High-impact control changes show stable post-change verification results |
 | Automation effort is spent on low-impact governance tasks | `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` | P-A1 automations are delivered first and reduce manual governance load |
 | Critical warnings are acknowledged slowly and become preventable incidents | `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` | Detection-to-action lag for critical signals stays within defined thresholds |
+| Same control risks recur despite prior fixes and consume governance capacity | `ALIGNMENT-CONTROL-FAILURE-MODES.md` | High-severity control failure recurrences decline with containment in SLA |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
