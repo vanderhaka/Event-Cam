@@ -550,6 +550,45 @@ This is the minimum set of revisions that will materially improve strategic cred
 
 ---
 
+## Impact × Effort Prioritization Board (Execution Triage)
+
+Use this board to decide what to do first when team bandwidth is constrained.
+
+### High Impact / Low Effort (Do Immediately)
+1. Correct all pricing/math contradictions across docs.
+2. Mark one canonical pricing doc and reference it everywhere else.
+3. Add version/owner header to each strategy doc.
+4. Clarify one near-term narrative: wedding-first + no-app-required-for-guests.
+5. Add confidence labels to major forecast assumptions.
+
+### High Impact / Medium Effort (Do Next)
+1. Build launch playbook with named owners and timeline.
+2. Implement standardized experiment scorecard across growth channels.
+3. Formalize referral mechanics and anti-abuse rules.
+4. Add retention health scoring for Pro/Venue channels.
+5. Establish KPI review cadence with “scale/hold/kill” decision gates.
+
+### High Impact / High Effort (Gate Carefully)
+1. Expand multi-segment pricing architecture beyond core wedding lane.
+2. Build app/social layer beyond MVP retention validation.
+3. Scale venue/festival channels before wedding funnel economics stabilize.
+
+### Medium Impact / Low Effort
+1. Add “deprecated assumptions” sections to docs with stale numbers.
+2. Add a short glossary to unify terms (guest, uploader, participant, event owner).
+3. Add one-page strategic map linking all docs to the same operating model.
+
+### Medium Impact / Medium Effort
+1. Create channel-level ROI tracker with CAC/payback comparison.
+2. Add monthly assumptions reforecast process.
+3. Add narrative QA step before any public-facing messaging release.
+
+### Low Impact / High Effort (Defer)
+1. Expanded visionary narrative collateral not tied to next-quarter execution.
+2. Non-critical framework expansion before existing loops are measured and stable.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
