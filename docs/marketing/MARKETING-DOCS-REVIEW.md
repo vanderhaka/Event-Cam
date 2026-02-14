@@ -457,6 +457,63 @@ Do this, and the strategy transitions from “high-potential but diffuse” to �
 
 ---
 
+## Assumption Audit Checklist (Use Before Publishing Any Strategy Update)
+
+Use this as a mandatory QA gate for future strategy docs and revisions:
+
+### Messaging & Positioning
+- [ ] Is the primary audience for this doc explicitly named in the first screen?
+- [ ] Does the document support the current quarter’s core narrative?
+- [ ] Are any future-state ideas clearly marked as future-state (not current GTM)?
+
+### Pricing & Economics
+- [ ] Do all prices match the canonical economics table?
+- [ ] Do all formulas reconcile arithmetically?
+- [ ] Are all incentives (discounts, commission, margin) mutually consistent?
+- [ ] Are scenario assumptions labeled (base / upside / downside)?
+
+### Funnel & Growth Claims
+- [ ] Does each conversion assumption have either evidence or a confidence label?
+- [ ] Is each growth channel tied to a measurable success threshold?
+- [ ] Is there a clear owner and review cadence for each KPI?
+
+### Compliance & Risk
+- [ ] Does any email/consent workflow align with current legal policy?
+- [ ] Are risky tactics explicitly reviewed for abuse/fraud/compliance failure modes?
+- [ ] Is there a documented fallback if key assumptions fail?
+
+### Execution Clarity
+- [ ] Does this doc include decision owner, last updated date, and version context?
+- [ ] Are contradictions with other strategy docs explicitly resolved?
+- [ ] Does this doc reduce ambiguity for execution teams (not add it)?
+
+---
+
+## Experiment Scorecard Template (Recommended Standard)
+
+To convert creative ideas into disciplined growth learning, every test should use one standard format:
+
+| Field | Required Content |
+|---|---|
+| Experiment Name | Short and specific (e.g., “DJ script insertion pilot”) |
+| Objective | Which funnel stage this improves (awareness/activation/revenue/referral) |
+| Hypothesis | If X is done, Y metric should improve by Z |
+| Audience | Exact segment targeted |
+| Channel | Where and how test runs |
+| Budget Cap | Maximum spend/time allowed |
+| Primary KPI | Single deciding metric |
+| Secondary KPIs | Supporting quality metrics |
+| Success Threshold | Minimum outcome to scale |
+| Stop-Loss Threshold | Trigger to terminate the test |
+| Time-to-Signal | How long before a valid read |
+| Owner | Responsible person |
+| Decision Date | Date to scale/iterate/kill |
+| Postmortem Summary | What was learned and next action |
+
+Using this template across channels will prevent idea overload and keep execution tied to measurable outcomes.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
