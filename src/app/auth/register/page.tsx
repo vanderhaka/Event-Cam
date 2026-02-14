@@ -101,7 +101,7 @@ function RegisterForm() {
     <div className="auth-wrapper">
       <section className="card">
         <h2 className="section-head">Create your account</h2>
-        <p className="section-sub">Start collecting event media in minutes</p>
+        <p className="section-sub">Start collecting memories in minutes</p>
         <form onSubmit={submit} className="form-grid">
           <label>
             <div className="label">First name</div>

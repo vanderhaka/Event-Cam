@@ -117,7 +117,7 @@ export default function DashboardPage() {
           <div className="empty-state">
             <h3 className="empty-state-heading">Your first event is waiting</h3>
             <p className="empty-state-text">
-              Every great album starts with one moment—yours starts here. Create an event, invite your guests, and collect every photo and video in one place.
+              Every great album starts with one moment—yours starts here. Create an event, invite your guests, and start collecting memories in one place.
             </p>
             <Link
               href="/dashboard/events/new"

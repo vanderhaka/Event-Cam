@@ -153,7 +153,7 @@ export default function NewEventStepContent() {
       <section className="card create-event-card">
         <div className="create-flow-header">
           <h3 className="section-head">Create event</h3>
-          <p className="section-sub">Set up a new event to start collecting media from guests.</p>
+          <p className="section-sub">Set up a new event to start collecting memories from guests.</p>
           <div className="create-flow-stepper" role="navigation" aria-label="Create event steps">
             <div className="create-flow-dots">
               {[1, 2, 3, 4].map((s) => (
@@ -185,7 +185,7 @@ export default function NewEventStepContent() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  placeholder="e.g. Sarah & Tom's Wedding"
+                  placeholder="e.g. Sarah & Tom's Wedding — Collecting memories"
                   autoFocus
                 />
               </label>
