@@ -56,6 +56,9 @@ export default function EventDetailPage() {
   const [editDisplayName, setEditDisplayName] = useState('');
   const [editPhone, setEditPhone] = useState('');
   const [inviteeOnboardingStep, setInviteeOnboardingStep] = useState<'step1' | 'step2' | null>(null);
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
@@ -189,6 +192,22 @@ export default function EventDetailPage() {
     } else {
       const payload = await response.json();
       showStatus(payload.message || 'Could not add invitees', 'error');
+    }
+  }
+
+  async function deleteEvent() {
+    setDeleting(true);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}`, { method: 'DELETE' });
+      if (response.ok) {
+        setDeleteConfirmOpen(false);
+        router.push('/dashboard');
+        return;
+      }
+      const payload = await response.json();
+      showStatus(payload.message || 'Failed to delete event', 'error');
+    } finally {
+      setDeleting(false);
     }
   }
 
@@ -394,7 +413,7 @@ export default function EventDetailPage() {
                 <p className="muted" style={{ margin: '0.15rem 0 0', fontSize: '0.85rem' }}>{eventPayload.event.location}</p>
               )}
             </div>
-            <div className="row" style={{ gap: '0.5rem' }}>
+            <div className="row" style={{ gap: '0.5rem', alignItems: 'center' }}>
               <button
                 type="button"
                 className="btn btn-subtle btn-sm"
@@ -411,6 +430,55 @@ export default function EventDetailPage() {
               >
                 Publish QR Codes
               </button>
+              <div style={{ position: 'relative' }}>
+                <button
+                  type="button"
+                  className="btn btn-subtle btn-sm"
+                  onClick={() => setSettingsOpen((o) => !o)}
+                  aria-expanded={settingsOpen}
+                  aria-haspopup="true"
+                  aria-label="Settings"
+                  title="Settings"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                  </svg>
+                </button>
+                {settingsOpen && (
+                  <>
+                    <div
+                      role="presentation"
+                      style={{ position: 'fixed', inset: 0, zIndex: 10 }}
+                      onClick={() => setSettingsOpen(false)}
+                    />
+                    <div
+                      className="event-settings-dropdown"
+                      role="menu"
+                      style={{
+                        position: 'absolute',
+                        top: '100%',
+                        right: 0,
+                        marginTop: '0.25rem',
+                        minWidth: '160px',
+                        zIndex: 11,
+                      }}
+                    >
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="event-settings-dropdown-item event-settings-dropdown-item-danger"
+                        onClick={() => {
+                          setSettingsOpen(false);
+                          setDeleteConfirmOpen(true);
+                        }}
+                      >
+                        Delete event
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </section>
@@ -435,6 +503,55 @@ export default function EventDetailPage() {
           Albums ({eventPayload.albums?.length ?? 0})
         </button>
       </div>
+
+      {/* Delete event confirmation modal */}
+      {deleteConfirmOpen && (
+        <div
+          className="modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="delete-event-modal-title"
+          onClick={() => !deleting && setDeleteConfirmOpen(false)}
+        >
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3 id="delete-event-modal-title" className="modal-title">Delete event</h3>
+              <button
+                type="button"
+                className="modal-close"
+                onClick={() => !deleting && setDeleteConfirmOpen(false)}
+                aria-label="Close"
+                disabled={deleting}
+              >
+                &times;
+              </button>
+            </div>
+            <div className="modal-body">
+              <p className="section-sub" style={{ marginBottom: '1.25rem' }}>
+                Are you sure? This is permanent. All guests, media, and albums for this event will be removed.
+              </p>
+              <div className="modal-actions" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="btn btn-subtle"
+                  onClick={() => setDeleteConfirmOpen(false)}
+                  disabled={deleting}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={deleteEvent}
+                  disabled={deleting}
+                >
+                  {deleting ? 'Deleting…' : 'Delete event'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ─── Invitees / Event QR Tab ─── */}
       {activeTab === 'invitees' && (

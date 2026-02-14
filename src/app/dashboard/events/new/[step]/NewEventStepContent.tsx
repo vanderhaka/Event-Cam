@@ -96,12 +96,6 @@ export default function NewEventStepContent() {
     return fetch(input, { ...init, headers });
   }
 
-  async function logout() {
-    await fetch('/api/auth/logout', { method: 'POST' });
-    await supabase.auth.signOut();
-    router.push('/');
-  }
-
   async function submit(e: FormEvent) {
     e.preventDefault();
     setCreating(true);
@@ -141,39 +135,15 @@ export default function NewEventStepContent() {
       <div className="grid">
         <div className="row-center" style={{ justifyContent: 'space-between' }}>
           <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Your Events</h2>
-          <div className="row-center" style={{ gap: '0.5rem' }}>
-            <Link href="/dashboard" className="btn btn-subtle btn-sm">
-              Cancel
-            </Link>
-            <button type="button" className="btn btn-subtle btn-sm" onClick={logout}>
-              Log out
-            </button>
-          </div>
+          <Link href="/dashboard" className="btn btn-subtle btn-sm">
+            Cancel
+          </Link>
         </div>
 
         <section className="card create-event-card">
           <div className="create-flow-header">
-          <h3 className="section-head">Create event</h3>
-          <p className="section-sub">Set up a new event to start collecting memories from guests.</p>
-          <div className="create-flow-stepper" role="navigation" aria-label="Create event steps">
-            <div className="create-flow-dots">
-              {[1, 2, 3, 4].map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  className={`create-flow-dot ${step === s ? 'active' : ''} ${step > s ? 'done' : ''}`}
-                  onClick={() => goToStep(s)}
-                  aria-current={step === s ? 'step' : undefined}
-                  aria-label={`Step ${s}${step === s ? ', current' : step > s ? ', completed' : ''}`}
-                >
-                  <span className="create-flow-dot-num">{s}</span>
-                </button>
-              ))}
-            </div>
-            <p className="create-flow-step-label">
-              Step {step} of {totalSteps}
-            </p>
-          </div>
+            <h3 className="section-head">Create event</h3>
+            <p className="section-sub">Set up a new event to start collecting memories from guests.</p>
           </div>
 
           <form onSubmit={submit} className="form-grid create-event-form" noValidate>
@@ -207,7 +177,8 @@ export default function NewEventStepContent() {
                       onChange={() => setEventType('invite_list')}
                     />
                     <span className="event-type-label">
-                      <strong>Known guest list</strong> — Add invitees; each gets a unique QR code.
+                      <span className="event-type-title">Known guest list</span>
+                      <span className="event-type-desc">Add invitees; each gets a unique QR code.</span>
                     </span>
                   </label>
                   <label className="event-type-option event-type-card">
@@ -219,7 +190,8 @@ export default function NewEventStepContent() {
                       onChange={() => setEventType('open')}
                     />
                     <span className="event-type-label">
-                      <strong>Open event</strong> — One QR for the event; anyone can scan and upload.
+                      <span className="event-type-title">Open event</span>
+                      <span className="event-type-desc">One QR for the event; anyone can scan and upload.</span>
                     </span>
                   </label>
                 </div>
@@ -267,6 +239,22 @@ export default function NewEventStepContent() {
             ) : (
               <span />
             )}
+            <div className="create-flow-stepper" role="navigation" aria-label="Create event steps">
+              <div className="create-flow-dots">
+                {[1, 2, 3, 4].map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    className={`create-flow-dot ${step === s ? 'active' : ''} ${step > s ? 'done' : ''}`}
+                    onClick={() => goToStep(s)}
+                    aria-current={step === s ? 'step' : undefined}
+                    aria-label={`Step ${s}${step === s ? ', current' : step > s ? ', completed' : ''}`}
+                  >
+                    <span className="create-flow-dot-num">{s}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
             {step < totalSteps ? (
               <button
                 type="button"

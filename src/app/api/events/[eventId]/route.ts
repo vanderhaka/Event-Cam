@@ -67,3 +67,22 @@ export async function GET(_: NextRequest, context: { params: { eventId: string }
     return jsonResponse({ message: 'Unable to load event' }, { status: 400 });
   }
 }
+
+export async function DELETE(_: NextRequest, context: { params: { eventId: string } }) {
+  try {
+    const { userId } = await requireHostUser();
+    await getEventForHost(context.params.eventId, userId);
+    const admin = createSupabaseAdminClient();
+    const { error } = await admin.from('events').delete().eq('id', context.params.eventId).eq('host_id', userId);
+    if (error) {
+      console.error('[DELETE /api/events/:eventId]', error.message);
+      return jsonResponse({ message: 'Failed to delete event' }, { status: 500 });
+    }
+    return jsonResponse({ deleted: true }, { status: 200 });
+  } catch (error) {
+    if (error instanceof ApiError) {
+      return jsonResponse({ message: error.message }, { status: error.status });
+    }
+    return jsonResponse({ message: 'Unable to delete event' }, { status: 400 });
+  }
+}
