@@ -848,7 +848,7 @@ export default function EventDetailPage() {
               <div className="modal-card onboarding-modal" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                   <h3 id="onboarding-modal-title" className="modal-title">
-                    {inviteeOnboardingStep === 'step1' ? 'Once you\'re done adding guests' : 'One more thing'}
+                    {inviteeOnboardingStep === 'step1' ? 'You\'re all set with your guest list' : 'Quick heads-up'}
                   </h3>
                   <button
                     type="button"
@@ -868,25 +868,25 @@ export default function EventDetailPage() {
                   {inviteeOnboardingStep === 'step1' ? (
                     <>
                       <p className="section-sub" style={{ marginBottom: '1rem' }}>
-                        Here&apos;s how you get QR codes for everyone:
+                        Super simple — here&apos;s how everyone gets their QR code:
                       </p>
                       <ol className="onboarding-steps" style={{ margin: '0 0 1.25rem', paddingLeft: '1.25rem' }}>
-                        <li style={{ marginBottom: '0.5rem' }}>Click <strong>I&apos;ve finished — confirm</strong> in the &quot;Next step&quot; card above your guest list.</li>
-                        <li style={{ marginBottom: '0.5rem' }}>After you confirm, QR codes are issued automatically for each guest. Refresh the page if you don&apos;t see them right away.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>Hit <strong>I&apos;ve finished — confirm</strong> in the &quot;Next step&quot; card above.</li>
+                        <li style={{ marginBottom: '0.5rem' }}>Boom — QR codes show up for each guest. If they don&apos;t appear right away, just refresh the page.</li>
                       </ol>
                       <p className="muted" style={{ fontSize: '0.9rem' }}>
-                        Look for the &quot;Next step&quot; card above your guest list.
+                        The &quot;Next step&quot; card is right above your guest list.
                       </p>
                       <div className="modal-actions" style={{ marginTop: '1.25rem' }}>
                         <button type="button" className="btn btn-primary" onClick={() => setInviteeOnboardingStep('step2')}>
-                          Continue
+                          Sounds good
                         </button>
                       </div>
                     </>
                   ) : (
                     <>
                       <p className="section-sub" style={{ marginBottom: '1.25rem' }}>
-                        You can always come back and add more guests later — before or after you confirm. Just save them here and, if you&apos;ve already published, you&apos;ll need to publish again to get new QR codes.
+                        You can add more guests anytime — before or after you confirm. Just save them here. If you&apos;ve already published, no worries — hit publish again and you&apos;ll get the new QR codes.
                       </p>
                       <button
                         type="button"
@@ -898,7 +898,7 @@ export default function EventDetailPage() {
                           }
                         }}
                       >
-                        Got it
+                        Perfect, thanks
                       </button>
                     </>
                   )}
