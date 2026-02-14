@@ -117,6 +117,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Contradictory critical signal pairs (count) |  |  |  |
 | Open exceptions past expiry (count) |  |  |  |
 | At-risk/failed handoffs (count) |  |  |  |
+| Operating health index band (Strong/Watch/At Risk/Critical) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -213,6 +214,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Signal correlation diagnosis completion rate:
 - Exception recurrence rate:
 - Handoff packet completeness rate:
+- Operating health index score:
 
 ---
 

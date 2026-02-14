@@ -229,6 +229,9 @@ Formal, time-bounded deviation from a required policy/control rule that must be 
 ## Handoff Reliability
 The quality of ownership transitions measured by context completeness, acceptance confirmation, and post-handoff execution stability.
 
+## Operating Health Index
+Composite system score combining decision, execution, control, signal, and governance-efficiency health to track overall alignment reliability.
+
 ---
 
 ## Incident & Escalation Terms

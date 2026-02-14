@@ -358,6 +358,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`**  
   Reliability review to ensure ownership transitions preserve continuity and execution quality.
 
+- **`ALIGNMENT-OPERATING-HEALTH-INDEX.md`**  
+  Composite monthly operating-health score aggregating decision, execution, control, signal, and governance health.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -473,6 +476,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to detect conflicting signal movement before making wrong optimization calls | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` |
 | We need recurring exception patterns translated into policy fixes, not ad hoc extensions | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` |
 | We need to prevent ownership-transition gaps from degrading execution quality | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` |
+| We need one composite system score to prioritize cross-domain recovery actions | `ALIGNMENT-OPERATING-HEALTH-INDEX.md` |
 
 ---
 
@@ -554,6 +558,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Signal Correlation Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 | Policy Exception Review | Strategy Owner + Ops / PMO + Governance Owners |
 | Handoff Reliability Review | Ops / PMO + Strategy Owner + Functional Leads |
+| Operating Health Index | Strategy Owner + Ops / PMO + Growth/Data Owner |
 
 ---
 
@@ -654,6 +659,7 @@ Includes Pack C, plus:
 81. `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
 82. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
 83. `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`
+84. `ALIGNMENT-OPERATING-HEALTH-INDEX.md`
 
 Recommended only when:
 - decision volume is high,

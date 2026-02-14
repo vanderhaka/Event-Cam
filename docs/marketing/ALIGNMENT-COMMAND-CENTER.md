@@ -44,6 +44,7 @@
 - Review signal-correlation report for contradictory high-priority pairs.
 - Review policy-exception patterns for recurrence, expiry risk, and unresolved extensions.
 - Review handoff reliability status for recent ownership transitions.
+- Review operating-health index trend for cross-domain deterioration.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -96,6 +97,7 @@
 - Check contradictory signal pairs and assign root-cause investigations.
 - Check recurring or expired exceptions and assign policy-correction owners.
 - Check recent handoffs for packet completeness, acceptance, and post-handoff stability.
+- Check component-level index drops and assign recovery owners by domain.
 
 ## Step 5: Commitments (10 min)
 - Set top 3 commitments for next 7 days.
@@ -163,6 +165,7 @@ Use this trigger table before meetings:
 | Contradictory critical signal pair unresolved >10 business days | Escalate cross-signal diagnostic review |
 | Exception recurrence rises across same policy/control | Trigger policy-exception correction review |
 | Critical workflow handoff fails or leaves ownerless window | Trigger immediate handoff recovery protocol |
+| Operating health index drops sharply or enters critical band | Trigger cross-domain recovery intervention |
 
 ---
 
@@ -173,7 +176,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis + control failure modes review + escalation effectiveness review + corrective action tracker + closure integrity audit + leading indicator watchlist + preventive action review + threshold calibration review + decision quality regression review + alert fatigue review + control dependency map + review cadence compliance + control adoption compliance + control effectiveness scorecard + signal correlation review + policy exception review + handoff reliability review + operating health index |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---
