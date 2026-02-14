@@ -37,6 +37,26 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-SCORECARD.md`**  
   Weekly quantitative health check to detect alignment drift early.
 
+- **`ALIGNMENT-RACI.md`**  
+  Ownership clarity for decision rights, execution responsibilities, and escalation paths.
+
+---
+
+## Which Artifact to Use by Situation
+
+| Situation | Use This Artifact First |
+|---|---|
+| Team is unsure where to start | `ALIGNMENT-START-HERE.md` |
+| Strategy feels broad or inconsistent | `MARKETING-DOCS-REVIEW.md` |
+| We need decisions before moving forward | `QUESTIONS-THAT-NEED-ANSWERS.md` |
+| We need a date-driven decision schedule | `ALIGNMENT-DECISION-CALENDAR.md` |
+| We need to pick one 90-day path | `PATH-ALIGNMENT-WORKSHEET.md` |
+| We need to verify readiness to execute | `ALIGNMENT-CHECKLIST.md` |
+| We need to track who decided what | `ALIGNMENT-DECISIONS-LOG.md` |
+| We need recurring operating rhythm | `ALIGNMENT-MEETING-CADENCE.md` |
+| We need to quantify alignment health weekly | `ALIGNMENT-SCORECARD.md` |
+| We need role-level ownership clarity | `ALIGNMENT-RACI.md` |
+
 ---
 
 ## Recommended Ownership
