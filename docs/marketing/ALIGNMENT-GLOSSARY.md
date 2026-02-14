@@ -427,6 +427,9 @@ The measurable delay or handoff drag introduced by control steps in critical ope
 ## Control Actionability
 The degree to which control outputs convert directly into clear, owned, time-bound actions.
 
+## Control Decision Usefulness
+The degree to which control outputs are actually incorporated into high-impact decision-making.
+
 ---
 
 ## Incident & Escalation Terms

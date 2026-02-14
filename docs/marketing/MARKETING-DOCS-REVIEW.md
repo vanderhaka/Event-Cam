@@ -899,6 +899,7 @@ Use this minimum-safe operating rule:
 | Control workflows become overly complex over time, causing process drag and avoidable execution latency | `ALIGNMENT-CONTROL-COMPLEXITY-BUDGET-REVIEW.md` | Over-budget critical-control count trends to zero and simplification actions close on time |
 | Control steps introduce recurring handoff delay, slowing critical execution even when controls are nominally healthy | `ALIGNMENT-CONTROL-EXECUTION-FRICTION-REVIEW.md` | Friction-high critical-control count trends to zero and median control-induced delay declines |
 | Control outputs are logged but not action-ready, causing delayed ownership and weak follow-through | `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` | Non-actionable output count trends to zero and signal-to-action lead time declines |
+| Controls generate activity but weakly influence high-impact decisions, reducing governance ROI and strategic precision | `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` | Low-utility control count trends to zero and signal-to-decision integration lag declines |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

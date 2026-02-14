@@ -88,6 +88,7 @@
 | Over-budget critical-control count |  | 0 |  |
 | Friction-high critical-control count |  | 0 |  |
 | Non-actionable control-output count |  | 0 |  |
+| Low-utility critical-control count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

@@ -345,6 +345,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Median control-induced delay (hrs):
 - Non-actionable control outputs (count):
 - Median signal-to-action lead time (hrs):
+- Low-utility critical controls (count):
+- Median signal-to-decision integration lag (hrs):
 
 ---
 
