@@ -26,6 +26,7 @@
 - Review any proposed control sunset actions and verify packet completeness.
 - Review open overrides for expiry risk and compensating-control status.
 - Confirm portfolio-review due date and readiness of required inputs.
+- Resolve any active control conflicts using precedence rules and log outcomes.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -106,6 +107,7 @@ Use this trigger table before meetings:
 | Governance cost exceeds 120% budget for 2 weeks | Trigger cost-reduction playbook and re-evaluate active pack/mode |
 | Portfolio review overdue beyond quarter reset window | Escalate to leadership and freeze net-new control additions |
 | Governance ROI negative for 2 months | Initiate governance redesign and leadership review |
+| Unresolved control conflict blocks decision progress | Apply precedence ruling and assign wording-fix owner |
 
 ---
 

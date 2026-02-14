@@ -298,6 +298,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-GOVERNANCE-ROI-REPORT.md`**  
   Monthly value-versus-cost report to verify governance effort is improving outcomes faster than it adds overhead.
 
+- **`ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`**  
+  Conflict-resolution hierarchy defining which controls take priority when governance rules prescribe different actions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -393,6 +396,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to cap governance overhead before it slows execution | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` |
 | We need a quarterly keep/merge/retire decision on all controls | `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md` |
 | We need proof that governance effort has positive return | `ALIGNMENT-GOVERNANCE-ROI-REPORT.md` |
+| We need one rule for resolving control conflicts quickly | `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md` |
 
 ---
 
@@ -454,6 +458,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Governance Cost Budget | Ops / PMO + Leadership Team |
 | Control Portfolio Review | Strategy Owner + Ops / PMO + Leadership Team |
 | Governance ROI Report | Strategy Owner + Ops / PMO + Leadership Team |
+| Control Precedence Rules | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -534,6 +539,7 @@ Includes Pack C, plus:
 61. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
 62. `ALIGNMENT-CONTROL-PORTFOLIO-REVIEW.md`
 63. `ALIGNMENT-GOVERNANCE-ROI-REPORT.md`
+64. `ALIGNMENT-CONTROL-PRECEDENCE-RULES.md`
 
 Recommended only when:
 - decision volume is high,

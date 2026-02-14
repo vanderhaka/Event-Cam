@@ -169,6 +169,9 @@ Periodic assessment of all active controls to decide keep/merge/retire/expand ac
 ## Governance ROI Index
 Normalized monthly measure of governance benefit minus governance cost, used to assess whether process intensity is producing net execution value.
 
+## Control Precedence
+Rule hierarchy that determines which control wins when two active controls prescribe conflicting actions.
+
 ---
 
 ## Incident & Escalation Terms

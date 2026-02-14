@@ -97,6 +97,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Governance cost (% capacity) |  |  |  |
 | Portfolio review status (On Track/At Risk/Overdue) |  |  |  |
 | Governance ROI index (last monthly run) |  |  |  |
+| Open control-precedence conflicts |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
