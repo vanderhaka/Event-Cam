@@ -73,6 +73,7 @@ Use this trigger table before meetings:
 | Active artifact count exceeds mode guardrail for 2 weeks | Run pruning pass and republish active-set declaration |
 | Repeated invalid state transitions this week | Freeze affected workflow until owner retraining completes |
 | Sev-1 alignment incident detected | Trigger on-call escalation matrix immediately |
+| Critical KPI anomaly detected (A1/A2) | Trigger metric anomaly protocol and mark packet provisional |
 
 ---
 

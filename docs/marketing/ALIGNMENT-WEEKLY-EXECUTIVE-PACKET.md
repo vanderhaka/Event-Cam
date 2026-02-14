@@ -73,6 +73,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 - Confirmed positive signals:
 - Ambiguous signals requiring more data:
 - Negative signals requiring action:
+- Metric anomalies open (A1/A2/A3 count):
 
 ---
 

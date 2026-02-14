@@ -238,6 +238,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-MODE-TRANSITION-LOG.md`**  
   Audit log of operating-mode changes with triggers, verification windows, and rollback criteria.
 
+- **`ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`**  
+  Triage and decision-gating procedure for unexpected KPI behavior or metric integrity failures.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -313,6 +316,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need structured post-incident learning and prevention capture | `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md` |
 | We need explicit weekly data readiness gates before decisions | `ALIGNMENT-WEEKLY-DATA-CONTRACT.md` |
 | We need an auditable history of mode changes and outcomes | `ALIGNMENT-MODE-TRANSITION-LOG.md` |
+| We need controlled triage for unexpected KPI behavior | `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md` |
 
 ---
 
@@ -354,6 +358,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Incident Hotwash Template | Ops / PMO + Strategy Owner |
 | Weekly Data Contract | Ops / PMO + Growth/Data Owner |
 | Mode Transition Log | Ops / PMO + Strategy Owner |
+| Metric Anomaly Protocol | Growth/Data Owner + Ops / PMO |
 
 ---
 
@@ -414,6 +419,7 @@ Includes Pack C, plus:
 41. `ALIGNMENT-INCIDENT-HOTWASH-TEMPLATE.md`
 42. `ALIGNMENT-WEEKLY-DATA-CONTRACT.md`
 43. `ALIGNMENT-MODE-TRANSITION-LOG.md`
+44. `ALIGNMENT-METRIC-ANOMALY-PROTOCOL.md`
 
 Recommended only when:
 - decision volume is high,
