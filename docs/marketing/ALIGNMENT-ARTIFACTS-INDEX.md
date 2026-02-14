@@ -157,6 +157,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`**  
   Structured rollback/replace protocol for decisions that underperform or breach guardrails.
 
+- **`ALIGNMENT-EVIDENCE-STANDARDS.md`**  
+  Decision evidence quality rubric defining what proof is required for high-impact choices.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -212,6 +215,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to make strategic assumptions explicit and testable | `ALIGNMENT-ASSUMPTION-REGISTRY.md` |
 | We need to track cross-functional blockers before they cascade | `ALIGNMENT-DEPENDENCY-TRACKER.md` |
 | We need a controlled process for rolling back failed decisions | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` |
+| We need clear standards for what qualifies as decision-grade evidence | `ALIGNMENT-EVIDENCE-STANDARDS.md` |
 
 ---
 
@@ -233,6 +237,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Assumption Registry | Strategy Owner + Growth Lead |
 | Dependency Tracker | Ops / PMO + Functional Leads |
 | Decision Reversal Protocol | Strategy Owner + Ops / PMO |
+| Evidence Standards | Strategy Owner + Analytics / Growth Lead |
 
 ---
 
@@ -273,6 +278,7 @@ Includes Pack C, plus:
 21. `ALIGNMENT-ASSUMPTION-REGISTRY.md`
 22. `ALIGNMENT-DEPENDENCY-TRACKER.md`
 23. `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
+24. `ALIGNMENT-EVIDENCE-STANDARDS.md`
 
 Recommended only when:
 - decision volume is high,
