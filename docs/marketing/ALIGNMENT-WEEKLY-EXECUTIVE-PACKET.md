@@ -349,6 +349,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Median signal-to-decision integration lag (hrs):
 - Inconsistent equivalent-signal responses (count):
 - Response consistency rate for equivalent signal classes (%):
+- Lead-time volatile critical controls (count):
+- Control lead-time variability index:
 
 ---
 

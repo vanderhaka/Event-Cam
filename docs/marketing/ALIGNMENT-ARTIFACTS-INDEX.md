@@ -562,6 +562,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md`**  
   Review verifying equivalent control signals trigger consistent action classes across teams.
 
+- **`ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`**  
+  Review ensuring critical control workflows close within stable and predictable lead-time bands.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -745,6 +748,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need control signals to produce clear, owned next steps instead of ambiguous follow-up | `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` |
 | We need proof that control outputs materially shape high-impact decisions, not just reporting volume | `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` |
 | We need equivalent control signals to trigger consistent responses across owners and cycles | `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` |
+| We need control completion timing to remain predictable so planning commitments stay reliable | `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` |
 
 ---
 
@@ -894,6 +898,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Actionability Review | Ops / PMO + Control Owners + Functional Leads |
 | Control Decision Usefulness Review | Ops / PMO + Strategy Owner + Control Owners |
 | Control Signal-Action Consistency Review | Ops / PMO + Control Owners + On-Call/Response Leads |
+| Control Lead-Time Predictability Review | Ops / PMO + Control Owners + Delivery/Execution Leads |
 
 ---
 
@@ -1062,6 +1067,7 @@ Includes Pack C, plus:
 149. `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md`
 150. `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md`
 151. `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md`
+152. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

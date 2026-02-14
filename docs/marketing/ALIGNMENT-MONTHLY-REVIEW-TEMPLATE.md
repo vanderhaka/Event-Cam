@@ -90,6 +90,7 @@
 | Non-actionable control-output count |  | 0 |  |
 | Low-utility critical-control count |  | 0 |  |
 | Inconsistent equivalent-signal response count |  | 0 |  |
+| Lead-time volatile critical-control count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

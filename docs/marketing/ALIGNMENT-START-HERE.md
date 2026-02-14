@@ -187,6 +187,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 102. `ALIGNMENT-CONTROL-ACTIONABILITY-REVIEW.md` (ensures control signals translate into clear, owned, and time-bound actions)
 103. `ALIGNMENT-CONTROL-DECISION-USEFULNESS-REVIEW.md` (ensures control outputs are used in high-impact decisions with low integration lag)
 104. `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` (ensures equivalent risk signals trigger consistent actions across owners and cycles)
+105. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` (ensures critical control workflows complete within stable lead-time bands for reliable planning)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

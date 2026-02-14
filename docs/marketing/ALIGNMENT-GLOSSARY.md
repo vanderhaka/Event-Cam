@@ -433,6 +433,9 @@ The degree to which control outputs are actually incorporated into high-impact d
 ## Control Signal-Action Consistency
 The degree to which equivalent control signals trigger the same approved response class across contexts.
 
+## Control Lead-Time Predictability
+The consistency of control completion timing relative to approved lead-time bands.
+
 ---
 
 ## Incident & Escalation Terms
