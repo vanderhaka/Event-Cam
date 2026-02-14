@@ -274,6 +274,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`**  
   Weekly telemetry for measuring active-artifact usage, staleness, and overlap to prevent process bloat.
 
+- **`ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`**  
+  Objective criteria and approval safeguards for retiring/merging controls without reintroducing alignment risk.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -361,6 +364,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to ensure meetings produce real outputs, not process drag | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` |
 | We need consistent recovery when weekly commitments slip | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` |
 | We need to prove active artifacts are actually used weekly | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` |
+| We need a safe way to retire controls when risk stays low | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` |
 
 ---
 
@@ -414,6 +418,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Meeting Effectiveness Review | Ops / PMO + Meeting Owners |
 | Commitment Slippage Protocol | Ops / PMO + Functional Leads |
 | Artifact Usage Telemetry | Ops / PMO + Documentation Owner |
+| Control Sunset Criteria | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -486,6 +491,7 @@ Includes Pack C, plus:
 53. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 54. `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
 55. `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
+56. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 
 Recommended only when:
 - decision volume is high,

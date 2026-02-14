@@ -91,6 +91,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 6. `ALIGNMENT-DECISION-OUTCOME-REVIEWS.md` (impact verification on closed decisions)
 7. `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` (meeting-yield and governance-efficiency check)
 8. `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` (active-control utilization and sprawl check)
+9. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` (safe control-retirement gate)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

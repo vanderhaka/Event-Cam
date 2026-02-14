@@ -58,6 +58,7 @@ It helps teams:
 - **Meeting yield control:** `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md`
 - **Commitment recovery control:** `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
 - **Artifact usage telemetry:** `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
+- **Control sunset governance:** `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -85,4 +86,5 @@ For full routing by scenario, use:
 - Keep recurring meetings outcome-positive (no 2-week Red effectiveness streak).
 - Keep S2/S3 commitment slippage on documented recovery plans within same week.
 - Keep active-artifact utilization healthy and prune low-use controls quickly.
+- Retire controls only through explicit sunset criteria and verification windows.
 

@@ -145,6 +145,9 @@ Condition where a weekly commitment misses due date, fails agreed quality gate, 
 ## Artifact Utilization Rate
 Percentage of declared active artifacts that are actually referenced in weekly operating workflows.
 
+## Control Sunset
+Formal process for merging or retiring an active governance control only after risk stability evidence and approval checks are satisfied.
+
 ---
 
 ## Incident & Escalation Terms

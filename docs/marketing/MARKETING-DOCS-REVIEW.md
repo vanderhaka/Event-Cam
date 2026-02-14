@@ -805,6 +805,7 @@ Use this minimum-safe operating rule:
 | Meeting hours rising while execution output stalls | `ALIGNMENT-MEETING-EFFECTIVENESS-REVIEW.md` | Meeting effectiveness stays Green/Yellow with rising decision yield |
 | Weekly commitments repeatedly miss without correction | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` | S2/S3 slippage trend stable or declining week-over-week |
 | Active controls multiply but are not used in practice | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` | Active-artifact utilization stays above target with low stale count |
+| Controls removed too quickly and risk rebounds | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` | No post-sunset risk spike during verification window |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

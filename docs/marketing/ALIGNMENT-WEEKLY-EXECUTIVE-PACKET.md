@@ -168,6 +168,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Recovery-on-time rate:
 - Top slippage root cause:
 - Active-artifact utilization rate:
+- Controls proposed for sunset (count):
 
 ---
 
