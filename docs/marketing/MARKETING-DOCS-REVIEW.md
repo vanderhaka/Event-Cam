@@ -821,6 +821,7 @@ Use this minimum-safe operating rule:
 | Escalations close administratively but root causes stay unresolved and recur | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` | Escalation recurrence and reopen rates decline with verified root-cause closure |
 | Corrective fixes are spread across logs and missed before verification | `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md` | Overdue high-priority corrective actions decline and verified-closure rate rises |
 | Teams close items early without proof, hiding unresolved risk | `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` | Valid closure rate rises and reopen-after-close rate declines month-over-month |
+| Emerging risks are recognized only after lagging KPI degradation | `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` | Warning/Critical leading indicators trigger timely preventive actions and fewer high-severity events |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

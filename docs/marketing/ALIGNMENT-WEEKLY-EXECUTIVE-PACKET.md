@@ -105,6 +105,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Escalations reopened this month (count) |  |  |  |
 | Overdue corrective actions (CA-P0/CA-P1) |  |  |  |
 | Invalid closures detected this week (count) |  |  |  |
+| Indicators in Warning/Critical state (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -189,6 +190,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Escalation root-cause closure rate:
 - Corrective-action verified closure rate:
 - Valid closure rate (audit):
+- Leading-indicator preventive actions overdue (count):
 
 ---
 

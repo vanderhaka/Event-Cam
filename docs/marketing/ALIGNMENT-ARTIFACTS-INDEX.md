@@ -322,6 +322,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`**  
   Evidence-quality audit to verify closed statuses are valid and not administratively premature.
 
+- **`ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`**  
+  Early-warning watchlist for pre-threshold risk drift across decision, execution, governance, data, and owner-load domains.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -425,6 +428,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to ensure escalations resolve root causes and not just move ownership upward | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` |
 | We need one verified closure queue for all corrective actions | `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md` |
 | We need to detect false closures before they create hidden risk | `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md` |
+| We need to act on risk build-up before lagging metrics fail | `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md` |
 
 ---
 
@@ -494,6 +498,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Escalation Effectiveness Review | Ops / PMO + On-Call Owner + Functional Leads |
 | Corrective Action Tracker | Ops / PMO + Functional Leads + Control Owners |
 | Closure Integrity Audit | Ops / PMO + Strategy Owner + Data/Analytics Owner |
+| Leading Indicator Watchlist | Ops / PMO + Growth/Data Owner + Functional Leads |
 
 ---
 
@@ -582,6 +587,7 @@ Includes Pack C, plus:
 69. `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
 70. `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
 71. `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
+72. `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
 
 Recommended only when:
 - decision volume is high,

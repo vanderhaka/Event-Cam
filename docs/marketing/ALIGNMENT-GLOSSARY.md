@@ -193,6 +193,9 @@ Status reached when a corrective action is completed and objective evidence conf
 ## Closure Integrity
 Quality standard indicating that a workflow item marked closed has complete, current evidence and passed required closure checks without process gaps.
 
+## Leading Indicator
+An early risk signal that usually moves before lagging KPI failure, used to trigger preventive action ahead of threshold breach.
+
 ---
 
 ## Incident & Escalation Terms
