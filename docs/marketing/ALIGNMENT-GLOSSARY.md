@@ -355,6 +355,9 @@ The rate and risk impact of repeated owner transitions on critical controls with
 ## Control Continuity Stress Test
 A multi-factor simulation that tests whether a control remains reliable during simultaneous continuity pressures.
 
+## Control Maintenance Debt
+Accumulated overdue maintenance work on a control that increases operational fragility and failure risk.
+
 ---
 
 ## Incident & Escalation Terms

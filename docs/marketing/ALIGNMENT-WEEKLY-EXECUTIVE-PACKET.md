@@ -297,6 +297,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Unplanned critical-control owner transitions (count):
 - Critical controls passing continuity stress tests (%):
 - Continuity stress-test failures open (count):
+- Overdue critical-control maintenance debt items (count):
+- Control-maintenance debt closure rate (%):
 
 ---
 

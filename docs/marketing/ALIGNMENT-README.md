@@ -128,6 +128,7 @@ It helps teams:
 - **Control succession-readiness governance:** `ALIGNMENT-CONTROL-SUCCESSION-READINESS-REVIEW.md`
 - **Control ownership-churn governance:** `ALIGNMENT-CONTROL-OWNERSHIP-CHURN-REVIEW.md`
 - **Control continuity stress-test governance:** `ALIGNMENT-CONTROL-CONTINUITY-STRESS-TEST-REVIEW.md`
+- **Control maintenance-debt governance:** `ALIGNMENT-CONTROL-MAINTENANCE-DEBT-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -225,4 +226,5 @@ For full routing by scenario, use:
 - Keep critical controls successor-ready with validated continuity coverage beyond primary owners.
 - Keep high-churn ownership events low and eliminate unplanned critical-control transitions.
 - Keep CC-1 controls stress-tested under compounded continuity scenarios with timely hardening closure.
+- Keep critical-control maintenance debt near zero and close overdue debt within SLA.
 

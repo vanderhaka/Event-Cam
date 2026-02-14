@@ -64,6 +64,7 @@
 | Critical-control successor coverage rate |  | 100% |  |
 | High-churn critical-control count |  | 0 |  |
 | Critical-control continuity stress-test pass rate |  | ≥90% |  |
+| Critical-control maintenance debt count |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________
