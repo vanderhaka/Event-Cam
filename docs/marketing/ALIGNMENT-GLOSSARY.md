@@ -148,6 +148,9 @@ Percentage of declared active artifacts that are actually referenced in weekly o
 ## Control Sunset
 Formal process for merging or retiring an active governance control only after risk stability evidence and approval checks are satisfied.
 
+## Decision Confidence Score
+Composite 0–100 score indicating how strongly a decision is supported across evidence strength, causal clarity, execution readiness, and risk containment.
+
 ---
 
 ## Incident & Escalation Terms

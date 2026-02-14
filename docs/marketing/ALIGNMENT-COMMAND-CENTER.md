@@ -41,6 +41,7 @@
 - Check decision intake queue for triage SLA misses and unassigned requests.
 - Check active decision counts against WIP ceilings.
 - Check overdue decision outcome reviews and unresolved negative outcomes.
+- Check confidence-band distribution for active P0/P1 decisions.
 
 ## Step 3: Execution Scan (20 min)
 - Verify active experiment load (≤5).
@@ -93,6 +94,7 @@ Use this trigger table before meetings:
 | S3 commitment slippage detected | Trigger same-day recovery plan and escalate ownership support |
 | Active-artifact utilization <70% for 2 weeks | Reduce active set and trigger pruning/merge pass |
 | Control retirement proposed without sunset packet | Block retirement and escalate for evidence review |
+| 2+ active P0 decisions below confidence score 70 | Trigger conditional-approval review and mitigation plan |
 
 ---
 

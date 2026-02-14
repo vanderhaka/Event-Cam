@@ -277,6 +277,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`**  
   Objective criteria and approval safeguards for retiring/merging controls without reintroducing alignment risk.
 
+- **`ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`**  
+  Scoring framework for quantifying decision confidence before approval and after outcome validation.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -365,6 +368,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need consistent recovery when weekly commitments slip | `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md` |
 | We need to prove active artifacts are actually used weekly | `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md` |
 | We need a safe way to retire controls when risk stays low | `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md` |
+| We need objective confidence scoring for high-impact decisions | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` |
 
 ---
 
@@ -419,6 +423,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Commitment Slippage Protocol | Ops / PMO + Functional Leads |
 | Artifact Usage Telemetry | Ops / PMO + Documentation Owner |
 | Control Sunset Criteria | Strategy Owner + Ops / PMO |
+| Decision Confidence Index | Strategy Owner + Growth Lead |
 
 ---
 
@@ -492,6 +497,7 @@ Includes Pack C, plus:
 54. `ALIGNMENT-COMMITMENT-SLIPPAGE-PROTOCOL.md`
 55. `ALIGNMENT-ARTIFACT-USAGE-TELEMETRY.md`
 56. `ALIGNMENT-CONTROL-SUNSET-CRITERIA.md`
+57. `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
 
 Recommended only when:
 - decision volume is high,

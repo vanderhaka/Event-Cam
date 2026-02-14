@@ -110,6 +110,17 @@ Complete `ALIGNMENT-DECISION-PREMORTEM.md` and summarize outputs:
 - Contingency owner:
 - Reversal trigger threshold:
 
+## Confidence Index (Mandatory for P0)
+
+Complete `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` and record:
+
+- Evidence score (0–5):
+- Causal score (0–5):
+- Execution score (0–5):
+- Risk containment score (0–5):
+- Total confidence score (0–100):
+- Confidence band (High/Moderate/Low/Very Low):
+
 ---
 
 ## Sign-off
