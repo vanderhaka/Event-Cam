@@ -24,6 +24,7 @@
 - Confirm no unresolved canonical-source conflict older than 5 business days.
 - Confirm artifact usage telemetry is within acceptable utilization/staleness range.
 - Review any proposed control sunset actions and verify packet completeness.
+- Review open overrides for expiry risk and compensating-control status.
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
@@ -98,6 +99,7 @@ Use this trigger table before meetings:
 | 2+ active P0 decisions below confidence score 70 | Trigger conditional-approval review and mitigation plan |
 | Calibration gap worsens below -0.15 for 2 months | Tighten confidence scoring policy and evidence requirements |
 | P0/P1 decision depends on expired evidence | Block approval until refresh or explicit override logged |
+| Override expires without closure | Escalate as governance incident and force same-week resolution |
 
 ---
 

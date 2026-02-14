@@ -286,6 +286,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`**  
   Cadence and expiry governance for keeping decision evidence current and decision-safe.
 
+- **`ALIGNMENT-OVERRIDE-REGISTER.md`**  
+  Canonical log for temporary control exceptions with expiry, compensating controls, and accountability.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -377,6 +380,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need objective confidence scoring for high-impact decisions | `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md` |
 | We need to verify our confidence scoring is accurate over time | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` |
 | We need stale evidence blocked before high-impact approvals | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` |
+| We need auditable control exceptions without shadow policy | `ALIGNMENT-OVERRIDE-REGISTER.md` |
 
 ---
 
@@ -434,6 +438,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Confidence Index | Strategy Owner + Growth Lead |
 | Decision Calibration Report | Strategy Owner + Analytics / Growth Lead |
 | Evidence Refresh Schedule | Growth / Analytics + Strategy Owner |
+| Override Register | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -510,6 +515,7 @@ Includes Pack C, plus:
 57. `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
 58. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
 59. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
+60. `ALIGNMENT-OVERRIDE-REGISTER.md`
 
 Recommended only when:
 - decision volume is high,

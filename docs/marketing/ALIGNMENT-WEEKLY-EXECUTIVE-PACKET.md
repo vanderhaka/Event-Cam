@@ -93,6 +93,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Active P0/P1 decisions with confidence <70 |  |  |  |
 | Decision calibration gap (last monthly run) |  |  |  |
 | Open P0/P1 decisions with expired evidence |  |  |  |
+| Open overrides (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:

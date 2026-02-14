@@ -157,6 +157,9 @@ Difference between expected decision outcome (based on confidence band) and obse
 ## Evidence Expiry
 State where previously valid evidence is no longer current enough to support high-impact decision approvals under defined refresh cadences.
 
+## Override
+Time-bounded exception to a standard control rule, allowed only with explicit rationale, risk owner, and compensating control.
+
 ---
 
 ## Incident & Escalation Terms

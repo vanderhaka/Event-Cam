@@ -62,6 +62,7 @@ It helps teams:
 - **Decision confidence scoring:** `ALIGNMENT-DECISION-CONFIDENCE-INDEX.md`
 - **Decision confidence calibration:** `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
 - **Evidence freshness control:** `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
+- **Override accountability control:** `ALIGNMENT-OVERRIDE-REGISTER.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -93,4 +94,5 @@ For full routing by scenario, use:
 - Keep active P0/P1 decisions above minimum confidence band or on conditional mitigation plans.
 - Run monthly calibration to ensure confidence scores match observed outcomes.
 - Keep evidence refresh current; expired evidence should not drive P0/P1 approvals.
+- Keep all control overrides logged, time-bounded, and reviewed weekly.
 
