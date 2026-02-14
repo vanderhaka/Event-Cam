@@ -617,17 +617,113 @@ Each phase validates the next. Don't build Phase 3 until Phase 2 proves people c
 
 ### Phase 4: Native App + Public Layer (Month 18–24)
 
-**Go native (iOS + Android) if PWA metrics justify it:**
-- Full native experience (smoother, faster, better push notifications)
+**Go cross-platform (React Native / Expo) for iOS + Android:**
+- Full native experience (smoother, faster, reliable push notifications)
 - Venue public pages with photo galleries and follower counts
 - "Discover" tab: browse venues, see public events nearby
 - Year-in-review shareable cards
 - Photographer portfolios (for Pro accounts)
 - In-app photobook ordering
 
-**Build cost:** High. Native development is a major investment. Only justified if PWA engagement proves the concept.
+**Build cost:** Medium-high. Cross-platform significantly cheaper than two native codebases. Only justified if PWA engagement proves the concept.
 
 **Success metric:** 100k+ app installs within 6 months of launch. 40%+ monthly retention.
+
+---
+
+## App Tech Stack: Cross-Platform (React Native + Expo)
+
+**Recommendation: React Native with Expo. Not native Swift + Kotlin.**
+
+### Why Cross-Platform
+
+| Factor | Native (Swift + Kotlin) | Cross-Platform (React Native + Expo) |
+|--------|------------------------|--------------------------------------|
+| **Codebases** | Two — one per platform. Every feature built twice. | One — shared across iOS and Android. |
+| **Language** | Swift (iOS) + Kotlin (Android) — both new to learn | React + TypeScript — **you already write this.** The entire web app is Next.js/React. |
+| **Time to ship** | 2x longer (building everything twice) | Ship to both platforms simultaneously |
+| **Team size needed** | Need iOS dev + Android dev (or one person who knows both) | One developer can ship both platforms |
+| **Maintenance** | Two codebases to update, debug, and keep in sync | One codebase. Fix a bug once, it's fixed everywhere. |
+| **Cost** | $150k–$300k for v1 (agency) or 6–12 months (solo) | $50k–$100k for v1 (agency) or 3–6 months (solo) |
+| **Performance** | Best possible | 95% as good. More than enough for a photo gallery/upload app. |
+| **App Store presence** | Yes | Yes — compiles to real native apps, not web wrappers |
+
+### Why React Native Specifically (Not Flutter, Not Capacitor)
+
+| Option | Pros | Cons | Verdict |
+|--------|------|------|---------|
+| **React Native + Expo** | You already know React/TypeScript. Massive ecosystem. Used by Instagram, Discord, Shopify. Expo handles push notifications, deep linking, camera, gallery, image picker out of the box. OTA updates without App Store review. | Not as smooth as pure native for complex animations. | **Best fit.** Minimal learning curve. Expo solves 90% of the hard native problems. |
+| **Flutter** | Excellent performance. Beautiful UI toolkit. Google-backed. | Dart language — completely new to learn. Can't share any code or knowledge with the existing Next.js web app. Different mental model. | Good framework, wrong fit. You'd be learning a new language and ecosystem from scratch. |
+| **Capacitor / Ionic** | Wraps your existing web app in a native shell. Could reuse Next.js code directly. | Feels like a web app in a wrapper — not truly native. Limited access to native APIs. Performance ceiling. Clunky. Users can tell. | Fine for an MVP prototype. Not good enough for the long-term app vision. |
+| **PWA** | Zero build cost beyond the web app. Works today. | iOS push notifications are limited. No App Store presence. Can't access some native APIs. "Add to home screen" is a confusing UX for most users. | Good for Phase 3 validation. Not the final answer. |
+| **Native (Swift + Kotlin)** | Best performance. Full platform access. | Two codebases. Two languages. Two everything. Brutal for a small team. | Only makes sense with a team of 10+ engineers and platform-specific features (AR, complex gestures, etc.). You don't need this. |
+
+### What Expo Gives You Out of the Box
+
+These are the hard native problems that Expo solves so you don't have to:
+
+| Feature | Needed For | Expo Support |
+|---------|-----------|-------------|
+| **Push notifications** | Event alerts, album ready, memory reminders | `expo-notifications` — full support, handles tokens, scheduling, rich notifications |
+| **Deep linking / Universal Links** | QR → app, email link → app, app-detect-then-fallback | `expo-linking` + `expo-router` — built-in support for Universal Links and App Links |
+| **Camera access** | Upload photos directly from camera | `expo-camera` — full camera API |
+| **Photo gallery / image picker** | Select photos from camera roll to upload | `expo-image-picker` — multi-select, videos, permissions handled |
+| **File upload** | Sending photos/videos to the server | Standard fetch/axios — same as web |
+| **Secure storage** | Auth tokens, user session | `expo-secure-store` — encrypted on-device storage |
+| **App Store builds** | Compiling for iOS and Android | EAS Build — cloud builds, no Mac required for iOS, handles signing |
+| **OTA updates** | Push bug fixes without App Store review | EAS Update — update JS bundle over the air. Critical for fast iteration. |
+| **Haptics** | Subtle feedback on reactions, uploads | `expo-haptics` — built-in |
+| **Share sheet** | One-tap reshare to Instagram/TikTok | `expo-sharing` — native share sheet |
+| **Location** | "Discover venues near you" | `expo-location` — permissions and geolocation |
+
+### Code Sharing Between Web and App
+
+The web app is Next.js (React). The mobile app would be React Native (React). They share:
+
+- **TypeScript** — same language
+- **React component model** — same mental model, similar patterns
+- **API layer** — same Supabase client, same API calls, same data shapes
+- **Business logic** — auth flows, event creation logic, upload logic, moderation logic
+
+What's NOT shared:
+- **UI components** — React Native uses `<View>`, `<Text>`, `<Image>` instead of `<div>`, `<p>`, `<img>`. The layout is similar (Flexbox) but the components are different. You won't copy-paste the UI.
+- **Navigation** — React Native uses stack/tab navigation, not URL-based routing. Expo Router is closing this gap (file-based routing like Next.js), but it's still different.
+- **Styling** — React Native uses StyleSheet objects, not CSS. Similar concepts but different syntax.
+
+**Estimated code reuse: 30–40%** of the logic layer (API calls, data transforms, auth, business rules). The UI is built from scratch but follows the same patterns you already know.
+
+### Recommended Approach
+
+```
+Phase 3 (Month 12–18):
+├── PWA for validation (use existing Next.js app)
+├── If metrics are good → start React Native + Expo build
+└── Target: 3–4 month build for v1
+
+Phase 4 (Month 18–24):
+├── Ship React Native app to App Store + Play Store
+├── Core screens: Your Events, Following, Create, Profile
+├── Push notifications, deep linking, image picker, share sheet
+└── Iterate based on user feedback
+```
+
+### What the App v1 Needs (Minimum)
+
+| Screen | Priority | Complexity |
+|--------|----------|-----------|
+| Login / signup | Must have | Low |
+| Your Events (timeline) | Must have | Medium |
+| Event detail (photo grid + reactions/comments) | Must have | Medium |
+| Upload (camera + gallery picker) | Must have | Medium |
+| Create Event (simplified flow) | Must have | Medium |
+| Following (venue list) | Nice to have v1 | Low |
+| Venue public page | Nice to have v1 | Medium |
+| Discover (nearby venues) | v2 | Medium |
+| Profile + settings | Must have | Low |
+| Push notification handling | Must have | Low (Expo handles it) |
+| Deep link routing | Must have | Low (Expo Router handles it) |
+
+**Estimated v1 build time: 3–4 months** for one developer experienced in React Native, or 2–3 months for two.
 
 ---
 
