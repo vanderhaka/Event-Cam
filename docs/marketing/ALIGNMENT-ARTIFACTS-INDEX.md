@@ -397,6 +397,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-OWNER-CAPACITY-FORECAST.md`**  
   Forward-looking owner workload forecast to rebalance capacity before overload impacts quality.
 
+- **`ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`**  
+  Stage-level breakdown of decision-cycle latency to pinpoint recurring bottlenecks.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -525,6 +528,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need early warning when strategic assumptions drift away from current evidence | `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` |
 | We need one objective queue for sequencing remediation interventions under capacity limits | `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` |
 | We need to rebalance owner assignments before overload harms decision and governance quality | `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` |
+| We need to identify exactly which decision stages are causing SLA delays | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` |
 
 ---
 
@@ -619,6 +623,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Assumption Drift Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 | Intervention Prioritization Matrix | Strategy Owner + Ops / PMO + Functional Leads |
 | Owner Capacity Forecast | Ops / PMO + Functional Leads + Strategy Owner |
+| Decision Latency Decomposition | Strategy Owner + Ops / PMO + Decision Review Leads |
 
 ---
 
@@ -732,6 +737,7 @@ Includes Pack C, plus:
 94. `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md`
 95. `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md`
 96. `ALIGNMENT-OWNER-CAPACITY-FORECAST.md`
+97. `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`
 
 Recommended only when:
 - decision volume is high,

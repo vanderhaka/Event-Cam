@@ -130,6 +130,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Drifted high-impact assumptions (count) |  |  |  |
 | Open I1/I2 interventions (count) |  |  |  |
 | Forecasted high-risk owners next cycle (count) |  |  |  |
+| Repeated decision bottleneck stage (name/count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -239,6 +240,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Assumption revalidated rate:
 - Intervention queue completion rate (I1/I2):
 - Owner capacity forecast accuracy:
+- Median decision stage latency (dominant stage):
 
 ---
 

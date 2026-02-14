@@ -268,6 +268,9 @@ Risk-weighted score used to rank remediation interventions by urgency, exposure,
 ## Owner Capacity Forecast
 Forward-looking estimate of owner workload and risk-band status for the next operating cycle to enable proactive reallocation.
 
+## Decision Latency Decomposition
+Stage-by-stage breakdown of decision cycle time used to identify the specific bottlenecks driving SLA misses.
+
 ---
 
 ## Incident & Escalation Terms

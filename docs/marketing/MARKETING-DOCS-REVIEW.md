@@ -846,6 +846,7 @@ Use this minimum-safe operating rule:
 | Strategic assumptions drift silently, causing confident decisions to rely on outdated baselines | `ALIGNMENT-ASSUMPTION-DRIFT-REVIEW.md` | Drifted high-impact assumptions are rebased quickly and decision exposure declines |
 | Teams address visible low-risk issues while high-risk interventions wait unstarted | `ALIGNMENT-INTERVENTION-PRIORITIZATION-MATRIX.md` | High-priority intervention queue clears faster and risk-reduction throughput improves |
 | Owner overload is discovered too late, after slippage and quality damage have started | `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` | Forecasted high-risk owner load is rebalanced before cycle start and overload incidents decline |
+| Decision-cycle delays are visible only at total-SLA level, hiding stage-specific bottlenecks | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` | Dominant decision-stage bottlenecks are reduced and total cycle-time reliability improves |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
