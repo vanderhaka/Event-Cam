@@ -114,6 +114,7 @@ It helps teams:
 - **Closure-quality governance:** `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`
 - **Control runbook resilience governance:** `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md`
 - **Control drill-quality governance:** `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md`
+- **Control failover resilience governance:** `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -197,4 +198,5 @@ For full routing by scenario, use:
 - Keep P0/high-impact closures compliant with explicit definition-of-done criteria.
 - Keep CC-1/CC-2 runbooks current and validation-tested on declared cadence.
 - Keep CC-1 drill quality above threshold and close drill corrective actions on time.
+- Keep CC-1 failover readiness at target and remediate not-ready controls immediately.
 

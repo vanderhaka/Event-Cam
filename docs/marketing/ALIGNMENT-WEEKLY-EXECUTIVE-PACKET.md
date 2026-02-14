@@ -269,6 +269,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls with stale/missing runbook (count):
 - Control drill first-pass success rate (%):
 - Critical-step omissions in control drills (count):
+- Failover-ready critical controls (%):
+- Critical controls not failover-ready (count):
 
 ---
 

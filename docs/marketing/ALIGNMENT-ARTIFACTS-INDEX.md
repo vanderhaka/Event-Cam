@@ -442,6 +442,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md`**  
   Effectiveness review ensuring control drills improve reliability and close execution gaps.
 
+- **`ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`**  
+  Readiness review ensuring critical controls can recover quickly via validated failover paths.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -585,6 +588,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent premature closures and reopen churn from weak done criteria | `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md` |
 | We need critical controls to remain operable under incident pressure with validated guidance | `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md` |
 | We need proof that control drills improve response quality instead of creating false confidence | `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md` |
+| We need critical controls to stay operational when primary owners/systems fail | `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md` |
 
 ---
 
@@ -694,6 +698,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Definition-of-Done Compliance | Ops / PMO + Workflow Owners + Strategy Owner |
 | Control Runbook Coverage Review | Ops / PMO + On-Call Lead + Functional Leads |
 | Control Drill Effectiveness Review | On-Call Lead + Ops / PMO + Functional Leads |
+| Control Failover Readiness Review | On-Call Lead + Ops / PMO + Platform/Data Owners |
 
 ---
 
@@ -822,6 +827,7 @@ Includes Pack C, plus:
 109. `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`
 110. `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md`
 111. `ALIGNMENT-CONTROL-DRILL-EFFECTIVENESS-REVIEW.md`
+112. `ALIGNMENT-CONTROL-FAILOVER-READINESS-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

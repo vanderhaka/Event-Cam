@@ -313,6 +313,9 @@ The degree to which critical controls maintain current, validated runbooks that 
 ## Control Drill Effectiveness
 The degree to which control drills reliably execute critical steps, meet stabilization targets, and produce timely corrective-action closure.
 
+## Control Failover Readiness
+The degree to which critical controls can switch to validated fallback paths and restore operation within target recovery windows.
+
 ---
 
 ## Incident & Escalation Terms

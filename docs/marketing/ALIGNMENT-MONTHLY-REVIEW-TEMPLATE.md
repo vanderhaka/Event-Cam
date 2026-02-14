@@ -50,6 +50,7 @@
 | Verified closure rate against done criteria |  | ≥95% |  |
 | Critical-control runbook validation rate |  | ≥95% |  |
 | Control drill first-pass success rate |  | ≥90% |  |
+| Critical-control failover readiness rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________
