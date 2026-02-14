@@ -154,6 +154,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DEPENDENCY-TRACKER.md`**  
   Cross-functional dependency tracker for owner/date-bound execution blockers.
 
+- **`ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`**  
+  Structured rollback/replace protocol for decisions that underperform or breach guardrails.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -208,6 +211,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to prove decisions changed execution and KPI outcomes | `ALIGNMENT-TRACEABILITY-MATRIX.md` |
 | We need to make strategic assumptions explicit and testable | `ALIGNMENT-ASSUMPTION-REGISTRY.md` |
 | We need to track cross-functional blockers before they cascade | `ALIGNMENT-DEPENDENCY-TRACKER.md` |
+| We need a controlled process for rolling back failed decisions | `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md` |
 
 ---
 
@@ -228,6 +232,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Traceability Matrix | Ops / PMO + Growth Lead |
 | Assumption Registry | Strategy Owner + Growth Lead |
 | Dependency Tracker | Ops / PMO + Functional Leads |
+| Decision Reversal Protocol | Strategy Owner + Ops / PMO |
 
 ---
 
@@ -264,6 +269,7 @@ Includes Pack B, plus:
 20. `ALIGNMENT-TRACEABILITY-MATRIX.md`
 21. `ALIGNMENT-ASSUMPTION-REGISTRY.md`
 22. `ALIGNMENT-DEPENDENCY-TRACKER.md`
+23. `ALIGNMENT-DECISION-REVERSAL-PROTOCOL.md`
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
