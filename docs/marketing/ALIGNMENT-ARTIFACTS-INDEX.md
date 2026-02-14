@@ -196,6 +196,37 @@ This index maps each alignment artifact to its purpose so the team can execute i
 
 ---
 
+## Minimal Packs by Team Maturity
+
+If you do not want to run the full system on day one, start with the pack that matches your current maturity:
+
+### Pack A — Minimum Viable Alignment (small team, immediate focus)
+1. `ALIGNMENT-START-HERE.md`
+2. `QUESTIONS-THAT-NEED-ANSWERS.md`
+3. `ALIGNMENT-PRIORITY0-DECISION-BRIEF.md`
+4. `PATH-ALIGNMENT-WORKSHEET.md`
+5. `ALIGNMENT-DECISIONS-LOG.md`
+
+### Pack B — Operating Alignment (team in active execution)
+Includes Pack A, plus:
+6. `ALIGNMENT-DASHBOARD-TEMPLATE.md`
+7. `ALIGNMENT-SCORECARD.md`
+8. `ALIGNMENT-MEETING-CADENCE.md`
+9. `ALIGNMENT-BLOCKERS-LOG.md`
+10. `ALIGNMENT-METRIC-DEFINITIONS.md`
+
+### Pack C — Full Governance Alignment (scaling team)
+Includes Pack B, plus:
+11. `ALIGNMENT-GOVERNANCE-CHARTER.md`
+12. `ALIGNMENT-ARTIFACT-LIFECYCLE.md`
+13. `ALIGNMENT-CHANGELOG.md`
+14. `ALIGNMENT-RISK-TAXONOMY.md`
+15. `ALIGNMENT-RECOVERY-PLAYBOOK.md`
+
+Rule of thumb: run the **lightest pack** that still prevents repeated drift.
+
+---
+
 ## Success Condition
 
 These artifacts are working when:
