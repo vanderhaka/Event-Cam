@@ -103,6 +103,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-SIGNAL-PLAYBOOK.md`**  
   Response playbook for green/yellow/red alignment signal states.
 
+- **`ALIGNMENT-KPI-OWNER-MAP.md`**  
+  Canonical ownership map for KPI reporting, backups, and data sources.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -140,6 +143,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a tactical weekly operating routine | `ALIGNMENT-WEEKLY-OPERATIONS-CHECKLIST.md` |
 | We need governance for artifact versioning and retirement | `ALIGNMENT-ARTIFACT-LIFECYCLE.md` |
 | We need clear responses to degrading alignment signals | `ALIGNMENT-SIGNAL-PLAYBOOK.md` |
+| We need explicit KPI owner and backup mapping | `ALIGNMENT-KPI-OWNER-MAP.md` |
 
 ---
 
