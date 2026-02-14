@@ -331,6 +331,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Risk-acceptance recalibration actions overdue (count):
 - Failed transferred-risk controls (count):
 - Transferred-risk effectiveness verification pass rate (%):
+- Delayed/no-effect critical interventions (count):
+- On-time intervention effect realization rate (%):
 
 ---
 

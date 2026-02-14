@@ -535,6 +535,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`**  
   Review validating effectiveness and residual exposure of transferred control risk.
 
+- **`ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`**  
+  Review tracking time-to-effect for control interventions and delayed impact patterns.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -709,6 +712,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need accepted residual risk tracked with authority, expiry, and monitoring discipline | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` |
 | We need accepted-risk criteria tuned to real outcomes instead of intuition drift | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` |
 | We need transferred control risks validated so external safeguards don’t create false security | `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` |
+| We need intervention impact timing measured so delayed/no-effect actions are corrected quickly | `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md` |
 
 ---
 
@@ -849,6 +853,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Risk Acceptance Review | Ops / PMO + Strategy Owner + Policy/Compliance Owners |
 | Control Risk Acceptance Calibration Review | Ops / PMO + Strategy Owner + Risk/Analytics Owners |
 | Control Risk Transfer Review | Ops / PMO + Risk/Control Owners + Vendor/Partner Owners |
+| Control Intervention Effect Lag Review | Ops / PMO + Control Owners + Functional Leads |
 
 ---
 
@@ -1008,6 +1013,7 @@ Includes Pack C, plus:
 140. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
 141. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`
 142. `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`
+143. `ALIGNMENT-CONTROL-INTERVENTION-EFFECT-LAG-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

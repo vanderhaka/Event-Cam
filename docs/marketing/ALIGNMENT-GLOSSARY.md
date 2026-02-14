@@ -406,6 +406,9 @@ The degree to which accepted-risk criteria and thresholds match observed outcome
 ## Control Risk Transfer
 The practice of shifting defined control-related risk exposure to an external party or mechanism with verifiable accountability.
 
+## Control Intervention Effect Lag
+The elapsed time between intervention launch and the first validated measurable improvement signal.
+
 ---
 
 ## Incident & Escalation Terms
