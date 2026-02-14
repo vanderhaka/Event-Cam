@@ -179,7 +179,7 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 #### Model C: Hybrid (Wholesale for bundlers, Affiliate for recommenders)
 
 - **Pros who bundle** Event Cam into their packages → Wholesale model (buy at $1.20, sell at their price)
-- **Pros who just recommend** → Affiliate model (20% commission, no billing hassle)
+- **Pros who just recommend** → Affiliate model (40% commission, no billing hassle)
 - Let the Pro choose which model fits their business.
 
 ### Pro Account Features
