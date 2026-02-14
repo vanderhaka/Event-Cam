@@ -37,6 +37,7 @@
 - Confirm meeting effectiveness status (Green/Yellow/Red trend).
 - Confirm governance cost is within weekly budget threshold.
 - Confirm latest governance ROI trend and action status.
+- Confirm signal-lag trend and any stage-specific threshold breaches.
 
 ## Step 2: Decision Scan (15 min)
 - Check Priority 0/1 decisions due this week.
@@ -49,6 +50,7 @@
 - Check overdue decision outcome reviews and unresolved negative outcomes.
 - Check confidence-band distribution for active P0/P1 decisions.
 - Check for expired evidence linked to pending high-impact decisions.
+- Check critical/high signal lag entries for assignment/action bottlenecks.
 
 ## Step 3: Execution Scan (20 min)
 - Verify active experiment load (≤5).
@@ -112,6 +114,7 @@ Use this trigger table before meetings:
 | Unresolved control conflict blocks decision progress | Apply precedence ruling and assign wording-fix owner |
 | C2/C3 control change launched without packet | Freeze rollout and require immediate governance review |
 | P-A1 automation candidates idle for 2 cycles | Escalate automation queue reprioritization |
+| Critical signal lags breach stage thresholds | Trigger on-call + lag root-cause correction plan |
 
 ---
 
@@ -122,7 +125,7 @@ Use this trigger table before meetings:
 | KPI Standup | KPI dashboard + data quality checklist |
 | Decision Review | Questions doc + decisions log + blockers log + decision intake queue + decision outcome reviews |
 | Experiment Review | Experiment register + thresholds + outcomes |
-| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report |
+| Strategy Sync | Monthly review template + score trend + risk register + meeting effectiveness review + artifact usage telemetry + decision calibration report + governance ROI report + signal lag analysis |
 | Executive Review | Weekly executive packet + active artifact set + contradiction register |
 
 ---

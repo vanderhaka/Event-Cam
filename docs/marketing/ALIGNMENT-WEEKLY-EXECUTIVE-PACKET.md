@@ -100,6 +100,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Open control-precedence conflicts |  |  |  |
 | Active high-criticality control changes (C2/C3) |  |  |  |
 | P-A1 automation candidates open (count) |  |  |  |
+| Critical signal lag breaches (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -179,6 +180,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Top slippage root cause:
 - Active-artifact utilization rate:
 - Controls proposed for sunset (count):
+- Mean critical-signal action lag (hours):
 
 ---
 

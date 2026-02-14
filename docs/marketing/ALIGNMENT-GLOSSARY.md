@@ -178,6 +178,9 @@ Classification of control updates (C1/C2/C3) based on expected behavior impact a
 ## Automation Priority Score
 Composite score used to rank governance automation candidates based on time savings, error reduction, risk reduction, complexity, and adoption readiness.
 
+## Signal Lag
+Elapsed time between threshold breach and stabilization, measured across detection, assignment, action, and recovery stages.
+
 ---
 
 ## Incident & Escalation Terms
