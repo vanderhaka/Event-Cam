@@ -133,6 +133,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-README.md`**  
   High-level orientation and quickstart for the alignment system.
 
+- **`ALIGNMENT-EXPERIMENT-REGISTRY.md`**  
+  Canonical tracker for experiment lifecycle, thresholds, and scale/stop decisions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -180,6 +183,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a roadmap to automate repetitive alignment operations | `ALIGNMENT-AUTOMATION-BACKLOG.md` |
 | We need canonical KPI decision thresholds by signal state | `ALIGNMENT-METRIC-THRESHOLDS.md` |
 | We need a first-touch orientation to the full system | `ALIGNMENT-README.md` |
+| We need one canonical source for experiment status and decisions | `ALIGNMENT-EXPERIMENT-REGISTRY.md` |
 
 ---
 
@@ -193,6 +197,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Path Worksheet | Leadership Team |
 | Meeting Cadence + Scorecard | Ops / PMO + Growth Lead |
 | Metric Definitions + Dashboard | Growth Lead + Ops / PMO |
+| Experiment Registry | Growth Lead + Marketing Lead |
 
 ---
 
