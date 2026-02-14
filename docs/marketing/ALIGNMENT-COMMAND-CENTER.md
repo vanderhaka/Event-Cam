@@ -12,6 +12,7 @@
 4. `ALIGNMENT-DECISIONS-LOG.md` — open vs closed high-priority decisions.
 5. `ALIGNMENT-DASHBOARD-TEMPLATE.md` — last weekly operating snapshot.
 6. `ALIGNMENT-CANONICAL-SOURCE-MAP.md` — source-of-truth ownership for conflicting topics.
+7. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` — meta-health of alignment discipline itself.
 
 ---
 
@@ -24,6 +25,7 @@
 
 ## Step 1: Health Scan (15 min)
 - Confirm current alignment score band.
+- Confirm current system-health band (Green/Yellow/Red).
 - Confirm any red signals from signal playbook.
 - Confirm blocker backlog trend.
 

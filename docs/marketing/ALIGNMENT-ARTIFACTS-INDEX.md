@@ -205,6 +205,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-OPERATING-MODES.md`**  
   Mode-selection playbook (Focus/Execution/Governance/Diagnostic) for tuning process intensity by context.
 
+- **`ALIGNMENT-SYSTEM-HEALTH-METRICS.md`**  
+  Meta-operating KPI framework for monitoring alignment-system quality and discipline health.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -269,6 +272,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need one explicit source of truth for active vs frozen docs | `ALIGNMENT-ACTIVE-ARTIFACT-SET.md` |
 | We need to resolve “which doc is canonical for this topic?” quickly | `ALIGNMENT-CANONICAL-SOURCE-MAP.md` |
 | We need to adjust process intensity to current risk and complexity | `ALIGNMENT-OPERATING-MODES.md` |
+| We need one weekly score of alignment-system discipline quality | `ALIGNMENT-SYSTEM-HEALTH-METRICS.md` |
 
 ---
 
@@ -299,6 +303,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Active Artifact Set | Ops / PMO + Documentation Owner |
 | Canonical Source Map | Strategy Owner + Documentation Owner |
 | Operating Modes | Ops / PMO + Strategy Owner |
+| System Health Metrics | Ops / PMO + Strategy Owner |
 
 ---
 
@@ -348,6 +353,7 @@ Includes Pack C, plus:
 30. `ALIGNMENT-ACTIVE-ARTIFACT-SET.md`
 31. `ALIGNMENT-CANONICAL-SOURCE-MAP.md`
 32. `ALIGNMENT-OPERATING-MODES.md`
+33. `ALIGNMENT-SYSTEM-HEALTH-METRICS.md`
 
 Recommended only when:
 - decision volume is high,
