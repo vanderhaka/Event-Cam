@@ -75,6 +75,7 @@ It helps teams:
 - **Corrective-action closure governance:** `ALIGNMENT-CORRECTIVE-ACTION-TRACKER.md`
 - **Closure validity governance:** `ALIGNMENT-CLOSURE-INTEGRITY-AUDIT.md`
 - **Early-warning governance:** `ALIGNMENT-LEADING-INDICATOR-WATCHLIST.md`
+- **Prevention effectiveness governance:** `ALIGNMENT-PREVENTIVE-ACTION-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -119,4 +120,5 @@ For full routing by scenario, use:
 - Keep corrective-action backlog small and verified-closure rates high.
 - Keep closed statuses audit-valid with evidence-linked closure quality above threshold.
 - Keep leading indicators monitored and prevent Warning/Critical drift from compounding.
+- Keep preventive action patterns only when they measurably reduce downstream failures.
 

@@ -196,6 +196,9 @@ Quality standard indicating that a workflow item marked closed has complete, cur
 ## Leading Indicator
 An early risk signal that usually moves before lagging KPI failure, used to trigger preventive action ahead of threshold breach.
 
+## Prevention Success Rate
+Percentage of completed preventive actions that avoid related escalation or failure recurrence during the defined watch window.
+
 ---
 
 ## Incident & Escalation Terms

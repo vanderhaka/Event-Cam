@@ -106,6 +106,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Overdue corrective actions (CA-P0/CA-P1) |  |  |  |
 | Invalid closures detected this week (count) |  |  |  |
 | Indicators in Warning/Critical state (count) |  |  |  |
+| Preventive actions marked ineffective (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -191,6 +192,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Corrective-action verified closure rate:
 - Valid closure rate (audit):
 - Leading-indicator preventive actions overdue (count):
+- Prevention success rate (30-day window):
 
 ---
 
