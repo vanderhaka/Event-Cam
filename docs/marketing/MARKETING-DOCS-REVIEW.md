@@ -589,6 +589,55 @@ Use this board to decide what to do first when team bandwidth is constrained.
 
 ---
 
+## Confidence Map for Key Strategy Claims
+
+Not all claims in the strategy set have equal evidence quality. This map clarifies what is strong vs speculative.
+
+| Claim Type | Current Confidence | Why | Recommended Upgrade Path |
+|---|---|---|---|
+| Wedding pain point (“photos fragmented across guests”) | **High** | Broadly observable user reality and consistent with market behavior | Keep as core anchor; collect testimonial evidence to strengthen copy |
+| “No app required” as conversion advantage | **High** | Frictionless participation is a clear behavioral advantage | Quantify with funnel step completion benchmarks |
+| $2/guest perceived affordability framing | **Medium-High** | Strong qualitative positioning, but elasticity still untested at scale | Run pricing sensitivity and checkout conversion tests |
+| Pro channel adoption at meaningful scale | **Medium** | Model is strong, but operational assumptions are still hypothetical | Pilot with small Pro cohort and track activation-to-repeat rate |
+| Guest flywheel as low-CAC engine | **Medium** | Strategically sound but highly dependent on compliance + execution quality | Instrument capture/opt-in/convert metrics and review monthly |
+| Venue recurring revenue expansion | **Low-Medium** | Attractive thesis, limited evidence of willingness-to-pay and retention | Interview + pilot with venues before broad GTM messaging |
+| Festival/multi-day segment viability | **Low** | Pricing and feature assumptions are unvalidated for enterprise buyers | Treat as discovery lane, not near-term revenue pillar |
+| Social app expansion as growth multiplier | **Low-Medium** | Compelling vision but dependent on retention and install behavior | Gate by hard product metrics before major investment |
+
+### Practical rule
+Any claim at **Low** or **Low-Medium** confidence should be framed internally as a hypothesis, not a strategy commitment.
+
+---
+
+## Minimum Metrics Pack Needed Before Scaling
+
+Before scaling paid channels or expanding segments, establish a minimum shared metric pack:
+
+1. **Acquisition**
+   - Visitor → signup conversion rate
+   - Signup → event creation conversion rate
+
+2. **Monetization**
+   - Event creation → paid conversion rate
+   - Revenue per event by segment
+
+3. **Engagement**
+   - Upload participation rate (invited vs uploaded)
+   - Median uploads per event
+
+4. **Flywheel**
+   - Guest email capture rate
+   - Guest marketing opt-in rate
+   - Guest → creator conversion rate (cohort-based)
+
+5. **Channel Efficiency**
+   - CAC by channel
+   - Payback period by channel
+
+If these metrics are not available and reviewed consistently, strategic expansion decisions should be paused.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
