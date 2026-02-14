@@ -45,6 +45,22 @@ Run `supabase/schema.sql` in your Supabase database SQL editor.
 npm run dev
 ```
 
+## End-to-end tests
+
+Install browsers and run the Playwright suite:
+
+```bash
+npm run e2e:install
+npm run e2e
+```
+
+Useful variants:
+
+```bash
+npm run e2e:headed   # launch browser UI
+npm run e2e:report   # open the HTML report after running tests
+```
+
 ## Vercel deployment
 
 For production (e.g. `event-cam-qr-test.vercel.app`), set these in **Vercel → Project → Settings → Environment Variables**:

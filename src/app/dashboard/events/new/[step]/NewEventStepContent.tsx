@@ -131,6 +131,22 @@ export default function NewEventStepContent() {
 
   const canProceed = step === 1 ? name.trim().length > 0 : true;
 
+  const isStepCompleted = useCallback(
+    (s: number) => {
+      if (s === 1) return name.trim().length > 0;
+      if (s === 2) return true;
+      if (s === 3) return location.trim().length > 0;
+      return true;
+    },
+    [name, location],
+  );
+
+  const canGoToStep = useCallback(
+    (s: number) =>
+      s <= step || (s === step + 1 && isStepCompleted(step)),
+    [step, isStepCompleted],
+  );
+
   return (
     <div className="create-event-flow">
       <div className="grid">
@@ -245,18 +261,22 @@ export default function NewEventStepContent() {
             )}
             <div className="create-flow-stepper" role="navigation" aria-label="Create event steps">
               <div className="create-flow-dots">
-                {[1, 2, 3, 4].map((s) => (
-                  <button
-                    key={s}
-                    type="button"
-                    className={`create-flow-dot ${step === s ? 'active' : ''} ${step > s ? 'done' : ''}`}
-                    onClick={() => goToStep(s)}
-                    aria-current={step === s ? 'step' : undefined}
-                    aria-label={`Step ${s}${step === s ? ', current' : step > s ? ', completed' : ''}`}
-                  >
-                    <span className="create-flow-dot-num">{s}</span>
-                  </button>
-                ))}
+                {[1, 2, 3, 4].map((s) => {
+                  const allowed = canGoToStep(s);
+                  return (
+                    <button
+                      key={s}
+                      type="button"
+                      className={`create-flow-dot ${step === s ? 'active' : ''} ${step > s ? 'done' : ''} ${!allowed ? 'create-flow-dot-locked' : ''}`}
+                      onClick={() => allowed && goToStep(s)}
+                      disabled={!allowed}
+                      aria-current={step === s ? 'step' : undefined}
+                      aria-label={`Step ${s}${step === s ? ', current' : step > s ? ', completed' : !allowed ? ', complete previous steps first' : ''}`}
+                    >
+                      <span className="create-flow-dot-num">{s}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
             {step < totalSteps ? (
