@@ -177,6 +177,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 92. `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` (ensures remaining post-mitigation risk is quantified and reduced for critical controls)
 93. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` (ensures accepted residual risks are authority-approved, monitored, and revisited before expiry)
 94. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` (ensures risk-acceptance thresholds stay calibrated to observed outcomes over time)
+95. `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` (ensures transferred risks are enforceable, monitored, and not masking residual internal exposure)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

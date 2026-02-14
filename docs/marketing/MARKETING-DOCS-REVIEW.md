@@ -891,6 +891,7 @@ Use this minimum-safe operating rule:
 | Teams assume controls are sufficient without quantifying residual exposure, leaving hidden risk unmanaged | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` | Exposed residual-risk control count trends to zero with regular reassessment coverage |
 | Residual risk is accepted informally without expiry or monitoring, creating unmanaged long-tail exposure | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` | Expired accepted-risk count trends to zero and monitoring coverage remains high |
 | Risk acceptance criteria drift from real outcomes, causing chronic over-acceptance or over-mitigation | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` | Acceptance calibration gap stays controlled and recalibration actions close on time |
+| Transferred control risk is assumed resolved without validating partner obligations or remaining internal exposure | `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` | Failed transfer count trends to zero and transfer effectiveness verification remains high |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

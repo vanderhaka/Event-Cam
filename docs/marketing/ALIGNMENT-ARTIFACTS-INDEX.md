@@ -532,6 +532,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`**  
   Review calibrating accepted-risk decisions against observed outcomes.
 
+- **`ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`**  
+  Review validating effectiveness and residual exposure of transferred control risk.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -705,6 +708,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need visibility into risk that remains after controls so hidden exposure is not ignored | `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md` |
 | We need accepted residual risk tracked with authority, expiry, and monitoring discipline | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md` |
 | We need accepted-risk criteria tuned to real outcomes instead of intuition drift | `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md` |
+| We need transferred control risks validated so external safeguards don’t create false security | `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md` |
 
 ---
 
@@ -844,6 +848,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Residual Risk Review | Ops / PMO + Strategy Owner + Risk/Control Owners |
 | Control Risk Acceptance Review | Ops / PMO + Strategy Owner + Policy/Compliance Owners |
 | Control Risk Acceptance Calibration Review | Ops / PMO + Strategy Owner + Risk/Analytics Owners |
+| Control Risk Transfer Review | Ops / PMO + Risk/Control Owners + Vendor/Partner Owners |
 
 ---
 
@@ -1002,6 +1007,7 @@ Includes Pack C, plus:
 139. `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
 140. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
 141. `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`
+142. `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

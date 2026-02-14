@@ -329,6 +329,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Accepted risks with active monitoring coverage (%):
 - Accepted-risk over-acceptance rate (%):
 - Risk-acceptance recalibration actions overdue (count):
+- Failed transferred-risk controls (count):
+- Transferred-risk effectiveness verification pass rate (%):
 
 ---
 

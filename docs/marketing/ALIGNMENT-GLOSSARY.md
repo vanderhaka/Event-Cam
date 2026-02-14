@@ -403,6 +403,9 @@ The formal, time-bounded decision to tolerate defined residual risk with explici
 ## Control Risk Acceptance Calibration
 The degree to which accepted-risk criteria and thresholds match observed outcomes over time.
 
+## Control Risk Transfer
+The practice of shifting defined control-related risk exposure to an external party or mechanism with verifiable accountability.
+
 ---
 
 ## Incident & Escalation Terms

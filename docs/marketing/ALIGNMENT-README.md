@@ -144,6 +144,7 @@ It helps teams:
 - **Control residual-risk governance:** `ALIGNMENT-CONTROL-RESIDUAL-RISK-REVIEW.md`
 - **Control risk-acceptance governance:** `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-REVIEW.md`
 - **Control risk-acceptance calibration governance:** `ALIGNMENT-CONTROL-RISK-ACCEPTANCE-CALIBRATION-REVIEW.md`
+- **Control risk-transfer governance:** `ALIGNMENT-CONTROL-RISK-TRANSFER-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -257,4 +258,5 @@ For full routing by scenario, use:
 - Keep residual risk on critical controls explicitly measured and actively reduced.
 - Keep accepted residual risks authority-approved, monitored, and closed/reassessed before expiry.
 - Keep accepted-risk criteria calibrated to observed outcomes; correct drift quickly.
+- Keep transferred-risk controls evidence-verified with no unmanaged residual exposure.
 
