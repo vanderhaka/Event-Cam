@@ -469,6 +469,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`**  
   Early-warning review detecting critical-control degradation before incidents occur.
 
+- **`ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md`**  
+  Review tracking failures that escaped active controls and caused downstream impact.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -621,6 +624,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need critical controls to be periodically re-certified so drift and obsolete logic don’t accumulate | `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` |
 | We need critical controls to recover quickly when control changes underperform | `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` |
 | We need to detect control degradation early instead of waiting for visible failures | `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` |
+| We need to stop recurring failures that bypass controls and appear only after impact | `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md` |
 
 ---
 
@@ -739,6 +743,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Recertification Review | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Rollback Readiness Review | Ops / PMO + On-Call Lead + Functional Leads |
 | Control Decay Early Warning Review | Ops / PMO + On-Call Lead + Data/Analytics Owners |
+| Control Escape Defect Review | Ops / PMO + Functional Leads + QA/Analytics Support |
 
 ---
 
@@ -876,6 +881,7 @@ Includes Pack C, plus:
 118. `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md`
 119. `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md`
 120. `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md`
+121. `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

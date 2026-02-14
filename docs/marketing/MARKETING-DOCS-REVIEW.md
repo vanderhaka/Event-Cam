@@ -870,6 +870,7 @@ Use this minimum-safe operating rule:
 | Critical controls silently age out of fit because they are never formally re-certified against current risk reality | `ALIGNMENT-CONTROL-RECERTIFICATION-REVIEW.md` | Recertification-on-cadence rate remains high and repeat drift findings trend to zero |
 | Control changes underperform but teams cannot safely revert because rollback readiness was never formalized | `ALIGNMENT-CONTROL-ROLLBACK-READINESS-REVIEW.md` | Rollback-ready coverage remains high and rollback-readiness gap count trends to zero |
 | Control degradation is noticed too late because early-warning signals are undefined or ignored | `ALIGNMENT-CONTROL-DECAY-EARLY-WARNING-REVIEW.md` | Undetected decay count trends to zero and preventive lead-time performance stays on target |
+| Control failures bypass existing checks and are discovered only after downstream damage is visible | `ALIGNMENT-CONTROL-ESCAPE-DEFECT-REVIEW.md` | Escape-defect count trends to zero and repeat escape patterns are eliminated |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

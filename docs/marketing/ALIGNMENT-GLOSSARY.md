@@ -340,6 +340,9 @@ The degree to which a control can revert safely and quickly to a stable state wh
 ## Control Decay Early Warning
 The degree to which early signals identify control degradation before incidents or escalations occur.
 
+## Control Escape Defect
+A control failure that bypasses existing checks and is discovered only after downstream impact has occurred.
+
 ---
 
 ## Incident & Escalation Terms

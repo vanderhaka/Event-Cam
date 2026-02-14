@@ -59,6 +59,7 @@
 | Critical-control recertification completion rate |  | 100% |  |
 | Critical-control rollback-readiness rate |  | ≥95% |  |
 | Early detection rate for control decay signals |  | ≥90% |  |
+| Escape defect count (critical controls) |  | 0 |  |
 
 Key governance issue this month:
 ______________________________________

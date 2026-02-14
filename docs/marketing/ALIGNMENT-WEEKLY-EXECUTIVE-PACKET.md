@@ -287,6 +287,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Controls with rollback-readiness gaps (count):
 - CC-1 controls with active decay-warning status (count):
 - Preventive action start within decay lead-time target (%):
+- Escape defects detected this cycle (count):
+- Escape-defect remediation closed on time (%):
 
 ---
 
