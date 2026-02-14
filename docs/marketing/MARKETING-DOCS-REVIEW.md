@@ -742,6 +742,26 @@ Run no more than **5 concurrent experiments** at any time; kill or graduate befo
 
 ---
 
+## Appendix C — 4-Week Action Register (Owner-Ready)
+
+This turns recommendations into immediate operating tasks.
+
+| Week | Action | Owner Role | Success Signal |
+|---|---|---|---|
+| Week 1 | Finalize canonical pricing/economics table and reconcile all conflicts | Founder + Finance | Zero numeric contradictions across strategy docs |
+| Week 1 | Publish one-page strategic narrative for current quarter | Founder + Marketing Lead | All new messaging references one canonical narrative |
+| Week 1 | Mark each strategy doc with owner + last updated + status | Ops / PMO | Every strategic doc has governance header |
+| Week 2 | Launch first 3 prioritized experiments with scorecards | Growth Lead | 3 experiments running with pass/stop thresholds |
+| Week 2 | Implement monthly board reporting structure | Leadership Ops | First monthly readout delivered in standard format |
+| Week 3 | Roll out referral mechanics with anti-abuse policy | Partnerships + Product + Legal | Referral program active with clear terms and controls |
+| Week 3 | Establish KPI cadence and channel efficiency dashboard | Growth + Analytics | Weekly KPI review includes CAC/payback by channel |
+| Week 4 | Run strategic review checkpoint and prune low-confidence initiatives | Leadership Team | Explicit scale/hold/kill decisions documented |
+
+### Operating discipline rule
+No new strategic initiative should be opened in this 4-week window unless one existing initiative is closed, paused, or killed.
+
+---
+
 ## Final Verdict
 
 You have stronger strategic thinking than most early-stage teams. The opportunity now is not “more ideas” — it’s **strategic compression and consistency discipline**.
