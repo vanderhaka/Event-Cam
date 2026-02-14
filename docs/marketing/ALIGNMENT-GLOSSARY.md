@@ -274,6 +274,9 @@ Stage-by-stage breakdown of decision cycle time used to identify the specific bo
 ## Dependency Resolution SLA
 Time-bound expectation for resolving a dependency before it blocks decisions, commitments, or downstream execution.
 
+## Data Source Reliability
+The measured trustworthiness of a source based on freshness, completeness, consistency, and stability for decision-grade use.
+
 ---
 
 ## Incident & Escalation Terms

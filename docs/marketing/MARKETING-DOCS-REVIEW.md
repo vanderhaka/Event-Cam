@@ -848,6 +848,7 @@ Use this minimum-safe operating rule:
 | Owner overload is discovered too late, after slippage and quality damage have started | `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` | Forecasted high-risk owner load is rebalanced before cycle start and overload incidents decline |
 | Decision-cycle delays are visible only at total-SLA level, hiding stage-specific bottlenecks | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` | Dominant decision-stage bottlenecks are reduced and total cycle-time reliability improves |
 | Dependency chains miss SLA silently and then cascade into multi-team delays | `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` | Overdue dependency clusters shrink and on-time dependency resolution improves |
+| Data source degradation silently reduces decision trust before downstream metrics reveal impact | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` | Critical source reliability remains high and exposed P0/P1 decision risk declines |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

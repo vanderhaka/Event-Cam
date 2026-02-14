@@ -132,6 +132,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Forecasted high-risk owners next cycle (count) |  |  |  |
 | Repeated decision bottleneck stage (name/count) |  |  |  |
 | Overdue high-priority dependencies (count) |  |  |  |
+| Degraded critical data sources (Yellow/Red count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -243,6 +244,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Owner capacity forecast accuracy:
 - Median decision stage latency (dominant stage):
 - Dependency resolution on-time rate:
+- Reliable source rate (critical sources):
 
 ---
 

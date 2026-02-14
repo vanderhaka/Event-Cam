@@ -403,6 +403,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`**  
   SLA performance review for dependency resolution speed, overdue trends, and escalation discipline.
 
+- **`ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md`**  
+  Reliability-band review for critical data sources used by decision and governance workflows.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -533,6 +536,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to rebalance owner assignments before overload harms decision and governance quality | `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` |
 | We need to identify exactly which decision stages are causing SLA delays | `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` |
 | We need visibility into overdue dependency chains before they stall delivery | `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` |
+| We need early warning when source reliability degrades and contaminates high-impact decisions | `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` |
 
 ---
 
@@ -629,6 +633,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Owner Capacity Forecast | Ops / PMO + Functional Leads + Strategy Owner |
 | Decision Latency Decomposition | Strategy Owner + Ops / PMO + Decision Review Leads |
 | Dependency Resolution SLA Review | Ops / PMO + Functional Leads + Strategy Owner |
+| Data Source Reliability Review | Growth/Data Owner + Strategy Owner + Ops / PMO |
 
 ---
 
@@ -744,6 +749,7 @@ Includes Pack C, plus:
 96. `ALIGNMENT-OWNER-CAPACITY-FORECAST.md`
 97. `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md`
 98. `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md`
+99. `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

@@ -134,6 +134,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 49. `ALIGNMENT-OWNER-CAPACITY-FORECAST.md` (forecasts owner overload and enables pre-cycle rebalancing)
 50. `ALIGNMENT-DECISION-LATENCY-DECOMPOSITION.md` (pinpoints stage bottlenecks causing decision-SLA misses)
 51. `ALIGNMENT-DEPENDENCY-RESOLUTION-SLA-REVIEW.md` (keeps cross-team dependency chains within resolution SLA)
+52. `ALIGNMENT-DATA-SOURCE-RELIABILITY-REVIEW.md` (monitors source trustworthiness before decision quality is impacted)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
