@@ -115,6 +115,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Control adoption non-compliance findings (count) |  |  |  |
 | Controls scoring <70 effectiveness (count) |  |  |  |
 | Contradictory critical signal pairs (count) |  |  |  |
+| Open exceptions past expiry (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -209,6 +210,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control adoption rate (new/changed controls):
 - Control effectiveness average score:
 - Signal correlation diagnosis completion rate:
+- Exception recurrence rate:
 
 ---
 

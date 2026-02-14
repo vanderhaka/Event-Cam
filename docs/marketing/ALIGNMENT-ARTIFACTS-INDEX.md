@@ -352,6 +352,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`**  
   Monthly review of expected signal relationships to detect contradictory patterns and hidden risk.
 
+- **`ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`**  
+  Pattern review for policy/control exceptions to prevent shadow policy and recurring bypass behavior.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -465,6 +468,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to verify teams are actually following newly launched controls | `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md` |
 | We need objective, per-control value scoring before portfolio decisions | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` |
 | We need to detect conflicting signal movement before making wrong optimization calls | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` |
+| We need recurring exception patterns translated into policy fixes, not ad hoc extensions | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` |
 
 ---
 
@@ -544,6 +548,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Adoption Compliance | Ops / PMO + Strategy Owner + Functional Leads |
 | Control Effectiveness Scorecard | Strategy Owner + Ops / PMO + Functional Leads |
 | Signal Correlation Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
+| Policy Exception Review | Strategy Owner + Ops / PMO + Governance Owners |
 
 ---
 
@@ -642,6 +647,7 @@ Includes Pack C, plus:
 79. `ALIGNMENT-CONTROL-ADOPTION-COMPLIANCE.md`
 80. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
 81. `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
+82. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

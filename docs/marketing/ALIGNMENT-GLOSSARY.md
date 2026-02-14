@@ -223,6 +223,9 @@ Composite per-control score evaluating adoption, outcome impact, response qualit
 ## Signal Correlation
 Observed relationship between key operating signals used to confirm expected system behavior and detect contradictory risk patterns.
 
+## Policy Exception
+Formal, time-bounded deviation from a required policy/control rule that must be explicitly reviewed for recurrence and systemic policy implications.
+
 ---
 
 ## Incident & Escalation Terms
