@@ -14,6 +14,23 @@
 
 ---
 
+## Review Coverage Matrix (Requested Scope Verification)
+
+This matrix confirms full review coverage of every requested document and where primary critique focus landed.
+
+| Requested Doc | Reviewed | Primary Focus Areas | Key Risk Flagged |
+|---|---|---|---|
+| `MARKETING-PLAN.md` | Yes | Narrative quality, GTM structure, forecast discipline | Strategy breadth vs execution focus |
+| `PRICING-MODELS.md` | Yes | Pricing architecture, conversion clarity, numeric consistency | Internal pricing contradictions |
+| `PRO-ACCOUNT-DEEP-DIVE.md` | Yes | Channel economics, partner UX, operational guardrails | Fraud/attribution/dispute controls missing detail |
+| `ACCOUNT-TYPES.md` | Yes | Account architecture alignment, recurring model framing | Stale/conflicting economics vs newer docs |
+| `PURPLE-COW-CHANNELS.md` | Yes | Channel creativity, prioritization, testability | Limited experiment discipline structure |
+| `NAMING-BRAINSTORM.md` | Yes | Brand positioning potential, memorability, strategic fit | Legal/trademark validation gap |
+| `SOCIAL-APP-EXPLORATION.md` | Yes | Long-term strategic fit, sequencing, narrative compatibility | Premature expansion risk |
+| `WHATS-MISSING.md` | Yes | Gap quality, prioritization rigor, execution sequencing | Governance/source-of-truth not emphasized enough |
+
+---
+
 ## Executive Summary
 
 This is a **high-quality strategic body of work**: thoughtful, energetic, and unusually deep for early-stage marketing docs. There is a clear growth thesis (guest flywheel), a coherent emotional promise (“every guest, every memory”), and strong founder-level ambition.
