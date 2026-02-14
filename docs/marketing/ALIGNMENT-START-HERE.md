@@ -104,6 +104,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 19. `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` (highest-impact automation sequencing)
 20. `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` (detection-to-action response speed control)
 21. `ALIGNMENT-CONTROL-FAILURE-MODES.md` (recurring control-breakdown containment and redesign)
+22. `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` (root-cause closure quality and escalation recurrence control)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

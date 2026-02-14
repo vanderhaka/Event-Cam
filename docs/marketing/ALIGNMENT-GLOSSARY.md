@@ -184,6 +184,9 @@ Elapsed time between threshold breach and stabilization, measured across detecti
 ## Control Failure Mode
 Recurring pattern where a governance control fails by design, adoption, timing, data quality, ownership, or conflict—requiring containment and redesign action.
 
+## Escalation Effectiveness
+The degree to which escalations are resolved within SLA, close root causes, and avoid recurrence over the following review window.
+
 ---
 
 ## Incident & Escalation Terms

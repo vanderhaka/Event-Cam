@@ -313,6 +313,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-FAILURE-MODES.md`**  
   Canonical catalog of control breakdown patterns, containment actions, and redesign triggers.
 
+- **`ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`**  
+  Weekly/monthly audit of escalation closure quality, recurrence, and root-cause resolution.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -413,6 +416,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need objective sequencing for governance automation work | `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md` |
 | We need to reduce time-to-response on critical alignment signals | `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md` |
 | We need to identify and correct recurring control breakdown patterns | `ALIGNMENT-CONTROL-FAILURE-MODES.md` |
+| We need to ensure escalations resolve root causes and not just move ownership upward | `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md` |
 
 ---
 
@@ -479,6 +483,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Automation Prioritization Scorecard | Ops / PMO + Engineering/Automation Owner |
 | Signal Lag Analysis | Ops / PMO + On-Call Owner + Functional Leads |
 | Control Failure Modes | Strategy Owner + Ops / PMO + Control Owners |
+| Escalation Effectiveness Review | Ops / PMO + On-Call Owner + Functional Leads |
 
 ---
 
@@ -564,6 +569,7 @@ Includes Pack C, plus:
 66. `ALIGNMENT-AUTOMATION-PRIORITIZATION-SCORECARD.md`
 67. `ALIGNMENT-SIGNAL-LAG-ANALYSIS.md`
 68. `ALIGNMENT-CONTROL-FAILURE-MODES.md`
+69. `ALIGNMENT-ESCALATION-EFFECTIVENESS-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

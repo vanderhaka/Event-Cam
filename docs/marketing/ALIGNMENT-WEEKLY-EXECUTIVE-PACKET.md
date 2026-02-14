@@ -102,6 +102,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | P-A1 automation candidates open (count) |  |  |  |
 | Critical signal lag breaches (count) |  |  |  |
 | Open high-severity control failure modes (F1/F2) |  |  |  |
+| Escalations reopened this month (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -183,6 +184,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Controls proposed for sunset (count):
 - Mean critical-signal action lag (hours):
 - Control failures without containment plan (count):
+- Escalation root-cause closure rate:
 
 ---
 
