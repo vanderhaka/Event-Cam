@@ -124,6 +124,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-GOVERNANCE-CHARTER.md`**  
   Core governance policy document defining controls and enforcement rules.
 
+- **`ALIGNMENT-AUTOMATION-BACKLOG.md`**  
+  Prioritized automation opportunities for scaling alignment operations.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -168,6 +171,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need consistent capture of decision-review meeting outcomes | `ALIGNMENT-DECISION-MEETING-NOTES-TEMPLATE.md` |
 | We need a defined response when alignment breaks down | `ALIGNMENT-RECOVERY-PLAYBOOK.md` |
 | We need formal governance rules and enforcement policy | `ALIGNMENT-GOVERNANCE-CHARTER.md` |
+| We need a roadmap to automate repetitive alignment operations | `ALIGNMENT-AUTOMATION-BACKLOG.md` |
 
 ---
 
