@@ -226,6 +226,9 @@ Observed relationship between key operating signals used to confirm expected sys
 ## Policy Exception
 Formal, time-bounded deviation from a required policy/control rule that must be explicitly reviewed for recurrence and systemic policy implications.
 
+## Handoff Reliability
+The quality of ownership transitions measured by context completeness, acceptance confirmation, and post-handoff execution stability.
+
 ---
 
 ## Incident & Escalation Terms

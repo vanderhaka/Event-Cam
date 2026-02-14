@@ -116,6 +116,7 @@ If “No” to path integrity, include immediate remediation owner and date.
 | Controls scoring <70 effectiveness (count) |  |  |  |
 | Contradictory critical signal pairs (count) |  |  |  |
 | Open exceptions past expiry (count) |  |  |  |
+| At-risk/failed handoffs (count) |  |  |  |
 
 ### Top overdue decisions
 - DEC-ID:
@@ -211,6 +212,7 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control effectiveness average score:
 - Signal correlation diagnosis completion rate:
 - Exception recurrence rate:
+- Handoff packet completeness rate:
 
 ---
 

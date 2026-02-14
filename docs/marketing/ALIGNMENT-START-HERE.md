@@ -118,6 +118,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 33. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` (scores control value before keep/merge/retire decisions)
 34. `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` (checks cross-signal coherence before major decisions)
 35. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` (prevents recurring exceptions from becoming shadow policy)
+36. `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` (ensures ownership transitions are stable and complete)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

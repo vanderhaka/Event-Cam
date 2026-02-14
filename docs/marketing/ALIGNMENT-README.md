@@ -85,6 +85,7 @@ It helps teams:
 - **Control value governance:** `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
 - **Cross-signal coherence governance:** `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
 - **Exception-governance coherence:** `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
+- **Ownership-transition governance:** `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`
 
 These controls keep the system operable as artifact count grows.
 
@@ -139,4 +140,5 @@ For full routing by scenario, use:
 - Keep each active control above minimum effectiveness score or route portfolio action.
 - Keep contradictory signal patterns diagnosed before high-impact decisions proceed.
 - Keep exception recurrence and expired-exception counts low through policy correction.
+- Keep ownership transitions complete and stable with no critical ownerless windows.
 

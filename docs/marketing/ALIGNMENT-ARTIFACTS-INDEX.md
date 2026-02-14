@@ -355,6 +355,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`**  
   Pattern review for policy/control exceptions to prevent shadow policy and recurring bypass behavior.
 
+- **`ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`**  
+  Reliability review to ensure ownership transitions preserve continuity and execution quality.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -469,6 +472,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need objective, per-control value scoring before portfolio decisions | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` |
 | We need to detect conflicting signal movement before making wrong optimization calls | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` |
 | We need recurring exception patterns translated into policy fixes, not ad hoc extensions | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` |
+| We need to prevent ownership-transition gaps from degrading execution quality | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` |
 
 ---
 
@@ -549,6 +553,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Effectiveness Scorecard | Strategy Owner + Ops / PMO + Functional Leads |
 | Signal Correlation Review | Strategy Owner + Growth/Data Owner + Ops / PMO |
 | Policy Exception Review | Strategy Owner + Ops / PMO + Governance Owners |
+| Handoff Reliability Review | Ops / PMO + Strategy Owner + Functional Leads |
 
 ---
 
@@ -648,6 +653,7 @@ Includes Pack C, plus:
 80. `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md`
 81. `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md`
 82. `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md`
+83. `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,

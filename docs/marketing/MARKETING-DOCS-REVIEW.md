@@ -832,6 +832,7 @@ Use this minimum-safe operating rule:
 | Active controls remain in place without objective proof of value | `ALIGNMENT-CONTROL-EFFECTIVENESS-SCORECARD.md` | Low-scoring controls are optimized/merged/retired and average score trends upward |
 | Teams optimize isolated metrics while contradictory signals reveal hidden risk | `ALIGNMENT-SIGNAL-CORRELATION-REVIEW.md` | Contradictory critical signal pairs decline and are diagnosed quickly when present |
 | Temporary policy exceptions become de facto shadow policy through repeated extension | `ALIGNMENT-POLICY-EXCEPTION-REVIEW.md` | Exception recurrence and expired-exception counts decline as policy gaps are corrected |
+| Ownership transitions drop context and create hidden execution gaps | `ALIGNMENT-HANDOFF-RELIABILITY-REVIEW.md` | Handoff completeness and post-handoff stability remain high with no critical ownerless windows |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.
