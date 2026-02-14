@@ -19,35 +19,37 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
 
     const admin = createSupabaseAdminClient();
     const normalizedToken = inviteeTokenKey(inviteToken);
+    const altToken = stripQrNoise(normalizedToken);
 
-    if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.info('[invite lookup]', { tokenHint: normalizedToken.slice(0, 8), length: normalizedToken.length, altProvided: altToken !== normalizedToken });
+
+    let query = admin.from('invitees').select('*');
+    const tokenCandidates = Array.from(new Set([normalizedToken, altToken].filter((value): value is string => Boolean(value))));
+    const { data: invitees, error } = await query.in('qr_token', tokenCandidates).order('updated_at', { ascending: false });
+
+    if (error || !invitees || invitees.length === 0) {
       // eslint-disable-next-line no-console
-      console.info('[invite lookup]', { tokenHint: normalizedToken.slice(0, 8), length: normalizedToken.length });
+      console.warn('[invite lookup] token not found', {
+        tokenHint: normalizedToken.slice(0, 8),
+        candidates: tokenCandidates,
+      });
+      return jsonResponse({ message: 'Invalid or expired QR code', code: 'TOKEN_NOT_FOUND', candidates: tokenCandidates }, { status: 404 });
     }
 
-    const { data: invitee, error } = await admin
-      .from('invitees')
-      .select('*')
-      .eq('qr_token', normalizedToken)
-      .single();
-
-    if (error || !invitee) {
-      if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
-        console.warn('[invite lookup] token not found', { tokenHint: normalizedToken.slice(0, 8) });
-      }
+    const invitee = invitees[0] as typeof invitees[0];
+    if (!invitee) {
       return jsonResponse({ message: 'Invalid or expired QR code', code: 'TOKEN_NOT_FOUND' }, { status: 404 });
     }
 
+
     if (!invitee.is_active || invitee.qr_state !== 'issued') {
-      if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
-        console.warn('[invite lookup] token disabled', {
-          tokenHint: normalizedToken.slice(0, 8),
-          isActive: invitee.is_active,
-          qrState: invitee.qr_state,
-        });
-      }
+      // eslint-disable-next-line no-console
+      console.warn('[invite lookup] token disabled', {
+        tokenHint: normalizedToken.slice(0, 8),
+        isActive: invitee.is_active,
+        qrState: invitee.qr_state,
+      });
       return jsonResponse({ message: 'This QR code is disabled', code: 'TOKEN_DISABLED' }, { status: 403 });
     }
 
@@ -62,23 +64,19 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
     }
 
     if (!event.is_published || event.status !== 'published') {
-      if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
-        console.warn('[invite lookup] event not published', { eventId: event.id, isPublished: event.is_published, status: event.status });
-      }
+      // eslint-disable-next-line no-console
+      console.warn('[invite lookup] event not published', { eventId: event.id, isPublished: event.is_published, status: event.status });
       return jsonResponse({ message: 'Event is not published yet', code: 'EVENT_NOT_PUBLISHED' }, { status: 403 });
     }
 
     if (!nowCanUpload(event)) {
-      if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
-        console.warn('[invite lookup] event window closed', {
-          eventId: event.id,
-          startAt: event.start_at,
-          endAt: event.end_at,
-          now: new Date().toISOString(),
-        });
-      }
+      // eslint-disable-next-line no-console
+      console.warn('[invite lookup] event window closed', {
+        eventId: event.id,
+        startAt: event.start_at,
+        endAt: event.end_at,
+        now: new Date().toISOString(),
+      });
       return jsonResponse(
         {
           message: 'Event upload window is closed',
@@ -135,4 +133,13 @@ function inviteeTokenKey(token: string) {
   } catch {
     return trimmed;
   }
+}
+
+function stripQrNoise(token: string) {
+  return token
+    .replace(/^["'`]+/, '')
+    .replace(/["'`]+$/, '')
+    .replace(/\\+$/, '')
+    .replace(/\s+/g, '')
+    .replace(/[^A-Za-z0-9_-]/g, '');
 }

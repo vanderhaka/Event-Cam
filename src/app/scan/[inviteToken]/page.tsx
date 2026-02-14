@@ -4,7 +4,10 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 export default function ScanPage() {
-  const { inviteToken } = useParams<{ inviteToken: string }>();
+  const params = useParams<{ inviteToken: string | string[] }>();
+  const rawInviteToken = Array.isArray(params.inviteToken) ? params.inviteToken[0] : params.inviteToken;
+  const inviteToken = rawInviteToken?.trim();
+  const normalizedInviteToken = inviteToken ? decodeURIComponentSafe(inviteToken) : '';
   const [info, setInfo] = useState<any>(null);
   const [files, setFiles] = useState<FileList | null>(null);
   const [consent, setConsent] = useState(false);
@@ -15,8 +18,14 @@ export default function ScanPage() {
   const [errorCode, setErrorCode] = useState('');
 
   async function loadInfo() {
-    console.debug('[scan page] loading invite', { inviteToken });
-    const response = await fetch(`/api/invite/${inviteToken}`);
+    if (!normalizedInviteToken) {
+      setStatusCode(400);
+      setErrorCode('MISSING_TOKEN');
+      setMessage('Invalid scan link');
+      return;
+    }
+    console.debug('[scan page] loading invite', { inviteToken: normalizedInviteToken });
+    const response = await fetch(`/api/invite/${normalizedInviteToken}`);
     console.debug('[scan page] invite response', { status: response.status });
     const payload = await response.json();
     if (response.ok) {
@@ -33,7 +42,7 @@ export default function ScanPage() {
 
   useEffect(() => {
     loadInfo();
-  }, [inviteToken]);
+  }, [normalizedInviteToken]);
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -53,7 +62,7 @@ export default function ScanPage() {
       formData.append('consent', 'true');
       formData.append('tags', tagCsv);
       formData.append('durationSec', durationSec);
-      const response = await fetch(`/api/invite/${inviteToken}/media`, {
+      const response = await fetch(`/api/invite/${normalizedInviteToken}/media`, {
         method: 'POST',
         body: formData,
       });
@@ -124,4 +133,12 @@ export default function ScanPage() {
       <p>{message}</p>
     </section>
   );
+}
+
+function decodeURIComponentSafe(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }
