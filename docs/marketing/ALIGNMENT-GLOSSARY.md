@@ -439,6 +439,9 @@ The consistency of control completion timing relative to approved lead-time band
 ## Control Outcome Attribution
 The strength of evidence linking a control to the outcomes it claims to influence.
 
+## Control Intervention Durability
+The degree to which intervention improvements persist over time without regression.
+
 ---
 
 ## Incident & Escalation Terms

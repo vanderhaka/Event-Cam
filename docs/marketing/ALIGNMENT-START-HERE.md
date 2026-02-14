@@ -189,6 +189,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 104. `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` (ensures equivalent risk signals trigger consistent actions across owners and cycles)
 105. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` (ensures critical control workflows complete within stable lead-time bands for reliable planning)
 106. `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` (ensures control impact claims are causally supported before investment is scaled)
+107. `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md` (ensures intervention improvements remain stable over time instead of regressing after initial gains)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

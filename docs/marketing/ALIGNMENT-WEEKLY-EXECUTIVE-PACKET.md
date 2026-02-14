@@ -353,6 +353,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Control lead-time variability index:
 - Low-attribution control claims (count):
 - Verified contribution rate for critical controls (%):
+- Regressing interventions after stabilization (count):
+- Durable intervention rate (%):
 
 ---
 

@@ -568,6 +568,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md`**  
   Review verifying claimed control outcomes are supported by credible causal attribution.
 
+- **`ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md`**  
+  Review verifying intervention gains remain stable over time and do not regress after initial recovery.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -753,6 +756,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need equivalent control signals to trigger consistent responses across owners and cycles | `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md` |
 | We need control completion timing to remain predictable so planning commitments stay reliable | `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md` |
 | We need confidence that claimed control impact is causally supported, not just correlated | `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md` |
+| We need to prove interventions stay effective over time and don’t regress after early stabilization | `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md` |
 
 ---
 
@@ -904,6 +908,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Control Signal-Action Consistency Review | Ops / PMO + Control Owners + On-Call/Response Leads |
 | Control Lead-Time Predictability Review | Ops / PMO + Control Owners + Delivery/Execution Leads |
 | Control Outcome Attribution Review | Ops / PMO + Strategy Owner + Analytics/Control Owners |
+| Control Intervention Durability Review | Ops / PMO + Control Owners + Functional Leads |
 
 ---
 
@@ -1074,6 +1079,7 @@ Includes Pack C, plus:
 151. `ALIGNMENT-CONTROL-SIGNAL-ACTION-CONSISTENCY-REVIEW.md`
 152. `ALIGNMENT-CONTROL-LEAD-TIME-PREDICTABILITY-REVIEW.md`
 153. `ALIGNMENT-CONTROL-OUTCOME-ATTRIBUTION-REVIEW.md`
+154. `ALIGNMENT-CONTROL-INTERVENTION-DURABILITY-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
