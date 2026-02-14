@@ -1,8 +1,8 @@
 # Event Cam — Marketing Plan
 
-> **Product:** Event Cam — a mobile-first web app built for weddings. Couples collect photos and videos from every guest via unique QR codes, apply AI-generated custom watermarks and photo filters, moderate submissions, and share curated albums through password-protected links. No app download required for guests.
+> **Product:** Event Cam — a mobile-first web app built for weddings and private celebrations. Hosts collect photos and videos from every guest via unique QR codes, apply AI-generated custom watermarks and photo filters, moderate submissions, and share curated albums through password-protected links. No app download required for guests.
 >
-> **Primary market:** Weddings (50–300 guests). **Pricing:** $2 per guest ($49 minimum) — premium but accessible, easy to justify inside a wedding budget.
+> **Primary market:** Weddings and private celebrations — birthdays, engagements, anniversaries, and other personal events (20–300+ guests). **Pricing:** $2 per guest ($49 minimum) — premium but accessible, easy to justify inside an event budget.
 
 ---
 
@@ -47,23 +47,24 @@ At **$2 per guest**, a 150-person wedding costs $300 — less than the cake, les
 
 ## 2. Target Audience
 
-### Primary Segment: Weddings
+### Primary Segment: Weddings & Private Celebrations
 
 | Sub-Segment | Description | Guest Count | Revenue @ $2/guest | Notes |
 |-------------|-------------|-------------|---------------------|-------|
 | **Engaged couples (DIY)** | Couples planning their own wedding | 50–200 | $100–$400 | Largest volume; $2/head is trivial in a wedding budget |
+| **Birthday parties** | Milestone birthdays, surprise parties, kids' parties | 20–100 | $49–$200 | High volume; natural word-of-mouth from attendees |
+| **Engagement parties & showers** | Pre-wedding events | 20–80 | $49–$160 | Funnel into the wedding itself — if they use Event Cam for the engagement, they'll use it for the wedding |
 | **Wedding planners** | Professional planners managing multiple weddings/year | 100–300 | $200–$600 per event | Repeat buyers; recommend tools to every client |
 | **Destination weddings** | Smaller guest list, but high-value experience | 20–80 | $49–$160 | Especially value "no app download" since guests may have limited connectivity |
 | **Large/cultural weddings** | Indian, Nigerian, Filipino, etc. — often 300–500+ guests | 300–500+ | $600–$1,000+ | Highest per-event revenue; strong community word-of-mouth |
+| **Anniversaries & vow renewals** | Milestone celebrations with similar dynamics to weddings | 20–150 | $49–$300 | Same product, same price, organic expansion |
 
 ### Secondary Segments (Future Expansion)
 
 | Segment | Description | Opportunity |
 |---------|-------------|-------------|
 | **Wedding photographers** | Use Event Cam as a guest-photo supplement alongside their professional shots | Power users who bring repeat business; natural referral channel |
-| **Engagement parties & showers** | Pre-wedding events that serve as a trial run | Funnel into the wedding itself — if they use Event Cam for the shower, they'll use it for the wedding |
-| **Anniversaries & vow renewals** | Milestone celebrations with similar dynamics to weddings | Same product, same price, organic expansion |
-| **Corporate events** | Holiday parties, retreats, conferences | Future segment once wedding brand is established |
+| **Corporate events** | Holiday parties, retreats, conferences | Future segment once primary brand is established |
 
 ### Buyer Persona: "Soon-to-Be Sarah"
 
@@ -409,7 +410,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 - [ ] Begin Google Ads and Meta Ads campaigns targeting engaged couples
 - [ ] Launch Pinterest Ads (promoted pins in wedding categories)
-- [ ] Launch affiliate program for wedding planners: 15–20% commission per referral
+- [ ] Launch affiliate program for wedding planners: 40% commission ($0.80/guest) per referral
 - [ ] Partner with 5+ wedding photographers who recommend Event Cam to clients
 - [ ] Publish monthly case studies: real weddings, real numbers, real watermarked albums
 - [ ] Launch the photobook upsell (partner with a print-on-demand service)
@@ -501,7 +502,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 | Partner Type | Examples | Value | Approach |
 |-------------|----------|-------|----------|
-| **Wedding planners** | Local firms, national planning companies, day-of coordinators | Direct referral to every client; 15–40 weddings/year each | Offer affiliate commission (15–20%) or a Planner Pro plan with white-label |
+| **Wedding planners** | Local firms, national planning companies, day-of coordinators | Direct referral to every client; 15–40 weddings/year each | Offer Pro account with 40% discount or 40% referral commission ($0.80/guest) |
 | **Wedding photographers** | Local and destination wedding photographers | Recommend Event Cam as a "guest photo supplement" to their professional work | Free account + co-branded album feature; they promote to every client |
 | **Venues** | Hotels, banquet halls, estates, barns, rooftops | Venue includes Event Cam in their packages or recommends to every couple | Provide branded QR table tents with venue logo; revenue share or flat referral fee |
 | **Wedding invitation platforms** | Zola, The Knot, Paperless Post, Minted | Include Event Cam QR code on digital invitations or RSVP pages | API integration; "Add guest photo collection" as a feature on their platform |

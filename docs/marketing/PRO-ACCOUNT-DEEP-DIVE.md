@@ -50,18 +50,18 @@ bills client however they want → keeps the margin
 #### Path 2: "I'll send them your way" — Pro Refers, Client Creates
 
 ```
-Pro shares their unique link → couple clicks and signs up → 
-couple creates event and pays $1.80/guest (10% off) → Pro earns $0.60/guest
+Pro shares their unique link → couple clicks and signs up →
+couple creates event and pays $2/guest (standard price) → Pro earns $0.80/guest
 ```
 
-- The couple does everything: creates the event, adds guests, pays $1.80/guest (10% discount via the Pro's code).
+- The couple does everything: creates the event, adds guests, pays $2/guest (standard price).
 - Pro doesn't touch anything. They just shared a link (or gave the couple a promo code).
-- Pro earns **$0.60/guest** as commission — credited to their Pro account, paid out monthly.
+- Pro earns **$0.80/guest** (40% commission) — credited to their Pro account, paid out monthly.
 - We keep **$1.20/guest** — same as Path 1.
 - Attribution: referral link or promo code with a 90-day cookie.
 
 **Economics for the Pro:**
-- 150-guest wedding = $270 paid by the couple (at $1.80/guest) → **$90 commission to the Pro**.
+- 150-guest wedding = $300 paid by the couple (at $2/guest) → **$120 commission to the Pro**.
 - Zero effort required. Just share a link.
 
 ### Why This Works
@@ -70,8 +70,8 @@ couple creates event and pays $1.80/guest (10% off) → Pro earns $0.60/guest
 |----------|------------------|
 | **One model** | Every Pro has the same account, same rate, same dashboard. |
 | **Flexible** | Pro chooses Path 1 or Path 2 per client. Not locked in. Can do Path 1 for their premium clients and Path 2 for casual referrals. |
-| **Same economics for us** | We keep $1.20/guest either way. Path 1: Pro pays $1.20. Path 2: Couple pays $1.80, Pro gets $0.60, we keep $1.20. |
-| **Simple to explain** | "You get 40% off. Set it up yourself and keep the margin, or refer clients and earn $0.60/guest." |
+| **Same economics for us** | We keep $1.20/guest either way. Path 1: Pro pays $1.20. Path 2: Couple pays $2, Pro gets $0.80, we keep $1.20. |
+| **Simple to explain** | "You get 40% off. Set it up yourself and keep the margin, or refer clients and earn $0.80/guest." |
 | **One thing to build** | One account type, one dashboard, one billing system. Path 1 = Pro pays at checkout. Path 2 = commission tracker + payout. |
 
 ---
@@ -230,29 +230,26 @@ This makes the Pro feel good even if they're absorbing the cost rather than mark
 
 Direct commission:
 
-- Client pays $1.80/guest → $270 for a 150-guest wedding.
-- Pro earns $0.60/guest → $90 commission.
+- Client pays $2/guest → $300 for a 150-guest wedding.
+- Pro earns $0.80/guest → $120 commission.
 - Commission is tracked in real-time and appears in the earnings dashboard.
 - Payout: monthly, via Stripe Connect.
 - Minimum payout threshold: $25 (rolls over if not met).
 
 ### What About the Promo Code?
 
-The Pro's promo code (e.g., THOMPSON40) could give the couple a small discount too, making it a win-win:
+The Pro's promo code (e.g., THOMPSON40) is a referral attribution tool. No couple discount — the Pro earns a strong 40% commission instead.
 
-| Option | Couple Gets | Pro Gets | We Get |
-|--------|------------|---------|--------|
-| **No couple discount** | Pays $2.00/guest | $0.80/guest commission | $1.20/guest |
-| **Couple gets 10% off** | Pays $1.80/guest | $0.60/guest commission | $1.20/guest |
-| **Couple gets 15% off** | Pays $1.70/guest | $0.50/guest commission | $1.20/guest |
+| Path | Couple Pays | Pro Gets | We Get |
+|------|------------|---------|--------|
+| **Pro creates event (Path 1)** | Whatever the Pro charges | Margin on markup | $1.20/guest |
+| **Pro refers via code (Path 2)** | $2.00/guest | $0.80/guest commission (40%) | $1.20/guest |
 
-Giving the couple a discount makes the promo code more shareable ("Use my code for 10% off!") but reduces the Pro's commission. The Pro is more likely to share a code that benefits their client — it makes them look good.
-
-**Recommendation:** Give the couple 10% off when they use a Pro's code. The Pro earns $0.60/guest (very meaningful — $90 on a 150-guest wedding), the couple feels they're getting a deal, and the Pro looks generous. Our revenue stays at $1.20/guest — the same as Path 1 wholesale.
+The Pro's commission is high enough ($0.80/guest = $120 on a 150-guest wedding) that it's a strong incentive to share without needing a couple discount.
 
 ```
 Standard price:        $2.00/guest  → we keep $2.00
-Pro code applied:      $1.80/guest  → couple saves $0.20, Pro earns $0.60, we keep $1.20
+Pro code applied:      $2.00/guest  → Pro earns $0.80, we keep $1.20
 Pro creates directly:  $1.20/guest  → Pro pays us $1.20, charges client whatever
 ```
 
@@ -413,11 +410,11 @@ Target: 50% of Pro signups should activate within 60 days.
 
 | Phase | Path 1 Savings | Path 2 Commissions | Total Pro Earnings |
 |-------|---------------|-------------------|-------------------|
-| Phase 1 | $5,616 | $4,212 | $9,828/mo across all Pros |
-| Phase 2 | $24,960 | $18,720 | $43,680/mo |
-| Phase 3 | $93,600 | $70,200 | $163,800/mo |
+| Phase 1 | $5,616 | $5,616 | $11,232/mo across all Pros |
+| Phase 2 | $24,960 | $24,960 | $49,920/mo |
+| Phase 3 | $93,600 | $93,600 | $187,200/mo |
 
-Pros collectively earning $163k/month by Phase 3 creates a very sticky, very motivated distribution network. A photographer doing 40 weddings/year keeps ~$4,800/year in savings (Path 1) or earns ~$3,600/year in commissions (Path 2). That's real money.
+Pros collectively earning $187k/month by Phase 3 creates a very sticky, very motivated distribution network. A photographer doing 40 weddings/year keeps ~$4,800/year in savings (Path 1) or earns ~$4,800/year in commissions (Path 2). That's real money.
 
 ---
 
@@ -440,8 +437,8 @@ At Phase 3, Pro events generate ~195,000 guest emails/month. Even excluding whit
 
 ## Open Questions
 
-- [ ] **$1.20 or $1.40?** $1.20/guest (40% off) feels generous. $1.40 (30% off) is still attractive and gives us more margin. Test both and see what drives Pro adoption.
-- [ ] **Promo code discount for couples — 10% or 0%?** Giving couples 10% off via the Pro's code makes the code more shareable but reduces Pro commission from $0.80 to $0.60. Test whether Pros prefer higher commission (no couple discount) or more conversions (couple gets a deal).
+- [x] **$1.20 or $1.40?** Decision: $1.20/guest (40% off). This is the canonical Pro rate.
+- [x] **Promo code discount for couples — 10% or 0%?** Decision: No couple discount. Pro earns $0.80/guest (40% commission). Couple pays standard $2/guest. The high commission is incentive enough for Pros to share.
 - [ ] **Minimum payout threshold:** $25 feels right. Low enough that small-volume Pros can cash out. High enough to avoid micro-transactions.
 - [ ] **Payout frequency:** Monthly is standard. Weekly could be attractive for high-volume Pros but increases operational overhead.
 - [ ] **Pro vetting:** Should anyone be able to create a Pro account, or require approval? Open signup is better for growth. Maybe add verification later (proof of business, portfolio link) for the directory listing only.

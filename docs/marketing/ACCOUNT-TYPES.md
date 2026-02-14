@@ -1,6 +1,6 @@
 # Event Cam — Account Types & Partner Models
 
-> Future product thinking for expanding beyond single-couple accounts. Two new account types that turn one-time customers into recurring revenue channels.
+> Account types for Event Cam. Standard accounts serve weddings and private celebrations (birthdays, engagements, etc.). Pro accounts are the primary growth channel. Venue accounts are a future feature.
 
 ---
 
@@ -16,17 +16,19 @@
 
 ## Overview
 
-The current model is simple: one couple creates one wedding, pays $2/guest ($49 minimum). That works perfectly for the primary use case. But two audiences need something different:
+The current model is simple: someone creates an event (wedding, birthday, engagement party, etc.), pays $2/guest ($49 minimum). That works for the primary use case. Two additional account types serve different audiences:
 
 | Account Type | Who | Core Need | Revenue Model |
 |-------------|-----|-----------|---------------|
-| **Standard** (current) | Engaged couples | One wedding, one-time purchase | $2/guest ($49 min) |
-| **Venue** | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription or per-event |
-| **Pro** | Photographers, planners, DJs, celebrants, coordinators | Resell or bundle Event Cam into their own packages; earn commission | Affiliate/commission + discounted per-guest rate |
+| **Standard** (current) | Couples, party hosts | One event, one-time purchase | $2/guest ($49 min) |
+| **Pro** | Photographers, planners, DJs, celebrants, coordinators | Resell or bundle Event Cam into their own packages; earn commission | 40% discount ($1.20/guest) or 40% referral commission ($0.80/guest) |
+| **Venue** (future) | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription ($39/$89/$179/mo) |
 
 ---
 
-## Venue Accounts
+## Venue Accounts (Future Feature)
+
+> **Note:** Venue accounts are planned for a future release. The details below are directional, not live.
 
 ### Who This Is For
 
@@ -60,9 +62,9 @@ Any business that hosts events regularly and wants to offer Event Cam as a built
 
 | Tier | Events/Month | Price/Month | Notes |
 |------|-------------|-------------|-------|
-| **Starter** | Up to 4 | $29/mo | Small pub doing weekly events |
-| **Growth** | Up to 15 | $79/mo | Active venue, multiple events/week |
-| **Unlimited** | Unlimited | $149/mo | Large venue or hotel with daily events |
+| **Starter** | Up to 4 | $39/mo | Small pub doing weekly events |
+| **Growth** | Up to 15 | $89/mo | Active venue, multiple events/week |
+| **Unlimited** | Unlimited | $179/mo | Large venue or hotel with daily events |
 
 - All tiers include unlimited guests per event (no per-guest charge — the venue is paying for access, not per-head).
 - Venue branding included at Growth+.
@@ -166,12 +168,13 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 
 #### Model B: Affiliate Commission (Pro earns a cut)
 
-- Couple pays $1.80/guest via Pro's code (10% off standard pricing).
-- Pro gets a **20% commission** on every event they refer: $0.20/guest.
+- Couple pays $2/guest (standard pricing).
+- Pro gets a **40% commission** on every event they refer: **$0.80/guest**.
 - Pro shares a referral link or code with clients.
 - Event Cam handles billing, the Pro just drives the sale.
+- We keep $1.20/guest — same as the wholesale path.
 
-**Example:** Photographer recommends Event Cam to 30 couples/year. Average 140 guests. Commission = 30 × 140 × $0.20 = **$840/year** passive income for the photographer. Not life-changing, but enough to keep them recommending it.
+**Example:** Photographer recommends Event Cam to 30 couples/year. Average 140 guests. Commission = 30 × 140 × $0.80 = **$3,360/year** passive income for the photographer. Real money for just mentioning the product.
 
 #### Model C: Hybrid (Wholesale for bundlers, Affiliate for recommenders)
 

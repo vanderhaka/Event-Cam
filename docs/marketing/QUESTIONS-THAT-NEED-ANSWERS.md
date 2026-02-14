@@ -177,12 +177,12 @@ Use this to resolve the highest-risk questions quickly.
 
 | Question ID | Decision | Owner | Date Decided | Docs to Update | Status |
 |---|---|---|---|---|---|
-| P0-1 |  |  |  |  | Open |
-| P0-2 |  |  |  |  | Open |
-| P0-3 |  |  |  |  | Open |
-| P0-4 |  |  |  |  | Open |
+| P0-1 | Weddings + private celebrations (birthdays, engagements, etc.) |  | 2026-02-14 | MARKETING-PLAN.md, ACCOUNT-TYPES.md | Closed |
+| P0-2 | $2/guest is canonical live pricing. Venue subscriptions ($39/$89/$179/mo) are a future feature, not live. |  | 2026-02-14 | PRICING-MODELS.md, ACCOUNT-TYPES.md | Closed |
+| P0-3 | $2/guest retail. Pro rate: $1.20/guest (40% discount). Pro referral commission: $0.80/guest (40%). No couple discount on referred events. We keep $1.20/guest in all paths. |  | 2026-02-14 | PRO-ACCOUNT-DEEP-DIVE.md, PRICING-MODELS.md, ACCOUNT-TYPES.md | Closed |
+| P0-4 | Primary loop: Pro network (photographers, planners bring clients). Secondary loop: Guest email engagement (guests become future customers). Details to be refined. |  | 2026-02-14 | MARKETING-PLAN.md | Closed |
 | P0-5 |  |  |  |  | Open |
-| P0-6 |  |  |  |  | Open |
+| P0-6 | Light touch — not aggressive with email marketing. Lower priority for now. |  | 2026-02-14 |  | Closed |
 | P1-7 |  |  |  |  | Open |
 | P1-8 |  |  |  |  | Open |
 | P1-9 |  |  |  |  | Open |

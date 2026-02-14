@@ -213,8 +213,10 @@ Festival attendees are a massive guest email pool. A 5,000-person festival gener
 
 ---
 
-## 5. Model 4: Venue Accounts
+## 5. Model 4: Venue Accounts (Future Feature)
 
+> **Note:** Venue accounts are a future feature, not currently live. Pricing below is planned, not active.
+>
 > Pubs, clubs, bars, hotels, restaurants, event spaces, breweries, wedding venues — any business that hosts events regularly.
 
 Venues need recurring access, not one-time event purchases. They host events weekly or daily. They need multi-admin, venue branding, and permanent QR codes.
@@ -301,27 +303,27 @@ The Pro doesn't handle billing. They refer clients, and earn a commission.
 
 | Structure | Details |
 |-----------|---------|
-| Commission | 20% of event revenue |
+| Commission | 40% of event revenue ($0.80/guest) |
 | Payout | Monthly, via Stripe Connect or bank transfer |
 | Minimum payout | $25 (rolls over if under threshold) |
 | Attribution | Referral link or promo code, 90-day cookie |
 | Dashboard | Track referrals, conversions, earnings in real-time |
 
-**Note:** In the unified Pro model (see `PRO-ACCOUNT-DEEP-DIVE.md`), referred events give the couple 10% off ($1.80/guest) and the Pro earns $0.60/guest commission. We keep $1.20/guest.
+**Note:** In the unified Pro model (see `PRO-ACCOUNT-DEEP-DIVE.md`), referred events are charged at the standard $2/guest rate. The Pro earns $0.80/guest commission. We keep $1.20/guest.
 
 **Example:**
 - Celebrant recommends Event Cam to 50 couples/year.
 - 60% convert (30 couples), averaging 130 guests.
-- Couple pays $1.80/guest (10% off via Pro code) = $234/event.
-- Pro commission: $0.60/guest × 130 = $78/event.
-- **$2,340/year** for the celebrant. Passive income for just mentioning the product.
+- Couple pays $2/guest = $260/event.
+- Pro commission: $0.80/guest × 130 = $104/event.
+- **$3,120/year** for the celebrant. Passive income for just mentioning the product.
 
 #### Comparison
 
 | Factor | Wholesale | Affiliate |
 |--------|-----------|-----------|
 | Who handles billing? | Pro bills their client (or bundles into package) | We bill the couple directly |
-| Pro's revenue | Margin on markup (potentially very high) | 20% commission (lower but zero effort) |
+| Pro's revenue | Margin on markup (potentially very high) | 40% commission ($0.80/guest, zero effort) |
 | Effort for Pro | Medium — they manage the event setup | Low — just share a link |
 | Best for | Photographers, planners who want full control | Celebrants, DJs, florists who just recommend |
 | White-label available? | Yes (premium add-on) | No (our brand shows) |
@@ -442,7 +444,7 @@ How to present all of this without overwhelming people. The pricing page needs t
 - CTA: "Start free with 10 guests"
 
 **Tab 2: Parties & Open Events**
-- 4 tier cards: Small ($29), Medium ($59), Large ($99), Massive ($199)
+- 4 tier cards: Small ($49), Medium ($99), Large ($199), Massive ($399)
 - "Don't know how many people? No problem."
 - CTA: "Start free with 15 uploaders"
 
@@ -451,7 +453,7 @@ How to present all of this without overwhelming people. The pricing page needs t
 - "Built for scale" messaging
 - CTA: "Get a custom quote" (for 10k+) or "Start setup" (for smaller)
 
-**Tab 4: Venues & Spaces**
+**Tab 4: Venues & Spaces (Future)**
 - 3 plan cards: Starter ($39/mo), Growth ($89/mo), Unlimited ($179/mo)
 - "For businesses that host events regularly"
 - CTA: "Start 14-day free trial"
@@ -464,7 +466,7 @@ How to present all of this without overwhelming people. The pricing page needs t
 
 - **Lead with the wedding tab** — it's the primary market. Default selected.
 - **No jargon** — "uploaders" not "seats." "Events" not "instances."
-- **Show the math** — "150 guests = $150. That's less than your cake."
+- **Show the math** — "150 guests = $300. That's less than your cake."
 - **Social proof under each tab** — "Trusted by 500+ couples" / "Used at 50+ venues" / "200+ wedding pros."
 - **FAQ at the bottom** covering: "Can I add guests later?", "What happens if I go over?", "Can I upgrade mid-event?", "What's included free?"
 
@@ -531,7 +533,7 @@ Even at $2/guest, Event Cam is cheaper than disposable cameras and massively che
 - [ ] Do we need a vetting/approval process for Pro accounts, or let anyone sign up?
 - [ ] Should wholesale volume tiers reset annually or be lifetime cumulative?
 - [ ] How do we handle the case where a Pro creates an event on behalf of a couple, but the couple also wants their own login to moderate/manage albums?
-- [ ] Is the Pro commission sustainable long-term? (At $2/guest with $0.60/guest commission on referred events, our margin is $1.20/guest — very healthy.)
+- [ ] Is the Pro commission sustainable long-term? (At $2/guest with $0.80/guest commission on referred events, our margin is $1.20/guest — healthy.)
 - [ ] Should Pros get early access to new features (beta watermark styles, filters) to keep them engaged?
 
 ### General
