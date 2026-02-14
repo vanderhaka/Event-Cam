@@ -3,40 +3,65 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+function decodeURIComponentSafe(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 export default function ScanPage() {
   const params = useParams<{ inviteToken: string | string[] }>();
   const rawInviteToken = Array.isArray(params.inviteToken) ? params.inviteToken[0] : params.inviteToken;
   const inviteToken = rawInviteToken?.trim();
   const normalizedInviteToken = inviteToken ? decodeURIComponentSafe(inviteToken) : '';
+
   const [info, setInfo] = useState<any>(null);
   const [files, setFiles] = useState<FileList | null>(null);
   const [consent, setConsent] = useState(false);
   const [tagCsv, setTagCsv] = useState('');
   const [durationSec, setDurationSec] = useState('');
   const [message, setMessage] = useState('');
-  const [statusCode, setStatusCode] = useState<number | null>(null);
-  const [errorCode, setErrorCode] = useState('');
+  const [messageType, setMessageType] = useState<'error' | 'success' | 'info'>('info');
+  const [loading, setLoading] = useState(true);
+  const [uploading, setUploading] = useState(false);
+  const [errorState, setErrorState] = useState<'not_found' | 'expired' | 'generic' | null>(null);
+
+  // Hide the main navigation for the guest scan page
+  useEffect(() => {
+    document.body.classList.add('guest-page');
+    return () => { document.body.classList.remove('guest-page'); };
+  }, []);
 
   async function loadInfo() {
     if (!normalizedInviteToken) {
-      setStatusCode(400);
-      setErrorCode('MISSING_TOKEN');
-      setMessage('Invalid scan link');
+      setErrorState('not_found');
+      setLoading(false);
       return;
     }
-    console.debug('[scan page] loading invite', { inviteToken: normalizedInviteToken });
-    const response = await fetch(`/api/invite/${normalizedInviteToken}`);
-    console.debug('[scan page] invite response', { status: response.status });
-    const payload = await response.json();
-    if (response.ok) {
-      setInfo(payload);
-      setStatusCode(200);
-      setErrorCode('');
-    } else {
-      setStatusCode(response.status);
-      setErrorCode(payload.code || 'UNKNOWN');
-      setMessage(payload.message || 'Could not load invite details');
-      console.error('[scan page] invite lookup failed', payload);
+
+    try {
+      const response = await fetch(`/api/invite/${normalizedInviteToken}`);
+      const payload = await response.json();
+
+      if (response.ok) {
+        setInfo(payload);
+        setErrorState(null);
+      } else {
+        const code = payload.code || '';
+        if (code === 'TOKEN_NOT_FOUND' || response.status === 404) {
+          setErrorState('not_found');
+        } else if (code === 'EVENT_WINDOW_CLOSED' || code === 'EXPIRED') {
+          setErrorState('expired');
+        } else {
+          setErrorState('generic');
+        }
+      }
+    } catch {
+      setErrorState('generic');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -48,13 +73,18 @@ export default function ScanPage() {
     event.preventDefault();
     if (!files || files.length === 0) {
       setMessage('Please pick at least one file');
+      setMessageType('error');
       return;
     }
 
     if (!consent) {
-      setMessage('Consent is required before upload');
+      setMessage('You must agree to the consent before uploading');
+      setMessageType('error');
       return;
     }
+
+    setUploading(true);
+    setMessage('');
 
     const uploads = Array.from(files).map(async (mediaFile) => {
       const formData = new FormData();
@@ -75,70 +105,128 @@ export default function ScanPage() {
 
     try {
       await Promise.all(uploads);
-      setMessage('Upload complete');
+      setMessage(`${files.length} file${files.length > 1 ? 's' : ''} uploaded successfully! The host will review them shortly.`);
+      setMessageType('success');
       setFiles(null);
       setTagCsv('');
       setDurationSec('');
+      // Reset the file input
+      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+      if (fileInput) fileInput.value = '';
     } catch (error) {
       setMessage((error as Error).message);
+      setMessageType('error');
+    } finally {
+      setUploading(false);
     }
   }
 
-  if (!info) {
+  // --- Loading state ---
+  if (loading) {
     return (
-      <section className="card">
-        <p className="muted">{message || 'Loading...'}</p>
-        {statusCode ? <p className="muted">{`HTTP ${statusCode}${errorCode ? ` · ${errorCode}` : ''}`}</p> : null}
-      </section>
+      <div className="scan-layout">
+        <div className="scan-header">
+          <h1 className="brand">
+            <span className="brand-mark">Event</span> Cam
+          </h1>
+        </div>
+        <section className="card" style={{ textAlign: 'center', padding: '3rem 1.5rem' }}>
+          <p className="muted">Loading your invite...</p>
+        </section>
+      </div>
     );
   }
 
-  return (
-    <section className="card">
-      <h2 className="section-head">{info.event.name}</h2>
-      <p className="muted">
-        Uploading as <strong>{info.invitee.displayName}</strong>
-      </p>
-      <p className="muted">Upload your photos and 20s videos before the event window closes.</p>
+  // --- Error states ---
+  if (errorState) {
+    const errorContent = {
+      not_found: {
+        icon: '\uD83D\uDD0D',
+        title: 'Invite not found',
+        desc: 'This QR code doesn\u2019t match any active invite. Please check with the event host for a valid link.',
+      },
+      expired: {
+        icon: '\u23F0',
+        title: 'Upload window closed',
+        desc: 'The upload window for this event has ended. Contact the event host if you believe this is a mistake.',
+      },
+      generic: {
+        icon: '\u26A0\uFE0F',
+        title: 'Something went wrong',
+        desc: 'We couldn\u2019t load your invite. Please try again or contact the event host.',
+      },
+    }[errorState];
 
-      <form onSubmit={submit} className="form-grid">
-        <label>
-          <div className="label">Files</div>
-          <input
-            className="input"
-            type="file"
-            accept="image/*,video/*"
-            multiple
-            capture="environment"
-            onChange={(event) => setFiles(event.target.files)}
-          />
-        </label>
-        <label>
-          <div className="label">Optional tags (comma separated)</div>
-          <input className="input" value={tagCsv} onChange={(event) => setTagCsv(event.target.value)} placeholder="James and Mel" />
-        </label>
-        <label>
-          <div className="label">Duration (seconds, optional for videos)</div>
-          <input className="input" value={durationSec} onChange={(event) => setDurationSec(event.target.value)} type="number" min="0" />
-        </label>
-        <label className="row">
-          <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} />
-          <span>I confirm photos and videos can be attributed to me and reviewed before publication.</span>
-        </label>
-        <button className="btn btn-primary" type="submit">
-          Upload
-        </button>
-      </form>
-
-      <p>{message}</p>
-    </section>
-  );
-}
-
-function decodeURIComponentSafe(value: string) {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
+    return (
+      <div className="scan-layout">
+        <div className="scan-header">
+          <h1 className="brand">
+            <span className="brand-mark">Event</span> Cam
+          </h1>
+        </div>
+        <section className="card error-card">
+          <span className="error-icon">{errorContent.icon}</span>
+          <h2 className="error-title">{errorContent.title}</h2>
+          <p className="error-desc">{errorContent.desc}</p>
+        </section>
+      </div>
+    );
   }
+
+  // --- Upload form ---
+  return (
+    <div className="scan-layout">
+      <div className="scan-header">
+        <h1 className="brand">
+          <span className="brand-mark">Event</span> Cam
+        </h1>
+      </div>
+
+      <section className="card">
+        <h2 className="section-head">{info.event.name}</h2>
+        <p className="section-sub">
+          Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. The host will review them before adding to the event album.
+        </p>
+
+        <form onSubmit={submit} className="form-grid">
+          <div className="file-upload-area">
+            <input
+              type="file"
+              accept="image/*,video/*"
+              multiple
+              capture="environment"
+              onChange={(e) => setFiles(e.target.files)}
+            />
+            <span className="file-upload-icon">{'\uD83D\uDCF7'}</span>
+            <p className="file-upload-text">
+              {files && files.length > 0
+                ? <strong>{files.length} file{files.length > 1 ? 's' : ''} selected</strong>
+                : <>Tap to <strong>choose photos or videos</strong>, or use your camera</>
+              }
+            </p>
+          </div>
+
+          <label>
+            <div className="label">Tags <span className="label-hint">(optional — e.g. &quot;ceremony&quot;, &quot;reception&quot;)</span></div>
+            <input className="input" value={tagCsv} onChange={(e) => setTagCsv(e.target.value)} placeholder="e.g. ceremony, reception" />
+          </label>
+
+          <label className="checkbox-row">
+            <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+            <span>I confirm my photos and videos can be attributed to me and reviewed by the host before publication.</span>
+          </label>
+
+          <button className="btn btn-primary btn-lg" type="submit" disabled={uploading || !files || files.length === 0 || !consent}>
+            {uploading ? 'Uploading...' : 'Upload'}
+          </button>
+        </form>
+
+        {message && (
+          <div className={`message ${messageType === 'error' ? 'message-error' : messageType === 'success' ? 'message-success' : 'message-info'}`}>
+            {message}
+          </div>
+        )}
+      </section>
+    </div>
+  );
 }

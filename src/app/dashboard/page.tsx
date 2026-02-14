@@ -30,7 +30,7 @@ const readableDate = (value?: string | null) => {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return 'Invalid date';
   const day = date.getDate();
-  const month = new Intl.DateTimeFormat('en-GB', { month: 'long' }).format(date);
+  const month = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(date);
   const year = date.getFullYear();
   const time = date.toLocaleTimeString('en-US', {
     hour: 'numeric',
@@ -97,6 +97,9 @@ export default function DashboardPage() {
 
   const [events, setEvents] = useState<any[]>([]);
   const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'error' | 'success'>('error');
+  const [showForm, setShowForm] = useState(false);
+  const [creating, setCreating] = useState(false);
 
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
@@ -139,14 +142,12 @@ export default function DashboardPage() {
     (async () => {
       const session = await supabase.auth.getSession();
       if (!session.data.session) {
-        setMessage('You must log in before creating or viewing events.');
         router.push('/auth/login');
         return;
       }
       await reload();
     })();
 
-    // Auto-detect location via Geolocation + reverse geocoding
     if ('geolocation' in navigator) {
       setDetectingLocation(true);
       navigator.geolocation.getCurrentPosition(
@@ -169,13 +170,12 @@ export default function DashboardPage() {
               }
             }
           } catch {
-            // Reverse geocoding failed — leave location empty for manual entry
+            // Reverse geocoding failed
           } finally {
             setDetectingLocation(false);
           }
         },
         () => {
-          // Geolocation denied or unavailable
           setDetectingLocation(false);
         },
         { enableHighAccuracy: false, timeout: 8000 },
@@ -185,6 +185,9 @@ export default function DashboardPage() {
 
   async function submit(event: FormEvent) {
     event.preventDefault();
+    setCreating(true);
+    setMessage('');
+
     const response = await fetchWithAuth('/api/events', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -199,78 +202,120 @@ export default function DashboardPage() {
     });
 
     if (response.ok) {
-      setMessage('Event created');
+      setMessage('Event created successfully');
+      setMessageType('success');
       setName('');
+      setShowForm(false);
       await reload();
     } else {
       const payload = await response.json();
       setMessage(payload.message || 'Failed to create event');
+      setMessageType('error');
     }
+    setCreating(false);
+  }
+
+  async function logout() {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    await supabase.auth.signOut();
+    router.push('/');
   }
 
   return (
     <div className="grid">
-      <section className="card">
-        <h2 className="section-head">Create event</h2>
-        <form onSubmit={submit} className="form-grid">
-          <label>
-            <div className="label">Event name</div>
-            <input className="input" value={name} onChange={(e) => setName(e.target.value)} required />
-          </label>
-          <div className="row">
-            <label className="stack field">
-              <div className="label">Location</div>
-              <input
-                className="input"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder={detectingLocation ? 'Detecting location…' : 'Add location'}
-                disabled={detectingLocation}
-              />
-              <span className="tz-hint">{timezone}</span>
-            </label>
-            <label className="stack field">
-              <div className="label">Fee per invite (cents)</div>
-              <input className="input" value={feePerInviteCents} onChange={(e) => setFeePerInviteCents(e.target.value)} required />
-            </label>
-          </div>
-          <div className="row">
-            <div className="stack field">
-              <div className="label">Start</div>
-              <DateTimeInput className="input" value={startAt} onChange={setStartAt} />
-            </div>
-            <div className="stack field">
-              <div className="label">End</div>
-              <DateTimeInput className="input" value={endAt} onChange={setEndAt} />
-            </div>
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Create
+      {/* Header bar */}
+      <div className="row-center" style={{ justifyContent: 'space-between' }}>
+        <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Your Events</h2>
+        <div className="row-center" style={{ gap: '0.5rem' }}>
+          <button className="btn btn-primary" onClick={() => setShowForm(!showForm)}>
+            {showForm ? 'Cancel' : '+ New Event'}
           </button>
-        </form>
-        {message ? <p>{message}</p> : null}
-      </section>
+          <button className="btn btn-subtle btn-sm" onClick={logout}>
+            Log out
+          </button>
+        </div>
+      </div>
 
-      <section className="card">
-        <h2 className="section-head">Your events</h2>
-        {events.length === 0 ? (
-          <p className="muted">No events yet.</p>
-        ) : (
-          <ul>
-            {events.map((event) => (
-              <li key={event.id} className="list-item">
-                <Link href={`/dashboard/events/${event.id}`} className="link">
-                  <strong>{event.name}</strong>
-                </Link>
-                <div className="muted">
-                  {readableDate(event.start_at)} → {readableDate(event.end_at)}
+      {/* Create event form */}
+      {showForm && (
+        <section className="card">
+          <h3 className="section-head">Create event</h3>
+          <p className="section-sub">Set up a new event to start collecting media from guests.</p>
+          <form onSubmit={submit} className="form-grid">
+            <label>
+              <div className="label">Event name</div>
+              <input className="input" value={name} onChange={(e) => setName(e.target.value)} required placeholder="e.g. Sarah & Tom's Wedding" />
+            </label>
+            <div className="row">
+              <label className="stack field">
+                <div className="label">Location</div>
+                <input
+                  className="input"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder={detectingLocation ? 'Detecting location...' : 'e.g. Sydney, Australia'}
+                  disabled={detectingLocation}
+                />
+                <span className="tz-hint">{timezone}</span>
+              </label>
+              <label className="stack field">
+                <div className="label">Fee per invite <span className="label-hint">(cents)</span></div>
+                <input className="input" value={feePerInviteCents} onChange={(e) => setFeePerInviteCents(e.target.value)} required type="number" min="0" />
+              </label>
+            </div>
+            <div className="row">
+              <div className="stack field">
+                <div className="label">Starts</div>
+                <DateTimeInput className="input" value={startAt} onChange={setStartAt} />
+              </div>
+              <div className="stack field">
+                <div className="label">Ends</div>
+                <DateTimeInput className="input" value={endAt} onChange={setEndAt} />
+              </div>
+            </div>
+            <button className="btn btn-primary" type="submit" disabled={creating}>
+              {creating ? 'Creating...' : 'Create Event'}
+            </button>
+          </form>
+        </section>
+      )}
+
+      {/* Messages */}
+      {message && (
+        <div className={`message ${messageType === 'error' ? 'message-error' : 'message-success'}`}>
+          {message}
+        </div>
+      )}
+
+      {/* Events list */}
+      {events.length === 0 ? (
+        <section className="card">
+          <div className="empty-state">
+            <span className="empty-state-icon">{'\uD83C\uDF89'}</span>
+            <p>No events yet. Create your first event to get started!</p>
+          </div>
+        </section>
+      ) : (
+        <div className="event-list">
+          {events.map((evt) => (
+            <Link key={evt.id} href={`/dashboard/events/${evt.id}`} className="event-card">
+              <div className="event-card-info">
+                <div className="event-card-name">
+                  {evt.name}
+                  <span className={`status-chip ${evt.status === 'checkout_pending' ? 'pending' : evt.status}`} style={{ marginLeft: '0.5rem' }}>
+                    {evt.status}
+                  </span>
                 </div>
-                <span className="muted"> — {event.status}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+                <div className="event-card-date">
+                  {readableDate(evt.start_at)} &mdash; {readableDate(evt.end_at)}
+                </div>
+                {evt.location && <div className="event-card-date">{evt.location}</div>}
+              </div>
+              <span className="event-card-arrow">&rsaquo;</span>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

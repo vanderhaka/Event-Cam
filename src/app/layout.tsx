@@ -12,29 +12,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className="top-shell">
-          <header>
-            <h1 className="brand">
-              <span className="brand-mark">Event</span> Cam
-            </h1>
-            <p className="subtitle">Simple media collection for private events</p>
-            <nav className="nav">
-              <Link href="/" className="link">
-                Home
-              </Link>
-              <Link href="/dashboard" className="link">
-                Host dashboard
-              </Link>
-              <Link href="/qr-test" className="link">
-                QR test
-              </Link>
-              <Link href="/auth/login" className="link">
-                Login
-              </Link>
-              <Link href="/auth/register" className="link">
-                Register
-              </Link>
-            </nav>
-          </header>
+          <div className="header-left">
+            <Link href="/">
+              <h1 className="brand">
+                <span className="brand-mark">Event</span> Cam
+              </h1>
+            </Link>
+          </div>
+          <nav className="nav">
+            <Link href="/" className="link">
+              Home
+            </Link>
+            <Link href="/dashboard" className="link">
+              Dashboard
+            </Link>
+            <span className="nav-divider" />
+            <Link href="/auth/login" className="link">
+              Login
+            </Link>
+            <Link href="/auth/register" className="link btn btn-sm btn-primary">
+              Sign Up
+            </Link>
+          </nav>
         </div>
         <main>{children}</main>
       </body>

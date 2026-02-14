@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { createBrowserSupabaseClient } from '@/lib/supabase/browser';
 
 const ordinalSuffix = (value: number) => {
@@ -44,9 +45,11 @@ export default function EventDetailPage() {
   const [pendingQueue, setPendingQueue] = useState<any[]>([]);
   const [approvedMedia, setApprovedMedia] = useState<any[]>([]);
   const [statusMessage, setStatusMessage] = useState('');
+  const [statusType, setStatusType] = useState<'error' | 'success' | 'info'>('info');
   const [albumTitle, setAlbumTitle] = useState('');
-  const [albumMediaIds, setAlbumMediaIds] = useState('');
+  const [selectedMediaIds, setSelectedMediaIds] = useState<Set<string>>(new Set());
   const [sharePassword, setSharePassword] = useState('');
+  const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
 
   async function buildAuthHeaders(extra: HeadersInit = {}) {
     const { data } = await supabase.auth.getSession();
@@ -96,6 +99,14 @@ export default function EventDetailPage() {
     loadData();
   }, [eventId]);
 
+  function showStatus(msg: string, type: 'error' | 'success' | 'info' = 'info') {
+    setStatusMessage(msg);
+    setStatusType(type);
+    if (type === 'success') {
+      setTimeout(() => setStatusMessage(''), 4000);
+    }
+  }
+
   function updateInviteeRow(index: number, field: 'firstName' | 'lastName' | 'phone', value: string) {
     setInviteeRows((prev) => prev.map((row, i) => (i === index ? { ...row, [field]: value } : row)));
   }
@@ -118,7 +129,7 @@ export default function EventDetailPage() {
       });
 
     if (invitees.length === 0) {
-      setStatusMessage('Add at least one invitee with a first name');
+      showStatus('Add at least one invitee with a first name', 'error');
       return;
     }
 
@@ -130,11 +141,11 @@ export default function EventDetailPage() {
 
     if (response.ok) {
       setInviteeRows([{ firstName: '', lastName: '', phone: '' }]);
-      setStatusMessage('Invitees added');
+      showStatus('Invitees added successfully', 'success');
       await loadData();
     } else {
       const payload = await response.json();
-      setStatusMessage(payload.message || 'Could not add invitees');
+      showStatus(payload.message || 'Could not add invitees', 'error');
     }
   }
 
@@ -149,17 +160,17 @@ export default function EventDetailPage() {
       window.location.href = payload.checkoutUrl;
       return;
     }
-    setStatusMessage(payload.message || 'Checkout failed');
+    showStatus(payload.message || 'Checkout failed', 'error');
   }
 
   async function publishEvent() {
     const response = await fetchWithAuth(`/api/events/${eventId}/publish`, { method: 'POST' });
     const payload = await response.json();
     if (response.ok) {
-      setStatusMessage(`Published ${payload.issued?.length ?? 0} invitees`);
+      showStatus(`Published! ${payload.issued?.length ?? 0} invitees received QR codes.`, 'success');
       await loadData();
     } else {
-      setStatusMessage(payload.message || 'Publish failed');
+      showStatus(payload.message || 'Publish failed', 'error');
     }
   }
 
@@ -172,32 +183,56 @@ export default function EventDetailPage() {
 
     if (response.ok) {
       await loadData();
-      setStatusMessage(`Media ${action}d`);
+      showStatus(`Media ${action}d`, 'success');
     } else {
       const payload = await response.json();
-      setStatusMessage(payload.message || `Could not ${action} media`);
+      showStatus(payload.message || `Could not ${action} media`, 'error');
+    }
+  }
+
+  function toggleMediaSelection(mediaId: string) {
+    setSelectedMediaIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(mediaId)) {
+        next.delete(mediaId);
+      } else {
+        next.add(mediaId);
+      }
+      return next;
+    });
+  }
+
+  function selectAllMedia() {
+    if (selectedMediaIds.size === approvedMedia.length) {
+      setSelectedMediaIds(new Set());
+    } else {
+      setSelectedMediaIds(new Set(approvedMedia.map((m) => m.id)));
     }
   }
 
   async function createAlbum(event: FormEvent) {
     event.preventDefault();
+    if (selectedMediaIds.size === 0) {
+      showStatus('Select at least one approved media item', 'error');
+      return;
+    }
     const response = await fetchWithAuth(`/api/events/${eventId}/albums`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         title: albumTitle,
-        mediaIds: albumMediaIds.split(',').map((value) => value.trim()).filter(Boolean),
+        mediaIds: Array.from(selectedMediaIds),
       }),
     });
 
     const payload = await response.json();
     if (response.ok) {
-      setStatusMessage(`Album created: ${payload.album?.id}`);
+      showStatus('Album created successfully', 'success');
       setAlbumTitle('');
-      setAlbumMediaIds('');
+      setSelectedMediaIds(new Set());
       await loadData();
     } else {
-      setStatusMessage(payload.message || 'Could not create album');
+      showStatus(payload.message || 'Could not create album', 'error');
     }
   }
 
@@ -211,180 +246,304 @@ export default function EventDetailPage() {
     const payload = await response.json();
     if (response.ok) {
       navigator.clipboard.writeText(payload.shareUrl);
-      setStatusMessage('Share link generated and copied to clipboard');
+      showStatus('Share link copied to clipboard!', 'success');
     } else {
-      setStatusMessage(payload.message || 'Could not create share link');
+      showStatus(payload.message || 'Could not create share link', 'error');
     }
   }
 
   if (!eventPayload) {
-    return <p className="muted">Loading event...</p>;
+    return (
+      <section className="card" style={{ textAlign: 'center', padding: '3rem' }}>
+        <p className="muted">Loading event...</p>
+      </section>
+    );
   }
+
+  const tabStyle = (tab: string) => ({
+    padding: '0.5rem 1rem',
+    border: 'none',
+    background: activeTab === tab ? 'var(--accent)' : 'transparent',
+    color: activeTab === tab ? '#fff' : 'var(--muted)',
+    fontWeight: 600 as const,
+    borderRadius: '10px',
+    cursor: 'pointer' as const,
+    fontSize: '0.9rem',
+    transition: 'all 0.2s ease',
+  });
 
   return (
     <div className="grid">
-      <section className="card">
-        <h2 className="section-head">{eventPayload.event?.name}</h2>
-        <p className="muted">
-          Status:
-          <span
-            className={`status-chip ${
-              eventPayload.event?.status === 'checkout_pending' ? 'pending' : eventPayload.event?.status
-            }`}
-            role="status"
-          >
-            {eventPayload.event?.status}
-          </span>
-        </p>
-        <p className="muted">
-          Window: {readableDate(eventPayload.event?.start_at)} → {readableDate(eventPayload.event?.end_at)}
-        </p>
-      </section>
-
-      <section className="card">
-        <h3 className="section-head">Add invitees</h3>
-        <form onSubmit={addInvitees} className="form-grid">
-          <div className="invitee-rows">
-            {inviteeRows.map((row, index) => (
-              <div key={index} className="invitee-row">
-                <div className="invitee-fields">
-                  <label className="field">
-                    <div className="label">First name *</div>
-                    <input
-                      className="input"
-                      placeholder="Jane"
-                      value={row.firstName}
-                      onChange={(e) => updateInviteeRow(index, 'firstName', e.target.value)}
-                      required
-                    />
-                  </label>
-                  <label className="field">
-                    <div className="label">Last name</div>
-                    <input
-                      className="input"
-                      placeholder="Doe"
-                      value={row.lastName}
-                      onChange={(e) => updateInviteeRow(index, 'lastName', e.target.value)}
-                    />
-                  </label>
-                  <label className="field">
-                    <div className="label">Phone</div>
-                    <input
-                      className="input"
-                      type="tel"
-                      placeholder="+1 555 000 0000"
-                      value={row.phone}
-                      onChange={(e) => updateInviteeRow(index, 'phone', e.target.value)}
-                    />
-                  </label>
-                </div>
-                {inviteeRows.length > 1 && (
-                  <button
-                    type="button"
-                    className="btn btn-danger invitee-remove"
-                    onClick={() => removeInviteeRow(index)}
-                    aria-label={`Remove invitee ${index + 1}`}
-                  >
-                    &times;
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="row gap-sm">
-            <button type="button" className="btn btn-subtle" onClick={addInviteeRow}>
-              + Add another
-            </button>
-            <button className="btn btn-primary" type="submit">
-              Save invitees
-            </button>
-          </div>
-        </form>
-      </section>
-
-      <section className="card">
-        <h3 className="section-head">Invitees</h3>
-        <div className="row">
-          <button className="btn btn-subtle" onClick={checkout}>
-            Checkout
-          </button>
-          <button className="btn btn-success" onClick={publishEvent}>
-            Generate QR tokens (publish)
-          </button>
-        </div>
-        <ul>
-          {eventPayload.invitees?.map((invitee: any) => (
-            <li key={invitee.id} className="list-item">
-              {invitee.display_name} - {invitee.qr_state}
-              {invitee.qr_token ? ` - /scan/${invitee.qr_token}` : ''}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="card">
-        <h3 className="section-head">Moderation queue</h3>
-        <ul>
-          {pendingQueue.map((item) => (
-            <li key={item.id} className="list-item">
-              <strong>{item.media_type}</strong> - {item.original_name || 'upload'}
-              {item.invitee ? ` — ${item.invitee.display_name}` : ''}
-              <div className="row gap-sm stack-small">
-                <button className="btn btn-success" onClick={() => moderate(item.id, 'approve')}>
-                  Approve
-                </button>
-                <button className="btn btn-danger" onClick={() => moderate(item.id, 'reject')}>
-                  Reject
-                </button>
-              </div>
-            </li>
-          ))}
-          {pendingQueue.length === 0 ? <li className="muted">No pending uploads</li> : null}
-        </ul>
-      </section>
-
-      <section className="card">
-        <h3 className="section-head">Create album from approved media</h3>
-        <form onSubmit={createAlbum} className="form-grid">
-          <label>
-            <div className="label">Album title</div>
-            <input className="input" value={albumTitle} onChange={(event) => setAlbumTitle(event.target.value)} required />
-          </label>
-          <label>
-            <div className="label">Approved media IDs (comma separated)</div>
-            <textarea
-              value={albumMediaIds}
-              onChange={(event) => setAlbumMediaIds(event.target.value)}
-              rows={3}
-              className="input"
-            />
-          </label>
-          <button className="btn btn-primary" type="submit">
-            Create album
-          </button>
-        </form>
-        <p className="muted">Hint: use approved IDs like {`{${approvedMedia[0]?.id || 'id1,id2' }}`}</p>
-      </section>
-
-      <section className="card">
-        <h3 className="section-head">Albums</h3>
-        <label>
-          <div className="label">Share password</div>
-          <input className="input" value={sharePassword} onChange={(event) => setSharePassword(event.target.value)} placeholder="shared-password" />
-        </label>
-        <ul>
-          {eventPayload.albums?.map((album: any) => (
-            <li key={album.id} className="list-item">
-              <strong>{album.title}</strong>
-              <button className="btn btn-subtle" onClick={() => createShareLink(album.id)}>
-                Generate private share link
+      {/* Back link + Event header */}
+      <div>
+        <Link href="/dashboard" className="link" style={{ fontSize: '0.85rem', marginBottom: '0.5rem', display: 'inline-block' }}>
+          &larr; Back to events
+        </Link>
+        <section className="card">
+          <div className="row-center" style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div>
+              <h2 className="section-head" style={{ display: 'inline' }}>{eventPayload.event?.name}</h2>
+              <span
+                className={`status-chip ${
+                  eventPayload.event?.status === 'checkout_pending' ? 'pending' : eventPayload.event?.status
+                }`}
+                role="status"
+                style={{ marginLeft: '0.75rem' }}
+              >
+                {eventPayload.event?.status}
+              </span>
+              <p className="muted" style={{ margin: '0.4rem 0 0', fontSize: '0.88rem' }}>
+                {readableDate(eventPayload.event?.start_at)} &mdash; {readableDate(eventPayload.event?.end_at)}
+              </p>
+              {eventPayload.event?.location && (
+                <p className="muted" style={{ margin: '0.15rem 0 0', fontSize: '0.85rem' }}>{eventPayload.event.location}</p>
+              )}
+            </div>
+            <div className="row" style={{ gap: '0.5rem' }}>
+              <button className="btn btn-subtle btn-sm" onClick={checkout}>
+                Checkout
               </button>
-            </li>
-          ))}
-        </ul>
-      </section>
+              <button className="btn btn-success btn-sm" onClick={publishEvent}>
+                Publish QR Codes
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
-      {statusMessage ? <p>{statusMessage}</p> : null}
+      {/* Status message */}
+      {statusMessage && (
+        <div className={`message ${statusType === 'error' ? 'message-error' : statusType === 'success' ? 'message-success' : 'message-info'}`}>
+          {statusMessage}
+        </div>
+      )}
+
+      {/* Tab navigation */}
+      <div className="row-center" style={{ gap: '0.25rem', background: 'var(--surface-soft)', padding: '0.3rem', borderRadius: '12px', width: 'fit-content' }}>
+        <button style={tabStyle('invitees')} onClick={() => setActiveTab('invitees')}>
+          Invitees ({eventPayload.invitees?.length ?? 0})
+        </button>
+        <button style={tabStyle('moderation')} onClick={() => setActiveTab('moderation')}>
+          Moderation ({pendingQueue.length})
+        </button>
+        <button style={tabStyle('albums')} onClick={() => setActiveTab('albums')}>
+          Albums ({eventPayload.albums?.length ?? 0})
+        </button>
+      </div>
+
+      {/* ─── Invitees Tab ─── */}
+      {activeTab === 'invitees' && (
+        <>
+          <section className="card">
+            <h3 className="section-head">Add invitees</h3>
+            <p className="section-sub">Add the people you want to invite. They will each get a unique QR code after publishing.</p>
+            <form onSubmit={addInvitees} className="form-grid">
+              <div className="invitee-rows">
+                {inviteeRows.map((row, index) => (
+                  <div key={index} className="invitee-row">
+                    <div className="invitee-fields">
+                      <label className="field">
+                        <div className="label">First name *</div>
+                        <input
+                          className="input"
+                          placeholder="Jane"
+                          value={row.firstName}
+                          onChange={(e) => updateInviteeRow(index, 'firstName', e.target.value)}
+                          required
+                        />
+                      </label>
+                      <label className="field">
+                        <div className="label">Last name</div>
+                        <input
+                          className="input"
+                          placeholder="Doe"
+                          value={row.lastName}
+                          onChange={(e) => updateInviteeRow(index, 'lastName', e.target.value)}
+                        />
+                      </label>
+                      <label className="field">
+                        <div className="label">Phone</div>
+                        <input
+                          className="input"
+                          type="tel"
+                          placeholder="+1 555 000 0000"
+                          value={row.phone}
+                          onChange={(e) => updateInviteeRow(index, 'phone', e.target.value)}
+                        />
+                      </label>
+                    </div>
+                    {inviteeRows.length > 1 && (
+                      <button
+                        type="button"
+                        className="btn btn-danger invitee-remove"
+                        onClick={() => removeInviteeRow(index)}
+                        aria-label={`Remove invitee ${index + 1}`}
+                      >
+                        &times;
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="row gap-sm">
+                <button type="button" className="btn btn-subtle" onClick={addInviteeRow}>
+                  + Add another
+                </button>
+                <button className="btn btn-primary" type="submit">
+                  Save invitees
+                </button>
+              </div>
+            </form>
+          </section>
+
+          {eventPayload.invitees && eventPayload.invitees.length > 0 && (
+            <section className="card">
+              <h3 className="section-head">Guest list</h3>
+              <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}</p>
+              <ul className="invitee-list">
+                {eventPayload.invitees.map((invitee: any) => (
+                  <li key={invitee.id} className="invitee-item">
+                    <div>
+                      <span className="invitee-name">{invitee.display_name}</span>
+                    </div>
+                    <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
+                      {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </>
+      )}
+
+      {/* ─── Moderation Tab ─── */}
+      {activeTab === 'moderation' && (
+        <>
+          <section className="card">
+            <h3 className="section-head">Pending review</h3>
+            <p className="section-sub">Review uploaded media before it goes into an album.</p>
+            {pendingQueue.length === 0 ? (
+              <div className="empty-state">
+                <span className="empty-state-icon">{'\u2705'}</span>
+                <p>No pending uploads to review</p>
+              </div>
+            ) : (
+              pendingQueue.map((item) => (
+                <div key={item.id} className="mod-item">
+                  <div className="mod-info">
+                    <strong>{item.original_name || 'Upload'}</strong>
+                    <span>
+                      {item.media_type}
+                      {item.invitee ? ` \u2014 from ${item.invitee.display_name}` : ''}
+                    </span>
+                  </div>
+                  <div className="mod-actions">
+                    <button className="btn btn-success btn-sm" onClick={() => moderate(item.id, 'approve')}>
+                      Approve
+                    </button>
+                    <button className="btn btn-danger btn-sm" onClick={() => moderate(item.id, 'reject')}>
+                      Reject
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
+          </section>
+
+          {approvedMedia.length > 0 && (
+            <section className="card">
+              <h3 className="section-head">Approved media</h3>
+              <p className="section-sub">{approvedMedia.length} item{approvedMedia.length !== 1 ? 's' : ''} approved</p>
+              <ul className="invitee-list">
+                {approvedMedia.map((item) => (
+                  <li key={item.id} className="invitee-item">
+                    <div>
+                      <span className="invitee-name">{item.original_name || 'Upload'}</span>
+                      <span className="invitee-meta" style={{ marginLeft: '0.5rem' }}>
+                        {item.media_type}
+                        {item.invitee ? ` \u2014 ${item.invitee.display_name}` : ''}
+                      </span>
+                    </div>
+                    <span className="status-chip paid">Approved</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </>
+      )}
+
+      {/* ─── Albums Tab ─── */}
+      {activeTab === 'albums' && (
+        <>
+          <section className="card">
+            <h3 className="section-head">Create album</h3>
+            <p className="section-sub">
+              Select approved media items and group them into a shareable album.
+            </p>
+            <form onSubmit={createAlbum} className="form-grid">
+              <label>
+                <div className="label">Album title</div>
+                <input className="input" value={albumTitle} onChange={(e) => setAlbumTitle(e.target.value)} required placeholder="e.g. Ceremony Highlights" />
+              </label>
+
+              {approvedMedia.length > 0 ? (
+                <div>
+                  <div className="row-center" style={{ justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <div className="label" style={{ margin: 0 }}>Select media ({selectedMediaIds.size} selected)</div>
+                    <button type="button" className="btn btn-subtle btn-sm" onClick={selectAllMedia}>
+                      {selectedMediaIds.size === approvedMedia.length ? 'Deselect all' : 'Select all'}
+                    </button>
+                  </div>
+                  <div className="media-select-grid">
+                    {approvedMedia.map((item) => (
+                      <div
+                        key={item.id}
+                        className={`media-select-item ${selectedMediaIds.has(item.id) ? 'selected' : ''}`}
+                        onClick={() => toggleMediaSelection(item.id)}
+                      >
+                        {selectedMediaIds.has(item.id) && <span className="check-mark">{'\u2713'}</span>}
+                        <div className="media-type-badge">{item.media_type}</div>
+                        <div className="media-name">{item.original_name || 'Upload'}</div>
+                        {item.invitee && <div className="invitee-meta">{item.invitee.display_name}</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <p className="muted" style={{ fontSize: '0.88rem' }}>No approved media yet. Review pending uploads in the Moderation tab first.</p>
+              )}
+
+              <button className="btn btn-primary" type="submit" disabled={selectedMediaIds.size === 0}>
+                Create Album ({selectedMediaIds.size} items)
+              </button>
+            </form>
+          </section>
+
+          {eventPayload.albums && eventPayload.albums.length > 0 && (
+            <section className="card">
+              <h3 className="section-head">Your albums</h3>
+              <div style={{ marginBottom: '0.75rem' }}>
+                <label>
+                  <div className="label">Share password</div>
+                  <input className="input" value={sharePassword} onChange={(e) => setSharePassword(e.target.value)} placeholder="Set a password for share links" style={{ maxWidth: '300px' }} />
+                </label>
+              </div>
+              <ul className="album-list">
+                {eventPayload.albums.map((album: any) => (
+                  <li key={album.id} className="album-item">
+                    <strong>{album.title}</strong>
+                    <button className="btn btn-subtle btn-sm" onClick={() => createShareLink(album.id)}>
+                      Generate share link
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </>
+      )}
     </div>
   );
 }
