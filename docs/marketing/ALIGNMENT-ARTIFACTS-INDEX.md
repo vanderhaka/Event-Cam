@@ -79,6 +79,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DECISION-CRITERIA.md`**  
   Weighted option-comparison model for high-stakes alignment decisions.
 
+- **`ALIGNMENT-RETROSPECTIVE-TEMPLATE.md`**  
+  Quarter-end template for evaluating alignment quality and execution outcomes.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -108,6 +111,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to communicate aligned path to the team | `ALIGNMENT-KICKOFF-COMMS-TEMPLATE.md` |
 | We need to track and escalate alignment blockers | `ALIGNMENT-BLOCKERS-LOG.md` |
 | We need a structured way to compare strategic options | `ALIGNMENT-DECISION-CRITERIA.md` |
+| We need a quarter-end alignment and execution review | `ALIGNMENT-RETROSPECTIVE-TEMPLATE.md` |
 
 ---
 
