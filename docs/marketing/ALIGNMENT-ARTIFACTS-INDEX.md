@@ -139,6 +139,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-DECISION-SLA.md`**  
   Time-bound service-level expectations for closing P0/P1/P2 decisions with escalation rules.
 
+- **`ALIGNMENT-NARRATIVE-GUARDRAILS.md`**  
+  Non-negotiable messaging consistency rules to prevent strategy and channel narrative drift.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -188,6 +191,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a first-touch orientation to the full system | `ALIGNMENT-README.md` |
 | We need one canonical source for experiment status and decisions | `ALIGNMENT-EXPERIMENT-REGISTRY.md` |
 | We need explicit time-to-decision rules and escalation timing | `ALIGNMENT-DECISION-SLA.md` |
+| We need to stop cross-doc messaging drift and contradiction | `ALIGNMENT-NARRATIVE-GUARDRAILS.md` |
 
 ---
 
@@ -203,6 +207,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | Metric Definitions + Dashboard | Growth Lead + Ops / PMO |
 | Experiment Registry | Growth Lead + Marketing Lead |
 | Decision SLA | Strategy Owner + Ops / PMO |
+| Narrative Guardrails | Marketing Lead + Strategy Owner |
 
 ---
 
@@ -224,14 +229,17 @@ Includes Pack A, plus:
 8. `ALIGNMENT-MEETING-CADENCE.md`
 9. `ALIGNMENT-BLOCKERS-LOG.md`
 10. `ALIGNMENT-METRIC-DEFINITIONS.md`
+11. `ALIGNMENT-EXPERIMENT-REGISTRY.md`
 
 ### Pack C — Full Governance Alignment (scaling team)
 Includes Pack B, plus:
-11. `ALIGNMENT-GOVERNANCE-CHARTER.md`
-12. `ALIGNMENT-ARTIFACT-LIFECYCLE.md`
-13. `ALIGNMENT-CHANGELOG.md`
-14. `ALIGNMENT-RISK-TAXONOMY.md`
-15. `ALIGNMENT-RECOVERY-PLAYBOOK.md`
+12. `ALIGNMENT-GOVERNANCE-CHARTER.md`
+13. `ALIGNMENT-ARTIFACT-LIFECYCLE.md`
+14. `ALIGNMENT-CHANGELOG.md`
+15. `ALIGNMENT-RISK-TAXONOMY.md`
+16. `ALIGNMENT-RECOVERY-PLAYBOOK.md`
+17. `ALIGNMENT-DECISION-SLA.md`
+18. `ALIGNMENT-NARRATIVE-GUARDRAILS.md`
 
 Rule of thumb: run the **lightest pack** that still prevents repeated drift.
 
