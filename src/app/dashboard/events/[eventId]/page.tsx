@@ -51,6 +51,7 @@ export default function EventDetailPage() {
   const [sharePassword, setSharePassword] = useState('');
   const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
   const [baseOrigin, setBaseOrigin] = useState('');
+  const [qrModalInvitee, setQrModalInvitee] = useState<any>(null);
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
   }, []);
@@ -403,48 +404,65 @@ export default function EventDetailPage() {
           {eventPayload.invitees && eventPayload.invitees.length > 0 && (
             <section className="card">
               <h3 className="section-head">Guest list</h3>
-              <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Open a guest&apos;s scan link or scan their QR to test uploads.</p>
+              <p className="section-sub">{eventPayload.invitees.length} invitee{eventPayload.invitees.length !== 1 ? 's' : ''}. Click &quot;Show QR&quot; to see the scan link and QR code.</p>
               <ul className="invitee-list">
-                {eventPayload.invitees.map((invitee: any) => {
-                  const scanUrl = invitee.qr_token && baseOrigin
-                    ? `${baseOrigin}/scan/${encodeURIComponent(invitee.qr_token)}`
-                    : '';
-                  const qrImageUrl = scanUrl
-                    ? `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(scanUrl)}`
-                    : '';
-                  return (
-                    <li key={invitee.id} className="invitee-item invitee-item-with-qr">
-                      <div className="invitee-item-head">
-                        <div>
-                          <span className="invitee-name">{invitee.display_name}</span>
-                        </div>
-                        <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
-                          {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
-                        </span>
-                      </div>
-                      {invitee.qr_state === 'issued' && qrImageUrl && (
-                        <div className="invitee-qr-row">
-                          <img
-                            src={qrImageUrl}
-                            alt={`QR code for ${invitee.display_name}`}
-                            width={200}
-                            height={200}
-                            className="invitee-qr-image"
-                          />
-                          <div className="invitee-qr-actions">
-                            <a href={scanUrl} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
-                              Open scan page
-                            </a>
-                            <span className="invitee-scan-url muted">{scanUrl}</span>
-                          </div>
-                        </div>
+                {eventPayload.invitees.map((invitee: any) => (
+                  <li key={invitee.id} className="invitee-item">
+                    <div>
+                      <span className="invitee-name">{invitee.display_name}</span>
+                    </div>
+                    <div className="invitee-item-actions">
+                      <span className={`status-chip ${invitee.qr_state === 'issued' ? 'published' : 'draft'}`}>
+                        {invitee.qr_state === 'issued' ? 'QR Issued' : 'Pending'}
+                      </span>
+                      {invitee.qr_state === 'issued' && invitee.qr_token && (
+                        <button
+                          type="button"
+                          className="btn btn-subtle btn-sm"
+                          onClick={() => setQrModalInvitee(invitee)}
+                        >
+                          Show QR
+                        </button>
                       )}
-                    </li>
-                  );
-                })}
+                    </div>
+                  </li>
+                ))}
               </ul>
             </section>
           )}
+
+          {/* QR modal */}
+          {qrModalInvitee && baseOrigin && (() => {
+            const scanUrl = `${baseOrigin}/scan/${encodeURIComponent(qrModalInvitee.qr_token)}`;
+            const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(scanUrl)}`;
+            return (
+              <div className="modal-backdrop" onClick={() => setQrModalInvitee(null)} role="presentation">
+                <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+                  <div className="modal-header">
+                    <h3 className="modal-title">Scan link — {qrModalInvitee.display_name}</h3>
+                    <button type="button" className="modal-close" onClick={() => setQrModalInvitee(null)} aria-label="Close">
+                      &times;
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    <img
+                      src={qrImageUrl}
+                      alt={`QR code for ${qrModalInvitee.display_name}`}
+                      width={280}
+                      height={280}
+                      className="qr-modal-image"
+                    />
+                    <div className="qr-modal-actions">
+                      <a href={scanUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
+                        Open scan page
+                      </a>
+                      <span className="qr-modal-url muted">{scanUrl}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </>
       )}
 
