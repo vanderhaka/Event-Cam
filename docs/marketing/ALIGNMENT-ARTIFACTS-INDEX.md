@@ -289,6 +289,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-OVERRIDE-REGISTER.md`**  
   Canonical log for temporary control exceptions with expiry, compensating controls, and accountability.
 
+- **`ALIGNMENT-GOVERNANCE-COST-BUDGET.md`**  
+  Weekly budget and efficiency model for keeping governance overhead proportional to execution value.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -381,6 +384,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to verify our confidence scoring is accurate over time | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` |
 | We need stale evidence blocked before high-impact approvals | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` |
 | We need auditable control exceptions without shadow policy | `ALIGNMENT-OVERRIDE-REGISTER.md` |
+| We need to cap governance overhead before it slows execution | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` |
 
 ---
 
@@ -439,6 +443,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Calibration Report | Strategy Owner + Analytics / Growth Lead |
 | Evidence Refresh Schedule | Growth / Analytics + Strategy Owner |
 | Override Register | Strategy Owner + Ops / PMO |
+| Governance Cost Budget | Ops / PMO + Leadership Team |
 
 ---
 
@@ -516,6 +521,7 @@ Includes Pack C, plus:
 58. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md`
 59. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md`
 60. `ALIGNMENT-OVERRIDE-REGISTER.md`
+61. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md`
 
 Recommended only when:
 - decision volume is high,

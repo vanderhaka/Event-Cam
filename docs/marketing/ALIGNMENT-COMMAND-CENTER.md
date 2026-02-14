@@ -32,6 +32,7 @@
 - Confirm any red signals from signal playbook.
 - Confirm blocker backlog trend.
 - Confirm meeting effectiveness status (Green/Yellow/Red trend).
+- Confirm governance cost is within weekly budget threshold.
 
 ## Step 2: Decision Scan (15 min)
 - Check Priority 0/1 decisions due this week.
@@ -100,6 +101,7 @@ Use this trigger table before meetings:
 | Calibration gap worsens below -0.15 for 2 months | Tighten confidence scoring policy and evidence requirements |
 | P0/P1 decision depends on expired evidence | Block approval until refresh or explicit override logged |
 | Override expires without closure | Escalate as governance incident and force same-week resolution |
+| Governance cost exceeds 120% budget for 2 weeks | Trigger cost-reduction playbook and re-evaluate active pack/mode |
 
 ---
 

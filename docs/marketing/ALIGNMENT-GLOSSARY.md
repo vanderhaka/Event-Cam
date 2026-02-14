@@ -160,6 +160,9 @@ State where previously valid evidence is no longer current enough to support hig
 ## Override
 Time-bounded exception to a standard control rule, allowed only with explicit rationale, risk owner, and compensating control.
 
+## Governance Cost
+Total weekly time spent on meetings, documentation, control administration, and governance-related recovery work.
+
 ---
 
 ## Incident & Escalation Terms

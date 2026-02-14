@@ -810,6 +810,7 @@ Use this minimum-safe operating rule:
 | Confidence model drifts away from real outcomes | `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` | Calibration gap remains near neutral and high-band failure rate stays low |
 | Decisions rely on stale evidence during fast-moving conditions | `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` | Expired-evidence dependency count trends to zero on P0/P1 items |
 | Teams bypass controls informally under deadline pressure | `ALIGNMENT-OVERRIDE-REGISTER.md` | Open overrides remain low, time-bounded, and fully reviewed |
+| Governance overhead grows faster than execution value | `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` | Governance cost remains in budget while decision quality trends improve |
 
 ### Practical rule
 If weekly updates are consistently late, drop down one maturity pack before adding any new controls.

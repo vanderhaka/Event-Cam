@@ -96,6 +96,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 11. `ALIGNMENT-DECISION-CALIBRATION-REPORT.md` (monthly confidence-vs-outcome accuracy check)
 12. `ALIGNMENT-EVIDENCE-REFRESH-SCHEDULE.md` (evidence freshness and expiry gate)
 13. `ALIGNMENT-OVERRIDE-REGISTER.md` (exception tracking and expiry discipline)
+14. `ALIGNMENT-GOVERNANCE-COST-BUDGET.md` (cost-to-value guardrail for process load)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 
