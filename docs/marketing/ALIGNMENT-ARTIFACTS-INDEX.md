@@ -94,6 +94,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-HANDOFF-TEMPLATE.md`**  
   Structured template for transferring alignment ownership without losing context.
 
+- **`ALIGNMENT-WEEKLY-OPERATIONS-CHECKLIST.md`**  
+  Day-by-day checklist for maintaining weekly alignment execution hygiene.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -128,6 +131,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need to evaluate long-term alignment capability maturity | `ALIGNMENT-MATURITY-MODEL.md` |
 | We need standardized risk classification and escalation | `ALIGNMENT-RISK-TAXONOMY.md` |
 | We need to transfer alignment ownership cleanly | `ALIGNMENT-HANDOFF-TEMPLATE.md` |
+| We need a tactical weekly operating routine | `ALIGNMENT-WEEKLY-OPERATIONS-CHECKLIST.md` |
 
 ---
 
