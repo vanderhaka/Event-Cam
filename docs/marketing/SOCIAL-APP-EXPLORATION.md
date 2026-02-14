@@ -204,11 +204,15 @@ This is a fundamental shift in how the product works over time. The QR code is t
 
 ### Three Upload Paths (Coexist)
 
-| Path | Who Uses It | How It Works | When It Dominates |
-|------|------------|-------------|-------------------|
-| **QR → Browser** | First-time guests, people without the app | Scan QR, browser opens, enter email, upload. Current flow, unchanged. | Now → always (it never goes away) |
-| **QR → App** | Guests who have the app | Scan QR, app opens instead of browser, already logged in, upload instantly. No email entry, no friction. | Once app has traction (Phase 3+) |
-| **App-only** | Guests who have the app and are already linked to the event | Open the app, see the event in "Your Events" (pushed via invite or auto-detected), tap, upload. No QR needed at all. | Mature phase — most uploads |
+**Critical principle:** Every link and every QR code uses the same universal URL. The URL tries to open the app first. If the app isn't installed, it falls back to the browser. The guest never sees a "choose your path" screen — it just works. One URL, automatic detection.
+
+| Path | Who Experiences It | How It Works | When It Dominates |
+|------|-------------------|-------------|-------------------|
+| **Link/QR → Browser** | Guests without the app | Tap link or scan QR → app not installed → falls through to browser → enter email, upload. | Now → always (it never goes away) |
+| **Link/QR → App** | Guests who have the app | Tap the same link or scan the same QR → app opens directly to the event → already logged in, upload instantly. No email entry, no friction. | Once app has traction (Phase 3+) |
+| **App-only** | Guests who have the app and are already linked to the event | Open the app, see the event in "Your Events" (pushed via invite notification or event code), tap, upload. No link or QR needed at all. | Mature phase — most uploads |
+
+**The guest never chooses a path.** The system detects whether the app is installed and routes accordingly. The host creates one set of QR codes and one set of links — they work for everyone.
 
 ### How This Works in Practice
 
@@ -338,9 +342,9 @@ Each option serves a different purpose:
 
 **Option 1 — Download the app:** This is the ideal path. If they download before the event, they'll have the smoothest experience during and after. Plus they're now an app user — part of the long-term hub. The event code makes it dead simple to connect to the right event.
 
-**Option 2 — Direct link:** For people who won't download an app for anything. Clicking the link takes them to the same browser upload page the QR code would. Zero friction. No app, no scan, just click and upload. They can even start uploading before the event (if they have photos from the rehearsal dinner, getting ready, etc.).
+**Option 2 — Direct link:** A universal link that tries the app first, falls back to browser. If they have the app installed, tapping the link opens the app directly to the event. If they don't, it opens the browser upload page. Same link either way — the guest doesn't have to think about it. Zero friction. No scan, just tap and upload.
 
-**Option 3 — QR at the event:** The fallback. Some people won't open the email, won't download the app, won't click the link. But they'll see the QR code on the table and scan it in the moment. This option is mentioned so they know to look for it.
+**Option 3 — QR at the event:** Same deep link behaviour as Option 2. Scanning the QR tries the app first, falls back to browser. The guest never sees a "do you have the app?" prompt — it just works. This option is mentioned in the email so guests know to look for QR codes at the venue if they didn't use the link beforehand.
 
 ### Event Codes
 
@@ -701,7 +705,7 @@ These affect the current web product and should be implemented from day one, reg
 
 ### Confirmed (Building These)
 
-1. **Deep link-ready QR URLs:** All QR code URLs must support deep linking from day one (Universal Links on iOS, App Links on Android). If the guest has the app, QR opens the app. If not, falls through to browser. The URL structure needs to be right now — retrofitting later is painful. This is invisible to the user.
+1. **Universal deep links on ALL URLs from day one:** Every URL the product generates — QR codes, email invite links, SMS links, share links — must use the same universal link format that supports deep linking (Universal Links on iOS, App Links on Android). Behaviour: if the app is installed, the link opens the app directly to the event. If not, it falls through to the browser. The guest never sees a choice screen, never sees "open in app or browser?" — it just works. One URL, automatic routing. This requires the URL structure and domain configuration (`.well-known/apple-app-site-association`, `assetlinks.json`) to be right from the very first QR code generated. Retrofitting later means every QR code ever printed is on the wrong URL format.
 
 2. **3-day post-event upload window:** Uploads stay open for 72 hours after the event ends. Guests can go through their camera roll the next morning and upload the photos they forgot about. Host can adjust (extend to 7 days, or close immediately). The app makes this natural, but the behaviour starts now.
 
