@@ -398,8 +398,16 @@ textarea.input {
 }
 
 /* ─── Create event multi-step flow ─── */
+.create-event-flow {
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .create-event-card {
-  max-width: 520px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .create-flow-header {

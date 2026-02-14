@@ -1,9 +1,6 @@
-import dynamic from 'next/dynamic';
+import NewEventStepContent from './NewEventStepContent';
 
-const NewEventStepContent = dynamic(
-  () => import('./NewEventStepContent'),
-  { ssr: false }
-);
+export const dynamic = 'force-dynamic';
 
 export default function NewEventStepPage() {
   return <NewEventStepContent />;

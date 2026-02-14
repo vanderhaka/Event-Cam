@@ -137,21 +137,22 @@ export default function NewEventStepContent() {
   const canProceed = step === 1 ? name.trim().length > 0 : true;
 
   return (
-    <div className="grid">
-      <div className="row-center" style={{ justifyContent: 'space-between' }}>
-        <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Your Events</h2>
-        <div className="row-center" style={{ gap: '0.5rem' }}>
-          <Link href="/dashboard" className="btn btn-subtle">
-            Cancel
-          </Link>
-          <button type="button" className="btn btn-subtle btn-sm" onClick={logout}>
-            Log out
-          </button>
+    <div className="create-event-flow">
+      <div className="grid">
+        <div className="row-center" style={{ justifyContent: 'space-between' }}>
+          <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Your Events</h2>
+          <div className="row-center" style={{ gap: '0.5rem' }}>
+            <Link href="/dashboard" className="btn btn-subtle btn-sm">
+              Cancel
+            </Link>
+            <button type="button" className="btn btn-subtle btn-sm" onClick={logout}>
+              Log out
+            </button>
+          </div>
         </div>
-      </div>
 
-      <section className="card create-event-card">
-        <div className="create-flow-header">
+        <section className="card create-event-card">
+          <div className="create-flow-header">
           <h3 className="section-head">Create event</h3>
           <p className="section-sub">Set up a new event to start collecting memories from guests.</p>
           <div className="create-flow-stepper" role="navigation" aria-label="Create event steps">
@@ -173,9 +174,9 @@ export default function NewEventStepContent() {
               Step {step} of {totalSteps}
             </p>
           </div>
-        </div>
+          </div>
 
-        <form onSubmit={submit} className="form-grid create-event-form" noValidate>
+          <form onSubmit={submit} className="form-grid create-event-form" noValidate>
           {step === 1 && (
             <div className="create-flow-panel" data-step={1}>
               <label>
@@ -281,14 +282,15 @@ export default function NewEventStepContent() {
               </button>
             )}
           </div>
-        </form>
-      </section>
+          </form>
+        </section>
 
-      {message && (
-        <div className={`message ${messageType === 'error' ? 'message-error' : 'message-success'}`}>
-          {message}
-        </div>
-      )}
+        {message && (
+          <div className={`message ${messageType === 'error' ? 'message-error' : 'message-success'}`}>
+            {message}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
