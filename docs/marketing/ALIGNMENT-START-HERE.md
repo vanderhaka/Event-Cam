@@ -145,6 +145,7 @@ Once week-1 setup is done, run this minimum weekly loop:
 60. `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` (ensures high-impact approvals follow declared authority paths)
 61. `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` (ensures critical controls maintain primary/backup/escalation ownership coverage)
 62. `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md` (ensures high-impact closures meet explicit done criteria before status closure)
+63. `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md` (ensures critical controls maintain current, validated runbooks for incident response)
 
 If this loop stops, alignment drift usually follows within 2–4 weeks.
 

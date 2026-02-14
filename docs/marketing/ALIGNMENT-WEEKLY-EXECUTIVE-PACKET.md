@@ -265,6 +265,8 @@ No meeting should end without assigning clear decision outcomes for this section
 - Critical controls with ownership gaps (count):
 - Verified closure rate against done criteria (%):
 - Premature closures detected this cycle (count):
+- Critical controls with validated runbook (%):
+- Critical controls with stale/missing runbook (count):
 
 ---
 

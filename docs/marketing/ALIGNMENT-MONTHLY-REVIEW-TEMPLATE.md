@@ -48,6 +48,7 @@
 | Governance ROI index |  | >0 |  |
 | Critical-control owner full-coverage rate |  | 100% |  |
 | Verified closure rate against done criteria |  | ≥95% |  |
+| Critical-control runbook validation rate |  | ≥95% |  |
 
 Key governance issue this month:
 ______________________________________

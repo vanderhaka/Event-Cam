@@ -307,6 +307,9 @@ The degree to which in-scope controls have complete, current primary, backup, an
 ## Definition of Done Compliance
 The degree to which closed items satisfy explicit completion criteria and evidence standards before being marked done.
 
+## Control Runbook Coverage
+The degree to which critical controls maintain current, validated runbooks that can be executed reliably under incident conditions.
+
 ---
 
 ## Incident & Escalation Terms

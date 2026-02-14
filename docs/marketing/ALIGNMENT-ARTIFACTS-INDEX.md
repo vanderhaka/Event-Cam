@@ -436,6 +436,9 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 - **`ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`**  
   Compliance review ensuring closed items meet explicit definition-of-done criteria before closure.
 
+- **`ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md`**  
+  Coverage review ensuring critical controls have current and validated runbooks.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -577,6 +580,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | We need to prevent unauthorized approvals on high-impact decisions | `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md` |
 | We need to eliminate single-owner fragility on high-criticality controls | `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md` |
 | We need to prevent premature closures and reopen churn from weak done criteria | `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md` |
+| We need critical controls to remain operable under incident pressure with validated guidance | `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md` |
 
 ---
 
@@ -684,6 +688,7 @@ When conflicts appear between source inputs and active alignment artifacts, rout
 | Decision Authority Compliance | Strategy Owner + Leadership Delegate + Ops / PMO |
 | Control Owner Coverage Review | Strategy Owner + Ops / PMO + Functional Leads |
 | Definition-of-Done Compliance | Ops / PMO + Workflow Owners + Strategy Owner |
+| Control Runbook Coverage Review | Ops / PMO + On-Call Lead + Functional Leads |
 
 ---
 
@@ -810,6 +815,7 @@ Includes Pack C, plus:
 107. `ALIGNMENT-DECISION-AUTHORITY-COMPLIANCE.md`
 108. `ALIGNMENT-CONTROL-OWNER-COVERAGE-REVIEW.md`
 109. `ALIGNMENT-DEFINITION-OF-DONE-COMPLIANCE.md`
+110. `ALIGNMENT-CONTROL-RUNBOOK-COVERAGE-REVIEW.md`
 
 Recommended only when:
 - decision volume is high,
