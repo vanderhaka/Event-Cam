@@ -186,24 +186,74 @@ After the wedding, offer couples a free printable postcard with their best water
 
 ---
 
-## Priority Matrix
+## Channels by Cost Category
 
-| Channel | Cost | Effort | Potential Impact | Speed to Implement |
-|---------|------|--------|-----------------|-------------------|
-| Morning After UGC (#3) | Free | Low | Very High | Immediate |
-| Unseen Photo content (#8) | Free | Low | High | Immediate |
-| Table Card Trojan Horse (#1) | Free | Low | High | 1–2 weeks |
-| DJ/MC Script (#7) | $5–10/wedding | Low | Very High | 1–2 weeks |
-| Bridal Party targeting (#9) | Ad spend | Medium | High | 2–4 weeks |
-| Photographer Second Shooter (#2) | Free | Medium | Very High | 2–4 weeks |
-| Guest List pre-email (#13) | Free | Medium | High | 2–4 weeks |
-| Just Married Postcards (#14) | Free | Low | Medium | 2–4 weeks |
-| Officiant Network (#10) | $10/referral | Medium | Medium–High | 1–2 months |
-| Disposable Camera Swap (#6) | Low | Medium | High (PR value) | 1–2 months |
-| Photo Booth Killer campaign (#11) | Ad spend | Medium | High | 1–2 months |
-| Bridal Shop QR Demo (#12) | Free | High | Medium–High | 2–3 months |
-| Venue Infrastructure (#4) | Low–Med | High | Very High (long-term) | 3–6 months |
-| Wedding Registry (#5) | Low | High | Very High (long-term) | 3–6 months |
+> Cost = out-of-pocket spend only. Dev time and marketing labor are not counted.
+
+### Free — $0 out of pocket
+
+These channels cost nothing beyond your own time and the product itself.
+
+| # | Channel | Potential Impact | Speed |
+|---|---------|-----------------|-------|
+| 1 | **Table Card Trojan Horse** — "Powered by Event Cam" on free downloadable templates | High | 1–2 weeks |
+| 2 | **Photographer "Second Shooter" Pitch** — Frame Event Cam as their free second shooter | Very High | 2–4 weeks |
+| 3 | **"Morning After" Viral UGC** — Couples film themselves seeing guest photos for the first time | Very High | Immediate |
+| 8 | **"Unseen Photo" Content Format** — Post one incredible candid guest photo per day | High | Immediate |
+| 9 | **Bridal Party as Sales Channel** — Target maid of honor / best man as gift-givers | High | 2–4 weeks |
+| 12 | **Bridal Shop QR Demo** — QR code in the dressing room during dress try-ons | Medium–High | 2–3 months |
+| 13 | **Guest List as Lead List** — Pre-wedding email to guests introducing Event Cam | High | 2–4 weeks |
+| 14 | **"Just Married" Postcards** — Free printable thank-you card with watermarked photo + branding | Medium | 2–4 weeks |
+
+### Low — Under $50 per wedding / activation
+
+Small per-unit costs that scale with usage but stay trivial.
+
+| # | Channel | Cost | Potential Impact | Speed |
+|---|---------|------|-----------------|-------|
+| 6 | **Disposable Camera Swap** — Trade unused disposables for a free Event Cam event | Free event (~$0 marginal cost) + small expo booth fee | High (PR value) | 1–2 months |
+| 7 | **DJ / MC Script Insertion** — DJs announce the QR code to every guest | $5–$10 kickback per wedding | Very High | 1–2 weeks |
+| 10 | **Officiant / Celebrant Network** — Officiants recommend Event Cam to couples | $10 referral fee per signup | Medium–High | 1–2 months |
+| 4 | **Venue Infrastructure** — Permanent acrylic QR stands on every table at partner venues | ~$20–$40 one-time per venue (acrylic stands) | Very High (long-term) | 3–6 months |
+
+### Paid — Requires ad spend or platform fees
+
+These need budget beyond the product itself, but the ROI potential is high.
+
+| # | Channel | Cost | Potential Impact | Speed |
+|---|---------|------|-----------------|-------|
+| 5 | **Wedding Registry Integration** — Event Cam as a registerable gift on Zola / The Knot | Platform listing fees or rev-share (varies) | Very High (long-term) | 3–6 months |
+| 9b | **Bridal Party Meta Ads** — Paid ads targeting "maid of honor gifts," "best man ideas" | Ad spend (Meta) | High | 2–4 weeks |
+| 11 | **"Photo Booth Killer" Campaign** — Comparison ads: $150 Event Cam vs. $1,000 photo booth | Ad spend (Meta, Google, TikTok) | High | 1–2 months |
+
+---
+
+## Quick-Start Priority
+
+Start with Free channels first. They compound over time and cost nothing to test.
+
+**Week 1–2:**
+- Start filming / collecting "Morning After" reactions (#3)
+- Start posting "Unseen Photo" content daily (#8)
+- Design and ship the branded table tent templates (#1)
+- Write a DJ announcement script and pitch 5 local DJs (#7)
+
+**Week 3–4:**
+- Reach out to 10 photographers with the "second shooter" pitch (#2)
+- Build the pre-wedding guest email (#13)
+- Design the "Just Married" postcard template (#14)
+- Target bridal party members organically in wedding Facebook groups (#9)
+
+**Month 2–3:**
+- Run the disposable camera swap at a bridal expo (#6)
+- Build officiant referral program (#10)
+- Pitch 3–5 venues on the infrastructure model (#4)
+- Test paid "Photo Booth Killer" creative with small budget (#11)
+
+**Month 3–6:**
+- Explore registry platform integration (#5)
+- Approach bridal shops for QR demo partnership (#12)
+- Scale whatever's working from the free tier into paid amplification
 
 ---
 
