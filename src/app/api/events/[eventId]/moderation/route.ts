@@ -12,7 +12,7 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
     const admin = createSupabaseAdminClient();
     const { data, error } = await admin
       .from('media_items')
-      .select('id, media_type, original_name, mime_type, size_bytes, duration_sec, moderation_state, created_at, attributed_labels, invitee_id, uploader_token')
+      .select('id, media_type, original_name, mime_type, size_bytes, duration_sec, moderation_state, created_at, attributed_labels, invitee_id, uploader_token, storage_path')
       .eq('event_id', context.params.eventId)
       .eq('moderation_state', state)
       .order('created_at', { ascending: false });
@@ -33,10 +33,16 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
       .in('id', inviteeIds as string[]);
 
     const inviteeById = new Map((invitees ?? []).map((invitee) => [invitee.id, invitee]));
-    const enriched = mediaItems.map((item) => ({
-      ...item,
-      invitee: inviteeById.get(item.invitee_id) || null,
-    }));
+    const enriched = mediaItems.map((item) => {
+      const url = item.storage_path
+        ? admin.storage.from('event-media').getPublicUrl(item.storage_path).data.publicUrl
+        : null;
+      return {
+        ...item,
+        invitee: inviteeById.get(item.invitee_id) || null,
+        url,
+      };
+    });
 
     return jsonResponse({ media: enriched });
   } catch (error) {

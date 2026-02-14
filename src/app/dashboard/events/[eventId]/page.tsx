@@ -478,25 +478,39 @@ export default function EventDetailPage() {
                 <p>No pending uploads to review</p>
               </div>
             ) : (
-              pendingQueue.map((item) => (
-                <div key={item.id} className="mod-item">
-                  <div className="mod-info">
-                    <strong>{item.original_name || 'Upload'}</strong>
-                    <span>
-                      {item.media_type}
-                      {item.invitee ? ` \u2014 from ${item.invitee.display_name}` : ''}
-                    </span>
+              <div className="mod-card-grid">
+                {pendingQueue.map((item) => (
+                  <div key={item.id} className="mod-card">
+                    <div className="mod-card-preview">
+                      {item.media_type === 'video' ? (
+                        item.url ? (
+                          <video src={item.url} className="mod-card-media" controls muted playsInline />
+                        ) : (
+                          <div className="mod-card-placeholder">Video</div>
+                        )
+                      ) : item.url ? (
+                        <img src={item.url} alt={item.original_name || 'Upload'} className="mod-card-media" />
+                      ) : (
+                        <div className="mod-card-placeholder">Image</div>
+                      )}
+                    </div>
+                    <div className="mod-card-info">
+                      <strong className="mod-card-name">{item.original_name || 'Upload'}</strong>
+                      {item.invitee && (
+                        <span className="mod-card-from muted">from {item.invitee.display_name}</span>
+                      )}
+                    </div>
+                    <div className="mod-card-actions">
+                      <button className="btn btn-success btn-sm" onClick={() => moderate(item.id, 'approve')}>
+                        Approve
+                      </button>
+                      <button className="btn btn-danger btn-sm" onClick={() => moderate(item.id, 'reject')}>
+                        Reject
+                      </button>
+                    </div>
                   </div>
-                  <div className="mod-actions">
-                    <button className="btn btn-success btn-sm" onClick={() => moderate(item.id, 'approve')}>
-                      Approve
-                    </button>
-                    <button className="btn btn-danger btn-sm" onClick={() => moderate(item.id, 'reject')}>
-                      Reject
-                    </button>
-                  </div>
-                </div>
-              ))
+                ))}
+              </div>
             )}
           </section>
 
