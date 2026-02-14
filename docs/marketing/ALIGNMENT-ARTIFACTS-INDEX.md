@@ -76,6 +76,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-BLOCKERS-LOG.md`**  
   Central blocker tracking with severity, ownership, and escalation SLA.
 
+- **`ALIGNMENT-DECISION-CRITERIA.md`**  
+  Weighted option-comparison model for high-stakes alignment decisions.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -104,6 +107,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need a periodic readiness self-assessment | `ALIGNMENT-READINESS-ASSESSMENT.md` |
 | We need to communicate aligned path to the team | `ALIGNMENT-KICKOFF-COMMS-TEMPLATE.md` |
 | We need to track and escalate alignment blockers | `ALIGNMENT-BLOCKERS-LOG.md` |
+| We need a structured way to compare strategic options | `ALIGNMENT-DECISION-CRITERIA.md` |
 
 ---
 
