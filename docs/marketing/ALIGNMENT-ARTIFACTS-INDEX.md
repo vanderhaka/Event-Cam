@@ -106,6 +106,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-KPI-OWNER-MAP.md`**  
   Canonical ownership map for KPI reporting, backups, and data sources.
 
+- **`ALIGNMENT-DATA-QUALITY-CHECKLIST.md`**  
+  Pre-review validation checklist to ensure KPI and decision data integrity.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -144,6 +147,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need governance for artifact versioning and retirement | `ALIGNMENT-ARTIFACT-LIFECYCLE.md` |
 | We need clear responses to degrading alignment signals | `ALIGNMENT-SIGNAL-PLAYBOOK.md` |
 | We need explicit KPI owner and backup mapping | `ALIGNMENT-KPI-OWNER-MAP.md` |
+| We need KPI data reliability checks before decisions | `ALIGNMENT-DATA-QUALITY-CHECKLIST.md` |
 
 ---
 
