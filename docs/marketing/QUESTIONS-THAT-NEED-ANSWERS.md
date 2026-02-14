@@ -1,0 +1,142 @@
+# Questions That Need Answers
+
+> Purpose: force alignment on core decisions so strategy execution stays focused.
+>
+> How to use:
+> 1. Answer **Priority 0** questions first.
+> 2. For each answer, record owner + decision date.
+> 3. Any unanswered Priority 0 item blocks expansion work.
+
+---
+
+## Priority 0 — Must Answer Immediately (Path-Defining)
+
+## 1) What is the single primary market for the next 6 months?
+- **Why this matters:** Prevents split focus across weddings, venues, festivals, and app vision.
+- **Decision options:**
+  - A) Weddings only
+  - B) Weddings + one secondary motion (Pro *or* Venue)
+- **Alignment test:** Could every team member explain this in one sentence?
+
+## 2) What is the canonical live pricing model right now?
+- **Why this matters:** Current docs contain conflicting numbers.
+- **Required outputs:**
+  - Live price table
+  - Explicit “not live” pricing assumptions
+  - One source-of-truth owner
+
+## 3) What is the final Pro economics model for this phase?
+- **Why this matters:** Contradictory commission/margin framing harms partner trust.
+- **Required outputs:**
+  - Pro-created path economics
+  - Referred path economics
+  - Coupon/discount logic
+  - Payout rules
+
+## 4) What is the one dominant growth loop for this quarter?
+- **Why this matters:** Running multiple loops in parallel slows learning.
+- **Decision options:**
+  - A) Pro partner loop
+  - B) Guest flywheel loop
+  - C) Content/organic loop
+- **Rule:** Pick one primary loop, one secondary support loop max.
+
+## 5) What message architecture is official for this quarter?
+- **Why this matters:** Prevents “no app required” vs “social app” narrative conflict.
+- **Required outputs:**
+  - Core one-liner
+  - 3 proof pillars
+  - “Not saying yet” boundary list
+
+## 6) What are the non-negotiable legal/compliance rules for guest capture?
+- **Why this matters:** Flywheel performance depends on compliant consent and outreach.
+- **Required outputs:**
+  - Consent policy by region
+  - Transactional vs marketing email policy
+  - Data retention and deletion policy
+
+---
+
+## Priority 1 — Needed in the Next 2–4 Weeks
+
+## 7) Which channels are we actively testing, and what is the kill criteria for each?
+- **Why this matters:** Avoids channel sprawl.
+- **Required outputs:** Scorecard for each active experiment (hypothesis, KPI, pass/fail threshold, stop-loss).
+
+## 8) What is our weekly KPI operating cadence?
+- **Why this matters:** Strategy without measurement drifts into opinion.
+- **Required outputs:**
+  - Weekly metric owner
+  - Weekly review meeting
+  - Scale / hold / kill decision protocol
+
+## 9) What is the launch playbook timeline and owner map?
+- **Why this matters:** Phases are defined, but day-level operations need accountability.
+- **Required outputs:**
+  - Week-by-week launch plan
+  - Responsible owner per task
+  - Risk fallback plan
+
+## 10) What is the referral program design (exactly)?
+- **Why this matters:** Repeatedly referenced as a growth lever but under-specified.
+- **Required outputs:**
+  - Incentive structure
+  - Attribution window
+  - Abuse prevention
+  - Financial sustainability threshold
+
+## 11) What is our retention strategy for recurring channels (Pro/Venue)?
+- **Why this matters:** Recurring channels can scale fast or churn fast.
+- **Required outputs:**
+  - Health score definition
+  - Churn risk triggers
+  - Intervention playbooks
+
+## 12) What assumptions are we treating as facts without evidence?
+- **Why this matters:** High-confidence projections can hide fragile assumptions.
+- **Required outputs:**
+  - Assumption register
+  - Confidence level per assumption
+  - Validation plan and date
+
+---
+
+## Priority 2 — Needed Before Broader Expansion
+
+## 13) What has to be true before venue expansion becomes a core motion?
+- **Why this matters:** Venue path likely requires different onboarding, retention, and support model.
+- **Required outputs:** Minimum qualification metrics and pilot outcomes.
+
+## 14) What has to be true before festival/multi-day is considered active GTM?
+- **Why this matters:** Enterprise-style expectations differ substantially from wedding workflows.
+- **Required outputs:** Segment-specific validation criteria and ROI case.
+
+## 15) What has to be true before social app build moves from vision to execution?
+- **Why this matters:** App work is high effort and can dilute current GTM momentum.
+- **Required outputs:** Metric gate thresholds (activation, retention, install intent).
+
+## 16) What naming decision criteria are final?
+- **Why this matters:** Naming affects brand rollouts, domain decisions, and messaging consistency.
+- **Required outputs:**
+  - Legal screen criteria
+  - Customer preference criteria
+  - Timeline for final selection
+
+## 17) What is our channel-level unit economics baseline by segment?
+- **Why this matters:** Spend decisions require comparable CAC/payback across channels.
+- **Required outputs:** Standardized channel economics dashboard.
+
+---
+
+## Alignment Ritual (Recommended)
+
+For each question above, capture:
+
+- **Decision:** chosen answer
+- **Owner:** accountable person
+- **Date decided:** timestamp
+- **Implication:** what changes now
+- **Docs to update:** which strategy docs must be synced
+
+If any Priority 0 question is unanswered, treat it as an execution blocker for expansion initiatives.
+
