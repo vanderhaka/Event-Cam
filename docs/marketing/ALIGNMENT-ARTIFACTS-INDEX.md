@@ -130,6 +130,9 @@ This index maps each alignment artifact to its purpose so the team can execute i
 - **`ALIGNMENT-METRIC-THRESHOLDS.md`**  
   Green/yellow/red KPI threshold reference for operational decision triggers.
 
+- **`ALIGNMENT-README.md`**  
+  High-level orientation and quickstart for the alignment system.
+
 ---
 
 ## Which Artifact to Use by Situation
@@ -176,6 +179,7 @@ This index maps each alignment artifact to its purpose so the team can execute i
 | We need formal governance rules and enforcement policy | `ALIGNMENT-GOVERNANCE-CHARTER.md` |
 | We need a roadmap to automate repetitive alignment operations | `ALIGNMENT-AUTOMATION-BACKLOG.md` |
 | We need canonical KPI decision thresholds by signal state | `ALIGNMENT-METRIC-THRESHOLDS.md` |
+| We need a first-touch orientation to the full system | `ALIGNMENT-README.md` |
 
 ---
 
