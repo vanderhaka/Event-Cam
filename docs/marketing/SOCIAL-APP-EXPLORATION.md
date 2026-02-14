@@ -198,6 +198,100 @@ Privacy is core. The app doesn't expose anything by default.
 
 ---
 
+## The Upload Evolution — QR Codes Become Optional
+
+This is a fundamental shift in how the product works over time. The QR code is the entry point today, but the app eventually replaces it for most users.
+
+### Three Upload Paths (Coexist)
+
+| Path | Who Uses It | How It Works | When It Dominates |
+|------|------------|-------------|-------------------|
+| **QR → Browser** | First-time guests, people without the app | Scan QR, browser opens, enter email, upload. Current flow, unchanged. | Now → always (it never goes away) |
+| **QR → App** | Guests who have the app | Scan QR, app opens instead of browser, already logged in, upload instantly. No email entry, no friction. | Once app has traction (Phase 3+) |
+| **App-only** | Guests who have the app and are already linked to the event | Open the app, see the event in "Your Events" (pushed via invite or auto-detected), tap, upload. No QR needed at all. | Mature phase — most uploads |
+
+### How This Works in Practice
+
+**Scenario 1: First-timer at a wedding (no app)**
+Same as today. They scan the QR code on the table, browser opens, they enter their email, upload photos. After the event, they get an email: "See the full album — download the app to save your memories." If they install, the event appears in their app retroactively.
+
+**Scenario 2: Returning guest with the app (scans QR)**
+They scan the QR code, but instead of the browser opening, the app opens. They're already logged in. The app recognises the event and adds it to their timeline. They tap "Upload" — no email entry, no consent screen (already agreed on signup), no friction. Upload is 2 taps instead of 5 steps.
+
+**Scenario 3: Guest with the app (no QR needed)**
+The host added them to the guest list with their email. The app sends a push notification: "You're invited to Sarah & James's wedding — the event is live!" They open the app, the event is already there, they tap and upload. They never scanned a QR code at all. They could upload from the car on the way home, from the hotel room the next morning, or a week later when they find that perfect photo in their camera roll.
+
+### Why This Matters
+
+**For guests:**
+- Path 1 (QR → browser) takes ~60 seconds and requires entering an email.
+- Path 2 (QR → app) takes ~10 seconds. No typing.
+- Path 3 (app-only) takes ~5 seconds. No scanning, no typing. Just open and upload.
+- The easier it is to upload, the more photos you get. More photos = more value for the couple.
+
+**For hosts/couples:**
+- More upload paths = higher guest participation rates
+- App users can upload after the event (they don't have to do it in the moment — they can go through their camera roll the next day)
+- Late uploads catch the best content: the candid shots people find days later that they didn't think to upload at the time
+
+**For the business:**
+- The QR code was the product's defining feature. But it was always a solution to a problem: "How do we connect a guest to an event without making them download an app?" Once they have the app, that problem is solved. The QR code becomes a backup, not the main path.
+- This is the ultimate lock-in. If most of your guests upload via the app, you don't even need QR codes at the event. The product works through the network, not through physical materials. That's a fundamentally stronger position.
+
+### The Transition Over Time
+
+```
+Year 1:  95% QR → Browser  |  5% App
+Year 2:  60% QR → Browser  |  25% QR → App  |  15% App-only
+Year 3:  30% QR → Browser  |  30% QR → App  |  40% App-only
+Year 4:  15% QR → Browser  |  25% QR → App  |  60% App-only
+```
+
+The QR code never disappears — there will always be first-timers, older guests, and people who don't want to install an app. But the balance shifts as the installed base grows. And every wedding where 50%+ of guests already have the app means:
+- Higher upload rates (less friction)
+- Faster uploads (no email entry)
+- Post-event uploads (guests go through their camera roll the next day)
+- The QR table cards become optional, not essential
+
+### Host-Side: Inviting Through the App
+
+Once the app exists, hosts can invite guests directly through it — not just by adding emails and generating QR codes:
+
+**Current flow:**
+```
+Host adds guest emails → system generates QR codes → 
+host prints QR cards → guest scans at event → uploads via browser
+```
+
+**App flow (additional option, not replacement):**
+```
+Host creates event in app → taps "Invite Guests" → 
+selects from contacts OR enters emails → guests with the app get 
+a push notification → event appears in their app → they upload 
+whenever they want
+```
+
+Guests without the app still get an email with a QR code / upload link. Both paths coexist. But for the host, inviting through the app is faster than printing QR cards — especially for casual events (birthday parties, dinners) where printing feels overkill.
+
+### What This Means for Venue Events
+
+For venues, the app evolution is even more powerful:
+
+**Today:** Venue prints QR codes on tables. Every guest at every event scans with their phone camera, opens browser, enters email.
+
+**With the app:** Regulars already have the app and follow the venue. When the venue creates a new event, followers get a push notification. They walk into the pub on Friday night, the event is already in their app, they just upload. No scanning, no table cards, no friction.
+
+The venue's QR codes on tables are just for first-timers. Regulars — the people who come every week — skip the QR entirely. They're already connected.
+
+```
+First visit:    Scan QR → browser → email → upload → "Get the app"
+Second visit:   Scan QR → app opens → upload (faster)
+Third visit:    Open app → event is there → upload (no scan needed)
+Every visit after: Just open the app and go
+```
+
+---
+
 ## What This Does to the Business
 
 ### Lock-In Through History
@@ -507,6 +601,10 @@ These affect the current web product and are worth implementing regardless of wh
 4. **Venue public/private flag:** When building venue accounts, include a "public" toggle for events. Even without the app, public events could appear on the venue's web profile page.
 
 5. **Reshare formatting:** When guests share a photo externally, make sure the watermark looks great on Instagram Stories (9:16 ratio, clean placement). This is free marketing whether or not an app exists.
+
+6. **Deep link-ready QR URLs:** When generating QR codes, use URLs that support deep linking (e.g., Universal Links on iOS, App Links on Android). If the guest has the app installed, the QR opens the app directly. If not, it falls through to the browser. This is invisible to the user but requires the URL structure to be right from day one. Retrofitting deep links later is painful.
+
+7. **Post-event upload window:** Even in the current browser flow, allow uploads for 48–72 hours after the event ends. This sets the expectation that uploading isn't only an in-the-moment thing — guests can go through their camera roll later. The app makes this natural, but the behaviour should be established now.
 
 ---
 
