@@ -1,7 +1,9 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+
+type SortOrder = 'newest' | 'oldest';
 
 export default function PublicAlbumPage() {
   const { albumId } = useParams<{ albumId: string }>();
@@ -12,16 +14,53 @@ export default function PublicAlbumPage() {
   const [payload, setPayload] = useState<any>(null);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [copyMessage, setCopyMessage] = useState('');
+  const [reporting, setReporting] = useState<string | null>(null);
+  const [sortOrder, setSortOrder] = useState<SortOrder>('newest');
+  const [preview, setPreview] = useState<any | null>(null);
 
-  async function load(event?: FormEvent) {
+  const orderedItems = useMemo(() => {
+    if (!payload?.items) {
+      return [];
+    }
+    return [...payload.items].sort((a, b) => {
+      const aAt = new Date(a.uploadedAt || '').getTime();
+      const bAt = new Date(b.uploadedAt || '').getTime();
+      return sortOrder === 'oldest' ? aAt - bAt : bAt - aAt;
+    });
+  }, [payload, sortOrder]);
+
+  function setCopyStatus(text: string) {
+    setCopyMessage(text);
+    setTimeout(() => {
+      setCopyMessage('');
+    }, 1500);
+  }
+
+  function shareUrlFromState() {
+    if (typeof window === 'undefined' || !token || !password) {
+      return '';
+    }
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('token', token);
+    searchParams.set('password', password);
+    searchParams.set('order', sortOrder);
+    return `${window.location.origin}${window.location.pathname}?${searchParams.toString()}`;
+  }
+
+  async function load(event?: FormEvent, nextSortOrder: SortOrder = sortOrder) {
     if (event) event.preventDefault();
     setLoading(true);
     setMessage('');
+    setPayload(null);
 
-    const response = await fetch(`/api/albums/${albumId}/public?token=${encodeURIComponent(token)}&password=${encodeURIComponent(password)}`);
+    const response = await fetch(
+      `/api/albums/${albumId}/public?token=${encodeURIComponent(token)}&password=${encodeURIComponent(password)}&order=${nextSortOrder}`,
+    );
     const body = await response.json();
 
     if (response.ok) {
+      setSortOrder(nextSortOrder);
       setPayload(body);
       setMessage('');
     } else {
@@ -31,11 +70,70 @@ export default function PublicAlbumPage() {
     setLoading(false);
   }
 
+  async function copyShareUrl() {
+    const shareUrl = shareUrlFromState();
+    if (!shareUrl) {
+      setCopyStatus('Share link unavailable');
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopyStatus('Share link copied');
+      return;
+    } catch {
+      const manualCopy = window.prompt('Copy this link:', shareUrl);
+      if (manualCopy) {
+        setCopyStatus('Link captured');
+      }
+    }
+  }
+
+  async function report(mediaId: string) {
+    const reason = window.prompt('Why should this media be reviewed?');
+    if (!reason) {
+      return;
+    }
+
+    if (!payload?.album?.event_id) {
+      setMessage('Unable to submit report for this item');
+      return;
+    }
+
+    setReporting(mediaId);
+    try {
+      const response = await fetch(`/api/events/${payload.album.event_id}/media/${mediaId}/report`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reason }),
+      });
+      if (response.ok) {
+        setMessage('Report submitted. Thanks for helping keep the gallery safe.');
+        return;
+      }
+      const body = await response.json();
+      setMessage(body.message || 'Unable to submit report');
+    } finally {
+      setReporting(null);
+    }
+  }
+
+  function openPreview(item: any) {
+    if (!item.url) {
+      return;
+    }
+    setPreview(item);
+  }
+
+  function closePreview() {
+    setPreview(null);
+  }
+
   useEffect(() => {
     if (token && password) {
-      load();
+      load(undefined, sortOrder);
     }
-  }, [albumId, token, password]);
+  }, [albumId, token, password, sortOrder]);
 
   if (!token) {
     return (
@@ -70,6 +168,7 @@ export default function PublicAlbumPage() {
               <button className="btn btn-primary btn-lg" type="submit" disabled={loading}>
                 {loading ? 'Opening...' : 'Open Album'}
               </button>
+              {loading && <p className="muted" style={{ textAlign: 'center' }}>Loading album...</p>}
               {message && <div className="message message-error">{message}</div>}
             </form>
           </section>
@@ -79,29 +178,80 @@ export default function PublicAlbumPage() {
           <section className="card" style={{ textAlign: 'center' }}>
             <h2 className="section-head">{payload.album.title}</h2>
             <p className="muted">{payload.items.length} item{payload.items.length !== 1 ? 's' : ''}</p>
+            <div className="row" style={{ justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+              <button
+                type="button"
+                className={sortOrder === 'newest' ? 'btn btn-primary btn-sm' : 'btn btn-subtle btn-sm'}
+                onClick={() => setSortOrder('newest')}
+              >
+                Newest first
+              </button>
+              <button
+                type="button"
+                className={sortOrder === 'oldest' ? 'btn btn-primary btn-sm' : 'btn btn-subtle btn-sm'}
+                onClick={() => setSortOrder('oldest')}
+              >
+                Oldest first
+              </button>
+              <button type="button" className="btn btn-subtle btn-sm" onClick={copyShareUrl}>
+                Copy share link
+              </button>
+            </div>
+            {copyMessage && <p className="muted" style={{ fontSize: '0.85rem', margin: '0.5rem 0 0' }}>{copyMessage}</p>}
           </section>
-          {payload.items.map((item: any) => (
+          {orderedItems.map((item: any) => (
             <article key={item.id} className="card" style={{ padding: '0', overflow: 'hidden' }}>
               {item.mediaType === 'image' ? (
                 <img
-                  style={{ width: '100%', display: 'block', borderRadius: 'var(--radius) var(--radius) 0 0' }}
+                  loading="lazy"
+                  style={{ width: '100%', display: 'block', borderRadius: 'var(--radius) var(--radius) 0 0', cursor: 'zoom-in' }}
                   src={item.url}
                   alt={item.name || 'photo'}
+                  onClick={() => openPreview(item)}
                 />
               ) : (
                 <video
                   controls
-                  style={{ width: '100%', display: 'block', borderRadius: 'var(--radius) var(--radius) 0 0' }}
+                  preload="metadata"
+                  style={{ width: '100%', display: 'block', borderRadius: 'var(--radius) var(--radius) 0 0', cursor: 'zoom-in' }}
                   src={item.url}
+                  onClick={() => openPreview(item)}
                 />
               )}
               <div style={{ padding: '0.75rem 1rem' }}>
                 <p className="muted" style={{ margin: 0, fontSize: '0.85rem' }}>
                   {item.invitedBy?.display_name || 'Anonymous'}
                 </p>
+                <button
+                  type="button"
+                  className="btn btn-subtle btn-sm"
+                  onClick={() => report(item.id)}
+                  disabled={reporting === item.id}
+                  style={{ marginTop: '0.5rem' }}
+                >
+                  {reporting === item.id ? 'Submitting…' : 'Report'}
+                </button>
               </div>
             </article>
           ))}
+          {preview && (
+            <div className="modal-backdrop" onClick={closePreview} role="presentation">
+              <div
+                className="modal-card"
+                onClick={(event) => event.stopPropagation()}
+                style={{ maxWidth: '92vw', width: 'fit-content' }}
+              >
+                {preview.mediaType === 'image' ? (
+                  <img src={preview.url} alt={preview.name || 'photo'} style={{ width: '100%', display: 'block' }} />
+                ) : (
+                  <video controls src={preview.url} style={{ width: '100%', display: 'block' }} />
+                )}
+                <button type="button" className="btn btn-subtle" onClick={closePreview} style={{ marginTop: '0.75rem' }}>
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

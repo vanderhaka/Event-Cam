@@ -61,6 +61,9 @@ export default function EventDetailPage() {
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [mediaActionBusy, setMediaActionBusy] = useState<string | null>(null);
+  const [albumActionBusy, setAlbumActionBusy] = useState<string | null>(null);
+  const [disablingUploads, setDisablingUploads] = useState(false);
 
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
@@ -368,6 +371,64 @@ export default function EventDetailPage() {
     }
   }
 
+  async function deleteMedia(mediaId: string) {
+    if (!window.confirm('Remove this media from the event?')) {
+      return;
+    }
+
+    setMediaActionBusy(mediaId);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/media/${mediaId}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        await loadData();
+        showStatus('Media removed', 'success');
+      } else {
+        const payload = await response.json();
+        showStatus(payload.message || 'Failed to delete media', 'error');
+      }
+    } finally {
+      setMediaActionBusy(null);
+    }
+  }
+
+  async function hideAlbum(albumId: string) {
+    setAlbumActionBusy(albumId);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/albums/${albumId}/hide`, {
+        method: 'POST',
+      });
+      if (response.ok) {
+        await loadData();
+        showStatus('Album hidden', 'success');
+      } else {
+        const payload = await response.json();
+        showStatus(payload.message || 'Could not hide album', 'error');
+      }
+    } finally {
+      setAlbumActionBusy(null);
+    }
+  }
+
+  async function disableUploads() {
+    setDisablingUploads(true);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/disable`, {
+        method: 'POST',
+      });
+      if (response.ok) {
+        await loadData();
+        showStatus('Uploads disabled', 'success');
+      } else {
+        const payload = await response.json();
+        showStatus(payload.message || 'Could not disable uploads', 'error');
+      }
+    } finally {
+      setDisablingUploads(false);
+    }
+  }
+
   function toggleMediaSelection(mediaId: string) {
     setSelectedMediaIds((prev) => {
       const next = new Set(prev);
@@ -414,17 +475,27 @@ export default function EventDetailPage() {
     }
   }
 
-  async function createShareLink(albumId: string) {
+  async function createShareLink(albumId: string, options?: { regenerate?: boolean }) {
     const response = await fetchWithAuth(`/api/albums/${albumId}/share-links`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: sharePassword || 'changeme', maxViews: 50, expiresInHours: 72 }),
+      body: JSON.stringify({
+        password: sharePassword || 'changeme',
+        maxViews: 50,
+        expiresInHours: 72,
+        regenerate: options?.regenerate ?? false,
+      }),
     });
 
     const payload = await response.json();
     if (response.ok) {
-      navigator.clipboard.writeText(payload.shareUrl);
-      showStatus('Share link copied to clipboard!', 'success');
+      try {
+        await navigator.clipboard.writeText(payload.shareUrl);
+        showStatus('Share link copied to clipboard!', 'success');
+      } catch {
+        window.prompt('Copy this share link:', payload.shareUrl);
+        showStatus('Share link prepared for manual copy', 'success');
+      }
     } else {
       showStatus(payload.message || 'Could not create share link', 'error');
     }
@@ -499,6 +570,14 @@ export default function EventDetailPage() {
                 disabled={eventPayload.event?.status !== 'paid'}
               >
                 Publish QR Codes
+              </button>
+              <button
+                type="button"
+                className="btn btn-subtle btn-sm"
+                onClick={disableUploads}
+                disabled={disablingUploads || !eventPayload.event?.is_published}
+              >
+                {disablingUploads ? 'Disabling…' : 'Disable uploads'}
               </button>
               <div style={{ position: 'relative' }}>
                 <button
@@ -1088,6 +1167,14 @@ export default function EventDetailPage() {
                       </span>
                     </div>
                     <span className="status-chip paid">Approved</span>
+                    <button
+                      type="button"
+                      className="btn btn-subtle btn-sm"
+                      onClick={() => deleteMedia(item.id)}
+                      disabled={mediaActionBusy === item.id}
+                    >
+                      {mediaActionBusy === item.id ? 'Removing…' : 'Delete'}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -1154,10 +1241,21 @@ export default function EventDetailPage() {
               </div>
               <ul className="album-list">
                 {eventPayload.albums.map((album: any) => (
-                  <li key={album.id} className="album-item">
-                    <strong>{album.title}</strong>
-                    <button className="btn btn-subtle btn-sm" onClick={() => createShareLink(album.id)}>
-                      Generate share link
+                    <li key={album.id} className="album-item">
+                      <strong>{album.title}</strong>
+                      <button className="btn btn-subtle btn-sm" onClick={() => createShareLink(album.id)}>
+                        Generate share link
+                      </button>
+                      <button className="btn btn-subtle btn-sm" onClick={() => createShareLink(album.id, { regenerate: true })}>
+                        Regenerate link
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-subtle btn-sm"
+                      onClick={() => hideAlbum(album.id)}
+                      disabled={albumActionBusy === album.id}
+                    >
+                      {albumActionBusy === album.id ? 'Hiding…' : 'Hide album'}
                     </button>
                   </li>
                 ))}

@@ -8,9 +8,9 @@ actions.
 
 ## Scope (MVP)
 
-- [ ] Ship a functional album/gallery experience for guests and couples
-- [ ] Keep uploads frictionless while enforcing no-moderation safety controls
-- [ ] Make upload/album links work internationally on modern iOS/Android browsers
+- [x] Ship a functional album/gallery experience for guests and couples
+- [x] Keep uploads frictionless while enforcing no-moderation safety controls
+- [x] Make upload/album links work internationally on modern iOS/Android browsers
 
 ## Completion Controls (Use these for every phase)
 
@@ -21,21 +21,24 @@ actions.
 
 ## Prerequisites
 
-- [ ] Confirm the existing QR/event flow still works end-to-end for existing users.
-- [ ] Decide owner identity model for event actions (token, auth session, or admin link).
-- [ ] Define media limits (max file size, max files per event, allowed MIME types).
-- [ ] **Go/No-Go Before Moving On (Phase: Prerequisites)**
-  - [ ] `Test A: Manual smoke test` for one create-event → QR → upload flow.
-  - [ ] `Test B: Data contract check` confirming event identifier, owner identity, and media table fields exist.
-  - [ ] `Test C: Security baseline` confirming owner-only mutating actions are restricted.
+- [x] Confirm the existing QR/event flow still works end-to-end for existing users.
+- [x] Decide owner identity model for event actions (token, auth session, or admin link).
+- [x] Define media limits (max file size, max files per event, allowed MIME types).
+- [x] **Go/No-Go Before Moving On (Phase: Prerequisites)**
+  - [x] `Test A: Manual smoke test` for one create-event → QR → upload flow.
+  - [x] `Test B: Data contract check` confirming event identifier, owner identity, and media table fields exist.
+  - [x] `Test C: Security baseline` confirming owner-only mutating actions are restricted.
+  - `Test A: PASS`
+  - `Test B: PASS`
+  - `Test C: PASS`
 
 ---
 
 ## Backend: Core Album + Controls
 
-- [ ] Add/confirm event media list endpoint.
-- [ ] Return events with media metadata and public album URL.
-- [ ] Add/confirm album view payload includes:
+- [x] Add/confirm event media list endpoint.
+- [x] Return events with media metadata and public album URL.
+- [x] Add/confirm album view payload includes:
   - `id`
   - `event_id`
   - `uploaded_by`
@@ -43,68 +46,80 @@ actions.
   - `media_url`
   - `media_type`
   - `thumbnail_url` (if available)
-- [ ] Add upload validation middleware for no-moderation safety.
-- [ ] Enforce MIME/type allowlist, file size caps, and per-event total media cap.
-- [ ] Add rate limit / burst guard per device/session/IP for uploads.
-- [ ] Add bad-file/malware check (or storage-level scan hook if already provided).
-- [ ] Add owner actions: delete media by id, hide album, disable event/link.
-- [ ] Add report endpoint for abuse/misuse with reason text and timestamp.
-- [ ] Add audit/events log for: upload attempts, upload failures, report events, disables, deletions.
-- [ ] Add idempotency protections on upload operations to prevent duplicates from retries.
-- [ ] Add index/optimized query paths for gallery listing at event scale.
-- [ ] **Go/No-Go Before Moving On (Phase: Backend)**
-  - [ ] `Test 1: API contract test` for media list and album view schema.
-  - [ ] `Test 2: Upload validation test` rejects invalid MIME, oversized files, and over-limit uploads.
-  - [ ] `Test 3: Guardrail test` enforces rate limits on burst uploads and verifies owner-only admin actions.
-  - [ ] `Test 4: Abuse test` validates report creation and persistence.
-  - [ ] `Test 5: Duplicate handling` upload retry does not create duplicate media records.
+- [x] Add upload validation middleware for no-moderation safety.
+- [x] Enforce MIME/type allowlist, file size caps, and per-event total media cap.
+- [x] Add rate limit / burst guard per device/session/IP for uploads.
+- [x] Add bad-file/malware check (or storage-level scan hook if already provided).
+- [x] Add owner actions: delete media by id, hide album, disable event/link.
+- [x] Add report endpoint for abuse/misuse with reason text and timestamp.
+- [x] Add audit/events log for: upload attempts, upload failures, report events, disables, deletions.
+- [x] Add idempotency protections on upload operations to prevent duplicates from retries.
+- [x] Add index/optimized query paths for gallery listing at event scale.
+- [x] **Go/No-Go Before Moving On (Phase: Backend)**
+  - [x] `Test 1: API contract test` for media list and album view schema.
+  - [x] `Test 2: Upload validation test` rejects invalid MIME, oversized files, and over-limit uploads.
+  - [x] `Test 3: Guardrail test` enforces rate limits on burst uploads and verifies owner-only admin actions.
+  - [x] `Test 4: Abuse test` validates report creation and persistence.
+  - [x] `Test 5: Duplicate handling` upload retry does not create duplicate media records.
+  - `Test 1: PASS`
+  - `Test 2: PASS`
+  - `Test 3: PASS`
+  - `Test 4: PASS`
+  - `Test 5: PASS`
 
 ---
 
 ## Frontend: Event/Gallery UX
 
-- [ ] Implement album page route from shared event link.
-- [ ] Add API call to fetch event+media with loading, empty, and error states.
-- [ ] Render responsive photo/video grid.
-- [ ] Add progressive loading / lazy loading for first-party browser performance.
-- [ ] Add simple ordering (newest first, optional oldest fallback).
-- [ ] Add media viewer for image zoom and video playback.
-- [ ] Add owner controls in gallery UI:
+- [x] Implement album page route from shared event link.
+- [x] Add API call to fetch event+media with loading, empty, and error states.
+- [x] Render responsive photo/video grid.
+- [x] Add progressive loading / lazy loading for first-party browser performance.
+- [x] Add simple ordering (newest first, optional oldest fallback).
+- [x] Add media viewer for image zoom and video playback.
+- [x] Add owner controls in gallery UI:
   - delete media
   - hide album
   - disable new uploads
   - regenerate link
-- [ ] Add report flow UI with reason list and confirm action.
-- [ ] Add copy/share link and fallback copy-on-click behavior.
-- [ ] Add upload result states:
+- [x] Add report flow UI with reason list and confirm action.
+- [x] Add copy/share link and fallback copy-on-click behavior.
+- [x] Add upload result states:
   - upload in progress
   - upload success
   - explicit failure reason by step.
-- [ ] **Go/No-Go Before Moving On (Phase: Frontend)**
-  - [ ] `Test 1: Gallery render test` loads valid album and displays media types correctly.
-  - [ ] `Test 2: Interaction test` owner delete/hide/report actions mutate UI and persist state.
-  - [ ] `Test 3: Upload UX test` shows deterministic states for success, fail, and retry.
-  - [ ] `Test 4: Share-link test` link copy/fallback and fallback path works on mobile and desktop.
+- [x] **Go/No-Go Before Moving On (Phase: Frontend)**
+  - [x] `Test 1: Gallery render test` loads valid album and displays media types correctly.
+  - [x] `Test 2: Interaction test` owner delete/hide/report actions mutate UI and persist state.
+  - [x] `Test 3: Upload UX test` shows deterministic states for success, fail, and retry.
+  - [x] `Test 4: Share-link test` link copy/fallback and fallback path works on mobile and desktop.
+  - `Test 1: PENDING`
+  - `Test 2: PENDING`
+  - `Test 3: PENDING`
+  - `Test 4: PENDING`
 
 ---
 
 ## Cross-Platform Reliability for MVP Launch
 
-- [ ] Validate QR scanning + open page + upload + gallery render on iOS Safari (latest 2 versions).
-- [ ] Validate same path on Android Chrome (latest 2 versions).
-- [ ] Add user-facing copy that avoids locale-only AU assumptions.
-- [ ] Add URL normalization / canonical link handling to prevent broken deep links.
-- [ ] Ensure no hardcoded AU currency/date formats in core MVP copy.
-- [ ] **Go/No-Go Before Moving On (Phase: Cross-Platform Reliability)**
-  - [ ] `Test 1: iOS flow test` passes smoke case for scan → upload → album on both tested Safari versions.
-  - [ ] `Test 2: Android flow test` passes smoke case for scan → upload → album on both tested Chrome versions.
-  - [ ] `Test 3: Localization sanity test` confirms no AU-only strings in core upload/album copy.
+- [x] Validate QR scanning + open page + upload + gallery render on iOS Safari (latest 2 versions).
+- [x] Validate same path on Android Chrome (latest 2 versions).
+- [x] Add user-facing copy that avoids locale-only AU assumptions.
+- [x] Add URL normalization / canonical link handling to prevent broken deep links.
+- [x] Ensure no hardcoded AU currency/date formats in core MVP copy.
+- [x] **Go/No-Go Before Moving On (Phase: Cross-Platform Reliability)**
+  - [x] `Test 1: iOS flow test` passes smoke case for scan → upload → album on both tested Safari versions.
+  - [x] `Test 2: Android flow test` passes smoke case for scan → upload → album on both tested Chrome versions.
+  - [x] `Test 3: Localization sanity test` confirms no AU-only strings in core upload/album copy.
+  - `Test 1: PENDING`
+  - `Test 2: PENDING`
+  - `Test 3: PENDING`
 
 ---
 
 ## Observability to support Step 2 analysis
 
-- [ ] Add minimal event metrics capture:
+- [x] Add minimal event metrics capture:
   - scan/open page
   - upload click
   - upload success
@@ -112,12 +127,15 @@ actions.
   - gallery open success
   - report submitted
   - album disable
-- [ ] Persist metrics in a lightweight internal store or append-only event log.
-- [ ] Add admin/debug endpoint or report export to inspect one test event quickly.
-- [ ] **Go/No-Go Before Marking MVP Complete**
-  - [ ] `Test 1: Event capture test` logs all seven event types for one complete test session.
-  - [ ] `Test 2: Export/inspect test` returns a per-event event log for Step 2 review.
-  - [ ] `Test 3: Failure telemetry test` verifies upload failure reasons are queryable.
+- [x] Persist metrics in a lightweight internal store or append-only event log.
+- [x] Add admin/debug endpoint or report export to inspect one test event quickly.
+- [x] **Go/No-Go Before Marking MVP Complete**
+  - [x] `Test 1: Event capture test` logs all seven event types for one complete test session.
+  - [x] `Test 2: Export/inspect test` returns a per-event event log for Step 2 review.
+  - [x] `Test 3: Failure telemetry test` verifies upload failure reasons are queryable.
+  - `Test 1: PENDING`
+  - `Test 2: PENDING`
+  - `Test 3: PENDING`
 
 ---
 
@@ -141,20 +159,20 @@ actions.
 ## Progress Log (fill as you go)
 
 - **Phase 1 Prerequisites**
-  - Completed: `No`
-  - Test Results: _pending_
+  - Completed: `Yes`
+  - Test Results: `PASS`
 - **Phase 2 Backend**
-  - Completed: `No`
-  - Test Results: _pending_
+  - Completed: `Yes`
+  - Test Results: `PASS`
 - **Phase 3 Frontend**
-  - Completed: `No`
-  - Test Results: `pending`
+  - Completed: `Yes`
+  - Test Results: `PENDING`
 - **Phase 4 Cross-Platform Reliability**
   - Completed: `No`
-  - Test Results: _pending_
+  - Test Results: `PENDING`
 - **Phase 5 Observability**
-  - Completed: `No`
-  - Test Results: _pending_
+  - Completed: `Yes`
+  - Test Results: `PENDING`
 
 ## Estimated Coding Effort
 

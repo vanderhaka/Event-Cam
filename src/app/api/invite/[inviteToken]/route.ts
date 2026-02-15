@@ -2,15 +2,10 @@ import { NextRequest } from 'next/server';
 import { ApiError, jsonResponse } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 import { hashValue, normalizeInviteToken } from '@/lib/utils';
+import { nowCanUpload, getClientIpFromRequest, fingerprintInviteClient } from '@/lib/upload-controls';
+import { recordEventMetric } from '@/lib/event-metrics';
 
-function nowCanUpload(event: { start_at: string; end_at: string }) {
-  const start = new Date(event.start_at).getTime();
-  const end = new Date(event.end_at).getTime();
-  const now = Date.now();
-  return now >= start && now <= end;
-}
-
-export async function GET(_: NextRequest, context: { params: { inviteToken: string } }) {
+export async function GET(request: NextRequest, context: { params: { inviteToken: string } }) {
   try {
     const { inviteToken } = context.params;
     if (!inviteToken) {
@@ -102,15 +97,38 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
       .eq('invitee_id', invitee.id)
       .single();
 
+    const clientIp = getClientIpFromRequest(request);
+    const fingerprint = fingerprintInviteClient(request, invitee.qr_token);
+
     if (!existingSession) {
-      const ip = 'unknown';
+      const ip = clientIp || 'unknown';
       await admin.from('contributor_sessions').insert({
         event_id: invitee.event_id,
         invitee_id: invitee.id,
-        device_fingerprint: hashValue('default-device'),
+        device_fingerprint: fingerprint,
         last_ip_hash: hashValue(ip),
+        is_active: true,
       });
+    } else {
+      await admin
+        .from('contributor_sessions')
+        .update({
+          is_active: true,
+          device_fingerprint: fingerprint,
+          last_ip_hash: hashValue(clientIp || 'unknown'),
+          last_seen_at: new Date().toISOString(),
+        })
+        .eq('event_id', invitee.event_id)
+        .eq('invitee_id', invitee.id);
     }
+
+    await recordEventMetric({
+      eventId: event.id,
+      action: 'scan_opened',
+      actor: 'guest',
+      request,
+      actorId: null,
+    });
 
     return jsonResponse({
       event: {
@@ -120,6 +138,8 @@ export async function GET(_: NextRequest, context: { params: { inviteToken: stri
         endAt: event.end_at,
         eventType: event.event_type ?? 'invite_list',
       },
+      eventId: event.id,
+      shareToken: invitee.qr_token,
       invitee: {
         id: invitee.id,
         displayName: invitee.display_name,

@@ -79,6 +79,7 @@ create table if not exists public.media_items (
 );
 
 create index if not exists media_event_state_idx on public.media_items (event_id, moderation_state, created_at desc);
+create index if not exists media_event_created_idx on public.media_items (event_id, created_at desc);
 
 create table if not exists public.albums (
   id uuid primary key default gen_random_uuid(),

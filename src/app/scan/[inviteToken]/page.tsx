@@ -86,26 +86,35 @@ export default function ScanPage() {
     setUploading(true);
     setMessage('');
 
-    const uploads = Array.from(files).map(async (mediaFile) => {
-      const formData = new FormData();
-      formData.append('file', mediaFile);
-      formData.append('consent', 'true');
-      formData.append('tags', tagCsv);
-      formData.append('durationSec', durationSec);
-      const response = await fetch(`/api/invite/${normalizedInviteToken}/media`, {
-        method: 'POST',
-        body: formData,
-      });
-      if (!response.ok) {
-        const payload = await response.json();
-        throw new Error(payload.message || 'Upload failed');
-      }
-      return response.json();
-    });
+    const fileList = Array.from(files);
+    let completed = 0;
 
     try {
-      await Promise.all(uploads);
-      setMessage(`${files.length} file${files.length > 1 ? 's' : ''} uploaded successfully! The host will review them shortly.`);
+      for (const mediaFile of fileList) {
+        setMessage(`Uploading ${completed + 1}/${fileList.length}: ${mediaFile.name || 'media'}…`);
+        setMessageType('info');
+
+        const formData = new FormData();
+        formData.append('file', mediaFile);
+        formData.append('consent', 'true');
+        formData.append('tags', tagCsv);
+        formData.append('durationSec', durationSec);
+
+        const response = await fetch(`/api/invite/${normalizedInviteToken}/media`, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const payload = await response.json();
+          throw new Error(`Upload ${mediaFile.name || 'media'} failed: ${payload.message || 'Upload failed'}`);
+        }
+
+        await response.json();
+        completed += 1;
+      }
+
+      setMessage(`${completed} file${completed > 1 ? 's' : ''} uploaded successfully! They are now available in the event gallery.`);
       setMessageType('success');
       setFiles(null);
       setTagCsv('');
@@ -114,7 +123,7 @@ export default function ScanPage() {
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
       if (fileInput) fileInput.value = '';
     } catch (error) {
-      setMessage((error as Error).message);
+      setMessage((error as Error).message || 'Upload failed');
       setMessageType('error');
     } finally {
       setUploading(false);
@@ -182,8 +191,8 @@ export default function ScanPage() {
         <h2 className="section-head">{info.event.name}</h2>
         <p className="section-sub">
           {info.event.eventType === 'open'
-            ? 'Upload your photos and videos below. The host will review them before adding to the event album.'
-            : <>Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. The host will review them before adding to the event album.</>}
+            ? 'Upload your photos and videos below. They appear in the event gallery right after upload.'
+            : <>Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. They appear in the event gallery right after upload.</>
         </p>
 
         <form onSubmit={submit} className="form-grid">
@@ -210,7 +219,7 @@ export default function ScanPage() {
 
           <label className="checkbox-row">
             <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
-            <span>I confirm my photos and videos can be attributed to me and reviewed by the host before publication.</span>
+            <span>I confirm my photos and videos can be attributed to me and shared in the event gallery.</span>
           </label>
 
           <button className="btn btn-primary btn-lg" type="submit" disabled={uploading || !files || files.length === 0 || !consent}>

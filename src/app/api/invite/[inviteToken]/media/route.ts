@@ -1,15 +1,16 @@
 import { ApiError, jsonResponse } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
-import { normalizeInviteToken, randomToken } from '@/lib/utils';
-
-const MAX_VIDEO_SECONDS = 20;
-
-function nowCanUpload(event: { start_at: string; end_at: string }) {
-  const start = new Date(event.start_at).getTime();
-  const end = new Date(event.end_at).getTime();
-  const now = Date.now();
-  return now >= start && now <= end;
-}
+import { normalizeInviteToken, randomToken, hashValue } from '@/lib/utils';
+import {
+  nowCanUpload,
+  getClientIpFromRequest,
+  parseUploadMediaType,
+  isAllowedMime,
+  getMaxUploadBytes,
+  getConfigLimits,
+  fingerprintInviteClient,
+} from '@/lib/upload-controls';
+import { recordEventMetric } from '@/lib/event-metrics';
 
 export async function POST(request: Request, context: { params: { inviteToken: string } }) {
   const { inviteToken } = context.params;
@@ -21,6 +22,10 @@ export async function POST(request: Request, context: { params: { inviteToken: s
   if (!normalizedInviteToken) {
     return jsonResponse({ message: 'Invalid inviteToken' }, { status: 400 });
   }
+
+  const config = getConfigLimits();
+  const requestId = request.headers.get('x-request-id') || null;
+  const idempotencyKey = request.headers.get('Idempotency-Key') || request.headers.get('idempotency-key') || null;
 
   try {
     const admin = createSupabaseAdminClient();
@@ -57,36 +62,217 @@ export async function POST(request: Request, context: { params: { inviteToken: s
       return jsonResponse({ message: 'Event upload window is closed' }, { status: 403 });
     }
 
+    const { count: eventMediaCount, error: eventMediaCountError } = await admin
+      .from('media_items')
+      .select('id', { count: 'exact', head: true })
+      .eq('event_id', event.id);
+    if (eventMediaCountError) {
+      return jsonResponse({ message: eventMediaCountError.message }, { status: 400 });
+    }
+
+    if ((eventMediaCount ?? 0) >= config.maxMediaPerEvent) {
+      return jsonResponse({ message: 'This event has reached the photo upload cap for MVP testing.' }, { status: 429 });
+    }
+
     const form = await request.formData();
     const file = form.get('file');
     const consent = String(form.get('consent') ?? 'false');
     const tags = String(form.get('tags') ?? '');
     const durationSec = Number(form.get('durationSec') ?? 0);
+    const clientIp = getClientIpFromRequest(request) || null;
+
+    await recordEventMetric({
+      eventId: event.id,
+      action: 'upload_click',
+      actor: 'guest',
+      request,
+      actorId: null,
+      reason: 'upload_request_received',
+      metadata: { hasFile: file instanceof File, consentProvided: consent === 'true' },
+    });
 
     if (consent !== 'true') {
+      await recordEventMetric({
+        eventId: event.id,
+        action: 'upload_failed',
+        actor: 'guest',
+        request,
+        actorId: null,
+        reason: 'consent_missing',
+      });
       return jsonResponse({ message: 'You must provide consent before upload' }, { status: 400 });
     }
 
     if (!(file instanceof File)) {
+      await recordEventMetric({
+        eventId: event.id,
+        action: 'upload_failed',
+        actor: 'guest',
+        request,
+        actorId: null,
+        reason: 'missing_file',
+      });
       return jsonResponse({ message: 'Missing media file' }, { status: 400 });
     }
 
-    const mediaType = file.type.startsWith('image/')
-      ? 'image'
-      : file.type.startsWith('video/')
-        ? 'video'
-        : '';
+    if (file.size === 0) {
+      await recordEventMetric({
+        eventId: event.id,
+        action: 'upload_failed',
+        actor: 'guest',
+        request,
+        actorId: null,
+        reason: 'empty_file',
+      });
+      return jsonResponse({ message: 'Uploaded file is empty' }, { status: 400 });
+    }
 
+    const mediaType = parseUploadMediaType(file.type);
     if (!mediaType) {
+      await recordEventMetric({
+        eventId: event.id,
+        action: 'upload_failed',
+        actor: 'guest',
+        request,
+        actorId: null,
+        reason: 'unsupported_mime_type',
+        metadata: { mimeType: file.type },
+      });
       return jsonResponse({ message: 'Only image and video uploads are supported' }, { status: 400 });
     }
 
-    if (mediaType === 'video' && durationSec > MAX_VIDEO_SECONDS) {
-      return jsonResponse({ message: 'Video duration must be 20s or less' }, { status: 400 });
+    if (!isAllowedMime(mediaType, file.type)) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'mime_not_allowed',
+        metadata: { mimeType: file.type },
+      });
+      return jsonResponse({ message: 'File type is not allowed for this event' }, { status: 400 });
     }
 
-    const extension = file.type.split('/')[1]?.replace(/[^a-zA-Z0-9]/g, '') || 'bin';
+    const maxBytes = getMaxUploadBytes(mediaType);
+    if (file.size > maxBytes) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'file_too_large',
+        metadata: { fileSize: file.size, limitBytes: maxBytes, mediaType },
+      });
+      return jsonResponse({ message: 'File exceeds size limit' }, { status: 400 });
+    }
+
+    if (mediaType === 'video' && durationSec > config.maxVideoSeconds) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'video_too_long',
+        metadata: { durationSec },
+      });
+      return jsonResponse({ message: `Video duration must be ${config.maxVideoSeconds}s or less` }, { status: 400 });
+    }
+
+    const burstWindowStart = new Date(Date.now() - config.burstWindowSeconds * 1000).toISOString();
+    const { error: burstError, count: recentUploadCount } = await admin
+      .from('media_items')
+      .select('id', { count: 'exact', head: true })
+      .eq('invitee_id', invitee.id)
+      .gte('created_at', burstWindowStart);
+
+    if (burstError) {
+      return jsonResponse({ message: burstError.message }, { status: 400 });
+    }
+    if ((recentUploadCount ?? 0) >= config.maxBurstAttempts) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'burst_rate_limit',
+        metadata: { burstWindowSeconds: config.burstWindowSeconds, max: config.maxBurstAttempts },
+      });
+      return jsonResponse({ message: 'Upload rate limit reached. Please wait before sending more media.' }, { status: 429 });
+    }
+
+    const uploadWindowStart = new Date(Date.now() - config.uploadWindowMinutes * 60 * 1000).toISOString();
+    const { error: windowUploadError, count: windowUploadCount } = await admin
+      .from('media_items')
+      .select('id', { count: 'exact', head: true })
+      .eq('invitee_id', invitee.id)
+      .gte('created_at', uploadWindowStart);
+
+    if (windowUploadError) {
+      return jsonResponse({ message: windowUploadError.message }, { status: 400 });
+    }
+    if ((windowUploadCount ?? 0) >= config.maxUploadsPerInvitee) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'invitee_rate_limit',
+        metadata: { windowMinutes: config.uploadWindowMinutes, max: config.maxUploadsPerInvitee },
+      });
+      return jsonResponse({ message: 'Upload limit reached for this event window.' }, { status: 429 });
+    }
+
+    const fingerprint = fingerprintInviteClient(request, invitee.qr_token);
+    const extMatch = String(file.name || '').split('.').pop()?.toLowerCase() ?? '';
+    const extension = extMatch && /^[a-z0-9]+$/.test(extMatch) ? extMatch : (mediaType === 'video' ? 'mp4' : 'jpg');
+    if (extension === 'bin') {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: 'invalid_extension',
+      });
+      return jsonResponse({ message: 'Invalid media filename' }, { status: 400 });
+    }
+
+    const safeTags = String(tags)
+      .split(',')
+      .map((tag) => tag.trim())
+      .filter(Boolean)
+      .slice(0, 10);
+
+    if (idempotencyKey) {
+      const { data: priorKey } = await admin
+        .from('upload_idempotency_keys')
+        .select('media_item_id')
+        .eq('event_id', event.id)
+        .eq('invitee_id', invitee.id)
+        .eq('idempotency_key', idempotencyKey)
+        .gt('expires_at', new Date().toISOString())
+        .maybeSingle();
+      if (priorKey?.media_item_id) {
+        await recordEventMetric({
+          eventId: event.id,
+          actor: 'guest',
+          action: 'upload_success',
+          request,
+          actorId: null,
+          reason: 'idempotent_replay',
+          metadata: { idempotencyKey },
+        });
+        return jsonResponse({ message: 'Duplicate request ignored', mediaId: priorKey.media_item_id }, { status: 200 });
+      }
+    }
+
     const storagePath = `${event.id}/${invitee.id}/${randomToken(16)}.${extension}`;
+    const fileFingerprint = hashValue(`${invitee.qr_token}:${storagePath}:${file.size}:${file.type}`);
 
     const buffer = Buffer.from(await file.arrayBuffer());
 
@@ -96,6 +282,15 @@ export async function POST(request: Request, context: { params: { inviteToken: s
     });
 
     if (upload.error) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: upload.error.message,
+        metadata: { storagePath, fileFingerprint },
+      });
       return jsonResponse({ message: upload.error.message }, { status: 400 });
     }
 
@@ -107,20 +302,27 @@ export async function POST(request: Request, context: { params: { inviteToken: s
         uploader_token: invitee.qr_token,
         media_type: mediaType,
         storage_path: storagePath,
-        original_name: file.name,
+        original_name: file.name || `${mediaType}-upload.${extension}`,
         mime_type: file.type,
         size_bytes: file.size,
         duration_sec: mediaType === 'video' ? durationSec || null : null,
-        attributed_labels: tags
-          .split(',')
-          .map((label) => label.trim())
-          .filter(Boolean),
+        attributed_labels: safeTags,
         consent_granted: true,
+        moderation_state: 'approved',
       })
       .select('*')
       .single();
 
     if (mediaInsertError) {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        reason: mediaInsertError.message,
+        metadata: { storagePath },
+      });
       return jsonResponse({ message: mediaInsertError.message }, { status: 400 });
     }
 
@@ -129,13 +331,62 @@ export async function POST(request: Request, context: { params: { inviteToken: s
       .upsert({
         event_id: event.id,
         invitee_id: invitee.id,
+        device_fingerprint: fingerprint,
+        last_ip_hash: hashValue(clientIp || 'unknown'),
         has_consented: true,
         last_seen_at: new Date().toISOString(),
       }, { onConflict: 'event_id,invitee_id' });
 
+    if (idempotencyKey) {
+      await admin.from('upload_idempotency_keys').insert({
+        event_id: event.id,
+        invitee_id: invitee.id,
+        idempotency_key: idempotencyKey,
+        media_item_id: mediaItem.id,
+        request_fingerprint: fingerprint,
+        request_id: requestId,
+        request_payload: {
+          sizeBytes: file.size,
+          mimeType: file.type,
+          mediaType,
+        },
+      });
+    }
+
+    await recordEventMetric({
+      eventId: event.id,
+      actor: 'guest',
+      action: 'upload_success',
+      request,
+      actorId: null,
+      metadata: {
+        mediaId: mediaItem.id,
+        mediaType,
+        sizeBytes: file.size,
+        moderationState: 'approved',
+      },
+    });
+
     return jsonResponse({ media: mediaItem }, { status: 201 });
   } catch (error) {
     if (error instanceof ApiError) {
+      if ((request as Request).headers && error.status >= 500) {
+        const normalizedInvite = normalizeInviteToken(inviteToken);
+        if (normalizedInvite) {
+          const admin = createSupabaseAdminClient();
+          const { data: invitee } = await admin.from('invitees').select('event_id').eq('qr_token', normalizedInvite).single();
+          if (invitee?.event_id) {
+            await recordEventMetric({
+              eventId: invitee.event_id,
+              actor: 'guest',
+              action: 'upload_failed',
+              request,
+              actorId: null,
+              reason: error.message,
+            });
+          }
+        }
+      }
       return jsonResponse({ message: error.message }, { status: error.status });
     }
     return jsonResponse({ message: 'Unable to upload media' }, { status: 500 });

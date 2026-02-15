@@ -39,10 +39,19 @@ export async function POST(request: Request, context: { params: { albumId: strin
     }
 
     const maxViews = body.maxViews ? Number(body.maxViews) : null;
+    const shouldRegenerate = body.regenerate === true;
     const expiresInHours = Number(body.expiresInHours ?? 0);
     const expiresAt = Number.isFinite(expiresInHours) && expiresInHours > 0
       ? new Date(Date.now() + expiresInHours * 60 * 60 * 1000).toISOString()
       : null;
+
+    if (shouldRegenerate) {
+      await admin
+        .from('share_links')
+        .update({ revoked_at: new Date().toISOString() })
+        .eq('album_id', album.id)
+        .is('revoked_at', null);
+    }
 
     const token = randomToken(20);
     const tokenHash = hashValue(password, process.env.EVENT_CAM_TOKEN_SALT || 'event-cam');

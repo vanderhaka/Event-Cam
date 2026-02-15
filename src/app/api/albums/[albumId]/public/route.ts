@@ -2,11 +2,13 @@ import { NextRequest } from 'next/server';
 import { ApiError, jsonResponse } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 import { hashValue } from '@/lib/utils';
+import { recordEventMetric } from '@/lib/event-metrics';
 
 export async function GET(request: NextRequest, context: { params: { albumId: string } }) {
   try {
     const shareToken = request.nextUrl.searchParams.get('token') || request.nextUrl.searchParams.get('shareToken');
     const password = request.nextUrl.searchParams.get('password') || '';
+    const sortDirection = request.nextUrl.searchParams.get('order') === 'oldest' ? 'oldest' : 'newest';
 
     if (!shareToken || !password) {
       return jsonResponse({ message: 'share token and password are required' }, { status: 401 });
@@ -51,6 +53,10 @@ export async function GET(request: NextRequest, context: { params: { albumId: st
       return jsonResponse({ message: 'Album not found for this share token' }, { status: 404 });
     }
 
+    if (album.visibility !== 'public') {
+      return jsonResponse({ message: 'This album is no longer public' }, { status: 410 });
+    }
+
     const { data: albumItems, error: albumItemsError } = await admin
       .from('album_items')
       .select('media_item_id,added_at')
@@ -93,11 +99,11 @@ export async function GET(request: NextRequest, context: { params: { albumId: st
 
     const inviteeById = new Map((invitees ?? []).map((invitee) => [invitee.id, invitee]));
     const signedUrlExpirySec = 3600; // 1 hour for share-link viewers
-    const itemsWithPaths = mediaIds
+    const mediaIdsInOrder = mediaIds
       .map((mediaId) => (mediaRows ?? []).find((item) => item.id === mediaId))
       .filter(Boolean);
-    const itemsOrdered = await Promise.all(
-      itemsWithPaths.map(async (item) => {
+    const itemsWithPaths = await Promise.all(
+      mediaIdsInOrder.map(async (item) => {
         const inv = inviteeById.get(item.invitee_id);
         let url: string | null = null;
         if (item.storage_path) {
@@ -119,6 +125,24 @@ export async function GET(request: NextRequest, context: { params: { albumId: st
       }),
     );
 
+    const orderedItems = itemsWithPaths.slice().sort((a, b) => {
+      const aAt = new Date(a.uploadedAt || '').getTime();
+      const bAt = new Date(b.uploadedAt || '').getTime();
+      return sortDirection === 'oldest' ? aAt - bAt : bAt - aAt;
+    });
+
+    await recordEventMetric({
+      eventId: album.event_id,
+      action: 'gallery_open_success',
+      actor: 'guest',
+      actorId: null,
+      reason: 'public_gallery_open',
+      metadata: {
+        albumId: album.id,
+        mediaCount: orderedItems.length,
+      },
+    });
+
     await admin
       .from('share_links')
       .update({ view_count: (share.view_count || 0) + 1 })
@@ -128,9 +152,11 @@ export async function GET(request: NextRequest, context: { params: { albumId: st
       album: {
         id: album.id,
         title: album.title,
+        event_id: album.event_id,
         criteria: album.criteria,
       },
-      items: itemsOrdered,
+      items: orderedItems,
+      order: sortDirection,
     });
   } catch (error) {
     if (error instanceof ApiError) {
