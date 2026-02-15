@@ -1,51 +1,52 @@
-# Admin Route & Email System Restructure Plan
+# Super-Admin Route Plan
 
 **Created:** 2026-02-15
 **Status:** Plan — not yet implemented
-**Scope:** Super-admin route, role system, and separation of platform-level email management from host dashboard
+**Scope:** Platform-level admin dashboard for monitoring, configuration, and operations
 
 ---
 
 ## Problem statement
 
-The email system (contacts, bulk send, send history, unsubscribe management) is currently embedded in the **host dashboard** at `/dashboard/events/[eventId]`. This is wrong for two reasons:
+There is no way for the platform owner to see what's happening across Event Cam as a whole. Every view in the app is scoped to a single host and their events. As the platform grows, the operator needs:
 
-1. **The flywheel email flow is a platform concern.** Capturing guest emails, sending album deliveries to grow the user base, managing unsubscribes, and (eventually) nurture sequences are decisions made by the platform operator — not individual event hosts.
-2. **There is no admin route at all.** No way for the platform owner to see cross-event data, monitor email health, manage contacts globally, or control platform-level email behaviour.
+- **Visibility** — how many events, uploads, emails, revenue across the whole platform
+- **Operations** — flagged content, abuse reports, compliance status
+- **Configuration** — platform-wide settings (pricing, feature flags, email defaults)
+- **User oversight** — who is using the platform, which hosts are active, any issues
 
-### What stays on the host dashboard
+### What the admin is NOT
 
-| Feature | Why it belongs to the host |
+The admin does **not** manage individual events. Hosts manage their own events, contacts, albums, and email sends through the existing host dashboard. The admin route is a read-heavy operations dashboard with a small number of platform-level write actions (suspend user, resolve report, update config).
+
+### What stays on the host dashboard (unchanged)
+
+Everything that's there today:
+
+| Feature | Owner |
 |---|---|
-| "Share album" (generate link, send to a specific person) | Host decides who to share with |
-| Upload digest toggle + frequency | Host controls their own notification preference |
-| Reply-to address | Host personalisation |
-
-### What moves to admin
-
-| Feature | Why it belongs to admin |
-|---|---|
-| Guest contact list (all events, cross-platform) | Platform growth metric, not per-host data |
-| Bulk send ("email album to all contacts") | Platform-triggered flywheel action |
-| Send history / email log | Platform monitoring |
-| Unsubscribe management | Compliance is platform responsibility |
-| Email templates (hardcoded for now) | Platform branding, not host-editable |
-| Future: nurture sequences | Platform marketing automation |
-| Future: email analytics (open rates, bounces) | Platform health monitoring |
+| Create/edit/delete events | Host |
+| Manage invitees and guest list | Host |
+| Moderate uploaded media | Host |
+| Create albums, share links | Host |
+| "Email album to all contacts" (bulk send) | Host |
+| Guest contacts tab (per-event) | Host |
+| Email settings (digest, reply-to, auto-send) | Host |
+| Send album to single recipient | Host |
 
 ---
 
 ## 1. Role system
 
-### Approach: `admin_users` table
+### Approach: `admin_users` allow-list table
 
-A simple allow-list table rather than a role column on auth.users. This avoids touching the Supabase auth schema and keeps the admin list explicit and auditable.
+Simple table, no changes to Supabase auth schema. One role for now — `super_admin`. A second tier (`admin` — read-only) can be added later if needed.
 
 ```sql
 create table if not exists public.admin_users (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade unique,
-  role text not null default 'super_admin' check (role in ('super_admin', 'admin')),
+  role text not null default 'super_admin' check (role in ('super_admin')),
   granted_by uuid references auth.users (id),
   created_at timestamptz not null default now()
 );
@@ -53,14 +54,11 @@ create table if not exists public.admin_users (
 create index admin_users_user_idx on public.admin_users (user_id);
 ```
 
-**Role definitions:**
-
-| Role | Access |
-|---|---|
-| `super_admin` | Full admin access. Can grant/revoke other admins. |
-| `admin` | Full admin access except managing other admins. |
-
-**Seed:** The first admin is inserted manually via a migration or SQL console using the Supabase user ID of the platform owner.
+**Seed:** Insert the platform owner manually after deployment:
+```sql
+insert into public.admin_users (user_id, role)
+values ('<your-supabase-user-id>', 'super_admin');
+```
 
 ### Auth helper
 
@@ -82,286 +80,287 @@ export async function requireAdmin() {
 
   return { user, supabase, userId, adminRole: data.role as string };
 }
-
-export async function requireSuperAdmin() {
-  const result = await requireAdmin();
-  if (result.adminRole !== 'super_admin') {
-    throw new ApiError('Forbidden', 403);
-  }
-  return result;
-}
 ```
 
 ---
 
-## 2. Admin route structure
+## 2. What the admin dashboard shows
+
+### 2a. Platform overview (home)
+
+Top-level numbers answering "how is the platform doing":
+
+| Metric | Source |
+|---|---|
+| Total events (by status: draft / paid / published) | `events` table |
+| Total hosts (unique `host_id` values) | `events` table |
+| Total photos uploaded | `media_items` count |
+| Total photos approved / rejected / pending | `media_items` by `moderation_state` |
+| Total albums created | `albums` count |
+| Total guest contacts captured | `guest_contacts` count |
+| Marketing consent rate | `guest_contacts` where `marketing_consent = true` / total |
+| Total emails sent (by type) | `email_sends` count grouped by `email_type` |
+| Unsubscribe rate | `guest_contacts` where `unsubscribed_at is not null` / total |
+| Revenue (total, this month) | `billing_records` sum |
+
+Plus a recent activity feed: last 20 events created, last 20 emails sent, last 20 uploads.
+
+### 2b. Events list
+
+Read-only bird's-eye view of all events on the platform.
+
+| Column | Source |
+|---|---|
+| Event name | `events.name` |
+| Host email | `auth.users.email` via `events.host_id` |
+| Status | `events.status` |
+| Type | `events.event_type` |
+| Guest count | `invitees` count |
+| Upload count | `media_items` count |
+| Contact count | `guest_contacts` count |
+| Created | `events.created_at` |
+
+Search by event name or host email. Filter by status. Paginated.
+
+Click-through shows a read-only detail view (event info, guest list, media stats, albums, email activity for that event).
+
+### 2c. Users (hosts) list
+
+All users who have created at least one event.
+
+| Column | Source |
+|---|---|
+| Email | `auth.users.email` |
+| Events created | count of `events` |
+| Total uploads (across their events) | `media_items` count |
+| Total revenue | `billing_records` sum |
+| Signed up | `auth.users.created_at` |
+
+Search by email. Paginated.
+
+### 2d. Email health
+
+Platform-wide email delivery overview. Answers "are our emails working":
+
+| Metric | Source |
+|---|---|
+| Emails sent today / this week / this month | `email_sends` count by date |
+| Breakdown by type (album_delivery, host_event_published, host_upload_digest) | `email_sends` grouped by `email_type` |
+| Total contacts | `guest_contacts` count |
+| Contacts with consent | `guest_contacts` where `marketing_consent = true` |
+| Unsubscribed contacts | `guest_contacts` where `unsubscribed_at is not null` |
+| Recent sends log (last 50) | `email_sends` ordered by `created_at` desc |
+
+No per-email open/click tracking (use Resend dashboard for that until volume justifies it).
+
+### 2e. Reports / flagged content
+
+Content that guests or the system has flagged:
+
+| Column | Source |
+|---|---|
+| Media item | `media_items` where reported or flagged |
+| Event name | join to `events` |
+| Reporter | from `event_action_logs` where `action_type = 'media_reported'` |
+| Status | pending review / resolved |
+| Reported at | timestamp |
+
+Admin actions: view media, mark resolved, delete media (hard remove from storage).
+
+### 2f. Platform configuration (future)
+
+Settings that apply platform-wide. Not per-event. Deferred until there are actual settings to configure.
+
+Potential candidates:
+- Default pricing per invitee (`fee_per_invite_cents`)
+- Global email footer text
+- Maintenance mode toggle
+- Feature flags (e.g., open events enabled)
+
+---
+
+## 3. Admin route structure
 
 ### URL layout
 
 ```
-/admin                          → Admin dashboard (overview stats)
-/admin/emails                   → Email management hub
-/admin/emails/contacts          → Cross-event contact list
-/admin/emails/sends             → Global send history / email log
-/admin/emails/templates         → View email templates (read-only for now)
-/admin/events                   → All events on the platform
-/admin/events/[eventId]         → Admin view of a specific event
-/admin/users                    → User management (future)
+/admin                          → Platform overview dashboard
+/admin/events                   → All events list (read-only)
+/admin/events/[eventId]         → Event detail (read-only)
+/admin/users                    → All hosts list (read-only)
+/admin/email-health             → Email delivery overview
+/admin/reports                  → Flagged content / abuse reports
 ```
 
 ### File structure
 
 ```
 src/app/admin/
-├── layout.tsx                  → Admin layout with nav, auth gate
-├── page.tsx                    → Dashboard: key stats, recent activity
-├── emails/
-│   ├── page.tsx                → Email hub: quick stats + links to sub-pages
-│   ├── contacts/
-│   │   └── page.tsx            → Cross-event contact list with search, filter, export
-│   └── sends/
-│       └── page.tsx            → Paginated email log with filters (type, status, date)
-└── events/
-    ├── page.tsx                → All events list with search + status filter
-    └── [eventId]/
-        └── page.tsx            → Admin event detail (contacts, sends, albums for one event)
+├── layout.tsx                  → Auth gate + sidebar nav
+├── page.tsx                    → Platform overview dashboard
+├── events/
+│   ├── page.tsx                → All events list
+│   └── [eventId]/
+│       └── page.tsx            → Event detail (read-only)
+├── users/
+│   └── page.tsx                → All hosts list
+├── email-health/
+│   └── page.tsx                → Email delivery overview
+└── reports/
+    └── page.tsx                → Flagged content queue
 ```
 
-### Admin layout (`/admin/layout.tsx`)
+### Admin layout
 
-- Client component that checks admin status on mount
-- Redirects to `/dashboard` if not admin
-- Renders a sidebar/top-nav with links to admin sections
-- Shows current admin user info
+- Server-side or client-side auth check (calls `requireAdmin()` equivalent)
+- Redirects to `/dashboard` if not an admin
+- Sidebar with links to each section
+- Shows "Admin" badge + current user
 
 ---
 
-## 3. Admin API routes
+## 4. Admin API routes
 
-New API routes under `/api/admin/` — all gated by `requireAdmin()`.
+All gated by `requireAdmin()`. All use `createSupabaseAdminClient()` (service role) since they query across all hosts/events.
 
-### 3a. Admin stats
+### 4a. Platform stats
 
 **`GET /api/admin/stats`**
 
-Returns platform-level metrics for the admin dashboard.
+Returns aggregate numbers for the overview dashboard. Single endpoint, multiple counts.
 
 ```json
 {
-  "totalEvents": 42,
-  "totalContacts": 1280,
-  "totalEmailsSent": 3400,
-  "contactsWithConsent": 980,
-  "unsubscribedCount": 45,
-  "recentSends": [{ "id": "...", "recipient_email": "...", "email_type": "...", "created_at": "..." }]
+  "events": { "total": 42, "draft": 10, "paid": 8, "published": 24 },
+  "uploads": { "total": 3200, "approved": 2800, "rejected": 150, "pending": 250 },
+  "albums": 65,
+  "contacts": { "total": 1280, "withConsent": 980, "unsubscribed": 45 },
+  "emails": { "total": 3400, "album_delivery": 2100, "host_event_published": 300, "host_upload_digest": 1000 },
+  "revenue": { "totalCents": 420000, "thisMonthCents": 85000 },
+  "hosts": 18
 }
 ```
 
-### 3b. Contacts (cross-event)
-
-**`GET /api/admin/contacts`**
-
-Query params: `?page=1&limit=50&search=gmail&event_id=...&consent=true&unsubscribed=false`
-
-Returns paginated contact list across all events with:
-- Email, display name, event name, consent status, unsubscribe status
-- Total count for pagination
-- CSV export via `?format=csv`
-
-**`DELETE /api/admin/contacts/[contactId]`**
-
-Unsubscribe a specific contact (sets `unsubscribed_at`).
-
-### 3c. Email sends (global log)
-
-**`GET /api/admin/sends`**
-
-Query params: `?page=1&limit=50&type=album_delivery&status=sent&from=2026-01-01&to=2026-02-15`
-
-Returns paginated send history across all events with:
-- Recipient, email type, event name, status, resend_id, timestamp
-- Total count for pagination
-
-### 3d. Events list (admin view)
+### 4b. Events list
 
 **`GET /api/admin/events`**
 
 Query params: `?page=1&limit=50&search=wedding&status=published`
 
-Returns all events with host email, contact count, send count, status.
+Returns paginated events with host email, guest/upload/contact counts.
 
-### 3e. Bulk send trigger
+### 4c. Event detail
 
-**`POST /api/admin/events/[eventId]/send-album-to-contacts`**
+**`GET /api/admin/events/[eventId]`**
 
-Admin-triggered bulk send for a specific event's album. Same logic as the current `send-to-guests` endpoint but accessible only to admins.
+Returns full event data: event info, invitees count, media stats, albums, contacts, email sends — all read-only.
 
-Body: `{ "albumId": "...", "password": "..." }`
+### 4d. Users list
 
----
+**`GET /api/admin/users`**
 
-## 4. Admin UI pages
+Query params: `?page=1&limit=50&search=gmail`
 
-### 4a. Admin dashboard (`/admin/page.tsx`)
+Returns paginated host list with event counts and revenue.
 
-Overview cards:
-- Total events (by status breakdown)
-- Total guest contacts captured (with consent %)
-- Total emails sent (by type breakdown)
-- Unsubscribe rate
-- Recent activity feed (last 10 email sends)
+### 4e. Email health
 
-### 4b. Email contacts page (`/admin/emails/contacts/page.tsx`)
+**`GET /api/admin/email-health`**
 
-- Search bar (search by email or event name)
-- Filters: consent status, unsubscribed, event
-- Table: email, display name, event name, consent, subscribed/unsubscribed, emails received, captured date
-- Bulk export CSV button
-- Per-row: unsubscribe button
+Returns email delivery stats (counts by type, by date range) and recent sends.
 
-### 4c. Email sends page (`/admin/emails/sends/page.tsx`)
+### 4f. Reports
 
-- Filters: email type, date range, event
-- Table: recipient, email type, event name, status, resend_id, sent date
-- Pagination
+**`GET /api/admin/reports`**
 
-### 4d. Events list page (`/admin/events/page.tsx`)
+Returns flagged/reported media items.
 
-- Search + status filter
-- Table: event name, host email, status, guest count, contact count, emails sent, created date
-- Click through to admin event detail
+**`POST /api/admin/reports/[mediaId]/resolve`**
 
-### 4e. Admin event detail (`/admin/events/[eventId]/page.tsx`)
+Mark a report as resolved.
 
-Admin-specific view of a single event:
-- Event info header (name, host, status, dates)
-- Contacts for this event (same as current contacts tab, but admin-accessible)
-- Send history for this event
-- Albums with admin bulk-send trigger
-- Email settings (read-only view of host's settings)
+**`DELETE /api/admin/reports/[mediaId]`**
+
+Delete reported media from storage and database.
 
 ---
 
-## 5. Changes to host dashboard
+## 5. Implementation order
 
-### Remove from host dashboard
-
-- **Contacts tab** — remove entirely. Hosts don't need to manage the platform's contact list.
-- **"Email album to all contacts" button** — remove from albums tab. This is an admin action.
-- **Contact-related state** — remove `contacts`, `contactsLoading`, `exportingContacts`, `removingContactId`, `loadContacts()`, `exportContacts()`, `removeContact()` and all contact tab UI.
-
-### Keep on host dashboard
-
-- **Email tab** — keep but simplify to only host-facing settings:
-  - Upload digest toggle + frequency
-  - Reply-to address
-  - Remove `album_auto_send` toggle (this is a platform decision)
-- **Album section** — keep "Generate share link" and "Send album email" (single recipient). Remove bulk send.
-- **Single-recipient email send** — host sends an album link to a specific person they know. This stays.
-
-### Rename email tab
-
-Rename from "Email" to "Notifications" since it now only controls the host's own notification preferences.
-
----
-
-## 6. Database migration
-
-Single migration file: `supabase/migrations/20260216000000_add_admin_users.sql`
-
-```sql
--- Admin users allow-list
-create table if not exists public.admin_users (
-  id uuid primary key default gen_random_uuid(),
-  user_id uuid not null references auth.users (id) on delete cascade unique,
-  role text not null default 'super_admin' check (role in ('super_admin', 'admin')),
-  granted_by uuid references auth.users (id),
-  created_at timestamptz not null default now()
-);
-
-create index admin_users_user_idx on public.admin_users (user_id);
-```
-
-**Note:** The first super_admin must be seeded manually after deployment:
-```sql
-insert into public.admin_users (user_id, role)
-values ('<your-supabase-user-id>', 'super_admin');
-```
-
----
-
-## 7. Implementation order
-
-### Phase 1 — Admin foundation (build first)
+### Phase 1 — Foundation
 
 | Step | What | Files |
 |---|---|---|
 | 1 | Add `admin_users` migration | `supabase/migrations/20260216000000_add_admin_users.sql` |
-| 2 | Add `requireAdmin()` and `requireSuperAdmin()` to auth helpers | `src/lib/auth.ts` |
-| 3 | Create admin layout with auth gate and nav | `src/app/admin/layout.tsx` |
-| 4 | Build admin stats API | `src/app/api/admin/stats/route.ts` |
-| 5 | Build admin dashboard page with overview cards | `src/app/admin/page.tsx` |
+| 2 | Add `requireAdmin()` to auth helpers | `src/lib/auth.ts` |
+| 3 | Create admin layout with auth gate and sidebar | `src/app/admin/layout.tsx` |
+| 4 | Build platform stats API | `src/app/api/admin/stats/route.ts` |
+| 5 | Build overview dashboard page | `src/app/admin/page.tsx` |
 
-### Phase 2 — Email management in admin
-
-| Step | What | Files |
-|---|---|---|
-| 6 | Build admin contacts API (paginated, searchable, CSV export) | `src/app/api/admin/contacts/route.ts` |
-| 7 | Build admin contacts page | `src/app/admin/emails/contacts/page.tsx` |
-| 8 | Build admin sends API (paginated, filterable) | `src/app/api/admin/sends/route.ts` |
-| 9 | Build admin sends page | `src/app/admin/emails/sends/page.tsx` |
-| 10 | Build admin email hub page | `src/app/admin/emails/page.tsx` |
-
-### Phase 3 — Admin event management
+### Phase 2 — Events + users visibility
 
 | Step | What | Files |
 |---|---|---|
-| 11 | Build admin events list API | `src/app/api/admin/events/route.ts` |
-| 12 | Build admin events list page | `src/app/admin/events/page.tsx` |
-| 13 | Build admin event detail page (with contacts, sends, bulk send) | `src/app/admin/events/[eventId]/page.tsx` |
-| 14 | Build admin bulk send API | `src/app/api/admin/events/[eventId]/send-album-to-contacts/route.ts` |
+| 6 | Build admin events list API | `src/app/api/admin/events/route.ts` |
+| 7 | Build admin events list page | `src/app/admin/events/page.tsx` |
+| 8 | Build admin event detail API | `src/app/api/admin/events/[eventId]/route.ts` |
+| 9 | Build admin event detail page (read-only) | `src/app/admin/events/[eventId]/page.tsx` |
+| 10 | Build admin users list API | `src/app/api/admin/users/route.ts` |
+| 11 | Build admin users list page | `src/app/admin/users/page.tsx` |
 
-### Phase 4 — Clean up host dashboard
+### Phase 3 — Email health + reports
 
 | Step | What | Files |
 |---|---|---|
-| 15 | Remove contacts tab from host event detail page | `src/app/dashboard/events/[eventId]/page.tsx` |
-| 16 | Remove "email album to all contacts" button from albums | `src/app/dashboard/events/[eventId]/page.tsx` |
-| 17 | Simplify email tab → "Notifications" (digest + reply-to only) | `src/app/dashboard/events/[eventId]/page.tsx` |
-| 18 | Remove `album_auto_send` toggle (admin controls this) | `src/app/dashboard/events/[eventId]/page.tsx` |
-| 19 | Clean up unused state, callbacks, and imports | `src/app/dashboard/events/[eventId]/page.tsx` |
+| 12 | Build email health API | `src/app/api/admin/email-health/route.ts` |
+| 13 | Build email health page | `src/app/admin/email-health/page.tsx` |
+| 14 | Build reports API (list + resolve + delete) | `src/app/api/admin/reports/route.ts` |
+| 15 | Build reports page | `src/app/admin/reports/page.tsx` |
 
-### Phase 5 — Polish and future
+### Phase 4 — Future (deferred)
 
 | Step | What |
 |---|---|
-| 20 | Add admin user management page (grant/revoke admin) |
-| 21 | Add email template preview page in admin |
-| 22 | Wire `album_auto_send` as a platform-level setting in admin |
-| 23 | Add Resend webhook integration for delivery/bounce tracking |
+| 16 | Platform configuration page (pricing, feature flags) |
+| 17 | Resend webhook integration (bounce/complaint tracking in email health) |
+| 18 | Admin audit log |
+| 19 | Read-only admin tier (`admin` role vs `super_admin`) |
 
 ---
 
-## 8. Security considerations
+## 6. Security considerations
 
-- All `/api/admin/*` routes must call `requireAdmin()` before any data access
-- Admin layout must client-side check admin status and redirect non-admins
-- Admin API routes use `createSupabaseAdminClient()` (service role) since they query across all events, not just the current user's
-- No RLS bypass needed — admin routes already use the service role client
-- Admin actions should be logged to `event_action_logs` with `actor = 'admin'` (requires adding `'admin'` to the actor check constraint if one exists)
+- All `/api/admin/*` routes call `requireAdmin()` before any data access
+- All admin queries use `createSupabaseAdminClient()` (service role key)
+- Admin layout redirects non-admins to `/dashboard`
+- Admin actions on reports (delete media) should be logged in `event_action_logs`
+- The admin route is **read-heavy** — the only write actions are resolving/deleting reported content and (future) platform config changes
+- No admin route modifies host events, albums, contacts, or email sends
 
 ---
 
-## 9. What NOT to build yet
+## 7. What NOT to build
 
-| Item | Why defer |
+| Item | Why |
 |---|---|
-| Admin user invitation flow (email-based) | Manual SQL seed is fine for 1-2 admins |
-| Email template editor | Hardcoded templates work until proven otherwise |
-| Real-time email analytics | Use Resend dashboard until volume justifies custom UI |
-| Admin audit log | Low priority — can add when multiple admins exist |
-| Admin-to-host messaging | Not needed for MVP |
+| Admin managing host events | Hosts manage their own events |
+| Admin sending emails on behalf of hosts | Hosts send their own emails |
+| Admin managing guest contacts | Hosts manage their own contacts |
+| Admin creating/editing albums | Hosts manage their own albums |
+| Email template editor | Hardcoded templates are fine |
+| Real-time email analytics (opens, clicks) | Use Resend dashboard |
+| Admin user invitation flow | Manual SQL seed is fine for 1 admin |
+| Platform config page | No settings to configure yet |
 
 ---
 
-*Phase 1 is the priority. Everything else follows from having an admin role check and a protected route.*
+## 8. Relationship to existing plans
+
+| Existing plan | Relationship |
+|---|---|
+| `EMAIL-FLOWS-PLAN.md` | No changes. The email system is host-facing and stays on the host dashboard. Admin only gets a read-only email health view. |
+| `COMPLIANCE-PREFLIGHT.md` | Admin reports page helps close the "Abuse triage SLA" TODO item by giving the platform owner a queue to work through. |
+
+---
+
+*Phase 1 is the priority. Everything else follows from having an admin role check and a protected route with aggregate stats.*
