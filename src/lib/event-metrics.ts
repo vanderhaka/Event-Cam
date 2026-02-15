@@ -11,7 +11,8 @@ export type EventMetricAction =
   | 'event_disabled'
   | 'media_deleted'
   | 'album_hidden'
-  | 'email_capture';
+  | 'email_capture'
+  | 'album_email_sent';
 
 export async function recordEventMetric(params: {
   eventId: string;

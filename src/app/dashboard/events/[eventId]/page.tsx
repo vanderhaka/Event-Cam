@@ -66,6 +66,8 @@ export default function EventDetailPage() {
   const [mediaActionBusy, setMediaActionBusy] = useState<string | null>(null);
   const [albumActionBusy, setAlbumActionBusy] = useState<string | null>(null);
   const [disablingUploads, setDisablingUploads] = useState(false);
+  const [emailRecipient, setEmailRecipient] = useState('');
+  const [sendingEmail, setSendingEmail] = useState<string | null>(null);
 
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
@@ -513,6 +515,33 @@ export default function EventDetailPage() {
       }
     } else {
       showStatus(payload.message || 'Could not create share link', 'error');
+    }
+  }
+
+  async function sendAlbumEmail(albumId: string) {
+    const to = emailRecipient.trim();
+    if (!to) {
+      showStatus('Enter a recipient email address', 'error');
+      return;
+    }
+
+    const pwd = sharePassword || 'changeme';
+    setSendingEmail(albumId);
+    try {
+      const response = await fetchWithAuth(`/api/albums/${albumId}/send-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to, password: pwd }),
+      });
+      const payload = await response.json();
+      if (response.ok) {
+        showStatus(`Album email sent to ${to}`, 'success');
+        setEmailRecipient('');
+      } else {
+        showStatus(payload.message || 'Could not send email', 'error');
+      }
+    } finally {
+      setSendingEmail(null);
     }
   }
 
@@ -1294,6 +1323,24 @@ export default function EventDetailPage() {
                     >
                       {albumActionBusy === album.id ? 'Hiding…' : 'Hide album'}
                     </button>
+                    <div className="row" style={{ gap: '0.5rem', width: '100%', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                      <input
+                        className="input"
+                        type="email"
+                        placeholder="Recipient email"
+                        value={emailRecipient}
+                        onChange={(e) => setEmailRecipient(e.target.value)}
+                        style={{ flex: 1, minWidth: '180px' }}
+                      />
+                      <button
+                        type="button"
+                        className="btn btn-primary btn-sm"
+                        onClick={() => sendAlbumEmail(album.id)}
+                        disabled={sendingEmail === album.id || !emailRecipient.trim()}
+                      >
+                        {sendingEmail === album.id ? 'Sending…' : 'Send album email'}
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>

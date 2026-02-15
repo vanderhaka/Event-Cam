@@ -19,6 +19,8 @@ export default function PublicAlbumPage() {
   const [sortOrder, setSortOrder] = useState<SortOrder>('newest');
   const [preview, setPreview] = useState<any | null>(null);
   const [manualShareLink, setManualShareLink] = useState('');
+  const [downloading, setDownloading] = useState<string | null>(null);
+  const [downloadingAll, setDownloadingAll] = useState(false);
 
   const orderedItems = useMemo(() => {
     if (!payload?.items) {
@@ -139,6 +141,46 @@ export default function PublicAlbumPage() {
     }
   }
 
+  async function downloadFile(url: string, filename: string, itemId?: string) {
+    if (itemId) setDownloading(itemId);
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+    } catch {
+      // Fallback: open in new tab
+      window.open(url, '_blank');
+    } finally {
+      if (itemId) setDownloading(null);
+    }
+  }
+
+  async function downloadAll() {
+    setDownloadingAll(true);
+    try {
+      const response = await fetch(
+        `/api/albums/${albumId}/download?token=${encodeURIComponent(token)}&password=${encodeURIComponent(password)}`,
+      );
+      if (!response.ok) return;
+      const { items } = await response.json();
+      for (const item of items) {
+        if (item.downloadUrl) {
+          await downloadFile(item.downloadUrl, item.name);
+          await new Promise((resolve) => setTimeout(resolve, 600));
+        }
+      }
+    } finally {
+      setDownloadingAll(false);
+    }
+  }
+
   function openPreview(item: any) {
     if (!item.url) {
       return;
@@ -217,6 +259,14 @@ export default function PublicAlbumPage() {
               <button type="button" className="btn btn-subtle btn-sm" onClick={copyShareUrl}>
                 Copy share link
               </button>
+              <button
+                type="button"
+                className="btn btn-subtle btn-sm"
+                onClick={downloadAll}
+                disabled={downloadingAll || orderedItems.length === 0}
+              >
+                {downloadingAll ? 'Downloading...' : 'Download all'}
+              </button>
             </div>
             {copyMessage && <p className="muted" style={{ fontSize: '0.85rem', margin: '0.5rem 0 0' }}>{copyMessage}</p>}
             {manualShareLink ? (
@@ -251,15 +301,24 @@ export default function PublicAlbumPage() {
                 <p className="muted" style={{ margin: 0, fontSize: '0.85rem' }}>
                   {item.invitedBy?.display_name || 'Anonymous'}
                 </p>
-                <button
-                  type="button"
-                  className="btn btn-subtle btn-sm"
-                  onClick={() => report(item.id)}
-                  disabled={reporting === item.id}
-                  style={{ marginTop: '0.5rem' }}
-                >
-                  {reporting === item.id ? 'Submitting…' : 'Report'}
-                </button>
+                <div className="row" style={{ gap: '0.5rem', marginTop: '0.5rem' }}>
+                  <button
+                    type="button"
+                    className="btn btn-subtle btn-sm"
+                    onClick={() => item.url && downloadFile(item.url, item.name || `photo-${item.id}`, item.id)}
+                    disabled={downloading === item.id || !item.url}
+                  >
+                    {downloading === item.id ? 'Saving...' : 'Download'}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-subtle btn-sm"
+                    onClick={() => report(item.id)}
+                    disabled={reporting === item.id}
+                  >
+                    {reporting === item.id ? 'Submitting…' : 'Report'}
+                  </button>
+                </div>
               </div>
             </article>
           ))}
