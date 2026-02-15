@@ -22,7 +22,7 @@ The current model is simple: someone creates an event (wedding, birthday, engage
 |-------------|-----|-----------|---------------|
 | **Standard** (current) | Couples, party hosts | One event, one-time purchase | $2/guest ($49 min) |
 | **Pro** | Photographers, planners, DJs, celebrants, coordinators, bands, dress shops, florists — any wedding vendor | Resell or bundle Event Cam into their own packages; earn credit or cash | 40% base discount ($1.20/guest, deeper with recruitment network); 20% referral credit ($0.40/guest). Credits applied to own events or cashed out at $100+ via Stripe Connect. |
-| **Venue** (future) | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription ($39/$89/$179/mo) |
+| **Venue** (future) | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription ($99/$199/$399/mo) |
 
 ---
 
@@ -54,7 +54,7 @@ Any business that hosts events regularly and wants to offer Event Cam as a built
 | **Centralized billing** | One invoice, one payment method, one dashboard. Not 50 separate Stripe checkouts. |
 | **Event archive** | Browse past events, pull up old albums, re-share links. Useful for marketing ("check out last week's event!"). |
 | **Analytics** | Upload volume, participation rates, peak times, popular events. Venues love data for marketing. |
-| **Guest email access** | Venues want the guest email list for their own marketing (with appropriate consent). |
+| **Guest email access** | Event Cam retains guest data. Venues do not receive guest email lists — simplifies legal/GDPR compliance. |
 
 ### Pricing Ideas
 
@@ -62,9 +62,9 @@ Any business that hosts events regularly and wants to offer Event Cam as a built
 
 | Tier | Events/Month | Price/Month | Notes |
 |------|-------------|-------------|-------|
-| **Starter** | Up to 4 | $39/mo | Small pub doing weekly events |
-| **Growth** | Up to 15 | $89/mo | Active venue, multiple events/week |
-| **Unlimited** | Unlimited | $179/mo | Large venue or hotel with daily events |
+| **Starter** | Up to 4 | $99/mo | Small pub doing weekly events |
+| **Growth** | Up to 12 | $199/mo | Active venue, multiple events/week |
+| **Unlimited** | Unlimited | $399/mo | Large venue or hotel with daily events |
 
 - All tiers include unlimited guests per event (no per-guest charge — the venue is paying for access, not per-head).
 - Venue branding included at Growth+.
@@ -317,8 +317,8 @@ Over 24 months, the mix should shift toward Pro and Venue as those channels comp
 ## Open Questions
 
 ### Venue
-- [ ] What's the right pricing model? Subscription vs. per-event vs. per-guest? Need to talk to 5–10 venue owners.
-- [ ] Do venues want guest email data for their own marketing? If yes, how do we handle consent/GDPR?
+- [x] ~~What's the right pricing model?~~ Decision (P2-13, 2026-02-15): Monthly subscription at $99/$199/$399. Events/month tiers (4/12/unlimited). Provisional — pending discovery validation after wedding MRR gate ($20-25K) clears.
+- [x] ~~Do venues want guest email data for their own marketing?~~ Decision (P2-13, 2026-02-15): No. Event Cam retains all guest data. Venues do not get email lists. Simplifies legal/GDPR.
 - [ ] Should venue events support the AI watermark? (Venue logo instead of couple's names?)
 - [ ] How do "always-on" QR codes work technically? Does the QR route to a venue landing page that redirects to the active event?
 - [ ] Do venues want a public-facing gallery ("See photos from last Friday's event") or is everything private?

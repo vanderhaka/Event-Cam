@@ -225,9 +225,9 @@ Venues need recurring access, not one-time event purchases. They host events wee
 
 | Tier | Events/Month | Uploaders/Event | Price/Month | Annual (20% off) |
 |------|-------------|-----------------|-------------|-------------------|
-| **Starter** | Up to 4 | Up to 100 each | $39/mo | $374/yr ($31/mo) |
-| **Growth** | Up to 12 | Up to 200 each | $89/mo | $854/yr ($71/mo) |
-| **Unlimited** | Unlimited | Up to 500 each | $179/mo | $1,718/yr ($143/mo) |
+| **Starter** | Up to 4 | Up to 100 each | $99/mo | $950/yr ($79/mo) |
+| **Growth** | Up to 12 | Up to 200 each | $199/mo | $1,910/yr ($159/mo) |
+| **Unlimited** | Unlimited | Up to 500 each | $399/mo | $3,830/yr ($319/mo) |
 | **Enterprise** | Unlimited | Unlimited | Custom | Custom |
 
 ### What's Included at Every Tier
@@ -239,7 +239,7 @@ Venues need recurring access, not one-time event purchases. They host events wee
 - Moderation dashboard
 - AI watermark (venue name/logo or custom per event)
 - Filters
-- Guest email capture (venue gets access to the email list for their own marketing, with consent)
+- Guest email capture (Event Cam retains guest data; venues do not receive guest email lists)
 - Album hosting for 6 months per event
 
 ### Growth+ Adds
@@ -257,9 +257,9 @@ Venues need recurring access, not one-time event purchases. They host events wee
 
 ### Venue Pricing Logic
 
-A pub running 4 events/month at $39/mo = $9.75/event. If they average 60 uploaders per event, that's $0.16/uploader. Massively cheaper than the per-event or per-guest model — which is the point. Venues get volume pricing because they commit to recurring revenue.
+A pub running 4 events/month at $99/mo = $24.75/event. If they average 60 uploaders per event, that's $0.41/uploader. Cheaper than the per-event or per-guest model — which is the point. Venues get volume pricing because they commit to recurring revenue.
 
-A hotel running unlimited events at $179/mo hosting 15 events/month = $11.93/event. At 150 uploaders average = $0.08/uploader. Incredible value, and the hotel is paying $2,148/year — a tiny line item for a hotel's marketing budget.
+A hotel running unlimited events at $399/mo hosting 15 events/month = $26.60/event. At 150 uploaders average = $0.18/uploader. Strong value, and the hotel is paying $4,788/year — a small line item for a hotel's marketing budget.
 
 ### Why Monthly (Not Per-Event for Venues)
 
@@ -456,7 +456,7 @@ How to present all of this without overwhelming people. The pricing page needs t
 - CTA: "Get a custom quote" (for 10k+) or "Start setup" (for smaller)
 
 **Tab 4: Venues & Spaces (Future)**
-- 3 plan cards: Starter ($39/mo), Growth ($89/mo), Unlimited ($179/mo)
+- 3 plan cards: Starter ($99/mo), Growth ($199/mo), Unlimited ($399/mo)
 - "For businesses that host events regularly"
 - CTA: "Start 14-day free trial"
 
@@ -528,7 +528,7 @@ Even at $2/guest, Event Cam is cheaper than disposable cameras and massively che
 ### Venue Accounts
 - [ ] Subscription pricing requires handling failed payments, downgrades, and cancellations. Is the billing infrastructure ready?
 - [ ] Do venues want to charge their clients for Event Cam, or absorb it as an amenity? This affects whether we need a venue-to-client billing layer.
-- [ ] Should venue tier limits be based on events/month, uploaders/month, or total uploads/month?
+- [x] ~~Should venue tier limits be based on events/month, uploaders/month, or total uploads/month?~~ Decision (P2-13, 2026-02-15): Events/month. Starter: 4, Growth: 12, Unlimited: unlimited.
 - [ ] What happens to past event data if a venue downgrades or cancels? Grace period? Export option?
 
 ### Pro Accounts
