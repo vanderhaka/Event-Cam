@@ -96,9 +96,9 @@ Every Pro starts at the base rate: **$1.20/guest (40% off retail)**. When a Pro 
 
 **Cap:** Maximum total discount is **55% ($0.90/guest floor)**. Nobody goes lower.
 
-**"Active" definition:** Completed at least 1 paid event in the trailing 90 days.
+**"Active" definition:** Completed at least 1 paid event in the trailing 12 months.
 
-**Recalculation:** Monthly, based on trailing 90-day activity.
+**Recalculation:** Monthly, based on trailing 12-month activity.
 
 **Applies to:** Path 1 only (Pro-created events). Path 2 referral credits are fixed at 20%.
 
@@ -494,7 +494,7 @@ At Phase 3, Pro events generate ~195,000 guest emails/month. Even excluding whit
 - [x] **$1.20 or $1.40?** Decision: $1.20/guest (40% off). This is the canonical base Pro rate.
 - [x] **Promo code discount for couples — 10% or 0%?** Decision: No couple discount. Pro earns 20% credit ($0.40/guest). Couple pays standard $2/guest.
 - [x] **Payout model?** Decision: **Credits-first.** All Pro rewards are wholesale discounts (via recruitment) or credits (via referrals). Credits can be cashed out via Stripe Connect Express at $100+ minimum balance (monthly). Serves connector Pros who never create their own events.
-- [x] **Pro-to-Pro referrals?** Decision: **Yes — 3-tier recruitment discount system.** Tier 1: +2%, Tier 2: +1%, Tier 3: +0.5% per active downstream Pro. Cap: 55% ($0.90/guest floor). Active = 1 paid event in 90 days.
+- [x] **Pro-to-Pro referrals?** Decision: **Yes — 3-tier recruitment discount system.** Tier 1: +2%, Tier 2: +1%, Tier 3: +0.5% per active downstream Pro. Cap: 55% ($0.90/guest floor). Active = 1 paid event in 12 months.
 - [x] **Referral credit rate?** Decision: **20% ($0.40/guest)**. Conservative — can increase later. Credits never expire, not cashable.
 - [ ] **Pro vetting:** Should anyone be able to create a Pro account, or require approval? Open signup is better for growth. Maybe add verification later (proof of business, portfolio link) for the directory listing only.
 - [ ] **Can a couple become a Pro?** If someone uses the product for their own wedding and loves it, they might want to start referring friends. Allow upgrade from Standard to Pro with one click.

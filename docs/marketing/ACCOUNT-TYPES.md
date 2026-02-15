@@ -333,7 +333,7 @@ Over 24 months, the mix should shift toward Pro and Venue as those channels comp
 ### General
 - [ ] Build priority: Which account type ships first? Pro is probably simpler (referral link + credit tracking + recruitment tracking) and has faster payback. Venue accounts are more complex but higher long-term value.
 - [ ] Do Standard accounts need an upgrade path? ("You started as a couple, now you're planning events professionally — upgrade to Pro.")
-- [ ] How do we prevent Pros from gaming the system? (e.g., creating fake Pro accounts to inflate recruitment discount — mitigated by "active = 1 paid event in 90 days" requirement)
+- [ ] How do we prevent Pros from gaming the system? (e.g., creating fake Pro accounts to inflate recruitment discount — mitigated by "active = 1 paid event in 12 months" requirement)
 
 ---
 

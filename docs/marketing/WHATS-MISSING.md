@@ -32,7 +32,7 @@
 - **Pro-to-couple referral:** 20% credit ($0.40/guest). Never expires, applied to future events.
 - **Payout option:** Credits above $100 can be cashed out via Stripe Connect Express (monthly). Serves connector Pros (bands, dress shops, florists) who refer but never create their own events.
 - **Attribution:** 90-day cookie for client referrals. Pro-to-Pro recruitment is permanent (first recruiter wins).
-- **Anti-abuse:** "Active" = 1 paid event in 90 days. One upline per Pro. Different payment method required on self-referral attempts.
+- **Anti-abuse:** "Active" = 1 paid event in 12 months. One upline per Pro. Different payment method required on self-referral attempts.
 
 ---
 
