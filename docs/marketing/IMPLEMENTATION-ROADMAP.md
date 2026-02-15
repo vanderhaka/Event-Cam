@@ -102,21 +102,21 @@ Current status was taken from code inspection and existing tests.
 | Step 2 | DONE | 2026-02-15 | `test -f 'src/app/api/invite/[inviteToken]/route.ts'` |
 | Step 3 | DONE | 2026-02-15 | `test -f 'src/app/api/invite/[inviteToken]/media/route.ts'` |
 | Step 4 | DONE | 2026-02-15 | `rg -n "upload_failed|reason|unsupported_mime_type|file_too_large" 'src/app/api/invite/[inviteToken]/media/route.ts'` |
-| Step 5 | NOT STARTED | 2026-02-15 | `rg -n "idempot|Idempotency|idempotent" 'src/app/api/invite/[inviteToken]/media/route.ts'` |
+| Step 5 | DONE | 2026-02-15 | `rg -n "idempot|Idempotency|idempotent" 'src/app/api/invite/[inviteToken]/media/route.ts'` |
 | Step 6 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/media/[mediaId]/route.ts' && test -f 'src/app/api/events/[eventId]/albums/[albumId]/hide/route.ts'` |
 | Step 7 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/media/[mediaId]/approve/route.ts' && test -f 'src/app/api/events/[eventId]/media/[mediaId]/reject/route.ts'` |
 | Step 8 | DONE | 2026-02-15 | `test -f 'src/app/api/albums/[albumId]/public/route.ts'` |
 | Step 9 | DONE | 2026-02-15 | `test -f 'src/app/api/albums/[albumId]/share-links/route.ts'` |
 | Step 10 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/metrics/route.ts' && test -f 'src/lib/event-metrics.ts'` |
-| Step 11 | NOT STARTED | 2026-02-15 | `rg -n "malware|virus|file_scan|security" 'src/app/api' 'src/lib'` |
-| Step 12 | NOT STARTED | 2026-02-15 | `rg -n "contact|marketingConsent|email" 'src/app'` |
+| Step 11 | DONE | 2026-02-15 | `rg -n "malware|virus|file_scan|security" 'src/app/api' 'src/lib'` |
+| Step 12 | DONE | 2026-02-15 | `rg -n "contact|marketingConsent|email" 'src/app'` |
 | Step 13 | DONE | 2026-02-15 | `npx playwright test tests/e2e/scan.spec.ts tests/e2e/app.spec.ts` |
 | Step 14 | DONE | 2026-02-15 | `npx playwright test tests/e2e/scan.spec.ts tests/e2e/app.spec.ts` |
 | Step 15 | DONE | 2026-02-15 | `rg -n "^\\| Step|Current status|Last audited" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
 | Step 16 | DONE | 2026-02-15 | `rg -n "Step 16|guest list|open event|pro|venue|referral" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
 | Step 17 | DONE | 2026-02-15 | `rg -n "app.*required|required.*app|mandatory.*app|must\\s+install|install.*required|download.*mandatory" src/app docs` |
 | Step 18 | DONE | 2026-02-15 | `rg -n "consent|opt[- ]in|retention|delete.*event|delete.*media|takedown|support" docs/COMPLIANCE-PREFLIGHT.md` |
-| Step 19 | NOT STARTED | 2026-02-15 | `rg -n "Launch playbook|growth loop|stop-loss" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
+| Step 19 | DONE | 2026-02-15 | `rg -n "Launch playbook|growth loop|stop-loss" 'docs/marketing/LAUNCH-PLAYBOOK.md'` |
 
 ## Step 1. Confirm guest scan path is present and reachable
 
