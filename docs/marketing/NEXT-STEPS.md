@@ -21,16 +21,24 @@
 **What to explicitly SKIP for MVP:**
 - AI watermarks — add after first real test
 - Photo filters — add after first real test
-- Moderation/approval queue — add after first real test (let all photos through for now)
+- Moderation/approval queue — add after first real test (no pre-publication moderation for v1)
+- No-moderation safety controls to build now (global-ready):
+  - MIME/type allowlist for upload media only
+  - Strict file-size and file-count caps
+  - Per-device/session upload rate limits
+  - Basic bad-file/malware checks
+  - Owner controls: delete media, hide album, disable event/link
+  - Report flow with a documented takedown response target
 - Email capture at upload — make the upload completely frictionless for v1
 - Pro accounts, dashboards, credit systems — not until Pro interviews are done
 - Email sequences (album delivery, nurture) — manual email with a link is fine for first 5 events
 - Payment/checkout — can be manual (Stripe payment link or invoice) for first 5 events
 - Analytics/tracking — you'll observe directly at test events
 
-**Estimated effort:** 20-40 hours depending on complexity of the gallery view
+**Estimated effort:** 22-44 hours depending on complexity of the gallery view + launch safety basics
 
 **Definition of done:** You can hand someone a QR code, they upload a photo, and you can send them a link where they see all the photos from the event in a clean gallery.
+You can also share that link globally across iOS Safari and Android Chrome without AU-only wording in core UI.
 
 **Target:** Complete within 2-3 weeks (at 10-20 hrs/week)
 
@@ -46,6 +54,7 @@
 3. Give minimal instructions — just the QR codes and maybe one verbal mention ("scan this to share photos from tonight")
 4. Do NOT hover, explain, or troubleshoot during the event — observe naturally
 5. After the event, send participants the album link
+6. If possible, run the same test flow in one non-AU market (or via a remote tester) to validate global launch readiness.
 
 **What to measure:**
 - How many people were at the event? (total guests)
@@ -57,6 +66,9 @@
 - Did anyone ask for help or seem confused?
 - Did anyone mention it unprompted after the event?
 - How did the album feel the next morning — exciting, disappointing, sparse?
+- How many failures happened in each step (scan, open page, upload, album view)?
+- What device/browser and region were used by non-local users (if any)?
+- Any reports/abuse flags and how quickly you resolved them?
 
 **What to write down after:**
 - Guest participation rate: uploaders / total guests = ___%
@@ -64,11 +76,15 @@
 - Biggest friction point observed: ___
 - Biggest surprise (positive or negative): ___
 - Would you pay $2/guest for this experience? (ask 3-5 attendees honestly)
+- Top error cause if people couldn't upload: ___
+- Regional friction differences (AU vs outside AU): ___
+- Takedown or abuse response time: ___
 
 **Success criteria:**
 - 25%+ of guests uploaded at least one photo = promising (40-50% target may be achievable with optimization)
 - 15-24% = needs work on distribution/prompting but core product works
 - Under 15% = fundamental product or distribution problem to solve before anything else
+- For a global launch signal: at least one non-local external tester completes scan+upload+view flow without manual support
 
 **Estimated effort:** 2-3 hours of prep, the event itself, 1-2 hours of analysis after
 
@@ -85,11 +101,11 @@
 - 3-4 wedding planners/coordinators
 - 1-2 other vendors (DJ, celebrant, florist) for variety
 
-**Where to find them (AU-focused):**
-- Instagram: Search #weddingphotographermelbourne (or your city), #australianweddingphotographer, #weddingplanneraustralia
-- Facebook groups: "Australian Wedding Photographers," "Wedding Planners Australia"
-- Google: "[your city] wedding photographer" — reach out to ones on page 2-3 (they're less busy and more likely to chat)
-- Easy Weddings, WedShed, The Knot AU directories
+**Where to find them (global-first):**
+- Instagram/TikTok: search city + wedding photographer/planner hashtags for target markets
+- Facebook/LinkedIn: target-country wedding vendor groups and event-planning communities
+- Google: "[city/country] wedding photographer" and "[country] wedding planner" — target page 2-3 first
+- The Knot, WeddingWire, Bridebook, WedShed, and comparable local directory alternatives
 - Ask friends/family: "Do you know anyone who photographs or plans weddings?"
 
 **How to reach out:**
@@ -106,10 +122,12 @@ DM or email template:
 7. "If there was a referral program where you get a deeper discount for recruiting other photographers or planners to use it — does that sound appealing or does it feel weird?" (MLM perception test — PRO-2)
 8. "What would make you NOT recommend this to a client?" (Objection mining)
 9. "How many weddings do you do per year, and what's the average guest count?" (Validate PRO-9 assumptions)
-10. "Is there anything I haven't asked that I should know?" (Open-ended gold)
+10. "What privacy, consent, or country-specific compliance requirements affect this product in your market?"
+11. "Is there anything I haven't asked that I should know?" (Open-ended gold)
 
 **What to record:**
 For each conversation, note:
+- Region/country served
 - Pro type (photographer/planner/DJ/other)
 - Weddings per year and avg guest count
 - Current guest photo solution (if any)
@@ -119,12 +137,14 @@ For each conversation, note:
 - MLM reaction (positive / neutral / negative — exact words matter)
 - Top objection
 - Would they actually use it? (yes / maybe / no)
+- Compliance objections/requirements mentioned
 
 **Decision triggers:**
 - 7+ out of 10 say "yes I'd use/recommend this" → Pro growth loop is validated, build Pro features
 - 4-6 out of 10 → promising but needs refinement, dig into objections
 - 3 or fewer → Pro growth loop is invalidated, pivot to direct-to-couple acquisition only
 - ANY strong negative MLM reaction → simplify to flat referral immediately
+- Any one region cluster strongly negative on legal/compliance → defer that region until risk is addressed
 
 **Estimated effort:** 3-5 hours for outreach, 2-3 hours for conversations (15 min each), 1-2 hours to synthesize findings. Total: ~8-10 hours over 2-3 weeks.
 
@@ -140,6 +160,7 @@ For each conversation, note:
 1. **The Guest** (theguestapp.com) — the most-cited competitor in the docs. Tests the "requires app download" claim.
 2. **Joy** (withjoy.com) — wedding planning platform with photo sharing. Tests whether all-in-one platforms offer this feature for free.
 3. **One more from search** — search "wedding guest photo QR code no app" and pick the top result you haven't heard of. This finds the competitor you don't know about yet.
+4. If launching globally, include at least one strong competitor from a target non-AU market (even if you're only in a few markets initially).
 
 **How to test:**
 For each competitor:
@@ -161,6 +182,7 @@ For each competitor:
 - What do they do better than Event Cam?
 - What does Event Cam do better?
 - Overall impression (1-10)
+- Region-specific strengths/weaknesses (language, onboarding, privacy framing, payment flow)
 
 **Deliverable:** A simple comparison table (even handwritten notes are fine). Update the competitive landscape in MARKETING-PLAN.md Section 4 with real data.
 
@@ -175,9 +197,11 @@ For each competitor:
 
 ---
 
-## Step 5: Build a Cost-to-Serve Model
+## Step 5: Build a Cost-to-Serve Model (Global, No-Moderation MVP)
 
 **Why this matters:** Every pricing decision, Pro discount, and margin calculation in the strategy docs floats without an anchor. The $0.90/guest Pro floor — the minimum Event Cam keeps at the deepest discount — may be unprofitable. Without knowing the actual cost to serve one guest at one event, you can't set prices, evaluate Pro economics, or know if the business works.
+
+Set this up as a regional model from day one (for example AU, US, UK) instead of one global average.
 
 **The model (spreadsheet or doc):**
 
@@ -193,6 +217,14 @@ For each competitor:
 | **Stripe processing** | Event total x 2.9% + $0.30 per transaction | On a $300 event: ~$9.00 |
 | **AI watermark generation** | 1 generation per event x (Gemini Nano API cost per call) | Near-zero if client-side overlay |
 | **Supabase compute** | Edge function invocations per event x ($/invocation) | Likely negligible at small scale |
+| **Report/takedown handling** | Owner/admin support time for abuse/complaint response + platform tooling | Add this as a fixed operational cost, not a zero-cost item |
+
+### Fixed + Variable Cost Split
+
+Use this split before margin decisions:
+- **Fixed monthly costs:** baseline hosting, monitoring, compliance tooling, support load
+- **Variable per-event costs:** storage, bandwidth, upload checks, email delivery, payment processing, compute
+- **Event cost** = fixed costs spread across expected monthly event volume + variable costs per event
 
 ### Key Numbers to Estimate
 
@@ -213,6 +245,16 @@ From Resend pricing:
 
 From Stripe:
 - AU: 1.75% + $0.30 AUD (domestic), 2.9% + $0.30 (international)
+- US: 2.9% + $0.30 USD (domestic starting point, card + wallet split may vary)
+- UK: 1.4% + £0.20 GBP (domestic cards) / 2.9% + £0.20 GBP (other cards)
+
+### Region Cost Variables (initial launch set)
+
+| Region | Payment fee | Typical VAT/GST considerations | Notes |
+|--------|-------------|--------------------------------|-------|
+| AU | 1.75% + $0.30 AUD | GST where applicable | Use local pricing/rounding |
+| US | 2.9% + $0.30 USD | State/local sales tax rules based on event/account setup | Confirm Stripe Tax posture |
+| UK | 1.4%-2.9% + £0.20 | VAT may apply depending on event/purchaser location | Verify with tax advisor if scaling |
 
 ### Then Calculate Margins
 
