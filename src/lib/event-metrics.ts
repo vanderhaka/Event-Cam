@@ -10,18 +10,31 @@ export type EventMetricAction =
   | 'gallery_report_submit'
   | 'event_disabled'
   | 'media_deleted'
-  | 'album_hidden';
+  | 'album_hidden'
+  | 'email_capture';
 
 export async function recordEventMetric(params: {
   eventId: string;
   action: EventMetricAction;
   actor?: 'guest' | 'host' | 'system';
+  targetType?: string | null;
+  targetId?: string | null;
   reason?: string | null;
   request?: Request;
   actorId?: string | null;
   metadata?: Record<string, unknown>;
 }) {
-  const { eventId, action, actor = 'guest', actorId = null, reason = null, metadata = {}, request } = params;
+  const {
+    eventId,
+    action,
+    actor = 'guest',
+    actorId = null,
+    targetType = null,
+    targetId = null,
+    reason = null,
+    metadata = {},
+    request,
+  } = params;
   const admin = createSupabaseAdminClient();
   const ipAddress = request ? request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') : null;
   const ipHash = normalizeAndHash(ipAddress);
@@ -32,6 +45,8 @@ export async function recordEventMetric(params: {
     action,
     actor,
     actor_id: actorId,
+    target_type: targetType,
+    target_id: targetId,
     reason,
     ip_hash: ipHash,
     user_agent: userAgent,

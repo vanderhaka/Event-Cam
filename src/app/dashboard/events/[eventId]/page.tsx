@@ -49,6 +49,8 @@ export default function EventDetailPage() {
   const [albumTitle, setAlbumTitle] = useState('');
   const [selectedMediaIds, setSelectedMediaIds] = useState<Set<string>>(new Set());
   const [sharePassword, setSharePassword] = useState('');
+  const [shareMaxViews, setShareMaxViews] = useState('50');
+  const [shareExpiresInHours, setShareExpiresInHours] = useState('72');
   const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
   const [baseOrigin, setBaseOrigin] = useState('');
   const [qrModalInvitee, setQrModalInvitee] = useState<any>(null);
@@ -476,13 +478,26 @@ export default function EventDetailPage() {
   }
 
   async function createShareLink(albumId: string, options?: { regenerate?: boolean }) {
+    const maxViews = Number.parseInt(shareMaxViews, 10);
+    const expiresInHours = Number.parseInt(shareExpiresInHours, 10);
+
+    if (!Number.isFinite(maxViews) || maxViews <= 0) {
+      showStatus('Share max views must be a positive integer', 'error');
+      return;
+    }
+
+    if (!Number.isFinite(expiresInHours) || expiresInHours <= 0) {
+      showStatus('Link expiry must be a positive number', 'error');
+      return;
+    }
+
     const response = await fetchWithAuth(`/api/albums/${albumId}/share-links`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         password: sharePassword || 'changeme',
-        maxViews: 50,
-        expiresInHours: 72,
+        maxViews,
+        expiresInHours,
         regenerate: options?.regenerate ?? false,
       }),
     });
@@ -1237,6 +1252,28 @@ export default function EventDetailPage() {
                 <label>
                   <div className="label">Share password</div>
                   <input className="input" value={sharePassword} onChange={(e) => setSharePassword(e.target.value)} placeholder="Set a password for share links" style={{ maxWidth: '300px' }} />
+                </label>
+                <label>
+                  <div className="label">Max views</div>
+                  <input
+                    className="input"
+                    type="number"
+                    min={1}
+                    value={shareMaxViews}
+                    onChange={(e) => setShareMaxViews(e.target.value)}
+                    style={{ maxWidth: '120px' }}
+                  />
+                </label>
+                <label>
+                  <div className="label">Expires in hours</div>
+                  <input
+                    className="input"
+                    type="number"
+                    min={1}
+                    value={shareExpiresInHours}
+                    onChange={(e) => setShareExpiresInHours(e.target.value)}
+                    style={{ maxWidth: '120px' }}
+                  />
                 </label>
               </div>
               <ul className="album-list">

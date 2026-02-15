@@ -9,8 +9,74 @@ import {
   getMaxUploadBytes,
   getConfigLimits,
   fingerprintInviteClient,
+  analyzeUploadFilename,
 } from '@/lib/upload-controls';
 import { recordEventMetric } from '@/lib/event-metrics';
+
+type ScanJob = {
+  eventId: string;
+  mediaId: string;
+  storagePath: string;
+  fileHash: string;
+  fileType: string;
+  mediaType: 'image' | 'video';
+  originalFileName: string;
+};
+
+function queueContentScanJob(scanJob: ScanJob) {
+  if (process.env.EVENT_CAM_ENABLE_FILE_SCAN !== 'true') {
+    return;
+  }
+
+  void (async () => {
+    const scanWebhookUrl = process.env.EVENT_CAM_SCAN_WEBHOOK_URL;
+    await recordEventMetric({
+      eventId: scanJob.eventId,
+      actor: 'system',
+      action: 'upload_success',
+      reason: 'media_scan_queued',
+      request: undefined,
+      metadata: {
+        mediaId: scanJob.mediaId,
+        storagePath: scanJob.storagePath,
+        fileHash: scanJob.fileHash,
+        mediaType: scanJob.mediaType,
+      },
+    });
+
+    if (!scanWebhookUrl) {
+      return;
+    }
+
+    try {
+      await fetch(scanWebhookUrl, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          mediaId: scanJob.mediaId,
+          eventId: scanJob.eventId,
+          storagePath: scanJob.storagePath,
+          originalFileName: scanJob.originalFileName,
+          fileHash: scanJob.fileHash,
+          fileType: scanJob.fileType,
+          mediaType: scanJob.mediaType,
+        }),
+      });
+    } catch {
+      await recordEventMetric({
+        eventId: scanJob.eventId,
+        actor: 'system',
+        action: 'upload_failed',
+        reason: 'media_scan_enqueue_failed',
+        metadata: {
+          mediaId: scanJob.mediaId,
+          storagePath: scanJob.storagePath,
+          fileHash: scanJob.fileHash,
+        },
+      });
+    }
+  })();
+}
 
 export async function POST(request: Request, context: { params: { inviteToken: string } }) {
   const { inviteToken } = context.params;
@@ -228,15 +294,43 @@ export async function POST(request: Request, context: { params: { inviteToken: s
     }
 
     const fingerprint = fingerprintInviteClient(request, invitee.qr_token);
-    const extMatch = String(file.name || '').split('.').pop()?.toLowerCase() ?? '';
-    const extension = extMatch && /^[a-z0-9]+$/.test(extMatch) ? extMatch : (mediaType === 'video' ? 'mp4' : 'jpg');
-    if (extension === 'bin') {
+    const fileNameAnalysis = analyzeUploadFilename(file.name || `upload.${mediaType}`);
+    const resolvedExtension = fileNameAnalysis.canonicalExtension || (mediaType === 'video' ? 'mp4' : 'jpg');
+    const safeExtension =
+      resolvedExtension && /^[a-z0-9]{2,6}$/.test(resolvedExtension) ? resolvedExtension : mediaType === 'video' ? 'mp4' : 'jpg';
+
+    const fileBuffer = Buffer.from(await file.arrayBuffer());
+    const fileHash = hashValue(fileBuffer.toString('base64'));
+    const fileFingerprint = hashValue(`${invitee.qr_token}:${fileHash}:${file.size}:${file.type}`);
+
+    if (process.env.EVENT_CAM_ENABLE_FILE_SCAN === 'true' && fileNameAnalysis.isBlocked) {
       await recordEventMetric({
         eventId: event.id,
         actor: 'guest',
         action: 'upload_failed',
         request,
         actorId: null,
+        targetType: 'media_upload',
+        reason: 'media_scan_failed',
+        metadata: {
+          fileHash,
+          fileScanReasons: fileNameAnalysis.reasons,
+          originalFileName: file.name,
+          canonicalName: fileNameAnalysis.sanitizedName,
+          mediaType,
+        },
+      });
+      return jsonResponse({ message: 'Upload blocked by file safety policy' }, { status: 400 });
+    }
+
+    if (safeExtension === 'bin') {
+      await recordEventMetric({
+        eventId: event.id,
+        actor: 'guest',
+        action: 'upload_failed',
+        request,
+        actorId: null,
+        targetType: 'media_upload',
         reason: 'invalid_extension',
       });
       return jsonResponse({ message: 'Invalid media filename' }, { status: 400 });
@@ -271,12 +365,9 @@ export async function POST(request: Request, context: { params: { inviteToken: s
       }
     }
 
-    const storagePath = `${event.id}/${invitee.id}/${randomToken(16)}.${extension}`;
-    const fileFingerprint = hashValue(`${invitee.qr_token}:${storagePath}:${file.size}:${file.type}`);
+    const storagePath = `${event.id}/${invitee.id}/${randomToken(16)}.${safeExtension}`;
 
-    const buffer = Buffer.from(await file.arrayBuffer());
-
-    const upload = await admin.storage.from('event-media').upload(storagePath, buffer, {
+    const upload = await admin.storage.from('event-media').upload(storagePath, fileBuffer, {
       contentType: file.type,
       upsert: false,
     });
@@ -302,7 +393,7 @@ export async function POST(request: Request, context: { params: { inviteToken: s
         uploader_token: invitee.qr_token,
         media_type: mediaType,
         storage_path: storagePath,
-        original_name: file.name || `${mediaType}-upload.${extension}`,
+        original_name: file.name || `${mediaType}-upload.${resolvedExtension}`,
         mime_type: file.type,
         size_bytes: file.size,
         duration_sec: mediaType === 'video' ? durationSec || null : null,
@@ -359,13 +450,28 @@ export async function POST(request: Request, context: { params: { inviteToken: s
       action: 'upload_success',
       request,
       actorId: null,
+      targetType: 'media_item',
+      targetId: mediaItem.id,
       metadata: {
         mediaId: mediaItem.id,
         mediaType,
         sizeBytes: file.size,
         moderationState: 'approved',
+        fileHash,
       },
     });
+
+    if (process.env.EVENT_CAM_ENABLE_FILE_SCAN === 'true') {
+      queueContentScanJob({
+        eventId: event.id,
+        mediaId: mediaItem.id,
+        storagePath,
+        fileHash,
+        fileType: file.type,
+        mediaType,
+        originalFileName: file.name || `${mediaType}-upload.${safeExtension}`,
+      });
+    }
 
     return jsonResponse({ media: mediaItem }, { status: 201 });
   } catch (error) {

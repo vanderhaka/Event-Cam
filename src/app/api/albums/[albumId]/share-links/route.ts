@@ -38,19 +38,33 @@ export async function POST(request: Request, context: { params: { albumId: strin
       return jsonResponse({ message: 'Not authorized for this album' }, { status: 403 });
     }
 
-    const maxViews = body.maxViews ? Number(body.maxViews) : null;
     const shouldRegenerate = body.regenerate === true;
-    const expiresInHours = Number(body.expiresInHours ?? 0);
-    const expiresAt = Number.isFinite(expiresInHours) && expiresInHours > 0
-      ? new Date(Date.now() + expiresInHours * 60 * 60 * 1000).toISOString()
-      : null;
+    const maxViews = body.maxViews === undefined ? null : Number(body.maxViews);
+    const expiresInHours = body.expiresInHours === undefined ? null : Number(body.expiresInHours);
+
+    if (maxViews !== null && (!Number.isInteger(maxViews) || maxViews <= 0)) {
+      return jsonResponse({ message: 'maxViews must be a positive integer or omitted' }, { status: 400 });
+    }
+
+    if (expiresInHours !== null && (!Number.isFinite(expiresInHours) || expiresInHours <= 0)) {
+      return jsonResponse({ message: 'expiresInHours must be a positive number or omitted' }, { status: 400 });
+    }
+
+    const expiresAt =
+      expiresInHours === null
+        ? null
+        : new Date(Date.now() + expiresInHours * 60 * 60 * 1000).toISOString();
 
     if (shouldRegenerate) {
-      await admin
+      const { error: revokeError } = await admin
         .from('share_links')
         .update({ revoked_at: new Date().toISOString() })
         .eq('album_id', album.id)
         .is('revoked_at', null);
+
+      if (revokeError) {
+        return jsonResponse({ message: revokeError.message }, { status: 400 });
+      }
     }
 
     const token = randomToken(20);

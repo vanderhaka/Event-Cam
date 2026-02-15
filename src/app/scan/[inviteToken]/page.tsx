@@ -11,6 +11,27 @@ function decodeURIComponentSafe(value: string) {
   }
 }
 
+function computeMobileSupport(windowRef: Window) {
+  const supportsUpload = typeof windowRef.File !== 'undefined' && typeof windowRef.FormData !== 'undefined' && typeof windowRef.FileList !== 'undefined';
+  const isMobileViewport = windowRef.matchMedia('(max-width: 768px)').matches;
+  const isPortrait = windowRef.innerHeight >= windowRef.innerWidth;
+  const isIOS = /iPhone|iPad|iPod/.test(windowRef.navigator.userAgent);
+  const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(windowRef.navigator.userAgent);
+
+  const supportMessage = supportsUpload
+    ? (isMobileViewport || isMobileDevice) && !isPortrait
+      ? 'For best upload results on mobile, rotate your device to portrait mode.'
+      : ''
+    : 'Your browser does not support file uploads. Please use a modern mobile browser.';
+
+  return {
+    uploadSupported: supportsUpload,
+    fileCaptureMode: isIOS ? 'environment' : undefined,
+    mobileSupportMessage: supportMessage,
+    isMobileViewport,
+  };
+}
+
 export default function ScanPage() {
   const params = useParams<{ inviteToken: string | string[] }>();
   const rawInviteToken = Array.isArray(params.inviteToken) ? params.inviteToken[0] : params.inviteToken;
@@ -26,12 +47,41 @@ export default function ScanPage() {
   const [messageType, setMessageType] = useState<'error' | 'success' | 'info'>('info');
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
+  const [contributorEmail, setContributorEmail] = useState('');
+  const [marketingConsent, setMarketingConsent] = useState(false);
+  const [emailMessage, setEmailMessage] = useState('');
+  const [emailMessageType, setEmailMessageType] = useState<'error' | 'success' | 'info'>('info');
+  const [capturingEmail, setCapturingEmail] = useState(false);
+  const [fileCaptureMode, setFileCaptureMode] = useState<'environment' | undefined>(undefined);
+  const [uploadSupported, setUploadSupported] = useState(true);
+  const [mobileSupportMessage, setMobileSupportMessage] = useState('');
   const [errorState, setErrorState] = useState<'not_found' | 'expired' | 'generic' | null>(null);
 
   // Hide the main navigation for the guest scan page
   useEffect(() => {
     document.body.classList.add('guest-page');
     return () => { document.body.classList.remove('guest-page'); };
+  }, []);
+
+  useEffect(() => {
+    const updateDeviceConfig = () => {
+      if (typeof window === 'undefined') {
+        return;
+      }
+      const settings = computeMobileSupport(window);
+      setFileCaptureMode(settings.fileCaptureMode);
+      setUploadSupported(settings.uploadSupported);
+      setMobileSupportMessage(settings.mobileSupportMessage);
+    };
+
+    updateDeviceConfig();
+    window.addEventListener('resize', updateDeviceConfig);
+    window.addEventListener('orientationchange', updateDeviceConfig);
+    return () => {
+      window.removeEventListener('resize', updateDeviceConfig);
+      window.removeEventListener('orientationchange', updateDeviceConfig);
+    };
   }, []);
 
   async function loadInfo() {
@@ -83,8 +133,15 @@ export default function ScanPage() {
       return;
     }
 
+    if (!uploadSupported) {
+      setMessage('Your browser does not support file uploads. Please use a modern mobile browser.');
+      setMessageType('error');
+      return;
+    }
+
     setUploading(true);
     setMessage('');
+    setEmailMessage('');
 
     const fileList = Array.from(files);
     let completed = 0;
@@ -117,6 +174,7 @@ export default function ScanPage() {
       setMessage(`${completed} file${completed > 1 ? 's' : ''} uploaded successfully! They are now available in the event gallery.`);
       setMessageType('success');
       setFiles(null);
+      setShowEmailCapture(true);
       setTagCsv('');
       setDurationSec('');
       // Reset the file input
@@ -125,8 +183,56 @@ export default function ScanPage() {
     } catch (error) {
       setMessage((error as Error).message || 'Upload failed');
       setMessageType('error');
+      setShowEmailCapture(false);
     } finally {
       setUploading(false);
+    }
+  }
+
+  async function submitEmailCapture(event: FormEvent) {
+    event.preventDefault();
+
+    if (!contributorEmail.trim()) {
+      setEmailMessage('Please enter an email address');
+      setEmailMessageType('error');
+      return;
+    }
+
+    if (!marketingConsent) {
+      setEmailMessage('Please confirm marketing consent before saving');
+      setEmailMessageType('error');
+      return;
+    }
+
+    setCapturingEmail(true);
+    setEmailMessage('');
+
+    try {
+      const response = await fetch(`/api/invite/${normalizedInviteToken}/contact`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: contributorEmail.trim(),
+          marketingConsent,
+        }),
+      });
+
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.message || 'Unable to save your email');
+      }
+
+      setEmailMessage('Email preference saved.');
+      setEmailMessageType('success');
+      setContributorEmail('');
+      setMarketingConsent(false);
+    } catch (error) {
+      setEmailMessage((error as Error).message || 'Unable to save email');
+      setEmailMessageType('error');
+    } finally {
+      setCapturingEmail(false);
     }
   }
 
@@ -193,6 +299,7 @@ export default function ScanPage() {
           {info.event.eventType === 'open'
             ? 'Upload your photos and videos below. They appear in the event gallery right after upload.'
             : <>Hi <strong>{info.invitee.displayName}</strong> — upload your photos and videos below. They appear in the event gallery right after upload.</>
+          }
         </p>
 
         <form onSubmit={submit} className="form-grid">
@@ -201,9 +308,11 @@ export default function ScanPage() {
               type="file"
               accept="image/*,video/*"
               multiple
-              capture="environment"
+              capture={fileCaptureMode}
+              disabled={!uploadSupported}
               onChange={(e) => setFiles(e.target.files)}
             />
+            {mobileSupportMessage ? <p className="muted" style={{ marginTop: '0.5rem' }}>{mobileSupportMessage}</p> : null}
             <p className="file-upload-text">
               {files && files.length > 0
                 ? <strong>{files.length} file{files.length > 1 ? 's' : ''} selected</strong>
@@ -222,7 +331,11 @@ export default function ScanPage() {
             <span>I confirm my photos and videos can be attributed to me and shared in the event gallery.</span>
           </label>
 
-          <button className="btn btn-primary btn-lg" type="submit" disabled={uploading || !files || files.length === 0 || !consent}>
+          <button
+            className="btn btn-primary btn-lg"
+            type="submit"
+            disabled={uploading || !uploadSupported || !files || files.length === 0 || !consent}
+          >
             {uploading ? 'Uploading...' : 'Upload'}
           </button>
         </form>
@@ -231,6 +344,43 @@ export default function ScanPage() {
           <div className={`message ${messageType === 'error' ? 'message-error' : messageType === 'success' ? 'message-success' : 'message-info'}`}>
             {message}
           </div>
+        )}
+
+        {showEmailCapture && (
+          <form onSubmit={submitEmailCapture} className="form-grid" style={{ marginTop: '1rem' }}>
+            <label>
+              <div className="label">Email (optional)</div>
+              <input
+                type="email"
+                className="input"
+                value={contributorEmail}
+                onChange={(e) => setContributorEmail(e.target.value)}
+                placeholder="you@example.com"
+                autoComplete="email"
+                disabled={capturingEmail}
+              />
+            </label>
+
+            <label className="checkbox-row">
+              <input
+                type="checkbox"
+                checked={marketingConsent}
+                onChange={(e) => setMarketingConsent(e.target.checked)}
+                disabled={capturingEmail}
+              />
+              <span>I agree to receive marketing and event updates.</span>
+            </label>
+
+            <button className="btn btn-subtle btn-lg" type="submit" disabled={capturingEmail}>
+              {capturingEmail ? 'Saving...' : 'Save email preference'}
+            </button>
+
+            {emailMessage && (
+              <div className={`message ${emailMessageType === 'error' ? 'message-error' : emailMessageType === 'success' ? 'message-success' : 'message-info'}`}>
+                {emailMessage}
+              </div>
+            )}
+          </form>
         )}
       </section>
     </div>

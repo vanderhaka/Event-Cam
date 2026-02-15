@@ -91,6 +91,58 @@ test.describe('public flows', () => {
 
     await expect(page.getByText('QR encodes: https://example.com/scan/test-token')).toBeVisible();
   });
+
+  test.describe('mobile copy flow', () => {
+    test.use({
+      viewport: { width: 390, height: 844 },
+      isMobile: true,
+      userAgent:
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+    });
+
+    test('falls back to manual share link when clipboard access fails', async ({ page }) => {
+      await stubSupabaseAuth(page, false);
+
+      await page.route('**/api/albums/album-123/public*', (route: Route) => {
+        if (route.request().method() !== 'GET') {
+          route.continue();
+          return;
+        }
+        route.fulfill({
+          status: 200,
+          contentType: 'application/json',
+          body: JSON.stringify({
+            album: { id: 'album-123', title: 'Family Party', event_id: 'event-123' },
+            items: [],
+          }),
+        });
+      });
+
+      await page.goto('/albums/album-123/public?token=token-123&password=secret&forceClipboardFailure=1');
+      const privateAlbumHeading = page.getByRole('heading', { name: 'Private Album' });
+      if (await privateAlbumHeading.isVisible()) {
+        await expect(privateAlbumHeading).toBeVisible();
+
+        const openAlbumResponse = page.waitForResponse((response) => {
+          const url = response.url();
+          return url.includes('/api/albums/album-123/public') && response.status() === 200;
+        });
+
+        await page.getByRole('textbox', { name: 'Password' }).fill('secret');
+        await openAlbumResponse;
+      }
+
+      const copyButton = page.getByRole('button', { name: 'Copy share link' });
+      await expect(page.getByRole('heading', { name: 'Family Party' })).toBeVisible();
+      await page.getByRole('button', { name: 'Copy share link' }).click();
+      await expect(page.getByText('Clipboard blocked. Tap the link below to copy it manually.')).toBeVisible();
+      const manualLink = page.getByRole('textbox', { name: 'Manual share link' });
+      await expect(manualLink).toHaveValue(/albums\/album-123\/public/);
+      await expect(manualLink).toHaveValue(/token=token-123/);
+      await expect(manualLink).toHaveValue(/order=newest/);
+      await expect(manualLink).toBeEnabled();
+    });
+  });
 });
 
 test.describe('host flows', () => {

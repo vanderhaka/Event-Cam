@@ -9,6 +9,9 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
     const { userId } = await requireHostUser();
     const event = await getEventForHost(context.params.eventId, userId);
     const body = await parseJsonBody(request);
+    const allowUnpaid =
+      Number(process.env.EVENT_CAM_ALLOW_UNPAID ?? '0') === 1 &&
+      process.env.NODE_ENV !== 'production';
 
     const admin = createSupabaseAdminClient();
     const isOpenEvent = event.event_type === 'open';
@@ -40,6 +43,38 @@ export async function POST(request: NextRequest, context: { params: { eventId: s
     const lineItemAmount = Number.isFinite(feePerInvite) && feePerInvite > 0 ? feePerInvite : Number(process.env.EVENT_CAM_DEFAULT_FEE_CENTS ?? event.fee_per_invite_cents ?? 500);
 
     const origin = request.nextUrl.origin;
+
+    if (allowUnpaid) {
+      const checkoutSessionId = `dev-checkout-${Date.now()}`;
+      const total = lineItemAmount * billableQuantity;
+
+      const billingInsert = await admin.from('billing_records').insert({
+        event_id: event.id,
+        provider: 'stripe',
+        checkout_session: checkoutSessionId,
+        amount_cents: total,
+        currency: currency.toUpperCase(),
+        status: 'paid',
+      });
+
+      if (billingInsert.error) {
+        return jsonResponse({ message: 'Unable to start checkout' }, { status: 500 });
+      }
+
+      const eventUpdate = await admin.from('events').update({ status: 'paid' }).eq('id', event.id);
+      if (eventUpdate.error) {
+        return jsonResponse({ message: 'Unable to start checkout' }, { status: 500 });
+      }
+
+      return jsonResponse({
+        checkoutUrl: `${origin}/dashboard/events/${event.id}?checkout=dev_skip`,
+        checkoutSessionId,
+        invites: billableQuantity,
+        total,
+        skippedCheckout: true,
+      });
+    }
+
     const stripe = getStripeClient();
 
     const stripeSession = await stripe.checkout.sessions.create({

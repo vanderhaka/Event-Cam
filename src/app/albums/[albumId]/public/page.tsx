@@ -18,6 +18,7 @@ export default function PublicAlbumPage() {
   const [reporting, setReporting] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<SortOrder>('newest');
   const [preview, setPreview] = useState<any | null>(null);
+  const [manualShareLink, setManualShareLink] = useState('');
 
   const orderedItems = useMemo(() => {
     if (!payload?.items) {
@@ -77,11 +78,31 @@ export default function PublicAlbumPage() {
       return;
     }
 
+    setCopyMessage('');
+    setManualShareLink('');
+    const forceClipboardFailure = process.env.NODE_ENV !== 'production'
+      && typeof window !== 'undefined'
+      && new URLSearchParams(window.location.search).get('forceClipboardFailure') === '1';
+
+    const isMobileViewport = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+    const isMobileUserAgent = typeof window !== 'undefined'
+      ? /(Mobi|Android|iPhone|iPad|iPod|Mobile)/i.test(window.navigator.userAgent)
+      : false;
+    const isMobileContext = isMobileViewport || isMobileUserAgent;
+
     try {
+      if (forceClipboardFailure) {
+        throw new Error('Clipboard failure forced for QA');
+      }
       await navigator.clipboard.writeText(shareUrl);
       setCopyStatus('Share link copied');
       return;
     } catch {
+      if (isMobileContext) {
+        setManualShareLink(shareUrl);
+        setCopyStatus('Clipboard blocked. Tap the link below to copy it manually.');
+        return;
+      }
       const manualCopy = window.prompt('Copy this link:', shareUrl);
       if (manualCopy) {
         setCopyStatus('Link captured');
@@ -198,6 +219,14 @@ export default function PublicAlbumPage() {
               </button>
             </div>
             {copyMessage && <p className="muted" style={{ fontSize: '0.85rem', margin: '0.5rem 0 0' }}>{copyMessage}</p>}
+            {manualShareLink ? (
+              <div style={{ marginTop: '0.5rem' }}>
+                <input className="input" readOnly value={manualShareLink} aria-label="Manual share link" />
+                <p className="muted" style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
+                  Long-press the link and choose Copy.
+                </p>
+              </div>
+            ) : null}
           </section>
           {orderedItems.map((item: any) => (
             <article key={item.id} className="card" style={{ padding: '0', overflow: 'hidden' }}>

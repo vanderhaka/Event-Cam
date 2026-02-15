@@ -4,6 +4,22 @@ import { requireHostUser, getEventForHost } from '@/lib/auth';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 
 const MAX_LOG_LIMIT = 1000;
+const CSV_HEADER = ['id', 'action', 'actor', 'actor_id', 'target_type', 'target_id', 'reason', 'ip_hash', 'user_agent', 'created_at', 'metadata'];
+
+function toCsvCell(value: unknown): string {
+  if (value === null || value === undefined) {
+    return '';
+  }
+  const text = typeof value === 'string' ? value : JSON.stringify(value);
+  const escaped = text.replace(/"/g, '""');
+  return `"${escaped}"`;
+}
+
+function asCsv(logs: Array<Record<string, unknown>>) {
+  const headerLine = CSV_HEADER.map(toCsvCell).join(',');
+  const rows = logs.map((log) => CSV_HEADER.map((key) => toCsvCell(log[key])).join(','));
+  return [headerLine, ...rows].join('\n');
+}
 
 export async function GET(request: NextRequest, context: { params: { eventId: string } }) {
   try {
@@ -31,7 +47,21 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
       return jsonResponse({ message: error.message }, { status: 400 });
     }
 
-    return jsonResponse({ event_id: context.params.eventId, logs: data ?? [] });
+    const logs = data ?? [];
+    const format = request.nextUrl.searchParams.get('format');
+
+    if (format === 'csv') {
+      const csvBody = asCsv(logs);
+      return new Response(csvBody, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': `attachment; filename="event-${context.params.eventId}-logs.csv"`,
+        },
+      });
+    }
+
+    return jsonResponse({ event_id: context.params.eventId, logs });
   } catch (error) {
     if (error instanceof ApiError) {
       return jsonResponse({ message: error.message }, { status: error.status });

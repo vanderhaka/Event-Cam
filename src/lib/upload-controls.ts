@@ -12,6 +12,72 @@ const BURST_WINDOW_SECONDS = 30;
 const MAX_UPLOADS_PER_INVITEE = 60;
 const MAX_INVITEE_WINDOW_MINUTES = 60;
 const MAX_MEDIA_PER_EVENT = 500;
+const DANGEROUS_FILE_EXTENSIONS = new Set([
+  'exe',
+  'bat',
+  'cmd',
+  'com',
+  'cpl',
+  'dll',
+  'msc',
+  'msi',
+  'msp',
+  'scr',
+  'pif',
+  'js',
+  'jse',
+  'ps1',
+  'vbs',
+  'vbe',
+  'vbscript',
+  'wsf',
+  'wsh',
+  'sh',
+  'bash',
+  'py',
+  'jar',
+  'php',
+  'asp',
+  'aspx',
+  'jsp',
+  'hta',
+  'apk',
+  'bin',
+  'dmg',
+  'iso',
+  'run',
+  'deb',
+  'rpm',
+  'elf',
+]);
+
+const MEDIA_EXTENSION_HINTS = new Set([
+  'jpg',
+  'jpeg',
+  'jpe',
+  'png',
+  'webp',
+  'heic',
+  'heif',
+  'tif',
+  'tiff',
+  'gif',
+  'mp4',
+  'mov',
+  'm4v',
+  'm4a',
+  'quicktime',
+  'webm',
+]);
+
+const CANONICAL_EXTENSION_MAP: Record<string, string> = {
+  jpeg: 'jpg',
+  jpe: 'jpg',
+  tiff: 'tif',
+  m4v: 'mp4',
+  m4a: 'mp4',
+  quicktime: 'mov',
+};
 
 export const ALLOWED_MIME_TYPES = {
   image: ['image/jpeg', 'image/png', 'image/heic', 'image/heif', 'image/webp'],
@@ -73,4 +139,78 @@ export function fingerprintInviteClient(request: Request, inviteeToken: string) 
 export function normalizeAndHash(value: string | null) {
   if (!value) return null;
   return hashValue(value, process.env.EVENT_CAM_ANALYTICS_SALT || 'event-cam');
+}
+
+function cleanFilename(raw: string) {
+  return raw
+    .normalize('NFKC')
+    .replace(/[\u0000-\u001F\u007F]/g, '')
+    .replace(/\\+/g, '/')
+    .replace(/^(?:\.\.\/|\.\/|\/)+/, '')
+    .trim();
+}
+
+export function analyzeUploadFilename(fileName: string) {
+  const clean = cleanFilename(fileName || 'upload.bin');
+  let normalized = clean;
+
+  for (let attempts = 0; attempts < 2; attempts += 1) {
+    if (!/%[0-9a-fA-F]{2}/.test(normalized)) {
+      break;
+    }
+    try {
+      const decoded = decodeURIComponent(normalized);
+      if (decoded === normalized) {
+        break;
+      }
+      normalized = decoded;
+    } catch {
+      break;
+    }
+  }
+
+  const pathOnly = normalized.split('/').filter(Boolean);
+  const fileNameOnly = pathOnly.at(-1) || normalized;
+
+  const lower = fileNameOnly.toLowerCase();
+  const rawParts = lower.split('.').map((part) => part.trim()).filter(Boolean);
+  const canonicalParts = rawParts
+    .map((part) => part.replace(/[^a-z0-9]/g, ''))
+    .filter(Boolean)
+    .map((part) => CANONICAL_EXTENSION_MAP[part] ?? part);
+
+  const extension = canonicalParts.length > 0 ? canonicalParts.at(-1) : 'bin';
+  const middleParts = canonicalParts.slice(0, -1);
+
+  const hasPathTraversal =
+    normalized.includes('..') || pathOnly.length > 1;
+  const hasDangerousExtension = DANGEROUS_FILE_EXTENSIONS.has(extension);
+  const hasSuspiciousMiddleExtension = middleParts.some(
+    (part) =>
+      DANGEROUS_FILE_EXTENSIONS.has(part) ||
+      (MEDIA_EXTENSION_HINTS.has(part) &&
+        part.length >= 2 &&
+        part.length <= 5 &&
+        /^[a-z]+$/.test(part)),
+  );
+  const hasDoubleEncoded = /%2e|%2f|%5c/i.test(normalized);
+  const hasMultipleDots = rawParts.length > 1;
+
+  const canonicalExtension = CANONICAL_EXTENSION_MAP[extension] ?? extension;
+
+  return {
+    sanitizedName: normalized,
+    canonicalParts,
+    extension,
+    canonicalExtension,
+    reasons: [
+      hasPathTraversal ? 'path_traversal' : null,
+      hasDangerousExtension ? 'dangerous_extension' : null,
+      hasSuspiciousMiddleExtension ? 'double_extension' : null,
+      hasMultipleDots && hasSuspiciousMiddleExtension ? 'nested_extension' : null,
+      hasDoubleEncoded ? 'double_encoded_extension' : null,
+    ].filter(Boolean) as string[],
+    isBlocked:
+      hasPathTraversal || hasDangerousExtension || hasSuspiciousMiddleExtension || hasDoubleEncoded,
+  };
 }

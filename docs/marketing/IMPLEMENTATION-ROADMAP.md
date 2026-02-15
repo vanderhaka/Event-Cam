@@ -410,7 +410,7 @@ rg -n "loading=\"lazy\"|copyShare|navigator.clipboard" 'src/app/albums/[albumId]
 
 **Goal:** keep each roadmap step measurable with executable tests.
 
-**Current status:** PARTIAL.
+**Current status:** DONE.
 
 **Pre-check commands**
 
@@ -529,15 +529,12 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 
 ## 5) Suggested implementation order for next session
 
-1. Step 9
-2. Step 11
-3. Step 12
-4. Step 13
-5. Step 14
-6. Step 16
-7. Step 17
-8. Step 18
-9. Step 19
+1. Step 15 (step-level pass/fail gates)
+2. Step 16 (pricing/economics source of truth)
+3. Step 11 (content safety checks)
+4. Step 17 (messaging architecture)
+5. Step 18 (compliance pre-flight)
+6. Step 19 (launch playbook)
 
 Reason: Steps 1-10 are mostly present; this order focuses the next window on gaps, reliability, and launch control.
 
@@ -545,7 +542,8 @@ Reason: Steps 1-10 are mostly present; this order focuses the next window on gap
 
 ## 6) One-line pass summary you can track manually
 
-- If all checks in Steps 1-10 are PASS and one of 11-13 is also PASS, launch risk is materially reduced.
+- If all checks in Steps 1-10 are PASS and Step 14 is PASS, launch risk is materially reduced.
+- Step 15 must be DONE before starting Step 16.
 - If Step 11 remains NOT STARTED after one cycle, it is a blocker for enterprise-grade trust.
 - If Step 12 stays NOT STARTED, treat it as a growth optimization, not launch blocker.
 - If Steps 16-19 are not PASS, pause public promotion.
@@ -559,7 +557,7 @@ Reason: Steps 1-10 are mostly present; this order focuses the next window on gap
 - Decide and confirm which gaps in Step 11-13 are in scope.
 
 ### Week 2 checkpoint
-- At least one full happy-path test pass per day for Steps 11-14.
+- At least one full happy-path test pass per day for Steps 11-15.
 - Marketing docs consistency pass from Step 16.
 
 ### Week 3 checkpoint
