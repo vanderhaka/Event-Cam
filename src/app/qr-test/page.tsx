@@ -81,9 +81,10 @@ export default function QrTestPage() {
 
       {scanUrl ? (
         <>
-          <div className="stack-small">
+        <div className="stack-small">
             <p className="muted">QR encodes: {scanUrl}</p>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={qrImageUrl}
             alt={`QR code for ${scanUrl}`}

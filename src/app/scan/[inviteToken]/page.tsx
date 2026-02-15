@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 function decodeURIComponentSafe(value: string) {
@@ -91,7 +91,7 @@ export default function ScanPage() {
     };
   }, []);
 
-  async function loadInfo() {
+  const loadInfo = useCallback(async () => {
     if (!normalizedInviteToken) {
       setErrorState('not_found');
       setLoading(false);
@@ -120,11 +120,11 @@ export default function ScanPage() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [normalizedInviteToken]);
 
   useEffect(() => {
     loadInfo();
-  }, [normalizedInviteToken]);
+  }, [loadInfo]);
 
   async function submit(event: FormEvent) {
     event.preventDefault();

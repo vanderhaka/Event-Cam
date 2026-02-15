@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createBrowserSupabaseClient } from '@/lib/supabase/browser';
@@ -35,6 +36,20 @@ const readableDate = (value?: string | null) => {
   return `${ordinalSuffix(day)} ${month} ${year}, ${time}`;
 };
 
+const TOUR_TARGETS = ['add-guests', 'guest-list', 'save-guests', 'confirm'] as const;
+const TOUR_MODAL_ESTIMATE = { width: 360, height: 280, gap: 16 };
+const TOUR_MODAL_PADDING = 16;
+
+type ContactRow = {
+  id: string;
+  email: string;
+  display_name: string;
+  marketing_consent: boolean;
+  created_at: string | null;
+  unsubscribed_at: string | null;
+  emails_sent: number;
+};
+
 export default function EventDetailPage() {
   const { eventId } = useParams<{ eventId: string }>();
   const router = useRouter();
@@ -51,7 +66,7 @@ export default function EventDetailPage() {
   const [sharePassword, setSharePassword] = useState('');
   const [shareMaxViews, setShareMaxViews] = useState('50');
   const [shareExpiresInHours, setShareExpiresInHours] = useState('72');
-  const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums'>('invitees');
+  const [activeTab, setActiveTab] = useState<'invitees' | 'moderation' | 'albums' | 'contacts' | 'email'>('invitees');
   const [baseOrigin, setBaseOrigin] = useState('');
   const [qrModalInvitee, setQrModalInvitee] = useState<any>(null);
   const [editingInviteeId, setEditingInviteeId] = useState<string | null>(null);
@@ -68,12 +83,20 @@ export default function EventDetailPage() {
   const [disablingUploads, setDisablingUploads] = useState(false);
   const [emailRecipient, setEmailRecipient] = useState('');
   const [sendingEmail, setSendingEmail] = useState<string | null>(null);
+  const [sendingGuestEmails, setSendingGuestEmails] = useState<string | null>(null);
+  const [emailAutoSend, setEmailAutoSend] = useState(false);
+  const [hostUploadDigest, setHostUploadDigest] = useState(true);
+  const [digestFrequency, setDigestFrequency] = useState<'immediate' | 'daily' | 'off'>('daily');
+  const [replyTo, setReplyTo] = useState('');
+  const [savingEmailSettings, setSavingEmailSettings] = useState(false);
+  const [contacts, setContacts] = useState<ContactRow[]>([]);
+  const [contactsLoading, setContactsLoading] = useState(false);
+  const [exportingContacts, setExportingContacts] = useState(false);
+  const [removingContactId, setRemovingContactId] = useState<string | null>(null);
 
   useEffect(() => {
     setBaseOrigin(typeof window !== 'undefined' ? window.location.origin : '');
   }, []);
-
-  const TOUR_TARGETS = ['add-guests', 'guest-list', 'save-guests', 'confirm'] as const;
 
   useEffect(() => {
     if (
@@ -87,9 +110,6 @@ export default function EventDetailPage() {
       setGuestListTourStep(0);
     }
   }, [activeTab, eventPayload, eventId]);
-
-  const TOUR_MODAL_ESTIMATE = { width: 360, height: 280, gap: 16 };
-  const TOUR_MODAL_PADDING = 16;
 
   useEffect(() => {
     if (guestListTourStep === null || typeof document === 'undefined' || typeof window === 'undefined') {
@@ -144,7 +164,7 @@ export default function EventDetailPage() {
     };
   }, [guestListTourStep]);
 
-  async function buildAuthHeaders(extra: HeadersInit = {}) {
+  const buildAuthHeaders = useCallback(async (extra: HeadersInit = {}) => {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
     const headers = new Headers(extra);
@@ -152,18 +172,57 @@ export default function EventDetailPage() {
       headers.set('Authorization', `Bearer ${token}`);
     }
     return headers;
-  }
+  }, [supabase]);
 
-  async function fetchWithAuth(input: RequestInfo, init: RequestInit = {}) {
+  const fetchWithAuth = useCallback(async (input: RequestInfo, init: RequestInit = {}) => {
     const headers = await buildAuthHeaders(init.headers as HeadersInit);
     return fetch(input, { ...init, headers });
-  }
+  }, [buildAuthHeaders]);
 
-  async function loadData() {
+  const showStatus = useCallback((msg: string, type: 'error' | 'success' | 'info' = 'info') => {
+    setStatusMessage(msg);
+    setStatusType(type);
+    if (type === 'success') {
+      setTimeout(() => setStatusMessage(''), 4000);
+    }
+  }, []);
+
+  const loadContacts = useCallback(async () => {
+    setContactsLoading(true);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/contacts`);
+      if (response.ok) {
+        const payload = await response.json();
+        setContacts(payload.contacts ?? []);
+        return;
+      }
+
+      if (response.status === 401) {
+        router.push('/auth/login');
+        return;
+      }
+
+      const payload = await response.json();
+      showStatus(payload.message || 'Could not load contacts', 'error');
+      setContacts([]);
+    } catch {
+      showStatus('Could not load contacts', 'error');
+      setContacts([]);
+    } finally {
+      setContactsLoading(false);
+    }
+  }, [eventId, fetchWithAuth, showStatus, router]);
+
+  const loadData = useCallback(async () => {
     const base = await fetchWithAuth(`/api/events/${eventId}`);
     if (base.ok) {
       const payload = await base.json();
       setEventPayload(payload);
+      const emailSettings = payload.email_settings || {};
+      setEmailAutoSend(Boolean(emailSettings.album_auto_send));
+      setHostUploadDigest(Boolean(emailSettings.host_upload_digest));
+      setDigestFrequency((emailSettings.digest_frequency as 'immediate' | 'daily' | 'off') || 'daily');
+      setReplyTo(emailSettings.reply_to ? String(emailSettings.reply_to) : '');
     } else if (base.status === 401) {
       router.push('/auth/login');
       return;
@@ -186,19 +245,13 @@ export default function EventDetailPage() {
       router.push('/auth/login');
       return;
     }
-  }
+
+    await loadContacts();
+  }, [eventId, fetchWithAuth, loadContacts, router]);
 
   useEffect(() => {
     loadData();
-  }, [eventId]);
-
-  function showStatus(msg: string, type: 'error' | 'success' | 'info' = 'info') {
-    setStatusMessage(msg);
-    setStatusType(type);
-    if (type === 'success') {
-      setTimeout(() => setStatusMessage(''), 4000);
-    }
-  }
+  }, [loadData, eventId]);
 
   function updateInviteeRow(index: number, field: 'firstName' | 'lastName' | 'phone', value: string) {
     setInviteeRows((prev) => prev.map((row, i) => (i === index ? { ...row, [field]: value } : row)));
@@ -545,6 +598,159 @@ export default function EventDetailPage() {
     }
   }
 
+  async function sendAlbumToGuests(albumId: string) {
+    const contactCount = eventPayload?.counts?.guest_contacts?.optIn ?? 0;
+    if (contactCount <= 0) {
+      showStatus('No contacts with marketing consent are available for this event.', 'error');
+      return;
+    }
+
+    const pwd = sharePassword || 'changeme';
+    if (pwd.length < 4) {
+      showStatus('Share password must be at least 4 characters to send album emails.', 'error');
+      return;
+    }
+
+    setSendingGuestEmails(albumId);
+    try {
+      const response = await fetchWithAuth(`/api/albums/${albumId}/send-to-guests`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwd }),
+      });
+      const payload = await response.json();
+
+      if (response.ok) {
+        const sentCount = payload.sentCount ?? 0;
+        const alreadyCount = payload.alreadySentCount ?? 0;
+        const unsubscribedCount = payload.unsubscribedCount ?? 0;
+        const failedCount = payload.failedCount ?? 0;
+        const summary = `Album send summary: ${sentCount} sent, ${alreadyCount} already received, ${unsubscribedCount} unsubscribed.`;
+        showStatus(failedCount > 0 ? `${summary} ${failedCount} failed.` : summary, failedCount > 0 ? 'error' : 'success');
+        await loadData();
+      } else {
+        showStatus(payload.message || 'Could not send album to all guests', 'error');
+      }
+    } finally {
+      setSendingGuestEmails(null);
+    }
+  }
+
+  async function saveEmailSettings() {
+    if (!['immediate', 'daily', 'off'].includes(digestFrequency)) {
+      showStatus('Choose a valid digest frequency.', 'error');
+      return;
+    }
+
+    setSavingEmailSettings(true);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          album_auto_send: emailAutoSend,
+          host_upload_digest: hostUploadDigest,
+          digest_frequency: digestFrequency,
+          reply_to: replyTo.trim() || null,
+        }),
+      });
+
+      const payload = await response.json();
+      if (!response.ok) {
+        showStatus(payload.message || 'Could not save email settings', 'error');
+        return;
+      }
+
+      if (payload.email_settings) {
+        setEventPayload((prev: any) =>
+          prev
+            ? {
+                ...prev,
+                email_settings: payload.email_settings,
+              }
+            : prev
+        );
+
+        const emailSettings = payload.email_settings;
+        setEmailAutoSend(Boolean(emailSettings.album_auto_send));
+        setHostUploadDigest(Boolean(emailSettings.host_upload_digest));
+        setDigestFrequency((emailSettings.digest_frequency as 'immediate' | 'daily' | 'off') || 'daily');
+        setReplyTo(emailSettings.reply_to ? String(emailSettings.reply_to) : '');
+      }
+
+      showStatus('Email settings saved', 'success');
+    } finally {
+      setSavingEmailSettings(false);
+    }
+  }
+
+  function contactListLabel(contact: ContactRow) {
+    if (contact.display_name) {
+      return `${contact.email} (${contact.display_name})`;
+    }
+    return contact.email;
+  }
+
+  async function exportContacts() {
+    setExportingContacts(true);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/contacts?format=csv`);
+      if (!response.ok) {
+        if (response.status === 401) {
+          router.push('/auth/login');
+          return;
+        }
+        const payload = await response.json();
+        showStatus(payload.message || 'Could not export contacts', 'error');
+        return;
+      }
+
+      const csv = await response.text();
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = downloadUrl;
+      anchor.download = `event-${eventId}-contacts.csv`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+      window.URL.revokeObjectURL(downloadUrl);
+      showStatus('Contact CSV exported', 'success');
+    } catch {
+      showStatus('Could not export contacts', 'error');
+    } finally {
+      setExportingContacts(false);
+    }
+  }
+
+  async function removeContact(contactId: string) {
+    if (!window.confirm('Remove this contact? They will no longer receive album emails.')) {
+      return;
+    }
+    setRemovingContactId(contactId);
+    try {
+      const response = await fetchWithAuth(`/api/events/${eventId}/contacts?contactId=${encodeURIComponent(contactId)}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        showStatus('Contact removed', 'success');
+        await loadContacts();
+        await loadData();
+        return;
+      }
+
+      if (response.status === 401) {
+        router.push('/auth/login');
+        return;
+      }
+
+      const payload = await response.json();
+      showStatus(payload.message || 'Could not remove contact', 'error');
+    } finally {
+      setRemovingContactId(null);
+    }
+  }
+
   if (!eventPayload) {
     return (
       <section className="card" style={{ textAlign: 'center', padding: '3rem' }}>
@@ -694,6 +900,12 @@ export default function EventDetailPage() {
         </button>
         <button className={activeTab === 'albums' ? 'active' : ''} style={tabStyle('albums')} onClick={() => setActiveTab('albums')}>
           Albums ({eventPayload.albums?.length ?? 0})
+        </button>
+        <button className={activeTab === 'contacts' ? 'active' : ''} style={tabStyle('contacts')} onClick={() => setActiveTab('contacts')}>
+          Contacts ({contacts.length})
+        </button>
+        <button className={activeTab === 'email' ? 'active' : ''} style={tabStyle('email')} onClick={() => setActiveTab('email')}>
+          Email
         </button>
       </div>
 
@@ -1171,7 +1383,7 @@ export default function EventDetailPage() {
                           <div className="mod-card-placeholder">Video</div>
                         )
                       ) : item.url ? (
-                        <img src={item.url} alt={item.original_name || 'Upload'} className="mod-card-media" />
+                          <img src={item.url} alt={item.original_name || 'Upload'} className="mod-card-media" />
                       ) : (
                         <div className="mod-card-placeholder">Image</div>
                       )}
@@ -1318,6 +1530,16 @@ export default function EventDetailPage() {
                       <button
                         type="button"
                         className="btn btn-subtle btn-sm"
+                        onClick={() => sendAlbumToGuests(album.id)}
+                        disabled={sendingGuestEmails === album.id || (eventPayload.counts?.guest_contacts?.optIn ?? 0) <= 0}
+                      >
+                        {sendingGuestEmails === album.id
+                          ? 'Sending album to contacts…'
+                          : `Email album to all contacts (${eventPayload.counts?.guest_contacts?.optIn ?? 0})`}
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-subtle btn-sm"
                       onClick={() => hideAlbum(album.id)}
                       disabled={albumActionBusy === album.id}
                     >
@@ -1347,6 +1569,112 @@ export default function EventDetailPage() {
             </section>
           )}
         </>
+      )}
+
+      {/* ─── Contacts Tab ─── */}
+      {activeTab === 'contacts' && (
+        <section className="card">
+          <h3 className="section-head">Guest contacts</h3>
+          <p className="section-sub">Manage captured guest emails and export the contact list.</p>
+
+          <div className="row" style={{ gap: '0.5rem', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+            <button type="button" className="btn btn-subtle btn-sm" onClick={exportContacts} disabled={exportingContacts || contacts.length === 0}>
+              {exportingContacts ? 'Exporting…' : 'Export CSV'}
+            </button>
+            <span className="muted">{contacts.length} contact{contacts.length === 1 ? '' : 's'} captured</span>
+          </div>
+
+          {contactsLoading ? (
+            <p className="muted">Loading contacts…</p>
+          ) : contacts.length === 0 ? (
+            <p className="empty-state">No contacts captured yet.</p>
+          ) : (
+            <ul className="invitee-list">
+              {contacts.map((contact) => (
+                <li key={contact.id} className="invitee-item">
+                  <div>
+                    <span className="invitee-name">{contactListLabel(contact)}</span>
+                    <div className="invitee-meta">
+                      {contact.marketing_consent ? 'Marketing consented' : 'No marketing consent'}
+                      {contact.unsubscribed_at ? ' · Unsubscribed' : ' · Active'}
+                      {` · ${contact.emails_sent} album email${contact.emails_sent === 1 ? '' : 's'} sent`}
+                    </div>
+                  </div>
+                  <div className="row">
+                    <button
+                      type="button"
+                      className="btn btn-subtle btn-sm"
+                      onClick={() => removeContact(contact.id)}
+                      disabled={Boolean(removingContactId && contact.id === removingContactId) || Boolean(contact.unsubscribed_at)}
+                    >
+                      {removingContactId === contact.id ? 'Removing…' : 'Remove'}
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
+      {/* ─── Email Tab ─── */}
+      {activeTab === 'email' && (
+        <section className="card">
+          <h3 className="section-head">Email settings</h3>
+          <p className="section-sub">Manage how this event sends host and guest email notifications.</p>
+
+          <div className="form-grid" style={{ gap: '0.75rem' }}>
+            <label className="checkbox-row">
+              <input
+                type="checkbox"
+                checked={emailAutoSend}
+                onChange={(e) => setEmailAutoSend(e.target.checked)}
+              />
+              <span>Auto-send album to guests when a share link is created</span>
+            </label>
+
+            <label className="checkbox-row">
+              <input
+                type="checkbox"
+                checked={hostUploadDigest}
+                onChange={(e) => setHostUploadDigest(e.target.checked)}
+              />
+              <span>Host upload digest notifications</span>
+            </label>
+
+            <label className="field">
+              <div className="label">Digest frequency</div>
+              <select className="input" value={digestFrequency} onChange={(e) => setDigestFrequency(e.target.value as 'immediate' | 'daily' | 'off')}>
+                <option value="immediate">Immediate</option>
+                <option value="daily">Daily</option>
+                <option value="off">Off</option>
+              </select>
+            </label>
+
+            <label className="field">
+              <div className="label">Reply-to email</div>
+              <input
+                className="input"
+                type="email"
+                placeholder="Reply-to address"
+                value={replyTo}
+                onChange={(e) => setReplyTo(e.target.value)}
+                maxLength={254}
+              />
+            </label>
+
+            <div className="row" style={{ gap: '0.5rem', marginTop: '0.25rem' }}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={saveEmailSettings}
+                disabled={savingEmailSettings}
+              >
+                {savingEmailSettings ? 'Saving…' : 'Save email settings'}
+              </button>
+            </div>
+          </div>
+        </section>
       )}
     </div>
   );

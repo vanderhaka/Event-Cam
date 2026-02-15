@@ -61,6 +61,21 @@ export async function POST(request: Request, context: { params: { inviteToken: s
       return jsonResponse({ message: 'Invite token is disabled' }, { status: 403 });
     }
 
+    const { error: contactError } = await admin
+      .from('guest_contacts')
+      .upsert({
+        event_id: invitee.event_id,
+        invitee_id: invitee.id,
+        email,
+        marketing_consent: marketingConsent,
+      })
+      .select('id')
+      .single();
+
+    if (contactError) {
+      return jsonResponse({ message: 'Unable to store guest contact' }, { status: 500 });
+    }
+
     await recordEventMetric({
       eventId: invitee.event_id,
       actor: 'guest',

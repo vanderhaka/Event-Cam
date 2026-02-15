@@ -74,7 +74,7 @@ export async function POST(request: Request, context: { params: { albumId: strin
     const linkBase = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
     const shareUrl = `${linkBase}/albums/${album.id}/public?share=${shareLink.token}&password=${encodeURIComponent(password)}`;
 
-    const { error: emailError } = await sendAlbumDeliveryEmail({
+    const { error: emailError, data: emailData } = await sendAlbumDeliveryEmail({
       to,
       eventName: event.name,
       albumTitle: album.title,
@@ -86,6 +86,21 @@ export async function POST(request: Request, context: { params: { albumId: strin
     if (emailError) {
       return jsonResponse({ message: 'Failed to send email. Check your Resend configuration.' }, { status: 502 });
     }
+
+    await admin
+      .from('email_sends')
+      .insert({
+        event_id: album.event_id,
+        album_id: album.id,
+        recipient_email: to,
+        email_type: 'album_delivery',
+        resend_id: emailData?.id || null,
+      })
+      .then(({ error }) => {
+        if (error) {
+          console.error('[send-email] failed to record send history', error.message);
+        }
+      });
 
     await recordEventMetric({
       eventId: album.event_id,

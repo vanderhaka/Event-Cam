@@ -2,6 +2,7 @@ import { ApiError, jsonResponse, parseJsonBody } from '@/lib/http';
 import { createSupabaseAdminClient } from '@/lib/supabase/server';
 import { requireHostUser } from '@/lib/auth';
 import { randomToken, hashValue } from '@/lib/utils';
+import { sendAlbumToGuests } from '../send-to-guests/route';
 
 export async function POST(request: Request, context: { params: { albumId: string } }) {
   try {
@@ -88,10 +89,38 @@ export async function POST(request: Request, context: { params: { albumId: strin
     }
 
     const linkBase = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+    let autoSendSummary = null;
+    try {
+      const { data: settings } = await admin
+        .from('email_settings')
+        .select('album_auto_send')
+        .eq('event_id', album.event_id)
+        .single();
+
+      if (settings?.album_auto_send) {
+        autoSendSummary = await sendAlbumToGuests({
+          admin,
+          userId,
+          albumId: album.id,
+          password,
+        });
+      }
+    } catch (error) {
+      console.error('[share-links] auto-send to contacts failed', error instanceof Error ? error.message : String(error));
+    }
 
     return jsonResponse({
       share,
       shareUrl: `${linkBase}/albums/${album.id}/public?share=${token}`,
+      autoSend: autoSendSummary
+        ? {
+            sentCount: autoSendSummary.sentCount,
+            alreadySentCount: autoSendSummary.alreadySentCount,
+            unsubscribedCount: autoSendSummary.unsubscribedCount,
+            failedCount: autoSendSummary.failedCount,
+            message: autoSendSummary.message,
+          }
+        : null,
     });
   } catch (error) {
     if (error instanceof ApiError) {

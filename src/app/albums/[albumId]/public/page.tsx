@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 
 type SortOrder = 'newest' | 'oldest';
@@ -51,27 +52,30 @@ export default function PublicAlbumPage() {
     return `${window.location.origin}${window.location.pathname}?${searchParams.toString()}`;
   }
 
-  async function load(event?: FormEvent, nextSortOrder: SortOrder = sortOrder) {
-    if (event) event.preventDefault();
-    setLoading(true);
-    setMessage('');
-    setPayload(null);
-
-    const response = await fetch(
-      `/api/albums/${albumId}/public?token=${encodeURIComponent(token)}&password=${encodeURIComponent(password)}&order=${nextSortOrder}`,
-    );
-    const body = await response.json();
-
-    if (response.ok) {
-      setSortOrder(nextSortOrder);
-      setPayload(body);
+  const load = useCallback(
+    async (event?: FormEvent, nextSortOrder: SortOrder = sortOrder) => {
+      if (event) event.preventDefault();
+      setLoading(true);
       setMessage('');
-    } else {
       setPayload(null);
-      setMessage(body.message || 'Unable to load album');
-    }
-    setLoading(false);
-  }
+
+      const response = await fetch(
+        `/api/albums/${albumId}/public?token=${encodeURIComponent(token)}&password=${encodeURIComponent(password)}&order=${nextSortOrder}`,
+      );
+      const body = await response.json();
+
+      if (response.ok) {
+        setSortOrder(nextSortOrder);
+        setPayload(body);
+        setMessage('');
+      } else {
+        setPayload(null);
+        setMessage(body.message || 'Unable to load album');
+      }
+      setLoading(false);
+    },
+    [albumId, password, sortOrder, token]
+  );
 
   async function copyShareUrl() {
     const shareUrl = shareUrlFromState();
@@ -194,9 +198,9 @@ export default function PublicAlbumPage() {
 
   useEffect(() => {
     if (token && password) {
-      load(undefined, sortOrder);
+      void load(undefined, sortOrder);
     }
-  }, [albumId, token, password, sortOrder]);
+  }, [load, sortOrder, token, password]);
 
   if (!token) {
     return (

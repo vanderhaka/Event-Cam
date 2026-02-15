@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createBrowserSupabaseClient } from '@/lib/supabase/browser';
@@ -43,7 +43,7 @@ export default function DashboardPage() {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState<'error' | 'success'>('error');
 
-  async function buildAuthHeaders(extra: HeadersInit = {}) {
+  const buildAuthHeaders = useCallback(async (extra: HeadersInit = {}) => {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
     const headers = new Headers(extra);
@@ -51,14 +51,14 @@ export default function DashboardPage() {
       headers.set('Authorization', `Bearer ${token}`);
     }
     return headers;
-  }
+  }, [supabase]);
 
-  async function fetchWithAuth(input: RequestInfo, init: RequestInit = {}) {
+  const fetchWithAuth = useCallback(async (input: RequestInfo, init: RequestInit = {}) => {
     const headers = await buildAuthHeaders(init.headers as HeadersInit);
     return fetch(input, { ...init, headers });
-  }
+  }, [buildAuthHeaders]);
 
-  async function reload() {
+  const reload = useCallback(async () => {
     const response = await fetchWithAuth('/api/events');
     if (!response.ok) {
       if (response.status === 401) {
@@ -70,7 +70,7 @@ export default function DashboardPage() {
     }
     const payload = await response.json();
     setEvents(payload.events ?? []);
-  }
+  }, [fetchWithAuth, router]);
 
   useEffect(() => {
     (async () => {
@@ -81,7 +81,7 @@ export default function DashboardPage() {
       }
       await reload();
     })();
-  }, []);
+  }, [reload, router, supabase.auth]);
 
   async function logout() {
     await fetch('/api/auth/logout', { method: 'POST' });
