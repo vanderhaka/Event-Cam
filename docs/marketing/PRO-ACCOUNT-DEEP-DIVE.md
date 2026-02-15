@@ -51,18 +51,22 @@ bills client however they want → keeps the margin
 
 ```
 Pro shares their unique link → couple clicks and signs up →
-couple creates event and pays $2/guest (standard price) → Pro earns $0.80/guest
+couple creates event and pays $2/guest (standard price) → Pro earns 20% as credit
 ```
 
 - The couple does everything: creates the event, adds guests, pays $2/guest (standard price).
 - Pro doesn't touch anything. They just shared a link (or gave the couple a promo code).
-- Pro earns **$0.80/guest** (40% commission) — credited to their Pro account, paid out monthly.
-- We keep **$1.20/guest** — same as Path 1.
+- Pro earns **$0.40/guest (20%) as credit** — added to their credit balance.
+- Credits are applied to future Path 1 events, reducing the Pro's wholesale cost.
+- Credits never expire.
+- **Payout option:** Pros with a credit balance of **$100+** can request a cash payout via Stripe Connect Express (monthly). This serves connector Pros (bands, dress shops, florists) who refer couples but never create their own events.
+- We keep **$1.60/guest** on referred events.
 - Attribution: referral link or promo code with a 90-day cookie.
 
 **Economics for the Pro:**
-- 150-guest wedding = $300 paid by the couple (at $2/guest) → **$120 commission to the Pro**.
+- 150-guest wedding = $300 paid by the couple (at $2/guest) → **$60 credit earned**.
 - Zero effort required. Just share a link.
+- That $60 credit covers half the cost of a future 100-guest Pro-created event at $1.20/guest.
 
 ### Why This Works
 
@@ -70,37 +74,74 @@ couple creates event and pays $2/guest (standard price) → Pro earns $0.80/gues
 |----------|------------------|
 | **One model** | Every Pro has the same account, same rate, same dashboard. |
 | **Flexible** | Pro chooses Path 1 or Path 2 per client. Not locked in. Can do Path 1 for their premium clients and Path 2 for casual referrals. |
-| **Same economics for us** | We keep $1.20/guest either way. Path 1: Pro pays $1.20. Path 2: Couple pays $2, Pro gets $0.80, we keep $1.20. |
-| **Simple to explain** | "You get 40% off. Set it up yourself and keep the margin, or refer clients and earn $0.80/guest." |
-| **One thing to build** | One account type, one dashboard, one billing system. Path 1 = Pro pays at checkout. Path 2 = commission tracker + payout. |
+| **Credits-first, payout optional** | Path 2 rewards are credits toward future events by default. Pros with $100+ balance can cash out via Stripe Connect — serves connector Pros (bands, dress shops) who never create their own events. |
+| **Simple to explain** | "Buy wholesale and resell, or refer clients and earn credit toward your own events." |
+| **One thing to build** | One account type, one dashboard, one billing system. Path 1 = Pro pays at checkout. Path 2 = credit tracker. |
 
 ---
 
-## Should There Be Volume Tiers?
+## Pro-to-Pro Recruitment Discount (3-Tier System)
 
-The question: does a photographer doing 50 weddings/year deserve a better rate than a celebrant doing 5?
+Instead of volume-based tiers, Pros earn deeper wholesale discounts by recruiting other Pros into the network. This creates a self-reinforcing growth loop: Pros recruit Pros, each recruiting Pro's costs drop, and the network expands without founder-driven outreach.
 
-### Argument For Tiers
+### How It Works
 
-- Rewards loyalty and volume — the biggest Pros feel valued.
-- Incentivizes Pros to push more events through the platform.
-- Standard SaaS practice.
+Every Pro starts at the base rate: **$1.20/guest (40% off retail)**. When a Pro recruits other Pros who become active on the platform, the recruiting Pro's wholesale rate drops — up to 3 tiers deep.
 
-### Argument Against Tiers
+| Tier | Relationship | Bonus Discount Per Active Pro |
+|------|-------------|-------------------------------|
+| **Tier 1** | You recruited them directly | +2% per active Pro |
+| **Tier 2** | Your recruit's recruit | +1% per active Pro |
+| **Tier 3** | 3rd degree (deepest) | +0.5% per active Pro |
 
-- Adds complexity. "What tier am I on? When do I level up?"
-- The Pro rate ($1.20) is already generous. 40% off is a lot.
-- Tiers create anxiety: a Pro at 990 guests/year might delay events or game the system to hit the 1,000 threshold.
-- The simplicity of "one rate for everyone" is itself a selling point. "No tiers. No thresholds. Just 40% off, always."
-- Most Pros won't do enough volume for tiers to matter. The median photographer does 25–40 weddings × 140 guests = 3,500–5,600 guests. The difference between $1.20 and $1.00/guest on 4,000 guests is $800/year. Nice, but not worth the complexity.
+**Cap:** Maximum total discount is **55% ($0.90/guest floor)**. Nobody goes lower.
 
-### Recommendation: No Tiers (For Now)
+**"Active" definition:** Completed at least 1 paid event in the trailing 90 days.
 
-Start with one flat rate: **$1.20/guest for everyone**. It's clean, easy to communicate, and removes a decision point.
+**Recalculation:** Monthly, based on trailing 90-day activity.
 
-If a Pro is doing 10,000+ guests/year and asks for a better rate, handle it manually with a custom agreement. You'll know who these people are — there won't be many in the first year. Don't build infrastructure for edge cases.
+**Applies to:** Path 1 only (Pro-created events). Path 2 referral credits are fixed at 20%.
 
-Revisit tiers once you have 100+ active Pros and can see the actual volume distribution.
+**Each Pro has one upline only.** First recruiter wins. No circular chains.
+
+### Scenarios
+
+**Small-time Pro** — recruited 2 photographers, both active.
+- Bonus: 2 × 2% = +4%
+- Total discount: 44% → **$1.12/guest**
+- Saves $0.08/guest vs. base
+
+**Solid networker** — recruited 4 Pros (Tier 1). Two of them each recruited 1 more (Tier 2).
+- Bonus: (4×2%) + (2×1%) = +10%
+- Total discount: 50% → **$1.00/guest**
+- Saves $0.20/guest vs. base
+
+**Power recruiter** — 5 direct (Tier 1), those 5 recruited 4 total (Tier 2), those 4 recruited 3 (Tier 3).
+- Bonus: (5×2%) + (4×1%) + (3×0.5%) = +15.5% → capped at +15%
+- Total discount: 55% → **$0.90/guest** (floor)
+- Saves $0.30/guest vs. base
+
+### Why This Works for Event-Cam
+
+Worst case: power recruiter at the $0.90/guest floor.
+- Event-Cam still keeps $0.90/guest on their events (healthy margin).
+- That recruiter brought 5+ active Pros, each paying $1.20/guest on their own events.
+- One recruited Pro doing 3 events/month × 120 guests = $432/month revenue for Event-Cam.
+- Cost of giving the recruiter their $0.30 discount on their own events: ~$108/month (3 events × 120 guests × $0.30).
+- **Net gain from just one active recruit: +$324/month.**
+
+### How Credits and Recruitment Discount Stack
+
+A Pro can benefit from both the recruitment discount AND Path 2 referral credits:
+
+1. Calculate recruitment discount (base 40% + network bonuses, max 55%)
+2. Calculate event cost at that rate
+3. Apply any available credits to reduce the cost further (can go to $0)
+
+**Example:** Pro A has 3 active Tier 1 Pros (46% discount → $1.08/guest) and $150 in credits from referrals. Creates a 120-guest wedding:
+- Cost at recruitment rate: 120 × $1.08 = $129.60
+- Apply credits: $129.60 − $129.60 = **$0.00** (uses $129.60 of credits, $20.40 remaining)
+- Pro charges couple whatever they want — keeps 100% on this event.
 
 ---
 
@@ -116,13 +157,14 @@ What the Pro sees when they log in.
 │  Thompson Photography — Pro Account                 │
 │                                                     │
 │  ┌─────────────┐  ┌─────────────┐  ┌────────────┐  │
-│  │  12         │  │  $1,440     │  │  1,680     │  │
-│  │  Events     │  │  Earned     │  │  Guests    │  │
-│  │  this year  │  │  this year  │  │  this year │  │
+│  │  12         │  │  $184.00    │  │  1,680     │  │
+│  │  Events     │  │  Credit     │  │  Guests    │  │
+│  │  this year  │  │  balance    │  │  this year │  │
 │  └─────────────┘  └─────────────┘  └────────────┘  │
 │                                                     │
 │  ┌─────────────────────────────────────────────────┐ │
-│  │  Next payout: $360.00 — Feb 28                 │ │
+│  │  Your rate: $1.08/guest (46% off)              │ │
+│  │  3 active Pros in your network                  │ │
 │  └─────────────────────────────────────────────────┘ │
 │                                                     │
 │  Quick Actions:                                     │
@@ -155,28 +197,35 @@ What the Pro sees when they log in.
 └──────────────────────────────────────────────────────────────┘
 ```
 
-### Earnings Tab
+### Credits & Savings Tab
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  Earnings                                                    │
+│  Credits & Savings                                           │
 │                                                              │
-│  ┌─ This Month ─────────────────────────────────────────────┐ │
-│  │  3 events completed                                      │ │
-│  │  Pro-created events: 2 × margin earned = $240            │ │
-│  │  Referred events:    1 × commission     = $90            │ │
-│  │  Total earned: $330                                      │ │
-│  │  Payout: Feb 28 via Stripe → **** 4242                   │ │
+│  ┌─ Credit Balance ─────────────────────────────────────────┐ │
+│  │  Available credit: $184.00                               │ │
+│  │  Credits earned this month: $52.00 (from 1 referral)     │ │
+│  │  Credits used this month: $0.00                          │ │
+│  │  Credits never expire.                                   │ │
+│  │  [ Request Payout — $184.00 available ]                  │ │
 │  └──────────────────────────────────────────────────────────┘ │
 │                                                              │
-│  ┌─ Lifetime ───────────────────────────────────────────────┐ │
-│  │  12 events  |  1,680 guests  |  $1,440 earned             │ │
+│  ┌─ Your Rate ──────────────────────────────────────────────┐ │
+│  │  Base rate: $1.20/guest (40% off)                        │ │
+│  │  Network bonus: +6% (3 active Tier 1 Pros)              │ │
+│  │  Your rate: $1.08/guest (46% off)                        │ │
+│  │  Next recalculation: Mar 1                               │ │
 │  └──────────────────────────────────────────────────────────┘ │
 │                                                              │
-│  ┌─ History ────────────────────────────────────────────────┐ │
-│  │  Jan 2026    4 events    560 guests    $480    Paid ✓    │ │
-│  │  Dec 2025    3 events    420 guests    $360    Paid ✓    │ │
-│  │  Nov 2025    2 events    280 guests    $240    Paid ✓    │ │
+│  ┌─ Wholesale Savings (Lifetime) ───────────────────────────┐ │
+│  │  12 events  |  1,680 guests  |  $1,344 saved vs retail   │ │
+│  └──────────────────────────────────────────────────────────┘ │
+│                                                              │
+│  ┌─ Credit History ─────────────────────────────────────────┐ │
+│  │  Jan 2026   Referral: Kim & Dan (130 guests)   +$52.00  │ │
+│  │  Jan 2026   Used on: Priya & Raj event         −$129.60 │ │
+│  │  Dec 2025   Referral: Alex & Jordan (110 guests) +$44.00│ │
 │  └──────────────────────────────────────────────────────────┘ │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -187,20 +236,24 @@ What the Pro sees when they log in.
 ┌──────────────────────────────────────────────────────────────┐
 │  Your Referral Tools                                         │
 │                                                              │
-│  Your link:                                                  │
+│  Client referral link (earns 20% credit):                    │
 │  ┌──────────────────────────────────────────────────────────┐ │
 │  │  https://[product].com/r/thompson-photo    [ Copy ]      │ │
 │  └──────────────────────────────────────────────────────────┘ │
 │                                                              │
-│  Your promo code:                                            │
+│  Pro recruitment link (grows your network):                   │
 │  ┌──────────────────────────────────────────────────────────┐ │
-│  │  THOMPSON40                                  [ Copy ]     │ │
+│  │  https://[product].com/pro/thompson-photo  [ Copy ]      │ │
 │  └──────────────────────────────────────────────────────────┘ │
 │                                                              │
-│  Referral stats:                                             │
+│  Client referral stats:                                      │
 │  │  Link clicks: 47  |  Signups: 12  |  Paid events: 8     │ │
 │  │  Conversion rate: 17%                                     │ │
-│  │  Commissions earned: $960                                 │ │
+│  │  Credits earned from referrals: $184.00                   │ │
+│                                                              │
+│  Pro network stats:                                          │
+│  │  Tier 1: 3 active  |  Tier 2: 0  |  Tier 3: 0           │ │
+│  │  Network bonus: +6% discount                              │ │
 │                                                              │
 │  Marketing kit:                                              │
 │  [ Download "I use [product]" badge ]                        │
@@ -214,46 +267,44 @@ What the Pro sees when they log in.
 
 ## Earnings Mechanics
 
+**Core principle: Credits-first.** All Pro rewards are wholesale discounts or credits. Pros who run their own events spend credits on cheaper wholesale rates. Pros who only refer (connector Pros — bands, dress shops, florists) can cash out credits above $100 via Stripe Connect Express.
+
 ### How the Pro Earns on Path 1 (Pro-Created Events)
 
-The "earnings" on Pro-created events are implicit — it's the margin between what the Pro pays ($1.20/guest) and what they charge the client. We don't track this directly because we don't know what the Pro charges.
-
-But for the dashboard, we can show it as:
+The "earnings" on Pro-created events are implicit — it's the margin between what the Pro pays and what they charge the client. The Pro's wholesale rate depends on their recruitment network:
 
 > **Retail value:** $300 (150 guests × $2)
-> **You paid:** $180 (150 guests × $1.20)
-> **Your savings:** $120
+> **You paid:** $162 (150 guests × $1.08 — with 46% discount from 3 active recruits)
+> **Your savings:** $138
 
-This makes the Pro feel good even if they're absorbing the cost rather than marking it up. They "saved" $60 vs. retail.
+This makes the Pro feel good even if they're absorbing the cost rather than marking it up. They "saved" $138 vs. retail.
 
 ### How the Pro Earns on Path 2 (Referred Events)
 
-Direct commission:
+Referral credits (not cash):
 
 - Client pays $2/guest → $300 for a 150-guest wedding.
-- Pro earns $0.80/guest → $120 commission.
-- Commission is tracked in real-time and appears in the earnings dashboard.
-- Payout: monthly, via Stripe Connect.
-- Minimum payout threshold: $25 (rolls over if not met).
+- Pro earns $0.40/guest (20%) → **$60 credit** added to their balance.
+- Credits appear in real-time on the credits dashboard.
+- Credits are applied to future Path 1 events, reducing wholesale cost.
+- Credits never expire.
+- **Payout option:** balance of $100+ can be cashed out via Stripe Connect Express (monthly).
 
 ### What About the Promo Code?
 
-The Pro's promo code (e.g., THOMPSON40) is a referral attribution tool. No couple discount — the Pro earns a strong 40% commission instead.
+The Pro's promo code (e.g., THOMPSON) is a referral attribution tool. No couple discount — the couple pays standard $2/guest. The Pro earns credit.
 
-| Path | Couple Pays | Pro Gets | We Get |
+| Path | Couple Pays | Pro Gets | We Keep |
 |------|------------|---------|--------|
-| **Pro creates event (Path 1)** | Whatever the Pro charges | Margin on markup | $1.20/guest |
-| **Pro refers via code (Path 2)** | $2.00/guest | $0.80/guest commission (40%) | $1.20/guest |
-
-The Pro's commission is high enough ($0.80/guest = $120 on a 150-guest wedding) that it's a strong incentive to share without needing a couple discount.
+| **Pro creates event (Path 1)** | Whatever the Pro charges | Margin on markup | $0.90–$1.20/guest (depending on recruitment discount) |
+| **Pro refers via code (Path 2)** | $2.00/guest | $0.40/guest credit (20%) | $1.60/guest |
+| **Pro recruits a Pro** | N/A | Deeper wholesale discount (+2%/+1%/+0.5% per tier) | Unchanged — discount comes from our margin |
 
 ```
 Standard price:        $2.00/guest  → we keep $2.00
-Pro code applied:      $2.00/guest  → Pro earns $0.80, we keep $1.20
-Pro creates directly:  $1.20/guest  → Pro pays us $1.20, charges client whatever
+Pro code applied:      $2.00/guest  → Pro earns $0.40 credit, we keep $1.60
+Pro creates directly:  $0.90–$1.20/guest  → Pro pays wholesale, charges client whatever
 ```
-
-We always keep $1.20/guest. Clean.
 
 ---
 
@@ -397,24 +448,27 @@ Target: 50% of Pro signups should activate within 60 days.
 - Average 130 guests per event
 - Split: 60% Path 1 (Pro-created), 40% Path 2 (referred)
 - White-label adoption: 10% of Pros
+- Average recruitment discount: ~44% in Phase 1, ~47% in Phase 2, ~50% in Phase 3 (as networks deepen)
 
 ### Revenue to Us (What We Keep)
 
-| Phase | Pro Events/Mo | Guests/Mo | Our Rev @ $1.20/guest | White-Label Rev | Total |
-|-------|--------------|-----------|----------------------|-----------------|-------|
-| Phase 1 | 90 | 11,700 | $14,040 | $147 | $14,187 |
-| Phase 2 | 400 | 52,000 | $62,400 | $490 | $62,890 |
-| Phase 3 | 1,500 | 195,000 | $234,000 | $1,470 | $235,470 |
+| Phase | Path 1 Events/Mo | Path 1 Rev (avg rate) | Path 2 Events/Mo | Path 2 Rev @ $1.60/guest | White-Label | Total |
+|-------|-----------------|----------------------|-----------------|-------------------------|-------------|-------|
+| Phase 1 | 54 | $7,581 (@ ~$1.08 avg) | 36 | $7,488 | $147 | $15,216 |
+| Phase 2 | 240 | $30,264 (@ ~$0.97 avg) | 160 | $33,280 | $490 | $64,034 |
+| Phase 3 | 900 | $95,940 (@ ~$0.82 avg) | 600 | $124,800 | $1,470 | $222,210 |
 
-### Revenue to Pros (What They Earn)
+**Note:** Path 2 revenue is higher per guest ($1.60 vs. variable Path 1) because we keep more on referred events. The credit cost ($0.40/guest) is deferred and some credits are never redeemed.
 
-| Phase | Path 1 Savings | Path 2 Commissions | Total Pro Earnings |
-|-------|---------------|-------------------|-------------------|
-| Phase 1 | $5,616 | $5,616 | $11,232/mo across all Pros |
-| Phase 2 | $24,960 | $24,960 | $49,920/mo |
-| Phase 3 | $93,600 | $93,600 | $187,200/mo |
+### Value to Pros (Savings + Credits)
 
-Pros collectively earning $187k/month by Phase 3 creates a very sticky, very motivated distribution network. A photographer doing 40 weddings/year keeps ~$4,800/year in savings (Path 1) or earns ~$4,800/year in commissions (Path 2). That's real money.
+| Phase | Path 1 Wholesale Savings | Path 2 Credits Issued | Total Pro Value |
+|-------|------------------------|-----------------------|----------------|
+| Phase 1 | $6,459 | $1,872 | $8,331/mo across all Pros |
+| Phase 2 | $31,736 | $8,320 | $40,056/mo |
+| Phase 3 | $141,960 | $31,200 | $173,160/mo |
+
+A photographer doing 40 weddings/year at a 46% network discount saves ~$5,600/year on wholesale costs. Add referral credits from casual recommendations and they're running some events nearly free. That's real, tangible value — without Event-Cam ever writing a check.
 
 ---
 
@@ -437,14 +491,14 @@ At Phase 3, Pro events generate ~195,000 guest emails/month. Even excluding whit
 
 ## Open Questions
 
-- [x] **$1.20 or $1.40?** Decision: $1.20/guest (40% off). This is the canonical Pro rate.
-- [x] **Promo code discount for couples — 10% or 0%?** Decision: No couple discount. Pro earns $0.80/guest (40% commission). Couple pays standard $2/guest. The high commission is incentive enough for Pros to share.
-- [ ] **Minimum payout threshold:** $25 feels right. Low enough that small-volume Pros can cash out. High enough to avoid micro-transactions.
-- [ ] **Payout frequency:** Monthly is standard. Weekly could be attractive for high-volume Pros but increases operational overhead.
+- [x] **$1.20 or $1.40?** Decision: $1.20/guest (40% off). This is the canonical base Pro rate.
+- [x] **Promo code discount for couples — 10% or 0%?** Decision: No couple discount. Pro earns 20% credit ($0.40/guest). Couple pays standard $2/guest.
+- [x] **Payout model?** Decision: **Credits-first.** All Pro rewards are wholesale discounts (via recruitment) or credits (via referrals). Credits can be cashed out via Stripe Connect Express at $100+ minimum balance (monthly). Serves connector Pros who never create their own events.
+- [x] **Pro-to-Pro referrals?** Decision: **Yes — 3-tier recruitment discount system.** Tier 1: +2%, Tier 2: +1%, Tier 3: +0.5% per active downstream Pro. Cap: 55% ($0.90/guest floor). Active = 1 paid event in 90 days.
+- [x] **Referral credit rate?** Decision: **20% ($0.40/guest)**. Conservative — can increase later. Credits never expire, not cashable.
 - [ ] **Pro vetting:** Should anyone be able to create a Pro account, or require approval? Open signup is better for growth. Maybe add verification later (proof of business, portfolio link) for the directory listing only.
 - [ ] **Can a couple become a Pro?** If someone uses the product for their own wedding and loves it, they might want to start referring friends. Allow upgrade from Standard to Pro with one click.
-- [ ] **Pro-to-Pro referrals:** Should Pros earn a bonus for referring other Pros? E.g., "Refer a photographer, get $50 credit when they complete their first event." Creates a viral loop within the wedding vendor network.
 
 ---
 
-*Ship the simplest version first: Pro account (free), $1.20/guest wholesale, referral link with commission, basic dashboard. Add white-label, Pro Directory, and marketing kit in v2.*
+*Ship the simplest version first: Pro account (free), $1.20/guest wholesale, referral link with credit tracking, recruitment tracking, basic dashboard. Add white-label, Pro Directory, and marketing kit in v2.*

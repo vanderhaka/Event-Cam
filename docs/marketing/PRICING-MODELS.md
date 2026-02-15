@@ -297,33 +297,35 @@ The Pro buys at a discount and resells at their own price.
 - **Net margin: $4,480/year** from just reselling the product.
 - Or they absorb the cost ($168/wedding at $1.20 × 140 guests) as a value-add in their $4,000 package. It's 4.2% of their package price for a major feature.
 
-#### Model B: Affiliate (For Pros Who Recommend)
+#### Model B: Referral Credits (For Pros Who Recommend)
 
-The Pro doesn't handle billing. They refer clients, and earn a commission.
+The Pro doesn't handle billing. They refer clients and earn credit toward their own future events. **No cash payouts.**
 
 | Structure | Details |
 |-----------|---------|
-| Commission | 40% of event revenue ($0.80/guest) |
-| Payout | Monthly, via Stripe Connect or bank transfer |
-| Minimum payout | $25 (rolls over if under threshold) |
+| Credit earned | 20% of event revenue ($0.40/guest) |
+| Default use | Applied to future Path 1 events (reduces wholesale cost) |
+| Payout option | Cash out via Stripe Connect Express at **$100+ minimum balance** (monthly) |
+| Credit expiry | Never expires |
 | Attribution | Referral link or promo code, 90-day cookie |
-| Dashboard | Track referrals, conversions, earnings in real-time |
+| Dashboard | Track referrals, conversions, credit balance in real-time |
 
-**Note:** In the unified Pro model (see `PRO-ACCOUNT-DEEP-DIVE.md`), referred events are charged at the standard $2/guest rate. The Pro earns $0.80/guest commission. We keep $1.20/guest.
+**Note:** In the unified Pro model (see `PRO-ACCOUNT-DEEP-DIVE.md`), referred events are charged at the standard $2/guest rate. The Pro earns $0.40/guest as credit. We keep $1.60/guest.
 
 **Example:**
 - Celebrant recommends Event Cam to 50 couples/year.
 - 60% convert (30 couples), averaging 130 guests.
 - Couple pays $2/guest = $260/event.
-- Pro commission: $0.80/guest × 130 = $104/event.
-- **$3,120/year** for the celebrant. Passive income for just mentioning the product.
+- Pro credit: $0.40/guest × 130 = $52/event.
+- **$1,560/year in credits** for the celebrant. Enough to cover ~13 of their own events for free (at $1.20/guest × 100 guests = $120/event).
 
 #### Comparison
 
-| Factor | Wholesale | Affiliate |
+| Factor | Wholesale (Path 1) | Referral Credits (Path 2) |
 |--------|-----------|-----------|
 | Who handles billing? | Pro bills their client (or bundles into package) | We bill the couple directly |
-| Pro's revenue | Margin on markup (potentially very high) | 40% commission ($0.80/guest, zero effort) |
+| Pro's reward | Margin on markup (potentially very high) | 20% credit ($0.40/guest) toward future events |
+| Cash payout? | No — Pro pays wholesale, keeps markup | Optional — cash out at $100+ balance via Stripe Connect |
 | Effort for Pro | Medium — they manage the event setup | Low — just share a link |
 | Best for | Photographers, planners who want full control | Celebrants, DJs, florists who just recommend |
 | White-label available? | Yes (premium add-on) | No (our brand shows) |
@@ -338,7 +340,7 @@ The Pro doesn't handle billing. They refer clients, and earn a commission.
 | Create events on behalf of clients | Yes |
 | Client handoff (transfer ownership to couple) | Yes |
 | Event templates (clone your standard setup) | Yes |
-| Earnings / commission tracker | Affiliate model |
+| Credit balance & referral tracker | Referral model (Path 2) |
 | Marketing materials (badges, graphics, email templates) | Yes |
 | Priority support | Yes |
 | White-label upload page | Wholesale only, +$49/mo |
@@ -349,10 +351,10 @@ The Pro doesn't handle billing. They refer clients, and earn a commission.
 | Component | Price |
 |-----------|-------|
 | Pro account itself | **Free** — no monthly fee to be a Pro |
-| Events | Wholesale rate (per-guest) OR standard pricing with affiliate commission |
+| Events | Wholesale rate (per-guest) with recruitment discount; referral credits on Path 2 |
 | White-label add-on | $49/month (optional, wholesale Pros only) |
 
-The Pro account should be free to join. The barrier to entry needs to be zero. You want every photographer, planner, and celebrant signed up. Revenue comes from the events they create or refer.
+The Pro account should be free to join. The barrier to entry needs to be zero. You want every photographer, planner, and celebrant signed up. Revenue comes from the events they create or refer. **Rewards are wholesale discounts and credits. Credits can be cashed out at $100+ via Stripe Connect — this serves connector Pros (bands, dress shops, florists) who refer but never create events.**
 
 ---
 
@@ -531,9 +533,9 @@ Even at $2/guest, Event Cam is cheaper than disposable cameras and massively che
 
 ### Pro Accounts
 - [ ] Do we need a vetting/approval process for Pro accounts, or let anyone sign up?
-- [ ] Should wholesale volume tiers reset annually or be lifetime cumulative?
+- [x] ~~Should wholesale volume tiers reset annually or be lifetime cumulative?~~ Replaced with 3-tier Pro-to-Pro recruitment discount. See `PRO-ACCOUNT-DEEP-DIVE.md`.
 - [ ] How do we handle the case where a Pro creates an event on behalf of a couple, but the couple also wants their own login to moderate/manage albums?
-- [ ] Is the Pro commission sustainable long-term? (At $2/guest with $0.80/guest commission on referred events, our margin is $1.20/guest — healthy.)
+- [x] ~~Is the Pro commission sustainable long-term?~~ No cash payouts. Path 2 earns 20% credit ($0.40/guest). We keep $1.60/guest. Sustainable.
 - [ ] Should Pros get early access to new features (beta watermark styles, filters) to keep them engaged?
 
 ### General

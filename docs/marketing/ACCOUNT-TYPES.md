@@ -21,7 +21,7 @@ The current model is simple: someone creates an event (wedding, birthday, engage
 | Account Type | Who | Core Need | Revenue Model |
 |-------------|-----|-----------|---------------|
 | **Standard** (current) | Couples, party hosts | One event, one-time purchase | $2/guest ($49 min) |
-| **Pro** | Photographers, planners, DJs, celebrants, coordinators | Resell or bundle Event Cam into their own packages; earn commission | 40% discount ($1.20/guest) or 40% referral commission ($0.80/guest) |
+| **Pro** | Photographers, planners, DJs, celebrants, coordinators, bands, dress shops, florists — any wedding vendor | Resell or bundle Event Cam into their own packages; earn credit or cash | 40% base discount ($1.20/guest, deeper with recruitment network); 20% referral credit ($0.40/guest). Credits applied to own events or cashed out at $100+ via Stripe Connect. |
 | **Venue** (future) | Pubs, clubs, hotels, banquet halls, event spaces, restaurants | Host many events across many clients; need multi-admin, recurring, always-on | Monthly subscription ($39/$89/$179/mo) |
 
 ---
@@ -166,21 +166,23 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 
 **Example:** Photographer charges a couple $4,000 for their package. Package now includes "guest photo collection powered by Event Cam." Photographer pays Event Cam $1.20 × 150 guests = $180. Photographer either absorbs it (4.5% of their package) or marks it up to $2/guest ($300) and pockets $120.
 
-#### Model B: Affiliate Commission (Pro earns a cut)
+#### Model B: Referral Credits (Pro earns credit, not cash)
 
 - Couple pays $2/guest (standard pricing).
-- Pro gets a **40% commission** on every event they refer: **$0.80/guest**.
+- Pro earns **20% credit** on every event they refer: **$0.40/guest**.
+- Credits accumulate, never expire, and are applied to future Path 1 events.
+- **Payout option:** Credits above $100 can be cashed out via Stripe Connect Express (monthly). Serves connector Pros (bands, dress shops, florists) who refer but never run their own events.
 - Pro shares a referral link or code with clients.
 - Event Cam handles billing, the Pro just drives the sale.
-- We keep $1.20/guest — same as the wholesale path.
+- We keep $1.60/guest on referred events.
 
-**Example:** Photographer recommends Event Cam to 30 couples/year. Average 140 guests. Commission = 30 × 140 × $0.80 = **$3,360/year** passive income for the photographer. Real money for just mentioning the product.
+**Example:** Photographer recommends Event Cam to 30 couples/year. Average 140 guests. Credits = 30 × 140 × $0.40 = **$1,680/year in credits**. Enough to cover ~14 of their own events for free.
 
-#### Model C: Hybrid (Wholesale for bundlers, Affiliate for recommenders)
+#### Model C: Hybrid (Wholesale for bundlers, Credits for recommenders)
 
-- **Pros who bundle** Event Cam into their packages → Wholesale model (buy at $1.20, sell at their price)
-- **Pros who just recommend** → Affiliate model (40% commission, no billing hassle)
-- Let the Pro choose which model fits their business.
+- **Pros who bundle** Event Cam into their packages → Wholesale model (buy at $1.20 base, cheaper with recruitment network)
+- **Pros who just recommend** → Referral credit model (20% credit, no billing hassle, no cash payouts)
+- Let the Pro choose which model fits per client. Same account, same dashboard.
 
 ### Pro Account Features
 
@@ -191,7 +193,7 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 | **Client handoff** | Option to transfer event ownership to the couple after setup (they take over moderation, albums). |
 | **White-label (premium)** | Replace "Event Cam" branding with the Pro's logo on the upload page and album. |
 | **Bulk event creation** | Template an event setup and clone it for each client. |
-| **Earnings dashboard** | Track commissions, payouts, referral performance. |
+| **Credits & savings dashboard** | Track referral credits, recruitment network, wholesale savings. |
 | **Marketing materials** | Downloadable assets: "We use Event Cam" badge, social media graphics, email templates for pitching to clients. |
 | **Priority support** | Pros are recommending this to paying clients — they need reliability and fast help. |
 
@@ -201,24 +203,28 @@ client's guests use Event Cam as normal → Pro earns margin on every event
 Pro Account
 ├── Profile & Branding
 │   ├── Business name, logo, website
-│   ├── Referral link / code
-│   └── Payout settings (Stripe Connect or similar)
+│   ├── Client referral link / code (earns 20% credit)
+│   └── Pro recruitment link (grows network discount)
 ├── Client Events
 │   ├── Active: "Sarah & James — June 14"
 │   ├── Active: "Priya & Raj — June 21"
 │   ├── Upcoming: "Emma & Liam — July 5"
 │   ├── Completed: "Maria & David — May 30"
 │   └── Templates: "Standard Wedding Setup"
-├── Earnings
-│   ├── This month: $180 (3 weddings)
-│   ├── Lifetime: $840
-│   └── Pending payout: $180
+├── Credits & Savings
+│   ├── Credit balance: $184.00
+│   ├── Your rate: $1.08/guest (46% off — 3 active recruits)
+│   ├── Wholesale savings (lifetime): $1,344
+│   └── [ Request Payout ] (available at $100+ balance via Stripe Connect)
+├── Pro Network
+│   ├── Tier 1: 3 active Pros
+│   ├── Tier 2: 0
+│   └── Tier 3: 0
 ├── Marketing Kit
 │   ├── "We use Event Cam" badge (PNG, SVG)
 │   ├── Social media graphics
 │   └── Client pitch email template
 └── Settings
-    ├── Pricing model: Wholesale / Affiliate
     ├── White-label: On / Off
     └── Default event settings (watermark style, filters)
 ```
@@ -253,7 +259,7 @@ Marketing it as: **"Event Cam Pro — For wedding professionals."**
 1. **Start with photographers** — They're the most natural fit (guest photos supplement their work) and the most active on social media.
 2. **Seed 20–30 Pros in the first 3 months** — Offer the first 5 events free. Let them experience it with real clients.
 3. **Build a "Pro Directory"** on the Event Cam website — Couples can find local Pros who use Event Cam. This gives Pros an incentive to join (free lead generation) and gives couples confidence (the Pro they're hiring already uses the tool).
-4. **Pro referral chain** — Pros who refer other Pros get a bonus. Photographers refer planners, planners refer DJs, etc.
+4. **Pro-to-Pro recruitment** — 3-tier recruitment discount system. Pros who recruit other active Pros earn deeper wholesale discounts: +2% per Tier 1, +1% per Tier 2, +0.5% per Tier 3. Cap: 55% ($0.90/guest floor). Photographers recruit planners, planners recruit DJs, etc.
 
 ---
 
@@ -270,8 +276,8 @@ Marketing it as: **"Event Cam Pro — For wedding professionals."**
               ▼                         ▼
      ┌────────────────┐       ┌────────────────┐
      │  Venue Account │       │  Pro Account   │
-     │  (Subscription)│       │ (Wholesale or  │
-     │                │       │   Affiliate)   │
+     │  (Subscription)│       │ (Wholesale +   │
+     │                │       │  Credits)      │
      └────────┬───────┘       └────────┬───────┘
               │                         │
               │  Hosts events           │  Creates events
@@ -318,16 +324,16 @@ Over 24 months, the mix should shift toward Pro and Venue as those channels comp
 - [ ] Do venues want a public-facing gallery ("See photos from last Friday's event") or is everything private?
 
 ### Pro
-- [ ] Wholesale vs. affiliate — which do photographers actually prefer? Need to interview 10+ photographers.
+- [x] ~~Wholesale vs. affiliate — which do photographers actually prefer?~~ Decision: unified model. Pros choose Path 1 (wholesale) or Path 2 (referral credits) per client. No cash payouts.
 - [ ] How does white-labeling affect the guest email flywheel? If it's the Pro's brand, do we still capture guest emails for Event Cam marketing? (Probably not for white-label — the Pro owns that relationship.)
-- [ ] What's the minimum viable Pro dashboard? Start with just a referral link + earnings tracker, then build up?
-- [ ] How do payouts work? Stripe Connect? Monthly bank transfer? Minimum threshold?
+- [ ] What's the minimum viable Pro dashboard? Start with just referral link + credit tracker + network stats, then build up?
+- [x] ~~How do payouts work?~~ Credits-first. Pros can cash out credits at $100+ minimum via Stripe Connect Express (monthly). Serves connector Pros who never create events.
 - [ ] Should Pros get access to a shared media library across their client events? (Useful for portfolio building, with client permission.)
 
 ### General
-- [ ] Build priority: Which account type ships first? Pro is probably simpler (referral link + commission tracking) and has faster payback. Venue accounts are more complex but higher long-term value.
+- [ ] Build priority: Which account type ships first? Pro is probably simpler (referral link + credit tracking + recruitment tracking) and has faster payback. Venue accounts are more complex but higher long-term value.
 - [ ] Do Standard accounts need an upgrade path? ("You started as a couple, now you're planning events professionally — upgrade to Pro.")
-- [ ] How do we prevent Pros from gaming the system? (e.g., creating "fake" events to harvest guest emails)
+- [ ] How do we prevent Pros from gaming the system? (e.g., creating fake Pro accounts to inflate recruitment discount — mitigated by "active = 1 paid event in 90 days" requirement)
 
 ---
 

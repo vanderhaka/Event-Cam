@@ -265,7 +265,7 @@ These are the channels we're actively testing now. Everything else in this secti
 | 5 | **WeddingTok creators** | Creator mentions drive awareness and signups | Views → site visits → signups per creator | 10+ signups from a single partnership | <3 signups per partnership after testing 3 creators | 4 weeks/test |
 | 6 | **Pro-to-Pro referrals** | Pros naturally refer other Pros when they like the product | Pro referrals → new Pro signups → client events | 20%+ of Pros refer at least 1 other Pro | <5% referral rate after 3 months | 3 months |
 
-**Not in focus this quarter** (documented below for future phases): SEO/blog, Pinterest organic, Product Hunt, Google Ads, Meta Ads, Pinterest Ads, micro-influencer partnerships, bridal shows, venue partnerships, couple referral program.
+**Not in focus this quarter** (documented below for future phases): SEO/blog, Pinterest organic, Product Hunt, Google Ads, Meta Ads, Pinterest Ads, micro-influencer partnerships, bridal shows, venue partnerships.
 
 ---
 
@@ -395,12 +395,12 @@ The email capture must feel natural, not extractive. Key principles:
 | + 6 months | "Anniversary coming up? Collect photos from friends and family." | Re-engage around milestone events |
 | Engagement season (Dec–Feb) | "Just got engaged? Congrats! Here's a wedding planning hack your guests will love." | Seasonal push timed to peak engagement season |
 
-**Sequence 3: Referral Ask (Marketing — opt-in only)**
+**Sequence 3: Pro Conversion (Marketing — opt-in only)**
 
 | Timing | Email | Purpose |
 |--------|-------|---------|
-| Post-wedding + 1 month | "Know someone getting married? Share Event Cam and you both get $10 off." | Referral program activation |
-| Every 3 months | "Still planning events? $10 referral credit is waiting." | Referral reminder |
+| Post-wedding + 1 month | "Work in weddings? Turn Event Cam into a business tool — Pro accounts are free." | Pro account acquisition from active guests/couples |
+| Every 3 months | "Still planning events? Go Pro — buy wholesale at 40% off." | Pro conversion reminder |
 
 ### Segmentation Strategy
 
@@ -411,7 +411,7 @@ Not all guest emails are equal. Segment for higher-conversion targeting:
 | **Guests who uploaded 3+ photos** | Upload count | High engagement — they loved the product. Strongest conversion candidates. |
 | **Guests who viewed the album multiple times** | Album page analytics | Emotionally invested in the content. Warm lead for "create your own event." |
 | **Guests in the 24–34 age range** | Inferred from couple's guest list metadata (if available) or self-reported | Prime wedding-planning demographic. Target with engagement/wedding content. |
-| **Guests who clicked a referral link** | Click tracking | Already considering Event Cam. Send conversion-focused follow-up. |
+| **Guests who clicked a Pro link** | Click tracking | Already considering Event Cam via a Pro. Send conversion-focused follow-up. |
 | **Guests from large weddings (200+)** | Event metadata | Likely part of communities where large events are common. Cultural/community targeting. |
 
 ### Long-Term Email List Value
@@ -446,7 +446,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 - [ ] Product Hunt launch — lead with AI watermark angle
 - [ ] Share in r/weddingplanning, r/Weddingsunder10k, The Knot forums, bridal Facebook groups
-- [ ] Run referral incentive: "Share Event Cam with an engaged friend, get $20 off your wedding"
+- [ ] Begin Pro outreach to wedding photographers and planners (free account + first event free)
 - [ ] Begin organic social posting (4×/week across Instagram, TikTok, Pinterest)
 - [ ] Reach out to 10–15 wedding bloggers, planners, and photographers for partnerships
 - [ ] Attend 1–2 local bridal shows with a simple booth: live demo + QR table card samples
@@ -462,7 +462,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 - [ ] Begin Google Ads and Meta Ads campaigns targeting engaged couples
 - [ ] Launch Pinterest Ads (promoted pins in wedding categories)
-- [ ] Launch affiliate program for wedding planners: 40% commission ($0.80/guest) per referral
+- [ ] Launch Pro referral credit program for wedding planners: 20% credit ($0.40/guest) per referred event
 - [ ] Partner with 5+ wedding photographers who recommend Event Cam to clients
 - [ ] Publish monthly case studies: real weddings, real numbers, real watermarked albums
 - [ ] Launch the photobook upsell (partner with a print-on-demand service)
@@ -470,7 +470,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 - [ ] Sponsor 3–5 wedding expos / bridal shows in major metros
 - [ ] Expand filter library based on what couples are requesting (vintage, film, moody, bright & airy)
 - [ ] Upload guest email list to Meta/Google to build lookalike audiences for paid ads
-- [ ] Launch guest referral program: "Know someone getting married? Share Event Cam."
+- [ ] Launch Pro-to-Pro recruitment program: 3-tier discount system for Pros who recruit other Pros
 - [ ] Segment guest email list by engagement level and target high-engagement guests with conversion campaigns
 
 ### Phase 3: Year-Round & Expansion (Months 8–14)
@@ -544,7 +544,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
    - Day 5: "Create your first album" (guide + prompt)
    - Day 10: "Share your album" (password-protected link walkthrough)
    - Day 14: "Want a photobook? One-click order from your album." (upsell)
-   - Day 21: "Love Event Cam? Share with engaged friends" (referral ask + testimonial request)
+   - Day 21: "Love Event Cam? Leave a review + tell us your experience" (testimonial request)
 
 ---
 
@@ -554,9 +554,9 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 | Partner Type | Examples | Value | Approach |
 |-------------|----------|-------|----------|
-| **Wedding planners** | Local firms, national planning companies, day-of coordinators | Direct referral to every client; 15–40 weddings/year each | Offer Pro account with 40% discount or 40% referral commission ($0.80/guest) |
+| **Wedding planners** | Local firms, national planning companies, day-of coordinators | Direct referral to every client; 15–40 weddings/year each | Offer Pro account with 40% wholesale discount + 20% referral credit ($0.40/guest). No cash payouts — credits toward own events. |
 | **Wedding photographers** | Local and destination wedding photographers | Recommend Event Cam as a "guest photo supplement" to their professional work | Free account + co-branded album feature; they promote to every client |
-| **Venues** | Hotels, banquet halls, estates, barns, rooftops | Venue includes Event Cam in their packages or recommends to every couple | Provide branded QR table tents with venue logo; revenue share or flat referral fee |
+| **Venues** | Hotels, banquet halls, estates, barns, rooftops | Venue includes Event Cam in their packages or recommends to every couple | Provide branded QR table tents with venue logo; future venue subscription model |
 | **Wedding invitation platforms** | Zola, The Knot, Paperless Post, Minted | Include Event Cam QR code on digital invitations or RSVP pages | API integration; "Add guest photo collection" as a feature on their platform |
 | **Print-on-demand** | Shutterfly, Artifact Uprising, Chatbooks, Motif | Post-event upsell: "Turn your watermarked album into a photobook" | Revenue share on orders placed through Event Cam |
 | **Wedding dress / registry platforms** | Zola, Amazon Wedding, Blueprint | Cross-promotion to engaged couples actively in planning mode | Sponsored content, co-branded guides |
@@ -590,7 +590,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 | Guest participation | % of invited guests who upload | 40%+ | 50%+ |
 | Watermark usage | % of weddings using AI watermark | 80%+ | 90%+ |
 | Filter usage | % of uploads with a filter applied | 30%+ | 40%+ |
-| Referral | Referral-driven signups | 10% of new | 20% of new |
+| Pro referral | Pro-referred event signups | 10% of new | 20% of new |
 | Upsell | % of weddings purchasing an add-on | 5% | 15% |
 
 ### Unit Economics Targets
@@ -617,7 +617,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 | Album delivery email open rate | 60%+ | 60%+ |
 | Nurture email open rate | 25%+ | 25%+ |
 | Guest-to-customer conversion rate | 1.5% | 2.5% |
-| Guest referral rate (shared with a friend) | 3% | 5% |
+| Guest-to-customer conversion rate (creates own event) | 1.5% | 2.5% |
 | Unsubscribe rate (nurture sequence) | < 2% | < 1.5% |
 | Lookalike audience ROAS (Meta/Google) | — | 3x+ |
 
@@ -663,7 +663,7 @@ The guest email list becomes one of Event Cam's most valuable assets over time:
 
 ### Budget Context
 
-At Phase 2 targets of 200 weddings/month averaging $260/wedding ($2 × 130 guests), that's $52,000/month in revenue. Even at the high end of the budget ($15,600), marketing spend is 30% of revenue — healthy for a growth-stage consumer product. As organic channels compound and referrals kick in, paid spend as a % of revenue should drop to 15–25% by month 8.
+At Phase 2 targets of 200 weddings/month averaging $260/wedding ($2 × 130 guests), that's $52,000/month in revenue. Even at the high end of the budget ($15,600), marketing spend is 30% of revenue — healthy for a growth-stage consumer product. As organic channels compound and Pro network referrals kick in, paid spend as a % of revenue should drop to 15–25% by month 8.
 
 ---
 

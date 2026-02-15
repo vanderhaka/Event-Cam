@@ -21,17 +21,18 @@
 
 ### High Priority — Would Strengthen the Plan Significantly
 
-#### 1. Referral Program Specifics
+#### 1. Referral Program Specifics — RESOLVED
 
-**Why it matters:** Referrals are mentioned in almost every doc but never specced out. It's a core growth lever with no details.
+**Status:** Decided (P1-10, 2026-02-15). See `PRO-ACCOUNT-DEEP-DIVE.md` for full details.
 
-**What's needed:**
-- Couple-to-couple referral: What's the incentive? Credit, discount, free event? How much? Two-sided (referrer and referee both get something)?
-- Pro-to-Pro referral: Does a photographer earn a bonus for referring a planner?
-- Guest-to-couple conversion: A guest at a wedding signs up for their own event — does the original couple get a reward?
-- Mechanics: Referral links, promo codes, tracking, attribution windows, payout rules
-- Anti-abuse: How do you prevent gaming (fake referrals, self-referral)?
-- Viral coefficient target: How many new customers does each existing customer generate?
+**Decisions:**
+- **Couple-to-couple referral:** Eliminated. Not part of the model.
+- **Guest-to-couple conversion:** No referral reward. Guests convert organically via the email flywheel — no incentive structure needed.
+- **Pro-to-Pro recruitment:** 3-tier discount system. Recruiting active Pros deepens your wholesale rate: +2% (Tier 1), +1% (Tier 2), +0.5% (Tier 3). Cap: 55% ($0.90/guest floor).
+- **Pro-to-couple referral:** 20% credit ($0.40/guest). Never expires, applied to future events.
+- **Payout option:** Credits above $100 can be cashed out via Stripe Connect Express (monthly). Serves connector Pros (bands, dress shops, florists) who refer but never create their own events.
+- **Attribution:** 90-day cookie for client referrals. Pro-to-Pro recruitment is permanent (first recruiter wins).
+- **Anti-abuse:** "Active" = 1 paid event in 90 days. One upline per Pro. Different payment method required on self-referral attempts.
 
 ---
 
