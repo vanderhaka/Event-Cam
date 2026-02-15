@@ -179,7 +179,7 @@ export function analyzeUploadFilename(fileName: string) {
     .filter(Boolean)
     .map((part) => CANONICAL_EXTENSION_MAP[part] ?? part);
 
-  const extension = canonicalParts.length > 0 ? canonicalParts.at(-1) : 'bin';
+  const extension = canonicalParts.length > 0 ? (canonicalParts.at(-1) ?? 'bin') : 'bin';
   const middleParts = canonicalParts.slice(0, -1);
 
   const hasPathTraversal =

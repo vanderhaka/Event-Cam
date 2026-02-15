@@ -11,12 +11,19 @@ function decodeURIComponentSafe(value: string) {
   }
 }
 
-function computeMobileSupport(windowRef: Window) {
-  const supportsUpload = typeof windowRef.File !== 'undefined' && typeof windowRef.FormData !== 'undefined' && typeof windowRef.FileList !== 'undefined';
-  const isMobileViewport = windowRef.matchMedia('(max-width: 768px)').matches;
-  const isPortrait = windowRef.innerHeight >= windowRef.innerWidth;
-  const isIOS = /iPhone|iPad|iPod/.test(windowRef.navigator.userAgent);
-  const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(windowRef.navigator.userAgent);
+type MobileSupportConfig = {
+  uploadSupported: boolean;
+  fileCaptureMode: 'environment' | undefined;
+  mobileSupportMessage: string;
+  isMobileViewport: boolean;
+};
+
+function computeMobileSupport(): MobileSupportConfig {
+  const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+  const isPortrait = window.innerHeight >= window.innerWidth;
+  const isIOS = /iPhone|iPad|iPod/.test(window.navigator.userAgent);
+  const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
+  const supportsUpload = typeof File !== 'undefined' && typeof FormData !== 'undefined' && typeof FileList !== 'undefined';
 
   const supportMessage = supportsUpload
     ? (isMobileViewport || isMobileDevice) && !isPortrait
@@ -69,7 +76,7 @@ export default function ScanPage() {
       if (typeof window === 'undefined') {
         return;
       }
-      const settings = computeMobileSupport(window);
+      const settings = computeMobileSupport();
       setFileCaptureMode(settings.fileCaptureMode);
       setUploadSupported(settings.uploadSupported);
       setMobileSupportMessage(settings.mobileSupportMessage);

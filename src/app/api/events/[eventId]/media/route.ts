@@ -103,7 +103,8 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
     let publicAlbumUrl: string | null = null;
     let publicAlbumId: string | null = null;
     if (publicAlbums && publicAlbums.length > 0) {
-      publicAlbumId = publicAlbums[0].id;
+      const publicAlbumIdRow = publicAlbums[0].id;
+      publicAlbumId = publicAlbumIdRow;
       const { data: shareRows, error: shareError } = await admin
         .from('share_links')
         .select('token, expires_at, max_views, view_count, revoked_at')
@@ -122,8 +123,9 @@ export async function GET(request: NextRequest, context: { params: { eventId: st
         return true;
       });
 
-      if (share) {
-        publicAlbumUrl = buildPublicAlbumUrl(publicAlbumId, share.token);
+      const shareToken = share?.token;
+      if (shareToken) {
+        publicAlbumUrl = buildPublicAlbumUrl(publicAlbumIdRow, String(shareToken));
       }
     }
 
