@@ -545,4 +545,55 @@ Even at $2/guest, Event Cam is cheaper than disposable cameras and massively che
 
 ---
 
+## 12. How the Account Types Fit Together
+
+```
+                    ┌──────────────┐
+                    │   Standard   │  Engaged couples
+                    │  $2 / guest  │  One-time purchase
+                    └──────┬───────┘
+                           │
+              ┌────────────┼────────────┐
+              │                         │
+              ▼                         ▼
+     ┌────────────────┐       ┌────────────────┐
+     │  Venue Account │       │  Pro Account   │
+     │  (Subscription)│       │ (Wholesale +   │
+     │                │       │  Credits)      │
+     └────────┬───────┘       └────────┬───────┘
+              │                         │
+              │  Hosts events           │  Creates events
+              │  with permanent QR      │  for clients
+              │                         │
+              ▼                         ▼
+     ┌────────────────┐       ┌────────────────┐
+     │  Guest Email   │       │  Guest Email   │
+     │  Flywheel      │◄──────│  Flywheel      │
+     │  (venue guests │       │  (wedding      │
+     │   → future     │       │   guests →     │
+     │   customers)   │       │   future       │
+     └────────────────┘       │   couples)     │
+                              └────────────────┘
+```
+
+All three account types feed the guest email flywheel. Every event, regardless of account type, captures guest emails that become future customers.
+
+### Revenue Mix Target (12-Month View)
+
+| Account Type | % of Revenue | Characteristics |
+|-------------|-------------|-----------------|
+| Standard (couples) | 60% | High volume, one-time, seasonal |
+| Pro (photographers, planners) | 25% | Recurring via client events, steady year-round |
+| Venue (pubs, clubs, hotels) | 15% | Recurring subscription, year-round, grows over time |
+
+Over 24 months, the mix should shift toward Pro and Venue as those channels compound:
+
+| Account Type | 12-Month | 24-Month |
+|-------------|----------|----------|
+| Standard | 60% | 40% |
+| Pro | 25% | 35% |
+| Venue | 15% | 25% |
+
+---
+
 *Validate all pricing with real users before committing. Run A/B tests on the pricing page once there's traffic. The numbers here are starting points, not gospel.*
