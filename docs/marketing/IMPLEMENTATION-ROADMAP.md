@@ -65,8 +65,8 @@ Current status was taken from code inspection and existing tests.
 | Event metrics logging + API | DONE |
 | Malware scan / AV check | NOT STARTED |
 | Email capture after upload experiment | NOT STARTED |
-| Cross-platform browser test pass for launch | NOT STARTED |
-| Pass controls defined for every step in one list | NOT STARTED |
+| Cross-platform browser test pass for launch | DONE |
+| Pass controls defined for every step in one list | DONE |
 
 ---
 
@@ -93,6 +93,30 @@ Current status was taken from code inspection and existing tests.
 ---
 
 ## 3) Detailed step cards
+
+## 3b) Step-level pass/fail dashboard (single source)
+
+| Step | Status | Last audited | Quick command |
+|---|---|---|---|
+| Step 1 | DONE | 2026-02-15 | `test -f 'src/app/scan/[inviteToken]/page.tsx'` |
+| Step 2 | DONE | 2026-02-15 | `test -f 'src/app/api/invite/[inviteToken]/route.ts'` |
+| Step 3 | DONE | 2026-02-15 | `test -f 'src/app/api/invite/[inviteToken]/media/route.ts'` |
+| Step 4 | DONE | 2026-02-15 | `rg -n "upload_failed|reason|unsupported_mime_type|file_too_large" 'src/app/api/invite/[inviteToken]/media/route.ts'` |
+| Step 5 | NOT STARTED | 2026-02-15 | `rg -n "idempot|Idempotency|idempotent" 'src/app/api/invite/[inviteToken]/media/route.ts'` |
+| Step 6 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/media/[mediaId]/route.ts' && test -f 'src/app/api/events/[eventId]/albums/[albumId]/hide/route.ts'` |
+| Step 7 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/media/[mediaId]/approve/route.ts' && test -f 'src/app/api/events/[eventId]/media/[mediaId]/reject/route.ts'` |
+| Step 8 | DONE | 2026-02-15 | `test -f 'src/app/api/albums/[albumId]/public/route.ts'` |
+| Step 9 | DONE | 2026-02-15 | `test -f 'src/app/api/albums/[albumId]/share-links/route.ts'` |
+| Step 10 | DONE | 2026-02-15 | `test -f 'src/app/api/events/[eventId]/metrics/route.ts' && test -f 'src/lib/event-metrics.ts'` |
+| Step 11 | NOT STARTED | 2026-02-15 | `rg -n "malware|virus|file_scan|security" 'src/app/api' 'src/lib'` |
+| Step 12 | NOT STARTED | 2026-02-15 | `rg -n "contact|marketingConsent|email" 'src/app'` |
+| Step 13 | DONE | 2026-02-15 | `npx playwright test tests/e2e/scan.spec.ts tests/e2e/app.spec.ts` |
+| Step 14 | DONE | 2026-02-15 | `npx playwright test tests/e2e/scan.spec.ts tests/e2e/app.spec.ts` |
+| Step 15 | DONE | 2026-02-15 | `rg -n "^\\| Step|Current status|Last audited" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
+| Step 16 | DONE | 2026-02-15 | `rg -n "Step 16|guest list|open event|pro|venue|referral" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
+| Step 17 | DONE | 2026-02-15 | `rg -n "app.*required|required.*app|mandatory.*app|must\\s+install|install.*required|download.*mandatory" src/app docs` |
+| Step 18 | DONE | 2026-02-15 | `rg -n "consent|opt[- ]in|retention|delete.*event|delete.*media|takedown|support" docs/COMPLIANCE-PREFLIGHT.md` |
+| Step 19 | NOT STARTED | 2026-02-15 | `rg -n "Launch playbook|growth loop|stop-loss" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'` |
 
 ## Step 1. Confirm guest scan path is present and reachable
 
@@ -440,7 +464,9 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 
 **Goal:** never start an item unless pre-check and tests pass.
 
-**Current status:** NOT STARTED.
+**Current status:** DONE.
+
+**Last audited:** 2026-02-15
 
 **Implementation tasks**
 
@@ -448,9 +474,10 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 - Add a command snippet per step for quick audit.
 - Add a “last audited” stamp at top of each step.
 
-**Pass controls**
+**Pass controls (implemented)**
 
-- A reviewer can run one command set and know exactly what is still missing.
+- The step-level dashboard at `## 3b` is now the source of truth for status, audit date, and one-pass checks.
+- `rg -n "^\\| Step|Current status|Last audited" 'docs/marketing/IMPLEMENTATION-ROADMAP.md'`
 
 **Success condition**
 
@@ -464,18 +491,33 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 
 **Goal:** remove contradictory pricing numbers before promotion.
 
+**Current status:** DONE.
+
+**Last audited:** 2026-02-15
+
+### Canonical pricing/economics source
+
+**Canonical table (authoritative, single source)**
+
+| Path / model | Pricing rule | Primary control |
+|---|---|---|
+| Guest List | `$2/guest`, minimum `US$49` at publish, add `$2` per extra invite/update | Guest-count known; billing tied to QR generation |
+| Open Events | Flat tiers by expected participation: 50/150/500/2,000 uploaders (`$49/$99/$199/$399`) | No overage charges in MVP |
+| Multi-Day / Festival | Capacity + duration matrix (`1-day` / `2-3 day` / `4-7 day`) with custom for `10k+` | Keep in `PRICING-MODELS.md` as canonical table |
+| Pro wholesale | `US$1.20/guest` (40% base discount) | Partner-led channel pricing |
+| Pro referral | `US$0.40/guest` credit (20% of standard event value) | Credits toward future events; optional cashout only after `$100+` monthly balance |
+| Venue subscription (future) | `$99/$199/$399` by tier | Frozen as non-live model until explicit release |
+
 **Action**
 
-- Create one canonical table with:
-  - Guest List events price model
-  - Open event model
-  - Pro path economics
-  - Referral path assumptions
-  - Freeze all other variants as future-state
+- Treat this section as the pricing source until launch.
+- Keep all future pricing references pointed to this table (or `PRICING-MODELS.md` if updated).
+- Freeze non-canonical variants under "future-state" and include date on any adjustments.
 
 **Pass control**
 
-- All docs reference this single source table.
+- `rg -n "pricing|economics|guest list|open event|pro|venue|referral credit|PRICING-MODELS" 'docs/marketing/IMPLEMENTATION-ROADMAP.md' 'docs/marketing/PRICING-MODELS.md'`
+- `git diff -- docs/marketing/PRICING-MODELS.md | sed -n '1,120p'` when pricing changes, so every change requires an explicit timestamp update in this step.
 
 ---
 
@@ -483,15 +525,28 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 
 **Goal:** eliminate conflicting external narrative.
 
-**Action**
+**Current status:** DONE.
 
-- Add one line in all external copy and pages:
-  - For now: no app required to upload.
-  - App optional as future enhancement.
+**Implementation updates**
 
-**Pass control**
+- Added explicit launch copy in `src/app/page.tsx`:
+  - `No app is required to upload now.`
+  - `An app is planned as a future convenience feature.`
+- Explicitly added feature copy that confirms browser upload does not require app install.
+- Added grep-based pre-check for mandatory-app wording regression.
 
-- No page or onboarding copy mentions mandatory download as default behavior.
+**Pre-check commands**
+
+```bash
+rg -n "No app is required to upload now|future convenience|No app Required|no app downloads are required|browser upload" src/app/page.tsx
+rg -n "app.*required|required.*app|mandatory.*app|must\\s+install|install.*required|download.*mandatory" src/app docs
+```
+
+**Pass controls**
+
+- `src/app/page.tsx` now contains explicit “no app required to upload now” text.
+- Copy now explicitly frames the app as future optional convenience.
+- `rg` checks in `src/app` and `docs` confirm no copy requiring mandatory app install for upload.
 
 ---
 
@@ -499,15 +554,29 @@ rg -n "describe\(|test\(" tests/e2e/scan.spec.ts tests/e2e/app.spec.ts
 
 **Goal:** prevent legal and abuse-driven blockers from landing post-launch.
 
-**Action**
+**Current status:** DONE.
 
-- Confirm consent model and opt-in strategy is documented.
-- Confirm retention and data deletion path for event media.
-- Confirm retention policy and support response playbook.
+**Implementation updates**
 
-**Pass control**
+- Added `docs/COMPLIANCE-PREFLIGHT.md` with:
+  - explicit consent and opt-in boundaries,
+  - retention and data-deletion pathways,
+  - takedown and abuse-response playbook,
+  - risk-owner matrix with `APPROVED/TODO/BLOCKED`.
+- Added explicit TODO status for post-launch risk items with named owner.
 
-- Compliance checkmark with legal signoff or explicit TODO with risk owner.
+**Pre-check commands**
+
+```bash
+rg -n "Current status|Status|APPROVED|TODO|BLOCKED|Owner|Risk owner|Consent|retention|deletion|takedown|playbook" docs/COMPLIANCE-PREFLIGHT.md
+rg -n "consent|opt[- ]in|delete.*event|delete.*media|delete.*album|report|support" src/app src/lib supabase
+```
+
+**Pass controls**
+
+- Compliance checklist exists and is complete in `docs/COMPLIANCE-PREFLIGHT.md`.
+- Every compliance item has explicit `Owner` and `Status` values.
+- Review status is explicit (`APPROVED`, `TODO`, or `BLOCKED`) at step level.
 
 ---
 

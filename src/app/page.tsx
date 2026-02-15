@@ -7,7 +7,9 @@ export default function HomePage() {
       <section className="card hero">
         <h2 className="section-head">Capture every moment, effortlessly</h2>
         <p className="muted section-sub">
-          Create events, share QR codes with guests, and collect all photos and videos in one beautiful album — no app downloads required.
+          Create events, share QR codes with guests, and collect all photos and videos in one beautiful album.
+          No app is required to upload now.
+          An app is planned as a future convenience feature.
         </p>
         <div className="row" style={{ gap: '0.75rem' }}>
           <Link href="/auth/login" className="btn btn-primary btn-lg">
@@ -53,7 +55,7 @@ export default function HomePage() {
             <span>&#128247;</span>
           </div>
           <h3>No App Required</h3>
-          <p>Guests upload directly from their phone browser. No downloads, no sign-ups, no friction.</p>
+          <p>Guests upload directly from their phone browser. No downloads are required for upload.</p>
         </div>
         <div className="feature-card">
           <div className="feature-icon" style={{ background: '#f0fdf4' }}>
