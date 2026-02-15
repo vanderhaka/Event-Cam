@@ -8,6 +8,20 @@
 
 ---
 
+## 0.1) Local QA workaround (no checkout required)
+
+- Use `EVENT_CAM_ALLOW_UNPAID=1` in `.env.local` when running locally.
+- Restart `npm run dev`.
+- Then publish from browser console while on the event detail page because the UI publish button still requires `status=paid`:
+  ```js
+  const eventId = window.location.pathname.split('/').at(-1);
+  await fetch(`/api/events/${eventId}/publish`, { method: 'POST' });
+  ```
+- Open an invite and verify the QR render works.
+- See `docs/marketing/LOCAL-QR-WITHOUT-CHECKOUT.md` for the full step-by-step flow.
+
+---
+
 ## 0) How to use this file
 
 For each step in the roadmap:
@@ -306,7 +320,7 @@ rg -n "scan_opened|upload_click|upload_success|upload_failed|gallery_open_succes
 
 **Goal:** catch obviously malformed or known-bad files before storage.
 
-**Current status:** NOT STARTED.
+**Current status:** DONE.
 
 **Pre-check commands**
 
@@ -336,7 +350,7 @@ rg -n "virus|scan|malware|content moderation|antivirus|clamscan|media scan" 'src
 
 **Goal:** reduce friction while measuring email capture conversion.
 
-**Current status:** NOT STARTED.
+**Current status:** DONE.
 
 **Pre-check commands**
 
@@ -364,6 +378,8 @@ rg -n "email|address|capture|newsletter|marketing|unsubscribe" 'src/app/scan/[in
 ---
 
 ## Step 13. Add cross-platform smoke checks and mobile-specific failure handling
+
+**Current status:** DONE.
 
 **Goal:** protect launch from mobile Safari / Android path breakage.
 
@@ -549,4 +565,3 @@ Reason: Steps 1-10 are mostly present; this order focuses the next window on gap
 ### Week 3 checkpoint
 - Full pass matrix update in Step 15.
 - Launch playbook lock from Step 19.
-
